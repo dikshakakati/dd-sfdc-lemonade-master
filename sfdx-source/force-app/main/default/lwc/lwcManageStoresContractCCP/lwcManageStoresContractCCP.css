@@ -1,0 +1,37 @@
+.datatable-container {
+  border: 2px solid #dddddd; /* Add a border to the container */
+  border-radius: 10px; /* Optional: Add rounded corners to the container */
+  overflow: hidden; /* Optional: Hide overflow content */
+}
+
+.messageBoxStyling {
+  background-color: rgb(243, 243, 243);
+  border-radius: 0.25rem;
+}
+.messageStyling {
+  padding: 1rem;
+  color: black;
+}
+.custom-box {
+  /* Change the background color to your desired color */
+  background-color: #ffcc00; /* Example: Hex color code for yellow */
+}
+.border-container {
+  border: 2px solid black; /* Add a border to the container */
+  border-radius: 10px; /* Optional: Add rounded corners to the container */
+  padding: 10px;
+}
+/* Header/Logo Title */
+.header {
+  padding: 5px;
+  text-align: center;
+  background: #1c3937;
+  color: white;
+  font-size: 25px;
+}
+.slds-modal__container {
+  max-width: 100rem !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100%;
+}

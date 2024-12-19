@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Review_Status__c</fullName>
+    <description>LEM-2983: Captures the review status of the Assets by the Sales Rep.</description>
+    <externalId>false</externalId>
+    <label>Asset Review Status</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Asset Not Required</fullName>
+                <default>false</default>
+                <label>Asset Not Required</label>
+            </value>
+            <value>
+                <fullName>Asset Creation in Progress</fullName>
+                <default>false</default>
+                <label>Asset Creation in Progress</label>
+            </value>
+            <value>
+                <fullName>Asset Review in Progress</fullName>
+                <default>false</default>
+                <label>Asset Review in Progress</label>
+            </value>
+            <value>
+                <fullName>Asset Updates Required</fullName>
+                <default>false</default>
+                <label>Asset Updates Required</label>
+            </value>
+            <value>
+                <fullName>Asset Approved</fullName>
+                <default>false</default>
+                <label>Asset Approved</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

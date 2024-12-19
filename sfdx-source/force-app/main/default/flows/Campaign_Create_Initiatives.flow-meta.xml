@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <description>LEM-1595: Apex Action Invocation to call Campaign Members.</description>
+        <name>Get_Filtered_Campaign_Members</name>
+        <label>Get Filtered Campaign Members</label>
+        <locationX>357</locationX>
+        <locationY>566</locationY>
+        <actionName>CreateInitiativesController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Create_Initiatives_For_Campaign_Members</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Screen_for_Missing_Campaign_member</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>campaignMembers</name>
+            <value>
+                <elementReference>Get_Campaign_Members</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>Filtered_Campaign_Members</assignToReference>
+            <name>output</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <description>LEM-1595: Assignment of individual Initiative and accumulation into Initiative List.</description>
+        <name>Assign_Initiative_Values</name>
+        <label>Assign Initiative Values</label>
+        <locationX>607</locationX>
+        <locationY>808</locationY>
+        <assignmentItems>
+            <assignToReference>Each_Initiative.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_Initiatives_For_Campaign_Members.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Initiative.Campaign__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Initiative.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>initiativeSummaryTruncation</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Initiative.Campaign_Member_Id__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_Initiatives_For_Campaign_Members.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Initiative.Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Strategic Effort</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Initiative.Start_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Initiative.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Status</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Initiative.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_Initiatives_For_Campaign_Members.Account.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Initiatives_To_Be_Created</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Each_Initiative</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Initiatives_For_Campaign_Members</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-1595: Assignment of individual Product Insight and accumulation into Product Insights list.</description>
+        <name>Assign_New_Product_Insight</name>
+        <label>Assign New Product Insight</label>
+        <locationX>770</locationX>
+        <locationY>1054</locationY>
+        <assignmentItems>
+            <assignToReference>Each_Product_Insight.Initiative__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_Product_Insights.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Product_Insight.Account_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_Product_Insights.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Product_Insight.Product__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Iterate_Associations.Campaign_Product__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Product_Insight.Interest_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Neutral</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Product_Insight.Origin__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Mx Initiated</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Product_Insight.Outcome__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Interested</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Each_Product_Insight.Outcome_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Value</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Product_Insights_To_Be_Created</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Each_Product_Insight</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_Associations</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <description>LEM-1595: In Progress Status of Initiative Type.</description>
+        <name>In_Progress</name>
+        <choiceText>In Progress</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>In Progress</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>LEM-1595: Initiative Status that is Not Started</description>
+        <name>Not_Started</name>
+        <choiceText>Not Started</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Not Started</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>LEM-1595: Initiative Status that is Planned</description>
+        <name>Planned</name>
+        <choiceText>Planned</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Planned</stringValue>
+        </value>
+    </choices>
+    <description>LEM-1595: Create Initiatives for associated Campaign Members</description>
+    <dynamicChoiceSets>
+        <description>LEM-1595: Stores the choice set of Initiative Status picklist</description>
+        <name>Initiative_Status</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Status__c</picklistField>
+        <picklistObject>Initiative__c</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-1595: Stores today&apos;s date.</description>
+        <name>Current_Date</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <description>It is used to store the truncated format of the Initiative Summary when its character limit has exceeded</description>
+        <name>initiativeSummaryTruncation</name>
+        <dataType>String</dataType>
+        <expression>IF(LEN({!Create_Initiatives_For_Campaign_Members.Campaign.Name} &amp; &apos; : &apos; &amp; {!Create_Initiatives_For_Campaign_Members.Account.Name}) &gt; 80, LEFT({!Create_Initiatives_For_Campaign_Members.Campaign.Name} &amp; &apos; : &apos; &amp; {!Create_Initiatives_For_Campaign_Members.Account.Name}, 80), {!Create_Initiatives_For_Campaign_Members.Campaign.Name} &amp; &apos; : &apos; &amp; {!Create_Initiatives_For_Campaign_Members.Account.Name})</expression>
+    </formulas>
+    <interviewLabel>Campaign - Create Initiatives {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Campaign - Create Initiatives</label>
+    <loops>
+        <description>LEM-1595: Declaration of Collection Variables.</description>
+        <name>Create_Initiatives_For_Campaign_Members</name>
+        <label>Create Initiatives For Campaign Members</label>
+        <locationX>357</locationX>
+        <locationY>817</locationY>
+        <collectionReference>Filtered_Campaign_Members</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Initiative_Values</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Initiatives</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>LEM-1595: Initialisation of Product Insights record to be created.</description>
+        <name>Create_Product_Insights</name>
+        <label>Create Product Insights</label>
+        <locationX>351</locationX>
+        <locationY>1052</locationY>
+        <collectionReference>Initiatives_To_Be_Created</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Iterate_Associations</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Generate_Product_Insights</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>LEM-1595: Association records Iterations for Insights creation</description>
+        <name>Iterate_Associations</name>
+        <label>Iterate Associations</label>
+        <locationX>615</locationX>
+        <locationY>1053</locationY>
+        <collectionReference>Get_Campaign_Product_Associations</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_New_Product_Insight</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Product_Insights</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>LEM-1595: DML Operation to Create Initiatives.</description>
+        <name>Create_Initiatives</name>
+        <label>Create Initiatives</label>
+        <locationX>52</locationX>
+        <locationY>768</locationY>
+        <connector>
+            <targetReference>Create_Product_Insights</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Screen_for_Create_Initiative_Record_Creation</targetReference>
+        </faultConnector>
+        <inputReference>Initiatives_To_Be_Created</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>LEM-1595: DML Operation for Product Insights Creation.</description>
+        <name>Generate_Product_Insights</name>
+        <label>Generate Product Insights</label>
+        <locationX>362</locationX>
+        <locationY>1278</locationY>
+        <faultConnector>
+            <targetReference>Error_Screen_for_Product_Insight_Record_Creation</targetReference>
+        </faultConnector>
+        <inputReference>Product_Insights_To_Be_Created</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>LEM-1595: Campaign Members fetched for the current Campaign which triggered the flow.</description>
+        <name>Get_Campaign_Members</name>
+        <label>Get Campaign Members</label>
+        <locationX>625</locationX>
+        <locationY>251</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Campaign_Product_Associations</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CampaignId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>CampaignMember</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>AccountId</queriedFields>
+        <queriedFields>CampaignId</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-1595: Campaign Product Association records fetched for the current Campaign.</description>
+        <name>Get_Campaign_Product_Associations</name>
+        <label>Get Campaign Product Associations</label>
+        <locationX>357</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Initiative_Information</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Campaign__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Campaign_Product_Association__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Campaign_Product__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-1595: Fetches all the details of the Campaign record.</description>
+        <name>Get_Current_Campaign</name>
+        <label>Get Current Campaign</label>
+        <locationX>357</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Campaign_Members</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Campaign</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>DefaultMode</runInMode>
+    <screens>
+        <description>LEM-21735: It is used to display generic error message.</description>
+        <name>Error_Screen_for_Create_Initiative_Record_Creation</name>
+        <label>Error Screen for Create Initiative Record Creation</label>
+        <locationX>51</locationX>
+        <locationY>989</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_Message_for_Create_Initiative_Record_Creation</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!$Label.Add_Stores_Exception_Message}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-20233: It is displayed when no Campaign Member associated with Campaign.</description>
+        <name>Error_Screen_for_Missing_Campaign_member</name>
+        <label>Error Screen for Missing Campaign member</label>
+        <locationX>715</locationX>
+        <locationY>568</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_Message_for_Missing_Campaign_Member</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!$Label.Campaigns_with_no_Campaign_Members_Exception_Message}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-21735: It is used to display generic error message.</description>
+        <name>Error_Screen_for_Product_Insight_Record_Creation</name>
+        <label>Error Screen for Product Insight Record Creation</label>
+        <locationX>745</locationX>
+        <locationY>1278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_Message_for_Product_Insight_Record_Creation</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!$Label.Add_Stores_Exception_Message}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Initiative_Information</name>
+        <label>Initiative Information</label>
+        <locationX>52</locationX>
+        <locationY>461</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Filtered_Campaign_Members</targetReference>
+        </connector>
+        <fields>
+            <name>Status</name>
+            <choiceReferences>Not_Started</choiceReferences>
+            <choiceReferences>Planned</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>Not_Started</defaultSelectedChoiceReference>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Create Initiatives</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>231</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Current_Campaign</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-1595: Stores the values of the current Initiative instance in the loop</description>
+        <name>Each_Initiative</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Initiative__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-1595: Stores the current assignments and instance of Product Insights.</description>
+        <name>Each_Product_Insight</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Product_Insights__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-1595: Accumulated by the Apex Action to filter out Campaign Members without Initiatives.</description>
+        <name>Filtered_Campaign_Members</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>LEM-1595: List of Initiatives accumulated after fresh assignments.</description>
+        <name>Initiatives_To_Be_Created</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Initiative__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-1595: List of Product Insights accumulated after fresh assignments.</description>
+        <name>Product_Insights_To_Be_Created</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Product_Insights__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-1595: Fetched the record Id of the Campaign from which the flow was triggered.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

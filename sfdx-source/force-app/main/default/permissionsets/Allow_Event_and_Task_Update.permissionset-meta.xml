@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Event_and_Task_Update</name>
+    </customPermissions>
+    <description>LEM-13539: It enables user to edit Event and Task.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Event and Task Update</label>
+</PermissionSet>

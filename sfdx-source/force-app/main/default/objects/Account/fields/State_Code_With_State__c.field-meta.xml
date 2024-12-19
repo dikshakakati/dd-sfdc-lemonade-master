@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_Code_With_State__c</fullName>
+    <description>LEM-5503: It used to store statecode with state</description>
+    <externalId>false</externalId>
+    <formula>TEXT(BillingStateCode) &amp;&quot; &quot;&amp;&quot;-&quot;&amp; &quot; &quot;&amp;BillingState</formula>
+    <label>State Code With State</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

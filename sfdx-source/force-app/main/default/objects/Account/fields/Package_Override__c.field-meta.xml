@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_Override__c</fullName>
+    <description>LEM-1851</description>
+    <externalId>false</externalId>
+    <label>Package Override</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Package_Pricing_Tiers</valueSetName>
+    </valueSet>
+</CustomField>

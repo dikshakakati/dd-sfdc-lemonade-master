@@ -1,0 +1,58 @@
+/* copyTextComponent.css */
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.text-container {
+    margin-right: 10px;
+}
+
+.clipboard-container {
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.clipboard-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.slds-button_outline-brand {
+    color: blue;
+}
+
+.my-button {
+    background-color: white;
+    color: #007bff;
+    border: 1px solid gray;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .my-success-button {
+    background-color: #25bd25;
+    color: black;
+    border: 1px solid #25bd25;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }

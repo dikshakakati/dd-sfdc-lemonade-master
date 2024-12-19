@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unique_Identifier__c</fullName>
+    <description>LEM-14648, LEM-14727: It is used to capture the UUID received by Mulesoft in the payload. </description>
+    <externalId>false</externalId>
+    <inlineHelpText>Displays the SSMO UUID of the Mx if one exists.</inlineHelpText>
+    <label>SSMO UUID</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

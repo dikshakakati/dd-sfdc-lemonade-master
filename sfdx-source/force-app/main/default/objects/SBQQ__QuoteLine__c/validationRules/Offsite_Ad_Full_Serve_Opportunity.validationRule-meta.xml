@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offsite_Ad_Full_Serve_Opportunity</fullName>
+    <active>true</active>
+    <description>LEM-17589: Validation to enforce specific values for Offsite Platform field on Offsite Ad product</description>
+    <errorConditionFormula>AND(
+SBQQ__ProductCode__c = &apos;10110&apos;,
+ISPICKVAL(SBQQ__Quote__r.SBQQ__Opportunity2__r.Deal_Type__c, &apos;Full-Serve&apos;),
+NOT(ISPICKVAL(Offsite_Platform__c, &apos;Display&apos;)),
+NOT(ISPICKVAL(Offsite_Platform__c, &apos;Video&apos;)),
+NOT(ISPICKVAL(Offsite_Platform__c,&apos;&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>Offsite_Platform__c</errorDisplayField>
+    <errorMessage>Offsite Platform can only be &apos;Display&apos; or &apos;Video&apos; for Full-Serve Opportunities</errorMessage>
+</ValidationRule>

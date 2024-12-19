@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.38"><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hi {{{Case.Account_Owner__c}}}<br />
+<br />
+This email is notify you that onboarding for the following Merchant is</span></span></span></span></span><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#ff0000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none"> </span></span></span></span></span><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#ff0000"><span style="font-weight:700"><span style="font-style:normal"><span style="text-decoration:none">fully blocked from moving forward due to missing or incorrect information</span></span></span></span></span><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">, and needs your attention ASAP:</span></span></span></span></span></span></span></p>
+
+<p style="line-height:1.38; margin-left:80px"><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:700"><span style="font-style:normal"><span style="text-decoration:none">Case: </span></span></span><span style="background-color:#ffffff"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">{{{Case.Id}}}</span></span></span></span></span></span></span></span><br />
+<span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:700"><span style="font-style:normal"><span style="text-decoration:none">Work Order:</span></span></span><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none"> {{{Case.Work_Order__c}}}</span></span></span></span></span></span></span></p>
+
+<p style="line-height:1.38"><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">In order to move forward, please do the following:</span></span></span></span></span></span></span></p>
+
+<ol>
+	<li aria-level="1" style="list-style-type:decimal"><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Open the Work Plan(s): </span></span></span></span></span></span></span></li>
+	<li aria-level="1" style="list-style-type:decimal"><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Make and save changes to the appropriate Account or Store Account.</span></span></span></span></span></span></span></li>
+	<li aria-level="1" style="list-style-type:decimal"><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Update status on Case to “resolved” and automatically reopen the WorkPlan.</span></span></span></span></span></span></span></li>
+</ol>
+
+<p style="line-height:1.38"><br />
+<span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Thanks,&nbsp;</span></span></span></span></span><br />
+<span style="font-variant: normal; white-space: pre-wrap;"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Onboarding Team</span></span></span></span></span></span></span></p>
+<br />
+&nbsp;
+</body></html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Status__c</fullName>
+    <description>LEM-13453: It checks the manager approval status of the S&amp;O support request.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <label>Approval Status</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending Approval</fullName>
+                <default>true</default>
+                <label>Pending Approval</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Request Denied</fullName>
+                <default>false</default>
+                <label>Request Denied</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

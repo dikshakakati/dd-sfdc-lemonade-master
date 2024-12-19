@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disable_Mx_form_submission_for_this_URL__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Captures the decision if Nintex form is expired or not.</description>
+    <externalId>false</externalId>
+    <label>Disable Mx form submission for this URL</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

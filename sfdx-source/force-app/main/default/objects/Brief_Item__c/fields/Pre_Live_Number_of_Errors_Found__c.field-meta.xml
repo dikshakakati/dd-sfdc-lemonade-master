@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Live_Number_of_Errors_Found__c</fullName>
+    <description>LEM-3674: It indicates the number of errors found before Brief Item goes live.</description>
+    <externalId>false</externalId>
+    <label>Pre-Live Number of Errors Found</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

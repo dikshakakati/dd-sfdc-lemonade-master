@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration_Go_Live__c</fullName>
+    <description>It indicates Go-Live date for POS integrations.
+BZAP-19603</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Note: The Go-Live Date for POS Integrations cannot be less than 5 days from today. Please keep in mind that the POS team activates M-F, and dates that fall on the weekend will not be activated until the following Monday</inlineHelpText>
+    <label>Integration Go-Live</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,22 @@
+.spinner-medium::after {
+    position: absolute;
+    content: attr(data-text);
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    top: calc(50% + 2em);
+}
+
+.backgroundInverse {
+    position: relative;
+    background-color: #16325c;
+    height: 80px;
+}
+
+.slds-table.uniform-columns th,
+.slds-table.uniform-columns td {
+  max-width: 10vw; /* Adjust as needed */
+  text-wrap:balance;
+  font-size:0.78rem;
+
+}

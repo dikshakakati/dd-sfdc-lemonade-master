@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nintex_Signatory__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-2294: Nintex Signatory captures the Contact that signed the Nintex Form</description>
+    <externalId>false</externalId>
+    <label>Nintex Signatory</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

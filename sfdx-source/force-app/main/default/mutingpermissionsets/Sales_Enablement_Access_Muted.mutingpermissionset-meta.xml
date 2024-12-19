@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MutingPermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Restrict_Work_Step_Status_Updates</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Hide_Conga_Grid_Components</name>
+    </customPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Store_Hours_link__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <label>Sales Enablement Access Muted</label>
+</MutingPermissionSet>

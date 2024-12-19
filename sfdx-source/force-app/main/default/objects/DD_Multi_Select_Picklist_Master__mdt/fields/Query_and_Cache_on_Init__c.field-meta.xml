@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Query_and_Cache_on_Init__c</fullName>
+    <defaultValue>false</defaultValue>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Component gets all picklist values on init and will not make server calls again to get the picklist values. 
+
+Usage is recommended for Object Picklist Metadata type and anything scenario which has less number of &lt;near&gt; immutable picklist values.</inlineHelpText>
+    <label>Query and Cache on Init</label>
+    <type>Checkbox</type>
+</CustomField>

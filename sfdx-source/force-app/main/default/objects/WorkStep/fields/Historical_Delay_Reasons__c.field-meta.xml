@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Historical_Delay_Reasons__c</fullName>
+    <description>LEM-964: Used to report on our drivers behind activations delays. i.e. This work step was Blocked for this long and here are all of the reasons it was delayed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to report on our drivers behind activations delays. i.e. This work step was Blocked for this long and here are all of the reasons it was delayed</inlineHelpText>
+    <label>Historical Delay Reasons</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Account and Opportunity do not match</fullName>
+                <default>false</default>
+                <label>Account and Opportunity do not match</label>
+            </value>
+            <value>
+                <fullName>Account and Opportunity is a dupe with the same location</fullName>
+                <default>false</default>
+                <label>Account and Opportunity is a dupe with the same location</label>
+            </value>
+            <value>
+                <fullName>Account Merge</fullName>
+                <default>false</default>
+                <label>Account Merge</label>
+            </value>
+            <value>
+                <fullName>Account Type is Parent</fullName>
+                <default>false</default>
+                <label>Account Type is Parent</label>
+            </value>
+            <value>
+                <fullName>Alcohol Addendum signed but no alcohol items on menu</fullName>
+                <default>false</default>
+                <label>Alcohol Addendum signed but no alcohol items on menu</label>
+            </value>
+            <value>
+                <fullName>Already Active</fullName>
+                <default>false</default>
+                <label>Already Active</label>
+            </value>
+            <value>
+                <fullName>Appears to be Change of Ownership - Update Type</fullName>
+                <default>false</default>
+                <label>Appears to be Change of Ownership - Update Type</label>
+            </value>
+            <value>
+                <fullName>Banking not listed in portal after S2N</fullName>
+                <default>false</default>
+                <label>Banking not listed in portal after S2N</label>
+            </value>
+            <value>
+                <fullName>Blurry or poorly cropped menu source</fullName>
+                <default>false</default>
+                <label>Blurry or poorly cropped menu source</label>
+            </value>
+            <value>
+                <fullName>Bulk tool Failure</fullName>
+                <default>false</default>
+                <label>Bulk tool Failure</label>
+            </value>
+            <value>
+                <fullName>Business ID mismatch in SFDC and Mint</fullName>
+                <default>false</default>
+                <label>Business ID mismatch in SFDC and Mint</label>
+            </value>
+            <value>
+                <fullName>Catalog / Grocery account</fullName>
+                <default>false</default>
+                <label>Catalog / Grocery account</label>
+            </value>
+            <value>
+                <fullName>Catalog photo upload issue</fullName>
+                <default>false</default>
+                <label>Catalog photo upload issue</label>
+            </value>
+            <value>
+                <fullName>Closed Lost, Mx not interested in Storefront</fullName>
+                <default>false</default>
+                <label>Closed Lost, Mx not interested in Storefront</label>
+            </value>
+            <value>
+                <fullName>DM Email associated to another Business</fullName>
+                <default>false</default>
+                <label>DM Email associated to another Business</label>
+            </value>
+            <value>
+                <fullName>Doesn’t see value in own online ordering</fullName>
+                <default>false</default>
+                <label>Doesn’t see value in own online ordering</label>
+            </value>
+            <value>
+                <fullName>Do not know what Storefront is</fullName>
+                <default>false</default>
+                <label>Do not know what Storefront is</label>
+            </value>
+            <value>
+                <fullName>Duplicate Account based on Store ID, Phone, or Address</fullName>
+                <default>false</default>
+                <label>Duplicate Account based on Store ID, Phone, or Address</label>
+            </value>
+            <value>
+                <fullName>Duplicate Onboarding Record</fullName>
+                <default>false</default>
+                <label>Duplicate Onboarding Record</label>
+            </value>
+            <value>
+                <fullName>Duplicate POS Integration ID - Already in Use</fullName>
+                <default>false</default>
+                <label>Duplicate POS Integration ID - Already in Use</label>
+            </value>
+            <value>
+                <fullName>Equipment Never Sent</fullName>
+                <default>false</default>
+                <label>Equipment Never Sent</label>
+            </value>
+            <value>
+                <fullName>Escalated to Eng Team</fullName>
+                <default>false</default>
+                <label>Escalated to Eng Team</label>
+            </value>
+            <value>
+                <fullName>Escalated to TAM Team</fullName>
+                <default>false</default>
+                <label>Escalated to TAM Team</label>
+            </value>
+            <value>
+                <fullName>Fee Onboarding Error</fullName>
+                <default>false</default>
+                <label>Fee Onboarding Error</label>
+            </value>
+            <value>
+                <fullName>Final inflated prices not present</fullName>
+                <default>false</default>
+                <label>Final inflated prices not present</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>Inactive menu</fullName>
+                <default>false</default>
+                <label>Inactive menu</label>
+            </value>
+            <value>
+                <fullName>Inactive Starting Point</fullName>
+                <default>false</default>
+                <label>Inactive Starting Point</label>
+            </value>
+            <value>
+                <fullName>Inactive Store (MINT)</fullName>
+                <default>false</default>
+                <label>Inactive Store (MINT)</label>
+            </value>
+            <value>
+                <fullName>In contract with competitor</fullName>
+                <default>false</default>
+                <label>In contract with competitor</label>
+            </value>
+            <value>
+                <fullName>Incorrect Legal Business Address</fullName>
+                <default>false</default>
+                <label>Incorrect Legal Business Address</label>
+            </value>
+            <value>
+                <fullName>Incorrect level of access</fullName>
+                <default>false</default>
+                <label>Incorrect level of access</label>
+            </value>
+            <value>
+                <fullName>Incorrect Starting Point</fullName>
+                <default>false</default>
+                <label>Incorrect Starting Point</label>
+            </value>
+            <value>
+                <fullName>Incorrect Submarket</fullName>
+                <default>false</default>
+                <label>Incorrect Submarket</label>
+            </value>
+            <value>
+                <fullName>Internal Menu - Cloning</fullName>
+                <default>false</default>
+                <label>Internal Menu - Cloning</label>
+            </value>
+            <value>
+                <fullName>Invalid Account Number</fullName>
+                <default>false</default>
+                <label>Invalid Account Number</label>
+            </value>
+            <value>
+                <fullName>Invalid Address</fullName>
+                <default>false</default>
+                <label>Invalid Address</label>
+            </value>
+            <value>
+                <fullName>Invalid Contract</fullName>
+                <default>false</default>
+                <label>Invalid Contract</label>
+            </value>
+            <value>
+                <fullName>Invalid EIN</fullName>
+                <default>false</default>
+                <label>Invalid EIN</label>
+            </value>
+            <value>
+                <fullName>Invalid IBAN Number</fullName>
+                <default>false</default>
+                <label>Invalid IBAN Number</label>
+            </value>
+            <value>
+                <fullName>Invalid KYC Document</fullName>
+                <default>false</default>
+                <label>Invalid KYC Document</label>
+            </value>
+            <value>
+                <fullName>Invalid POS Integration ID</fullName>
+                <default>false</default>
+                <label>Invalid POS Integration ID</label>
+            </value>
+            <value>
+                <fullName>Invalid Routing Number</fullName>
+                <default>false</default>
+                <label>Invalid Routing Number</label>
+            </value>
+            <value>
+                <fullName>Invalid Store Phone</fullName>
+                <default>false</default>
+                <label>Invalid Store Phone</label>
+            </value>
+            <value>
+                <fullName>Language barrier</fullName>
+                <default>false</default>
+                <label>Language barrier</label>
+            </value>
+            <value>
+                <fullName>Language not supported by vendor</fullName>
+                <default>false</default>
+                <label>Language not supported by vendor</label>
+            </value>
+            <value>
+                <fullName>Liquor store Account</fullName>
+                <default>false</default>
+                <label>Liquor store Account</label>
+            </value>
+            <value>
+                <fullName>Logo tool failure</fullName>
+                <default>false</default>
+                <label>Logo tool failure</label>
+            </value>
+            <value>
+                <fullName>Manual Store creation needed</fullName>
+                <default>false</default>
+                <label>Manual Store creation needed</label>
+            </value>
+            <value>
+                <fullName>Max item limit exceeded in menu</fullName>
+                <default>false</default>
+                <label>Max item limit exceeded in menu</label>
+            </value>
+            <value>
+                <fullName>Meeting scheduled</fullName>
+                <default>false</default>
+                <label>Meeting scheduled</label>
+            </value>
+            <value>
+                <fullName>Menu failed to ingest - POS system blocked</fullName>
+                <default>false</default>
+                <label>Menu failed to ingest - POS system blocked</label>
+            </value>
+            <value>
+                <fullName>Menu ingested with no pricing - POS provider error</fullName>
+                <default>false</default>
+                <label>Menu ingested with no pricing - POS provider error</label>
+            </value>
+            <value>
+                <fullName>Menu is mostly alcohol (no addendum)</fullName>
+                <default>false</default>
+                <label>Menu is mostly alcohol (no addendum)</label>
+            </value>
+            <value>
+                <fullName>Menu source is for wrong brand</fullName>
+                <default>false</default>
+                <label>Menu source is for wrong brand</label>
+            </value>
+            <value>
+                <fullName>Menu source is mostly non-alcohol restricted items</fullName>
+                <default>false</default>
+                <label>Menu source is mostly non-alcohol restricted items</label>
+            </value>
+            <value>
+                <fullName>Menu Source PDF in Opp needs to be added</fullName>
+                <default>false</default>
+                <label>Menu Source PDF in Opp needs to be added</label>
+            </value>
+            <value>
+                <fullName>Menu upload failed</fullName>
+                <default>false</default>
+                <label>Menu upload failed</label>
+            </value>
+            <value>
+                <fullName>Merchant is not active on Storefront</fullName>
+                <default>false</default>
+                <label>Merchant is not active on Storefront</label>
+            </value>
+            <value>
+                <fullName>Merchant no-show</fullName>
+                <default>false</default>
+                <label>Merchant no-show</label>
+            </value>
+            <value>
+                <fullName>Merchant not ready to integrate POS</fullName>
+                <default>false</default>
+                <label>Merchant not ready to integrate POS</label>
+            </value>
+            <value>
+                <fullName>Merchant rescheduled</fullName>
+                <default>false</default>
+                <label>Merchant rescheduled</label>
+            </value>
+            <value>
+                <fullName>Mismatched Account for Opp, Quote and Order</fullName>
+                <default>false</default>
+                <label>Mismatched Account for Opp, Quote and Order</label>
+            </value>
+            <value>
+                <fullName>Mismatched Parent Account Name and Account Name</fullName>
+                <default>false</default>
+                <label>Mismatched Parent Account Name and Account Name</label>
+            </value>
+            <value>
+                <fullName>Missing Account Number</fullName>
+                <default>false</default>
+                <label>Missing Account Number</label>
+            </value>
+            <value>
+                <fullName>Missing Business ID</fullName>
+                <default>false</default>
+                <label>Missing Business ID</label>
+            </value>
+            <value>
+                <fullName>Missing Delivery Radius File</fullName>
+                <default>false</default>
+                <label>Missing Delivery Radius File</label>
+            </value>
+            <value>
+                <fullName>Missing EIN</fullName>
+                <default>false</default>
+                <label>Missing EIN</label>
+            </value>
+            <value>
+                <fullName>Missing Legal Business Address</fullName>
+                <default>false</default>
+                <label>Missing Legal Business Address</label>
+            </value>
+            <value>
+                <fullName>Missing Legal Representative Name and DOB</fullName>
+                <default>false</default>
+                <label>Missing Legal Representative Name and DOB</label>
+            </value>
+            <value>
+                <fullName>Missing Menu Link</fullName>
+                <default>false</default>
+                <label>Missing Menu Link</label>
+            </value>
+            <value>
+                <fullName>Missing or incomplete store hours</fullName>
+                <default>false</default>
+                <label>Missing or incomplete store hours</label>
+            </value>
+            <value>
+                <fullName>Missing Parent Account</fullName>
+                <default>false</default>
+                <label>Missing Parent Account</label>
+            </value>
+            <value>
+                <fullName>Missing POS Integration ID</fullName>
+                <default>false</default>
+                <label>Missing POS Integration ID</label>
+            </value>
+            <value>
+                <fullName>Missing Routing Number</fullName>
+                <default>false</default>
+                <label>Missing Routing Number</label>
+            </value>
+            <value>
+                <fullName>Missing Starting Point</fullName>
+                <default>false</default>
+                <label>Missing Starting Point</label>
+            </value>
+            <value>
+                <fullName>Missing Store Hours</fullName>
+                <default>false</default>
+                <label>Missing Store Hours</label>
+            </value>
+            <value>
+                <fullName>Missing Submarket</fullName>
+                <default>false</default>
+                <label>Missing Submarket</label>
+            </value>
+            <value>
+                <fullName>Most of menu has no pricing</fullName>
+                <default>false</default>
+                <label>Most of menu has no pricing</label>
+            </value>
+            <value>
+                <fullName>Multiple Polygons for Delivery Radius are Unsupported</fullName>
+                <default>false</default>
+                <label>Multiple Polygons for Delivery Radius are Unsupported</label>
+            </value>
+            <value>
+                <fullName>Multiple Tier Pricing in Menu Source</fullName>
+                <default>false</default>
+                <label>Multiple Tier Pricing in Menu Source</label>
+            </value>
+            <value>
+                <fullName>Mx has not reached photo or menu readiness thresholds</fullName>
+                <default>false</default>
+                <label>Mx has not reached photo or menu readiness thresholds</label>
+            </value>
+            <value>
+                <fullName>Mx must inbound request through Provider</fullName>
+                <default>false</default>
+                <label>Mx must inbound request through Provider</label>
+            </value>
+            <value>
+                <fullName>Mx No Longer Integrating with POS Provider</fullName>
+                <default>false</default>
+                <label>Mx No Longer Integrating with POS Provider</label>
+            </value>
+            <value>
+                <fullName>Mx Refused</fullName>
+                <default>false</default>
+                <label>Mx Refused</label>
+            </value>
+            <value>
+                <fullName>Mx requested Order Protocol change</fullName>
+                <default>false</default>
+                <label>Mx requested Order Protocol change</label>
+            </value>
+            <value>
+                <fullName>Mx thought that Storefront was a promotion</fullName>
+                <default>false</default>
+                <label>Mx thought that Storefront was a promotion</label>
+            </value>
+            <value>
+                <fullName>Mx Unresponsive for POS Pull Request</fullName>
+                <default>false</default>
+                <label>Mx Unresponsive for POS Pull Request</label>
+            </value>
+            <value>
+                <fullName>Needs Coverage Extension - Location is out of Starting Point</fullName>
+                <default>false</default>
+                <label>Needs Coverage Extension - Location is out of Starting Point</label>
+            </value>
+            <value>
+                <fullName>Needs DD help placing link on Google Biz/Social media</fullName>
+                <default>false</default>
+                <label>Needs DD help placing link on Google Biz/Social media</label>
+            </value>
+            <value>
+                <fullName>Needs implementation help</fullName>
+                <default>false</default>
+                <label>Needs implementation help</label>
+            </value>
+            <value>
+                <fullName>New and Curious</fullName>
+                <default>false</default>
+                <label>New and Curious</label>
+            </value>
+            <value>
+                <fullName>New Merchant thought that Storefront is DoorDash.com</fullName>
+                <default>false</default>
+                <label>New Merchant thought that Storefront is DoorDash.com</label>
+            </value>
+            <value>
+                <fullName>No access to menu source</fullName>
+                <default>false</default>
+                <label>No access to menu source</label>
+            </value>
+            <value>
+                <fullName>No access to website login</fullName>
+                <default>false</default>
+                <label>No access to website login</label>
+            </value>
+            <value>
+                <fullName>No Contact Number</fullName>
+                <default>false</default>
+                <label>No Contact Number</label>
+            </value>
+            <value>
+                <fullName>No menu source found</fullName>
+                <default>false</default>
+                <label>No menu source found</label>
+            </value>
+            <value>
+                <fullName>No Response</fullName>
+                <default>false</default>
+                <label>No Response</label>
+            </value>
+            <value>
+                <fullName>No SFDC Child Opportunity</fullName>
+                <default>false</default>
+                <label>No SFDC Child Opportunity</label>
+            </value>
+            <value>
+                <fullName>Not Applicable for Activation</fullName>
+                <default>false</default>
+                <label>Not Applicable for Activation</label>
+            </value>
+            <value>
+                <fullName>Not Applicable for Mx</fullName>
+                <default>false</default>
+                <label>Not Applicable for Mx</label>
+            </value>
+            <value>
+                <fullName>Not Applicable for Provider</fullName>
+                <default>false</default>
+                <label>Not Applicable for Provider</label>
+            </value>
+            <value>
+                <fullName>Not a priority and didn’t have time to add link</fullName>
+                <default>false</default>
+                <label>Not a priority and didn’t have time to add link</label>
+            </value>
+            <value>
+                <fullName>Not Available for Signature</fullName>
+                <default>false</default>
+                <label>Not Available for Signature</label>
+            </value>
+            <value>
+                <fullName>Not in Coverage - Location is out of Starting Point</fullName>
+                <default>false</default>
+                <label>Not in Coverage - Location is out of Starting Point</label>
+            </value>
+            <value>
+                <fullName>Not Ready</fullName>
+                <default>false</default>
+                <label>Not Ready</label>
+            </value>
+            <value>
+                <fullName>Not the Decision Maker</fullName>
+                <default>false</default>
+                <label>Not the Decision Maker</label>
+            </value>
+            <value>
+                <fullName>No value in changing from competitor</fullName>
+                <default>false</default>
+                <label>No value in changing from competitor</label>
+            </value>
+            <value>
+                <fullName>No website access</fullName>
+                <default>false</default>
+                <label>No website access</label>
+            </value>
+            <value>
+                <fullName>Old Case</fullName>
+                <default>false</default>
+                <label>Old Case</label>
+            </value>
+            <value>
+                <fullName>OO requesting Opportunity update</fullName>
+                <default>false</default>
+                <label>OO requesting Opportunity update</label>
+            </value>
+            <value>
+                <fullName>Opportunity is not Closed Won</fullName>
+                <default>false</default>
+                <label>Opportunity is not Closed Won</label>
+            </value>
+            <value>
+                <fullName>Opportunity missing Proposed Date of Activation</fullName>
+                <default>false</default>
+                <label>Opportunity missing Proposed Date of Activation</label>
+            </value>
+            <value>
+                <fullName>Opportunity missing Proposed Date of Menu</fullName>
+                <default>false</default>
+                <label>Opportunity missing Proposed Date of Menu</label>
+            </value>
+            <value>
+                <fullName>Opportunity missing tier level</fullName>
+                <default>false</default>
+                <label>Opportunity missing tier level</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Out of Business</fullName>
+                <default>false</default>
+                <label>Out of Business</label>
+            </value>
+            <value>
+                <fullName>Phone number incorrectly formatted</fullName>
+                <default>false</default>
+                <label>Phone number incorrectly formatted</label>
+            </value>
+            <value>
+                <fullName>POS Ingestion Failure</fullName>
+                <default>false</default>
+                <label>POS Ingestion Failure</label>
+            </value>
+            <value>
+                <fullName>POS Mx Requests Additional Testing</fullName>
+                <default>false</default>
+                <label>POS Mx Requests Additional Testing</label>
+            </value>
+            <value>
+                <fullName>Possible Fraud</fullName>
+                <default>false</default>
+                <label>Possible Fraud</label>
+            </value>
+            <value>
+                <fullName>POS Team Troubleshooting</fullName>
+                <default>false</default>
+                <label>POS Team Troubleshooting</label>
+            </value>
+            <value>
+                <fullName>POS Team Working On Integration</fullName>
+                <default>false</default>
+                <label>POS Team Working On Integration</label>
+            </value>
+            <value>
+                <fullName>POS Testing Error</fullName>
+                <default>false</default>
+                <label>POS Testing Error</label>
+            </value>
+            <value>
+                <fullName>Post-sign up steps unclear</fullName>
+                <default>false</default>
+                <label>Post-sign up steps unclear</label>
+            </value>
+            <value>
+                <fullName>Pricing Tier Incorrect</fullName>
+                <default>false</default>
+                <label>Pricing Tier Incorrect</label>
+            </value>
+            <value>
+                <fullName>Pricing Tier Missing</fullName>
+                <default>false</default>
+                <label>Pricing Tier Missing</label>
+            </value>
+            <value>
+                <fullName>Provider is in Pilot Stage</fullName>
+                <default>false</default>
+                <label>Provider is in Pilot Stage</label>
+            </value>
+            <value>
+                <fullName>Qualifying questions not answered</fullName>
+                <default>false</default>
+                <label>Qualifying questions not answered</label>
+            </value>
+            <value>
+                <fullName>Returned to Sender</fullName>
+                <default>false</default>
+                <label>Returned to Sender</label>
+            </value>
+            <value>
+                <fullName>Service Fee Incorrect</fullName>
+                <default>false</default>
+                <label>Service Fee Incorrect</label>
+            </value>
+            <value>
+                <fullName>Service Fee Missing</fullName>
+                <default>false</default>
+                <label>Service Fee Missing</label>
+            </value>
+            <value>
+                <fullName>Shipping Delays - DoorDash</fullName>
+                <default>false</default>
+                <label>Shipping Delays - DoorDash</label>
+            </value>
+            <value>
+                <fullName>Shipping Delays - Provider</fullName>
+                <default>false</default>
+                <label>Shipping Delays - Provider</label>
+            </value>
+            <value>
+                <fullName>Square OAuth not completed</fullName>
+                <default>false</default>
+                <label>Square OAuth not completed</label>
+            </value>
+            <value>
+                <fullName>SSME to Doordash</fullName>
+                <default>false</default>
+                <label>SSME to Doordash</label>
+            </value>
+            <value>
+                <fullName>SSMO Franchise</fullName>
+                <default>false</default>
+                <label>SSMO Franchise</label>
+            </value>
+            <value>
+                <fullName>Store name not formatted correctly</fullName>
+                <default>false</default>
+                <label>Store name not formatted correctly</label>
+            </value>
+            <value>
+                <fullName>Store Phone is invalid</fullName>
+                <default>false</default>
+                <label>Store Phone is invalid</label>
+            </value>
+            <value>
+                <fullName>Stripe verification error</fullName>
+                <default>false</default>
+                <label>Stripe verification error</label>
+            </value>
+            <value>
+                <fullName>Stripe verification needed</fullName>
+                <default>false</default>
+                <label>Stripe verification needed</label>
+            </value>
+            <value>
+                <fullName>Submarket is not live and Launch Date is TBD</fullName>
+                <default>false</default>
+                <label>Submarket is not live and Launch Date is TBD</label>
+            </value>
+            <value>
+                <fullName>Submitted implementation help and waiting</fullName>
+                <default>false</default>
+                <label>Submitted implementation help and waiting</label>
+            </value>
+            <value>
+                <fullName>Tablet/Merchant Profile Missing in Nimda</fullName>
+                <default>false</default>
+                <label>Tablet/Merchant Profile Missing in Nimda</label>
+            </value>
+            <value>
+                <fullName>Tablet Profile missing</fullName>
+                <default>false</default>
+                <label>Tablet Profile missing</label>
+            </value>
+            <value>
+                <fullName>Technical Issues with Tablet</fullName>
+                <default>false</default>
+                <label>Technical Issues with Tablet</label>
+            </value>
+            <value>
+                <fullName>Test Onboarding Record</fullName>
+                <default>false</default>
+                <label>Test Onboarding Record</label>
+            </value>
+            <value>
+                <fullName>Timelock or geo-lock</fullName>
+                <default>false</default>
+                <label>Timelock or geo-lock</label>
+            </value>
+            <value>
+                <fullName>Toast Onboarding Not Completed</fullName>
+                <default>false</default>
+                <label>Toast Onboarding Not Completed</label>
+            </value>
+            <value>
+                <fullName>Unable to Access Delivery Radius File</fullName>
+                <default>false</default>
+                <label>Unable to Access Delivery Radius File</label>
+            </value>
+            <value>
+                <fullName>Unable to QA: Menu source and completed menu are for different brands</fullName>
+                <default>false</default>
+                <label>Unable to QA: Menu source and completed menu are for different brands</label>
+            </value>
+            <value>
+                <fullName>Unable to QA: Missing completed menu</fullName>
+                <default>false</default>
+                <label>Unable to QA: Missing completed menu</label>
+            </value>
+            <value>
+                <fullName>Unable to QA: No access to completed menu</fullName>
+                <default>false</default>
+                <label>Unable to QA: No access to completed menu</label>
+            </value>
+            <value>
+                <fullName>Unable to QA: No access to menu source</fullName>
+                <default>false</default>
+                <label>Unable to QA: No access to menu source</label>
+            </value>
+            <value>
+                <fullName>Unidentified banking error - manual portal entry needed</fullName>
+                <default>false</default>
+                <label>Unidentified banking error - manual portal entry needed</label>
+            </value>
+            <value>
+                <fullName>Unidentified S2N error</fullName>
+                <default>false</default>
+                <label>Unidentified S2N error</label>
+            </value>
+            <value>
+                <fullName>Unsupported POS Provider</fullName>
+                <default>false</default>
+                <label>Unsupported POS Provider</label>
+            </value>
+            <value>
+                <fullName>Waiting on logo update</fullName>
+                <default>false</default>
+                <label>Waiting on logo update</label>
+            </value>
+            <value>
+                <fullName>Waiting on reply from Mx</fullName>
+                <default>false</default>
+                <label>Waiting on reply from Mx</label>
+            </value>
+            <value>
+                <fullName>Waiting on reply from Px</fullName>
+                <default>false</default>
+                <label>Waiting on reply from Px</label>
+            </value>
+            <value>
+                <fullName>Waiting on web designer to implement Storefront link</fullName>
+                <default>false</default>
+                <label>Waiting on web designer to implement Storefront link</label>
+            </value>
+            <value>
+                <fullName>Waitlist POS Provider</fullName>
+                <default>false</default>
+                <label>Waitlist POS Provider</label>
+            </value>
+            <value>
+                <fullName>Was just checking it out</fullName>
+                <default>false</default>
+                <label>Was just checking it out</label>
+            </value>
+            <value>
+                <fullName>Website controlled by corporate</fullName>
+                <default>false</default>
+                <label>Website controlled by corporate</label>
+            </value>
+            <value>
+                <fullName>Website tied to online ordering competitor</fullName>
+                <default>false</default>
+                <label>Website tied to online ordering competitor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

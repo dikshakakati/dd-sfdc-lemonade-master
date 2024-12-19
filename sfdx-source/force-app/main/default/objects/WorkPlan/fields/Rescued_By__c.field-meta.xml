@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rescued_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-13575:  MxS rep will manually update the “Rescued By” field with their name.</description>
+    <externalId>false</externalId>
+    <label>Rescued By</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Rescued_By_User</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

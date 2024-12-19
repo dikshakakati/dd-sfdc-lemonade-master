@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Inbound_Ingestion_Log__c$Name</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$Unique_Id__c</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$UUID__c</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$Integration_Type__c</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$Parent_Log__c</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$Status__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>CDF1</field>
+    </columns>
+    <currency>USD</currency>
+    <customDetailFormulas>
+        <calculatedFormula>CEILING((Inbound_Ingestion_Log__c.LastModifiedDate-Inbound_Ingestion_Log__c.CreatedDate)/0.00001157)</calculatedFormula>
+        <dataType>Double</dataType>
+        <description>Processing time in seconds</description>
+        <developerName>CDF1</developerName>
+        <label>Processing Time</label>
+        <scale>0</scale>
+    </customDetailFormulas>
+    <description>Displays the Inbound Ingestion Logs containing events from Signals</description>
+    <filter>
+        <criteriaItems>
+            <column>Inbound_Ingestion_Log__c$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Completed,Success</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Inbound_Ingestion_Log__c$Parent_Log__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Signals Events</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>InboundIngestionLogs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Inbound_Ingestion_Log__c$CreatedDate</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Inbound_Ingestion_Log__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_LASTTHISMONTH</interval>
+    </timeFrameFilter>
+</Report>

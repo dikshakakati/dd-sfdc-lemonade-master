@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UPC_List__c</fullName>
+    <description>Created as part of LEM-6483. LEM-17471- Updated the label</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide a link to a list of all the UPCs included in the campaign</inlineHelpText>
+    <label>URPC List</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

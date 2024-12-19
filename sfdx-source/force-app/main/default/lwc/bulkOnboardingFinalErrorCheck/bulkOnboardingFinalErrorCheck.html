@@ -1,0 +1,568 @@
+<template>
+  <div class="slds-p-horizontal_medium option-container slds-box">
+    <!-- Stage / Progress Indicator -->
+    <c-bulk-onboarding-stage-bar
+      current-step={currentStep}
+    ></c-bulk-onboarding-stage-bar>
+
+    <lightning-card class="slds-theme_shade">
+      <div class="slds-p-horizontal_medium">
+        <p class="slds-text-title_bold slds-m-bottom_medium">
+          Final Error Check
+        </p>
+        <p class="slds-m-bottom_medium bulk-onboarding-modal-font">
+          {instructionalText.mainInstructions}
+        </p>
+
+        <!-- Saving indicator -->
+        <template if:true={showMainComponentSpinner}>
+          <div class="flow-spinner-container main-spinner">
+            <div
+              class="slds-spinner slds-spinner_brand slds-spinner_medium"
+              role="status"
+            >
+              <span class="slds-assistive-text"></span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Missing / Invalid Information Section -->
+        <template if:false={showMainComponentSpinner}>
+          <div class="slds-p-around_medium slds-m-bottom_medium slds-box">
+            <!-- All stores are finished and passed validations and there are no errors to show in this screen -->
+            <template if:true={showSuccessMessage}>
+              <div>
+                <lightning-card
+                  class="slds-m-around_medium slds-text-align_center"
+                  style="color: #047a02"
+                >
+                  <lightning-icon
+                    class="slds-m-bottom_small"
+                    icon-name="action:approval"
+                    alternative-text="Approved"
+                    title="Approved"
+                    size="large"
+                  ></lightning-icon>
+                  <p class="slds-text-heading_medium slds-m-bottom_small">
+                    Validation Successful
+                  </p>
+                </lightning-card>
+
+                <p class="success-message-text">
+                  {instructionalText.successMessage}
+                </p>
+              </div>
+            </template>
+
+            <!-- BUSINESS DETAILS -->
+            <div
+              class="slds-scrollable slds-m-around_medium"
+              if:true={storeFailureDetails.requiresCanadianDetails}
+            >
+              <!-- Saving spinner -->
+              <template if:true={showBusinessDetailsSectionSpinner}>
+                <div
+                  class="flow-spinner-container table-spinner relative-spinner"
+                >
+                  <div
+                    class="slds-spinner slds-spinner_brand slds-spinner_medium"
+                    role="status"
+                  >
+                    <span class="slds-assistive-text"></span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+                </div>
+              </template>
+
+              <div if:true={storeFailureDetails.requiresCanadianDetails}>
+                <c-bulk-onboarding-business-contacts
+                  flow-request-id={flowRequestId}
+                  contract-id={contractId}
+                  default-contacts={storeFailureDetails.businessContacts}
+                  onallcontactscompleted={handleBusinessContactFormCompletion}
+                ></c-bulk-onboarding-business-contacts>
+              </div>
+            </div>
+
+            <!-- STORES WITH ADDRESS ISSUES -->
+            <div
+              class="slds-scrollable slds-m-around_xx-small slds-p-top_xx-small"
+              if:true={storeFailureDetails.hasAddressIssues}
+            >
+              <p class="slds-text-title_bold slds-m-bottom_medium">
+                The following addresses require attention
+              </p>
+
+              <!-- REJECTED ADDRESSES -->
+              <template if:true={failedStores.length}>
+                <p class="slds-m-bottom_medium bulk-onboarding-modal-font">
+                  {instructionalText.rejectedMessage}
+                </p>
+
+                <table
+                  class="slds-table slds-table_bordered slds-table_cell-buffer stores-table"
+                  if:false={showAccountTableSpinners}
+                >
+                  <thead>
+                    <tr class="slds-text-title_caps">
+                      <th scope="col">
+                        <div class="slds-truncate">Store Name</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">Address</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">Issue Type</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">Action</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template for:each={failedStores} for:item="thisStore">
+                      <tr key={thisStore.Id} class="store-row">
+                        <td
+                          data-account-id={thisStore.Id}
+                          style="cursor: pointer"
+                        >
+                          <a
+                            onclick={navigateToAccount}
+                            data-store-id={thisStore.Id}
+                            >{thisStore.Name}</a
+                          >
+                        </td>
+                        <td>
+                          {thisStore.BillingStreet} <br />
+                          {thisStore.BillingCity}<span
+                            if:true={thisStore.BillingCity}
+                            >,</span
+                          >
+                          {thisStore.BillingState} {thisStore.BillingPostalCode}
+                          <br />
+                          {thisStore.BillingCountry}
+                        </td>
+                        <td>{thisStore.verificationIssue}</td>
+                        <td>
+                          <template if:false={thisStore.isSaving}>
+                            <a
+                              onclick={handleRemoveStore}
+                              data-account-id={thisStore.Id}
+                              data-list-type="failed"
+                              >Remove</a
+                            >
+                          </template>
+                          <template if:true={thisStore.isSaving}>
+                            <div class="flow-spinner-container">
+                              <div
+                                class="slds-spinner slds-spinner_brand slds-spinner_x-small"
+                                role="status"
+                              >
+                                <span class="slds-assistive-text"></span>
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                              </div>
+                            </div>
+                          </template>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+
+                <p class="slds-text-color_error slds-text-align_left">
+                  {errorMessage}
+                </p>
+
+                <template if:true={showAccountTableSpinners}>
+                  <div class="flow-spinner-container table-spinner">
+                    <div
+                      class="slds-spinner slds-spinner_brand slds-spinner_medium"
+                      role="status"
+                    >
+                      <span class="slds-assistive-text"></span>
+                      <div class="slds-spinner__dot-a"></div>
+                      <div class="slds-spinner__dot-b"></div>
+                    </div>
+                  </div>
+                </template>
+
+                <div class="slds-p-bottom_xx-large"></div>
+              </template>
+
+              <!-- NOT YET VERIFIED ADDRESSES -->
+              <template if:true={storeFailureDetails.someStoresNotVerified}>
+                <p class="slds-m-bottom_medium bulk-onboarding-modal-font">
+                  {instructionalText.unverifiedMessage}
+                </p>
+
+                <table
+                  class="slds-table slds-table_bordered slds-table_cell-buffer stores-table"
+                  if:false={showAccountTableSpinners}
+                >
+                  <thead>
+                    <tr class="slds-text-title_caps">
+                      <th scope="col">
+                        <div class="slds-truncate">Store Name</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">Address</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">Issue Type</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">Action</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template for:each={notRunStores} for:item="thisStore">
+                      <tr
+                        key={thisStore.Id}
+                        class="store-row"
+                        style="cursor: pointer"
+                      >
+                        <td data-account-id={thisStore.Id}>
+                          <a
+                            onclick={navigateToAccount}
+                            data-store-id={thisStore.Id}
+                            >{thisStore.Name}</a
+                          >
+                        </td>
+                        <td>
+                          {thisStore.BillingStreet} <br />
+                          {thisStore.BillingCity}<span
+                            if:true={thisStore.BillingCity}
+                            >,</span
+                          >
+                          {thisStore.BillingState} {thisStore.BillingPostalCode}
+                          <br />
+                          {thisStore.BillingCountry}
+                        </td>
+                        <td>{thisStore.verificationIssue}</td>
+                        <td>
+                          <template if:false={thisStore.isSaving}>
+                            <a
+                              onclick={handleRemoveStore}
+                              data-account-id={thisStore.Id}
+                              data-list-type="notRun"
+                              >Remove</a
+                            >
+                          </template>
+                          <template if:true={thisStore.isSaving}>
+                            <div class="flow-spinner-container">
+                              <div
+                                class="slds-spinner slds-spinner_brand slds-spinner_x-small"
+                                role="status"
+                              >
+                                <span class="slds-assistive-text"></span>
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                              </div>
+                            </div>
+                          </template>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+
+                <p class="slds-text-color_error slds-text-align_left">
+                  {errorMessage}
+                </p>
+
+                <template if:true={showAccountTableSpinners}>
+                  <div class="flow-spinner-container table-spinner">
+                    <div
+                      class="slds-spinner slds-spinner_brand slds-spinner_medium"
+                      role="status"
+                    >
+                      <span class="slds-assistive-text"></span>
+                      <div class="slds-spinner__dot-a"></div>
+                      <div class="slds-spinner__dot-b"></div>
+                    </div>
+                  </div>
+                </template>
+
+                <div class="slds-p-bottom_xx-large"></div>
+              </template>
+
+              <!-- STORES THAT ARE OUT OF COVERAGE -->
+              <template if:true={outOfCoverageStores.length}>
+                <p class="slds-text-title_bold slds-m-bottom_medium">
+                  The following stores are not in coverage
+                </p>
+
+                <p class="slds-m-bottom_medium bulk-onboarding-modal-font">
+                  {instructionalText.outOfCoverageMessage}
+                </p>
+
+                <table
+                  class="slds-table slds-table_bordered slds-table_cell-buffer stores-table"
+                  if:false={showAccountTableSpinners}
+                >
+                  <thead>
+                    <tr class="slds-text-title_caps">
+                      <th scope="col">
+                        <div class="slds-truncate">Store Name</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">Address</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">
+                          Address Verification Status
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template
+                      for:each={outOfCoverageStores}
+                      for:item="thisStore"
+                    >
+                      <tr key={thisStore.Id} class="store-row">
+                        <td
+                          data-account-id={thisStore.Id}
+                          style="cursor: pointer"
+                        >
+                          <a
+                            onclick={navigateToAccount}
+                            data-store-id={thisStore.Id}
+                            >{thisStore.Name}</a
+                          >
+                        </td>
+                        <td>
+                          {thisStore.BillingStreet} <br />
+                          {thisStore.BillingCity}<span
+                            if:true={thisStore.BillingCity}
+                            >,</span
+                          >
+                          {thisStore.BillingState} {thisStore.BillingPostalCode}
+                          <br />
+                          {thisStore.BillingCountry}
+                        </td>
+                        <td class="slds-text-align_center">
+                          <template if:true={thisStore.isVerifiedSuccessfully}>
+                            <lightning-icon
+                              icon-name="utility:check"
+                              variant="success"
+                              size="x-small"
+                            ></lightning-icon>
+                          </template>
+                          <template if:false={thisStore.isVerifiedSuccessfully}>
+                            <lightning-icon
+                              icon-name="utility:close"
+                              variant="error"
+                              size="x-small"
+                            ></lightning-icon>
+                          </template>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+              </template>
+
+              <!-- Buttons aligned horizontally -->
+              <div class="slds-grid slds-grid_align-spread slds-m-top_medium">
+                <!-- Button to refresh/poll the store grids -->
+                <div>
+                  <lightning-button-icon
+                    icon-name="utility:refresh"
+                    variant="brand"
+                    alternative-text="Refresh"
+                    title="Refresh"
+                    onclick={refresh}
+                  ></lightning-button-icon>
+                  <span class="slds-m-left_x-small" onclick={refresh}
+                    >Refresh Store Lists</span
+                  >
+                </div>
+
+                <!-- Button to accept out of coverage results -->
+                <div if:true={outOfCoverageStores.length}>
+                  <lightning-button
+                    variant="brand"
+                    label="Skip Out of Coverage Stores"
+                    onclick={handleConfirmOutOfCoverage}
+                  ></lightning-button>
+                </div>
+              </div>
+            </div>
+
+            <!-- STORES MISSING INFORMATION -->
+            <div
+              class="slds-scrollable slds-m-around_medium"
+              if:true={storeFailureDetails.storesRequiringAdditionalInformation.length}
+            >
+              <!-- DIVIDER BETWEEN SECTIONS - ONLY SHOW IF YOU HAVE MULTIPLE SECTIONS OF DATA -->
+              <div
+                class="slds-border_top slds-m-vertical_large"
+                if:true={storeFailureDetails.hasAddressIssues}
+              ></div>
+
+              <!-- Change this to pass in dynamically when we have another "Missing Details" use case -->
+              <p class="slds-text-title_bold slds-m-bottom_medium">
+                Regulatory Details Required
+              </p>
+
+              <p class="slds-m-bottom_medium bulk-onboarding-modal-font">
+                {instructionalText.accessibilitiesMessage}
+              </p>
+
+              <!-- Saving spinner -->
+              <template if:true={showMissingDetailsTableSpinner}>
+                <div
+                  class="flow-spinner-container table-spinner relative-spinner"
+                >
+                  <div
+                    class="slds-spinner slds-spinner_brand slds-spinner_medium"
+                    role="status"
+                  >
+                    <span class="slds-assistive-text"></span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+                </div>
+              </template>
+
+              <div
+                class={missingInfoTableClass}
+                if:false={showMissingDetailsTableSpinner}
+              >
+                <!-- Invisible Table for Global Dropdowns -->
+                <table
+                  class="slds-table slds-table_cell-buffer slds-m-bottom_small slds-no-row-hover stores-table global-actions-table"
+                >
+                  <tbody>
+                    <tr class="store-row">
+                      <td data-account-id="N/A" class="description-cell">
+                        <div class="slds-text-title_caps slds-m-bottom_x-small">
+                          Set for All Stores
+                        </div>
+                      </td>
+                      <td>
+                        <lightning-combobox
+                          name="needToClimb"
+                          label={fields.stairsAccessibilityField}
+                          value={globalStairsValue}
+                          placeholder="Select..."
+                          options={accessibilityOptions}
+                          onchange={updateAllFieldsWithSameValue}
+                        >
+                        </lightning-combobox>
+                      </td>
+                      <td>
+                        <lightning-combobox
+                          name="hasElevatorsOrRamps"
+                          label={fields.elevatorsAccessibilityField}
+                          value={globalElevatorsValue}
+                          placeholder="Select..."
+                          options={accessibilityOptions}
+                          onchange={updateAllFieldsWithSameValue}
+                        >
+                        </lightning-combobox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table
+                  class="slds-table slds-table_bordered slds-table_cell-buffer stores-table"
+                >
+                  <thead>
+                    <tr class="slds-text-title_caps">
+                      <th scope="col">
+                        <div class="slds-truncate">Store Name</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">
+                          {fields.stairsAccessibilityField}
+                        </div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate">
+                          {fields.elevatorsAccessibilityField}
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template
+                      for:each={storeFailureDetails.storesRequiringAdditionalInformation}
+                      for:item="thisStore"
+                    >
+                      <tr key={thisStore.Id} class="store-row">
+                        <td
+                          data-account-id={thisStore.Id}
+                          style="cursor: pointer"
+                        >
+                          <a
+                            onclick={navigateToAccount}
+                            data-store-id={thisStore.Id}
+                            >{thisStore.Name}</a
+                          >
+                        </td>
+                        <td>
+                          <lightning-combobox
+                            name="needToClimb"
+                            value={thisStore.needToClimb}
+                            placeholder="Select..."
+                            options={accessibilityOptions}
+                            onchange={updateAdditionalRequiredField}
+                            class="no-label-combobox"
+                            data-store-id={thisStore.Id}
+                          >
+                          </lightning-combobox>
+                        </td>
+                        <td>
+                          <lightning-combobox
+                            name="hasElevatorsOrRamps"
+                            value={thisStore.hasElevatorsOrRamps}
+                            placeholder="Select..."
+                            options={accessibilityOptions}
+                            onchange={updateAdditionalRequiredField}
+                            class="no-label-combobox"
+                            data-store-id={thisStore.Id}
+                          >
+                          </lightning-combobox>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+
+                <div
+                  class="slds-p-vertical_medium slds-p-right_large slds-grid slds-grid_align-end"
+                >
+                  <lightning-button
+                    variant="brand"
+                    label="Save"
+                    onclick={serializeAndSaveAccessibilities}
+                    disabled={isSaveDisabled}
+                  ></lightning-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <div
+          class="slds-p-vertical_medium slds-grid slds-grid_align-end slds-border_top slds-border_light"
+        >
+          <lightning-button
+            variant="brand"
+            label="Next"
+            onclick={handleNext}
+            disabled={isNextDisabled}
+          ></lightning-button>
+        </div>
+      </div>
+    </lightning-card>
+  </div>
+</template>

@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <description>LEM-24069: To collect open Opportunity Stores.</description>
+        <name>Collect_Open_Opportunity_Stores</name>
+        <label>Collect Open Opportunity Stores</label>
+        <locationX>1546</locationX>
+        <locationY>1970</locationY>
+        <assignmentItems>
+            <assignToReference>OpenOpportunityStores</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_over_Opportunity_Stores</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_over_Opportunity_Stores</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-24069: It is used to initialise the log record once a fault occurs during store reparenting.</description>
+        <name>Generate_Log_Record</name>
+        <label>Generate Log Record</label>
+        <locationX>2646</locationX>
+        <locationY>1754</locationY>
+        <assignmentItems>
+            <assignToReference>StoreReparentingError.Log_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>flowExceptionType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StoreReparentingError.Quiddity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>errorSource</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StoreReparentingError.Severity_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StoreReparentingError.Detailed_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>StoreReparentingError.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Store_Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Detailed_Message_Blank</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-24069: It used to update detailed message field if it&apos;s blank.</description>
+        <name>Update_Detailed_Message</name>
+        <label>Update Detailed Message</label>
+        <locationX>2514</locationX>
+        <locationY>1970</locationY>
+        <assignmentItems>
+            <assignToReference>StoreReparentingError.Detailed_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Error_Message_For_Blank_ParentId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Log_Errors</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>LEM-24069: Decision to check whether any active Agreement are present.</description>
+        <name>Is_Active_Agreement_Present</name>
+        <label>Is Active Agreement Present?</label>
+        <locationX>1084</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <targetReference>Is_Store_Active</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Active Agreement Present</defaultConnectorLabel>
+        <rules>
+            <name>Active_Agreement_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Active_Agreement</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Active_Agreement_Error_Screen</targetReference>
+            </connector>
+            <label>Active Agreement Present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-24069: Decision to check whether active Merchant Service are present or not.</description>
+        <name>Is_Active_Merchant_Service_Present</name>
+        <label>Is Active Merchant Service Present?</label>
+        <locationX>699</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Get_Active_Agreement</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Active Merchant Service Present</defaultConnectorLabel>
+        <rules>
+            <name>Active_Merchant_Service_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Active_Merchant_Services</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Active_Merchant_Service_Error_Screen</targetReference>
+            </connector>
+            <label>Active Merchant Service Present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-24069: Decision to check whether active XRef are present or not.</description>
+        <name>Is_Active_XRef_Present</name>
+        <label>Is Active XRef Present ?</label>
+        <locationX>374</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Get_Active_Merchant_Services</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Active XRef</defaultConnectorLabel>
+        <rules>
+            <name>Active_XRef_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Active_XRefs</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Active_XRef_Error_Screen</targetReference>
+            </connector>
+            <label>Active XRef Present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-24069: It used to check if Detailed message field is blank or not.</description>
+        <name>Is_Detailed_Message_Blank</name>
+        <label>Is Detailed Message Blank?</label>
+        <locationX>2646</locationX>
+        <locationY>1862</locationY>
+        <defaultConnector>
+            <targetReference>Log_Errors</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Blank</defaultConnectorLabel>
+        <rules>
+            <name>Is_blank</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>StoreReparentingError.Detailed_Message__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StoreReparentingError.Detailed_Message__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Detailed_Message</targetReference>
+            </connector>
+            <label>Is blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-24069: Decision to check whether Opportunity is open.</description>
+        <name>Is_Open_Opportunity</name>
+        <label>Is Open Opportunity?</label>
+        <locationX>1678</locationX>
+        <locationY>1862</locationY>
+        <defaultConnector>
+            <targetReference>Loop_over_Opportunity_Stores</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Closed Opportunity</defaultConnectorLabel>
+        <rules>
+            <name>Open_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_over_Opportunity_Stores.Opportunity__r.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Collect_Open_Opportunity_Stores</targetReference>
+            </connector>
+            <label>Open Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-24069: Decision to check whether open Opportunity Stores are present.</description>
+        <name>Is_Open_Opportunity_Stores_Present</name>
+        <label>Is Open Opportunity Stores Present</label>
+        <locationX>1458</locationX>
+        <locationY>2246</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>1 OR 2</conditionLogic>
+            <conditions>
+                <leftValueReference>OpenOpportunityStores</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OpenOpportunityStores</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Opportunity_Stores</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_ParenId_Blank</name>
+        <label>Is ParenId Blank?</label>
+        <locationX>2338</locationX>
+        <locationY>1214</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Failure_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>ParentId is blank</defaultConnectorLabel>
+        <rules>
+            <name>ParentId_not_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Choose_Business_Account.recordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_to_Bypass_VR</targetReference>
+            </connector>
+            <label>ParentId is not blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-24069: Decision to check whether Store Account&apos;s Activation Status is active.</description>
+        <name>Is_Store_Active</name>
+        <label>Is Store Active ?</label>
+        <locationX>1590</locationX>
+        <locationY>890</locationY>
+        <defaultConnector>
+            <targetReference>Re_Parent_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Inactive</defaultConnectorLabel>
+        <rules>
+            <name>Active</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Store_Account.Activation_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Active_Store_Error_Screen</targetReference>
+            </connector>
+            <label>Active</label>
+        </rules>
+    </decisions>
+    <description>LEM-24069: It is used to Re-Parent Store Account.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-24069: It is used to store the error message to display when store have active merchant service</description>
+        <name>Error_Message_for_Active_Merchant_Service</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Error_Message_for_Active_Merchant_Service}</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-24069: It is used to store the error message to display when store status is active.</description>
+        <name>Error_Message_For_Active_Stores</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Error_Message_For_Active_Stores}</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-24069: It is used to store the error message to display when Store have active Xref.</description>
+        <name>Error_Message_For_Active_XRef</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Error_Message_For_Active_XRef}</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-24069 : It stores error message when parentId field is blank</description>
+        <name>Error_Message_For_Blank_ParentId</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Error_Message_For_Blank_ParentId}</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-24069 : It stores error message to display when store reparenting fails.</description>
+        <name>Error_Message_For_Failure</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Store_Account_Reparenting_Error_Message} +&apos;( &apos;+ {!Get_Store_Account.Id} +&apos; )&apos;+{!$Label.Error_Message_For_Failure}</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-24069: It is used to store the error message to display when store has active Agreements</description>
+        <name>Error_Screen_For_Active_Agreement</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Error_Screen_For_Active_Agreement}</expression>
+    </formulas>
+    <interviewLabel>Re-Parent Store Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Re-Parent Store Account</label>
+    <loops>
+        <description>LEM-24069: It is used to loop over Opportunity Stores.</description>
+        <name>Loop_over_Opportunity_Stores</name>
+        <label>Loop over Opportunity Stores</label>
+        <locationX>1458</locationX>
+        <locationY>1754</locationY>
+        <collectionReference>Get_Opportunity_Stores</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Is_Open_Opportunity</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Is_Open_Opportunity_Stores_Present</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>LEM-24069: It is used to create Account Management Event Log record.</description>
+        <name>Create_Account_Management_Event_Log</name>
+        <label>Create Account Management Event Log</label>
+        <locationX>1458</locationX>
+        <locationY>1646</locationY>
+        <connector>
+            <targetReference>Loop_over_Opportunity_Stores</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Failure_Screen</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Get_Store_Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Parent_Account_Reason__c</field>
+            <value>
+                <elementReference>Reparent_Reason</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Parent_Account__c</field>
+            <value>
+                <elementReference>Choose_Business_Account.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Old_Parent_Account__c</field>
+            <value>
+                <elementReference>Get_Store_Account.ParentId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account_Management_Event_Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>LEM-24069: It is used to log the errors during reparenting of stores.</description>
+        <name>Log_Errors</name>
+        <label>Log Errors</label>
+        <locationX>2646</locationX>
+        <locationY>2162</locationY>
+        <inputReference>StoreReparentingError</inputReference>
+    </recordCreates>
+    <recordDeletes>
+        <description>LEM-24069: To delete Opportunity Stores.</description>
+        <name>Delete_Opportunity_Stores</name>
+        <label>Delete Opportunity Stores</label>
+        <locationX>1194</locationX>
+        <locationY>2354</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Failure_Screen</targetReference>
+        </faultConnector>
+        <inputReference>OpenOpportunityStores</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>LEM-24069: It queries for Agreement with Active status.</description>
+        <name>Get_Active_Agreement</name>
+        <label>Get Active Agreement</label>
+        <locationX>1084</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Active_Agreement_Present</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Agreement__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-24069: It queries for Merchant Services with Active status.</description>
+        <name>Get_Active_Merchant_Services</name>
+        <label>Get Active Merchant Services</label>
+        <locationX>699</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Active_Merchant_Service_Present</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Merchant_Service__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-24069: It queries for XRefs with status Active.</description>
+        <name>Get_Active_XRefs</name>
+        <label>Get Active XRefs</label>
+        <locationX>374</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Active_XRef_Present</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Salesforce_Account_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Xref_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Xref__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-24069: It queries for Opportunity Stores associated with Store Account records.</description>
+        <name>Get_Opportunity_Stores</name>
+        <label>Get Opportunity Stores</label>
+        <locationX>2338</locationX>
+        <locationY>1106</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_ParenId_Blank</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Store_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity_Store__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-24069: It queries for Store Account record.</description>
+        <name>Get_Store_Account</name>
+        <label>Get Store Account</label>
+        <locationX>374</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Active_XRefs</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordRollbacks>
+        <description>LEM-24069: It is used to roll back entire process when error occur in store reparenting.</description>
+        <name>Roll_Back_Records</name>
+        <label>Roll Back Records</label>
+        <locationX>2646</locationX>
+        <locationY>1646</locationY>
+        <connector>
+            <targetReference>Generate_Log_Record</targetReference>
+        </connector>
+    </recordRollbacks>
+    <recordUpdates>
+        <description>LEM-24069: It is used to update the IsValidationRuleBypassedByFlow field to true.</description>
+        <name>Update_Account_to_Bypass_VR</name>
+        <label>Update Account to Bypass VR</label>
+        <locationX>1458</locationX>
+        <locationY>1322</locationY>
+        <connector>
+            <targetReference>Update_Store_Account</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Failure_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>IsValidationRuleBypassedByFlow__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>LEM-24069: It is used to update the IsValidationRuleBypassedByFlow field to false.</description>
+        <name>Update_Account_to_Not_Bypass_VR</name>
+        <label>Update Account to Not Bypass VR</label>
+        <locationX>1458</locationX>
+        <locationY>1538</locationY>
+        <connector>
+            <targetReference>Create_Account_Management_Event_Log</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Failure_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>IsValidationRuleBypassedByFlow__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>LEM-24069: It is used to update Parent Account on Store Account.</description>
+        <name>Update_Store_Account</name>
+        <label>Update Store Account</label>
+        <locationX>1458</locationX>
+        <locationY>1430</locationY>
+        <connector>
+            <targetReference>Update_Account_to_Not_Bypass_VR</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Failure_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>Choose_Business_Account.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <description>LEM-24069: To display error for Store Account with active Agreement.</description>
+        <name>Active_Agreement_Error_Screen</name>
+        <label>Active Agreement Error Screen</label>
+        <locationX>578</locationX>
+        <locationY>890</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Active_Agreement_Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(176, 46, 46);&quot;&gt;{!Error_Screen_For_Active_Agreement}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-24069: To display error for Store Account with active Merchant Service.</description>
+        <name>Active_Merchant_Service_Error_Screen</name>
+        <label>Active Merchant Service Error Screen</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Active_Merchant_Service_Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(176, 46, 46);&quot;&gt;{!Error_Message_for_Active_Merchant_Service}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-24069: To display error for Active Store Account.</description>
+        <name>Active_Store_Error_Screen</name>
+        <label>Active Store Error Screen</label>
+        <locationX>842</locationX>
+        <locationY>998</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Active_Store_Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(176, 46, 46);&quot;&gt;{!Error_Message_For_Active_Stores}﻿&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-24069: Display error for Store Account having active XRef.</description>
+        <name>Active_XRef_Error_Screen</name>
+        <label>Active XRef Error Screen</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Active_XRef_Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(176, 46, 46);&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;{!Error_Message_For_Active_XRef}﻿&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-24069 : It displays error screen on store reparenting failure</description>
+        <name>Failure_Screen</name>
+        <label>Failure Screen</label>
+        <locationX>2646</locationX>
+        <locationY>1538</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Roll_Back_Records</targetReference>
+        </connector>
+        <fields>
+            <name>Store_Reparenting_Failure</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(176, 46, 46);&quot;&gt;{!Error_Message_For_Failure}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-24069: Screen for populating Re-Parenting details.</description>
+        <name>Re_Parent_Screen</name>
+        <label>Re-Parent Screen</label>
+        <locationX>2338</locationX>
+        <locationY>998</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Opportunity_Stores</targetReference>
+        </connector>
+        <fields>
+            <name>Choose_Business_Account</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Account</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>Backend_Parent_Account__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>New Parent Account</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Reparent_Reason</name>
+            <dataType>String</dataType>
+            <fieldText>Provide a reason why this store needs to be re-parented to another Business Account.</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>248</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Store_Account</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-24069: It is used to store the quiddity for any potential error</description>
+        <name>errorSource</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>&quot;Re-Parent Store Account&quot; flow</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-24069: It is used to store the error message indicating that the store reparenting failed.</description>
+        <name>flowExceptionType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Store reparenting failed. Please contact System Administrator</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>OpenOpportunityStores</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity_Store__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-24069 : It used to store RecordId of store accounts.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-24069: It is used to log the errors generated while reparenting store</description>
+        <name>StoreReparentingError</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Log__c</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RequiredFieldsWhenAccelratorPackageIsYes</fullName>
+    <active>true</active>
+    <description>LEM-14402: Validated if required quote fields are populated when Accelerator package is set to Yes.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules), 
+  ISCHANGED(Accelerator_Package__c), 
+  TEXT(Accelerator_Package__c) = $Label.Yes_Decision, 
+  OR(
+    ISPICKVAL(Duration__c , &apos;&apos;),
+    ISPICKVAL(Monitoring_Frequency__c , &apos;&apos;), 
+    ISBLANK(Target_1__c), 
+    ISBLANK(Rebate_1__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>Duration, Monitoring frequency, Target 1 ($), Rebate 1 (%) are required when Accelerator package equals to Yes.</errorMessage>
+</ValidationRule>

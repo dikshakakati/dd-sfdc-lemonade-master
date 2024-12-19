@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMB_CLM_Package_Product_Code__c</fullName>
+    <description>This field is critical for CLM Integration specific to SMB , reach out to Tina.</description>
+    <externalId>false</externalId>
+    <formula>IF(OR(TEXT(SBQQ__Quote__r.SBQQ__Type__c) = &apos;Quote&apos;,
+
+AND(TEXT(SBQQ__Quote__r.SBQQ__Type__c) = &apos;Amendment&apos;, SBQQ__Quantity__c &gt; 0,ISBLANK(SBQQ__Source__c),SBQQ__UpgradedSubscription__c =&quot;&quot;),
+
+AND( TEXT(SBQQ__Quote__r.SBQQ__Type__c) = &apos;Amendment&apos;, SBQQ__Quantity__c &gt; 0, NOT(ISBLANK(SBQQ__Source__c)) , OR( Requested_Commission__c != SBQQ__Source__r.Requested_Commission__c ,SBQQ__Bundle__c=true, SBQQ__SpecialPrice__c != SBQQ__Source__r.SBQQ__SpecialPrice__c) )), CASE(
+
+Package_Code__c,
+&apos;10086&apos;, &apos;10017&apos;,
+&apos;10087&apos;, &apos;10017&apos;,
+&apos;10088&apos;, &apos;10017&apos;,
+&apos;10089&apos;, &apos;10047&apos;,
+&apos;10090&apos;, &apos;10047&apos;,
+
+Package_Code__c
+
+) + &quot;-&quot; +  CASE(
+
+SBQQ__ProductCode__c,
+&apos;10086&apos;, &apos;10017&apos;,
+&apos;10087&apos;, &apos;10017&apos;,
+&apos;10088&apos;, &apos;10017&apos;,
+&apos;10089&apos;, &apos;10047&apos;,
+&apos;10090&apos;, &apos;10047&apos;,
+
+SBQQ__ProductCode__c
+
+),
+
+&quot;&quot;
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SMB CLM Package Product Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

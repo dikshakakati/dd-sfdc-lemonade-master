@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateGoogleSheetURLOnParentWorkOrder</fullName>
+    <active>true</active>
+    <description>LEM-13264: It validates Google Sheet URL field when WO Type is Drive and Sub Type not equal to Auto-Activations and Withholding(Withholding with Auto-Activations?)</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Work_Order_Validation_Rules),
+OR(
+AND(
+ISNEW(),
+$User.Alias &lt;&gt; $Label.Automated_Process_User_Alias,
+$User.Alias &lt;&gt; $Label.Automation_Process_User_Alias
+),
+AND(
+NOT(ISNEW()),
+CreatedBy.Alias &lt;&gt; $Label.Automated_Process_User_Alias,
+CreatedBy.Alias &lt;&gt; $Label.Automation_Process_User_Alias
+)
+),
+ISBLANK(ParentWorkOrderId),
+ISPICKVAL( Type__c , &apos;Drive&apos;),
+NOT(
+OR(
+ISPICKVAL(  Sub_Type__c , &apos;Auto-Activations&apos; ),
+AND(
+ISPICKVAL(  Sub_Type__c , &apos;Withholding&apos; ),
+Withholding_with_Auto_Activations__c
+)
+)
+),
+OR(
+ISNULL( Google_Sheet_URL__c ),
+ISBLANK( Google_Sheet_URL__c ),
+NOT( CONTAINS( Google_Sheet_URL__c , $Label.Google_Sheet_URL ) )
+)
+)</errorConditionFormula>
+    <errorMessage>Please ensure a valid Drive Intake form is attached to the Google Sheet URL field on WorkOrder</errorMessage>
+</ValidationRule>

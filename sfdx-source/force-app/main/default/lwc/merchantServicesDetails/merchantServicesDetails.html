@@ -1,0 +1,56 @@
+<!--
+  * @author Deloitte
+  * @date 07/01/2024
+  * @description LEM-16029 - The LWC application facilitates the retrieval and display merchant
+  * records and data below contract table.
+-->
+<template>
+  <div class="data-table-template">
+    <template lwc:if={loaded}>
+      <!-- If data is loaded -->
+      <template lwc:if={errors}>
+        <!-- Display error -->
+        <div>{errors}</div>
+      </template>
+      <template lwc:else>
+        <!-- Display tables for each store -->
+        <template lwc:if={servicesMap.size}>
+          <h3 class="header-styling">{allStores}</h3>
+          <template
+            for:each={storeEntries}
+            for:item="storeEntry"
+            for:index="index"
+          >
+            <div key={storeEntry.key}>
+              <h3 class="account-name">{storeEntry.accountName}</h3>
+
+              <lightning-datatable
+                key={storeEntry.key}
+                key-field={sectionValues.ID}
+                data={storeEntry.value}
+                columns={columns}
+                hide-checkbox-column
+                show-row-number-column
+              >
+              </lightning-datatable>
+            </div>
+          </template>
+          <div class="view-all-styling">
+            <a href={reportURL} target={sectionValues.BLANK}>{viewAll}</a>
+          </div>
+        </template>
+        <template lwc:else>
+          <div>{sectionValues.NO_SERVICES_FOUND}</div>
+        </template>
+      </template>
+    </template>
+    <template lwc:else>
+      <!-- If data is not loaded -->
+      <lightning-spinner
+        alternative-text={sectionValues.LOADING}
+        size={sectionValues.SPINNER_SIZE_MEDIUM}
+        class={sectionValues.SPINS}
+      ></lightning-spinner>
+    </template>
+  </div>
+</template>

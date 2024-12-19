@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Required_Fields_Lead_Conversion</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISNEW(),
+  NOT(ISBLANK(Converted_Lead_Id__c)),
+  Lead_Required_Fields__c,
+  TEXT(Creation_Source__c) = $Label.CreationSourceManual
+)</errorConditionFormula>
+    <errorMessage>Fill in all the required fields on lead before conversion.</errorMessage>
+</ValidationRule>

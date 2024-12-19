@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMB_Self_Serve_Closed_Won_Stage_Gate</fullName>
+    <active>true</active>
+    <description>LEM-23233: It validates Self Serve Deal Type Opportunities stage.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Opportunity_Validation_Rules),
+    NOT($Permission.Bypass_Self_Serve_Opportunity_Validation),
+    TEXT(Account.Segment__c) = $Label.AccountSegmentSMB,
+    TEXT(Deal_Type__c) = $Label.OpportunityDealTypeSelfServe,
+    TEXT(StageName) = $Label.Opportunity_Stage_Closed_Won,
+    NOT(TEXT(SBQQ__PrimaryQuote__r.SBQQ__Status__c) = $Label.Quote_Contract_Signed)
+)</errorConditionFormula>
+    <errorMessage>Self Serve Opportunities created to get sales credit should stay in Pitching stage.</errorMessage>
+</ValidationRule>

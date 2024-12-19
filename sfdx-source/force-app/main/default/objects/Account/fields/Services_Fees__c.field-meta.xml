@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services_Fees__c</fullName>
+    <description>LEM-4728: It stores link to the Services associated with an Account. It is used for showing the link to Service related list in onboarding details section.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(LEFT($Api.Enterprise_Server_URL_540, FIND($CustomMetadata.Static_Configurations__mdt.Enterprise_Server_URL_Search_Key.Configuration_Value__c, $Api.Enterprise_Server_URL_540, 0) - 1) + $CustomMetadata.Static_Configurations__mdt.Store_Related_Services_URL_Prefix.Configuration_Value__c +  Account_ID18__c + $CustomMetadata.Static_Configurations__mdt.Store_Related_Services_URL_Suffix.Configuration_Value__c, $CustomMetadata.Static_Configurations__mdt.Services_Fees_Related_List_Name.Configuration_Value__c)</formula>
+    <label>Services &amp; Fees</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

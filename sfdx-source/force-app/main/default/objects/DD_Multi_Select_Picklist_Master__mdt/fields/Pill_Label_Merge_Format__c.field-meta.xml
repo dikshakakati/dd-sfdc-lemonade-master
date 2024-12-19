@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pill_Label_Merge_Format__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>For Object Search: Provide Fields (which should have been included in the SELECT) within {&lt;Field API Name&gt;}
+
+For Aggregate Search: Provide field name of SELECT of AggregateResult</inlineHelpText>
+    <label>Pill Label Merge Format</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

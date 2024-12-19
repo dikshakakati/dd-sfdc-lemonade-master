@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Account__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-1337: This looks-up to the Account residing on the other side of the Account Relationship</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The account with which the user is creating a relationship to.</inlineHelpText>
+    <label>Related Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Account Relationships cannot be created involving store accounts. Please update the Account and Related Account accordingly.</errorMessage>
+        <filterItems>
+            <field>Account.RecordType.DeveloperName</field>
+            <operation>notEqual</operation>
+            <value>Store</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Receiving Related Accounts</relationshipLabel>
+    <relationshipName>Related_Accounts_Receiving_Relation</relationshipName>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

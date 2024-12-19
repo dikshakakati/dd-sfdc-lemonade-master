@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Meta via Symbiosys</fullName>
+        <default>false</default>
+        <label>Meta via Symbiosys</label>
+    </customValue>
+    <customValue>
+        <fullName>Meta Collab</fullName>
+        <default>false</default>
+        <label>Meta Collab</label>
+    </customValue>
+    <customValue>
+        <fullName>Google PLA</fullName>
+        <default>false</default>
+        <label>Google PLA</label>
+    </customValue>
+    <customValue>
+        <fullName>Youtube</fullName>
+        <default>false</default>
+        <label>Youtube</label>
+    </customValue>
+    <customValue>
+        <fullName>TikTok</fullName>
+        <default>false</default>
+        <label>TikTok</label>
+    </customValue>
+    <customValue>
+        <fullName>Display</fullName>
+        <default>false</default>
+        <label>Display</label>
+    </customValue>
+    <customValue>
+        <fullName>Video</fullName>
+        <default>false</default>
+        <label>Video</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <description>LEM-17589: Offsite Platform Attributes</description>
+    <masterLabel>Offsite Platform</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

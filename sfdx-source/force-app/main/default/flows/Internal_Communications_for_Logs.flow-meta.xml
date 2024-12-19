@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <description>LEM-10033,LEM-11498: It sends bell notification and email to populated recipient and email Ids on Log creation.</description>
+    <environments>Default</environments>
+    <interviewLabel>Internal Communications for Logs {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Internal Communications for Logs</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Trigger_Bell_Notification_to_Parent_Account_Owner</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Send_Notification__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Log__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>LEM-10033: It triggers bell notification to parent Account Owner on Log creation.</description>
+        <name>Trigger_Bell_Notification_to_Parent_Account_Owner</name>
+        <label>Trigger Bell Notification to Parent Account Owner</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <flowName>Subflow_Send_Bell_Notification_To_Owners</flowName>
+        <inputAssignments>
+            <name>logRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

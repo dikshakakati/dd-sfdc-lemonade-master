@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ__TestedField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Field on the Quote object that should be used in testing this condition.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field on the Quote object that should be used in testing this condition.</inlineHelpText>
+    <label>Tested Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>SBQQ__TestedObject__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Group Line Items</fullName>
+                <default>false</default>
+                <label>Group Line Items</label>
+            </value>
+            <value>
+                <fullName>Unit Price</fullName>
+                <default>false</default>
+                <label>Unit Price</label>
+            </value>
+            <value>
+                <fullName>Trial_Period__c</fullName>
+                <default>false</default>
+                <label>Trial_Period__c</label>
+            </value>
+            <value>
+                <fullName>Trial_End_Date__c</fullName>
+                <default>false</default>
+                <label>Trial_End_Date__c</label>
+            </value>
+            <value>
+                <fullName>Fee_Type__c</fullName>
+                <default>false</default>
+                <label>Fee_Type__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__SpecialPrice__c</fullName>
+                <default>false</default>
+                <label>SBQQ__SpecialPrice__c</label>
+            </value>
+            <value>
+                <fullName>Requested_Commission__c</fullName>
+                <default>false</default>
+                <label>Requested_Commission__c</label>
+            </value>
+            <value>
+                <fullName>Trial_Commission__c</fullName>
+                <default>false</default>
+                <label>Trial_Commission__c</label>
+            </value>
+            <value>
+                <fullName>Trial_Fee__c</fullName>
+                <default>false</default>
+                <label>Trial_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Package__c</fullName>
+                <default>false</default>
+                <label>Package__c</label>
+            </value>
+            <value>
+                <fullName>Opt_In_Opt_Out_Decision__c</fullName>
+                <default>false</default>
+                <label>Opt_In_Opt_Out_Decision__c</label>
+            </value>
+            <value>
+                <fullName>Opt_Out_Save_Period_days__c</fullName>
+                <default>false</default>
+                <label>Opt_Out_Save_Period_days__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__ProductName__c</fullName>
+                <default>false</default>
+                <label>SBQQ__ProductName__c</label>
+            </value>
+            <value>
+                <fullName>Payment_Method__c</fullName>
+                <default>false</default>
+                <label>Payment_Method__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__RequiredBy__c</fullName>
+                <default>false</default>
+                <label>SBQQ__RequiredBy__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__ProductFamily__c</fullName>
+                <default>false</default>
+                <label>SBQQ__ProductFamily__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__Type__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Type__c</label>
+            </value>
+            <value>
+                <fullName>Franchise_Owned_Store_Count__c</fullName>
+                <default>false</default>
+                <label>Franchise_Owned_Store_Count__c</label>
+            </value>
+            <value>
+                <fullName>Account_Type__c</fullName>
+                <default>false</default>
+                <label>Account_Type__c</label>
+            </value>
+            <value>
+                <fullName>Account_Record_Type__c</fullName>
+                <default>false</default>
+                <label>Account_Record_Type__c</label>
+            </value>
+            <value>
+                <fullName>Opt_In_Opt_Out_Response_Time_in_Days__c</fullName>
+                <default>false</default>
+                <label>Opt_In_Opt_Out_Response_Time_in_Days__c</label>
+            </value>
+            <value>
+                <fullName>Opt_In_Out_Responsible_Party__c</fullName>
+                <default>false</default>
+                <label>Opt_In_Out_Responsible_Party__c</label>
+            </value>
+            <value>
+                <fullName>Product_Name_and_Package__c</fullName>
+                <default>false</default>
+                <label>Product_Name_and_Package__c</label>
+            </value>
+            <value>
+                <fullName>LOF_and_AOV__c</fullName>
+                <default>false</default>
+                <label>LOF_and_AOV__c</label>
+            </value>
+            <value>
+                <fullName>SOF_and_AOV__c</fullName>
+                <default>false</default>
+                <label>SOF_and_AOV__c</label>
+            </value>
+            <value>
+                <fullName>Enable_Catering_Setup__c</fullName>
+                <default>false</default>
+                <label>Enable_Catering_Setup__c</label>
+            </value>
+            <value>
+                <fullName>Location_Territory_Definition__c</fullName>
+                <default>false</default>
+                <label>Location_Territory_Definition__c</label>
+            </value>
+            <value>
+                <fullName>Account_Billing_Country_Code__c</fullName>
+                <default>false</default>
+                <label>Account_Billing_Country_Code__c</label>
+            </value>
+            <value>
+                <fullName>test__c</fullName>
+                <default>false</default>
+                <label>test__c</label>
+            </value>
+            <value>
+                <fullName>Package_Product__c</fullName>
+                <default>false</default>
+                <label>Package_Product__c</label>
+            </value>
+            <value>
+                <fullName>Account_Franchise_Enrollment_Process__c</fullName>
+                <default>false</default>
+                <label>Account_Franchise_Enrollment_Process__c</label>
+            </value>
+            <value>
+                <fullName>End_Date__c</fullName>
+                <default>false</default>
+                <label>End_Date__c</label>
+            </value>
+            <value>
+                <fullName>Is_Current_Date_Greater_Than_Start_Date__c</fullName>
+                <default>false</default>
+                <label>Is_Current_Date_Greater_Than_Start_Date__c</label>
+            </value>
+            <value>
+                <fullName>Start_Date__c</fullName>
+                <default>false</default>
+                <label>Start_Date__c</label>
+            </value>
+            <value>
+                <fullName>Marketing_Commitment_Start_Date__c</fullName>
+                <default>false</default>
+                <label>Marketing_Commitment_Start_Date__c</label>
+            </value>
+            <value>
+                <fullName>Marketing_Commitment_End_Date__c</fullName>
+                <default>false</default>
+                <label>Marketing_Commitment_End_Date__c</label>
+            </value>
+            <value>
+                <fullName>Level__c</fullName>
+                <default>false</default>
+                <label>Level__c</label>
+            </value>
+            <value>
+                <fullName>Evaluation_Period__c</fullName>
+                <default>false</default>
+                <label>Evaluation_Period__c</label>
+            </value>
+            <value>
+                <fullName>Duplicate__c</fullName>
+                <default>false</default>
+                <label>Duplicate__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__ProductCode__c</fullName>
+                <default>false</default>
+                <label>SBQQ__ProductCode__c</label>
+            </value>
+            <value>
+                <fullName>Opt_In_Opt_Out_Responsible_Party__c</fullName>
+                <default>false</default>
+                <label>Opt_In_Opt_Out_Responsible_Party__c</label>
+            </value>
+            <value>
+                <fullName>Franchise_Enrollment_Process__c</fullName>
+                <default>false</default>
+                <label>Franchise_Enrollment_Process__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__Quote__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Quote__c</label>
+            </value>
+            <value>
+                <fullName>Quote_Type__c</fullName>
+                <default>false</default>
+                <label>Quote_Type__c</label>
+            </value>
+            <value>
+                <fullName>Is_this_for_Ads_Promos__c</fullName>
+                <default>false</default>
+                <label>Is_this_for_Ads_Promos__c</label>
+            </value>
+            <value>
+                <fullName>Incompatible_Rate__c</fullName>
+                <default>false</default>
+                <label>Incompatible_Rate__c</label>
+            </value>
+            <value>
+                <fullName>Segment__c</fullName>
+                <default>false</default>
+                <label>Segment__c</label>
+            </value>
+            <value>
+                <fullName>Active_Fee__c</fullName>
+                <default>false</default>
+                <label>Active_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Requested_Active_Price_Mismatch__c</fullName>
+                <default>false</default>
+                <label>Requested_Active_Price_Mismatch__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__LineItemsGrouped__c</fullName>
+                <default>false</default>
+                <label>SBQQ__LineItemsGrouped__c</label>
+            </value>
+            <value>
+                <fullName>Estimated_Total_Investment__c</fullName>
+                <default>false</default>
+                <label>Estimated_Total_Investment__c</label>
+            </value>
+            <value>
+                <fullName>Invoicing_Payment_Account__c</fullName>
+                <default>false</default>
+                <label>Invoicing_Payment_Account__c</label>
+            </value>
+            <value>
+                <fullName>Auto_Bidding__c</fullName>
+                <default>false</default>
+                <label>Auto_Bidding__c</label>
+            </value>
+            <value>
+                <fullName>Bid__c</fullName>
+                <default>false</default>
+                <label>Bid__c</label>
+            </value>
+            <value>
+                <fullName>Trial_Period_Mismatch__c</fullName>
+                <default>false</default>
+                <label>Trial_Period_Mismatch__c</label>
+            </value>
+            <value>
+                <fullName>Min__c</fullName>
+                <default>false</default>
+                <label>Min__c</label>
+            </value>
+            <value>
+                <fullName>Max__c</fullName>
+                <default>false</default>
+                <label>Max__c</label>
+            </value>
+            <value>
+                <fullName>Account_Primary_Vertical__c</fullName>
+                <default>false</default>
+                <label>Account_Primary_Vertical__c</label>
+            </value>
+            <value>
+                <fullName>CurrencyIsoCode</fullName>
+                <default>false</default>
+                <label>CurrencyIsoCode</label>
+            </value>
+            <value>
+                <fullName>Custom_Partnership_Type__c</fullName>
+                <default>false</default>
+                <label>Custom_Partnership_Type__c</label>
+            </value>
+            <value>
+                <fullName>Undiscounted_Commission_Rate__c</fullName>
+                <default>false</default>
+                <label>Undiscounted_Commission_Rate__c</label>
+            </value>
+            <value>
+                <fullName>Fulfillment_Fee_Validation__c</fullName>
+                <default>false</default>
+                <label>Fulfillment_Fee_Validation__c</label>
+            </value>
+            <value>
+                <fullName>Menu_Item_IDs_Option_IDs_List_A__c</fullName>
+                <default>false</default>
+                <label>Menu_Item_IDs_Option_IDs_List_A__c</label>
+            </value>
+            <value>
+                <fullName>Menu_Item_Name_Item_ID_Option_ID__c</fullName>
+                <default>false</default>
+                <label>Menu_Item_Name_Item_ID_Option_ID__c</label>
+            </value>
+            <value>
+                <fullName>Target_Customer_Audience__c</fullName>
+                <default>false</default>
+                <label>Target_Customer_Audience__c</label>
+            </value>
+            <value>
+                <fullName>Order_Cart_Minimum__c</fullName>
+                <default>false</default>
+                <label>Order_Cart_Minimum__c</label>
+            </value>
+            <value>
+                <fullName>Marketing_Flat_Fee__c</fullName>
+                <default>false</default>
+                <label>Marketing_Flat_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Item_Discount_Percentage__c</fullName>
+                <default>false</default>
+                <label>Item_Discount_Percentage__c</label>
+            </value>
+            <value>
+                <fullName>Order_Service_Type__c</fullName>
+                <default>false</default>
+                <label>Order_Service_Type__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__StartDate__c</fullName>
+                <default>false</default>
+                <label>SBQQ__StartDate__c</label>
+            </value>
+            <value>
+                <fullName>Max_Discount_Amount_for_Consumer__c</fullName>
+                <default>false</default>
+                <label>Max_Discount_Amount_for_Consumer__c</label>
+            </value>
+            <value>
+                <fullName>Discount_Percentage_for_Consumer__c</fullName>
+                <default>false</default>
+                <label>Discount_Percentage_for_Consumer__c</label>
+            </value>
+            <value>
+                <fullName>Delay_after_Activation_days__c</fullName>
+                <default>false</default>
+                <label>Delay_after_Activation_days__c</label>
+            </value>
+            <value>
+                <fullName>Length_of_Term__c</fullName>
+                <default>false</default>
+                <label>Length_of_Term__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__OptionLevel__c</fullName>
+                <default>false</default>
+                <label>SBQQ__OptionLevel__c</label>
+            </value>
+            <value>
+                <fullName>Original_Commission__c</fullName>
+                <default>false</default>
+                <label>Original_Commission__c</label>
+            </value>
+            <value>
+                <fullName>User_Communication_Type__c</fullName>
+                <default>false</default>
+                <label>User_Communication_Type__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__EndDate__c</fullName>
+                <default>false</default>
+                <label>SBQQ__EndDate__c</label>
+            </value>
+            <value>
+                <fullName>CRM_Type__c</fullName>
+                <default>false</default>
+                <label>CRM_Type__c</label>
+            </value>
+            <value>
+                <fullName>Is_Max_Discount_Greater_than_Min_Disc__c</fullName>
+                <default>false</default>
+                <label>Is_Max_Discount_Greater_than_Min_Disc__c</label>
+            </value>
+            <value>
+                <fullName>Duplicate_Package_Product__c</fullName>
+                <default>false</default>
+                <label>Duplicate_Package_Product__c</label>
+            </value>
+            <value>
+                <fullName>Requested_Commission_Over_Max_Commission__c</fullName>
+                <default>false</default>
+                <label>Requested_Commission_Over_Max_Commission__c</label>
+            </value>
+            <value>
+                <fullName>Is_End_Date_Less_Than_Start_Date__c</fullName>
+                <default>false</default>
+                <label>Is_End_Date_Less_Than_Start_Date__c</label>
+            </value>
+            <value>
+                <fullName>Requested_Less_Deal_Desk_Commission__c</fullName>
+                <default>false</default>
+                <label>Requested_Less_Deal_Desk_Commission__c</label>
+            </value>
+            <value>
+                <fullName>Region__c</fullName>
+                <default>false</default>
+                <label>Region__c</label>
+            </value>
+            <value>
+                <fullName>Is_Pkg_Store_Missing_When_Deal_Desk__c</fullName>
+                <default>false</default>
+                <label>Is_Pkg_Store_Missing_When_Deal_Desk__c</label>
+            </value>
+            <value>
+                <fullName>Split_Category__c</fullName>
+                <default>false</default>
+                <label>Split_Category__c</label>
+            </value>
+            <value>
+                <fullName>Users_Approval_Group__c</fullName>
+                <default>false</default>
+                <label>Users_Approval_Group__c</label>
+            </value>
+            <value>
+                <fullName>dealdesktest__c</fullName>
+                <default>false</default>
+                <label>dealdesktest__c</label>
+            </value>
+            <value>
+                <fullName>Quote_Line_Mismatch_Type__c</fullName>
+                <default>false</default>
+                <label>Quote_Line_Mismatch_Type__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__Existing__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Existing__c</label>
+            </value>
+            <value>
+                <fullName>Is_A_Deal_Desk_Active_User__c</fullName>
+                <default>false</default>
+                <label>Is_A_Deal_Desk_Active_User__c</label>
+            </value>
+            <value>
+                <fullName>Opportunity_Type__c</fullName>
+                <default>false</default>
+                <label>Opportunity_Type__c</label>
+            </value>
+            <value>
+                <fullName>Storefront_Exclusivity__c</fullName>
+                <default>false</default>
+                <label>Storefront_Exclusivity__c</label>
+            </value>
+            <value>
+                <fullName>Is_Core_Upgraded__c</fullName>
+                <default>false</default>
+                <label>Is_Core_Upgraded__c</label>
+            </value>
+            <value>
+                <fullName>Alcohol_Pickup_and_Pickup_Check__c</fullName>
+                <default>false</default>
+                <label>Alcohol_Pickup_and_Pickup_Check__c</label>
+            </value>
+            <value>
+                <fullName>Alcohol_Delivery_And_Delivery_Check__c</fullName>
+                <default>false</default>
+                <label>Alcohol_Delivery_And_Delivery_Check__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__Quantity__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Quantity__c</label>
+            </value>
+            <value>
+                <fullName>Deck_Rank__c</fullName>
+                <default>false</default>
+                <label>Deck_Rank__c</label>
+            </value>
+            <value>
+                <fullName>Top_Mx__c</fullName>
+                <default>false</default>
+                <label>Top_Mx__c</label>
+            </value>
+            <value>
+                <fullName>Local_Premium__c</fullName>
+                <default>false</default>
+                <label>Local_Premium__c</label>
+            </value>
+            <value>
+                <fullName>Product_Name_with_Existing__c</fullName>
+                <default>false</default>
+                <label>Product_Name_with_Existing__c</label>
+            </value>
+            <value>
+                <fullName>Package_with_Existing__c</fullName>
+                <default>false</default>
+                <label>Package_with_Existing__c</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Group Line Items</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Opt_In_Opt_Out_Decision__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>Opt_Out_Save_Period_days__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>SBQQ__Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>Franchise_Owned_Store_Count__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>Account_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>Account_Record_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>Opt_In_Opt_Out_Response_Time_in_Days__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Opt_In_Out_Responsible_Party__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Account_Billing_Country_Code__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Account_Franchise_Enrollment_Process__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Is_this_for_Ads_Promos__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Segment__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Invoicing_Payment_Account__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Opportunity_Deal_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Account_Primary_Vertical__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>CurrencyIsoCode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Custom_Partnership_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Duplicate_Package_Product__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Users_Approval_Group__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>dealdesktest__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Quote_Line_Mismatch_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__Existing__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Is_A_Deal_Desk_Active_User__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Is_Core_Upgraded__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Alcohol_Pickup_and_Pickup_Check__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Alcohol_Delivery_And_Delivery_Check__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Deck_Rank__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Top_Mx__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Local_Premium__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_Period__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_End_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Fee_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__SpecialPrice__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Requested_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <valueName>Package__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <valueName>SBQQ__ProductName__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Configuration Attributes</controllingFieldValue>
+            <valueName>Payment_Method__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__RequiredBy__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__ProductFamily__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Product_Name_and_Package__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>LOF_and_AOV__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SOF_and_AOV__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Enable_Catering_Setup__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Location_Territory_Definition__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>test__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Package_Product__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>End_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Is_Current_Date_Greater_Than_Start_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Start_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Marketing_Commitment_Start_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Marketing_Commitment_End_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Level__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Evaluation_Period__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Duplicate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__ProductCode__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Incompatible_Rate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Active_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Requested_Active_Price_Mismatch__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Estimated_Total_Investment__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Auto_Bidding__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Bid__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_Period_Mismatch__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Undiscounted_Commission_Rate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Min__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Max__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Offsite_Platform__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Fulfillment_Fee_Validation__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Menu_Item_IDs_Option_IDs_List_A__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Menu_Item_Name_Item_ID_Option_ID__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Target_Customer_Audience__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Order_Cart_Minimum__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Marketing_Flat_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Item_Discount_Percentage__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Order_Service_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__StartDate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Max_Discount_Amount_for_Consumer__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Discount_Percentage_for_Consumer__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Delay_after_Activation_days__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Length_of_Term__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__OptionLevel__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Original_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>User_Communication_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__EndDate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>CRM_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Is_Max_Discount_Greater_than_Min_Disc__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Requested_Commission_Over_Max_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Is_Current_Date_Greater_Than_Start_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Is_End_Date_Less_Than_Start_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Requested_Less_Deal_Desk_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Region__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Is_Pkg_Store_Missing_When_Deal_Desk__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <valueName>Split_Category__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__Quantity__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Product_Name_with_Existing__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Package_with_Existing__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>Opt_In_Opt_Out_Responsible_Party__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>Franchise_Enrollment_Process__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>SBQQ__Quote__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line Group</controllingFieldValue>
+            <valueName>Quote_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <controllingFieldValue>Configuration Attributes</controllingFieldValue>
+            <valueName>Unit Price</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

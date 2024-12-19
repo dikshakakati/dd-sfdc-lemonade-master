@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalated_Storefront_OB_Work_Plans</fullName>
+    <columns>Work_Order_Name__c</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Sub_Type__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Parent_Work_Plan__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Name</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Escalated</value>
+    </filters>
+    <label>Escalated Storefront OB Work Plans</label>
+    <queue>Storefront_Under_Review</queue>
+</ListView>

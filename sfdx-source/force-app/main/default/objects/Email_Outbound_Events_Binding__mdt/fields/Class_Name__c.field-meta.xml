@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Name__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13778: It is used factory class name that should be called based on the topic.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Class Name</label>
+    <length>40</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

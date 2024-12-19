@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Will_Mx_Share_Long_Term_LTO_Calendar__c</fullName>
+    <description>LEM-14633-DPEI Attributes to Opportunity Product, Order Product and Subscription objects</description>
+    <externalId>false</externalId>
+    <label>Will Mx Share Long Term LTO Calendar?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No_Maybe</valueSetName>
+    </valueSet>
+</CustomField>

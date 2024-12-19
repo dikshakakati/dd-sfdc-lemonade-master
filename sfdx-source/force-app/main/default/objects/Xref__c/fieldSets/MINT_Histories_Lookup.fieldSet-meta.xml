@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MINT_Histories_Lookup</fullName>
+    <description>LookUp field for the history to be shown on work Order</description>
+    <displayedFields>
+        <field>Business_Reference__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>MINT Histories Lookup</label>
+</FieldSet>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-15978 : It stores the csv column name and its corresponding field mapping to bulk staging request object</description>
+    <label>Staging Bulk Upload Request Mapping</label>
+    <pluralLabel>Staging Bulk Upload Request Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Coverage_Check_Time__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14822: It indicates the time when the last coverage check was run.</description>
+    <externalId>false</externalId>
+    <label>Last Coverage Check Time</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>DateTime</type>
+</CustomField>

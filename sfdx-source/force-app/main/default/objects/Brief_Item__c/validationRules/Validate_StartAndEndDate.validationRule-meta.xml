@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_StartAndEndDate</fullName>
+    <active>true</active>
+    <description>LEM-2983: Validates if Start Date is less than End Date.</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+NOT(
+    ISBLANK(Start_Date__c)
+),
+NOT(
+    ISBLANK(End_Date__c)
+),
+Start_Date__c&gt;End_Date__c
+)</errorConditionFormula>
+    <errorMessage>Start Date cannot be greater than End Date. Please populate Start and End Date appropriately.</errorMessage>
+</ValidationRule>

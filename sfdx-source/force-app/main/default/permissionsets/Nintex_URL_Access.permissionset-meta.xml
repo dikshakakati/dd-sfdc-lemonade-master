@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Accessibilities__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Merchant_Pop_Up_Response__c.Seattle_Zipcodes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Nintex_URL_Access</name>
+    </customPermissions>
+    <description>LEM-3214: It enables UI access to the Nintex URL field on the franchise form request record page for an individual.</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Name_With_Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Nintex URL Access</label>
+    <license>Salesforce</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RunFlow</name>
+    </userPermissions>
+</PermissionSet>

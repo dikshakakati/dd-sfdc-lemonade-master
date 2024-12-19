@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Commission_Calculation_Methodgy</fullName>
+    <active>true</active>
+    <description>LEM-8322,LEM-9464: The Commission Calculation Methodology field is required if Primary Vertical does not include list
+CPG
+Dashmart
+Government/NonProfit
+Health &amp; Pharmacy
+Rx
+Supply Chain
+Misc
+LEM-12933: update Pharmacy to Health &amp; Pharmacy.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  AND(
+      NOT(CONTAINS($Profile.Name,&apos;Integration&apos;)),
+      $Profile.Name &lt;&gt; $Label.System_Administrator
+  ),
+  AND(
+      ISNEW(),
+      TEXT(Creation_Source__c) == &apos;Lead&apos;
+  ),
+  ISBLANK(TEXT(Commission_Calculation_Methodology__c)),
+  RecordType.DeveloperName = $Label.BusinessAccountRecordTypeName,
+  NOT(
+      OR(
+      ISPICKVAL (Primary_Vertical__c, &apos;CPG&apos;),
+      ISPICKVAL (Primary_Vertical__c, &apos;Dashmart&apos;),
+      ISPICKVAL (Primary_Vertical__c, &apos;Government/NonProfit&apos;),
+      ISPICKVAL (Primary_Vertical__c, &apos;Health &amp; Pharmacy&apos;),
+      ISPICKVAL (Primary_Vertical__c, &apos;Rx&apos;),
+      ISPICKVAL (Primary_Vertical__c, &apos;Supply Chain&apos;),
+      ISPICKVAL (Primary_Vertical__c, &apos;Misc.&apos;),
+      ISBLANK(TEXT(Primary_Vertical__c)
+      )
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Commission_Calculation_Methodology__c</errorDisplayField>
+    <errorMessage>Please enter the Commission Calculation Methodology field value</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Preferred_Language__c</fullName>
+    <description>This Field is to get the Preferred Language from Account and check if it is populated on Account or not , right before contract generation</description>
+    <externalId>false</externalId>
+    <formula>TEXT(SBQQ__Account__r.Preferred_Language__c)</formula>
+    <label>Account Preferred Language</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

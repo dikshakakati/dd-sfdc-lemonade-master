@@ -1,0 +1,54 @@
+<template>
+  <div class="slds-p-bottom_medium">
+    <lightning-record-edit-form
+      object-api-name="Payment_Account__c"
+      onchange={handleFieldUpdate}
+      onsubmit={handleSubmit}
+      onsuccess={handleSuccess}
+      onerror={handleError}
+    >
+      <lightning-layout>
+        <lightning-layout-item size="12">
+          <lightning-input-field
+            field-name="Entity_Type__c"
+            variant="label-stacked"
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="Payment_Method__c"
+            variant="label-stacked"
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="RoutingNumber__c"
+            variant="label-stacked"
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="Bank_Account_Number__c"
+            variant="label-stacked"
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="Institution_Number__c"
+            variant="label-stacked"
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="Billing_Contact_Name__c"
+            variant="label-stacked"
+          ></lightning-input-field>
+          <!-- TODO - Temporarily removing this due to some ongoing issues with the field. To be brought back later. -->
+          <!-- <lightning-input-field
+            field-name="Payment_Descriptor__c"
+            variant="label-stacked"
+          ></lightning-input-field> -->
+        </lightning-layout-item>
+      </lightning-layout>
+
+      <div class="slds-p-bottom_medium">
+        <lightning-button
+          variant="brand"
+          type="submit"
+          name="save"
+          label="Save"
+        ></lightning-button>
+      </div>
+    </lightning-record-edit-form>
+  </div>
+</template>

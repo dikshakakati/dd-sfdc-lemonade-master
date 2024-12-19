@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Store ID</fullName>
+        <default>false</default>
+        <label>Store ID</label>
+    </customValue>
+    <customValue>
+        <fullName>Business ID</fullName>
+        <default>false</default>
+        <label>Business ID</label>
+    </customValue>
+    <description>LEM-468 – Attributes related to Promotion products</description>
+    <masterLabel>Store vs. Business Level Targeting</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

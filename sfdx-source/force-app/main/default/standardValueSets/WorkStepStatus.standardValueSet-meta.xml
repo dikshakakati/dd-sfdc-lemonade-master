@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Not Workable</fullName>
+        <default>true</default>
+        <label>Not Workable</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Started</fullName>
+        <default>false</default>
+        <label>Not Started</label>
+    </standardValue>
+    <standardValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <label>In Progress</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready for QA</fullName>
+        <default>false</default>
+        <label>Ready for QA</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QA Complete</fullName>
+        <default>false</default>
+        <label>QA Complete</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+        <label>Escalated</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Blocked</fullName>
+        <default>false</default>
+        <label>Blocked</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Resolved</fullName>
+        <default>false</default>
+        <label>Resolved</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Complete</fullName>
+        <default>false</default>
+        <label>Complete</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Complete - DoorDash to implement link</fullName>
+        <default>false</default>
+        <label>Complete - DoorDash to implement link</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Complete - Mx to implement link</fullName>
+        <default>false</default>
+        <label>Complete - Mx to implement link</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Complete - Implemented on the call</fullName>
+        <default>false</default>
+        <label>Complete - Implemented on the call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Dead</fullName>
+        <default>false</default>
+        <label>Dead</label>
+    </standardValue>
+</StandardValueSet>

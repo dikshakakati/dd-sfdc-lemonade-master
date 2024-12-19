@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Branded_Collection_Activation_Ticket__c</fullName>
+    <description>LEM-5421</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the campaign is DoorDash funded without a contract, Ad Ops to provide JIRA link here.</inlineHelpText>
+    <label>Branded Collection: Activation Ticket</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

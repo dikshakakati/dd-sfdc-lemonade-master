@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.38"><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hello,</span></span></span></span></span></span><br />
+<br />
+<span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">This is a notification that the following Work Order needs action as stores are blocked from provisioning due to error(s):</span></span></span></span></span></span></p>
+
+<p style="line-height: 1.38; margin-left: 40px;"><span style="font-family: Arial; font-size: 9pt; white-space: pre-wrap; font-weight: 700;">Work Order: </span><span style="font-family: Arial; font-size: 9pt; white-space: pre-wrap;"><a href="{{{WorkOrder.link}}}">{{{WorkOrder.Work_Order_Name__c}}}</a></span><br />
+<span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:700"><span style="font-style:normal"><span style="text-decoration:none">Account Name:</span></span></span><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none"> {{{WorkOrder.Account_Link__c}}}</span></span></span></span></span></span></p>
+
+<p style="line-height: 1.38;"><span style="font-family: Arial; font-size: 9pt; white-space: pre-wrap;">Please follow these resolution steps:</span></p>
+
+<ol>
+	<li aria-level="1" style="list-style-type:decimal"><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Click the linked Work Order above; on this record you will be able to view the full list of affected stores as well as the data that needs to be corrected in order to progress. This will be a related list labeled ‘Readiness Check Corrections’.</span></span></span></span></span></span></li>
+	<li aria-level="1" style="list-style-type:decimal"><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">After the affected data has been addressed, please navigate back to the Work Order and click the ‘Run Readiness Check’ button.</span></span></span></span></span></span></li>
+</ol>
+
+<p style="line-height:1.38"><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Thanks,&nbsp;</span></span></span></span></span></span><br />
+<span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Onboarding Team</span></span></span></span></span></span></p>
+<br />
+&nbsp;
+</body></html>

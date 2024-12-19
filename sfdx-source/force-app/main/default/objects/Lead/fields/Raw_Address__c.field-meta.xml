@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Raw_Address__c</fullName>
+    <description>LEM-21532: It is used to store the address as inputted from the Mx regardless of if the address was verified or not.</description>
+    <externalId>false</externalId>
+    <label>Raw Address</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <securityClassification>Proprietary</securityClassification>
+    <complianceGroup>GDPR</complianceGroup>
+    <visibleLines>3</visibleLines>
+</CustomField>

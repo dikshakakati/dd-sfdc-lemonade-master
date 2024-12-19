@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_Date__c</fullName>
+    <description>LEM-3523: This field is used to store the created date for record from error_record_details table in Figment Postgres database.</description>
+    <externalDeveloperName>created_at</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Created Date</label>
+    <securityClassification>Internal</securityClassification>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

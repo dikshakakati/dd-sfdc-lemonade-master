@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Example SOSL</label>
+    <protected>false</protected>
+    <values>
+        <field>ApexClassName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Clear_Keyword_After_Select__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Dropdown_Additional_CSS__c</field>
+        <value xsi:type="xsd:string">slds-has-dividers_bottom-space</value>
+    </values>
+    <values>
+        <field>Dropdown_CSS_Position__c</field>
+        <value xsi:type="xsd:string">Absolute</value>
+    </values>
+    <values>
+        <field>Dropdown_Icon_Avatar_Size__c</field>
+        <value xsi:type="xsd:string">medium</value>
+    </values>
+    <values>
+        <field>Dropdown_Item_Additional_CSS__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Dropdown_Label_Merge_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Dropdown_Scroll_Height__c</field>
+        <value xsi:type="xsd:string">500px</value>
+    </values>
+    <values>
+        <field>Dropdown_SubLabel_Merge_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Exclude_Already_Selected_Records__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Exclude_Field_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Field_Label__c</field>
+        <value xsi:type="xsd:string">Example: SOSL</value>
+    </values>
+    <values>
+        <field>Filter_Allow_Advanced_Operators__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Filter_Allow_IS_BLANK_IS_NOT_BLANK_op__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Filter_Label_Has_Expand_Collapse__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>From__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Group_By__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>IconSrc_Merge_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">standard:avatar</value>
+    </values>
+    <values>
+        <field>Icon_Type__c</field>
+        <value xsi:type="xsd:string">Avatar</value>
+    </values>
+    <values>
+        <field>Input_Field_Placeholder__c</field>
+        <value xsi:type="xsd:string">Search for User by Name, Email, etc...</value>
+    </values>
+    <values>
+        <field>Keep_SearchRes_Open_After_Pill_Remove__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Keep_SearchRes_Open_After_Select__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Keyword_Search_Field__c</field>
+        <value xsi:type="xsd:string">Name</value>
+    </values>
+    <values>
+        <field>Keyword_Search_Like_Operator__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Keyword_Trim_Logic__c</field>
+        <value xsi:type="xsd:string">Start Trim</value>
+    </values>
+    <values>
+        <field>Label_Display_Variant__c</field>
+        <value xsi:type="xsd:string">Field</value>
+    </values>
+    <values>
+        <field>Limit__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Maximum_Selections_Variant__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Maximum_Selections__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Minimum_Characters__c</field>
+        <value xsi:type="xsd:double">2.0</value>
+    </values>
+    <values>
+        <field>Order_By__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Picklist_Metadata_Field_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Picklist_Metadata_Force_Sort_By__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Picklist_Metadata_Object_name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Picklist_Metadata_Search_Label_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Pill_Label_Merge_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Pill_Variant__c</field>
+        <value xsi:type="xsd:string">Below</value>
+    </values>
+    <values>
+        <field>Query_and_Cache_on_Init__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Results_Variant__c</field>
+        <value xsi:type="xsd:string">Dropdown</value>
+    </values>
+    <values>
+        <field>Results_Width__c</field>
+        <value xsi:type="xsd:string">100%</value>
+    </values>
+    <values>
+        <field>SOSL_Returning_Fields__c</field>
+        <value xsi:type="xsd:string">ALL FIELDS</value>
+    </values>
+    <values>
+        <field>Select__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Sharing_Model__c</field>
+        <value xsi:type="xsd:string">With Sharing</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">SOSL</value>
+    </values>
+    <values>
+        <field>Value_Merge_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Where_Clause__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

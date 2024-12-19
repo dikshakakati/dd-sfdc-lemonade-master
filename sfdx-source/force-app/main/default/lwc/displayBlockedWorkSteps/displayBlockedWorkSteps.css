@@ -1,0 +1,11 @@
+/**
+ * @author Deloitte
+ * @date 10/16/2023
+ * @description CSS for displayBlockedWorkSteps lightning web component.
+ */
+.THIS .slds-modal__content {
+  overflow: initial;
+}
+.bgColor {
+  background-color: white;
+}

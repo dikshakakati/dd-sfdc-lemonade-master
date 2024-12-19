@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Level_Tax_Categories_Rates__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1048: Indicates the Item Category and corresponding Tax Rate for each Category, separated by a line.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please include the Item Category and corresponding Tax Rate for each Category, separated by a line. i.e.
+Soda - 6.9%
+Candy - 1.2%</inlineHelpText>
+    <label>Item-Level Tax Categories + Rates</label>
+    <length>500</length>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

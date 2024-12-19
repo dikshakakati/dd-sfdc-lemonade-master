@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_this_form_request_for_Self_Delivery__c</fullName>
+    <securityClassification>Confidential</securityClassification>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-9141-Add Self-Delivery option on Mx Popup for Marketplace.</description>
+    <externalId>false</externalId>
+    <label>Is this form request for Self-Delivery?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

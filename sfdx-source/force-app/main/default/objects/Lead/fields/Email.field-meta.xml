@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13398: It represents the email address of the Lead.</description>
+    <inlineHelpText>Represents the email address of the Lead</inlineHelpText>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+</CustomField>

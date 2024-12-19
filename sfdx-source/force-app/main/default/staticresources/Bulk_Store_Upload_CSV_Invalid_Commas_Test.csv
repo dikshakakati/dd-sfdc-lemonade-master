@@ -1,0 +1,5 @@
+Name*,Type*,Parent Account ID*,Business ID*,Legal Business Name*,Country*,State,City*,Street*,Postal Code*,Phone*,In-Store Pickup Instructions,Parking / Arrival Instructions,Minimum Prep Time,Hours of Operation*,Shopping Protocol,POS System,POS Integration Id,Payment Account ID,Decision Maker ID,,,
+StoreTest1,Virtual,0017600000ZuxpWAAR,1,NewStore_13thSept,United States,New Jersey,Maplewood,1833 Springfield Avenue,7040,6268581750,,,0,11am to 9pm,Mx Pick,,1555,,,,,
+StoreTest2,Virtual,0017600000ZuxpWAAR,2,NewStore_13thSept,United States,Connecticut,Windsor,576 Windsor Avenue,6095,6268581751,,,1,11am to 9pm,Mx Pick,,1666,,,,,
+StoreTest3,Virtual,0017600000ZuxpWAAR,3,NewStore_13thSept,United States,Illinois,Moline,1401 5th Avenue,61265,6268581752,Testing, with, commas,,2,Retail,11am to 9pm,,1777,Drop-ship,,
+StoreTest4,Virtual,0017600000ZuxpWAAR,4,NewStore_13thSept,United States,New York,Ithaca,222 Elmira Road,14850,6268581753,Commas,with,no,,3,Retail,11am to 9pm,,1888,,,

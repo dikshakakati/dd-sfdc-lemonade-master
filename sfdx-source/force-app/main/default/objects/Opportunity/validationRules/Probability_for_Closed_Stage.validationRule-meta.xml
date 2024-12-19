@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Probability_for_Closed_Stage</fullName>
+    <active>true</active>
+    <description>LEM-378: Probability cannot be editable on a Closed Opportunity so that the probability is accurately reflecting that the opportunity was closed.</description>
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Opportunity_Validation_Rules),
+        PRIORVALUE(IsClosed),
+        IsClosed,
+        ISCHANGED(Probability))</errorConditionFormula>
+    <errorDisplayField>Probability</errorDisplayField>
+    <errorMessage>Probability cannot be updated for a Closed opportunity.</errorMessage>
+</ValidationRule>

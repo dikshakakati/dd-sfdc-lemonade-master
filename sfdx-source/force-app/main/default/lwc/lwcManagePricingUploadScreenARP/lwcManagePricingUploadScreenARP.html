@@ -1,0 +1,139 @@
+<template>
+    <div class="slds-p-around_medium">
+      <!-- Spinner -->
+      <div if:true={working}>
+          <lightning-spinner alternative-text="Loading..."  size="large" variant="brand"></lightning-spinner>
+      </div>
+
+      <div if:false={working}>
+        <div if:false={showPricingScreenComponent}>
+          <div class="border-container">
+            <div class="header">
+              <h1 class="slds-p-around_medium">Manage Pricing</h1>
+            </div>
+            <div class="slds-p-top_x-small slds-p-bottom_x-small slds-text-align_right">
+              <!-- Buttons -->
+              <lightning-button
+                  label="Next"
+                  variant="brand"
+                  onclick={addAccounts}
+                  disabled={addAccountsDisabled}>
+              </lightning-button>
+            </div>
+          <div if:true={showSuccess}>
+            <div class="slds-scoped-notification slds-media slds-media_center slds-theme_success" role="status">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-utility-success" title="success">
+                    <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+                    </svg>
+                    <span class="slds-assistive-text">success</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <p>Accounts added to Contract</p>
+                </div>
+            </div>
+          </div>
+          <!-- Tabset -->
+          <div>
+            <lightning-tabset variant="scoped" if:true={showTabs}>
+              <lightning-tab label="CSV Import" value="3" onactive={handleActive}>
+                <div class="slds-p-top_medium">
+                  <div class="slds-p-around_medium lgc-bg">
+                    <lightning-formatted-rich-text value={labels.csvInstructionsLabel}></lightning-formatted-rich-text>&nbsp;&nbsp;
+                    <a href={labels.CSVTemplateResource}
+                    >CSV Template</a>
+                  </div>
+                </div>
+                <div class="slds-p-top_medium" >
+                  <c-lwc-generic-upload-c-s-v
+                  onfileadded={handleFileAdded}
+                  onfilereaderror={handleFileReadError}
+                  onfileremoved={handleFileRemoved}
+                  >
+                  </c-lwc-generic-upload-c-s-v>
+                </div>
+                <div if:true={importShowTableSpinner} class="slds-is-relative">
+                  <lightning-spinner alternative-text="Loading..."  size="small" variant="base"></lightning-spinner>
+                </div>
+                <div if:true={importShowTable} >
+                  <div class="slds-p-around_medium lgc-bg" if:true={importShowTable}>
+                    {labels.selectedStoresLabel} <b>{selectedStores}</b>
+                  </div>
+                  <div lwc-if={importDataTable.length} class="datatable-container">
+                  <lightning-datatable
+                            key-field="Id"
+                            data={importDataTable}
+                            columns={columns}
+                            onrowselection={selectedRowHandler}
+                            sorted-by="Name"
+                            data-id="Table3"
+                            selected-rows={preSelectedRows}>
+                  </lightning-datatable>
+                  </div>
+                </div>
+                <div if:true={importShowError}>
+                  <template for:each={importErrorMessages} for:item="errorMessage" for:index="index">
+                      <div key={errorMessage.index} class="slds-scoped-notification slds-media slds-media_center slds-theme_error" role="status">
+                          <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-utility-error" title="error">
+                              <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                              </svg>
+                              <span class="slds-assistive-text">error</span>
+                            </span>
+                          </div>
+                          <div class="slds-media__body">
+                            <lightning-formatted-text value={errorMessage}></lightning-formatted-text>
+                            </p>
+                          </div>
+                        </div>
+                  </template>
+                </div>
+                <div if:true={ShowGetAssociatedAccountsError}>
+                  <div
+                    class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                    <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Error Icon">
+                      <lightning-icon
+                        icon-name="utility:error"
+                        alternative-text="Error"
+                        title="Error"
+                        variant="inverse"
+                      ></lightning-icon>
+                    </span>
+                    <h2>{getAssociatedAccountsError}</h2>
+                  </div>
+                </div>
+                <div class="slds-p-around_medium lgc-bg" if:true={importShowTableAssociated}>
+                  {labels.accountAssociatedLabel}
+                </div>
+                <div if:true={importShowTableAssociated} class="datatable-container">
+                  <lightning-datatable
+                            key-field="id"
+                            data={importDataTableAssociated}
+                            columns={columns}
+                            sorted-by="Name"
+                            hide-checkbox-column="true">
+                  </lightning-datatable>
+                </div>
+              </lightning-tab>
+            </lightning-tabset>
+          </div>
+          </div>
+          </div>
+
+        <div if:true={showPricingScreenComponent}>
+          <c-lwc-manage-pricing-screen-a-r-p
+          accounts-string={sendaccountIds}
+          record={recordId}
+          accounts-data={accountsDataTable}
+          filename={filename}
+          filecontents={filecontents}
+          onpassshowpricingscreencomponentvalue={handleBackButton}
+          onclose={handleCloseParent}
+          ></c-lwc-manage-pricing-screen-a-r-p>
+        </div>
+      </div>
+    </div>
+    </template>

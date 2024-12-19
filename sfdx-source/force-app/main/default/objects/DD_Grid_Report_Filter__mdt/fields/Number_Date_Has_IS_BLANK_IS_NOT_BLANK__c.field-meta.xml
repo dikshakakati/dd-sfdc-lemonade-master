@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_Date_Has_IS_BLANK_IS_NOT_BLANK__c</fullName>
+    <defaultValue>true</defaultValue>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Number/Date Has IS BLANK &amp; IS NOT BLANK</label>
+    <type>Checkbox</type>
+</CustomField>

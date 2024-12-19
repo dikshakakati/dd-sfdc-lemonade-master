@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact.AccountContactRelations$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.AccountContactRelations*Account$Opt_out_Nintex_Email__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Email</field>
+    </columns>
+    <columns>
+        <field>Contact.AccountContactRelations*Account$Most_Recent_Nintex_Use_Case__c</field>
+    </columns>
+    <columns>
+        <field>Contact.AccountContactRelations*Account$Drive_WH_Nintex_ID__c</field>
+    </columns>
+    <columns>
+        <field>Contact.AccountContactRelations*Account$Drive_WH_Nintex_URL__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Opt_out_Email_Difference_Indicator__c</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Account.Drive_WH_Nintex_ID__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <operation>with</operation>
+        <primaryTableColumn>Contact$Id</primaryTableColumn>
+        <relatedTable>AccountContactRelation-Account</relatedTable>
+        <relatedTableJoinColumn>Contact</relatedTableJoinColumn>
+    </crossFilters>
+    <currency>USD</currency>
+    <description>To track the Nintex Opt-Out submissions from Mx</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.AccountContactRelations$Roles</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>includes</operator>
+            <value>Decision Maker</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Drive Withholding Opt-Out Nintex</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Contact_Relationship__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Contact.AccountContactRelations$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contact.AccountContactRelations$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

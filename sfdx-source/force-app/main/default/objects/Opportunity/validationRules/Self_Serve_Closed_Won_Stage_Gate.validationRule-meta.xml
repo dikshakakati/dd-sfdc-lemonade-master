@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Self_Serve_Closed_Won_Stage_Gate</fullName>
+    <active>true</active>
+    <description>LEM-10765: A&amp;P Validation Rule Enhancements</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Opportunity_Validation_Rules),
+    TEXT(Account.Segment__c) != $Label.AccountSegmentSMB,
+    ISPICKVAL(Deal_Type__c, &apos;Self-Serve&apos;),
+    ISPICKVAL(StageName, &apos;Closed Won&apos;),
+    NOT(ISPICKVAL( SBQQ__PrimaryQuote__r.Self_Serve_Status__c, &apos;Activated&apos;))
+)</errorConditionFormula>
+    <errorMessage>Primary Quote’s ‘Self-Serve Status&apos; must be &apos;Activated’ to C/W this Opportunity.</errorMessage>
+</ValidationRule>

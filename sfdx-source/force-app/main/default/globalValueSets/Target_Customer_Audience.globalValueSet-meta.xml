@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>All Customers</fullName>
+        <default>false</default>
+        <label>All Customers</label>
+    </customValue>
+    <customValue>
+        <fullName>Existing Customers</fullName>
+        <default>false</default>
+        <label>Existing Customers</label>
+    </customValue>
+    <description>LEM-468 – Attributes related to Promotion products</description>
+    <masterLabel>Target Customer Audience</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

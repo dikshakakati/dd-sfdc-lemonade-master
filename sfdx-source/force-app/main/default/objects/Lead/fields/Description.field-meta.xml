@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13618: It stores information regarding the Leads and its current status.</description>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

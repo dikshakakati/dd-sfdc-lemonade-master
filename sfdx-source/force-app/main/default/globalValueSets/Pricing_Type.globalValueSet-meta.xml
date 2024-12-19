@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Flat Fee</fullName>
+        <default>false</default>
+        <label>Flat Fee</label>
+    </customValue>
+    <customValue>
+        <fullName>Cost per Mille (CPM)</fullName>
+        <default>false</default>
+        <label>Cost per Mille (CPM)</label>
+    </customValue>
+    <customValue>
+        <fullName>Cost per Click (CPC)</fullName>
+        <default>false</default>
+        <label>Cost per Click (CPC)</label>
+    </customValue>
+    <description>LEM-1602: Create New Fields for Ads and Promos</description>
+    <masterLabel>Pricing Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

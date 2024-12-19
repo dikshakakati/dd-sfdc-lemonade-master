@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ENT_Onboarding_Quality_Check_AC_N_QV</fullName>
+    <columns>Name</columns>
+    <columns>Xref__c</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Name__c</columns>
+    <columns>Proposed_Date_of_Menu__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Name</field>
+        <operation>equals</operation>
+        <value>Central Activations</value>
+    </filters>
+    <filters>
+        <field>Proposed_Date_of_Menu__c</field>
+        <operation>equals</operation>
+        <value>LAST_90_DAYS</value>
+    </filters>
+    <filters>
+        <field>Proposed_Date_of_Activation__c</field>
+        <operation>equals</operation>
+        <value>LAST_90_DAYS</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <filters>
+        <field>Parent_Work_Plan__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>ENT Onboarding - Quality Check AC/N (QV)</label>
+    <queue>Marketplace_ENT_Quality_Check_Queue</queue>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fulfillment_Method__c</fullName>
+    <description>LEM-174 - Identifies if a bundle or option product is fulfilled by DoorDash, Self-Delivery, or Flexible Fulfillment.</description>
+    <externalId>false</externalId>
+    <label>Fulfillment Method</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Fulfillment_Method</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Verticals__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1842: This multi select picklist defines the other verticals associated with a business account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>All applicable verticals for the Mx</inlineHelpText>
+    <label>All Verticals</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Vertical</valueSetName>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

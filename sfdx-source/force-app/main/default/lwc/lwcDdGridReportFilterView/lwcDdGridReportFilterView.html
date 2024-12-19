@@ -1,0 +1,75 @@
+<template>
+    <div class={tableClass}>
+        <table class="slds-table slds-table_bordered">
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="sticky" scope="col" style="width: 20%;">
+                <div class="slds-truncate" title="Filter">Filter</div>
+                </th>
+                <th class="sticky" scope="col">
+                <div class="slds-truncate" title="Selected Values">Value(s)</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <template for:each={filterData} for:item="row">
+                    <tr key={row.label}>
+                        <td data-label="Filter" style="width: 30%;">
+                            <div class="slds-truncate" title="Filter">{row.label}</div>
+                        </td>
+                        <td data-label="Selected Values">
+                            <ul class="slds-listbox slds-listbox_horizontal" role="listbox" aria-label="Selected Options:" aria-orientation="horizontal">
+                                <template for:each={row.values} for:item="item">
+                                    <template if:true={row.isMultiSelect}>
+                                        <span key={item}>
+                                            <template if:true={item.textBefore}>
+                                                <span class="slds-var-p-top_x-small slds-var-p-bottom_x-small">
+                                                    {item.textBefore}
+                                                </span>
+                                            </template>
+                                            <template if:true={item.value}>
+                                                <c-dd-pill label={item.value}></c-dd-pill>
+                                            </template>
+                                            <template if:true={item.textAfter}>
+                                                <span class="slds-var-p-top_x-small slds-var-p-bottom_x-small">
+                                                    {item.textAfter}
+                                                </span>
+                                            </template>
+                                        </span>
+                                    </template>
+                                    <template if:false={row.isMultiSelect}>
+                                        <c-dd-pill key={item} label={item}></c-dd-pill>
+                                    </template>
+                                </template>
+                            </ul>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+    <template if:true={sortData.sortedByLabel}>
+        <div style="max-height: 20%" class="slds-var-p-top_large">
+            <table class="slds-table slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col" style="width: 50%;">
+                            <div class="slds-truncate" title="Sorted By">Sorted By</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Selected Values">Sort Direction</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td data-label="sorted-by" style="width: 50%;">
+                        <div class="slds-truncate">{sortData.sortedByLabel}</div>
+                    </td>
+                    <td data-label="sorted-by">
+                        <div class="slds-truncate">{sortData.sortDirectionLabel}</div>
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ENT_Onboarding_Support_Request_QV</fullName>
+    <columns>Name</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Name__c</columns>
+    <columns>Xref__c</columns>
+    <columns>Status__c</columns>
+    <columns>Proposed_Date_of_Menu__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Escalated</value>
+    </filters>
+    <filters>
+        <field>Parent_Work_Plan__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>ENT Onboarding - Support Request (QV)</label>
+</ListView>

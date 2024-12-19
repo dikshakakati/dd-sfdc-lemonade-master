@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Number_Of_Stores_Report__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1821: Link used to navigate to the Child store report</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/lightning/r/Report/&quot;+$CustomMetadata.Static_Configurations__mdt.Total_Number_of_Stores.Configuration_Value__c +&quot;/view?fv0=&quot;+Id+&quot;&amp;fv1=&quot;+Id+&quot;&amp;fv2=&quot;+Id+&quot;&amp;fv3=&quot;+Id+&quot;&amp;fv4=&quot;+Id+&quot;&amp;fv5=&quot;+Id+&quot;&amp;fv6=&quot;+Id+&quot;&amp;fv7=&quot;+Id, Text(Total_Number_Of_Stores__c) ,&quot;_blank&quot;)</formula>
+    <inlineHelpText>Total Count of Stores for the Business.</inlineHelpText>
+    <label>Total Number of Stores</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

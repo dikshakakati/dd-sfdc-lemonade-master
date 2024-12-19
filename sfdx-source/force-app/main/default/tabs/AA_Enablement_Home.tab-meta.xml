@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Links to a VisualForce page with components that help control the AA enablement process on the quote object.</description>
+    <label>AA Enablement Home</label>
+    <motif>Custom61: Castle</motif>
+    <page>AQS_AAEnablementHome</page>
+</CustomTab>

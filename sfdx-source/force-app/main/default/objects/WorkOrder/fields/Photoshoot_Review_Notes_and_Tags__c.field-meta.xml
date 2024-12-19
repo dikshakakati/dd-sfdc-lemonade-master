@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Photoshoot_Review_Notes_and_Tags__c</fullName>
+    <description>LEM-21576: It is used to store the notes and tags for vendor associated with a photoshoot.</description>
+    <externalId>false</externalId>
+    <label>Photoshoot Review Notes and Tags</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

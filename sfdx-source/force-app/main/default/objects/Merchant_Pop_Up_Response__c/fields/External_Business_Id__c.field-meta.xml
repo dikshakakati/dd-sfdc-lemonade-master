@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Business_Id__c</fullName>
+    <description>LEM-2486: Captures Mx name that will be used in API.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Mx name that will be used in API.</inlineHelpText>
+    <label>External Business Id</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

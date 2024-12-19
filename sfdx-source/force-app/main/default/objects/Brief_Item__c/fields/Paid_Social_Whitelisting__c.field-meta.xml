@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Paid_Social_Whitelisting__c</fullName>
+    <description>LEM-15296: DPEI Incentives Fields</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Quote_Line__r.SBQQ__Quote__r.Paid_Social_Whitelisting__c)</formula>
+    <label>Paid Social / Whitelisting</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

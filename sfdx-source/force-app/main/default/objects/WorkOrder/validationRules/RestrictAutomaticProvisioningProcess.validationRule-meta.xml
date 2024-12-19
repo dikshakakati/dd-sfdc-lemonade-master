@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictAutomaticProvisioningProcess</fullName>
+    <active>true</active>
+    <description>LEM-3199: It restricts from selecting Provisioning Process as Automatic on parent Work Order for the following Work Order sub-types:
+1. Ads and Promo - Activate
+2. Sponsored Listing</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  NOT(
+    AND(
+      OR (
+        TEXT(Work_Order_Source__c) = $Label.WorkOrderSourceSystem,
+        TEXT(Work_Order_Source__c) = $Label.SOURCE_SSMO
+      ),
+      Account_Record_Type_Name__c = $Label.StoreAccountRecordTypeName
+    )
+  ),
+  TEXT(Business_to_Store_Assignment__c) = $Label.WorkOrderProvisioningProcessAutomatic,
+  NOT(ISBLANK(TEXT(Sub_Type__c))),
+  OR(
+    TEXT(Sub_Type__c) = $Label.WorkOrderSubTypeAdsPromoActivate,
+    TEXT(Sub_Type__c) = $Label.WorkOrderSubTypeSponsoredListing
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Business_to_Store_Assignment__c</errorDisplayField>
+    <errorMessage>Provisioning Process will always be manual for this Work Order Sub-Type.</errorMessage>
+</ValidationRule>

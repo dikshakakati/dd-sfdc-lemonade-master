@@ -1,0 +1,92 @@
+<!--
+  @description       :
+  @author            : Gaurav
+  @group             :
+  @last modified on  : 06-06-2024
+  @last modified by  : Gaurav
+-->
+<template>
+  <template lwc:if={showComponent}>
+    <lightning-card>
+      <div class="slds-box slds-var-m-around_medium">
+        <span style="display: flex">
+          <lightning-icon
+            icon-name="standard:record_update"
+            size="large"
+          ></lightning-icon>
+          <div class="slds-grid slds-grid_vertical slds-var-p-left_small">
+            <div class="slds-col">
+              <span>{getLabel}</span>
+            </div>
+            <div class="slds-col slds-text-heading_medium">
+              <span>{existingContractsLabel}</span>
+            </div>
+          </div>
+        </span>
+      </div>
+
+      <div class="slds-box slds-var-m-around_medium">
+        <lightning-tabset>
+          <!-- lightning tab for Core Products -->
+          <lightning-tab
+            label={productLabel.coreProductLabel}
+            title={productLabel.coreProductLabel}
+            onactive={tabChangeHandler}
+          >
+            <template lwc:if={contractsAreAvailable}>
+              <c-contracts-details
+                columns={columnsForContract}
+                rows-to-be-displayed={dataForContract}
+                tab-identifier={productLabel.coreProductLabel}
+                record-id={recordId}
+                initiated-from={initiatedFrom}
+                show-change-rates={disableChangeRates}
+                business-account-id={businessAccountId}
+                is-customer-segment-smb={isCustomerSegmentSmb}
+              >
+              </c-contracts-details>
+            </template>
+            <template lwc:else>
+              <div class="slds-align_absolute-center">
+                {dataUnavailableText}
+              </div>
+            </template>
+          </lightning-tab>
+
+          <!-- lightning tab for Promo Products -->
+          <lightning-tab
+            label={productLabel.promoProductLabel}
+            title={productLabel.promoProductLabel}
+            onactive={tabChangeHandler}
+          >
+            <template lwc:if={contractsAreAvailable}>
+              <c-contracts-details
+                columns={columnsForContract}
+                rows-to-be-displayed={dataForContract}
+                tab-identifier={productLabel.promoProductLabel}
+                record-id={recordId}
+                initiated-from={initiatedFrom}
+                disable-change-rates={disableChangeRates}
+                business-account-id={businessAccountId}
+                tab-name={currentTab}
+                is-customer-segment-smb={isCustomerSegmentSmb}
+              >
+              </c-contracts-details>
+            </template>
+            <template lwc:else>
+              <div class="slds-align_absolute-center">
+                {dataUnavailableText}
+              </div>
+            </template>
+          </lightning-tab>
+        </lightning-tabset>
+      </div>
+    </lightning-card>
+  </template>
+  <template lwc:else>
+    <!-- spinner -->
+    <lightning-card>
+      <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </lightning-card>
+  </template>
+</template>

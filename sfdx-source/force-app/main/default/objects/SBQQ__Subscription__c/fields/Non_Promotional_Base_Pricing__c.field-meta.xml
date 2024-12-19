@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Promotional_Base_Pricing__c</fullName>
+    <description>LEM-1602: Create New Fields for Ads and Promos</description>
+    <externalId>false</externalId>
+    <label>Non-Promotional Base Pricing</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

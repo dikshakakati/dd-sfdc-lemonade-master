@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tablet_Kit_Type__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1048: Signifies the tablet kit type.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Signifies the tablet kit type</inlineHelpText>
+    <label>Tablet Kit Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>McDonalds</fullName>
+                <default>false</default>
+                <label>McDonalds</label>
+            </value>
+            <value>
+                <fullName>Dunkin Donuts</fullName>
+                <default>false</default>
+                <label>Dunkin Donuts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

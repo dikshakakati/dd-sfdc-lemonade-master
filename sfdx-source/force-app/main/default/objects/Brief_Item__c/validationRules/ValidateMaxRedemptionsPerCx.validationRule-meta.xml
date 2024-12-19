@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateMaxRedemptionsPerCx</fullName>
+    <active>true</active>
+    <description>LEM-3674: It is used to validate if Max Redemptions Per Cx is populated for certain Products.LEM-17972: Updated isblank check to isnull</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+    ISCHANGED(Status__c),
+    TEXT(Status__c) = $Label.Campaign_Building,
+  OR(
+    TEXT(Product__c) = $Label.Brief_Product_BuyAndGetOff,
+    TEXT(Product__c) = $Label.Brief_Product_BuyOneGetOne,
+    TEXT(Product__c) = $Label.Brief_Product_DoorDashDeals,
+    TEXT(Product__c) = $Label.Brief_Product_FirstOrderOff,
+    TEXT(Product__c) = $Label.Brief_Product_FreeItemOverX,
+    TEXT(Product__c) = $Label.Brief_Product_OrderAgain,
+    TEXT(Product__c) = $Label.Brief_Product_SpendXGetY,
+    TEXT(Product__c) = $Label.Brief_Product_TryMeFree
+  ),
+   ISNULL(Max_Number_of_Redemptions_per_Cx__c)
+)</errorConditionFormula>
+    <errorDisplayField>Max_Number_of_Redemptions_per_Cx__c</errorDisplayField>
+    <errorMessage>The ‘Max Number of Redemptions per Customer’ field must be populated to move the Brief Item to the ‘Campaign Building’ stage.</errorMessage>
+</ValidationRule>

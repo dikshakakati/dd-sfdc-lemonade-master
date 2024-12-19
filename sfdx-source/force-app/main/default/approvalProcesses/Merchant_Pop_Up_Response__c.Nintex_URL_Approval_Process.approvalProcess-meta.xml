@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Mx_Corporate_Account__c</field>
+        <field>Contract__c</field>
+        <field>Approval_Status__c</field>
+        <field>URL__c</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Nintex_URL_Approved</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>Nintex_URL_Approved_Email</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>Commercial_Operations</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>LEM-3214: At this step the approver can approve/reject the approval request.</description>
+        <label>Approver Action</label>
+        <name>Approver_Action</name>
+        <rejectionActions>
+            <action>
+                <name>Nintex_URL_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>Nintex_URL_Rejected_Email</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>LEM-3214: It used to obtain approval from the users added in the commercial operations queue for the Nintex URL generated in Merchant Pop-up response record.</description>
+    <emailTemplate>Nintex_Approval_Emails/Nintex_URL_Approval_Email_Template</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Merchant_Pop_Up_Response__c.URL__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Nintex_URL_Pending_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Nintex URL Approval Process</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

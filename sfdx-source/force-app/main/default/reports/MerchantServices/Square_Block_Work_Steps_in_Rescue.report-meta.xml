@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.WorkOrders$Name</field>
+    </columns>
+    <columns>
+        <field>Account.WorkOrders.WorkPlans.WorkSteps$Parent_Work_Step__c</field>
+    </columns>
+    <columns>
+        <field>Account.WorkOrders.WorkPlans.WorkSteps$Status</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.WorkOrders$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketplace</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.WorkOrders$LastModifiedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Maya Fisher,Michelle Watson,Tasia Hester,Alize Sanders,Cheyenne Stevenson,Dione Alvarado,Chi Macon,Mike Scaro,Veronica Reyes,Roxanne Angulo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.WorkOrders$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Maya Fisher,Michelle Watson,Tasia Hester,Alize Sanders,Cheyenne Stevenson,Dione Alvarado,Chi Macon,Mike Scaro,Veronica Reyes,Roxanne Angulo</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.WorkOrders.WorkPlans.WorkSteps$Status_Reason__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Square Block Work Steps in Rescue</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Workorders_with_Workplans_Workstep__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.WorkOrders$LastModifiedDate</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

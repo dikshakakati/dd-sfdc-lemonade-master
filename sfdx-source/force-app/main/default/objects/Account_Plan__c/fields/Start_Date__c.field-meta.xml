@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15222: It is used to Indicate the date when the Account Plan was created.</description>
+    <externalId>false</externalId>
+    <formula>CreatedDate</formula>
+    <inlineHelpText>Indicates the date when the Account Plan was created for the account.</inlineHelpText>
+    <label>Start Date</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

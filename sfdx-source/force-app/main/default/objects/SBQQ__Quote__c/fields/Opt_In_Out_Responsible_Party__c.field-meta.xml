@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opt_In_Out_Responsible_Party__c</fullName>
+    <description>LEM-1363 - Capture Opt In/Out and Responsible Party</description>
+    <externalId>false</externalId>
+    <label>Opt-In/Out Responsible Party</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Opt_In_Out_Responsible_Party</valueSetName>
+    </valueSet>
+</CustomField>

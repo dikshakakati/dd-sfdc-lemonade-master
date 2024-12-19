@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>affectlayer__All</fullName>
+    <columns>NAME</columns>
+    <columns>affectlayer__ChorusId__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>affectlayer__EngagementId__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>affectlayer__URL__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

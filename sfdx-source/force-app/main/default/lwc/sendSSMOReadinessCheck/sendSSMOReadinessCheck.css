@@ -1,0 +1,10 @@
+.doordashSectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(201, 201, 201);
+    color: #000000;
+  /*  border-radius: 24px;*/
+    padding-right: 16px;
+    padding-left: 16px;
+}

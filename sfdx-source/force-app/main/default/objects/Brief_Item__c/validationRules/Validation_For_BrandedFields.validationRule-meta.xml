@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_For_BrandedFields</fullName>
+    <active>true</active>
+    <description>LEM-5110 Create Validation For branded field</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+ISCHANGED(Status__c),
+ISPICKVAL(Status__c, &quot;Campaign Building&quot;),
+ISPICKVAL(Product__c, &quot;Branded Collections&quot;), OR(Text(Branded_Collection_Type__c)==Null,
+ISBLANK(Brand_SKU_List__c))
+)</errorConditionFormula>
+    <errorMessage>The ‘Branded Collection Type’ and ‘Brand/SKU List’ fields must be populated to shift the Brief Item status to ‘Campaign Building’.</errorMessage>
+</ValidationRule>

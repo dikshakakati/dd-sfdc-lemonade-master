@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Push_SMS_Notification_Commitment__c</fullName>
+    <description>LEM-468 – Attributes related to Promotion products</description>
+    <externalId>false</externalId>
+    <label>Push/SMS Notification Commitment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

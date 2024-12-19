@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Section_Sequence__c</fullName>
+    <description>LEM-1397: Indicates the sequence of the section to allow sorting of the section.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Section Sequence</label>
+    <precision>3</precision>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

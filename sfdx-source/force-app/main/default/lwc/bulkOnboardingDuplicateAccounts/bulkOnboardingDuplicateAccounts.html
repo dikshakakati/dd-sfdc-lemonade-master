@@ -1,0 +1,58 @@
+<!--
+  * @author Deloitte
+  * @date 11/10/2023
+  * @description It is used to show the match accounts retrieved by the given duplicate accounts.
+-->
+<template>
+    <div class="slds-p-around_medium slds-m-bottom_medium slds-box">
+        <p><b>Potential Duplicates for {rowName}&emsp;</b><a class ="text-align" onclick={navigateToUploadCsvPage}>Back to Errors List.</a></p><br>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout slds-max-medium-table_stacked-horizontal">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="row-column" scope="col">
+                        <div class="slds-truncate" title="Name">{label.COLUMN_HEADER_NAME}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Address">{label.COLUMN_HEADER_ADDRESS}</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Parent Account">{label.COLUMN_HEADER_PARENT_ACCOUNT}</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template lwc:if={isMatchRecordsLoading}>
+                    <div class="lightningSpinnerStyle">
+                        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                    </div>
+                </template>
+                <template for:each={matchRecords} for:item="eachMatchRecord">
+                    <tr class="slds-hint-parent" key={eachMatchRecord.Id}>
+                        <td >
+                            <div class="slds-truncate"><a onclick={navigateToAccountRecordPage} data-row={eachMatchRecord.Id}>{eachMatchRecord.Name}</a></div>
+                        </td>
+                        <td >
+                            <div class="slds-truncate">{eachMatchRecord.Account_Address__c}</div>
+                        </td>
+                        <td >
+                            <div class="slds-truncate" if:true={eachMatchRecord.ParentId}><a onclick={navigateToAccountRecordPage} data-row={eachMatchRecord.ParentId}>{eachMatchRecord.Parent.Name}</a></div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <div class="slds-p-around_medium slds-m-bottom_medium slds-box" if:false={isMatchRecordsLoading}>
+            <div class="slds-grid slds-wrap" if:false={hasNonDuplicateErrors}>
+                <div class="slds-col slds-size_1-of-2 slds-text-align_center">
+                    <lightning-button class="slds-col_bump-left" label={removeButtonLabel} variant="brand" onclick={removeStore}></lightning-button>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-text-align_center">
+                    <lightning-button class="slds-col_bump-left" label={continueButtonLabel} variant="brand" onclick={forceUpload}></lightning-button>
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap" if:true={hasNonDuplicateErrors}>
+                <strong><em>* Please address the additional errors unrelated to duplicates, then re-upload the CSV file. You can then select an appropriate action for the duplicate stores.</em></strong>
+            </div>
+        </div>
+    </div>
+</template>

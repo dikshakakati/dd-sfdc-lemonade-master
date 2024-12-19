@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Landing_Page_Link__c</fullName>
+    <description>LEM-5469: Captures the External Landing Page Link.</description>
+    <externalId>false</externalId>
+    <label>External Landing Page Link</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

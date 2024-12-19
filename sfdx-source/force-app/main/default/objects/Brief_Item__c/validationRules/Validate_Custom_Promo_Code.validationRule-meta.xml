@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Custom_Promo_Code</fullName>
+    <active>true</active>
+    <description>LEM-5421</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+ISPICKVAL(Status__c, &quot;Campaign Building&quot;),
+
+(OR(
+ISPICKVAL(Product__c, &quot;Buy Item, Get $X or Y% Off&quot;),
+ISPICKVAL(Product__c, &quot;Buy One, Get One&quot;),
+ISPICKVAL(Product__c, &quot;DoorDash Deals&quot;),
+ISPICKVAL(Product__c, &quot;Try Me Free&quot;),
+ISPICKVAL(Product__c, &quot;First Order, Percentage Off&quot;),
+ISPICKVAL(Product__c, &quot;Free Item Over $X&quot;),
+ISPICKVAL(Product__c, &quot;Order Again&quot;),
+ISPICKVAL(Product__c, &quot;Spend X, Get Y&quot;)
+)),
+
+ISPICKVAL( Redemption_Type__c, &quot;Promo Code&quot;),
+ISBLANK(Custom_Promo_Code__c)
+)</errorConditionFormula>
+    <errorMessage>The ‘Custom Promo Code’ field must be populated to shift the Brief Item status to ‘Campaign Building’ if Redemption Type is set to ‘Promo Code’</errorMessage>
+</ValidationRule>

@@ -1,0 +1,42 @@
+<template>
+    <div class={mainDivClass}>
+      <template if:true={searchInfo.Filter_Allow_Advanced_Operators__c}>
+        <template for:each={selectedRecordsWithOperators} for:item="rec" for:index="index">
+          <span key={rec}>
+            <template if:true={rec.textBefore}>
+              <span class="slds-var-p-top_x-small slds-var-p-bottom_x-small">
+                {rec.textBefore}
+              </span>
+            </template>
+            <template if:true={rec.item}>
+              <c-dd-multi-select-picklist-pill
+                rec={rec.item}
+                pill-index={index}
+                pill-focus-index={pillFocusIndex}
+                icon-name={searchInfo.Icon_Name__c}
+                icon-type={searchInfo.Icon_Type__c}>
+              </c-dd-multi-select-picklist-pill>
+            </template>
+            <template if:true={rec.textAfter}>
+              <span class="slds-var-p-top_x-small slds-var-p-bottom_x-small">
+                {rec.textAfter}
+              </span>
+            </template>
+          </span>
+        </template>
+      </template>
+      <template if:false={searchInfo.Filter_Allow_Advanced_Operators__c}>
+        <template for:each={selectedRecords} for:item="rec" for:index="index">
+          <span key={rec}>
+            <c-dd-multi-select-picklist-pill
+              rec={rec}
+              pill-index={index}
+              pill-focus-index={pillFocusIndex}
+              icon-name={searchInfo.Icon_Name__c}
+              icon-type={searchInfo.Icon_Type__c}>
+            </c-dd-multi-select-picklist-pill>
+          </span>
+        </template>
+      </template>
+    </div>
+  </template>

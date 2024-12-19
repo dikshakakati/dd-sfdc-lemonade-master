@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Toggle_Default</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   Toggle_Default__c ,
+   NOT( Toggle_Filter_Required__c )
+)</errorConditionFormula>
+    <errorDisplayField>Toggle_Default__c</errorDisplayField>
+    <errorMessage>Toggle default can be set only when Toggle Filter is required.</errorMessage>
+</ValidationRule>

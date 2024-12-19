@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner_Name__c</fullName>
+    <description>LEM-1240: It is used to display Account Owner name on Email Templates.</description>
+    <externalId>false</externalId>
+    <formula>Account.Owner.FirstName + &apos; &apos; + Account.Owner.LastName</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Account Owner Name</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-22137: Sales Enablement Access Permission Group. This is the combination of below PSGs:
+     Merchant Services - QuoteToCash
+     Onboarding and Activations - Service Manager
+     SMB Pre-Sales Manager</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Enablement Access</label>
+    <mutingPermissionSets>Sales_Enablement_Access_Muted</mutingPermissionSets>
+    <permissionSets>Allow_Business_Group_Id_Update</permissionSets>
+    <permissionSets>amazonconnect__AC_Agent</permissionSets>
+    <permissionSets>Allow_Duplicate_Photoshoot_Request_Creation</permissionSets>
+    <permissionSets>CRMC_PP__ActionGrid_Users</permissionSets>
+    <permissionSets>Conga_Grid_Access</permissionSets>
+    <permissionSets>Enable_SSO</permissionSets>
+    <permissionSets>Files_Connect</permissionSets>
+    <permissionSets>HasContactRecordCreationPermissionInGuidedFlow</permissionSets>
+    <permissionSets>Log_Access</permissionSets>
+    <permissionSets>Manage_Email_Template</permissionSets>
+    <permissionSets>Manage_Stores</permissionSets>
+    <permissionSets>Mx_Fraud_Documents_Access</permissionSets>
+    <permissionSets>Onboarding_Activations_In_App_Guidance</permissionSets>
+    <permissionSets>Onboarding_and_Activations_App</permissionSets>
+    <permissionSets>Outbound_Integration_Named_Credentials_Access</permissionSets>
+    <permissionSets>Remove_Stores</permissionSets>
+    <permissionSets>Service</permissionSets>
+    <permissionSets>Xrefs_and_Business_Reference</permissionSets>
+    <permissionSets>Create_Public_Links_Access</permissionSets>
+    <permissionSets>Enable_VSP_Recommendations</permissionSets>
+    <permissionSets>MX_Onboarding_Link_PS</permissionSets>
+    <permissionSets>CPQ_License</permissionSets>
+    <permissionSets>Ironclad_Workflow_Launch</permissionSets>
+    <permissionSets>View_Only_QuoteToCash</permissionSets>
+    <permissionSets>Account_Management</permissionSets>
+    <permissionSets>Allow_Account_Team_Member_Update</permissionSets>
+    <permissionSets>Allow_Account_Owner_Field_Update</permissionSets>
+    <permissionSets>Allow_Account_Reparenting</permissionSets>
+    <permissionSets>Allow_PA_Sync_With_Netsuite</permissionSets>
+    <permissionSets>Allow_Netsuite_Restricted_Fields_Update</permissionSets>
+    <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>Ironclad_ReadOnly_Permissions</permissionSets>
+    <permissionSets>CPQ_AA_License</permissionSets>
+    <permissionSets>Enable_Create_and_Customize_List_Views</permissionSets>
+    <permissionSets>QuoteToCash</permissionSets>
+    <permissionSets>Salesforce_for_CPQ_User_Restricted_Access</permissionSets>
+    <permissionSets>SMB_Sales_App</permissionSets>
+    <permissionSets>Sales</permissionSets>
+    <permissionSets>HighVelocitySalesUser</permissionSets>
+    <permissionSets>sbaa__AdvancedApprovalsUser</permissionSets>
+    <permissionSets>My_Items_To_Approve</permissionSets>
+    <permissionSets>Can_Assign_Opportunity_Team_Members_in_Bulk</permissionSets>
+    <permissionSets>Allow_Event_and_Task_Update</permissionSets>
+    <permissionSets>SMB_Vendor_Sales_Create_Quote</permissionSets>
+    <permissionSets>force__SlackSalesCloud</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

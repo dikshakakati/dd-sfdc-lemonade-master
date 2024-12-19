@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POS_Integration_Go_Live_Date__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1162: It indicates Go-Live date for POS integrations.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Note: The Go-Live Date for POS Integrations cannot be less than 5 days from today. Please keep in mind that the POS team activates M-F, and dates that fall on the weekend will not be activated until the following Monday</inlineHelpText>
+    <label>POS Integration Go-Live Date</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

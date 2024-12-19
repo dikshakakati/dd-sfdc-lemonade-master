@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Geo Based ($,%)</fullName>
+        <default>false</default>
+        <label>Geo Based ($,%)</label>
+    </customValue>
+    <customValue>
+        <fullName>Distance Based (incl. tiered)</fullName>
+        <default>false</default>
+        <label>Distance Based (incl. tiered)</label>
+    </customValue>
+    <customValue>
+        <fullName>Distance Based by Geo</fullName>
+        <default>false</default>
+        <label>Distance Based by Geo</label>
+    </customValue>
+    <description>LEM-2064: Drive Product Attributes</description>
+    <masterLabel>Delivery Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

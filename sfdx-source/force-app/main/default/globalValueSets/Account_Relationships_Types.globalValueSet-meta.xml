@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Merchant</fullName>
+        <default>false</default>
+        <label>Merchant</label>
+    </customValue>
+    <customValue>
+        <fullName>Agency</fullName>
+        <default>false</default>
+        <label>Agency</label>
+    </customValue>
+    <customValue>
+        <fullName>Measurement Partner</fullName>
+        <default>false</default>
+        <label>Measurement Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>AdTech</fullName>
+        <default>false</default>
+        <label>AdTech</label>
+    </customValue>
+    <customValue>
+        <fullName>POS/MWP Provider</fullName>
+        <default>false</default>
+        <label>POS/MWP Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Supplier</fullName>
+        <default>false</default>
+        <label>Supplier</label>
+    </customValue>
+    <customValue>
+        <fullName>Delivery Partner</fullName>
+        <default>false</default>
+        <label>Delivery Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Exclusive Delivery Partner</fullName>
+        <default>false</default>
+        <label>Exclusive Delivery Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Franchise</fullName>
+        <default>false</default>
+        <label>Franchise</label>
+    </customValue>
+    <description>LEM-1337: Captures the possible types of Accounts between which relationships can be created</description>
+    <masterLabel>Account Relationships Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

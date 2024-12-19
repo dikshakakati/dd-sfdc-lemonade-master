@@ -1,0 +1,2102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <description>LEM-10841 Navigate to Default Product Selection screen for group after Quote is created.</description>
+        <name>Go_To_Group_Product_Selection</name>
+        <label>Go To Group Product Selection</label>
+        <locationX>2118</locationX>
+        <locationY>4406</locationY>
+        <actionName>c:loadWebPage</actionName>
+        <actionType>component</actionType>
+        <connector>
+            <targetReference>Redirect_Message_Screen</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>url</name>
+            <value>
+                <elementReference>DefaultGroupProductSelection</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>c:loadWebPage</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>LEM:449 Navigate to Product Selection after Quote is created.</description>
+        <name>Go_To_Product_Selection_0</name>
+        <label>Go To Product Selection</label>
+        <locationX>1854</locationX>
+        <locationY>4298</locationY>
+        <actionName>c:loadWebPage</actionName>
+        <actionType>component</actionType>
+        <connector>
+            <targetReference>Redirect_Message_Screen</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>url</name>
+            <value>
+                <elementReference>ProductSelction</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>c:loadWebPage</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Ads_And_Promo_Value</name>
+        <label>Ads And Promo Value</label>
+        <locationX>3218</locationX>
+        <locationY>1682</locationY>
+        <assignmentItems>
+            <assignToReference>AdsAndPromoYes</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Yes</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Create_Default_Group</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Segment</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-14577: Set the Opportunity Contact Role variable check for Contract Signatory Role to true.</description>
+        <name>Assign_Valid_Contract_Signatory_Role_on_Opportunity_Contact_Role</name>
+        <label>Assign Valid Contract Signatory Role on Opportunity Contact Role</label>
+        <locationX>2338</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>isOCRContractSignatory</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iteration_On_Opportunity_Contact_Roles</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-14577: Set the Opportunity Contact Role variable check for primary role to true.</description>
+        <name>Assign_Valid_isPrimary_on_Opportunity_Contact_Role</name>
+        <label>Assign Valid isPrimary on Opportunity Contact Role</label>
+        <locationX>2602</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>isOCRPrimary</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iteration_On_Opportunity_Contact_Roles</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-14577: Set the Opportunity Contact Role variable check for a valid Opportunity Contact Role to true.</description>
+        <name>Assign_Valid_Opportunity_Contact_Role</name>
+        <label>Assign Valid Opportunity Contact Role</label>
+        <locationX>2074</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>isValidOpportunityContactRole</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iteration_On_Opportunity_Contact_Roles</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>highAOVAssignment</name>
+        <label>highAOVAssignment</label>
+        <locationX>2151</locationX>
+        <locationY>2498</locationY>
+        <assignmentItems>
+            <assignToReference>highAOV</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>YesValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iteration_on_Mx_Tags_Association</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Is_Not_Self_Serve</name>
+        <label>Is Not Self Serve</label>
+        <locationX>2118</locationX>
+        <locationY>1274</locationY>
+        <assignmentItems>
+            <assignToReference>SelfServe</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_for_Opportunity_Stages</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>localPremiumAssignment</name>
+        <label>localPremiumAssignment</label>
+        <locationX>2415</locationX>
+        <locationY>2498</locationY>
+        <assignmentItems>
+            <assignToReference>localPremium</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>YesValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iteration_on_Mx_Tags_Association</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Self_Serve_Deal</name>
+        <label>Self Serve Deal</label>
+        <locationX>1854</locationX>
+        <locationY>1274</locationY>
+        <assignmentItems>
+            <assignToReference>SelfServe</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SelfServeQuoteStatus</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_for_Opportunity_Stages</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>topMxAssignment</name>
+        <label>topMxAssignment</label>
+        <locationX>1887</locationX>
+        <locationY>2498</locationY>
+        <assignmentItems>
+            <assignToReference>topMx</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>YesValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iteration_on_Mx_Tags_Association</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>When product insights with brand licensing present then update contracting flow to Templatized wet-sign</description>
+        <name>Update_contracting_flow_to_Templatized_wet_sign</name>
+        <label>Update contracting flow to Templatized wet-sign</label>
+        <locationX>1469</locationX>
+        <locationY>3422</locationY>
+        <assignmentItems>
+            <assignToReference>StoreSpecificPricingYes</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>No</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractingFlowRedlining</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Templatizedwetsign</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PricingVariationScenario</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BrandLicensing</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Ads_Promos_validation</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-17422: It is used to assign Store Specific Variation and Contracting Flow values.</description>
+        <name>Update_StoreSpecific_Pricing_on_Quote</name>
+        <label>Update StoreSpecific Pricing on Quote</label>
+        <locationX>1733</locationX>
+        <locationY>3422</locationY>
+        <assignmentItems>
+            <assignToReference>StoreSpecificPricingYes</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Yes</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractingFlowRedlining</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>REDLINING</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Ads_Promos_validation</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>NoValue</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>YesValue</elementReference>
+        </value>
+    </choices>
+    <constants>
+        <description>LEM-19800: It is used to store the value as Brand Licensing.</description>
+        <name>BrandLicensing</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Brand Licensing</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>ContractingFlowTemplatizedESign</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Templatized e-sign</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>NoValue</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>LEM-17422: It is used to set &apos;Redlining&apos;.</description>
+        <name>REDLINING</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Redlining</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Templatizedwetsign</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Templatized wet-sign</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>YesValue</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>Does the opportunity have the sub-type set to ;Ads and Promos&apos;?</description>
+        <name>Ads_Promos_Sub_type</name>
+        <label>Ads Promos Sub-type?</label>
+        <locationX>3218</locationX>
+        <locationY>1574</locationY>
+        <defaultConnector>
+            <targetReference>Segment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_not_Ads_and_Promos</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Opportunity_Sub_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ads &amp; Promos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_Create_New_Quote_Message</targetReference>
+            </connector>
+            <label>Is not Ads and Promos</label>
+        </rules>
+        <rules>
+            <name>Is_Ads_And_Promo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Opportunity_Sub_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ads &amp; Promos</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ads_And_Promo_Value</targetReference>
+            </connector>
+            <label>Is Ads And Promo</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>It is used o show a warning message when I click on Create Quote button on the Opportunity of Type = Existing and stop creating Pricing Variations Quotes accidentally</description>
+        <name>Check_Ads_Promos_validation</name>
+        <label>Check Ads &amp; Promos validation</label>
+        <locationX>1986</locationX>
+        <locationY>3782</locationY>
+        <defaultConnector>
+            <targetReference>Create_New_Quote_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Ads_Promos_validation_warning</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Opportunity_Sub_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ads &amp; Promos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Warning</targetReference>
+            </connector>
+            <label>Check Ads &amp; Promos validation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>checks if default group needs to be created</description>
+        <name>Check_Create_Default_Group</name>
+        <label>Check Create Default Group</label>
+        <locationX>1986</locationX>
+        <locationY>4190</locationY>
+        <defaultConnector>
+            <targetReference>Create_Group</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Create Default Group Yes</defaultConnectorLabel>
+        <rules>
+            <name>Create_Default_Group_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Create_Default_Group</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Go_To_Product_Selection_0</targetReference>
+            </connector>
+            <label>Create Default Group No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-14105: Check applicable Mx Tags.</description>
+        <name>Check_for_applicable_Mx_Tags</name>
+        <label>Check for applicable Mx Tags</label>
+        <locationX>2283</locationX>
+        <locationY>2390</locationY>
+        <defaultConnector>
+            <targetReference>Iteration_on_Mx_Tags_Association</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Top_Mx</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iteration_on_Mx_Tags_Association.MxTagName__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Top Mx</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Iteration_on_Mx_Tags_Association.MxTagAssociation_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>topMxAssignment</targetReference>
+            </connector>
+            <label>Top Mx</label>
+        </rules>
+        <rules>
+            <name>High_AOV</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iteration_on_Mx_Tags_Association.MxTag__r.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>High AOV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Iteration_on_Mx_Tags_Association.MxTagAssociation_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>highAOVAssignment</targetReference>
+            </connector>
+            <label>High AOV</label>
+        </rules>
+        <rules>
+            <name>Local_Premium</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iteration_on_Mx_Tags_Association.MxTagName__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Local Premium</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Iteration_on_Mx_Tags_Association.MxTagAssociation_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>localPremiumAssignment</targetReference>
+            </connector>
+            <label>Local Premium</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-449 - Opportunity stage should not be Closed Won, Out for Signature, Contract Signed.</description>
+        <name>Check_for_Opportunity_Stages</name>
+        <label>Check for Opportunity Stages</label>
+        <locationX>1986</locationX>
+        <locationY>1466</locationY>
+        <defaultConnector>
+            <targetReference>Segment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_Opportunity_Brand_Relationship_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_Brand_Relationships</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.AccountSegmentSMB</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_Opportunity_Brand_Relationship_Found</targetReference>
+            </connector>
+            <label>No Opportunity Brand Relationship Present</label>
+        </rules>
+        <rules>
+            <name>Check_for_Required_Fields</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Type</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.CurrencyIsoCode</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Required_Fields_are_Missing</targetReference>
+            </connector>
+            <label>Check for Required Fields on Opportunity</label>
+        </rules>
+        <rules>
+            <name>Eligible_opportunity_Stages</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contracting</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_Stage_not_Valid_0</targetReference>
+            </connector>
+            <label>Check for Eligible opportunity Stages</label>
+        </rules>
+        <rules>
+            <name>SMB_Check_fields_on_Account</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Data_Verification_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Verified</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Address_Verification_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Verified</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SMB_Address_and_Data_Verification_Status_Fields_Check</targetReference>
+            </connector>
+            <label>SMB-Check fields on Account</label>
+        </rules>
+        <rules>
+            <name>Check_fields_on_Account</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Data_Verification_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Verified</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Accounts_Fields_Eligibility</targetReference>
+            </connector>
+            <label>ENT-Check fields on Account</label>
+        </rules>
+        <rules>
+            <name>Check_for_SMB_Account_Preferred_Language</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Preferred_Language__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SMB_Preferred_Language_Validation</targetReference>
+            </connector>
+            <label>Check for SMB Account Preferred Language</label>
+        </rules>
+        <rules>
+            <name>Check_Legal_Entity_on_Account</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.DoorDash_Legal_Entity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Business</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Channel_Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Legal_Entity_Validation</targetReference>
+            </connector>
+            <label>Check Legal Entity on Account</label>
+        </rules>
+        <rules>
+            <name>Limit_Quote_Creation_ability_based_on_Account_Fields</name>
+            <conditionLogic>(1 OR 2) OR (3 AND 4 AND 11) OR 5 OR (6 AND NOT(7 OR 8 OR 9 OR 10))</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.BillingCountry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Germany</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.BillingCountry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Japan</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Business</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Type</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Franchise</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Store</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Primary_Vertical__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CPG</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.BillingCountry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>United States</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.BillingCountry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Australia</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.BillingCountry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Canada</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.BillingCountry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Zealand</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Limit_Quote_Creation_based_on_Account</targetReference>
+            </connector>
+            <label>Limit Quote Creation ability based on Account Fields</label>
+        </rules>
+        <rules>
+            <name>Check_for_Existing_Quotes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Quote</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Existing_Quotes_Found</targetReference>
+            </connector>
+            <label>Check for Existing Quotes</label>
+        </rules>
+        <rules>
+            <name>Check_Primary_Vertical_not_equal_to_Rx</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Primary_Vertical__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Rx</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Display_Account_Primary_Vertical_Validation_Message</targetReference>
+            </connector>
+            <label>Check Primary Vertical not equal to Rx</label>
+        </rules>
+        <rules>
+            <name>Check_Contact_with_role_as_Contract_Signatory</name>
+            <conditionLogic>1  AND (NOT (( 2 AND 3 ) OR 4))</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account.Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isOCRPrimary</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isOCRContractSignatory</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isValidOpportunityContactRole</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Display_Primary_Contact_Role_Validation_Message</targetReference>
+            </connector>
+            <label>Check Contact with role as Contract Signatory</label>
+        </rules>
+        <rules>
+            <name>Check_for_Ads_Promo_Deal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ads_Promos_Sub_type</targetReference>
+            </connector>
+            <label>Check for Ads Promo Deal</label>
+        </rules>
+        <rules>
+            <name>Limit_Quote_creation_on_Opportunity_Close_date_in_Past</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpportunityCloseDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account_Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Validation_for_Opp_Close_Date_in_Past</targetReference>
+            </connector>
+            <label>Limit Quote creation on Opportunity Close date in Past</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check product insight with Brand Licensing present on opportunity</description>
+        <name>Check_product_insight_present</name>
+        <label>Check product insight present</label>
+        <locationX>1601</locationX>
+        <locationY>3314</locationY>
+        <defaultConnector>
+            <targetReference>Update_StoreSpecific_Pricing_on_Quote</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Brand_Licensing_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_product_Insights.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_contracting_flow_to_Templatized_wet_sign</targetReference>
+            </connector>
+            <label>Brand Licensing Present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-16198: It Auto update the Pricing Type field on Business Account when more than one core Contract is identified while creating the Quote</description>
+        <name>Evaluate_if_Pricing_Type_should_be_updated_at_the_Account</name>
+        <label>Evaluate if Pricing Type should be updated at the Account</label>
+        <locationX>1799</locationX>
+        <locationY>3098</locationY>
+        <defaultConnector>
+            <targetReference>Check_Ads_Promos_validation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Pricing_Type_to_Store_Specific_Pricing</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Core_Contracts_pertaining_to_Business_Account</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Existing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Opportunity_Sub_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Upgrade</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Opportunity_Sub_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Retention</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Store_Specific_Pricing</targetReference>
+            </connector>
+            <label>Update Pricing Type to Store Specific Pricing</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Indicates if Opportunity/Deal Type is Self-Serve</description>
+        <name>Is_Self_Serve</name>
+        <label>Is Self Serve</label>
+        <locationX>1986</locationX>
+        <locationY>1166</locationY>
+        <defaultConnector>
+            <targetReference>Is_Not_Self_Serve</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Opportunity Deal Type Is Not Self Serve</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Deal_Type_is_Self_Serve</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Deal_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Self-Serve</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Self_Serve_Deal</targetReference>
+            </connector>
+            <label>Opportunity Deal Type is Self Serve</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-14577: It is used to check if Opportunity Contact Role associated on Opportunity has either one Primary Contact and one Contract Signatory, or a single contact that serves as both (Primary Contact and Contract Signatory)</description>
+        <name>Is_Valid_Opportunity_Contact_Role</name>
+        <label>Is Valid Opportunity Contact Role</label>
+        <locationX>2470</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <targetReference>Iteration_On_Opportunity_Contact_Roles</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_for_Contact_Role_as_not_Contract_Signatory_and_not_Primary</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iteration_On_Opportunity_Contact_Roles.Role</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contract Signatory</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Iteration_On_Opportunity_Contact_Roles.IsPrimary</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Valid_Opportunity_Contact_Role</targetReference>
+            </connector>
+            <label>Check for Contact Role as not &apos;Contract Signatory&apos; and not Primary</label>
+        </rules>
+        <rules>
+            <name>Check_for_Contact_Role_as_not_Contract_Signatory</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iteration_On_Opportunity_Contact_Roles.Role</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contract Signatory</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Valid_Contract_Signatory_Role_on_Opportunity_Contact_Role</targetReference>
+            </connector>
+            <label>Check for Contact Role as not &apos;Contract Signatory&apos;</label>
+        </rules>
+        <rules>
+            <name>Check_for_Contact_Role_as_not_Primary</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iteration_On_Opportunity_Contact_Roles.IsPrimary</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Valid_isPrimary_on_Opportunity_Contact_Role</targetReference>
+            </connector>
+            <label>Check for Contact Role as not Primary</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Segment</name>
+        <label>Segment</label>
+        <locationX>1986</locationX>
+        <locationY>2066</locationY>
+        <defaultConnector>
+            <targetReference>Check_Ads_Promos_validation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SMBSegment</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity.Account_Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SMB</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Mx_Tags_for_Quotes</targetReference>
+            </connector>
+            <label>SMBSegment</label>
+        </rules>
+    </decisions>
+    <description>LEM-449,LEM-553: Create Quote from Opportunity
+LEM-5125: Hot fix to allow Quote Creation for CPG Accounts in US, CA, AUS, NZ
+LEM-5412: Add a new logic to check if any existing quotes with status &quot;Out for Signature&quot; or &quot;Contract Singed&quot; is found in the opportunity.
+LEM-6714: On an existing Opportunity, allow quote creation only for Ads Promo Deals
+LEM-9564: Set &quot;Is_this_for_Ads_promos__c&quot; to yes or No based on the opportunity subtype
+LEM-10422: New Quote Status - Self-Serve Activated - Sets &quot;Self-Serve Opportunity/Quote&quot; flag to True based on Opportunity Deal Type
+LEM-11452: Hotfix remove default quote line group
+LEM:12653: Pre-Create Quote Group - revised CCP scope
+LEM:12257: Ability to toggle the Opportunity Deal Type between ‘Full-Serve’ and ‘Self-Serve’
+LEM-9973: Remove ads and promo prompt
+LEM-13378: Added SMB Rx related validations.
+LEM-14085: Added SMB Preferred Language validation
+LEM-14802: Added Opportunity Brand Relationship Validation prior to Quote Creation
+LEM-16198: Auto update the Pricing Type field on Business Account when more than one core Contract is identified
+LEM-17709: Added Account Legal Business Name Validation prior to Quote Creation
+LEM-19800: When product insights with Brand Licensing is present on related existing opp is present then contracting flow will be Templatized wet-sign
+LEM-20708: Removing Legal Business Name validation from Create Quote Flow
+LEM-24062: Show warning message to avoid create Pricing Variations Quotes accidentally</description>
+    <dynamicChoiceSets>
+        <description>LEM - 553 Show the Experience fields on the Create  Quote Screen</description>
+        <name>ExperienceonQuote</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Experience__c</picklistField>
+        <picklistObject>SBQQ__Quote__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>QualifiedOpportunityStages</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>StageName</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Self Serve Status from the quote</description>
+        <name>SelfServeStatus</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Self_Serve_Status__c</picklistField>
+        <picklistObject>SBQQ__Quote__c</picklistObject>
+        <sortOrder>Asc</sortOrder>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-20229 :To enforce a validation that prevents users from creating a Quote on an Opportunity with a close date set in the past.</description>
+        <name>OpportunityCloseDate</name>
+        <dataType>Boolean</dataType>
+        <expression>{!Get_Opportunity.CloseDate} &lt; TODAY()</expression>
+    </formulas>
+    <interviewLabel>Create Quote {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Quote</label>
+    <loops>
+        <description>LEM-14105: It Iterates over Mx Tags association to assign the values as &quot;Yes&quot; on Top Mx, High AOV and Local Premium Fields on Quote.</description>
+        <name>Iteration_on_Mx_Tags_Association</name>
+        <label>Iteration on Mx Tags Association</label>
+        <locationX>1799</locationX>
+        <locationY>2282</locationY>
+        <collectionReference>Get_Mx_Tags_for_Quotes</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_for_applicable_Mx_Tags</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Brand_licensing_Solution</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>LEM-14577: It is used to iterate over the Opportunity Contact Role records associated to the Opportunity.</description>
+        <name>Iteration_On_Opportunity_Contact_Roles</name>
+        <label>Iteration On Opportunity Contact Roles</label>
+        <locationX>1986</locationX>
+        <locationY>674</locationY>
+        <collectionReference>Get_Opportunity_Contact_Role</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Is_Valid_Opportunity_Contact_Role</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Is_Self_Serve</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Create Group Record</description>
+        <name>Create_Group</name>
+        <label>Create Group</label>
+        <locationX>2118</locationX>
+        <locationY>4298</locationY>
+        <connector>
+            <targetReference>Go_To_Group_Product_Selection</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Exception</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Get_Opportunity.Account.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Account__c</field>
+            <value>
+                <elementReference>Get_Opportunity.Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__CustomerTotal__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__ListTotal__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__NetTotal__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Number__c</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Quote__c</field>
+            <value>
+                <elementReference>NewQuoteId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__QuoteLineGroup__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>Create New Quote from Opportunity.</description>
+        <name>Create_New_Quote_0</name>
+        <label>Create Quote</label>
+        <locationX>1986</locationX>
+        <locationY>4082</locationY>
+        <assignRecordIdToReference>NewQuoteId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Check_Create_Default_Group</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Exception</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Account_Segment__c</field>
+            <value>
+                <elementReference>Get_Opportunity.Account.Segment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contracting_Flow__c</field>
+            <value>
+                <elementReference>ContractingFlowRedlining</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CurrencyIsoCode</field>
+            <value>
+                <elementReference>Get_Opportunity.CurrencyIsoCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>High_AOV__c</field>
+            <value>
+                <elementReference>highAOV</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Is_this_for_Ads_Promos__c</field>
+            <value>
+                <elementReference>AdsAndPromoYes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Local_Premium__c</field>
+            <value>
+                <elementReference>localPremium</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Number_of_Stores__c</field>
+            <value>
+                <elementReference>Get_Opportunity.Estimated_Number_of_Stores__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Pricing_Variation_Scenario__c</field>
+            <value>
+                <elementReference>PricingVariationScenario</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Account__c</field>
+            <value>
+                <elementReference>Get_Opportunity.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__LineItemsGrouped__c</field>
+            <value>
+                <elementReference>Create_Default_Group</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Opportunity2__c</field>
+            <value>
+                <elementReference>Get_Opportunity.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__PricebookId__c</field>
+            <value>
+                <elementReference>Get_Pricebook_Id.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Primary__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__StartDate__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__SubscriptionTerm__c</field>
+            <value>
+                <numberValue>12.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Self_Serve_Status__c</field>
+            <value>
+                <elementReference>SelfServeQuoteStatus</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Store_Specific_Variations__c</field>
+            <value>
+                <elementReference>StoreSpecificPricingYes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Top_Mx__c</field>
+            <value>
+                <elementReference>topMx</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__Quote__c</object>
+    </recordCreates>
+    <recordLookups>
+        <description>It is used to fetch solutions where name is Brand Licensing</description>
+        <name>Get_Brand_licensing_Solution</name>
+        <label>Get Brand licensing Solution</label>
+        <locationX>1799</locationX>
+        <locationY>2774</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_product_Insights</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Brand Licensing</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Campaign_Product__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-16198: It Auto update the Pricing Type field on Business Account when more than one core Contract is identified while creating the Quote</description>
+        <name>Get_Core_Contracts_pertaining_to_Business_Account</name>
+        <label>Get Core Contracts pertaining to Business Account</label>
+        <locationX>1799</locationX>
+        <locationY>2990</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Evaluate_if_Pricing_Type_should_be_updated_at_the_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Contract_Split_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Core</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Contract</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-14105: It is used to get the Mx Tag records by Mx Tag Associations.</description>
+        <name>Get_Mx_Tags_for_Quotes</name>
+        <label>Get Mx Tags for Quotes</label>
+        <locationX>1799</locationX>
+        <locationY>2174</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iteration_on_Mx_Tags_Association</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3 OR 4)</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity.Account.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>MxTagName__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Top Mx</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>MxTagName__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>High AOV</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>MxTagName__c</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Local Premium</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Mx_Tag_Association__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>1986</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Opportunity_Brand_Relationships</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-14802: It fetches all Opportunity Brand Relationships related to Opportunity.</description>
+        <name>Get_Opportunity_Brand_Relationships</name>
+        <label>Get Opportunity Brand Relationships</label>
+        <locationX>1986</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Quote</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity_Brand_Relationship__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-13378: It gets the Opportunity Contact Role records associated to the Opportunity related to Quote.</description>
+        <name>Get_Opportunity_Contact_Role</name>
+        <label>Get Opportunity Contact Role</label>
+        <locationX>1986</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iteration_On_Opportunity_Contact_Roles</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Pricebook_Id</name>
+        <label>Get Pricebook Id</label>
+        <locationX>1986</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Opportunity_Contact_Role</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Standard Price Book</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>It is used to fetch the product insights where the solution name is Brand Licensing</description>
+        <name>Get_product_Insights</name>
+        <label>Get product Insights</label>
+        <locationX>1799</locationX>
+        <locationY>2882</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Core_Contracts_pertaining_to_Business_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Product__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Brand_licensing_Solution.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Product_Insights__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Quote</name>
+        <label>Get Quote</label>
+        <locationX>1986</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Pricebook_Id</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>SBQQ__Opportunity2__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SBQQ__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Out for Signature</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBQQ__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Contract Signed</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>SBQQ__Quote__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>LEM-16198: It Auto update the Pricing Type field on Business Account when more than one core Contract is identified while creating the Quote</description>
+        <name>Update_Store_Specific_Pricing</name>
+        <label>Update Store Specific Pricing</label>
+        <locationX>1601</locationX>
+        <locationY>3206</locationY>
+        <connector>
+            <targetReference>Check_product_insight_present</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Pricing_Type__c</field>
+            <value>
+                <stringValue>Store Specific Pricing</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <screens>
+        <description>LEM-841, LEM-13378: It displays a validation message related to Address and Data Verification Status fields on the Account record not having value as &apos;Verified&apos;.</description>
+        <name>Accounts_Fields_Eligibility</name>
+        <label>ENT-Account Segment and Data Verification Status Fields Check</label>
+        <locationX>1106</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Cancel</backButtonLabel>
+        <fields>
+            <name>Required_Fields_0</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please update the Segment and Data Verification Status fields on the Account before proceeding with quote creation.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Cannot_Create_New_Quote_Message</name>
+        <label>Cannot Create New Quote Message</label>
+        <locationX>2954</locationX>
+        <locationY>1682</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>CreateQuoteError</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;You cannot create a new Quote. Please create an amendment instead.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-13378: It displays validation message related to the primary vertical on the Account record not having value as &apos;Rx&apos;.</description>
+        <name>Display_Account_Primary_Vertical_Validation_Message</name>
+        <label>Display Account Primary Vertical Validation Message</label>
+        <locationX>2426</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Required_Field</name>
+            <fieldText>&lt;p&gt;{!$Label.Primary_Vertical_Validation_for_Create_Quote}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-13378: It displays validation message related to the primary contact not being assigned role as “Contract Signatory” on the Opportunity Contact Role record.</description>
+        <name>Display_Primary_Contact_Role_Validation_Message</name>
+        <label>Display Primary Contact Role Validation Message</label>
+        <locationX>2690</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Contact_with_role_as_Contract_Signatory</name>
+            <fieldText>&lt;p&gt;{!$Label.Primary_Contact_Role_Validation_for_Create_Quote}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM - 553 Create Quote enhancements</description>
+        <name>Exception</name>
+        <label>Exception</label>
+        <locationX>2382</locationX>
+        <locationY>4406</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Exception_while_Creating_Quotes</name>
+            <fieldText>&lt;p&gt;An error occurred - {!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Existing_Quotes_Found</name>
+        <label>Existing Quotes Found</label>
+        <locationX>2162</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Existing_Quotes_Found_Message</name>
+            <fieldText>&lt;p&gt;A new Quote cannot be created, as an existing Quote with the status of either “Out for Signature” or “Contract Signed” is already related to this Opportunity.&amp;nbsp;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-1518 Legal Entity is required for Quote Creation</description>
+        <name>Legal_Entity_Validation</name>
+        <label>Legal Entity Validation</label>
+        <locationX>1634</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Legal_Entity_Error_Message</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!$Label.Create_Quote_DoorDash_Legal_Entity_Error}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-1598</description>
+        <name>Limit_Quote_Creation_based_on_Account</name>
+        <label>Limit Quote Creation based on Account</label>
+        <locationX>1898</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Account_Field_Check_for_Quote</name>
+            <fieldText>&lt;p&gt;Quote Creation is not allowed for the selected account. Please review your account selection.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-14802: It displays screen to show error message when no Opportunity Brand Relationships were retrieved.</description>
+        <name>No_Opportunity_Brand_Relationship_Found</name>
+        <label>No Opportunity Brand Relationship Found</label>
+        <locationX>50</locationX>
+        <locationY>1574</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>No_Opportunity_Brand_Relationship_ErrorMessage</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Please ensure Opportunity Brand Relationship is present on the Opportunity before proceeding with quote creation.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM:449 Fault Screen Handling</description>
+        <name>Opportunity_Stage_not_Valid_0</name>
+        <label>Opportunity Stage not Valid</label>
+        <locationX>578</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Invalid_Opportunity_stage_0</name>
+            <fieldText>&lt;p&gt;Quotes cannot be created when the Opportunity is in Stage: Contracting, Closed Won, Closed Lost.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: serif;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Redirect_Message_Screen</name>
+        <label>Redirect Message Screen</label>
+        <locationX>1986</locationX>
+        <locationY>4730</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Redirect_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;{!$Label.Create_Quote_Redirect_Message}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Required_Fields_are_Missing</name>
+        <label>Required Fields are Missing on Opportunity</label>
+        <locationX>314</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Required_Fields</name>
+            <fieldText>&lt;p&gt;Account Name, Opportunity Currency and Type are required fields on the Opportunity to create a Quote. Please enter a value. &lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-841, LEM-13378: It displays a validation message related to Address and Data Verification Status fields on the Account record not having value as &apos;Verified&apos;.</description>
+        <name>SMB_Address_and_Data_Verification_Status_Fields_Check</name>
+        <label>SMB-Address and Data Verification Status Fields Check</label>
+        <locationX>842</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Cancel</backButtonLabel>
+        <fields>
+            <name>SMB_Required_Fields</name>
+            <fieldText>&lt;p&gt;{!$Label.Address_Data_Verification_Validation_for_Create_Quote}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-14085: It is used to display the validation message for Preferred Language for SMB Opportunity quotes.</description>
+        <name>SMB_Preferred_Language_Validation</name>
+        <label>SMB Preferred Language Validation</label>
+        <locationX>1370</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Cancel</backButtonLabel>
+        <fields>
+            <name>Quote_Creation_Validation_for_SMB_Preferred_language</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Please update the &lt;strong&gt;Preferred Language&lt;/strong&gt; field on the associated &lt;strong&gt;Business Account &lt;/strong&gt;before proceeding with quote creation.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Validation_for_Opp_Close_Date_in_Past</name>
+        <label>Validation for Opp Close Date in Past</label>
+        <locationX>3658</locationX>
+        <locationY>1574</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>CloseDate_Validation_Message</name>
+            <fieldText>&lt;p&gt;{!$Label.OpportunityCloseDateValidation}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Warning</name>
+        <label>Warning</label>
+        <locationX>1854</locationX>
+        <locationY>3890</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Cancel</backButtonLabel>
+        <connector>
+            <targetReference>Create_New_Quote_0</targetReference>
+        </connector>
+        <fields>
+            <name>Show_warning_Ads_promos_validation</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;You are about to create a Pricing variation quote which will trigger redlining flow. Please validate before moving forward. If the intention is to amend an existing contract, please click on &apos;Create Amendment&apos;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;If your intention is not to create a pricing variation quote, please click on &apos;X&apos; icon, this will land you on Opportunity details page.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Continue</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>1860</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>AdsAndPromoYes</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>No</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-17422: It is used to update Contracting Flow to Redlining if Store Specific Variation is &apos;Yes&apos;</description>
+        <name>ContractingFlowRedlining</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>ContractingFlowTemplatizedESign</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>Create_Default_Group</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Redirects to product selection screen for group</description>
+        <name>DefaultGroupProductSelection</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>{!$Setup.CPQ_Flows__c.Quote_URL__c}/apex/sb?scontrolCaching=1&amp;id={!NewQuoteId}#/product/lookup?qId={!NewQuoteId}&amp;groupKey=2</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-14105: It is used to capture the Yes or No value if Mx Tag with the name High AOV is found on Account.</description>
+        <name>highAOV</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>NoValue</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-14577: It is used to check if there are Opportunity Contact Roles as &apos;Contract Signatory&apos;.</description>
+        <name>isOCRContractSignatory</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-14577: It is used to check if there is Opportunity Contact Role as &apos;Primary&apos;.</description>
+        <name>isOCRPrimary</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-14577: It is used to check if there are Opportunity Contact Roles as &apos;Contract Signatory&apos; and is primary.</description>
+        <name>isValidOpportunityContactRole</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-14105: It is used to capture the Yes or No value if Mx Tag with the name Local Premium is found on Account.</description>
+        <name>localPremium</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>NoValue</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-449: This variable holds the new QuoteId</description>
+        <name>NewQuoteId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-19800: It is used to store the pricing variation scenario.</description>
+        <name>PricingVariationScenario</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-449:URL to navigate the user directly to Product Selection on Quote Creation</description>
+        <name>ProductSelction</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>{!$Setup.CPQ_Flows__c.Quote_URL__c}/apex/sb?scontrolCaching=1&amp;id={!NewQuoteId}#/product/lookup?qId={!NewQuoteId} </stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Get the record Id</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SelfServe</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SelfServeQuoteStatus</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Draft</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-17422: It is used to set Store Specific Pricing to Yes on Quote.</description>
+        <name>StoreSpecificPricingYes</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>No</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-14105: It is used to capture the Yes or No value if Mx Tag with the name Top Mx is found on Account.</description>
+        <name>topMx</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>NoValue</elementReference>
+        </value>
+    </variables>
+</Flow>

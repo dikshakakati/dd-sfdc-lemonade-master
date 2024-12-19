@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Self_Serve_Step__c</fullName>
+    <description>LEM-14186: It indicates the Self Serve Step where the Mx dropped off in Self Serve Process.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Self Serve Step where the Mx dropped off in Self Serve Process</inlineHelpText>
+    <label>Self Serve Step</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Identity</fullName>
+                <default>false</default>
+                <label>Identity</label>
+            </value>
+            <value>
+                <fullName>Order Protocol</fullName>
+                <default>false</default>
+                <label>Order Protocol</label>
+            </value>
+            <value>
+                <fullName>Menu</fullName>
+                <default>false</default>
+                <label>Menu</label>
+            </value>
+            <value>
+                <fullName>Pricing Plan</fullName>
+                <default>false</default>
+                <label>Pricing Plan</label>
+            </value>
+            <value>
+                <fullName>Banking Information</fullName>
+                <default>false</default>
+                <label>Banking Information</label>
+            </value>
+            <value>
+                <fullName>Unspecified</fullName>
+                <default>false</default>
+                <label>Unspecified</label>
+            </value>
+            <value>
+                <fullName>Store Hours</fullName>
+                <default>false</default>
+                <label>Store Hours</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type_To_Override__c</fullName>
+    <description>LEM-2796: It indicates the Work Order sub type value when overriden by system then needs to be matched while adding the offset for populating PDOA.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Sub Type To Override</label>
+    <inlineHelpText>It is currently used when opportunity supports drive auto-activations</inlineHelpText>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Auto-Activations</fullName>
+                <default>true</default>
+                <label>Auto-Activations</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

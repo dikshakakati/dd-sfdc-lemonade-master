@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-17422: Allow only Account Development, Account Development Manager, SMB Vendor Post-Sales Rep, SMB Vendor Post-Sales Manager, Finance Manager/Approver, Account Manager, Account Manager Manager, System Admin personas to View Create Quote Button.</description>
+    <isLicensed>false</isLicensed>
+    <label>CreateQuote_Users</label>
+</CustomPermission>

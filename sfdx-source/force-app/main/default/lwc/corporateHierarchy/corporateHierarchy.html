@@ -1,0 +1,65 @@
+<template>
+  <div>
+    <div
+      class="slds-grid slds-page-header slds-m-left--small slds-m-right--small slds-m-top--small slds-p-top--none slds-p-bottom--none"
+    >
+      <div class="slds-grid slds-grid_vertical">
+        <div class="slds-col slds-m-top--small">
+          <lightning-breadcrumbs>
+            <lightning-breadcrumb
+              style="text-transform: uppercase"
+              label={objectName}
+              onclick={handleListViewNavigation}
+            >
+            </lightning-breadcrumb>
+            <lightning-breadcrumb label={name} onclick={handleRecordNavigation}>
+            </lightning-breadcrumb>
+          </lightning-breadcrumbs>
+        </div>
+        <div class="slds-page-header__title slds-m-bottom--x-small">
+          {label.corporateHierarchy}
+        </div>
+      </div>
+      <div class="slds-form-element slds-p-top--medium slds-col_bump-left">
+        <label class="slds-checkbox_toggle slds-grid">
+          <span class="slds-form-element__label slds-m-bottom_none toggleStore"
+            >{label.toggleStores}</span
+          >
+          <input
+            type="checkbox"
+            name="checkbox-toggle-20"
+            value="checkbox-toggle-20"
+            aria-describedby="checkbox-toggle-20"
+            onchange={changeToggle}
+          />
+          <span
+            id="checkbox-toggle-20"
+            class="slds-checkbox_faux_container"
+            aria-live="assertive"
+          >
+            <span class="slds-checkbox_faux"></span>
+            <span class="slds-checkbox_on">Enabled</span>
+            <span class="slds-checkbox_off">Disabled</span>
+          </span>
+        </label>
+      </div>
+      <br />
+      <div>
+        <c-dynamic-columns
+          object-name={objectName}
+          onselected={datashow}
+          field-set-name={fieldSetName}
+          max-columns={maxColumns}
+          required-options={requiredOptions}
+        ></c-dynamic-columns>
+      </div>
+    </div>
+    <c-display-account-hierarchy
+      record-id={recordId}
+      account-lookup="ParentId"
+      grid-columns={gridColumns}
+      grid-fields={gridFields}
+      report-name={reportName}
+    ></c-display-account-hierarchy>
+  </div>
+</template>

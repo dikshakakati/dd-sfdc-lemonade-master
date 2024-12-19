@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Installment_PayPeriod_before_CreatedDate</fullName>
+    <active>true</active>
+    <description>LEM-16860: Validation to check for installment pay period value is lesser than start date.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  ISCHANGED(ApprovalStatus__c),
+  ISPICKVAL(SBQQ__Status__c, &apos;Draft&apos;),
+  OR(
+    Account_Billing_Country_Code__c = &apos;US&apos;,
+    Account_Billing_Country_Code__c = &apos;CA&apos;,
+    Account_Billing_Country_Code__c = &apos;AU&apos;,
+    Account_Billing_Country_Code__c = &apos;NZ&apos;
+  ),
+  Segment__c = &apos;SMB&apos;,
+  OR(
+    AND(NOT(ISNULL(Installment_1_Pay_Period__c)), Installment_1_Pay_Period__c &lt; DATEVALUE(CreatedDate)),
+    AND(NOT(ISNULL(Installment_2_Pay_Period__c)), Installment_2_Pay_Period__c &lt; DATEVALUE(CreatedDate)),
+    AND(NOT(ISNULL(Installment_3_Pay_Period__c)), Installment_3_Pay_Period__c &lt; DATEVALUE(CreatedDate)),
+    AND(NOT(ISNULL(Installment_4_Pay_Period__c)), Installment_4_Pay_Period__c &lt; DATEVALUE(CreatedDate))
+  )
+)
+</errorConditionFormula>
+    <errorMessage>Installment pay period cannot be less than the Quote Created Date</errorMessage>
+</ValidationRule>

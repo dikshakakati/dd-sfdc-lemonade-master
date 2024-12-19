@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+		<members>Order.CPQ_Pricing_Tier__c</members>
+		<members>Order.SMB_Package_Check__c</members>
+		<members>SBQQ__QuoteLine__c.CPQ_Pricing_Tier__c</members>
+		<members>SBQQ__Quote__c.CPQ_Pricing_Tier__c</members>
+		<members>SBQQ__Quote__c.SMB_Package_Check__c</members>
+		<members>Lead.Q_assign_First_Assigned_Date__c</members>
+		<members>Lead.Q_assign_Last_Assigned_Date__c</members>
+		<members>Opportunity.Q_assign_Last_Assigned_Date__c</members>
+		<members>Opportunity.Q_assign_First_Assigned_Date__c</members>
+		<members>Opportunity.Opportunity_Source__c</members>
+		<members>WorkOrder.SSMO_UUID__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>OrderItem</members>
+		<name>ApexTrigger</name>
+	</types>
+    <version>55.0</version>
+</Package>

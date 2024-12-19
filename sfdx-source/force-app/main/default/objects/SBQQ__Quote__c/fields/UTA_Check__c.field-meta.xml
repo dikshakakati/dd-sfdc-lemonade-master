@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UTA_Check__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description>LEM-16304 created as part of Quote RESSMO Eligibility</description>
+    <externalId>false</externalId>
+    <formula>AND(
+/*ISNULL( X0_Commission_End_Date__c ),*/
+ISNULL( X0_Commission_Start_Date__c ),
+ISPICKVAL( Eligible_location_for_0_Commission_Rate__c ,&apos;&apos;),
+ISPICKVAL( X0_Commission_of_days__c ,&apos;&apos;),
+ISPICKVAL( Storefront_Free_Trail_Duration__c ,&apos;&apos;),
+ISPICKVAL( Storefront_Free_Delivery_Duration__c ,&apos;&apos;),
+/*ISNULL( Fulfilled_Orders__c ),*/
+ISNULL( DoorDash_Storefront_Commitment__c ),
+ISNULL ( DoorDash_Drive_Commitment__c ),
+OR(
+ISPICKVAL( DashPass_Commitment__c ,&apos;No&apos;),
+ISPICKVAL( DashPass_Commitment__c ,&apos;&apos;)
+),
+ISNULL( DashPass_Exclusive_Menu_Item_Commitment__c ),
+ISNULL( PickUp_Program_Commitment__c ),
+OR(
+ISPICKVAL( Pricing_Parity_Commitment__c ,&apos;No&apos;),
+ISPICKVAL( Pricing_Parity_Commitment__c ,&apos;&apos;)
+),
+OR(
+ISPICKVAL( Loyalty_Program_Commitment__c ,&apos;No&apos;),
+ISPICKVAL( Loyalty_Program_Commitment__c ,&apos;&apos;)
+),
+ISNULL(Co_Funded_Promo_Structure_Merchant__c),
+OR(
+ISPICKVAL( Mx_Evergreen_promo_Commitment__c ,&apos;No&apos;),
+ISPICKVAL( Mx_Evergreen_promo_Commitment__c ,&apos;&apos;)
+),
+ISNULL( Sponsored_Listing_Commitment__c ),
+OR(
+ISPICKVAL( In_app_merchandising_Benefit__c ,&apos;No&apos;),
+ISPICKVAL( In_app_merchandising_Benefit__c ,&apos;&apos;)
+),
+ISNULL( Social_Post_Commitment_Quarterly__c ),
+ISNULL( DMF_Cofunding_Amount__c ),
+ISPICKVAL( Drive_Me_Free_Frequency__c, &apos;&apos;),
+ISNULL( New_Store_Expansion_Amount__c ),
+OR(
+ISPICKVAL( Accelerator_Package__c ,&apos;No&apos;),
+ISPICKVAL( Accelerator_Package__c ,&apos;&apos;)
+),
+
+ISNULL(Avoidable_Dasher_Wait_In_minutes__c),
+ISNULL(Canceled_Orders__c),
+ISNULL(Acceptance_Rate__c),
+ISNULL(Missing_and_Incorrect_Orders__c),
+ISPICKVAL( Standard_Marketing_Package_Benefit__c, &apos;&apos;),
+ISNULL(Marketing_Spend_Benefit__c),
+ISNULL(Evergreen_Promo_Commitment_Quarterly__c),
+ISPICKVAL( Drive_Me_Free_Frequency_number__c, &apos;&apos;),
+ISPICKVAL( Monitoring_Frequency__c, &apos;&apos;),
+ISPICKVAL( Duration__c, &apos;&apos;),
+ISNULL(Target_1__c),
+ISNULL(Target_2__c),
+ISNULL(Target_3__c),
+ISNULL(Rebate_1__c),
+ISNULL(Rebate_2__c),
+ISNULL(Rebate_3__c),
+ISNULL(Marketing_Prgm_Spend_Commitment_Annual__c)
+
+)</formula>
+    <label>UTA Check</label>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

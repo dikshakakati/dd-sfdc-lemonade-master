@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Validate_Handoff_Fields_On_AMAD_Handoff</fullName>
+  <active>true</active>
+  <description>LEM-14016: It is used to validate Timeframe Given for Rep Outreach, Handoff Details, &amp; Outreach Type Requested fields to create a AM &lt;&gt; AD Handoff Activity.</description>
+  <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Task_Validation_Rules),
+  TEXT(Type) = $Label.Task_Type_AMAD_Handoff,
+  OR(
+  ISBLANK(TEXT(Timeframe_Given_for_Outreach__c)),
+  ISBLANK(TEXT(Handoff_Details__c)),
+  ISBLANK(TEXT(Outreach_Type_Requested__c))
+  )
+  )</errorConditionFormula>
+  <errorMessage>Please enter information in Timeframe Given for Rep Outreach, Handoff Details, &amp; Outreach Type Requested fields to create a AM &lt;&gt; AD Handoff Activity.</errorMessage>
+</ValidationRule>
+

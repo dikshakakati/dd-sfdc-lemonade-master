@@ -1,0 +1,66 @@
+{
+  "addressVerificationInfo": {
+    "alcoholRules": {
+      "alcoholAllowanceCategory": "Dry"
+    },
+    "startingPoint": {
+      "startingPoint": "ON: Agincourt",
+      "Id": 10103
+    },
+    "submarket": {
+      "name": "Scarborough",
+      "id": "9094"
+    },
+    "validatedAddress": {
+      "timeZone": "America/Toronto",
+      "addressId": "51416762",
+      "postalCode": "M3P 2L6",
+      "countryShortname": "CA",
+      "country": "Canada",
+      "state": "ON",
+      "city": "Toronto",
+      "addressLine2": "",
+      "addressLine1": "1500 Kennedy Road",
+      "longitude": -73.980294,
+      "latitude": 40.7671773
+    },
+    "addressVerificationDate": "2024-05-24T05:19:57.932Z",
+    "rejectedReason": null,
+    "addressVerificationStatus": "Verified"
+  },
+  "hasValidEmail": true,
+  "matchedRecords": {
+    "account": [{
+        "id": "001O100000AogG4IAJ"
+      }],
+    "contact": [{
+      "id" : "003O100000EloWlIAJ"
+    }],
+    "lead": []
+  },
+  "ownerPhone": "+15667676767",
+  "treatmentGroups": ["is_singularity_exp"],
+  "selectedPackageUuid": "a436236c-595d-4891-99d8-3d8c931d9f82",
+  "menuLinks": ["s3://test/menu.jpg", "https://menu.com"],
+  "storeHours": "Monday 8:00PM-2:30AM(next day), Tuesday 2:30AM-4:30AM,8:00PM-2:30AM(next day), Wednesday 2:30AM-4:30AM,8:00PM-2:30AM(next day), Thursday 2:30AM-4:30AM,8:00PM-2:30AM(next day), Friday 2:30AM-4:30AM,8:00PM-2:30AM(next day), Saturday 2:30AM-4:30AM,8:00PM-2:30AM(next day), Sunday 2:00PM-10:00PM",
+  "orderProtocol": "ORDER_PROTOCOL_TABLET",
+  "businessId": 123456,
+  "storeId": 123456,
+  "storeAddress": {
+    "postalCode": "M2P 2L6",
+    "country": "CA",
+    "state": "ON",
+    "city": "Toronto",
+    "addressLine1": "1500 Kennedy Road"
+  },
+  "experiences": ["DOORDASH"],
+  "selfServeStep": "SELF_SERVE_STEP_MARKETING",
+  "locale": "en-US",
+  "verticalType": "VERTICAL_TYPE_RESTAURANT",
+  "email": "saranginvalid3@gmail.com",
+  "businessPhone": "0987654321",
+  "ownerLastName": "Cafe El Tapatio (Milwaukee Ave) (Glenview)",
+  "ownerFirstName": "Cafe El Tapatio (Milwaukee Ave) (Glenview)",
+  "storeName": "Sarang Store",
+  "sourceUniqueId": "79k4d787-66TH-4bb0-93ed-4b0bc2ec1cf8"
+}

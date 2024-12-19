@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Manager_Commission_Threshold__c</fullName>
+    <description>LEM-185: Initial Setup of Commission Rate Object</description>
+    <externalId>false</externalId>
+    <label>User Manager Commission Threshold</label>
+    <precision>17</precision>
+    <required>false</required>
+    <scale>5</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

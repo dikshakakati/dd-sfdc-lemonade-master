@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>true</custom>
+    <description>LEM-3859: It is used to enforce IP ranges related to Nintex integration.</description>
+    <layoutAssignments>
+        <layout>Case-Bulk Upload Request</layout>
+        <recordType>Case.Bulk_Upload_Request</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Xref__c-Xref Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Business Account Layout</layout>
+        <recordType>Account.Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Store Account Layout</layout>
+        <recordType>Account.Store</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Business Account Layout</layout>
+        <recordType>Account.Channel_Partner</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brand__c-Brand Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brand_Association__c-Brand Association Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account_Payment_Account_Relation__c-Account Payment Account Relation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account_Relationship__c-Account Relationship Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Campaign-Campaign Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-POS Integration</layout>
+        <recordType>Case.POS_Integrations</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-SO Support Request</layout>
+        <recordType>Case.SO_Support_Request</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Contact-Contact Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Contact_Payment_Account_Relation__c-Contact Payment Account Relation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Log__c-Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Order-SBQQ__CPQ Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OrderItem-SBQQ__CPQ Order Product Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brief__c-Brief Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity_Brand_Relationship__c-Opportunity Brand Relationship</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Campaign_Program__c-Campaign Program</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lead-Lead</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Payment_Account__c-Invoice Page Layout</layout>
+        <recordType>Payment_Account__c.Invoice</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Payment_Account__c-Payment Account Layout</layout>
+        <recordType>Payment_Account__c.Payments</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PricebookEntry-Price Book Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Provisioning_History__c-Provisioning History</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Readiness_Check_Failure__c-Readiness Check Failure</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS Approved Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_Approved_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS Draft Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_Draft_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS In Progress Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_In_Progress_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkOrder-Work Order</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlan-Work Plan</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlanTemplateEntry-Work Plan Template Entry</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStep-Work Step</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStepDependencyTemplate__c-Work Step Dependency Template</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStepDependency__c-Work Step Dependency</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Outlook-Email Sync</layout>
+    </layoutAssignments>
+    <loginIpRanges>
+        <description>Temporarily bypassing IP ranges till final resolution on external systems.</description>
+        <endAddress>255.255.255.255</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>13.64.137.209</endAddress>
+        <startAddress>13.64.137.209</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>13.64.141.187</endAddress>
+        <startAddress>13.64.141.187</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>13.70.128.136</endAddress>
+        <startAddress>13.70.128.136</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia, Canada IP Range</description>
+        <endAddress>13.70.131.212</endAddress>
+        <startAddress>13.70.131.212</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>13.77.50.106</endAddress>
+        <startAddress>13.77.50.106</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>13.88.152.153</endAddress>
+        <startAddress>13.88.152.153</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>13.91.40.30</endAddress>
+        <startAddress>13.91.40.30</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>13.91.41.7</endAddress>
+        <startAddress>13.91.41.7</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>13.91.46.203</endAddress>
+        <startAddress>13.91.46.203</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>13.91.82.173</endAddress>
+        <startAddress>13.91.82.173</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>20.67.206.137</endAddress>
+        <startAddress>20.67.206.137</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>20.67.207.5</endAddress>
+        <startAddress>20.67.207.5</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>20.67.207.30</endAddress>
+        <startAddress>20.67.207.30</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>20.67.207.53</endAddress>
+        <startAddress>20.67.207.53</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>20.67.207.243</endAddress>
+        <startAddress>20.67.207.243</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>20.67.207.250</endAddress>
+        <startAddress>20.67.207.250</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - UK IP Range</description>
+        <endAddress>20.90.134.14</endAddress>
+        <startAddress>20.90.134.14</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - UK IP Range</description>
+        <endAddress>20.90.202.106</endAddress>
+        <startAddress>20.90.202.106</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - UK IP Range</description>
+        <endAddress>20.90.202.153</endAddress>
+        <startAddress>20.90.202.153</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - UK IP Range</description>
+        <endAddress>20.90.207.13</endAddress>
+        <startAddress>20.90.207.13</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - UK IP Range</description>
+        <endAddress>20.90.207.45</endAddress>
+        <startAddress>20.90.207.45</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - UK IP Range</description>
+        <endAddress>20.90.207.109</endAddress>
+        <startAddress>20.90.207.109</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>20.107.224.10</endAddress>
+        <startAddress>20.107.224.10</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - UK IP Range</description>
+        <endAddress>20.108.89.172</endAddress>
+        <startAddress>20.108.89.172</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>20.184.242.129</endAddress>
+        <startAddress>20.184.242.129</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>20.184.242.157</endAddress>
+        <startAddress>20.184.242.157</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>20.184.243.214</endAddress>
+        <startAddress>20.184.243.214</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>23.101.230.162</endAddress>
+        <startAddress>23.101.230.162</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>23.101.235.11</endAddress>
+        <startAddress>23.101.235.11</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>23.101.238.27</endAddress>
+        <startAddress>23.101.238.27</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>23.101.238.134</endAddress>
+        <startAddress>23.101.238.134</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>23.101.238.167</endAddress>
+        <startAddress>23.101.238.167</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>23.101.239.142</endAddress>
+        <startAddress>23.101.239.142</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>40.78.11.12</endAddress>
+        <startAddress>40.78.11.12</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>40.87.134.251</endAddress>
+        <startAddress>40.87.134.251</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>40.87.138.71</endAddress>
+        <startAddress>40.87.138.71</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>40.112.243.0</endAddress>
+        <startAddress>40.112.243.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>40.112.243.57</endAddress>
+        <startAddress>40.112.243.57</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>40.112.255.35</endAddress>
+        <startAddress>40.112.255.35</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>40.113.68.216</endAddress>
+        <startAddress>40.113.68.216</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>40.115.74.25</endAddress>
+        <startAddress>40.115.74.25</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>40.115.90.254</endAddress>
+        <startAddress>40.115.90.254</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>40.115.98.85</endAddress>
+        <startAddress>40.115.98.85</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Australia IP Range</description>
+        <endAddress>40.127.95.244</endAddress>
+        <startAddress>40.127.95.244</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Canada IP Range</description>
+        <endAddress>52.228.84.36</endAddress>
+        <startAddress>52.228.84.36</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Canada IP Range</description>
+        <endAddress>52.228.104.177</endAddress>
+        <startAddress>52.228.104.177</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Canada IP Range</description>
+        <endAddress>52.228.106.58</endAddress>
+        <startAddress>52.228.106.58</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Canada IP Range</description>
+        <endAddress>52.228.107.144</endAddress>
+        <startAddress>52.228.107.144</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Canada IP Range</description>
+        <endAddress>52.228.107.186</endAddress>
+        <startAddress>52.228.107.186</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Canada IP Range</description>
+        <endAddress>52.228.107.236</endAddress>
+        <startAddress>52.228.107.236</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Canada IP Range</description>
+        <endAddress>52.228.108.194</endAddress>
+        <startAddress>52.228.108.194</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - Europe IP Range</description>
+        <endAddress>104.41.226.28</endAddress>
+        <startAddress>104.41.226.28</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud - USA IP Range</description>
+        <endAddress>104.42.186.75</endAddress>
+        <startAddress>104.42.186.75</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud Email IP Ranges</description>
+        <endAddress>149.72.132.168</endAddress>
+        <startAddress>149.72.132.168</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud Email IP Ranges</description>
+        <endAddress>167.89.109.75</endAddress>
+        <startAddress>167.89.109.75</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>180.151.144.34</endAddress>
+        <startAddress>180.151.144.34</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Nintex Workflow Cloud Email IP Ranges</description>
+        <endAddress>198.21.3.35</endAddress>
+        <startAddress>198.21.3.35</startAddress>
+    </loginIpRanges>
+    <userLicense>Salesforce</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ActivitiesAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AddDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AllowViewKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ApexRestServices</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ApiEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AssignTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterEditOwnPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterFileLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterInternalUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterInviteExternalUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterOwnGroups</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ContentWorkspaces</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateCustomizeFilters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateCustomizeReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DistributeFromPersWksp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditEvent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EmailMass</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EmailSingle</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EnableNotifications</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ExportReport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>LightningConsoleAllowedForUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LightningExperienceUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ListEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MassInlineEdit</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RunReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ShowCompanyNameAsUserBadge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubscribeToLightningReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TransactionalEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDeveloperName</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewHelpLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewRoles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewSetup</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewTrustMeasures</name>
+    </userPermissions>
+</Profile>

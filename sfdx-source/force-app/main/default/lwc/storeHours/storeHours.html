@@ -1,0 +1,22 @@
+<!--
+  @description       : Store Hours Input component reusable
+  @author            : VenkateshDD
+  @group             : DDMx RESSMO - Aethereus
+  @last modified on  : 07-02-2024
+  @last modified by  : VenkateshDD
+-->
+<template>
+      <template if:true={loadComponent}>
+        <div class="slds-gutters slds-var-p-around_small" style="display: inline-flex;">
+          <div class="slds-align-content-center">
+            <label class="slds-form-element__label slds-p-left — xx-small">Same store hours to all days in a week</label>
+          </div>
+          <div>
+            <lightning-input class="slds-p-top_small toggleShiftClass" variant="label-hidden" type="toggle" onchange={handleAllDaysToggle} checked={isAllDaysSame} message-toggle-active="" message-toggle-inactive=""></lightning-input>
+          </div>
+        </div>
+        <template for:each={valuesToShow} for:item="day">
+          <c-store-hours-day key={day.name} day-info={day} onchangeinvalue={changeInValue}></c-store-hours-day>
+        </template>
+      </template>
+  </template>

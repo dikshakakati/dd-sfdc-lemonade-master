@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>true</custom>
+    <description>LEM-3859: It is used to enforce IP ranges related to Woflow integration.</description>
+    <layoutAssignments>
+        <layout>Case-Bulk Upload Request</layout>
+        <recordType>Case.Bulk_Upload_Request</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Xref__c-Xref Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Business Account Layout</layout>
+        <recordType>Account.Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Store Account Layout</layout>
+        <recordType>Account.Store</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Business Account Layout</layout>
+        <recordType>Account.Channel_Partner</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brand__c-Brand Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brand_Association__c-Brand Association Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account_Payment_Account_Relation__c-Account Payment Account Relation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account_Relationship__c-Account Relationship Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Campaign-Campaign Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-POS Integration</layout>
+        <recordType>Case.POS_Integrations</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-SO Support Request</layout>
+        <recordType>Case.SO_Support_Request</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Contact-Contact Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Contact_Payment_Account_Relation__c-Contact Payment Account Relation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Log__c-Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Order-SBQQ__CPQ Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OrderItem-SBQQ__CPQ Order Product Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brief__c-Brief Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity_Brand_Relationship__c-Opportunity Brand Relationship</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Campaign_Program__c-Campaign Program</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lead-Lead</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Payment_Account__c-Invoice Page Layout</layout>
+        <recordType>Payment_Account__c.Invoice</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Payment_Account__c-Payment Account Layout</layout>
+        <recordType>Payment_Account__c.Payments</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PricebookEntry-Price Book Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Provisioning_History__c-Provisioning History</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Readiness_Check_Failure__c-Readiness Check Failure</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS Approved Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_Approved_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS Draft Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_Draft_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS In Progress Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_In_Progress_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkOrder-Work Order</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlan-Work Plan</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlanTemplateEntry-Work Plan Template Entry</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStep-Work Step</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStepDependencyTemplate__c-Work Step Dependency Template</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStepDependency__c-Work Step Dependency</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Outlook-Email Sync</layout>
+    </layoutAssignments>
+    <loginIpRanges>
+        <description>Woflow development VPN allowedlist.</description>
+        <endAddress>52.33.51.171</endAddress>
+        <startAddress>52.33.51.171</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>Woflow Production VPN allowedlist.</description>
+        <endAddress>52.33.179.8</endAddress>
+        <startAddress>52.33.179.8</startAddress>
+    </loginIpRanges>
+    <userLicense>Salesforce</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ActivitiesAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AddDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AllowViewKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ApexRestServices</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ApiEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AssignTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterEditOwnPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterFileLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterInternalUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterInviteExternalUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterOwnGroups</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ContentWorkspaces</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateCustomizeFilters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateCustomizeReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DistributeFromPersWksp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditEvent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EmailMass</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EmailSingle</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EnableNotifications</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ExportReport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>LightningConsoleAllowedForUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LightningExperienceUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ListEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MassInlineEdit</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RunReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ShowCompanyNameAsUserBadge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubscribeToLightningReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TransactionalEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDeveloperName</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewHelpLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewRoles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewSetup</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewTrustMeasures</name>
+    </userPermissions>
+</Profile>

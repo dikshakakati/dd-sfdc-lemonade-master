@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_Store_Id__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-5768: Represents the ID of the Drive store in MINT. We stamp this in SFDC while processing COO for this store</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents the ID of the Drive store in MINT</inlineHelpText>
+    <label>Drive Store Id</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

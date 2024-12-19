@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Req_1</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( Return_Fields__c )</errorConditionFormula>
+    <errorDisplayField>Return_Fields__c</errorDisplayField>
+    <errorMessage>This is required...</errorMessage>
+</ValidationRule>

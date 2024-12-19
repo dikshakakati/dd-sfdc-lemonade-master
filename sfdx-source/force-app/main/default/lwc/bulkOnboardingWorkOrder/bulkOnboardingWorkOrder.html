@@ -1,0 +1,168 @@
+<template>
+    <!-- Stage / Progress Indicator -->
+    <c-bulk-onboarding-stage-bar
+      current-step={currentStep}
+    ></c-bulk-onboarding-stage-bar>
+
+    <lightning-card class="slds-theme_shade">
+      <div class="slds-p-horizontal_medium">
+        <template if:true={isLoading}>
+          <div class="slds-spinner_container">
+            <div
+              class="slds-spinner slds-spinner_brand slds-spinner_medium"
+              role="status"
+            >
+              <span class="slds-assistive-text">Loading</span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+          </div>
+        </template>
+        <template if:true={isSaving}>
+          <div class="slds-spinner_container">
+            <div
+              class="slds-spinner slds-spinner_brand slds-spinner_medium"
+              role="status"
+            >
+              <span class="slds-assistive-text">Saving</span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+          </div>
+        </template>
+
+        <div class={createNewFormClass}>
+          <!-- Button to switch between WO creation and WO selection -->
+          <div class="slds-p-vertical_medium">
+            <a onclick={switchToWorkOrderSelection}
+              >Would you like to select from an existing Work Order instead?</a
+            >
+          </div>
+
+          <lightning-record-edit-form
+            object-api-name="WorkOrder"
+            class="work-order-form"
+            onsubmit={handleSubmit}
+          >
+            <lightning-layout multiple-rows="true">
+              <lightning-layout-item size="6">
+                <lightning-input-field
+                  field-name="AccountId"
+                  value={accountId}
+                  variant="label-stacked"
+                  readonly="true"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Menu_to_be_Completed_By__c"
+                  onchange={handleMenuUpdate}
+                  variant="label-stacked"
+                  required={isMenuToBeCompletedByRequired}
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Order_Protocol__c"
+                  variant="label-stacked"
+                  onchange={handleOrderProtocolUpdate}
+                  required={isOrderProtocolRequired}
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Activated_Centrally_AC__c"
+                  variant="label-stacked"
+                  value={activatedCentrallyValue}
+                  onchange={handleActivatedCentrallyUpdate}
+                  required={isActivatedCentrallyRequired}
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Menu_Setup_Method__c"
+                  variant="label-stacked"
+                ></lightning-input-field>
+                <lightning-input-field
+                  value={defaultProvisioningProcess}
+                  field-name="Business_to_Store_Assignment__c"
+                  variant="label-stacked"
+                  required="true"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Estimated_Number_Of_Stores__c"
+                  variant="label-stacked"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Work_Order_Source__c"
+                  variant="label-stacked"
+                ></lightning-input-field>
+              </lightning-layout-item>
+              <lightning-layout-item size="6">
+                <lightning-input-field
+                  field-name="Contract__c"
+                  value={contractId}
+                  variant="label-stacked"
+                  readonly
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Proposed_Date_of_Activation__c"
+                  variant="label-stacked"
+                  required={isProposedDateOfActivationRequired}
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Opportunity__c"
+                  value={opportunityId}
+                  variant="label-stacked"
+                ></lightning-input-field>
+                <lightning-combobox
+                  class="slds-p-horizontal_xx-small"
+                  name="type"
+                  label="Type"
+                  value={defaultType}
+                  options={typeOptions}
+                  disabled
+                ></lightning-combobox>
+                <lightning-input-field
+                  field-name="Sub_Type__c"
+                  variant="label-stacked"
+                ></lightning-input-field>
+                <lightning-combobox
+                  class="slds-p-horizontal_xx-small"
+                  name="status"
+                  label="Status"
+                  value={defaultStatus}
+                  options={statusOptions}
+                  disabled
+                ></lightning-combobox>
+                <lightning-input-field
+                  field-name="Proposed_Date_of_Tablet__c"
+                  variant="label-stacked"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="POS_Integration_Type__c"
+                  variant="label-stacked"
+                  required={isPosIntegrationTypeRequired}
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Google_Sheet_URL__c"
+                  variant="label-stacked"
+                ></lightning-input-field>
+              </lightning-layout-item>
+
+              <lightning-layout-item size="12">
+                <lightning-input-field
+                  field-name="Sales_Notes_for_Menu_Team__c"
+                  variant="label-stacked"
+                ></lightning-input-field>
+              </lightning-layout-item>
+            </lightning-layout>
+
+            <!-- Footer -->
+            <div
+              class="slds-p-around_medium slds-grid slds-grid_align-end slds-border_top slds-border_light"
+            >
+              <lightning-button
+                variant="brand"
+                type="submit"
+                name="save"
+                label="Next"
+              ></lightning-button>
+            </div>
+          </lightning-record-edit-form>
+        </div>
+      </div>
+    </lightning-card>
+  </template>

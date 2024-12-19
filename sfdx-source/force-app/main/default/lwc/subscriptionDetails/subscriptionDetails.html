@@ -1,0 +1,140 @@
+<!--
+  @description       :
+  @author            : Gaurav
+  @group             :
+  @last modified on  : 08-09-2024
+  @last modified by  : Gaurav
+-->
+<template>
+  <template lwc:if={showComponent}>
+    <!-- Show subscription records  -->
+    <template lwc:if={areSubscriptionRecordsFound}>
+      <!-- Iterate over subscription records  -->
+      <template for:each={subscriptions} for:item="data" for:index="dataIndex">
+        <div
+          key={data.packageName}
+          class="slds-m-vertical_small slds-box slds-box_xx-small"
+        >
+          <!-- Subscription grouped by package  -->
+          <div class="slds-grid slds-wrap slds-p-around_x-small">
+            <span>
+              <template lwc:if={data.showPackage}>
+                <lightning-icon
+                  icon-name="utility:chevrondown"
+                  data-row-index={dataIndex}
+                  onclick={handlePackageAccordion}
+                  size="x-small"
+                  alternative-text="Accordion"
+                  title="Accordion"
+                ></lightning-icon>
+              </template>
+              <template lwc:else>
+                <lightning-icon
+                  icon-name="utility:chevronright"
+                  data-row-index={dataIndex}
+                  onclick={handlePackageAccordion}
+                  size="x-small"
+                  alternative-text="Accordion"
+                  title="Accordion"
+                ></lightning-icon>
+              </template>
+
+              &nbsp;&nbsp;
+              <b> {data.packageName} </b>
+            </span>
+          </div>
+
+          <!-- package accordion  -->
+          <template lwc:if={data.showPackage}>
+            <!-- Active rates -->
+            <template lwc:if={data.areActiveRateRecordsFound}>
+              <div class="slds-box slds-box_xx-small slds-m-bottom_xx-small">
+                <div class="slds-grid slds-wrap slds-p-around_x-small">
+                  <template lwc:if={data.showActiveSubscription}>
+                    <lightning-icon
+                      icon-name="utility:chevrondown"
+                      data-row-index={dataIndex}
+                      onclick={handleActiveRateAccordion}
+                      size="x-small"
+                      alternative-text="Accordion"
+                      title="Accordion"
+                    ></lightning-icon>
+                  </template>
+                  <template lwc:else>
+                    <lightning-icon
+                      icon-name="utility:chevronright"
+                      data-row-index={dataIndex}
+                      onclick={handleActiveRateAccordion}
+                      size="x-small"
+                      alternative-text="Accordion"
+                      title="Accordion"
+                    ></lightning-icon>
+                  </template>
+
+                  &nbsp;&nbsp; {activeRateLabel}
+                </div>
+
+                <!-- Active rates datatable-->
+                <template lwc:if={data.showActiveSubscription}>
+                  <div class="slds-p-bottom--xx-small">
+                    <c-custom-type-datatable
+                      key-field="Id"
+                      data={data.activeSubscriptions}
+                      columns={activeRateColumns}
+                      hide-checkbox-column
+                      show-row-number-column
+                      min-column-width="100"
+                    >
+                    </c-custom-type-datatable>
+                  </div>
+                </template>
+              </div>
+            </template>
+          </template>
+        </div>
+      </template>
+    </template>
+
+    <!-- Historical Rate Section-->
+    <div class="slds-box slds-box_xx-small slds-m-bottom_xx-small">
+      <div class="slds-grid slds-wrap slds-p-around_x-small">
+        <span>
+          <template lwc:if={showHistoricalSection}>
+            <lightning-icon
+              icon-name="utility:chevrondown"
+              onclick={handleHistoricalAccordion}
+              size="x-small"
+              alternative-text="Accordion"
+              title="Accordion"
+            ></lightning-icon>
+          </template>
+          <template lwc:else>
+            <lightning-icon
+              icon-name="utility:chevronright"
+              onclick={handleHistoricalAccordion}
+              size="x-small"
+              alternative-text="Accordion"
+              title="Accordion"
+            ></lightning-icon>
+          </template>
+
+          &nbsp;&nbsp;
+          <b> {historicalRateLabel} </b>
+        </span>
+      </div>
+      <template lwc:if={showHistoricalSection}>
+        <div class="slds-p-left_x-large slds-p-bottom_small">
+          <lightning-formatted-rich-text
+            value={rateChangeHistoryDashboard}
+          ></lightning-formatted-rich-text>
+        </div>
+      </template>
+    </div>
+  </template>
+  <template lwc:else>
+    <!-- spinner -->
+    <lightning-card>
+      <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </lightning-card>
+  </template>
+</template>

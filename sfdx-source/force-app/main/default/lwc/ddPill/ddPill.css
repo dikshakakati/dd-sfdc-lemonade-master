@@ -1,0 +1,16 @@
+.pointer {
+    cursor: pointer;
+}
+
+.dd-pill {
+    background-color: var(--sds-c-button-brand-color-background, var(--lwc-brandAccessible,rgb(1, 118, 211)));
+    color: var(--sds-c-button-brand-text-color, rgb(255, 255, 255));
+}
+
+.dd-pill:hover {
+    background-color: var(--sds-c-button-brand-color-background-hover, var(--lwc-brandAccessibleActive,rgb(1, 68, 134)));
+}
+
+.slds-pill-has-focus {
+    background-color: var(--sds-c-button-brand-color-background-hover, var(--lwc-brandAccessibleActive,rgb(1, 68, 134)));
+}

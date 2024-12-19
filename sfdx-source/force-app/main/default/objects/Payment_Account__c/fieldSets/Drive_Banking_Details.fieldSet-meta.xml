@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_Banking_Details</fullName>
+    <description>LEM-2516: It is used to display Payment Account fields on Banking Details section in Onboarding Details component for Work Plan of Drive type.</description>
+    <displayedFields>
+        <field>NetSuite_ID__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>NetSuite_Sync_Status__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Drive Banking Details</label>
+</FieldSet>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Work_Step_Validation_Rules</name>
+    </customPermissions>
+    <description>LEM-2043: It used to bypass validation rules on Work Step object.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Work Step Validations</label>
+</PermissionSet>

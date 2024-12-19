@@ -1,0 +1,15 @@
+.inputWidth {
+    width: 115px;
+  }
+
+  .startEndSeparator{
+    align-content: center;
+    padding-top: 15px;
+    width: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .rounded-input  {
+      --slds-c-checkbox-radius-border :4px
+  }

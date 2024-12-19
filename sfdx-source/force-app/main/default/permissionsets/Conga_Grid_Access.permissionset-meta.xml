@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>CRMC_PP__AGComponentController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>LEM-530: It will be used to provide the additional permissions (like ApiEnabled) which are required for the DoorDash persona to access the Conga Grid.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Conga Grid Access</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApiEnabled</name>
+    </userPermissions>
+</PermissionSet>

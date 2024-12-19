@@ -1,0 +1,102 @@
+<template>
+  <div class="slds-p-horizontal_medium option-container slds-box">
+    <!-- Stage / Progress Indicator -->
+    <c-bulk-onboarding-stage-bar
+      current-step={currentStep}
+    ></c-bulk-onboarding-stage-bar>
+
+    <lightning-card class="slds-theme_shade">
+      <div class="slds-p-horizontal_medium">
+        <!-- Flow Selection Form -->
+        <template lwc:if={promptForFlowSelection}>
+          <div class="slds-p-around_x-large">
+            <div class="slds-grid slds-grid_vertical slds-wrap">
+              <div
+                class="slds-col slds-size_1-of-1 slds-text-align_center slds-p-bottom_medium"
+              >
+                <p>
+                  Would you like to select a Decision Maker for all stores, or
+                  use multiple Decision Makers?
+                </p>
+              </div>
+              <div class="slds-col slds-size_1-of-1 slds-text-align_center">
+                <div class="slds-grid slds-grid_align-center slds-wrap">
+                  <lightning-button
+                    class="slds-m-horizontal_x-small"
+                    label="Use a single Decision Maker"
+                    variant="neutral"
+                    onclick={handleUseSingleSelect}
+                  ></lightning-button>
+                  <lightning-button
+                    label="Use multiple Decision Makers"
+                    variant="neutral"
+                    onclick={handleUseMultiSelect}
+                  ></lightning-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+        <!-- Single Select Flow -->
+        <template lwc:elseif={useSingleSelectFlow}>
+          <c-bulk-onboarding-contact-creation
+            contract-id={contractId}
+            vertical-padding="medium"
+            custom-instructions={customInstructions}
+            specified-fields={formFields}
+            contact-details={contactDetails}
+            hide-create-form={hideCreateFormByDefault}
+            parent-page="DecisionMaker"
+            onfieldupdate={handleEnableSave}
+            oncontactcreated={handleNewContactCreated}
+            onupdatesavestatus={handleUpdateSaveStatus}
+          ></c-bulk-onboarding-contact-creation>
+        </template>
+        <!-- Multi-Select Flow -->
+        <template lwc:elseif={useMultiSelectFlow}>
+          <div class="slds-p-around_x-large">
+            <div class="slds-grid slds-grid_vertical slds-wrap">
+              <div class="slds-text-align_center slds-p-bottom_medium">
+                <c-bulk-onboarding-multi-select
+                  flow-request-id={flowRequestId}
+                  account-id={accountId}
+                  contract-id={contractId}
+                  is-tablet-work-order={isTabletWorkOrder}
+                  object-type="Contact"
+                  is-saving={isSaving}
+                  onmultirecordsselected={handleMultiRecordsSelection}
+                ></c-bulk-onboarding-multi-select>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- FOOTER & NEXT BUTTON -->
+        <div
+          class="slds-p-vertical_medium slds-grid slds-grid_align-end slds-border_top slds-border_light"
+        >
+          <lightning-button
+            variant="brand"
+            label="Next"
+            onclick={updateFlowRequestWithDecisionMaker}
+            disabled={disableButton}
+          ></lightning-button>
+        </div>
+      </div>
+
+      <!-- Saving Spinner -->
+      <template if:true={isSaving}>
+        <div class="slds-spinner_container">
+          <div
+            class="slds-spinner slds-spinner_brand slds-spinner_medium"
+            role="status"
+          >
+            <span class="slds-assistive-text">Saving</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+        </div>
+      </template>
+    </lightning-card>
+  </div>
+</template>

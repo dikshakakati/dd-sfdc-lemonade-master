@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Invoke the apex method to update merchant services.</description>
+        <name>deactivate_Mx_Services</name>
+        <label>deactivate Mx Services</label>
+        <locationX>506</locationX>
+        <locationY>1284</locationY>
+        <actionName>MerchantServicesService</actionName>
+        <actionType>apex</actionType>
+        <faultConnector>
+            <targetReference>log_error_on_updating_MX_services</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>deactivatedAgreementsList</name>
+            <value>
+                <elementReference>DeactivatedStoreAgreementsList</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>error on updating agreement records</description>
+        <name>error_on_Updating_agreement_Records</name>
+        <label>error on Updating agreement Records</label>
+        <locationX>1034</locationX>
+        <locationY>1176</locationY>
+        <actionName>FlowErrorLogController</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>deactivatedAgreementsList</name>
+            <value>
+                <elementReference>DeactivatedStoreAgreementsList</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>error</name>
+            <value>
+                <elementReference>errorOnUpdatingAgreements</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Error logging from flow in apex class.</description>
+        <name>log_Error_From_Flow</name>
+        <label>log Error From Flow</label>
+        <locationX>1298</locationX>
+        <locationY>360</locationY>
+        <actionName>FlowErrorLogController</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>error</name>
+            <value>
+                <elementReference>errorOnFetchingAgreementRecords</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>log error while updating merchant services.</description>
+        <name>log_error_on_updating_MX_services</name>
+        <label>log error on updating MX services</label>
+        <locationX>770</locationX>
+        <locationY>1392</locationY>
+        <actionName>FlowErrorLogController</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>deactivatedAgreementsList</name>
+            <value>
+                <elementReference>DeactivatedStoreAgreementsList</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>error</name>
+            <value>
+                <elementReference>erroronupdatingmxServices</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <description>Assign the status = &quot;Cancelled&quot; and all the agreements in DeactivatedAgreementList to update after for loop.</description>
+        <name>assign_Agreement_Status</name>
+        <label>assign Agreement Status</label>
+        <locationX>396</locationX>
+        <locationY>468</locationY>
+        <assignmentItems>
+            <assignToReference>deactivated_Agreements_Loop.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>deactivatedAgreementsWithAllTypes</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>deactivated_Agreements_Loop</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>type_check</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>collecting store agreements to update mx services.</description>
+        <name>store_agreement_collection</name>
+        <label>store agreement collection</label>
+        <locationX>264</locationX>
+        <locationY>684</locationY>
+        <assignmentItems>
+            <assignToReference>DeactivatedStoreAgreementsList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>deactivated_Agreements_Loop</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>deactivated_Agreements_Loop</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <description>cancelled status</description>
+        <name>cancelledStatus</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Cancelled</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>error while fetching agreement records</description>
+        <name>errorOnFetchingAgreementRecords</name>
+        <dataType>String</dataType>
+    </constants>
+    <constants>
+        <description>error on updating agreements</description>
+        <name>errorOnUpdatingAgreements</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>There is an error in flow while updating agreements.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>error On updating MX Services</description>
+        <name>erroronupdatingmxServices</name>
+        <dataType>String</dataType>
+    </constants>
+    <constants>
+        <description>Success Message</description>
+        <name>successMessage</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Flow has been ran successfully. </stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>Null check for agreements</description>
+        <name>agreements_null_check</name>
+        <label>agreements null check</label>
+        <locationX>176</locationX>
+        <locationY>960</locationY>
+        <defaultConnector>
+            <targetReference>update_deactivated_Agreements</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>agreementList is not empty</defaultConnectorLabel>
+        <rules>
+            <name>agreementList_is_empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>deactivatedAgreementsWithAllTypes</leftValueReference>
+                <operator>IsEmpty</operator>
+            </conditions>
+            <label>agreementList is empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>store_agreements_null_check</name>
+        <label>store agreements null check</label>
+        <locationX>374</locationX>
+        <locationY>1176</locationY>
+        <defaultConnector>
+            <targetReference>deactivate_Mx_Services</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>update mx Services</defaultConnectorLabel>
+        <rules>
+            <name>store_agreements_are_not_Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DeactivatedStoreAgreementsList</leftValueReference>
+                <operator>IsEmpty</operator>
+            </conditions>
+            <label>store agreements are not Available</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checking whether the type of agreement is Store</description>
+        <name>type_check</name>
+        <label>type check</label>
+        <locationX>396</locationX>
+        <locationY>576</locationY>
+        <defaultConnector>
+            <targetReference>deactivated_Agreements_Loop</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Store Agreement</defaultConnectorLabel>
+        <rules>
+            <name>Store_agreement</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>deactivated_Agreements_Loop.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Store Agreement</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>store_agreement_collection</targetReference>
+            </connector>
+            <label>Store agreement</label>
+        </rules>
+    </decisions>
+    <description>Update Agreement Status and Merchant Services</description>
+    <environments>Default</environments>
+    <interviewLabel>Update Agreement Status and Deactivation Date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Agreement Status and Merchant Services</label>
+    <loops>
+        <description>Looping agreements to assign the status &quot;Cancelled&quot;.</description>
+        <name>deactivated_Agreements_Loop</name>
+        <label>deactivated Agreements Loop</label>
+        <locationX>176</locationX>
+        <locationY>360</locationY>
+        <collectionReference>get_deactivated_agreement_List</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>assign_Agreement_Status</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>agreements_null_check</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Fetch all the deactivated agreements where the deactivation date is TODAY().</description>
+        <name>get_deactivated_agreement_List</name>
+        <label>get deactivated agreement List</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>deactivated_Agreements_Loop</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>log_Error_From_Flow</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Deactivation_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TodayDate</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Agreement__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Deactivation_Date__c</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>Account__c</queriedFields>
+        <queriedFields>Type__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update  deactivated Agreements status = cancelled.</description>
+        <name>update_deactivated_Agreements</name>
+        <label>update deactivated Agreements</label>
+        <locationX>374</locationX>
+        <locationY>1068</locationY>
+        <connector>
+            <targetReference>store_agreements_null_check</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>error_on_Updating_agreement_Records</targetReference>
+        </faultConnector>
+        <inputReference>deactivatedAgreementsWithAllTypes</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_deactivated_agreement_List</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-06-26</startDate>
+            <startTime>01:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>agreementType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>deactivated Agreements of Store, Franchise and Business</description>
+        <name>deactivatedAgreementsWithAllTypes</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Agreement__c</objectType>
+    </variables>
+    <variables>
+        <description>deactivated store agreements list</description>
+        <name>DeactivatedStoreAgreementsList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Agreement__c</objectType>
+    </variables>
+    <variables>
+        <description>Store agreement</description>
+        <name>storeAgreement</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>Store Agreement</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>TodayDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDate</elementReference>
+        </value>
+    </variables>
+</Flow>

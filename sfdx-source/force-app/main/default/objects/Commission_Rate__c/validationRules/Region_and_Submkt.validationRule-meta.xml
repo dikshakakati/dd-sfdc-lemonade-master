@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_and_Submkt</fullName>
+    <active>true</active>
+    <description>Cannot have region and submarket populated at the same time.</description>
+    <errorConditionFormula>AND( NOT( ISBLANK( TEXT(Region__c) ) ) , NOT( ISBLANK( Submarket__c ) ))</errorConditionFormula>
+    <errorMessage>Region and Submarket cannot be populated on the same record. Delete region if you want to price by submarket.</errorMessage>
+</ValidationRule>

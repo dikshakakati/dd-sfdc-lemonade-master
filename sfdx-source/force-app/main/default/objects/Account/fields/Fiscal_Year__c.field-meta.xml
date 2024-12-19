@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Year__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-370: This field represents the fiscal year cycle of the business.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents the fiscal year cycle of the business</inlineHelpText>
+    <label>Fiscal Year</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Jan - Dec</fullName>
+                <default>false</default>
+                <label>Jan - Dec</label>
+            </value>
+            <value>
+                <fullName>Feb - Jan</fullName>
+                <default>false</default>
+                <label>Feb - Jan</label>
+            </value>
+            <value>
+                <fullName>Mar - Feb</fullName>
+                <default>false</default>
+                <label>Mar - Feb</label>
+            </value>
+            <value>
+                <fullName>Apr - Mar</fullName>
+                <default>false</default>
+                <label>Apr - Mar</label>
+            </value>
+            <value>
+                <fullName>May - Apr</fullName>
+                <default>false</default>
+                <label>May - Apr</label>
+            </value>
+            <value>
+                <fullName>May - Jun</fullName>
+                <default>false</default>
+                <label>May - Jun</label>
+            </value>
+            <value>
+                <fullName>Jun - May</fullName>
+                <default>false</default>
+                <label>Jun - May</label>
+            </value>
+            <value>
+                <fullName>Jul - Jun</fullName>
+                <default>false</default>
+                <label>Jul - Jun</label>
+            </value>
+            <value>
+                <fullName>Aug - Jul</fullName>
+                <default>false</default>
+                <label>Aug - Jul</label>
+            </value>
+            <value>
+                <fullName>Sept - Aug</fullName>
+                <default>false</default>
+                <label>Sept - Aug</label>
+            </value>
+            <value>
+                <fullName>Oct - Sept</fullName>
+                <default>false</default>
+                <label>Oct - Sept</label>
+            </value>
+            <value>
+                <fullName>Nov - Oct</fullName>
+                <default>false</default>
+                <label>Nov - Oct</label>
+            </value>
+            <value>
+                <fullName>Dec - Nov</fullName>
+                <default>false</default>
+                <label>Dec - Nov</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

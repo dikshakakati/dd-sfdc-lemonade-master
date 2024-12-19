@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictUpdate_To_Required_Fields</fullName>
+    <active>true</active>
+    <description>LEM-13365 Restrict updates on fields once record is created.</description>
+    <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISNEW()),
+OR(
+ISCHANGED(Effective_Date__c),
+ISCHANGED(S_O_Support_Request_Link__c),
+ISCHANGED( Contract__c)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot edit the Effective Date, S&amp;O Support Request Link and Contract once the record is created.</errorMessage>
+</ValidationRule>

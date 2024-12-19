@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Franchise_Supplemental_Agreement_Link__c</fullName>
+    <description>Description: LEM-2018: Create New fields for Nintex processes. This field is to store FSA (Franchisee supplemental agreement URL).</description>
+    <externalId>false</externalId>
+    <label>Franchise Supplemental Agreement Link</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

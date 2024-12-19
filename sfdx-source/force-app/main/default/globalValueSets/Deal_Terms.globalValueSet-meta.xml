@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Standard</fullName>
+        <default>false</default>
+        <label>Standard</label>
+    </customValue>
+    <customValue>
+        <fullName>Non-Standard</fullName>
+        <default>false</default>
+        <label>Non-Standard</label>
+    </customValue>
+    <description>LEM-451: Indicate if non-productized deal terms are included on Quote</description>
+    <masterLabel>Deal Terms</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

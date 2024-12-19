@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Are_All_Brief_Items_in_Campaign_Building__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-3676: It is used to indicate if all the related Brief Items are in Campaign Building or ahead.</description>
+    <externalId>false</externalId>
+    <label>Are All Brief Items in Campaign Building</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

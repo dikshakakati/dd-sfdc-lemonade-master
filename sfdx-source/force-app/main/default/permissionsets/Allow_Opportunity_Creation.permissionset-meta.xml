@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Opportunity_Creation</name>
+    </customPermissions>
+    <description>LEM-15224: It is used to control the Opportunity Creation from Account Plan.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Opportunity Creation</label>
+</PermissionSet>

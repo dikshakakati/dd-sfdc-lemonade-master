@@ -1,0 +1,55 @@
+.lgc-bg {
+  background-color: var(--wheat-white);
+}
+
+.lgc-bg-inverse {
+  background-color: var(--dark-blue);
+}
+:host() {
+  --dark-blue: rgb(22 50 92);
+  --wheat-white: rgb(242 242 242);
+  --border: solid 1px #ccc;
+}
+.c-container {
+  border: 1px solid #d8dde6;
+  margin: 10px 0 20px;
+}
+
+.page-section {
+  border: solid 1px #ccc;
+  padding: 1rem;
+}
+
+.page-header,
+.page-footer {
+  height: 50px;
+}
+
+.page-main {
+  background: #f8f8f8;
+}
+
+.page-left,
+.page-right {
+  background: #f0efef;
+}
+
+.slds-spinner-text {
+  width: 320px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+.slds-spinner--small .slds-spinner-text {
+  transform: translate(-36%, -50%) rotate(-90deg);
+}
+.slds-spinner--medium .slds-spinner-text {
+  transform: translate(-32%, -50%) rotate(-90deg);
+}
+.slds-spinner--large .slds-spinner-text {
+  transform: translate(-26%, -50%) rotate(-90deg);
+}
+
+.slds-spinner_container {
+  margin-top: 125px !important;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Creation_Without_QuoteLine</fullName>
+    <active>true</active>
+    <description>LEM-3957: It is used to restrict Brief Item creation without related Quote Line Item.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+  ISBLANK(Legacy_ID__c),
+  ISBLANK(Quote_Line__c)
+)</errorConditionFormula>
+    <errorDisplayField>Quote_Line__c</errorDisplayField>
+    <errorMessage>Quote Line is a required field. Please select Quote Line to save the record.</errorMessage>
+</ValidationRule>

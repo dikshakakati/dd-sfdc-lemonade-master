@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Walk_Total_Adjustment_100</fullName>
+    <active>true</active>
+    <description>Total Adjustment has to sum up to 100 (99.97 to 100.03 is expectable)</description>
+    <errorConditionFormula>Total_Adjustment__c  &lt; 99.97  || Total_Adjustment__c  &gt;100.03</errorConditionFormula>
+    <errorMessage>The total adjustment must be 100%. (99.97 to 100.03 is expectable)
+Please check the weekly adjustment number</errorMessage>
+</ValidationRule>

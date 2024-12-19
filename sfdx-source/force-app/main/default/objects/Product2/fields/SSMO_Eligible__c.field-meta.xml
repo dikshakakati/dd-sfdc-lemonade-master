@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSMO_Eligible__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-16434: Identifies whether this product is supported in SSMO</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This box will be set to true if the product is eligible to be sent to SSMO/RESSMO.</inlineHelpText>
+    <label>SSMO Eligible</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

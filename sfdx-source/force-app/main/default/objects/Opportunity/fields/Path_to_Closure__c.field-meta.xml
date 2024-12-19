@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Path_to_Closure__c</fullName>
+    <description>LEM-408: This field is to describe how this deal can be won, including next steps or potential blockers that need to be resolved.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Add details here that describe how this deal can be won, including next steps or potential blockers that need to be resolved.</inlineHelpText>
+    <label>Path to Closure</label>
+    <length>131072</length>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Channel_Partner_Accounts_Pre_POS</fullName>
+    <active>true</active>
+    <description>LEM-17027
+Currently we are blocking Channel Partner Account Creations and Edits until we roll out the new POS Account Data Model</description>
+    <errorConditionFormula>AND(
+   OR(
+      ISNEW(),
+      NOT(ISNEW())
+   ),
+   RecordType.DeveloperName=&quot;Channel_Partner&quot;,
+   ISPICKVAL(Type,&apos;POS/MWP Provider&apos;),
+   NOT($Permission.Bypass_Channel_Partner_Account_Validation_Rules)
+)</errorConditionFormula>
+    <errorMessage>You cannot create or edit Channel Partner Account types during the POS Account Data Model rollout. Please reach out to Nayana or Lex on GTMT if you hit this error.</errorMessage>
+</ValidationRule>

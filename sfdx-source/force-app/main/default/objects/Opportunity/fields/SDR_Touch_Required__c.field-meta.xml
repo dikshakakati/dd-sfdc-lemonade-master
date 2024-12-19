@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SDR_Touch_Required__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13541: It is used to check if SDR touch is required for this opportunity.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the need for the SDR touch on the SMB opportunity.</inlineHelpText>
+    <label>SDR Touch Required?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No</valueSetName>
+    </valueSet>
+</CustomField>

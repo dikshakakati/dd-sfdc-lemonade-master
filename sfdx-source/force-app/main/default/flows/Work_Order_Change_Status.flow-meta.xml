@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>LEM-4094: It displays an error message when the current user has Read/View Only access on the current Work Order record.</description>
+        <name>Display_Error_Message_On_Read_Access</name>
+        <label>Display Error Message On Read Access</label>
+        <locationX>446</locationX>
+        <locationY>1574</locationY>
+        <actionName>c:OverrideFlowSaveButton</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>Read_Only_Error_Message</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>mode</name>
+            <value>
+                <stringValue>dismissible</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>error</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>LEM-4094: It displays an error message when a user selects status on work order whose current status is beyond &apos;Confirmed&apos;.</description>
+        <name>Display_Status_Restriction_Message</name>
+        <label>Display Status Restriction Message</label>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
+        <actionName>c:OverrideFlowSaveButton</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>Work_Order_Status_Restriction_Message</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>mode</name>
+            <value>
+                <stringValue>dismissible</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>error</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>LEM-4094: It calls action for redirecting to the record detail page on the DML failure.</description>
+        <name>Redirect_To_Record_Detail_Page_On_Fault</name>
+        <label>Redirect To Record Detail Page On Fault</label>
+        <locationX>754</locationX>
+        <locationY>1214</locationY>
+        <actionName>c:OverrideFlowSaveButton</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>$Label.Work_Order_Status_Fault_Message</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>mode</name>
+            <value>
+                <stringValue>dismissible</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>error</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>LEM-4094: It calls action for redirecting to the record detail page on success.</description>
+        <name>Redirect_To_Record_Detail_Page_On_Success</name>
+        <label>Redirect To Record Detail Page On Success</label>
+        <locationX>314</locationX>
+        <locationY>1214</locationY>
+        <actionName>c:OverrideFlowSaveButton</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>Success_Message</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>enableRefreshView</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>mode</name>
+            <value>
+                <stringValue>dismissible</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>success</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <choices>
+        <description>LEM-4094: It represents &apos;Confirmed&apos; value of Work Order object&apos;s status picklist.</description>
+        <name>Confirmed_Status</name>
+        <choiceText>{!$Label.WorkOrderStatusConfirmed}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>$Label.WorkOrderStatusConfirmed</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>LEM-4094: It represents &apos;Dead&apos; value of Work Order object&apos;s status picklist.</description>
+        <name>Dead_Status</name>
+        <choiceText>{!$Label.Work_Order_Status_Dead}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>$Label.Work_Order_Status_Dead</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>LEM-4094: It represents &apos;Planning&apos; value of Work Order object&apos;s status picklist.</description>
+        <name>Planning_Status</name>
+        <choiceText>{!$Label.Work_Order_Status_Planning}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>$Label.Work_Order_Status_Planning</elementReference>
+        </value>
+    </choices>
+    <decisions>
+        <description>LEM-3034: It checks whether the current user has Edit access on the current Work Order record or the user is &quot;View Only&quot; persona.</description>
+        <name>Has_Record_Access</name>
+        <label>Has Record Access?</label>
+        <locationX>446</locationX>
+        <locationY>278</locationY>
+        <defaultConnector>
+            <targetReference>Display_Error_Message_On_Read_Access</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Has Read Or No Access?</defaultConnectorLabel>
+        <rules>
+            <name>Has_View_Only_Permission_Assigned</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.Hide_Onboarding_Activations_Quick_Actions</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Permission.Show_Onboarding_Activations_Quick_Actions</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Display_Error_Message_On_Read_Access</targetReference>
+            </connector>
+            <label>Has View Only Permission Assigned?</label>
+        </rules>
+        <rules>
+            <name>Has_Edit_Access</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>hasEditAccessOnWorkOrder</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Work_Order_Details</targetReference>
+            </connector>
+            <label>Has Edit Access?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-4094: It is used to prevent changing status value in restricted scenarios:
+a. Dead status cannot be selected once work plans and work steps have been created (refer LEM-1010).
+b. Onboarding event has started i.e. work order status has moved beyond &apos;Confirmed&apos; through actions on related work plans/work steps.</description>
+        <name>Is_Valid_Status_Change</name>
+        <label>Is Valid Status Change?</label>
+        <locationX>314</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>Change_Status_On_WorkOrder</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Valid Status Change</defaultConnectorLabel>
+        <rules>
+            <name>Has_Onboarding_Event_Started</name>
+            <conditionLogic>(1 AND 2 AND 3 AND (4 OR 5)) OR 6</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Work_Order_Details.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Planning</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Work_Order_Details.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Confirmed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Work_Order_Details.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Dead</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Planning_Status</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Confirmed_Status</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Work_Order_Details.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Onboarding Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Display_Status_Restriction_Message</targetReference>
+            </connector>
+            <label>Has Onboarding Event Started?</label>
+        </rules>
+        <rules>
+            <name>Has_Work_Plans_Generated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Dead_Status</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Work_Order_Details.HasWorkPlansGenerated__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Confirmation_Message_When_User_Selects_Dead_Status</targetReference>
+            </connector>
+            <label>Has Work Plans Generated?</label>
+        </rules>
+    </decisions>
+    <description>LEM-4094: It enables a user to change status of current work order and related child work orders with allowed values (Planning/Confirmed/Dead).
+LEM-5153: Update decision element &quot;Has Record Access&quot; by checking a new permission.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-4094: It stores the message to be displayed for read/view only access.</description>
+        <name>Read_Only_Error_Message</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.AssignToReadOnlyErrorMessage}</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-4094: It stores the message to be displayed on success.</description>
+        <name>Success_Message</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Work_Order_Change_Status_Success_Message} &amp; &quot; &quot; &amp;{!Status} &amp; &quot;.&quot;</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-4094: It stores the message to be displayed on selection of restricted Work Order status value.</description>
+        <name>Work_Order_Status_Restriction_Message</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Work_Order_Status_Restriction_Message} &amp; &quot; &quot; &amp; TEXT({!Get_Work_Order_Details.Status}) &amp; &quot;.&quot;</expression>
+    </formulas>
+    <interviewLabel>Work Order - Change Status {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Work Order - Change Status</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>LEM-4094: It is used to get current Work Order record details.</description>
+        <name>Get_Work_Order_Details</name>
+        <label>Get Work Order Details</label>
+        <locationX>314</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Status_Selection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>WorkOrder</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-4094: It is used to get the UserRecordAccess of the current user to check Edit access on the current Work Order record.</description>
+        <name>GetUserAccessRecords</name>
+        <label>GetUserAccessRecords</label>
+        <locationX>446</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_Record_Access</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>UserId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>UserRecordAccess</object>
+        <outputAssignments>
+            <assignToReference>hasEditAccessOnWorkOrder</assignToReference>
+            <field>HasEditAccess</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>workOrderRecordId</assignToReference>
+            <field>RecordId</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordUpdates>
+        <description>LEM-1536: It is used to update Status field of the current Work Order and related child Work Order to the selected value.</description>
+        <name>Change_Status_On_WorkOrder</name>
+        <label>Change Status On WorkOrder</label>
+        <locationX>314</locationX>
+        <locationY>1094</locationY>
+        <connector>
+            <targetReference>Redirect_To_Record_Detail_Page_On_Success</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Redirect_To_Record_Detail_Page_On_Fault</targetReference>
+        </faultConnector>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ParentWorkOrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>Status</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>Status</elementReference>
+            </value>
+        </inputAssignments>
+        <object>WorkOrder</object>
+    </recordUpdates>
+    <screens>
+        <description>LEM:5460 It shows a confirmation message to the user when the user selects Dead Status after the Workplans are created.</description>
+        <name>Confirmation_Message_When_User_Selects_Dead_Status</name>
+        <label>Confirmation Message When User Selects Dead Status</label>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Change_Status_On_WorkOrder</targetReference>
+        </connector>
+        <fields>
+            <name>Confirmation_Error_Message</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;em&gt;You are about to move this Work Order to the Dead status. Please confirm you want to proceed with making this update, as this change cannot be undone.&lt;/em&gt;&lt;/strong&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;em&gt; &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Confirm</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-4094: It provides an option to a user for changing Work Order record&apos;s status.</description>
+        <name>Status_Selection</name>
+        <label>Status Selection</label>
+        <locationX>314</locationX>
+        <locationY>518</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Cancel</backButtonLabel>
+        <connector>
+            <targetReference>Is_Valid_Status_Change</targetReference>
+        </connector>
+        <fields>
+            <name>Status</name>
+            <choiceReferences>Planning_Status</choiceReferences>
+            <choiceReferences>Confirmed_Status</choiceReferences>
+            <choiceReferences>Dead_Status</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>Planning_Status</defaultSelectedChoiceReference>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetUserAccessRecords</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-4094: It indicates whether the current user has edit access on the current Work Order record.</description>
+        <name>hasEditAccessOnWorkOrder</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-4094: It stores Salesforce Id of current Work Order.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-3034: It holds record Id of the current Work Order received from User Record Access.</description>
+        <name>workOrderRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>recordId</elementReference>
+        </value>
+    </variables>
+</Flow>

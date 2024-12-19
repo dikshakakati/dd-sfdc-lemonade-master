@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Create_Quote_Button_Visible__c</fullName>
+    <description>LEM-14855: This is utilized to decide whether the Create Quote button should be shown on the layout. It was created because a flexi page cannot have more than 10 conditions for visibility of a button.
+LEM-23603: Create quote should be allowed for Contract Correction sub-types</description>
+    <formula>IF(
+  Text(Account.Segment__c) != $Label.AccountSegmentSMB,
+  true,
+  IF(
+    AND(
+      Text(Account.Type) = $Label.Subtype_Corporate,
+      OR(
+        Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Net_New_Partner,
+        Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Former_Partner,
+        Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Contract_Correction_New, /*LEM-23603*/
+        Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Contract_Correction_Amendment, /*LEM-23603*/
+        AND(
+          $Permission.CreateQuote_Users,
+          OR(
+            Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Upgrade,
+            Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Ads_Promos,
+            Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Retention
+          )
+        )
+      )
+    ),
+    true,
+    IF(
+      AND(
+        Text(Account.Type) = $Label.Subtype_Franchisee,
+        OR(
+          Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Net_New_Partner,
+          Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Former_Partner,
+          AND(
+            Text(Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Ads_Promos,
+            $Permission.CreateQuote_Users
+          )
+        )
+      ),
+      true,
+      false
+    )
+  )
+)</formula>
+    <label>Is Create Quote Button Visible?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

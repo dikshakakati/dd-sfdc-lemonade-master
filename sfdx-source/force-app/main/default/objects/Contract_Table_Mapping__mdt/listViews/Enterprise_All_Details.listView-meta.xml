@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enterprise_All_Details</fullName>
+    <columns>Segment__c</columns>
+    <columns>Order__c</columns>
+    <columns>MasterLabel</columns>
+    <columns>API_Name__c</columns>
+    <columns>Type__c</columns>
+    <columns>Hyper_Link_Display_Field__c</columns>
+    <columns>Available_On__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Segment__c</field>
+        <operation>equals</operation>
+        <value>Enterprise</value>
+    </filters>
+    <label>Enterprise All Details</label>
+</ListView>

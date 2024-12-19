@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-p-horizontal_medium option-container">
+
+        <!-- Stage / Progress Indicator -->
+        <c-bulk-onboarding-stage-bar current-step={currentStep}></c-bulk-onboarding-stage-bar>
+                
+        <p class="option-text slds-m-bottom_large">Begin with creating a new Work Order or selecting an existing one.</p>
+        
+        <div class="option-container-buttons">        
+            <lightning-button label="Create New Work Order" variant="brand" disabled={createNewDisabled} title={createNewTitle} onclick={handleCreateNew}></lightning-button>
+            <lightning-button label="Select Existing Work Order" variant="neutral" onclick={handleSelectExisting}></lightning-button>
+        </div>
+    </div>
+</template>

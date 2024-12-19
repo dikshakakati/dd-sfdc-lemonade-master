@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <description>LEM-360: Support Request for Access, Technical Issues and Data Updates</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the most appropriate Sub-Type of the case</inlineHelpText>
+    <label>Sub Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Create New Account</fullName>
+                <default>false</default>
+                <label>Create New Account</label>
+            </value>
+            <value>
+                <fullName>Account Hierarchy Change</fullName>
+                <default>false</default>
+                <label>Account Hierarchy Change</label>
+            </value>
+            <value>
+                <fullName>Account Ownership Change</fullName>
+                <default>false</default>
+                <label>Account Ownership Change</label>
+            </value>
+            <value>
+                <fullName>Create New Brand</fullName>
+                <default>false</default>
+                <label>Create New Brand</label>
+            </value>
+            <value>
+                <fullName>Change to Business Group ID</fullName>
+                <default>false</default>
+                <label>Change to Business Group ID</label>
+            </value>
+            <value>
+                <fullName>MINT only updates</fullName>
+                <default>false</default>
+                <label>MINT only updates</label>
+            </value>
+            <value>
+                <fullName>SFDC Only Updates</fullName>
+                <default>false</default>
+                <label>SFDC Only Updates</label>
+            </value>
+            <value>
+                <fullName>Reparent Account</fullName>
+                <default>false</default>
+                <label>Reparent Account</label>
+            </value>
+            <value>
+                <fullName>SAD Role Change Request</fullName>
+                <default>false</default>
+                <label>SAD Role Change Request</label>
+            </value>
+            <value>
+                <fullName>MINT &amp; SFDC Updates</fullName>
+                <default>false</default>
+                <label>MINT &amp; SFDC Updates</label>
+            </value>
+            <value>
+                <fullName>New Merchant Store List</fullName>
+                <default>false</default>
+                <label>New Merchant Store List</label>
+            </value>
+            <value>
+                <fullName>Updated Merchant Store List</fullName>
+                <default>false</default>
+                <label>Updated Merchant Store List</label>
+            </value>
+            <value>
+                <fullName>Tablet/Printer Request</fullName>
+                <default>false</default>
+                <label>Tablet/Printer Request</label>
+            </value>
+            <value>
+                <fullName>Marketing Kit Request</fullName>
+                <default>false</default>
+                <label>Marketing Kit Request</label>
+            </value>
+            <value>
+                <fullName>NV Tablet/Printer Request</fullName>
+                <default>false</default>
+                <label>NV Tablet/Printer Request</label>
+            </value>
+            <value>
+                <fullName>Drive Intake Form for Drive Activations</fullName>
+                <default>false</default>
+                <label>Drive Intake Form for Drive Activations</label>
+            </value>
+            <value>
+                <fullName>Marketplace Rate Change</fullName>
+                <default>false</default>
+                <label>Marketplace Rate Change</label>
+            </value>
+            <value>
+                <fullName>Drive Rate Change</fullName>
+                <default>false</default>
+                <label>Drive Rate Change</label>
+            </value>
+            <value>
+                <fullName>Marketplace &amp; Drive Rate Change</fullName>
+                <default>false</default>
+                <label>Marketplace &amp; Drive Rate Change</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>Reparent Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>Account Ownership Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>Account Hierarchy Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>Change to Business Group ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>Create New Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>Create New Brand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>MINT only updates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>SFDC Only Updates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>MINT &amp; SFDC Updates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Coverage Check</controllingFieldValue>
+            <valueName>New Merchant Store List</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Coverage Check</controllingFieldValue>
+            <valueName>Updated Merchant Store List</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Equipment Requests</controllingFieldValue>
+            <valueName>Tablet/Printer Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Equipment Requests</controllingFieldValue>
+            <valueName>Marketing Kit Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Equipment Requests</controllingFieldValue>
+            <valueName>NV Tablet/Printer Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive Support</controllingFieldValue>
+            <valueName>Drive Intake Form for Drive Activations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <valueName>Marketplace Rate Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <valueName>Drive Rate Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <valueName>Marketplace &amp; Drive Rate Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Hierarchy Assistance</controllingFieldValue>
+            <valueName>SAD Role Change Request</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_Order_ID__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>LEM-13509: It is used to store the unique  identifier for the Order.</description>
+    <externalId>true</externalId>
+    <label>Vendor Order ID</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

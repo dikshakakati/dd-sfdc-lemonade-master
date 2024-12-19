@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_Product_Existing__c</fullName>
+    <description>LEM-13535: This field is used to filter out existing lines for by passing amendment validations.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+            SBQQ__Existing__c,
+            &quot;&quot;,
+            Package__c &amp; &apos;: &apos; &amp; SBQQ__ProductOption__r.SBQQ__ProductName__c
+
+        )</formula>
+    <label>Package/Product Existing</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

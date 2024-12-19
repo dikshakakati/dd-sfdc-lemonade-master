@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Multiselect_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT(ISPICKVAL(Type__c,&apos;MultiSelect Picklist&apos;)),
+  OR(
+    NOT(ISBLANK( MultiSelect_Ref__c)),
+    NOT(ISBLANK( Text( MultiSelect_Query_Operator__c )))
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Type__c</errorDisplayField>
+    <errorMessage>Mutliselect section fields cannot be set for this type.</errorMessage>
+</ValidationRule>

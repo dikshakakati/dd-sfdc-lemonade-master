@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filter_Value_1__c</fullName>
+    <description>LEM-185: Initial Setup of Commission Rate Object</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A custom lookup value used to define prices when the pricing characteristics do not match the above logic. The purpose of this field is to account for vertical-specific or otherwise unique attributes that govern pricing.</inlineHelpText>
+    <label>Filter Value 1</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Reparent_Brief_Item_by_Account</fullName>
+    <active>true</active>
+    <description>LEM-5167: It is used to validate Brief Item reparenting to the Brief with the same Account</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+CreatedBy.LastName &lt;&gt; &quot;Data Migration Integration User&quot; ,
+CASESAFEID(Brief__r.Opportunity_Name__r.AccountId)&lt;&gt;  CASESAFEID(Quote_Line__r.SBQQ__Quote__r.SBQQ__Account__c),
+CASESAFEID(Brief__r.Agency_Opportunity_Name__r.AccountId) &lt;&gt;  CASESAFEID(Quote_Line__r.SBQQ__Quote__r.SBQQ__Account__c))</errorConditionFormula>
+    <errorMessage>You’ve selected a Brief that is tied to a Quote with a different Account than this Brief Item’s Quote Line is tied to. Please choose a Brief that is tied to the same Account as this Brief Item’s Quote Line before saving.</errorMessage>
+</ValidationRule>

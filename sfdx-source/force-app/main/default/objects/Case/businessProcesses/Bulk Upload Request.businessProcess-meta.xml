@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bulk Upload Request</fullName>
+    <description>LEM-1212: Support process to manage Bulk Upload Requests.</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Blocked</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Duplicate</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>No Action Needed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Open</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Mobile App</fullName>
+        <default>false</default>
+        <label>Mobile App</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobile Web</fullName>
+        <default>false</default>
+        <label>Mobile Web</label>
+    </customValue>
+    <customValue>
+        <fullName>Desktop</fullName>
+        <default>false</default>
+        <label>Desktop</label>
+    </customValue>
+    <masterLabel>Offsite Banner Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

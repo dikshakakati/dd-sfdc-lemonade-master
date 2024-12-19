@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <constants>
+        <description>LEM-16573: It is used to store Name - &apos;Storefront - Holding&apos;.</description>
+        <name>Name_Storefront_Holding</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Storefront - Holding</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>LEM-16573: It is used to store work plan name - &apos;Storefront - Under Review&apos;.</description>
+        <name>Name_Storefront_Under_Review</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Storefront - Under Review</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>PDOA_Delay_Details</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Work Plan - Storefront Under Review</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>LEM-16573: It is used to store Work Plan Names.</description>
+        <name>Work_Plan_Storefront</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Storefront</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Work_Plan_Storefront_Bundled</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Storefront Bundled</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>LEM-16573: It is used to decide if the record&apos;s PDOA should be updated.</description>
+        <name>Change_Storefront_PDOA</name>
+        <label>Change Storefront PDOA</label>
+        <locationX>578</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Work_Plan_Name_Storefront</name>
+            <conditionLogic>1 AND 2 AND 3 AND (4 OR 6) AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Primary_Routing_Assigned__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Secondary_Routing_Assigned__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner:Group.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Name_Storefront_Under_Review</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Work_Plan_Storefront</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Owner:Group.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Name_Storefront_Holding</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Work_Plan_Storefront_Bundled</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Work_Order_Creation_Source</targetReference>
+            </connector>
+            <label>Work Plan Name - Storefront</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-16573: It is used to check the Work Order&apos;s Creation Source.</description>
+        <name>Work_Order_Creation_Source</name>
+        <label>Work Order Creation Source</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sales</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WorkOrder.Creation_Source__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PDOA_on_WO_for_Sales</targetReference>
+            </connector>
+            <label>Sales</label>
+        </rules>
+        <rules>
+            <name>SSMO</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WorkOrder.Creation_Source__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SSMO</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PDOA_on_WO_for_SSMO</targetReference>
+            </connector>
+            <label>SSMO</label>
+        </rules>
+    </decisions>
+    <description>LEM-16573: It is used to update PDOA on Queue Change.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-16573: It is used to calculate PDOA + 3 business days.</description>
+        <name>PDOA_With_3_Days</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+  WEEKDAY({!$Record.Proposed_Date_of_Activation__c}),
+  1, {!$Record.Proposed_Date_of_Activation__c} + 3,
+  2, {!$Record.Proposed_Date_of_Activation__c} + 3,
+  3, {!$Record.Proposed_Date_of_Activation__c} + 3,
+  4, {!$Record.Proposed_Date_of_Activation__c} + 5,
+  5, {!$Record.Proposed_Date_of_Activation__c} + 5,
+  6, {!$Record.Proposed_Date_of_Activation__c} + 5,
+  7, {!$Record.Proposed_Date_of_Activation__c} + 4,
+  {!$Record.Proposed_Date_of_Activation__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-16573: It is used to calculate PDOA + 5 business days.</description>
+        <name>PDOA_With_5_Days</name>
+        <dataType>Date</dataType>
+        <expression>CASE(
+  WEEKDAY({!$Record.Proposed_Date_of_Activation__c}),
+  1, {!$Record.Proposed_Date_of_Activation__c} + 5,
+  2, {!$Record.Proposed_Date_of_Activation__c} + 7,
+  3, {!$Record.Proposed_Date_of_Activation__c} + 7,
+  4, {!$Record.Proposed_Date_of_Activation__c} + 7,
+  5, {!$Record.Proposed_Date_of_Activation__c} + 7,
+  6, {!$Record.Proposed_Date_of_Activation__c} + 7,
+  7, {!$Record.Proposed_Date_of_Activation__c} + 6,
+  {!$Record.Proposed_Date_of_Activation__c}
+)</expression>
+    </formulas>
+    <interviewLabel>Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Storefront PDOA on Queue Change</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>LEM-16573: It is used to update the PDOA on Work Order.</description>
+        <name>Update_PDOA_on_WO_for_Sales</name>
+        <label>Update PDOA on WO for Sales</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>PDOA_Delay_Details__c</field>
+            <value>
+                <elementReference>PDOA_Delay_Details</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PDOA_Delay_Reason__c</field>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Proposed_Date_of_Activation__c</field>
+            <value>
+                <elementReference>PDOA_With_3_Days</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.WorkOrder</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>LEM-16573: It is used to update the PDOA on Work Order.</description>
+        <name>Update_PDOA_on_WO_for_SSMO</name>
+        <label>Update PDOA on WO for SSMO</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>PDOA_Delay_Details__c</field>
+            <value>
+                <elementReference>PDOA_Delay_Details</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PDOA_Delay_Reason__c</field>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Proposed_Date_of_Activation__c</field>
+            <value>
+                <elementReference>PDOA_With_5_Days</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.WorkOrder</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Change_Storefront_PDOA</targetReference>
+        </connector>
+        <object>WorkPlan</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-16573: It stores Salesforce Id of current Work Plan.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

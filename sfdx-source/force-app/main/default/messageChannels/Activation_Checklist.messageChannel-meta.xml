@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>This enables &quot;Validate&quot; button on Activation Checklist validations completion.</description>
+        <fieldName>enableValidateButton</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This indicates Parent Work Plan where this message needs to be subscribed.</description>
+        <fieldName>parentWorkPlanId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This indicates whether the validation process is still in progress.</description>
+        <fieldName>isValidationInProgress</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Activation Checklist</masterLabel>
+</LightningMessageChannel>

@@ -1,0 +1,101 @@
+<template>
+  <lightning-card>
+    <header class="slds-modal__header">
+      <h2 class="slds-text-heading_medium slds-hyphenate">{titleToDisplay}</h2>
+      {subHeadingToDisplay}&nbsp;
+      <template lwc:if={showMxOnboardingLinkComponent}>
+        <template lwc:if={mxOnboardingLink}>
+          <a
+            data-id={mxOnboardingLink.Id}
+            onclick={handleHereClick}
+            title="here"
+          >
+            here</a
+          >.
+        </template>
+      </template>
+    </header>
+    <!-- Component Header -->
+    <div class="slds-m-around_medium">
+      <div class="slds-form-element__control">
+        <!-- Show Mx Onboarding Link details if active record exist -->
+        <template lwc:if={showMxOnboardingLinkComponent}>
+          <c-display-mx-onboarding-link
+            record-id={contractId}
+            onsendmxonboardinglink={handleMxOnboardingLink}
+            show-mx-onboarding-link={showActiveMxOnboardingLink}
+            mx-onboarding-link-record={mxOnboardingLink}
+          ></c-display-mx-onboarding-link>
+        </template>
+        <!-- Show Onboarding Inputs selection screen -->
+        <template lwc:if={showOnboardingScenarioSelectionScreen}>
+          <template for:each={options} for:item="option">
+            <div
+              key={option.value}
+              class="slds-grid slds-grid_vertical-align-center slds-m-bottom_small"
+            >
+              <input
+                type="radio"
+                id={option.value}
+                name="radioGroup"
+                value={option.value}
+                onchange={handleChange}
+                checked={option.checked}
+                class="slds-m-right_x-small"
+              />
+              <label for={option.value} class="slds-m-right_x-small"
+                >{option.label}</label
+              >
+            </div>
+            <span key={option.value} class="custom-tooltip slds-m-left_x-small"
+              >{option.helpText}</span
+            >
+          </template>
+        </template>
+        <!-- Show OI base component -->
+        <template lwc:if={showBaseComponent}>
+          <c-o-i-base-component
+            contract-id={contractId}
+            opportunity-id={opportunityId}
+            account-id={accountId}
+            object-name={objectApiName}
+            selected-onboarding-scenario={selectedOnboardingScenario}
+            onsendmxonboardingsuccess={handleMxOnboardingLinkSuccess}
+            onmxlinkcreation={handleMxOnboardingLinkCreation}
+            onaddstoretitle={handleAddStore}
+            onhideoibasecomponent={hideOIBaseComponent}
+            oncancel={handleClose}
+          ></c-o-i-base-component>
+        </template>
+        <template lwc:if={noMxInputNeeded}>
+              <lightning-modal-body> No inputs are needed from the Mx for this onboarding scenario. The onboarding process has been initiated based on your inputs.</lightning-modal-body>
+        </template>
+      </div>
+
+      <footer class="slds-card__footer slds-grid slds-grid_align-end">
+        <template lwc:if={hasActiveMxOnboardingLink}
+          ><lightning-button
+            label="Close"
+            variant="neutral"
+            onclick={handleClose}
+            class="slds-m-right_small"
+          ></lightning-button
+        ></template>
+        <template lwc:if={showOnboardingScenarioSelectionScreen}>
+          <lightning-button
+            label="Cancel"
+            variant="neutral"
+            onclick={handleClose}
+            class="slds-m-right_small"
+          ></lightning-button>
+          <lightning-button
+            label="Next"
+            variant="brand"
+            disabled={nextButtonDisabled}
+            onclick={handleNext}
+          ></lightning-button>
+        </template>
+      </footer>
+    </div>
+  </lightning-card>
+</template>

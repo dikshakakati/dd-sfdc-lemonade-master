@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Churn_Severity_Field_Update</name>
+    </customPermissions>
+    <description>LEM-14050: It is used to validate that the Churn Severity field is populated when Subtype is Retention and Type is Existing for the personas who have this permission set assigned.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Churn Severity Field Update</label>
+</PermissionSet>

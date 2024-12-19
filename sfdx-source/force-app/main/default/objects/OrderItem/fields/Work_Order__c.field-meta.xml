@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-2445: It indicates parent Work Order of child Work Order corresponding to Work Order Type of Product associated with Order Product.</description>
+    <externalId>false</externalId>
+    <label>Work Order</label>
+    <referenceTo>WorkOrder</referenceTo>
+    <relationshipLabel>Work Orders</relationshipLabel>
+    <relationshipName>WorkOrders</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

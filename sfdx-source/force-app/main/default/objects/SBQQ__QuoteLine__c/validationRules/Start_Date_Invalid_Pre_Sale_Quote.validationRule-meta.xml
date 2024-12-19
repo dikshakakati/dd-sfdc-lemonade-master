@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date_Invalid_Pre_Sale_Quote</fullName>
+    <active>true</active>
+    <description>Created as part of  LEM-22341 to ensure if the start date should be blank while creating a Pre-Sale Quote.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Ads_Promos_Validation),
+    SBQQ__Existing__c = FALSE,
+    SBQQ__ProductName__c != &apos;Store Rewards (DD Loyalty)&apos;,
+    SBQQ__ProductName__c != &apos;Dashpass Exclusive Item)&apos;,
+    SBQQ__ProductName__c != &apos;Banners&apos;,
+    SBQQ__ProductName__c != &apos;CRM&apos;,
+    Text(SBQQ__Quote__r.SBQQ__Account__r.Segment__c) = $Label.AccountSegmentSMB,
+    SBQQ__Quote__r.Opportunity_Type__c = &apos;New&apos;,
+    NOT(ISBLANK(End_Date__c)),
+    OR(
+        SBQQ__ProductFamily__c = &apos;Advertisement&apos;,
+        SBQQ__ProductFamily__c = &apos;Marketplace Promotion&apos;
+    )
+)</errorConditionFormula>
+    <errorMessage>For all A&amp;P Products, End Date shouldn’t be populated on Pre-Sale Quotes</errorMessage>
+</ValidationRule>

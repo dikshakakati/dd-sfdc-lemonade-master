@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-16059: It is used to bypass validation rules on Engagement.</description>
+    <isLicensed>false</isLicensed>
+    <label>Bypass Engagement Validation Rules</label>
+</CustomPermission>

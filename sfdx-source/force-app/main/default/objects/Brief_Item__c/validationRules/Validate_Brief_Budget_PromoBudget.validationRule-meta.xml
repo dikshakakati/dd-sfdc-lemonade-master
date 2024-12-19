@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Brief_Budget_PromoBudget</fullName>
+    <active>false</active>
+    <description>LEM-5110 Either &apos;Budget&apos; or &apos;Is there a Promo Budget Cap is not Blank when Status = &apos;Campaign Building&apos;</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+  ISCHANGED(Status__c),
+  ISPICKVAL( Status__c , &apos;Campaign Building&apos;),
+  Package__c != $Label.Brief_Package_Sponsorships,
+(OR(
+TEXT(Product__c) = $Label.Brief_Product_BuyAndGetOff,
+TEXT(Product__c) = $Label.Brief_Product_BuyOneGetOne,
+TEXT(Product__c) = $Label.Brief_Product_DoorDashDeals,
+TEXT(Product__c) = $Label.Brief_Product_TryMeFree,
+TEXT(Product__c) = $Label.Brief_Product_FirstOrderOff,
+TEXT(Product__c) = $Label.Brief_Product_FreeItemOverX,
+TEXT(Product__c) = $Label.Brief_Product_OrderAgain,
+TEXT(Product__c) = $Label.Brief_Product_SpendXGetY
+)),
+TEXT(Is_there_a_Promo_Budget_Cap__c)==Null
+)</errorConditionFormula>
+    <errorMessage>&apos;Is there a Promo Budget Cap?&apos; field must be populated to move campaign to &apos;Campaign Building&apos;.</errorMessage>
+</ValidationRule>

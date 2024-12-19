@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$Subject</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations*Activity$Call_Result__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Contact</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Role</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$CompletedDateTime</field>
+    </columns>
+    <currency>USD</currency>
+    <description>LEM-18931: This report shows the Opportunity, which have Contact Role with Activity.</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$CreatedDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_QUARTER</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityContactRoles.ActivityRelations*Activity$Call_Result__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Completed Call,Requested Call Back,No Answer,Left Voicemail,Incorrect Phone Number</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.OpportunityContactRoles.ActivityRelations$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Opportunities with Contact Roles &amp; Call</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Contact_Roles_with_Tasks__c</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <sortColumn>Opportunity.OpportunityContactRoles.ActivityRelations$Subject</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

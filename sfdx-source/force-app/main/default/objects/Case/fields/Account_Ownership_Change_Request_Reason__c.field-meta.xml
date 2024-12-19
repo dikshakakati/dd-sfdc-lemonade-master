@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Ownership_Change_Request_Reason__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14106: It indicates the Account Ownership Change Request Reason.</description>
+    <externalId>false</externalId>
+    <label>Change Request Reason</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sub_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dropped to Unmanaged, but should be Managed</fullName>
+                <default>false</default>
+                <label>Dropped to Unmanaged, but should be Managed</label>
+            </value>
+            <value>
+                <fullName>Low Growth Opportunity</fullName>
+                <default>false</default>
+                <label>Low Growth Opportunity</label>
+            </value>
+            <value>
+                <fullName>Mx/Store Belongs to a Group/Brand I already Manage</fullName>
+                <default>false</default>
+                <label>Mx/Store Belongs to a Group/Brand I already Manage</label>
+            </value>
+            <value>
+                <fullName>Mx Not in my Region</fullName>
+                <default>false</default>
+                <label>Mx Not in my Region</label>
+            </value>
+            <value>
+                <fullName>Mx Permanently Closed</fullName>
+                <default>false</default>
+                <label>Mx Permanently Closed</label>
+            </value>
+            <value>
+                <fullName>Mx Requested not to get Contacted</fullName>
+                <default>false</default>
+                <label>Mx Requested not to get Contacted</label>
+            </value>
+            <value>
+                <fullName>Mx Threatening to Churn if Management not Kept</fullName>
+                <default>false</default>
+                <label>Mx Threatening to Churn if Management not Kept</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Previously in My Book (Good Relationship)</fullName>
+                <default>false</default>
+                <label>Previously in My Book (Good Relationship)</label>
+            </value>
+            <value>
+                <fullName>Request Both Specialists</fullName>
+                <default>false</default>
+                <label>Request Both Specialists</label>
+            </value>
+            <value>
+                <fullName>Request no SAD Coverage</fullName>
+                <default>false</default>
+                <label>Request no SAD Coverage</label>
+            </value>
+            <value>
+                <fullName>Request Swap to Marketplace Generalist</fullName>
+                <default>false</default>
+                <label>Request Swap to Marketplace Generalist</label>
+            </value>
+            <value>
+                <fullName>Request Swap to Platform Generalist</fullName>
+                <default>false</default>
+                <label>Request Swap to Platform Generalist</label>
+            </value>
+            <value>
+                <fullName>Strategic Mx | Selection Mx</fullName>
+                <default>false</default>
+                <label>Strategic Mx | Selection Mx</label>
+            </value>
+            <value>
+                <fullName>Unresponsive Mx</fullName>
+                <default>false</default>
+                <label>Unresponsive Mx</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SAD Role Change Request</controllingFieldValue>
+            <valueName>Request Both Specialists</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SAD Role Change Request</controllingFieldValue>
+            <valueName>Request no SAD Coverage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SAD Role Change Request</controllingFieldValue>
+            <valueName>Request Swap to Marketplace Generalist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SAD Role Change Request</controllingFieldValue>
+            <valueName>Request Swap to Platform Generalist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Dropped to Unmanaged, but should be Managed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Low Growth Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Mx/Store Belongs to a Group/Brand I already Manage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Mx Not in my Region</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Mx Permanently Closed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Mx Requested not to get Contacted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Mx Threatening to Churn if Management not Kept</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Previously in My Book (Good Relationship)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Strategic Mx | Selection Mx</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Ownership Change</controllingFieldValue>
+            <valueName>Unresponsive Mx</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

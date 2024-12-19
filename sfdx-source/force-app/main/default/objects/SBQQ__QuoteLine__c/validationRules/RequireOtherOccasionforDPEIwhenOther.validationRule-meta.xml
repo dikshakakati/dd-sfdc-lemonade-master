@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RequireOtherOccasionforDPEIwhenOther</fullName>
+    <active>true</active>
+    <description>LEM-13256-DPEI Quote Line Attributes.</description>
+    <errorConditionFormula>AND(
+SBQQ__ProductCode__c = &apos;10084&apos;,
+ISPICKVAL(Is_this_part_of_any_DoorDash_Occasions__c, &apos;Other&apos;),
+ISBLANK(Other_Occasion__c)
+)</errorConditionFormula>
+    <errorMessage>Please fill out Other Occasion when Is this part of any DoorDash Occasions? is Other.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidatingStoreSpecificVariations</fullName>
+    <active>true</active>
+    <description>LEM-17422: Store specific variations validation</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Quote_Validation_Rules),
+    Segment__c =  &apos;SMB&apos;,
+    ISPICKVAL(SBQQ__Opportunity2__r.Type, &apos;Existing&apos;),
+    OR(
+        ISPICKVAL(SBQQ__Opportunity2__r.Opportunity_Sub_Type__c, &apos;Upgrade&apos;),
+        ISPICKVAL(SBQQ__Opportunity2__r.Opportunity_Sub_Type__c, &apos;Retention&apos;)
+    ),
+    ISPICKVAL(Store_Specific_Variations__c, &apos;No&apos;),
+    ISCHANGED(Store_Specific_Variations__c),
+    Text(SBQQ__Account__r.Pricing_Type__c) = &apos;Store Specific Pricing&apos; 
+)</errorConditionFormula>
+    <errorMessage>There is a core Contract under the Business Account, if Store Specific variations are not needed for the Mx, consider amending the existing core Contract.</errorMessage>
+</ValidationRule>

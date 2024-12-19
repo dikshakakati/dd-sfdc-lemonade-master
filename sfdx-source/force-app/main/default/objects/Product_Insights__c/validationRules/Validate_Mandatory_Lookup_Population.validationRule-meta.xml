@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Mandatory_Lookup_Population</fullName>
+    <active>true</active>
+    <description>LEM-623: To validate if the user has populated either one of the following lookup fields on the record Account, Opportunity, Initiative.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Product_Insights_Validation_Rules),
+    OR(
+        ISNEW(),
+        ISCHANGED(Initiative__c),
+        ISCHANGED(Opportunity__c),
+        ISCHANGED(Account_Name__c)
+    ),
+    ISBLANK(Initiative__c),
+    ISBLANK(Opportunity__c),
+    ISBLANK(Account_Name__c)
+)</errorConditionFormula>
+    <errorMessage>A Product Insight must be related to a Business Account, an Initiative, or an Opportunity. Please add at least one of those relationships.</errorMessage>
+</ValidationRule>

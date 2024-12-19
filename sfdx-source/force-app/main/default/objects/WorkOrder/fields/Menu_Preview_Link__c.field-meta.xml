@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_Preview_Link__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13504: It used to store the menu preview link from the Photoshoot Guided flow. LEM-16545: Changed the data type to LongTextArea(1000 characters) for allowing the URL with length more than 255 characters.</description>
+    <externalId>false</externalId>
+    <label>Menu Preview Link</label>
+    <length>1000</length>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

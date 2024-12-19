@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Type__c</fullName>
+    <description>LEM-15217: It is used to indicate if the Mx needs pricing variation across the Stores.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates if Mx needs standard pricing Vs pricing variation across the Stores</inlineHelpText>
+    <label>Pricing Type</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard Pricing</fullName>
+                <default>true</default>
+                <label>Standard Pricing</label>
+            </value>
+            <value>
+                <fullName>Store Specific Pricing</fullName>
+                <default>false</default>
+                <label>Store Specific Pricing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

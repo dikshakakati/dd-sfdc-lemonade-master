@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Negotiating_Stage_Gate</fullName>
+    <active>true</active>
+    <description>LEM-353: Validation to check if parent Account of type &apos;Holding Group&apos;/&apos;Independent Business&apos;/&apos;Corporate&apos; and the opportunity has a primary quote attached to move it from Negotiating to Contracting/Closed-Won.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Opportunity_Validation_Rules),
+    NOT(TEXT(Deal_Type__c) = $Label.Opportunity_Lite),
+    TEXT(Source__c) != $Label.Source_Nintex,
+    TEXT(Source__c) != $Label.Source_Product,
+    OR(
+        TEXT(StageName)=$Label.Opportunity_Stage_Contracting,
+        TEXT(StageName)=$Label.Opportunity_Stage_Closed_Won
+    ),
+    OR(
+        AND(
+            ISNEW(),
+            TEXT(Account.Type)&lt;&gt;$Label.Type_Franchisee
+        ),
+        AND(
+            OR(
+                ISCHANGED(AccountId),
+                ISCHANGED(StageName),
+                ISCHANGED(SBQQ__PrimaryQuote__c)
+            ),
+            OR(
+                ISBLANK(TEXT(Account.Type)),
+                TEXT(Account.Type)=$Label.Type_Holding_Group,
+                TEXT(Account.Type)=$Label.Type_Independent_Business,
+                TEXT(Account.Type)=$Label.Type_Corporate,
+                TEXT(Account.Type)=$Label.Type_Agency,
+                TEXT(Account.Type)=$Label.Type_AdTech,
+                TEXT(Account.Type)=$Label.Type_Measurement_Partner,
+                TEXT(Account.Type)=$Label.Type_POS_MWP_Provider
+            ),
+            OR(
+                ISBLANK(SBQQ__PrimaryQuote__c)
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Please log a Quote before moving past the Negotiating Stage.</errorMessage>
+</ValidationRule>

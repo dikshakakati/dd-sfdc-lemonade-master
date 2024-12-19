@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <description>LEM-8466 - Picklist with values representing the specific stage at which the Flow is on.</description>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>false</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Work Order Type Selection</fullName>
+                <default>false</default>
+                <label>Work Order Type Selection</label>
+            </value>
+            <value>
+                <fullName>Work Order Creation</fullName>
+                <default>false</default>
+                <label>Work Order Creation</label>
+            </value>
+            <value>
+                <fullName>Work Order Association</fullName>
+                <default>false</default>
+                <label>Work Order Association</label>
+            </value>
+            <value>
+                <fullName>Account File Upload</fullName>
+                <default>false</default>
+                <label>Account File Upload</label>
+            </value>
+            <value>
+                <fullName>Business Vertical</fullName>
+                <default>false</default>
+                <label>Business Vertical</label>
+            </value>
+            <value>
+                <fullName>Payment Account</fullName>
+                <default>false</default>
+                <label>Payment Account</label>
+            </value>
+            <value>
+                <fullName>Decision Maker</fullName>
+                <default>false</default>
+                <label>Decision Maker</label>
+            </value>
+            <value>
+                <fullName>Final Error Check</fullName>
+                <default>false</default>
+                <label>Final Error Check</label>
+            </value>
+            <value>
+                <fullName>Processing Stores</fullName>
+                <default>false</default>
+                <label>Processing Stores</label>
+            </value>
+            <value>
+                <fullName>Upload Complete</fullName>
+                <default>false</default>
+                <label>Upload Complete</label>
+            </value>
+            <value>
+                <fullName>Flow Initiated</fullName>
+                <default>false</default>
+                <label>Flow Initiated</label>
+            </value>
+            <value>
+                <fullName>Flow Completed</fullName>
+                <default>false</default>
+                <label>Flow Completed</label>
+            </value>
+            <value>
+                <fullName>External Ids Created</fullName>
+                <default>false</default>
+                <label>External Ids Created</label>
+            </value>
+            <value>
+                <fullName>Email Sent</fullName>
+                <default>false</default>
+                <label>Email Sent</label>
+            </value>
+            <value>
+                <fullName>Select Entitlement</fullName>
+                <default>false</default>
+                <label>Select Entitlement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

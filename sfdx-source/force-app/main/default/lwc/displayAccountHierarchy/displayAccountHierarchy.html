@@ -1,0 +1,39 @@
+<template>
+  <div
+    if:true={showWarningMessage}
+    class="slds-p-top--medium slds-p-left--medium"
+  >
+    <lightning-icon
+      icon-name="utility:warning"
+      size="small"
+      alternative-text="Warning!"
+      title="Warning"
+      class="my-icon"
+    ></lightning-icon>
+    <span class="slds-p-left--x-small">{label.storeLimitMessage}</span>
+  </div>
+  <div if:true={isLoading} class="slds-is-relative slds-p-around--x-large">
+    <div class="slds-spinner_container">
+      <div
+        role="status"
+        class="slds-spinner slds-spinner_medium slds-spinner_brand"
+      >
+        <span class="slds-assistive-text">Loading</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+    </div>
+  </div>
+  <div if:false={isLoading} class="slds-m-around_small">
+    <lightning-tree-grid
+      columns={gridColumns}
+      data={gridData}
+      hide-checkbox-column="true"
+      is-loading={isLoading}
+      key-field="Id"
+      ontoggle={handleOnToggle}
+      selected-rows={selectedRow}
+      expanded-rows={currentExpanded}
+    ></lightning-tree-grid>
+  </div>
+</template>

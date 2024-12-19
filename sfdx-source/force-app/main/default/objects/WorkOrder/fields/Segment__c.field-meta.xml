@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <description>LEM-813: Account segment linked to the onboarding event.</description>
+    <externalId>false</externalId>
+    <formula>Text(Account.Segment__c)</formula>
+    <inlineHelpText>Account segment linked to the onboarding event</inlineHelpText>
+    <label>Segment</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

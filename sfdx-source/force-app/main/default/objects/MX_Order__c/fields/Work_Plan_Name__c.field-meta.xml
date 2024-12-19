@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Plan_Name__c</fullName>
+    <description>LEM-13511 : Formula Field For Get WorkPlan Name</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/&apos; + Work_Plan__r.Id, Work_Plan__r.Name, &apos;_self&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Work Plan Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

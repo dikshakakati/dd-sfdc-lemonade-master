@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Document_Type__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15836: It stores all document type and dependent on country code. This is not a restricted picklist so it allows user to insert new value.</description>
+    <externalId>false</externalId>
+    <label>Mx Document Type</label>
+    <required>true</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Mx_Country__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ABN Document</fullName>
+                <default>false</default>
+                <label>ABN Document</label>
+            </value>
+            <value>
+                <fullName>Business License</fullName>
+                <default>false</default>
+                <label>Business License</label>
+            </value>
+            <value>
+                <fullName>DBA (Doing Business As)</fullName>
+                <default>false</default>
+                <label>DBA (Doing Business As)</label>
+            </value>
+            <value>
+                <fullName>EIN Verification Letter (147C)</fullName>
+                <default>false</default>
+                <label>EIN Verification Letter (147C)</label>
+            </value>
+            <value>
+                <fullName>Food License</fullName>
+                <default>false</default>
+                <label>Food License</label>
+            </value>
+            <value>
+                <fullName>Form SS-4</fullName>
+                <default>false</default>
+                <label>Form SS-4</label>
+            </value>
+            <value>
+                <fullName>HST/GST Document</fullName>
+                <default>false</default>
+                <label>HST/GST Document</label>
+            </value>
+            <value>
+                <fullName>NZBN Document</fullName>
+                <default>false</default>
+                <label>NZBN Document</label>
+            </value>
+            <value>
+                <fullName>Passport</fullName>
+                <default>false</default>
+                <label>Passport</label>
+            </value>
+            <value>
+                <fullName>Photo Identification Back</fullName>
+                <default>false</default>
+                <label>Photo Identification Back</label>
+            </value>
+            <value>
+                <fullName>Photo Identification Front</fullName>
+                <default>false</default>
+                <label>Photo Identification Front</label>
+            </value>
+            <value>
+                <fullName>W9 with Schedule C</fullName>
+                <default>false</default>
+                <label>W9 with Schedule C</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>US</controllingFieldValue>
+            <controllingFieldValue>CA</controllingFieldValue>
+            <valueName>Business License</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>US</controllingFieldValue>
+            <controllingFieldValue>CA</controllingFieldValue>
+            <valueName>DBA (Doing Business As)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>US</controllingFieldValue>
+            <valueName>EIN Verification Letter (147C)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>US</controllingFieldValue>
+            <valueName>Form SS-4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>US</controllingFieldValue>
+            <controllingFieldValue>CA</controllingFieldValue>
+            <controllingFieldValue>AU</controllingFieldValue>
+            <controllingFieldValue>NZ</controllingFieldValue>
+            <valueName>Passport</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>US</controllingFieldValue>
+            <controllingFieldValue>CA</controllingFieldValue>
+            <controllingFieldValue>AU</controllingFieldValue>
+            <controllingFieldValue>NZ</controllingFieldValue>
+            <valueName>Photo Identification Back</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>US</controllingFieldValue>
+            <controllingFieldValue>CA</controllingFieldValue>
+            <controllingFieldValue>AU</controllingFieldValue>
+            <controllingFieldValue>NZ</controllingFieldValue>
+            <valueName>Photo Identification Front</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>US</controllingFieldValue>
+            <valueName>W9 with Schedule C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CA</controllingFieldValue>
+            <valueName>HST/GST Document</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AU</controllingFieldValue>
+            <valueName>ABN Document</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AU</controllingFieldValue>
+            <controllingFieldValue>NZ</controllingFieldValue>
+            <valueName>Food License</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NZ</controllingFieldValue>
+            <valueName>NZBN Document</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

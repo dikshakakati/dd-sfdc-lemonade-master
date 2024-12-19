@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner_Email_Id__c</fullName>
+    <description>LEM-2045: It stores email address of Work Order&apos;s Account Owner for sending email alerts.</description>
+    <externalId>false</externalId>
+    <label>Account Owner Email Id</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Reply_for_5_days</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Last_Email_Received_Date__c</field>
+        <operation>notEqual</operation>
+        <value>LAST_N_DAYS:5</value>
+    </filters>
+    <filters>
+        <field>Last_Email_Received_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>No Reply for 5 days</label>
+</ListView>

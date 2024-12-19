@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Validations_For_Deal_Desk_Team</name>
+    </customPermissions>
+    <description>LEM-15216: It is used to bypass validation rules for deal desk team.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Validations For Deal Desk Team</label>
+</PermissionSet>

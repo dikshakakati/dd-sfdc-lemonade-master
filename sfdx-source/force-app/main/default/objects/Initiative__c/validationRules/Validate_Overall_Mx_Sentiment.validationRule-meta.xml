@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Overall_Mx_Sentiment</fullName>
+    <active>false</active>
+    <description>LEM-596: Validate if Overall Mx Sentiment is populated or not</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Initiative_Validation_Rules),
+    TEXT(Status__c) = $Label.Completed_Value,
+    TEXT(Overall_Mx_Sentiment__c) = &quot;&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Overall_Mx_Sentiment__c</errorDisplayField>
+    <errorMessage>Please indicate the Overall Mx Sentiment before saving the initiative as completed.</errorMessage>
+</ValidationRule>

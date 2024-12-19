@@ -1,0 +1,22 @@
+.lightningSpinnerStyle{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.option-container {
+    padding: 1.3rem;
+}
+
+.option-container p {
+    text-align: left;
+}
+
+.option-container-buttons {
+    text-align: right;
+}
+
+.option-text {
+    font-size: 1.1em;
+}

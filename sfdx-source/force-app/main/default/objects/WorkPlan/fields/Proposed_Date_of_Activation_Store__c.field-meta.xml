@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Date_of_Activation_Store__c</fullName>
+    <description
+  >LEM-4910: It indicates the Proposed Date of Activation of Account associated with Work Order of Work Plan. It is used to filter list views or reports on Work Plan object by Store Account's PDOA.</description>
+    <externalId>false</externalId>
+    <formula>WorkOrder.Account.Proposed_Date_of_Activation__c</formula>
+    <label>Proposed Date of Activation (Store)</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

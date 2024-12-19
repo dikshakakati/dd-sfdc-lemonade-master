@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Withholding</fullName>
+        <default>false</default>
+        <label>Withholding</label>
+    </customValue>
+    <customValue>
+        <fullName>Invoicing</fullName>
+        <default>false</default>
+        <label>Invoicing</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Fund</fullName>
+        <default>false</default>
+        <label>Marketing Fund</label>
+    </customValue>
+    <description>LEM-182: Initial Setup of Order Product</description>
+    <masterLabel>Payment Protocol</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,22 @@
+<!--
+@author BizApps
+@date 07/08/2023
+@description Aura component to wrap reattemptProvisioningOnWorkOrder lightning web component.
+-->
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"
+>
+  <!--@description It is used to hide the modal on clicking Reattempt Provisioning quick action.-->
+  <aura:html tag="style">
+    .slds-modal { visibility: hidden; display: none; } .slds-backdrop { display:
+    none; }
+  </aura:html>
+  <aura:attribute
+    name="recordId"
+    type="String"
+    description="Id of the currect record"
+  />
+  <c:reattemptProvisioningOnWorkOrder
+    recordId="{!v.recordId}"
+  ></c:reattemptProvisioningOnWorkOrder>
+</aura:component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LEM-3214: It is used to notify the franchisee form requester about Nintex URL approval request outcome.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Nintex URL Approval Completed Email</name>
+    <style>none</style>
+    <subject>Contract #: {!Merchant_Pop_Up_Response__c.Contract_Number__c} Approval Request for Franchise Form URL has been completed</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

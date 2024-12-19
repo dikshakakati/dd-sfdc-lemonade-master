@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Account_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Record_Type_Name__c</fields>
+    <fields>OwnerId</fields>
+    <fields>Segment__c</fields>
+    <fields>Primary_Vertical__c</fields>
+    <fields>Total_Number_Of_Stores_Report__c</fields>
+    <fields>Partnership_Status__c</fields>
+    <fields>Data_Verification_Status__c</fields>
+    <fields>Duplicate_Status__c</fields>
+    <label>Business Account Compact Layout</label>
+</CompactLayout>

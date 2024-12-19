@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMB_Pricing_Tier__c</fullName>
+    <description>LEM-21389, LEM-16377: It is used to calculate the tier values based on different conditions.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  Product_Name__c = &apos;Basic Package&apos;,
+  2,
+  IF(
+    NOT(ISBLANK(TEXT(Order.Account.Pricing_Tier_Override__c))),
+    VALUE(TEXT(Order.Account.Pricing_Tier_Override__c)),
+    IF(
+      TEXT(Order.Account.BillingCountryCode) = &apos;CA&apos;,
+      IF(
+        Product_Name__c = &apos;Plus Package&apos;,
+        3,
+        IF(
+          Product_Name__c = &apos;Premier Package&apos;,
+          4,
+          null
+        )
+      ),
+      IF(
+        OR(
+             Product_Name__c = &apos;Plus Package&apos;,
+             Product_Name__c = &apos;Marketplace&apos;
+        ),
+        Order.Account.SubMarket__r.Submarket_Base_Tier__c,
+        IF(
+          Product_Name__c = &apos;Premier Package&apos;,
+          Order.Account.SubMarket__r.Submarket_Premium_Tier__c,
+          4
+        )
+      )
+    )
+  )
+)</formula>
+    <label>SMB_Pricing_Tier</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

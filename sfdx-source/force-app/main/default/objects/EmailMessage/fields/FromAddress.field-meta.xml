@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FromAddress</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14155: It is used to store the from address of associated email.</description>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Email</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Campaign_Setup_Errors_Found__c</fullName>
+    <description>LEM-2983: Captures the number of setup errors occurred related to the Brief Item.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the number of campaign setup errors found for this product.</inlineHelpText>
+    <label>Number of Campaign Setup Errors Found</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

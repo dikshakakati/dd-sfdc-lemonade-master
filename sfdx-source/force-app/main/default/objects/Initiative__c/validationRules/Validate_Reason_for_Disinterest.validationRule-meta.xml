@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Reason_for_Disinterest</fullName>
+    <active>true</active>
+    <description>LEM-1596: Validate If Reason field is populated when Response value equals to Mx Uninterested - No further Action necessary.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Initiative_Validation_Rules),
+  ISBLANK(Reason_for_Disinterest__c),
+  TEXT(Response__c) = $Label.Mx_Uninterested_No_further_Action_necessary
+)</errorConditionFormula>
+    <errorDisplayField>Reason_for_Disinterest__c</errorDisplayField>
+    <errorMessage>Reason for Disinterest must be populated before saving the Initiative.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SP_Banner_Content_ID__c</fullName>
+    <description>LEM-2983: Captures the Sponsored Products ID.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the Sponsored Products content ID here.</inlineHelpText>
+    <label>Store Page Banner Content ID</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

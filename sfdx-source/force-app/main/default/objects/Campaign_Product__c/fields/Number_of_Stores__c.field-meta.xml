@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Stores__c</fullName>
+    <description>LEM-15224: It represents the number of stores.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <label>Number of Stores</label>
+    <securityClassification>Propietary</securityClassification>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

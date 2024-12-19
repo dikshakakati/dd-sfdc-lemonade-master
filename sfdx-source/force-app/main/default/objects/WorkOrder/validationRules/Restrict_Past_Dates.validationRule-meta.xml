@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Past_Dates</fullName>
+    <active>true</active>
+    <description>LEM-1729, LEM-3109: PDOx should not be in past while creating Work Order for Marketplace, COO type.
+LEM-1684: Bypassed it for Work Order created on store Account through system.
+LEM-10254: Bypassed it for Work Order SubType is COO Same Store</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  ISNEW(),
+  Originating_Work_Order__c = NULL,
+  NOT(
+    AND(
+      OR (
+        TEXT(Work_Order_Source__c) = $Label.WorkOrderSourceSystem,
+        TEXT(Work_Order_Source__c) = $Label.SOURCE_SSMO
+      ),
+      Account_Record_Type_Name__c = $Label.StoreAccountRecordTypeName
+    )
+  ),
+  OR(
+    TEXT(Type__c) = $Label.WorkOrder_Type_Marketplace,
+    (TEXT(Type__c) = $Label.WorkOrderTypeCOO &amp;&amp; TEXT(Sub_Type__c) != $Label.WorkOrderSubTypeSameStoreCOO)
+  ),
+  OR(
+    Proposed_Date_of_Activation__c &lt; TODAY(),
+    Proposed_Date_of_Menu__c &lt; TODAY(),
+    Proposed_Date_of_Tablet__c &lt; TODAY()
+  )
+)</errorConditionFormula>
+    <errorMessage>Please ensure the PDOA, PDOT do not occur in the past. The Proposed Date of Activation must be set to at least 4 business days into the future.</errorMessage>
+</ValidationRule>

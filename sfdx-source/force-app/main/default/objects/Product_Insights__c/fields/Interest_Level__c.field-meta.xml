@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interest_Level__c</fullName>
+    <description>LEM-623: Captures the level of Interest for a Merchant with whom Product discussions were initiated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the overall Merchant interest level for the campaign product.</inlineHelpText>
+    <label>Interest Level</label>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Interested at All</fullName>
+                <default>false</default>
+                <label>Not Interested at All</label>
+            </value>
+            <value>
+                <fullName>Somewhat Uninterested</fullName>
+                <default>false</default>
+                <label>Somewhat Uninterested</label>
+            </value>
+            <value>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+                <label>Neutral</label>
+            </value>
+            <value>
+                <fullName>Somewhat Interested</fullName>
+                <default>false</default>
+                <label>Somewhat Interested</label>
+            </value>
+            <value>
+                <fullName>Very Interested</fullName>
+                <default>false</default>
+                <label>Very Interested</label>
+            </value>
+            <value>
+                <fullName>To Be Evaluated</fullName>
+                <default>false</default>
+                <label>To Be Evaluated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

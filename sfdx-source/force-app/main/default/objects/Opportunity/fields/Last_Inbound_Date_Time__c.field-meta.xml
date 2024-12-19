@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Inbound_Date_Time__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15472: It indicates the most recent time this Opportunity has inbounded.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the most recent time this Opportunity has inbounded.</inlineHelpText>
+    <label>Last Inbound Date/Time</label>
+    <securityClassification>Proprietary</securityClassification>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

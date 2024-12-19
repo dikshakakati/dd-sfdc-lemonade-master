@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimated_Number_Of_Stores__c</fullName>
+    <description>LEM-813: Estimated number of stores to be onboarded as part of the work order.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Estimated number of stores to be onboarded as part of the work order</inlineHelpText>
+    <label>Estimated Number Of Stores</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

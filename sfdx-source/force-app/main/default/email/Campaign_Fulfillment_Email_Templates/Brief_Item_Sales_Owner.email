@@ -1,0 +1,11 @@
+Hi {!Brief_Item__c.Opportunity_Owner__c},
+
+Your in-campaign amendment/optimization request for {!Brief_Item__c.Name} has been completed. Please see further details regarding the request below.
+ 
+Account: {!Brief_Item__c.Account_Val__c}
+Ops DRI: {!Brief_Item__c.Ops_Owner__c}
+Brief Item ID: {!Brief_Item__c.Name}
+Product: {!Brief_Item__c.Product__c}
+ 
+Thanks,
+Xx

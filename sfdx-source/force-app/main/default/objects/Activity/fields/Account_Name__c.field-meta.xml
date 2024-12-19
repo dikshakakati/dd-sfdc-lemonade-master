@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Name__c</fullName>
+    <description>LEM-16014 : Populate the Account name for all store(s) that satisfy the above criteria on the Task as comma-separated text values in a separate field for Related Account(s).</description>
+    <externalId>false</externalId>
+    <label>Account Name</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

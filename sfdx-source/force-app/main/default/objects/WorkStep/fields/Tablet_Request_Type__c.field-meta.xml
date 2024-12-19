@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tablet_Request_Type__c</fullName>
+    <description>LEM-1395: Type of tablet request that will be created and manage by the vendor.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND(
+    NOT(ISBLANK(Store_Account__c)),
+    NOT(ISBLANK(TEXT(Store_Account__r.Order_Protocol__c))),
+    CONTAINS(
+    $Label.TabletRequestTypeOrderProtocolCriteria,
+    TEXT(Store_Account__r.Order_Protocol__c)
+    ),
+    TEXT(Store_Account__r.Order_Protocol__c) &lt;&gt; $Label.AccountOrderProtocolTabletAndPrinter
+  ),
+  $Label.ShipToMerchantTabletRequestType,
+  IF(
+    TEXT(Store_Account__r.Order_Protocol__c) = $Label.AccountOrderProtocolTabletAndPrinter,
+    $Label.ShipToMerchantPrinterTabletRequestType,
+    &apos;&apos;
+  )
+)</formula>
+    <label>Tablet Request Type</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

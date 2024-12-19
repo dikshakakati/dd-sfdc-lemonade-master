@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>King</fullName>
+        <default>false</default>
+        <label>King</label>
+    </customValue>
+    <customValue>
+        <fullName>Queen</fullName>
+        <default>false</default>
+        <label>Queen</label>
+    </customValue>
+    <customValue>
+        <fullName>Jack</fullName>
+        <default>false</default>
+        <label>Jack</label>
+    </customValue>
+    <customValue>
+        <fullName>Joker</fullName>
+        <default>false</default>
+        <label>Joker</label>
+    </customValue>
+    <customValue>
+        <fullName>Ace</fullName>
+        <default>false</default>
+        <label>Ace</label>
+    </customValue>
+    <customValue>
+        <fullName>Ace of Spades</fullName>
+        <default>false</default>
+        <label>Ace of Spades</label>
+    </customValue>
+    <customValue>
+        <fullName>King of Spades</fullName>
+        <default>false</default>
+        <label>King of Spades</label>
+    </customValue>
+    <description>LEM-14098: It is used to store Deck Rank values for the associated Account.</description>
+    <masterLabel>Deck Rank Values</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

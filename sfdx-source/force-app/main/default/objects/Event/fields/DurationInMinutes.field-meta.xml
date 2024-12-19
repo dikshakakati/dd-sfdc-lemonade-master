@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DurationInMinutes</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14155: It represents the length of an event in minutes.</description>
+    <inlineHelpText>Represents the length of an event in minutes</inlineHelpText>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+</CustomField>

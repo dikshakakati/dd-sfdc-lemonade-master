@@ -1,0 +1,59 @@
+{
+"uuid": "MxPAddStorefront66-53-6y6hdd9-4a0c-9193-9152aeb86fe4",
+"eventType": "ADD_STOREFRONT",
+"store": {
+"storeId": "3884328",
+"isTest": false,
+"businessId": "13432605",
+"storeName": "TK Net New Without StoreFront 1",
+"vendorContractType": "Mx Portal Online Ordering Addendum",
+"vendorActivityId": "65fb64b0de264b7d4b7d823d",
+"vendorContractRecord": "https://app.pactsafe.com/api/activity/65fb64b0de264b7d4b7d823d/record",
+"orderProducts": {
+"name": "Standard Storefront Package",
+"productCode": null,
+"productOptions": [
+{
+"name": "Set Up Fee",
+"productCode": null,
+"fee": 0
+},
+{
+"name": "Subscription Fee",
+"productCode": null,
+"commission": 0
+},
+{
+"name": "Mx Delivery Fee",
+"productCode": null,
+"fee": 0.30000001192092896
+},
+{
+"name": "Payment Processing Fee",
+"productCode": null,
+"fee": 0.30000001192092896
+},
+{
+"name": "Payment Processing Rate",
+"productCode": null,
+"commission": 2.9000000953674316
+},
+{
+"name": "Pickup",
+"productCode": null,
+"fee": 0
+},
+{
+"name": "Cx Delivery Fee",
+"productCode": null,
+"fee": 3.9900000953674315
+},
+{
+"name": "Service Rate",
+"productCode": null,
+"commission": 10
+}
+]
+}
+}
+}

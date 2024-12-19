@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Tablet Lost</fullName>
+        <default>false</default>
+        <label>Tablet Lost</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet Stolen</fullName>
+        <default>false</default>
+        <label>Tablet Stolen</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet Screen Cracked</fullName>
+        <default>false</default>
+        <label>Tablet Screen Cracked</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet Won’t Charge</fullName>
+        <default>false</default>
+        <label>Tablet Won’t Charge</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet Won’t Connect to Internet</fullName>
+        <default>false</default>
+        <label>Tablet Won’t Connect to Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Accessories Lost/Broken</fullName>
+        <default>false</default>
+        <label>Accessories Lost/Broken</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (please specify reason in notes)</fullName>
+        <default>false</default>
+        <label>Other (please specify reason in notes)</label>
+    </customValue>
+    <description>LEM-13509 : It is used to store the reason for replacement.</description>
+    <masterLabel>Reason For Replacement</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

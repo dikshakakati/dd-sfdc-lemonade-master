@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percent_of_Fee_to_Invoice_Merchant_Val__c</fullName>
+    <description>LEM-6823
+LEM-9346: APEX - Fixing the Process for In-Campaign Changes</description>
+    <externalId>false</externalId>
+    <formula>Quote_Line__r.Percent_of_Fee_to_Invoice_Merchant__c</formula>
+    <inlineHelpText>Stores the percentage of the fee to be invoiced to the Merchant.</inlineHelpText>
+    <label>Z% of Fee to Invoice Advertiser</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,58 @@
+<!--
+  * @author Aethereus
+  * @date 02/06/2024
+  * @description LWC to show Work Steps Issue records .
+-->
+
+<template>
+    <template lwc:if={isComponentVisible}>
+        <lightning-tabset>
+            <lightning-tab label={blockedLabel} title="Work Plan Blockers" onactive={tabChangeHandler}>
+                <template lwc:if={showWorkPlanBlockers}>
+                    <!-- Help text message for blocked -->
+                    <template lwc:if={isBlockedCountGreaterThanZero}>
+                        <div class="slds-var-p-around_medium slds-box custom-box-yellow slds-var-m-bottom_small">
+                            <lightning-icon icon-name="utility:info" alternative-text="HelpText" size="small" title="HelpText" class="info-icon-yellow">
+                            </lightning-icon>
+                            <lightning-formatted-rich-text class="slds-var-p-left_small" value={helpText.blocked}></lightning-formatted-rich-text>
+                        </div>
+                    </template>
+
+                    <c-issue-work-steps-data-table
+                        columns={columns}
+                        work-order-id={recordId}
+                        work-order-name={name}
+                        title={tableTitle}
+                        work-step-status={workPlanstatus}
+                        show-component={showComponent}
+                    >
+                    </c-issue-work-steps-data-table>
+                </template>
+            </lightning-tab>
+            <lightning-tab label={escalatedLabel} title="Work Plan Escalations" onactive={tabChangeHandler}>
+                <template lwc:if={showWorkPlanEscalations}>
+                    <!-- Help text message for escalated -->
+                    <template lwc:if={isEscalatedCountCountGreaterThanZero}>
+                        <div class="slds-var-p-around_medium slds-box custom-box-yellow slds-var-m-bottom_small">
+                            <lightning-icon icon-name="utility:info" alternative-text="HelpText" size="small" title="HelpText" class="info-icon-yellow">
+                            </lightning-icon>
+                            <lightning-formatted-rich-text class="slds-var-p-left_small" value={helpText.escalated}></lightning-formatted-rich-text>
+                        </div>
+                    </template>
+
+                    <c-issue-work-steps-data-table
+                        columns={columns}
+                        work-order-id={recordId}
+                        work-order-name={name}
+                        title={tableTitle}
+                        work-step-status={workPlanstatus}
+                    >
+                    </c-issue-work-steps-data-table>
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+    </template>
+    <template lwc:else>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+      </template>
+</template>

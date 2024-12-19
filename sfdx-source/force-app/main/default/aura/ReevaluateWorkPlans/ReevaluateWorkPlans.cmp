@@ -1,0 +1,22 @@
+<!--
+@author Deloitte
+@date 13/07/2022
+@description Aura component to wrap reevaluateWorkPlansOnWorkOrder lightning web component.
+-->
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"
+>
+  <!--@description It is used to hide the modal on clicking Re-evaluate Work Plans quick action.-->
+  <aura:html tag="style">
+    .slds-modal { visibility: hidden; display: none; } .slds-backdrop { display:
+    none; }
+  </aura:html>
+  <aura:attribute
+    name="recordId"
+    type="String"
+    description="Id of the currect record"
+  />
+  <c:reevaluateWorkPlansOnWorkOrder
+    recordId="{!v.recordId}"
+  ></c:reevaluateWorkPlansOnWorkOrder>
+</aura:component>

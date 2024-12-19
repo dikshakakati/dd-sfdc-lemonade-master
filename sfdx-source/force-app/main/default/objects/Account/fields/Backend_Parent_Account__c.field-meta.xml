@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Backend_Parent_Account__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-24069: It is used to have the lookup to the Account with the filter criteria as RecordType.Name = ‘Business&apos; AND Type = &apos;Corporate’ .This filed will be referred in the flow.</description>
+    <externalId>false</externalId>
+    <label>Backend Parent Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Business</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Corporate</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.Segment__c</field>
+            <operation>equals</operation>
+            <value>SMB</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Accounts (Backend Parent Account)</relationshipLabel>
+    <relationshipName>Accounts1</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,131 @@
+<!--
+  @description       :
+  @author            : Gaurav
+  @group             :
+  @last modified on  : 08-21-2024
+  @last modified by  : Gaurav
+-->
+
+
+<template>
+    <template lwc:if={showComponent}>
+        <template lwc:if={areEmailMessagesFound}>
+            <lightning-card class="slds-var-p-top_medium slds-var-p-bottom_medium">
+                <template for:each={emailMessages} for:item="account" for:index="accountIndex">
+                    <div key={account.accountName} class="slds-var-m-bottom_large">
+                        <template if:true={account.toggleEmails}>
+                            <lightning-icon icon-name="utility:chevrondown" size="x-small" class="slds-var-m-around_xx-small" data-index={accountIndex} onclick={handleStoreAccordion}></lightning-icon>
+                        </template>
+                        <template if:false={account.toggleEmails}>
+                            <lightning-icon icon-name="utility:chevronright" size="x-small" class="slds-var-m-around_xx-small" data-index={accountIndex} onclick={handleStoreAccordion}></lightning-icon>
+                        </template>
+                        <lightning-formatted-url value={account.storeAccountUrl} label={account.accountName} target="_blank"></lightning-formatted-url>
+
+                        <template if:true={account.toggleEmails}>
+                            <div class="slds-var-m-left_medium slds-var-m-top_small">
+                                <ul class="slds-timeline">
+                                    <template for:each={account.emailMessages} for:item="email" for:index="index">
+                                        <li key={email.Id}>
+                                            <div class="slds-timeline__item_expandable slds-timeline__item_email slds-is-open">
+                                                <span class="slds-assistive-text">email</span>
+                                                <div class="slds-media">
+                                                    <div class="slds-media__figure">
+                                                        <template if:true={email.areDetailsVisible}>
+                                                            <lightning-icon icon-name="utility:chevrondown" size="x-small"
+                                                                                                onclick={handleEmailAccordion} data-messageid={email.Id} data-accountindex={accountIndex} data-index={index}></lightning-icon>
+                                                        </template>
+                                                        <template if:false={email.areDetailsVisible}>
+                                                            <lightning-icon icon-name="utility:chevronright" size="x-small"
+                                                                                                onclick={handleEmailAccordion} data-messageid={email.Id} data-accountindex={accountIndex} data-index={index}></lightning-icon>
+                                                        </template>
+                                                        <span class="slds-assistive-text">Toggle details for {email.Subject}</span>
+                                                        <div class="slds-icon_container slds-var-m-left_small" title="email">
+                                                            <lightning-icon icon-name="standard:email" size="small"></lightning-icon>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-media__body">
+                                                        <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                                                            <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                                                                <h3 class="slds-truncate" title={email.Subject}>
+                                                                    <lightning-formatted-url value={email.emailMessageUrl} label={email.Subject} target="_blank" data-index={email.Id} onclick={handleEmailMessageLinkClick}></lightning-formatted-url>
+                                                                </h3>
+                                                                <template if:true={email.HasAttachment}>
+                                                                    <div class="slds-no-flex">
+                                                                        <span class="slds-icon_container slds-icon-utility-attach"
+                                                                                                                            title="Has attachments">
+                                                                            <lightning-icon icon-name="utility:attach" size="xx-small"
+                                                                                                                                class="slds-var-m-left_xx-small"></lightning-icon>
+                                                                        <span class="slds-assistive-text">Has attachments</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </template>
+                                                            </div>
+                                                            <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                                <p class="slds-timeline__date">{email.MessageDate}</p>
+                                                            </div>
+                                                        </div>
+                                                        <template if:true={email.Is_Message_Seen__c}>
+                                                            <lightning-icon icon-name="utility:email_open" size="x-small"
+                                                                                                class="slds-var-m-right_xx-small" alternative-text="Email read icon"
+                                                                                                title="Email read icon"></lightning-icon> Opened
+                                                        </template>
+                                                        <template if:false={email.Is_Message_Seen__c}>
+                                                            <lightning-icon icon-name="utility:email" size="x-small"
+                                                                                                class="slds-var-m-right_xx-small" alternative-text="Email unread icon"
+                                                                                                title="Email unread icon">
+                                                            </lightning-icon> Unopened
+                                                        </template>
+                                                        <p class="slds-var-m-horizontal_xx-small">
+                                                            <a href="#">{email.FromAddress}</a> sent an email to
+                                                            <a href="#"> {email.ToAddress}</a>
+                                                        </p>
+                                                        <template if:true={email.areDetailsVisible}>
+                                                            <article class="slds-box slds-timeline__item_details slds-theme_shade slds-var-m-top_x-small slds-var-m-horizontal_xx-small slds-var-p-around_medium">
+
+                                                                <ul class="slds-list_horizontal slds-wrap">
+                                                                    <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-var-p-bottom_small">
+                                                                        <span class="slds-text-title slds-var-p-bottom_x-small">From Address</span>
+                                                                        <span class="slds-text-body_medium slds-truncate" title="Jackie Dewar">
+                                                                            <a href="#">{email.FromAddress}</a>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-var-p-bottom_small">
+                                                                        <span class="slds-text-title slds-var-p-bottom_x-small">To Address</span>
+                                                                        <span class="slds-text-body_medium slds-truncate" title="Lea Chan">
+                                                                            <a href="#">{email.ToAddress}</a>
+                                                                        </span>
+                                                                    </li>
+                                                                </ul>
+                                                                <div>
+                                                                    <span class="slds-text-title">Text Body</span><br />
+                                                                    <div class="slds-box slds-theme_default">
+                                                                        <lightning-formatted-rich-text value={email.HtmlBody} class="slds-var-p-top_x-small">
+                                                                        </lightning-formatted-rich-text>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </lightning-card>
+        </template>
+        <template lwc:else>
+            <div class="slds-box slds-box_xx-small slds-var-m-vertical_medium slds-text-align_center">
+                {noRecordFound}
+            </div>
+        </template>
+
+    </template>
+    <template lwc:else>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+
+</template>

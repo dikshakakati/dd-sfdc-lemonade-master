@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Untouched_Opportunities</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>Opportunity_Sub_Type__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Estimated_Number_of_Stores__c</columns>
+    <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>Account_Deck_Rank__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Prospecting</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.LAST_ACTIVITY</field>
+        <operation>equals</operation>
+    </filters>
+    <label>My Untouched Opportunities</label>
+</ListView>

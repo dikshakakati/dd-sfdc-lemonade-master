@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_ReleaseDateIsFilled_For_Ext_Ad</fullName>
+    <active>false</active>
+    <description>LEM-2983: Validates if the earliest Press Release Date is populated when campaign
+        advertisement needs to be carried out by external media channels.</description>
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Brief_Validation_Rules),
+        TEXT(Advertise_via_External_Media_Channels__c)=$Label.Yes_Decision,
+        ISBLANK(Earliest_Date_for_Press_Release__c)
+        )</errorConditionFormula>
+    <errorDisplayField>Earliest_Date_for_Press_Release__c</errorDisplayField>
+    <errorMessage>Please provide the earliest date for press release since you have chose to
+        advertise this campaign through external media channels.</errorMessage>
+</ValidationRule>

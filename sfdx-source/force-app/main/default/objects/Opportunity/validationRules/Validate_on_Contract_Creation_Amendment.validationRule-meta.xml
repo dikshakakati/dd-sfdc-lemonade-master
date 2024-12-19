@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_on_Contract_Creation_Amendment</fullName>
+    <active>false</active>
+    <description>LEM-13478:It prevents the opportunity from getting created when Type is Existing and Subtype is Contract-Creation-Amendment for SMB accounts</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Opportunity_Validation_Rules),
+ISPICKVAL( Account.Segment__c , &quot;SMB&quot;) ,
+ISPICKVAL( Type , &quot;Existing&quot;) ,
+ISPICKVAL( Opportunity_Sub_Type__c , &quot;Contract Correction - Amendment&quot;)
+)</errorConditionFormula>
+    <errorMessage>You do not have access to this Opportunity Sub-Type. Please select a different value to continue.</errorMessage>
+</ValidationRule>

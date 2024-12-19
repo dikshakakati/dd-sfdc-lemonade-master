@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Name_Required_for_AM_AD_Handoff</fullName>
+    <active>true</active>
+    <description>LEM-24541: It ensures that the Name field is required when creating a new task with Type set to &apos;AM &lt;&gt; AD Handoff&apos;.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Task_Validation_Rules),
+  TEXT(Type) = $Label.Task_Type_AMAD_Handoff,
+  ISBLANK(WhoId)
+)</errorConditionFormula>
+    <errorDisplayField>WhoId</errorDisplayField>
+    <errorMessage>Name is required for AM &lt;&gt; AD Handoff.</errorMessage>
+</ValidationRule>

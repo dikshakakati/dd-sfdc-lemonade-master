@@ -1,0 +1,40 @@
+<!--
+  * @author Deloitte
+  * @date 12/04/2023
+  * @description LWC to show store association failures on Business Account record Page.
+-->
+<template>
+  <lightning-card>
+    <template lwc:if={loaded}>
+      <div class="dataTableStyling">
+        <template lwc:if={showDataTable}>
+          <template if:true={isLoading}>
+            <lightning-spinner alternative-text={loadingAlternativeText} size="large" class="slds-is-fixed"></lightning-spinner>
+          </template>
+          <lightning-datatable
+            key-field="Id"
+            data={results}
+            hide-checkbox-column
+            columns={columns}
+            enable-infinite-loading
+            onloadmore={loadMoreData}>
+          >
+          </lightning-datatable>
+        </template>
+      </div>
+      <template lwc:if={showMessage}>
+        <div class="messageBoxStyling">
+          <p class="messageStyling">{noDataFoundMessage}</p>
+        </div>
+      </template>
+      <template lwc:if={errors}>{errors}</template>
+    </template>
+    <template lwc:else>
+      <div class="spinnerStyling">
+        <lightning-spinner
+          alternative-text={loadingAlternativeText}
+        ></lightning-spinner>
+      </div>
+    </template>
+  </lightning-card>
+</template>

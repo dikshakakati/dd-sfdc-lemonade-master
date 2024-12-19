@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_PromoCodeIsPopulated</fullName>
+    <active>false</active>
+    <description>LEM-2983: Validates if the Promo Code is populated when the Redemption Type is Promo Code.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Brief_Validation_Rules),
+    TEXT(Redemption_Type__c)=$Label.Promo_Code_Redemption_Type,
+    ISBLANK(Custom_Promo_Code__c)
+)</errorConditionFormula>
+    <errorDisplayField>Custom_Promo_Code__c</errorDisplayField>
+    <errorMessage>Please populate a Custom Promo Code since you have not selected the Auto-Redemption option.</errorMessage>
+</ValidationRule>

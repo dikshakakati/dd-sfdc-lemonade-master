@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CPM</fullName>
+        <default>false</default>
+        <label>CPM</label>
+    </customValue>
+    <customValue>
+        <fullName>Flat Rate</fullName>
+        <default>false</default>
+        <label>Flat Rate</label>
+    </customValue>
+    <description>LEM-486 – Attributes related to Advertisement products</description>
+    <masterLabel>Banner Fee (Unit Price Per CPM)</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

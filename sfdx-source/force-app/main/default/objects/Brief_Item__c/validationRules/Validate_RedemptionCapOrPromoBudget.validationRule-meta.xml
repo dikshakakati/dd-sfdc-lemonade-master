@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_RedemptionCapOrPromoBudget</fullName>
+    <active>true</active>
+    <description>LEM-2983: Validates if Redemption Cap or Promo Budget population when % of Consumer Discount DD funded is greater than 0.
+LEM-12181- Update Max Number of Redemptions to ‘Overall Max Number of Redemptions’</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+    Package__c != $Label.Brief_Package_Sponsorships,
+    ISBLANK(Max_Redemption_Cap__c),
+    NOT(
+        ISBLANK(Percentof_Consumer_DiscFee_DD_Funded__c)
+    ),
+    Percentof_Consumer_DiscFee_DD_Funded__c&gt;0
+)</errorConditionFormula>
+    <errorDisplayField>Max_Redemption_Cap__c</errorDisplayField>
+    <errorMessage>Please populate Overall Max Number of Redemptions as the % of Consumer Discount DD Funded field is greater than 0</errorMessage>
+</ValidationRule>

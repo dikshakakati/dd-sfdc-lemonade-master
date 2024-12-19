@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Message_Seen__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-13578, it is used to implement custom logic used for tracking messages are opened or not.</description>
+    <externalId>false</externalId>
+    <label>Is Message Seen</label>
+    <type>Checkbox</type>
+</CustomField>

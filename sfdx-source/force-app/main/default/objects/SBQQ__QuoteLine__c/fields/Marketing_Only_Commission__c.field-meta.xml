@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Only_Commission__c</fullName>
+    <description>LEM-13626: It captures the value of additional marketing fee rate. LEM-13960 - Magic Wand Attributes</description>
+    <externalId>false</externalId>
+    <label>Additional Marketing Fee Rate</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

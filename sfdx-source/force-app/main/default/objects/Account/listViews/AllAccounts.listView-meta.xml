@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllAccounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>Segment__c</columns>
+    <columns>Primary_Vertical__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Total_Number_Of_Stores__c</columns>
+    <columns>Partnership_Status__c</columns>
+    <columns>Account_Lifecycle_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Accounts</label>
+</ListView>

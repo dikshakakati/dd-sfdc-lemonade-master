@@ -1,0 +1,29 @@
+<!--
+  @description       :
+  @author            : Gaurav
+  @group             :
+  @last modified on  : 05-24-2024
+  @last modified by  : Soumya Dash
+-->
+<template>
+    <!-- sldsValidatorIgnoreNextLine -->
+<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+    <thead>
+        <tr>
+            <th>{rowHeading.rowSelection}</th>
+            <th>{rowHeading.name}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <template for:each={existingBrands} for:item="brands">
+            <tr key={brands.brandAssociationId}>
+                <td>
+                    <lightning-input class="slds-var-p-left_small" type="checkbox" onchange={handleCheckboxChange} data-id={brands.brandAssociationId} data-brand-name={brands.BrandName} data-brand-id={brands.brandId} checked={brands.isChecked}></lightning-input>
+                </td>
+                <td>{brands.BrandName}</td>
+            </tr>
+        </template>
+    </tbody>
+</table>
+
+</template>

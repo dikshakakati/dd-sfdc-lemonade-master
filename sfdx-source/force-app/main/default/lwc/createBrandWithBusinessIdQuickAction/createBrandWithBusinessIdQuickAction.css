@@ -1,0 +1,4 @@
+.slds-box.non-unique {
+    border: 2px solid red; /* You can customize the highlighting style */
+    box-shadow: 0 0 5px red; /* Optional: Add a shadow for better visibility */
+}

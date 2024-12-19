@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Deck_Rank_For_Enterprise</fullName>
+    <active>true</active>
+    <description>LEM-14098: It is used to validate that for Enterprise/Mid Market accounts do not allow the record to be saved if Deck Rank = Ace, King, Queen, Jack, Joker.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  OR(
+    TEXT( Segment__c ) == $Label.AccountSegmentEnterprise,
+    TEXT( Segment__c ) == $Label.SegmentMidMarket
+  ),
+  OR(
+    TEXT( Deck_Rank__c ) == $Label.DeckRankAce,
+    TEXT( Deck_Rank__c ) == $Label.DeckRankQueen,
+    TEXT( Deck_Rank__c ) == $Label.DeckRankJack,
+    TEXT( Deck_Rank__c ) == $Label.DeckRankJoker,
+    TEXT( Deck_Rank__c ) == $Label.DeckRankKing
+  )
+)</errorConditionFormula>
+    <errorMessage>Enterprise and Mid Market Accounts cannot have Deck Rank = Ace, King, Queen, Jack, Joker. Please update the Segment or the Deck Rank before saving.</errorMessage>
+</ValidationRule>

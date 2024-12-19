@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>LEM-13303: It allows generic Platform Event schema and the trigger listener to act as dispatcher of the events for Merchant Services related functionality. It passes topic and corresponding payload to the trigger listener which identifies service corresponding to the passed topic and passes payload to the service layer for further processing.</description>
+    <eventType>HighVolume</eventType>
+    <label>Onboarding &amp; Activation</label>
+    <pluralLabel>Onboarding &amp; Activations</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

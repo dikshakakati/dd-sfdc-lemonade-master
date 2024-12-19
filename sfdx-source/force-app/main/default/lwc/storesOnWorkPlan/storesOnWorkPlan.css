@@ -1,0 +1,53 @@
+/**
+ * @author Deloitte
+ * @date 04/29/2022
+ * @description CSS for storeOnWorkPlan lightning web component.
+ */
+:host {
+  --slds-c-accordion-summary-color-background: rgb(243, 243, 243);
+}
+.cardStyling {
+  padding: 1rem;
+}
+.divStyling {
+  padding: 5px;
+}
+.hideRecordFormStyling {
+  display: none;
+}
+.messageBoxStyling {
+  background-color: rgb(243, 243, 243);
+  text-align: center;
+  margin: 0.75rem;
+  border-radius: 0.25rem;
+}
+.messageStyling {
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+}
+.recordNotFoundBoxStyling {
+  background-color: #fffae6;
+  text-align: center;
+  margin: 0.75rem;
+  border-radius: 0.25rem;
+}
+.scrollableDivStyling {
+  height: 25rem;
+}
+.sectionHeadingStyling {
+  background-color: rgb(243, 243, 243);
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  font-style: inherit;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+}
+.spinnerStyling {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}

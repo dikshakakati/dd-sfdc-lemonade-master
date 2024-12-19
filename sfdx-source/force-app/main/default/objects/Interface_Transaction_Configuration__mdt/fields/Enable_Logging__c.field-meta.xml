@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Logging__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-13378: It indicates whether error logging is enabled for the current process</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Enable Logging</label>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Photoshoot_Date_Time__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15506: It calculates the Photoshoot Date/Time value based on Photoshoot Date and Photoshoot Time field values.</description>
+    <externalId>false</externalId>
+    <formula>if(Hour(Photoshoot_Time__c)&gt;17,TEXT(Photoshoot_Date__c+1)&amp;&apos; &apos;&amp;Text(Photoshoot_Time__c+(3600000*7))&amp;&apos;Z&apos;,TEXT(Photoshoot_Date__c)&amp;&apos; &apos;&amp;Text(Photoshoot_Time__c+(3600000*7))&amp;&apos;Z&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Photoshoot Date &amp; Time</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

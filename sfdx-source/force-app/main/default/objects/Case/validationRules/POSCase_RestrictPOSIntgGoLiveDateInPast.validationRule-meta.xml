@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POSCase_RestrictPOSIntgGoLiveDateInPast</fullName>
+    <active>true</active>
+    <description>LEM-3078: It ensures that &quot;POS Integration Go-Live Date&quot; field value must be more than 5 business days from today for POS Integrations Case record type.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Case_Validation_Rules),
+  RecordType.DeveloperName = $Label.POSIntegrationsCaseRecordTypeName,
+  ((5 * FLOOR((POS_Integration_Go_Live_Date__c - DATE(2000, 1, 3)) / 7)
+  + MIN(5, MOD(POS_Integration_Go_Live_Date__c - DATE(2000, 1, 3), 7)))) /*Calculates the number of Working days between the POS Integration Go-Live Date and 01/03/2000 - Monday*/
+  - ((5 * FLOOR((Today() - DATE(2000, 1, 3)) / 7) + MIN(5, MOD(Today() - DATE(2000, 1, 3), 7)))) /*Calculates the number of Working days between the current day and 01/03/2000 - Monday*/
+  &lt; 5
+)</errorConditionFormula>
+    <errorDisplayField>POS_Integration_Go_Live_Date__c</errorDisplayField>
+    <errorMessage>The Go-Live Date for POS Integration Requests must be more than 5 business days from today. Keep in mind the POS team activates M-F and requests that fall on a holiday will not be activated until the following business day.</errorMessage>
+</ValidationRule>

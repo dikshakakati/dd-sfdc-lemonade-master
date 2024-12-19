@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Editable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-16959: Determines if the line item is editable or not</description>
+    <externalId>false</externalId>
+    <label>Is Editable</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

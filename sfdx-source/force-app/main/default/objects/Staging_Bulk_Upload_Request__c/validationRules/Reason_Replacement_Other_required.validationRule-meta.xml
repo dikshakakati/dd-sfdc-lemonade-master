@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Replacement_Other_Required</fullName>
+    <active>true</active>
+    <description>LEM-15978: Reason for Replacement (if other) is required if Replacement Reason is &apos;Other (please specify reason in notes)&apos;.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.ByPass_Bulk_Update_Staging_Validation), 
+    ISPICKVAL(Replacement_Reason__c, &quot;Other (please specify reason in notes)&quot;), 
+    ISBLANK(Replacement_Reason_if_Other__c)
+    )</errorConditionFormula>
+    <errorMessage>Reason for Replacement (if other) is required.</errorMessage>
+</ValidationRule>

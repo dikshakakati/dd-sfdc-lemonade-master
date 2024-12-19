@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15116: Onboarding event type.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Onboarding event type</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Work_Order_Type</valueSetName>
+    </valueSet>
+</CustomField>

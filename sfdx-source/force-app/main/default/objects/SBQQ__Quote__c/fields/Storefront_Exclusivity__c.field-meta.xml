@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Storefront_Exclusivity__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-16543: Quote line header field.</description>
+    <externalId>false</externalId>
+    <label>Storefront Exclusivity</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

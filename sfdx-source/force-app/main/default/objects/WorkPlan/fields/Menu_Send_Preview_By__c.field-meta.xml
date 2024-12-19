@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_Send_Preview_By__c</fullName>
+    <description>LEM-1683: It lets the rep know when preview links are required by the Mx to review before actually making the changes live.</description>
+    <externalId>false</externalId>
+    <label>Menu Send Preview By</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

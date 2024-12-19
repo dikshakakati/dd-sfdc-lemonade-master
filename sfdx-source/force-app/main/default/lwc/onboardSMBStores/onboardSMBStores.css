@@ -1,0 +1,25 @@
+/* radioGroup.css */
+.slds-grid {
+    align-items: center; /* Align items vertically in the center */
+}
+
+.slds-m-right_x-small {
+    margin-right: 0.5rem; /* Adjust spacing to your preference */
+}
+
+.button-Margin {
+ margin-left: 20px;
+}
+
+.custom-tooltip {
+    color: black; /* Tooltip text color */
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: relative;
+    z-index: 1;
+    bottom: 10px; /* Adjust based on your layout */
+    left: 20px; /* Adjust based on your layout */
+    visibility: visible; /* Always visible */
+    
+}

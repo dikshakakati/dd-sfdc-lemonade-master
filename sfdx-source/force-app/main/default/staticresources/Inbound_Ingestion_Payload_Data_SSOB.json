@@ -1,0 +1,168 @@
+{
+  "id": "f90e2706-27fd-9e2f-5168-66c7f13af4dc",
+  "uuid": "07a5e956-9d35-4738-b48c-94e3209d756b",
+  "createdAt": "2024-07-19T11:07:23.010Z",
+  "eventType": "DRIVE_ONBOARDING",
+  "account": {
+    "sfdcAccountId": null,
+    "isTestStore": false,
+    "name": "string",
+    "phone": "string",
+    "businessId": "11556308",
+    "isMarketplacePartner": "No",
+    "address": {
+      "street": "abc",
+      "postalCode": "abc",
+      "city": "abc",
+      "state": "abc",
+      "country": "abc"
+    }
+  },
+  "contact": {
+    "decisionMaker": {
+      "sfdcContactId": null,
+      "firstName": "string",
+      "lastName": "string",
+      "email": "string",
+      "mobilePhone": "string",
+      "phone": "string",
+      "title": ""
+    },
+    "accounting": {
+      "sfdcContactId": null,
+      "firstName": "string",
+      "lastName": "string",
+      "email": "string",
+      "mobilePhone": "string",
+      "phone": "string",
+      "title": null,
+      "address": {
+        "street": "abc",
+        "postalCode": "abc",
+        "city": "abc",
+        "state": "abc",
+        "country": "abc"
+      }
+    }
+  },
+  "opportunity": {
+    "sfdcOpportunityId": null,
+    "name": "string",
+    "preferredLanguage": null,
+    "inCoverage": true,
+    "isExistingDrivePartner": false,
+    "activationNotes": null,
+    "currentDeliveryChannels": "Incumbent",
+    "middleware": {
+      "middlewareProvider": "Toast",
+      "plannedIntegrationPath": "Middleware Provider",
+      "rightOfFirstRefusal": true
+    },
+    "contractDetails": {
+      "createUsingBusinessName": true,
+      "automationStatus": "No Activation Required",
+      "vendorContractType": "SSMO Drive Fulfillment Agreement",
+      "typeOfEntity": "Limited Liability Company (LLC)",
+      "legalEntity": "US",
+      "ofAddressableLocations": 1,
+      "vendorContractRecord": "https://app.pactsafe.com/activity?group=contract&filter=id%3D%3D6446ef4814f416c617a4cee3",
+      "vendorActivityId": "6446ef4814f416c617a4cee3",
+      "docusignSent": "2023-04-24",
+      "contractSignedDate": "2023-04-24",
+      "contactManagerOwnerName": "Jun Zhu",
+      "contactManagerOwnerEmail": "jzhu@blackwatercc.com",
+      "nextStep": "",
+      "nextStepDate": null
+    },
+    "paymentProtocol": "Invoicing",
+    "invoicingInformation": "",
+    "matchedRecords": {
+      "lead": [],
+      "contact": [],
+      "account": []
+    },
+    "hasValidEmail": false,
+    "addressVerificationInfo": {
+      "addressVerificationStatus": "Verified",
+      "rejectedReason": null,
+      "addressVerificationDate": "2024-06-21T14:14:51.052Z",
+      "validatedAddress": {
+        "latitude": 47.305622,
+        "longitude": -122.32281,
+        "addressLine1": "876 S 333rd St",
+        "addressLine2": "",
+        "city": "Federal Way",
+        "state": "WA",
+        "country": "United States",
+        "countryShortname": "US",
+        "postalCode": "98003",
+        "addressId": "850774004",
+        "timeZone": "America/Los_Angeles"
+      },
+      "submarket": {
+        "id": "21",
+        "name": "Bellevue"
+      },
+      "startingPoint": {
+        "id": 654,
+        "startingPoint": "WA: Federal/Auburn"
+      },
+      "alcoholRules": {
+        "alcoholAllowanceCategory": "Wet"
+      }
+    },
+    "orderProducts": {
+      "name": "Small Order Fulfillment (SOF)",
+      "productCode": null,
+      "productOptions": [
+        {
+          "name": "Return Fee",
+          "productCode": null,
+          "commission": 50
+        },
+        {
+          "name": "3rd Party Fulfillment (3PF)",
+          "productCode": null,
+          "commission": 0
+        },
+        {
+          "name": "Alcohol Delivery",
+          "productCode": null,
+          "commission": 0
+        },
+        {
+          "name": "Delivery",
+          "productCode": null,
+          "fee": 7.99,
+          "deliveryRadiusMiles": 5,
+          "costPerMile": null,
+          "maxDeliveryDistanceRadius": 5
+        },
+        {
+          "name": "Regulatory Dasher Fee - CA",
+          "productCode": null,
+          "fee": 2,
+          "dasherRegulatoryCapType": "Unlimited"
+        },
+        {
+          "name": "Average Order Volume (AOV)",
+          "productCode": null,
+          "volumeTimePeriod": "Weekly",
+          "numberOfVolumeTiers": "4",
+          "businessLevelForVolumeTier1": "Business",
+          "volumeTierCommitmentTier1": 30,
+          "volumeTierFeeReductionTier1": 0.25,
+          "businessLevelForVolumeDiscTier2": "Business",
+          "volumeTierCommitmentTier2": 60,
+          "volumeTierFeeReductionTier2": 0.5,
+          "businessLevelForVolumeDiscTier3": "Business",
+          "volumeTierCommitmentTier3": 100,
+          "volumeTierFeeReductionTier3": 0.75,
+          "businessLevelForVolumeDiscTier4": "Business",
+          "volumeTierCommitmentTier4": 200,
+          "volumeTierFeeReductionTier4": 1
+        }
+      ]
+    }
+  }
+}

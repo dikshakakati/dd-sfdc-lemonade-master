@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Email_Address_for_Weekly_Reporting__c</fullName>
+    <description>LEM-2983: Captures the email address of the Mx who would receive weekly reporting emails.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the email address of the Mx employee you want to receive weekly reporting</inlineHelpText>
+    <label>Advertiser Email Address for Reporting</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSMO_Holding_Queue_Inbound_Ingestion_Log</fullName>
+    <filterScope>Queue</filterScope>
+    <label>SSMO Holding Queue</label>
+    <queue>SSMO_Holding_Queue</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Productized_Deal_Terms</fullName>
+    <active>true</active>
+    <description>LEM-11096
+Non Productized Deal Terms cannot be edited after Contract Signed, except for CommOps Users</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.CommOps_User),
+    ISCHANGED(Non_Productized_Deal_terms__c),
+    ISPICKVAL(SBQQ__Status__c,&apos;Contract Signed&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Non_Productized_Deal_terms__c</errorDisplayField>
+    <errorMessage>You cannot change the Non Productized Deal Terms after the Contract is signed.</errorMessage>
+</ValidationRule>

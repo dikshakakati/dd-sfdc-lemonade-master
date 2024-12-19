@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Required_for_Most_Types</fullName>
+    <active>true</active>
+    <description>LEM-6126
+Account is required for all parent Work Orders, except POS Work Orders</description>
+    <errorConditionFormula>AND (
+      NOT($Permission.Bypass_Work_Order_Validation_Rules),
+      ISBLANK(ParentWorkOrderId),
+      NOT(
+        OR(
+          TEXT(Type__c) = $Label.Work_Order_POS,
+          TEXT(Type__c) = $Label.Work_Order_Tablet,
+          TEXT(Type__c) = $Label.Work_Order_Photoshoot
+          )
+          ),
+      OR (
+        ISBLANK(AccountId),
+        AND (
+          NOT(ISBLANK(AccountId)),
+          Account.Record_Type_Name__c &lt;&gt;  $Label.BusinessAccountRecordTypeName
+        )
+      )
+)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>Account is required for all Work Orders except when the Type is &quot;POS&quot;. Please populate the Account field with a Business account.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,205 @@
+<template>
+  <p class="slds-text-align_left slds-p-bottom_medium">
+    {instructionalText.mainInstructions}
+  </p>
+
+  <div
+    class="slds-p-horizontal_none slds-grid slds-box slds-grid_vertical-stretch"
+  >
+    <!-- Main Spinner -->
+    <template if:true={isLoading}>
+      <div class="slds-spinner_container">
+        <div
+          class="slds-spinner slds-spinner_brand slds-spinner_medium"
+          role="status"
+        >
+          <span class="slds-assistive-text">Saving</span>
+          <div class="slds-spinner__dot-a"></div>
+          <div class="slds-spinner__dot-b"></div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Left Column -->
+    <div class="slds-col slds-size_2-of-6 slds-border_right">
+      <div class="left-grid-column">
+        <!-- Input to search for records: PAs, DMs, etc -->
+        <div class="slds-p-around_small">
+          <div class="slds-form-element__control">
+            <!-- Possible future enhancement -- prevent the search of already-selected records -->
+            <c-lookup-search
+              label={searchFieldLabel}
+              selected-icon-name={objectIcon}
+              object-label={objectLabel}
+              object-api-name={objectType}
+              primary-field-to-search={primarySearchField}
+              secondary-field={secondarySearchFields}
+              records-limit="4"
+              do-not-persist-selection="true"
+              onvalueselected={handleSelectionOfFoundRecord}
+            >
+            </c-lookup-search>
+          </div>
+        </div>
+
+        <ul class="slds-vertical-tabs selected-records-list">
+          <template for:each={recordsToLink} for:item="thisRecord">
+            <li
+              class={thisRecord.classList}
+              key={thisRecord.id}
+              data-record-id={thisRecord.id}
+              onclick={handleClickRecord}
+            >
+              <div class="slds-vertical-tabs__link record-tab">
+                <span class="record-title">{thisRecord.name}</span>
+                <span class="record-subfields">{thisRecord.subFields}</span>
+              </div>
+            </li>
+          </template>
+
+          <li onclick={handleClickCreateNew} class="slds-p-around_xx-small">
+            <div class="slds-vertical-tabs__link record-tab">
+              <span class="record-subfields">Create new {objectLabel}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right Column -->
+    <div class="slds-col slds-size_4-of-6">
+      <template lwc:if={showCreateRecordForm}>
+        <div>
+          <div class="slds-p-vertical_medium">
+            <template if:true={errorMessage}>
+              <div class="slds-text-color_error slds-m-top_medium">
+                {errorMessage}
+              </div>
+            </template>
+          </div>
+
+          <div class="slds-p-bottom_medium">
+            <template if:true={isSavingNewRecord}>
+              <div class="slds-spinner_container">
+                <div
+                  class="slds-spinner slds-spinner_brand slds-spinner_medium"
+                  role="status"
+                >
+                  <span class="slds-assistive-text">Saving</span>
+                  <div class="slds-spinner__dot-a"></div>
+                  <div class="slds-spinner__dot-b"></div>
+                </div>
+              </div>
+            </template>
+
+            <div class={createNewFormClass}>
+              <template lwc:if={isPaymentAccountFlow}>
+                <c-bulk-onboarding-payment-account-creation
+                  account-id={accountId}
+                  flow-request-id={flowRequestId}
+                  onfieldupdate={handleCreateFormChange}
+                  onpaymentaccountsaving={handleNewRecordSave}
+                  onpaymentaccountcreated={handleRecordCreation}
+                  onpaymentaccountfailed={handleNewRecordFailure}
+                >
+                </c-bulk-onboarding-payment-account-creation>
+              </template>
+
+              <template lwc:elseif={isDecisionMakerFlow}>
+                <c-bulk-onboarding-contact-creation
+                  contract-id={contractId}
+                  custom-instructions=""
+                  vertical-padding="none"
+                  specified-fields={contactCreationFields}
+                  contact-details={contactDetails}
+                  hide-lookup-search={hideContactLookupSearch}
+                  show-create-form-only={skipEmbeddedSearchOption}
+                  hide-create-form={hideCreateFormByDefault}
+                  parent-page="DecisionMaker"
+                  onfieldupdate={handleCreateFormChange}
+                  onupdatesavestatus={handleNewRecordSave}
+                  oncontactcreated={handleRecordCreation}
+                ></c-bulk-onboarding-contact-creation>
+              </template>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <template lwc:elseif={selectedRecord}>
+        <div class="slds-m-around_small">
+          <p class="slds-text-align_left slds-p-bottom_medium">
+            Select stores using {objectLabel} {selectedRecord.name}.
+            {instructionalText.saveInstructions}
+          </p>
+          <table
+            class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped"
+            if:true={allStores.length}
+          >
+            <thead>
+              <tr>
+                <th scope="col">
+                  <div class="slds-truncate" title="Select">
+                    <input
+                      type="checkbox"
+                      name="selectAll"
+                      onclick={handleSelectAll}
+                    />
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Row #">Row #</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Store Name">Store Name</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title={objectLabel}>
+                    {objectLabel}
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <template for:each={allStores} for:item="thisStore">
+                <tr key={thisStore.storeAccount.Id}>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name={thisStore.storeAccount.Id}
+                      onclick={handleSelectStore}
+                    />
+                  </td>
+                  <td>{thisStore.storeInfo.rowNumber}</td>
+                  <td>{thisStore.storeAccount.Name}</td>
+                  <td>
+                    <span if:true={thisStore.selectedRecord}>
+                      <span lwc:if={thisStore.selectedRecord.isSaved}>
+                        {thisStore.selectedRecord.name}
+                      </span>
+                      <span lwc:else class="unsaved-record-name">
+                        <em>{thisStore.selectedRecord.name}*</em>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </template>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+          <button
+            class="slds-button slds-button_brand slds-m-top_medium"
+            onclick={handleConfirm}
+          >
+            Confirm
+          </button>
+        </div>
+      </template>
+
+      <template lwc:else>
+        <p class="slds-text-align_center slds-p-around_large">
+          {instructionalText.missingRecords}
+        </p>
+      </template>
+    </div>
+  </div>
+</template>

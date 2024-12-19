@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Onboarding_Link_Next_Update__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15116: It indicates the scheduled time for mx onboarding link record update.</description>
+    <externalId>false</externalId>
+    <formula>CreatedDate + ((Value($CustomMetadata.Static_Configurations__mdt.Mx_Onboarding_Link_Update_Time_In_Mins.Configuration_Value__c)/60)/24)</formula>
+    <label>Mx Onboarding Link Next Update</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

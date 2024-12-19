@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>MPBzId req for Drive AutoActivation  Opp</label>
+    <protected>false</protected>
+    <values>
+        <field>Sobject_Type_Sub_Type_Mapping__c</field>
+        <value xsi:type="xsd:string">Drive_Auto_Activations</value>
+    </values>
+    <values>
+        <field>Store_Readiness_Validation_Rule__c</field>
+        <value xsi:type="xsd:string">MP_Bz_Id_req_on_Opportunity</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Sortable_Invalid</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+   Default_Sort__c ,
+   NOT( Sortable__c )
+)</errorConditionFormula>
+    <errorDisplayField>Default_Sort__c</errorDisplayField>
+    <errorMessage>Default Sort can be set only on a &quot;Sortable&quot; field</errorMessage>
+</ValidationRule>

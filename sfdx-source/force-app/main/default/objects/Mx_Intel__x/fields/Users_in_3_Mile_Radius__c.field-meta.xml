@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Users_in_3_Mile_Radius__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13543: It stores how many users are there in 3 Mile radius.</description>
+    <externalDeveloperName>users_3mile</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Users in 3 Mile Radius</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

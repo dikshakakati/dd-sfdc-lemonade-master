@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4756: It enables access to CRM Analytics as an administrator.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CRMA Admin Access</label>
+    <permissionSets>Analytics_Data_Manager_App</permissionSets>
+    <permissionSets>Analytics_Studio_App</permissionSets>
+    <permissionSets>Walk_Data_Admin</permissionSets>
+    <permissionSets>force__EinsteinAnalyticsPlusAdmin</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

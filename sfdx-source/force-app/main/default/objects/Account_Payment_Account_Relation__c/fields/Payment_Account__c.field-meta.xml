@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-1150: This field represents the associated payment account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field represents the associated payment account.</inlineHelpText>
+    <label>Payment Account</label>
+    <referenceTo>Payment_Account__c</referenceTo>
+    <relationshipLabel>Related Accounts</relationshipLabel>
+    <relationshipName>Account_Payment_Account_Relations</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

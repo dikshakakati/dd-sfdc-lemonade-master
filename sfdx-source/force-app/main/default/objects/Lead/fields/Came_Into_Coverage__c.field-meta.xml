@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coverage_Start_Date__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13402: It indicates when the Lead became in coverage.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates when the Lead came into Coverage</inlineHelpText>
+    <label>Came Into Coverage</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>DateTime</type>
+</CustomField>

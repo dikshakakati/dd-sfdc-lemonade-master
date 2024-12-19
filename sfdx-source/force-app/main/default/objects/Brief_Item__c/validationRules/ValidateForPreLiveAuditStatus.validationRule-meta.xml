@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateForPreLiveAuditStatus</fullName>
+    <active>false</active>
+    <description>LEM-3674: It is used to validate if the Pre-Live Audit Status has necessary fields.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+  OR(TEXT(Status__c)=$Label.Testing_Ready_for_Edits,
+      TEXT(Status__c)=$Label.Testing_Second_Review,
+      TEXT(Status__c)=$Label.Testing_Ready_to_Schedule_Live),
+  OR(
+    ISBLANK(Testing_QA_Fixes_Needed__c),
+    AND(
+      ISBLANK(Tester__c),
+    TEXT(Brief__r.Configuration__c)=$Label.Brief_Configuration_Custom
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Please indicate the Tester of the Brief Item and provide Testing QA Fixes Needed prior to moving to &apos;Testing - Ready for Edits&apos; or &apos;Testing - Second Review&apos; or &apos;Testing - Ready to Schedule&apos; status.</errorMessage>
+</ValidationRule>

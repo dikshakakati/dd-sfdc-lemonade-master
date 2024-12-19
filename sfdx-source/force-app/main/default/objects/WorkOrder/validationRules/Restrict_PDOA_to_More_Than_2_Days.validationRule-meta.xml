@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_PDOA_to_More_Than_2_Days</fullName>
+    <active>true</active>
+    <description>LEM-10442 </description>
+    <errorConditionFormula>AND (
+
+NOT($Permission.Bypass_Work_Order_Validation_Rules),
+ISCHANGED( Proposed_Date_of_Activation__c),
+ISPICKVAL(Type__c, &quot;COO&quot;),
+ISPICKVAL( Provisioning_Status__c, &quot;Readiness Check Complete&quot;),
+
+OR(
+PRIORVALUE(Proposed_Date_of_Activation__c)+2 = Proposed_Date_of_Activation__c,
+PRIORVALUE(Proposed_Date_of_Activation__c)+1 = Proposed_Date_of_Activation__c)
+
+)</errorConditionFormula>
+    <errorDisplayField>Proposed_Date_of_Activation__c</errorDisplayField>
+    <errorMessage>PDOA cannot be today or tomorrow. Please move PDOA to be more than 2 calendar days in the future.</errorMessage>
+</ValidationRule>

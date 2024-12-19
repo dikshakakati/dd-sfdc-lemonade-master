@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>Documentation</aura:description>
+	<aura:example name="ExampleName" ref="exampleComponentName" label="Label">
+		Aura component to display the QuoteLine Drawer Attributes LEM-1486
+	</aura:example>
+</aura:documentation>

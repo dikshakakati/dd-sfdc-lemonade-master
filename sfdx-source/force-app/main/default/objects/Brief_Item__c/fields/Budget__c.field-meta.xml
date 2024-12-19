@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budget__c</fullName>
+    <description>LEM-2983: Captures the budget associated with Brief Item.
+LEM-9346: APEX - Fixing the Process for In-Campaign Changes</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the total budget for the product here.</inlineHelpText>
+    <label>Budget</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

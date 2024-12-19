@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Salesforce_Account_Name__c</columns>
+    <columns>Account_Record_Type__c</columns>
+    <columns>Account_Type__c</columns>
+    <columns>External_ID_Source__c</columns>
+    <columns>MINT_Store_Page__c</columns>
+    <columns>Mint_BusinessPage__c</columns>
+    <columns>Business_GroupID__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

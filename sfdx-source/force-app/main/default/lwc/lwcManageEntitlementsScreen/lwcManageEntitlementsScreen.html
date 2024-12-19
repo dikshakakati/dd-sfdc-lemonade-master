@@ -1,0 +1,168 @@
+<!--
+  * @author Deloitte
+  * @date 8/2/2024
+  * @description LEM-11556 - Entitlements selection and deselection along with the selection, workorder validations.
+-->
+<template>
+  <template if:true={showSpinner}>
+    <div class="flow-spinner-container">
+      <div
+        class="slds-spinner slds-spinner_brand slds-spinner_medium"
+        role="status"
+      >
+        <span class="slds-assistive-text"></span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+    </div>
+  </template>
+  <div class="slds-p-bottom_x-small slds-p-top_x-small">
+    <lightning-button label="Back" variant="brand" onclick={backToUploadScreen}>
+    </lightning-button>
+    <div class="slds-float_right">
+      <lightning-button label="Submit" variant="brand" onclick={submitProcess}>
+      </lightning-button>
+    </div>
+  </div>
+  <div class="border-container">
+    <div class="messageBoxStyling">
+      <p class="messageStyling">
+        <lightning-formatted-rich-text
+          value={labels.manageStoresEntitlementsScreenInstructions}
+        ></lightning-formatted-rich-text>
+      </p>
+    </div>
+    <div if:true={importShowError}>
+      <div class="slds-p-around_x-small">
+        <template
+          for:each={importErrorMessages}
+          for:item="errorMessage"
+          for:index="index"
+        >
+          <div
+            key={errorMessage.index}
+            class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error"
+            role="alert"
+          >
+            <span
+              class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+              title="Error Icon"
+            >
+              <lightning-icon
+                icon-name="utility:error"
+                alternative-text="Error"
+                title="Error"
+                variant="inverse"
+              ></lightning-icon>
+            </span>
+            <h2>{errorMessage}</h2>
+          </div>
+        </template>
+      </div>
+    </div>
+    <div if:true={showWrapperList}>
+      <div class="scrollable modal-body-border">
+        <lightning-modal-body>
+          <lightning-accordion>
+            <template for:each={wrapperList} for:item="wrap">
+              <div key={wrap.packageRecord}>
+                <summary class="slds-page-header slds-theme_alt-inverse">
+                  Store(s) to be added: {wrap.accountIds.length}
+                </summary>
+                <template for:each={wrap.packageList} for:item="pack">
+                  <div if:true={isBusinessIdsImported} key={pack.packageId}>
+                    <div
+                      if:true={pack.isDrivePackage}
+                      class="slds-p-top_xx-small"
+                    >
+                      <summary
+                        class="slds-page-header package-selection datatable-with-border"
+                      >
+                        <lightning-input
+                          type="checkbox"
+                          name="packages"
+                          value={pack.packageId}
+                          data-id="packages"
+                          checked=""
+                        ></lightning-input
+                        ><b>Package: {pack.packageName}</b>
+                      </summary>
+                    </div>
+                  </div>
+                  <div if:false={isBusinessIdsImported} key={pack.packageId}>
+                    <div
+                      if:false={pack.isDrivePackage}
+                      class="slds-p-top_xx-small"
+                    >
+                      <summary
+                        class="slds-page-header package-selection datatable-with-border"
+                      >
+                        <lightning-input
+                          type="checkbox"
+                          name="packages"
+                          value={pack.packageId}
+                          data-id="packages"
+                          checked=""
+                          onchange={handlePackageCheckboxChange}
+                        ></lightning-input
+                        ><b>Package: {pack.packageName}</b>
+                      </summary>
+                      <template if:true={pack.subsList}>
+                        <template if:true={pack.subsList.length}>
+                          <lightning-datatable
+                            key-field="Id"
+                            data={pack.subsList}
+                            columns={columns}
+                            class="tab datatable-with-border"
+                            data-id="SubscriptionTable"
+                            selected-rows={preSelectedRows}
+                            onrowselection={handleProductSelection}
+                          >
+                          </lightning-datatable>
+                        </template>
+                      </template>
+                    </div>
+                    <div
+                      if:true={pack.isDrivePackage}
+                      class="slds-p-top_xx-small"
+                    >
+                      <summary class="slds-page-header package-selection">
+                        <lightning-input
+                          type="checkbox"
+                          value={pack.packageId}
+                          data-id="packages"
+                          disabled=""
+                          checked=""
+                        ></lightning-input
+                        ><b>Package: {pack.packageName}</b>
+                      </summary>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </template>
+          </lightning-accordion>
+        </lightning-modal-body>
+      </div>
+    </div>
+    <div if:true={showSubscriptionsError}>
+      <div
+        class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error"
+        role="alert"
+      >
+        <span
+          class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+          title="Error Icon"
+        >
+          <lightning-icon
+            icon-name="utility:error"
+            alternative-text="Error"
+            title="Error"
+            variant="inverse"
+          ></lightning-icon>
+        </span>
+        <h2>{fetchSubscriptionsError}</h2>
+      </div>
+    </div>
+  </div>
+</template>

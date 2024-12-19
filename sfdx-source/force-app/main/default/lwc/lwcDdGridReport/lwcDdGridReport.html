@@ -1,0 +1,146 @@
+<template>
+    <c-dd-modal data-id="modal"
+        title={modalTitle}
+        size={modalSize}
+        type={modalType}
+        content={modalContent}
+        onclose={resetModal}>
+    </c-dd-modal>
+    <template if:true={isLeftPanelExpanded}>
+        <div class="leftPanel">
+            <div class="leftPanel-Header">
+                <span class="slds-var-m-right_small">
+                    <lightning-button-menu alternative-text="Show menu" onselect={handleReportSelection} icon-name="utility:threedots_vertical">
+                        <template for:each={reportOptions} for:item="option">
+                            <lightning-menu-item key={option.developerName} value={option.developerName} label={option.label}></lightning-menu-item>
+                        </template>
+                    </lightning-button-menu>
+                </span>
+                <span style="flex:1;" class="slds-align_absolute-center slds-truncate">
+                    <template if:true={reportDefinition}>
+                        {reportDefinition.Label}
+                    </template>
+                </span>
+                <span class="slds-var-m-left_small">
+                    <lightning-button-icon
+                        variant="border-inverse"
+                        icon-name="utility:arrow_left"
+                        size="medium"
+                        alternative-text="Close Panel"
+                        onclick={toggleLeftPanel}>
+                    </lightning-button-icon>
+                </span>
+            </div>
+            <template if:true={reportDefinition}>
+                <div class="leftPanel-Body">
+                    <div class="leftPanel-Body_Buttons">
+                        <lightning-button variant="brand"
+                            label="Search"
+                            title="Search"
+                            icon-name="utility:search"
+                            onclick={handleSearchButtonClick}
+                            disabled={isGridLoading}
+                            class="slds-var-m-left_x-small slds-align_absolute-center leftPanel-Body_Button">
+                        </lightning-button>
+                        <lightning-button variant="brand"
+                            label="Clear"
+                            title="Clear"
+                            icon-name="utility:clear"
+                            onclick={handleClearFilterButtonClick}
+                            class="slds-var-m-left_x-small slds-align_absolute-center leftPanel-Body_Button">
+                        </lightning-button>
+                    </div>
+                    <div class="leftPanel-Body_Filters">
+                        <template for:each={filters} for:item="filter">
+                            <c-lwc-dd-grid-report-filter
+                                key={filter.name}
+                                filter={filter}
+                                onchange={handleGridFilterChange}>
+                            </c-lwc-dd-grid-report-filter>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:false={isLeftPanelExpanded}>
+        <div class="leftPanel-Collapsed">
+            <div class="leftPanel-Header">
+                <lightning-button-icon
+                    variant="border-inverse"
+                    icon-name="utility:arrow_right"
+                    size="medium"
+                    alternative-text="Open Panel"
+                    onclick={toggleLeftPanel}>
+                </lightning-button-icon>
+            </div>
+            <template if:true={reportDefinition}>
+                <div class="leftPanel-Collapsed-Body">
+                    <c-lwc-dd-grid-report-show-current-filters
+                        filter-configuration={filters}
+                        sort-configuration={sortConfig}
+                        field-configuration={columns}>
+                    </c-lwc-dd-grid-report-show-current-filters>
+                </div>
+            </template>
+        </div>
+    </template>
+    
+    <div class={rightPanelClass}>
+        <div class="rightPanel-Header slds-var-p-around_small">
+            <template if:true={recordCountText}>
+                <div class="rightPanel-Header_Info">{recordCountText}</div>
+            </template>
+            <div class="rightPanel-Header_Buttons">
+                <template if:true={reportDefinition}>
+                    <c-lwc-dd-grid-report-save-search-filters
+                        class="slds-p-right_small"
+                        filter-configuration={filters}
+                        sort-configuration={sortConfig}
+                        field-configuration={columns}
+                        report-name={reportDefinition.DeveloperName}>
+                    </c-lwc-dd-grid-report-save-search-filters>
+                    <c-lwc-dd-grid-report-show-saved-search-filters
+                        class="slds-p-right_small"
+                        onloadsearch={reloadSearchResults}
+                        report-name={reportDefinition.DeveloperName}>
+                    </c-lwc-dd-grid-report-show-saved-search-filters>
+                </template>
+                <lightning-button 
+                    icon-name="utility:download"
+                    label="Export"
+                    title="Export"
+                    onclick={initializeDownload}
+                    disabled={disableExportButton}
+                    variant="brand">
+                 </lightning-button>
+            </div>
+        </div>
+        <div class="rightPanel-DataSection">
+            <template if:true={backdropText}>
+                <div class="rightPanel-backdrop slds-align_absolute-center">{backdropText}</div>
+            </template>
+            <template if:true={isGridLoading}>
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </template>
+            <div class={datatableDivClass}>
+                <c-dd-datatable key-field="Id"
+                    data-id="userRecords"
+                    data={data}
+                    columns={columns}
+                    enable-infinite-loading={enableInfiniteLoading}
+                    onloadmore={loadMoreData}
+                    onrowaction={handleRowAction}
+                    sorted-by={sortConfig.sortedBy}
+                    sorted-direction={sortConfig.sortDirection}
+                    onsort={handleOnSort}
+                    ondatatableurlclick={handleDatatableRecordUrlClick}
+                    hide-checkbox-column
+                    suppress-bottom-bar>
+                </c-dd-datatable>
+            </div>
+        </div>
+    </div>
+    <c-lwc-dd-grid-report-row-action-handler data-id="rowActionHandler">
+    </c-lwc-dd-grid-report-row-action-handler>
+</template>

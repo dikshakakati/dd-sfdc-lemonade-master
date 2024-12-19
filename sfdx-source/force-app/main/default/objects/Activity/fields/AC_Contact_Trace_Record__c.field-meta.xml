@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AC_Contact_Trace_Record__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-17883 : Lookup field for AWS CTR object. This field will navigate to CTR record from task related record.</description>
+    <externalId>false</externalId>
+    <label>AC Contact Trace Record</label>
+    <referenceTo>amazonconnect__AC_ContactTraceRecord__c</referenceTo>
+    <relationshipLabel>Activities</relationshipLabel>
+    <relationshipName>Activities</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Lookup</type>
+</CustomField>

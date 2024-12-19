@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidatePercentageOfConsumerDiscounts</fullName>
+    <active>true</active>
+    <description>LEM-5030: It is used to validate if % of Consumer Discounts are populated for Promotion products.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+  TEXT(Status__c)!= $Label.Waiting_For_Inputs,
+  TEXT(Status__c)!= $Label.Cancelled_Brief_Item_Status,
+  Package__c != $Label.Brief_Package_Sponsorships,
+  OR(
+    TEXT(Product__c) = $Label.Brief_Product_BuyAndGetOff,
+    TEXT(Product__c) = $Label.Brief_Product_BuyOneGetOne,
+    TEXT(Product__c) = $Label.Brief_Product_DoorDashDeals,
+    TEXT(Product__c) = $Label.Brief_Product_FirstOrderOff,
+    TEXT(Product__c) = $Label.Brief_Product_FreeItemOverX,
+    TEXT(Product__c) = $Label.Brief_Product_OrderAgain,
+    TEXT(Product__c) = $Label.Brief_Product_SpendXGetY,
+    TEXT(Product__c) = $Label.Brief_Product_TryMeFree
+  ),
+  OR(
+    ISBLANK(Percentof_ConsumerDiscFee_Contra_Funded__c),
+    ISBLANK(Percentof_ConsumerDiscFee_DashPassFunded__c),
+    ISBLANK(Percentof_Consumer_DiscFee_DD_Funded__c),
+    ISBLANK(Percent_of_ConsumerDisc_or_Fee_Mx_Funded__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>Percentages of Consumer Discount are required when configuring a promotion.</errorMessage>
+</ValidationRule>

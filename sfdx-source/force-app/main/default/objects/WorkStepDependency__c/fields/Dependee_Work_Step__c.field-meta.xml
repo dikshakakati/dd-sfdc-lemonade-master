@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dependee_Work_Step__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-1061: It indicates dependee Work Step. It drives status updates on dependent WorkSteps.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates dependee Work Step</inlineHelpText>
+    <label>Work Step Name</label>
+    <referenceTo>WorkStep</referenceTo>
+    <relationshipLabel>Dependent Work Steps</relationshipLabel>
+    <relationshipName>DependentWorkSteps</relationshipName>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

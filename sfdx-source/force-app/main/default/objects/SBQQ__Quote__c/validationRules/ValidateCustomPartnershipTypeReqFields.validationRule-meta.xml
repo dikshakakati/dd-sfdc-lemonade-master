@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateCustomPartnershipTypeReqFields</fullName>
+    <active>true</active>
+    <description>LEM-14399: Validates if required fields are populated when Custom Partnership Type is Preferred or Preferred-2 or Exclusive.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  OR(
+    Account_Billing_Country_Code__c = &apos;US&apos;,
+    Account_Billing_Country_Code__c = &apos;CA&apos;
+  ),
+
+  AND(
+    ISCHANGED(ApprovalStatus__c), 
+    OR(
+      TEXT(ApprovalStatus__c) = $Label.Approval_Status_Pending,
+      AND(
+        TEXT(ApprovalStatus__c) = $Label.Approval_Status_Approved, 
+        ISBLANK(PRIORVALUE(ApprovalStatus__c)) 
+      )
+    )
+  ),
+  OR( 
+    TEXT(Custom_Partnership_Type__c) = $Label.Custom_Partnership_Type_Exclusive,
+    TEXT(Custom_Partnership_Type__c) = $Label.Custom_Partnership_Type_Preferred,
+    TEXT(Custom_Partnership_Type__c) = $Label.Custom_Partnership_Type_Preferred2
+  ),
+  OR(
+    ISBLANK(Number_of_Locations__c),
+    ISBLANK(TEXT(Business_Region__c)),
+    ISBLANK(TEXT(Initial_Term_and_Termination_Years__c)),
+    ISBLANK(TEXT(Breach_of_Contract__c)),
+    ISBLANK(TEXT(Operations_Commitment__c))
+  )
+)</errorConditionFormula>
+    <errorMessage>Number of Location, Business Region, Initial Term and Termination Years, Breach of Contract, Operations Commitment are required when ‘Custom Partnership Type’ is Preferred or Preferred-2 or Exclusive.</errorMessage>
+</ValidationRule>

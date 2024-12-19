@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transfer_Ownership</fullName>
+    <availability>online</availability>
+    <description>LEM-13474: It is used to transfer the Opportunity ownership to other user.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Transfer Ownership</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/flow/Assign_To_Others_Bulk?retURL=/lightning/o/Opportunity/list?filterName=Recent</url>
+</WebLink>

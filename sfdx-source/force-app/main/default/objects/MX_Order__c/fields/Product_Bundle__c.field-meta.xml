@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Bundle__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-14053: It is used to store the associated product bundle.</description>
+    <externalId>false</externalId>
+    <label>Product Bundle</label>
+    <referenceTo>Mx_Order_Product_Bundle__c</referenceTo>
+    <relationshipLabel>Merchant Orders</relationshipLabel>
+    <relationshipName>Related_Merchant_Orders</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

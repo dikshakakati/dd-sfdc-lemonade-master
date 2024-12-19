@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ENT_Onboarding_Activations_PPDOA</fullName>
+    <columns>Name</columns>
+    <columns>Xref__c</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Name__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Proposed_Date_of_Menu__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Proposed_Date_of_Activation__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <filters>
+        <field>Parent_Work_Plan__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Name</field>
+        <operation>equals</operation>
+        <value>Central Activations</value>
+    </filters>
+    <label>ENT Onboarding Activations - PPDOA (QV)</label>
+    <queue>Marketplace_ENT_Activation</queue>
+</ListView>

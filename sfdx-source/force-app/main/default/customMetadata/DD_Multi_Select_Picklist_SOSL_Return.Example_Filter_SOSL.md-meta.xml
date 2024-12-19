@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Example Filter SOSL</label>
+    <protected>false</protected>
+    <values>
+        <field>Dropdown_Label_Merge_Format__c</field>
+        <value xsi:type="xsd:string">{Name}</value>
+    </values>
+    <values>
+        <field>Dropdown_SubLabel_Merge_Format__c</field>
+        <value xsi:type="xsd:string">{Email} | {Profile.Name} | Manager: {Manager.Name}</value>
+    </values>
+    <values>
+        <field>Exclude_Field_Name__c</field>
+        <value xsi:type="xsd:string">Id</value>
+    </values>
+    <values>
+        <field>IconSrc_Merge_Format__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Limit__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Order_By__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Parent__c</field>
+        <value xsi:type="xsd:string">Example_Filter_SOSL</value>
+    </values>
+    <values>
+        <field>Pill_Label_Merge_Format__c</field>
+        <value xsi:type="xsd:string">{Name}</value>
+    </values>
+    <values>
+        <field>Return_Fields__c</field>
+        <value xsi:type="xsd:string">Id, Name, Manager.Name, Email, Profile.Name</value>
+    </values>
+    <values>
+        <field>SObject_Name__c</field>
+        <value xsi:type="xsd:string">User</value>
+    </values>
+    <values>
+        <field>Sequence__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Value_Merge_Format__c</field>
+        <value xsi:type="xsd:string">{Id}</value>
+    </values>
+    <values>
+        <field>Where_Clause__c</field>
+        <value xsi:type="xsd:string">isActive = true</value>
+    </values>
+</CustomMetadata>

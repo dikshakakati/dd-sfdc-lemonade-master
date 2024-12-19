@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>7</fullName>
+        <default>false</default>
+        <label>7</label>
+    </customValue>
+    <customValue>
+        <fullName>14</fullName>
+        <default>false</default>
+        <label>14</label>
+    </customValue>
+    <customValue>
+        <fullName>30</fullName>
+        <default>false</default>
+        <label>30</label>
+    </customValue>
+    <customValue>
+        <fullName>45</fullName>
+        <default>false</default>
+        <label>45</label>
+    </customValue>
+    <customValue>
+        <fullName>60</fullName>
+        <default>false</default>
+        <label>60</label>
+    </customValue>
+    <customValue>
+        <fullName>90</fullName>
+        <default>false</default>
+        <label>90</label>
+    </customValue>
+    <customValue>
+        <fullName>120</fullName>
+        <default>false</default>
+        <label>120</label>
+    </customValue>
+    <customValue>
+        <fullName>180</fullName>
+        <default>false</default>
+        <label>180</label>
+    </customValue>
+    <customValue>
+        <fullName>365</fullName>
+        <default>false</default>
+        <label>365</label>
+    </customValue>
+    <description>LEM-180 – Initial Setup of Quote Line – Quote Line Pricing</description>
+    <masterLabel>Trial Period</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

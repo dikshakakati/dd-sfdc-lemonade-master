@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Marketing Qualification</fullName>
+        <default>false</default>
+        <label>Marketing Qualification</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Untouched</fullName>
+        <default>true</default>
+        <label>Untouched</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Trying to Reach</fullName>
+        <default>false</default>
+        <label>Trying to Reach</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>DM Found</fullName>
+        <default>false</default>
+        <label>DM Found</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Interested - Cool Down</fullName>
+        <default>false</default>
+        <label>Not Interested - Cool Down</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Disqualified</fullName>
+        <default>false</default>
+        <label>Disqualified</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Converted</fullName>
+        <default>false</default>
+        <label>Converted</label>
+        <converted>true</converted>
+    </standardValue>
+</StandardValueSet>

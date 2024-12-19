@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-5468: Custom permission to identify Nintex Integration user in scenarios like bypassing phone validations</description>
+    <isLicensed>false</isLicensed>
+    <label>Nintex Integration user identifier</label>
+</CustomPermission>

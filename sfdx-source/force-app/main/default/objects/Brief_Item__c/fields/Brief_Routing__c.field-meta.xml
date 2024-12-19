@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brief_Routing__c</fullName>
+    <description>LEM-12423: Eliminate Need for Sales to Select Configuration Type</description>
+    <externalId>false</externalId>
+    <label>Brief Routing</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Brief_Routing</valueSetName>
+    </valueSet>
+</CustomField>

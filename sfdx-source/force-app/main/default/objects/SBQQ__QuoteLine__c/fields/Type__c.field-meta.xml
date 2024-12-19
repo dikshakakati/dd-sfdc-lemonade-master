@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>LEM-5420: Used in Cong Queries and Template to check Type of Quote line on an Amended Quote i.e  if the quote line is  or Amended or Deleted or Existing or New.
+        LEM-12478: Updated Formula.</description>
+    <externalId>false</externalId>
+    <formula>IF( SBQQ__Quote__r.Quote_Type__c = &quot;Amendment&quot;,
+IF( AND(SBQQ__Source__c  &lt;&gt; &quot;&quot;, SBQQ__UpgradedSubscription__c = &quot;&quot;, SBQQ__Source__r.SBQQ__UpgradedSubscription__c &lt;&gt; &quot;&quot;), &quot;Amended&quot;,
+IF( AND(SBQQ__UpgradedSubscription__c &lt;&gt; &quot;&quot;, SBQQ__Quantity__c =0), &quot;Deleted&quot;,
+IF( AND(SBQQ__UpgradedSubscription__c &lt;&gt; &quot;&quot;, SBQQ__Quantity__c &gt;0), &quot;Existing&quot;,
+IF( AND(SBQQ__UpgradedSubscription__c =&quot;&quot;, SBQQ__Quantity__c &gt;0 ), &quot;New&quot;, &quot;&quot;
+)))),&quot;&quot;)</formula>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

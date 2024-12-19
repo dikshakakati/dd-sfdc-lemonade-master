@@ -1,0 +1,21 @@
+<!--
+  * @author Deloitte
+  * @date 10/20/2022
+  * @description It is used for showing warning message for Sync with Netsuite implementation with Mulesoft.
+-->
+<template>
+  <template if:true={displayBannerOnScreen}>
+    <lightning-card>
+      <div
+        class="slds-p-horizontal_small slds-p-bottom_xx-small slds-p-top_none"
+      >
+        <lightning-icon
+          icon-name="utility:warning"
+          variant={warningIconVariant}
+        >
+        </lightning-icon>
+        <p class="messageStyling">{bannerMessage}</p>
+      </div>
+    </lightning-card>
+  </template>
+</template>

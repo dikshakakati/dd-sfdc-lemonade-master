@@ -1,0 +1,179 @@
+<template>
+  <div class="slds-p-horizontal_medium option-container slds-box">
+    <!-- Stage / Progress Indicator -->
+    <c-bulk-onboarding-stage-bar
+      current-step={currentStep}
+    ></c-bulk-onboarding-stage-bar>
+    <lightning-card class="slds-theme_shade">
+      <div class="slds-p-horizontal_medium">
+        <!-- Flow Selection Form -->
+        <template lwc:if={promptForFlowSelection}>
+          <div
+            class="slds-text-heading_small slds-m-bottom_medium slds-align_absolute-center"
+          >
+            Would you like to select a Payment Account for all stores, or use
+            multiple Payment Accounts?
+          </div>
+
+          <blockquote class="slds-p-horizontal_small">
+            <p class="slds-m-bottom_medium">
+              Select <strong>"Use a Single Payment Account"</strong> if banking
+              is the same across all stores in the upload. From here, you will
+              be able to select a single existing payment account or create a
+              new one to link across all new stores.
+            </p>
+
+            <p class="slds-m-bottom_medium">
+              Select <strong>"Use Multiple Payment Accounts"</strong> if banking
+              is different across all stores in the upload. From here, you will
+              be able to create multiple payment accounts or link multiple
+              existing payment accounts across all new stores.
+            </p>
+          </blockquote>
+
+          <div
+            class="slds-col slds-size_1-of-1 slds-text-align_center slds-m-bottom_large"
+          >
+            <div class="slds-grid slds-grid_align-center slds-wrap">
+              <lightning-button
+                class="slds-m-horizontal_x-small"
+                label="Use a single Payment Account"
+                variant="neutral"
+                onclick={handleUseSingleSelect}
+              ></lightning-button>
+              <lightning-button
+                label="Use multiple Payment Accounts"
+                variant="neutral"
+                onclick={handleUseMultiSelect}
+              ></lightning-button>
+            </div>
+          </div>
+
+          <div
+            class="slds-m-horizontal_small slds-m-bottom_small slds-m-horizontal_small slds-m-bottom_medium text-instructions"
+            if:true={isEligibleForSkipping}
+          >
+            <p class="slds-text-body_small">
+              Click <strong>Next</strong> to skip payment account creation if
+              the stores you are uploading do not require a payment account
+              since they are Dasher Shop Deliver.
+            </p>
+          </div>
+        </template>
+
+        <!-- Single Select Flow -->
+        <template lwc:elseif={useSingleSelectFlow}>
+          <!-- Search Existing PAs -->
+          <template if:false={showCreatePaymentAccountForm}>
+            <!-- Instructions -->
+            <p class="option-text">
+              Enter a Payment Account Name (starting with
+              <strong><em>PA-</em></strong
+              >), then choose from the available options
+            </p>
+
+            <!-- Position the Search field and the "Create New" links side-by-side -->
+            <div class="slds-p-vertical_medium slds-grid">
+              <div class="slds-col slds-size_8-of-12">
+                <c-lookup-search
+                  label="Select Payment Account for Stores"
+                  selected-icon-name="standard:account"
+                  object-label="Payment Account"
+                  object-api-name="Payment_Account__c"
+                  primary-field-to-search="Name"
+                  secondary-field="Entity_Type__c,Business_Account__r.Name"
+                  do-not-persist-selection="false"
+                  onvalueselected={handlePaymentAccountSelection}
+                >
+                </c-lookup-search>
+              </div>
+              <div
+                class="slds-col slds-size_4-of-12 slds-align-bottom slds-p-left_small"
+              >
+                <a onclick={toggleCreatePaymentAccountForm}
+                  >Create a new Payment Account</a
+                >
+              </div>
+            </div>
+          </template>
+
+          <!-- Create New Payment Account Link / Form -->
+          <template if:true={showCreatePaymentAccountForm}>
+            <div class={createNewFormClass}>
+              <div class="slds-p-vertical_medium">
+                <p class="option-text">
+                  Input the Payment Account details below. Upon saving, these
+                  will be linked to the Stores you uploaded in the previous
+                  step.
+                </p>
+                <div class="slds-p-top_small">
+                  <a onclick={toggleCreatePaymentAccountForm}
+                    >Or find an existing Payment Account instead</a
+                  >
+                </div>
+
+                <template if:true={errorMessage}>
+                  <div class="slds-text-color_error slds-m-top_medium">
+                    {errorMessage}
+                  </div>
+                </template>
+              </div>
+
+              <!-- Payment Account Create New Form -->
+              <c-bulk-onboarding-payment-account-creation
+                account-id={accountId}
+                flow-request-id={flowRequestId}
+                onpaymentaccountsaving={handleNewPaymentAccountSave}
+                onpaymentaccountcreated={handleSuccess}
+                onpaymentaccountfailed={handleError}
+              >
+              </c-bulk-onboarding-payment-account-creation>
+            </div>
+          </template>
+        </template>
+        <!-- Multi-Select Flow -->
+        <template lwc:elseif={useMultiSelectFlow}>
+          <div class="slds-p-around_x-large">
+            <div class="slds-grid slds-grid_vertical slds-wrap">
+              <div class="slds-text-align_center slds-p-bottom_medium">
+                <c-bulk-onboarding-multi-select
+                  flow-request-id={flowRequestId}
+                  account-id={accountId}
+                  object-type="Payment_Account__c"
+                  is-saving={isSaving}
+                  onmultirecordsselected={handleMultiRecordsSelection}
+                ></c-bulk-onboarding-multi-select>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- FOOTER & NEXT BUTTON -->
+        <div
+          class="slds-p-vertical_medium slds-grid slds-grid_align-end slds-border_top slds-border_light"
+        >
+          <lightning-button
+            variant="brand"
+            label="Next"
+            onclick={updateFlowRequestWithPaymentAccount}
+            disabled={disableButton}
+          ></lightning-button>
+        </div>
+      </div>
+
+      <!-- Loading spinner for component -->
+      <template if:true={isSaving}>
+        <div class="slds-spinner_container">
+          <div
+            class="slds-spinner slds-spinner_brand slds-spinner_medium"
+            role="status"
+          >
+            <span class="slds-assistive-text">Saving</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+        </div>
+      </template>
+    </lightning-card>
+  </div>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_CRM_Influencer_Creative_Assets__c</fullName>
+    <description>LEM-13267 - DPEI Brief Item Generation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Add in links in the relevant asset fields to the correctly sized item photos and any other create assets that will be needed to launch the item. Photos must follow regular menu guidelines of “Item image URL in JPG|JPEG|PNG format, min resolution (1600w x 800h), aspect ratio 16:9 and max size 2MB”</inlineHelpText>
+    <label>Link to CRM/Influencer Creative Assets</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

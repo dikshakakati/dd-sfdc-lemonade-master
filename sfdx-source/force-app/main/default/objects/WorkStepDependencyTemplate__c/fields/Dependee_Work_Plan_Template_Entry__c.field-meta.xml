@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dependee_Work_Plan_Template_Entry__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-1061: It indicates dependee WorkPlanTemplateEntry. It is used for populating dependee WorkStep in actual dependency record.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates dependee WorkPlanTemplateEntry</inlineHelpText>
+    <label>Dependee Work Plan Template Entry</label>
+    <referenceTo>WorkPlanTemplateEntry</referenceTo>
+    <relationshipLabel>Dependent Work Step Templates</relationshipLabel>
+    <relationshipName>DependentWorkStepTemplates</relationshipName>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

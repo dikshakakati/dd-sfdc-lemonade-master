@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Non_Owner_Opportunity_Reparenting</name>
+    </customPermissions>
+    <description>LEM-4979: It enables edit access for account lookup field on opportunity.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Opportunity Reparenting</label>
+</PermissionSet>

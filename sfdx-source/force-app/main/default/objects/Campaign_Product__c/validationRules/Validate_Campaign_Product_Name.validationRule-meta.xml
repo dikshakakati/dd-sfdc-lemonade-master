@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Campaign_Product_Name</fullName>
+    <active>true</active>
+    <description>LEM-625: This rule is to validate that the Campaign Product Name can not be duplicated.</description>
+    <errorConditionFormula>
+      AND(
+      NOT($Permission.Bypass_Campaign_Product_Validation_Rules),
+      OR(
+        ISNEW(),
+        ISCHANGED(Name)
+      ),
+      NOT(
+        ISBLANK (
+          VLOOKUP($ObjectType.Campaign_Product__c.Fields.Name,
+          $ObjectType.Campaign_Product__c.Fields.Name, Name )
+        )
+      )
+    )
+  </errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>A campaign product with this name already exists. Please use the existing campaign product or re-name this one before creating it.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Item_Name_s__c</fullName>
+    <description>LEM-14498: Store Rewards Opportunity Product Attributes. LEM-18567 - Rename Free Item Name(s).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please add the Menu Item ID and Name of the Free Item here. If the list is long, please add a link to a spreadsheet with Menu Item IDs and Names</inlineHelpText>
+    <label>Free Item Name(s) &amp; ID(s)</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

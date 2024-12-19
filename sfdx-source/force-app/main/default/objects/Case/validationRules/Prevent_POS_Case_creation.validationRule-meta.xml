@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_POS_Case_creation</fullName>
+    <active>true</active>
+    <description>Prevent POS Case creation once the transition to WorkOrder is launched.</description>
+    <errorConditionFormula>AND(
+   ISNEW(),
+   RecordType.DeveloperName = &apos;POS_Integrations&apos;,
+   TODAY() &gt;= $Setup.POS_Config__c.Transition_To_WorkOrder_Go_Live__c
+)</errorConditionFormula>
+    <errorMessage>The POS integration process has now been moved from Case to WorkOrder. You many no longer create a POS case. Create a POS work order instead.</errorMessage>
+</ValidationRule>

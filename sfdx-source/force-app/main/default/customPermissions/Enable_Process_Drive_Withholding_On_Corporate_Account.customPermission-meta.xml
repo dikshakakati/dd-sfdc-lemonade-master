@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-9551: It enables visibility of &apos;Process Drive Withholding&apos; quick action on the Business Account layout.</description>
+    <isLicensed>false</isLicensed>
+    <label>Enable Process Drive Withholding On Corporate Account</label>
+</CustomPermission>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flows</fullName>
+    <active>true</active>
+    <description>Track which flows have been launched</description>
+    <label>Flows</label>
+    <picklistValues>
+        <picklist>Result__c</picklist>
+        <values>
+            <fullName>Failure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial Success</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Account File Upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Vertical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processing Stores</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upload Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Order Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Order Creation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Order Type Selection</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Aborted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Work_Order_Selection_Method__c</picklist>
+        <values>
+            <fullName>Created New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Selected Existing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

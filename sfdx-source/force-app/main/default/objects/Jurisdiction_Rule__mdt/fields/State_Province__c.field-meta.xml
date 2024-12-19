@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_Province__c</fullName>
+    <description>The state or province component of the jurisdiction (e.g., &quot;Texas&quot; or &quot;British Columbia&quot;).</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The state or province component of the jurisdiction (e.g., &quot;Texas&quot; or &quot;British Columbia&quot;).</inlineHelpText>
+    <label>State/Province</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

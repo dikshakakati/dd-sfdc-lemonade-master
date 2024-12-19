@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Entity_Field_to_Update_BriefItem</fullName>
+    <active>true</active>
+    <description>LEM-18006 - Status of Brief Item cannot be moved if account ‘Primary Vertical’ = Rx and Entity Type on Brief is blank.</description>
+    <errorConditionFormula>AND(NOT($Permission.Bypass_Brief_Validation_Rules),
+Brief__r.Primary_Vertical__c = &quot;Rx&quot;,
+ISPICKVAL(Brief__r.Entity_Type__c, &apos;&apos;), ISCHANGED(Status__c),
+ISPICKVAL(Status__c, &apos;Campaign Building&apos;))</errorConditionFormula>
+    <errorMessage>Please fill out the Entity Type field on Brief before moving the status to Campaign Building.</errorMessage>
+</ValidationRule>

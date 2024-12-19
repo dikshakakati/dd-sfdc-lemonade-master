@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Xrefs_With_All_Internal_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-3925: It shares Edit access on all Xrefs with all internal users using Owner Id not blank criteria.</description>
+        <label>Share Xrefs With All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Xrefs_With_Integration_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-3736: It provides Edit access on Xrefs to MuleSoft user.</description>
+        <label>Share Xrefs With Integration Users</label>
+        <sharedTo>
+            <group>Integration_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

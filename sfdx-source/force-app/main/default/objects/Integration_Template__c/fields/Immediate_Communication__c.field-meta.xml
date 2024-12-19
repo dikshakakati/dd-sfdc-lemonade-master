@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Immediate_Communication__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <defaultValue>false</defaultValue>
+    <description>LEM-13777: It indicates whether the Email communication needs to be sent immediately.</description>
+    <externalId>false</externalId>
+    <label>Immediate Communication</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Type__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1337: Captures the type of Account to which the Relationship is being created.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The type of account with which the user is creating a relationship to.</inlineHelpText>
+    <label>Relationship Type</label>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Account_Relationships_Types</valueSetName>
+    </valueSet>
+</CustomField>

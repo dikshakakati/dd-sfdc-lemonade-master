@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_PuertoRico_State_On_New_Quote</fullName>
+    <active>true</active>
+    <description>LEM-16955: It is used to check if the corresponding account&apos;s billing state is &quot;Puerto Rico&quot; for new Quote and gives a validation message if &apos;Has_Puerto_Rico_Locations__c&apos; is changed to &quot;No&quot;.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  Segment__c = &apos;SMB&apos;,
+  SBQQ__Account__r.BillingState = &apos;Puerto Rico&apos;,
+  TEXT(Has_Puerto_Rico_Locations__c) = &apos;No&apos;,
+  TEXT(SBQQ__Type__c) = &apos;Quote&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Has_Puerto_Rico_Locations__c</errorDisplayField>
+    <errorMessage>Has Puerto Rico Location(s)? should be Yes when the Business Account&apos;s Billing State is &apos;Puerto Rico&apos;</errorMessage>
+</ValidationRule>

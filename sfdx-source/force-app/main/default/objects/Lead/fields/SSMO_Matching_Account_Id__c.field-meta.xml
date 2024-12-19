@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSMO_Matching_Account_Id__c</fullName>
+    <description>LEM-14819: It is used to Store the matching account Id received in payload on SSMO fallout.</description>
+    <externalId>false</externalId>
+    <complianceGroup>GDPR</complianceGroup>
+    <label>SSMO Matching Account Id</label>
+    <length>80</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

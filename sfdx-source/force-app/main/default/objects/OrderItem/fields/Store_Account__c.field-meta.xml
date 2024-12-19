@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Store_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-14233: It stores the Store Account value from Quote Line with Twin Field functionality.</description>
+    <externalId>false</externalId>
+    <label>Store Location</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Order Products (Store Account)</relationshipLabel>
+    <relationshipName>Order_Products</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

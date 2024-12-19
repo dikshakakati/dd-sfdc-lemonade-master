@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Edit_Access_of_Account_Team</name>
+    </customPermissions>
+    <description>LEM-15845: It enables access to allow Account Team Member update on business and store Accounts.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Account Team Member Update</label>
+</PermissionSet>

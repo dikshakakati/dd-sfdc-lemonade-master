@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blocked_Drive_Work_Plans_Manual</fullName>
+    <columns>Work_Order_Name__c</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Sub_Type__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Parent_Work_Plan__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Name</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Blocked</value>
+    </filters>
+    <filters>
+        <field>Work_Order_Sub_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Auto-Activations</value>
+    </filters>
+    <label>Blocked Drive Work Plans (Manual)</label>
+    <queue>Drive_Onboarding_and_Activation</queue>
+</ListView>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Photo_Linking_Escalation_WorkPlan</fullName>
+    <columns>Name</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Owner_Link__c</columns>
+    <columns>Number_of_Workable_WorkSteps__c</columns>
+    <columns>CreatedBy</columns>
+    <columns>CreatedDate</columns>
+    <filterScope>Queue</filterScope>
+    <label>Photo Linking Escalations</label>
+    <queue>Photo_Linking_Escalation</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

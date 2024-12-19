@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jira_Ticket_be_linked_to_set_Jira_Ticket</fullName>
+    <active>false</active>
+    <description>LEM-914: Restrict Submitting for Approval based on population of the Jira Request ticket and Jira Request ticket status fields</description>
+    <errorConditionFormula>IF(
+    OR(
+        AQS_Quote__c = NULL,
+        $Permission.Ironclad_Workflow_Launch,
+        AQS_Quote__r.Segment__c  = $Label.AccountSegmentSMB,
+        $Permission.CommOps_User,
+        $Profile.Name = &apos;System Administrator&apos;
+    ),
+    FALSE,
+    IF(
+        AND(
+            TEXT(AQS_Quote__r.Contract_Generation_Path__c) = &apos;Non-Templatized&apos;,
+            AQS_Quote__r.Jira_Request_Ticket_link__c = NULL,
+            TEXT(AQS_Quote__r.Jira_Request_Ticket_status__c)= &apos;Closed/Approved&apos;
+        ),
+        TRUE,
+        IF(
+            AND(
+                TEXT(AQS_Quote__r.Contract_Generation_Path__c) = &apos;Non-Templatized&apos;,
+                AQS_Quote__r.Jira_Request_Ticket_link__c = NULL,
+                TEXT(AQS_Quote__r.Jira_Request_Ticket_status__c) = NULL
+            ),
+            TRUE,
+            IF(
+                AND(
+                    TEXT(AQS_Quote__r.Contract_Generation_Path__c) = &apos;Non-Templatized&apos;,
+                    AQS_Quote__r.Jira_Request_Ticket_link__c &lt;&gt; NULL,
+                    TEXT(AQS_Quote__r.Jira_Request_Ticket_status__c) &lt;&gt; &apos;Closed/Approved&apos;
+                ),
+                TRUE,
+                FALSE
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>The Jira Request Ticket must be linked to the Quote and the Jira Ticket Request status set to “Closed/Approved” before proceeding with approval.</errorMessage>
+</ValidationRule>

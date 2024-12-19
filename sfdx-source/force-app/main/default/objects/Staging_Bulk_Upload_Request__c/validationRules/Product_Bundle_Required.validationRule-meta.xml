@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Bundle_Required</fullName>
+    <active>true</active>
+    <description>LEM-15978: Product Bundle column is required only for (Tablet+Net- New) or (Tablet+Replacement) combination.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.ByPass_Bulk_Update_Staging_Validation),
+    Type__c = $Label.Work_Order_Tablet,
+    Request_Type__c != $Label.Work_Order_Sub_Type_Return,
+    ISBLANK(Product_Bundle__c)
+   )</errorConditionFormula>
+    <errorMessage>Product Bundle is required when request type is &apos;Net-New&apos; or  &apos;Replacement&apos;.</errorMessage>
+</ValidationRule>

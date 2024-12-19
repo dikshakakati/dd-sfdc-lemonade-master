@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_DMF_Templatized_Flow__c</fullName>
+    <description>LEM-2291</description>
+    <externalId>false</externalId>
+    <formula>IF( SBQQ__ProductFamily__c = &apos;Drive Promotion&apos;
+
+			&amp;&amp;  SBQQ__ProductCode__c  &lt;&gt; &apos;10035&apos;
+
+			&amp;&amp; ISBLANK(SBQQ__UpgradedSubscription__c),
+
+
+1, 2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Standard DMF Templatized Flow</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

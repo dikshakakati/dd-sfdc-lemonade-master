@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promotional_Top_Ups_Participation__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-17924: It displays the Mx preferences to receive email communications regarding Promotion Top-Ups.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Displays the Mx preferences to receive email communications regarding Promotion Top-Ups</inlineHelpText>
+    <label>Promotional Top-Ups Participation</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Opt-In</fullName>
+                <default>false</default>
+                <label>Opt-In</label>
+            </value>
+            <value>
+                <fullName>Opt-Out</fullName>
+                <default>false</default>
+                <label>Opt-Out</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Business_Name_Store__c</fullName>
+    <description>LEM-3184: It is used to display store Account&apos;s Legal Business Name in the &apos;Banking Details&apos; section of the onboarding details on Work Plan.</description>
+    <externalId>false</externalId>
+    <formula>Account.Legal_Business_Name__c</formula>
+    <inlineHelpText>Represents the legal business name</inlineHelpText>
+    <label>Legal Business Name (Store)</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

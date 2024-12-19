@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Approval_Status_Must_be_Approved</fullName>
+    <active>true</active>
+    <description>LEM-1468 Prevents a user from setting the Quote ‘Status’ field to &apos;Out for Signature&apos; if the Quote &apos;Approval Status&apos; field is not &apos;Approved&apos;</description>
+    <errorConditionFormula>IF (ISPICKVAL(SBQQ__Status__c, &apos;Out for Signature&apos;) &amp;&amp; NOT ISPICKVAL( ApprovalStatus__c, &quot;Approved&quot;)
+	, TRUE, FALSE)</errorConditionFormula>
+    <errorMessage>The Quote&apos;s Approval Status must be &apos;Approved&apos; before the Quote&apos;s Status is set to &apos;Out for Signature&apos;</errorMessage>
+</ValidationRule>

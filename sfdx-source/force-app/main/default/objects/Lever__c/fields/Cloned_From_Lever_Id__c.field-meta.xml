@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cloned_From_Lever_Id__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15227: It stores the Lever Id from which the Lever is cloned.</description>
+    <externalId>false</externalId>
+    <label>Cloned From Lever Id</label>
+    <length>100</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

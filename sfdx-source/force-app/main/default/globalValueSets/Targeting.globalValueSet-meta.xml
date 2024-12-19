@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>All Users</fullName>
+        <default>false</default>
+        <label>All Users</label>
+    </customValue>
+    <customValue>
+        <fullName>New Customers to Merchant</fullName>
+        <default>false</default>
+        <label>New Customers to Merchant</label>
+    </customValue>
+    <customValue>
+        <fullName>Existing Customers to Merchant</fullName>
+        <default>false</default>
+        <label>Existing Customers to Merchant</label>
+    </customValue>
+    <customValue>
+        <fullName>DashPass Subscribers</fullName>
+        <default>false</default>
+        <label>DashPass Subscribers</label>
+    </customValue>
+    <customValue>
+        <fullName>Non-DashPass Subscribers</fullName>
+        <default>false</default>
+        <label>Non-DashPass Subscribers</label>
+    </customValue>
+    <customValue>
+        <fullName>Churned Users From Store (Winback)</fullName>
+        <default>false</default>
+        <label>Churned Users From Store (Winback)</label>
+    </customValue>
+    <customValue>
+        <fullName>Lapsed Customers to Merchant</fullName>
+        <default>false</default>
+        <label>Lapsed Customers to Merchant</label>
+    </customValue>
+    <customValue>
+        <fullName>Low frequency Cx</fullName>
+        <default>false</default>
+        <label>Low frequency Cx</label>
+    </customValue>
+    <customValue>
+        <fullName>Medium frequency Cx</fullName>
+        <default>false</default>
+        <label>Medium frequency Cx</label>
+    </customValue>
+    <description>LEM-1602: Create New Fields for Ads and Promos. LEM-11629: Brief Item Enhancements</description>
+    <masterLabel>Targeting</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

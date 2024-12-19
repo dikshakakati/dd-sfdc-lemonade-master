@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PriceTier__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13618,14733: It depicts price range that will be used to establish # of dollar signs on DoorDash App.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Price Range of the Mx on a scale of $ to $$$$</inlineHelpText>
+    <label>Price Range</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>$</fullName>
+                <default>false</default>
+                <label>$</label>
+            </value>
+            <value>
+                <fullName>$$</fullName>
+                <default>false</default>
+                <label>$$</label>
+            </value>
+            <value>
+                <fullName>$$$</fullName>
+                <default>false</default>
+                <label>$$$</label>
+            </value>
+            <value>
+                <fullName>$$$$</fullName>
+                <default>false</default>
+                <label>$$$$</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

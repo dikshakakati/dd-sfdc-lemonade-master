@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Brief_Item_On_UI__c</fullName>
+    <description>LEM-15129: It is used to indicate if related Brief Item can be created or not for the Quote Line.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND(
+    TEXT(SBQQ__Quote__r.Account_Segment__c) = $Label.AccountSegmentSMB,
+    Split_Category__c = $Label.SplitCategoryAandP
+  ),
+  $Label.Value_No,
+  TEXT(Create_Brief_Item__c)
+)</formula>
+    <label>Create Brief Item</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

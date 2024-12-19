@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Control_of_Price</fullName>
+    <active>true</active>
+    <description>Created as part of LEM-13847</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Account_Validation_Rules),
+AND(
+NOT(CONTAINS($Profile.Name,&apos;Integration&apos;)),
+$Profile.Name &lt;&gt; $Label.System_Administrator
+), NOT(ISBLANK(TEXT(Control_of_Price__c))) , ISPICKVAL(Control_of_Price__c, &apos;DoorDash&apos;),
+DoorDash_Legal_Entity__c &lt;&gt; $Label.DoorDash_Legal_Entity ,
+RecordType.DeveloperName = $Label.BusinessAccountRecordTypeName)</errorConditionFormula>
+    <errorDisplayField>Control_of_Price__c</errorDisplayField>
+    <errorMessage>Control of Price cannot be set as DoorDash if the legal entity is not DoorDash G&amp;C, LLC.</errorMessage>
+</ValidationRule>

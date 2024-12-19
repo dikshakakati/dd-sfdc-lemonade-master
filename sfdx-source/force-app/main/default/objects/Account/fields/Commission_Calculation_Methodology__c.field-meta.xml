@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commission_Calculation_Methodology__c</fullName>
+    <description>LEM-3128: Depicts the commission calculation methodology for the Mx.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Determines the price at which commission is charged to a Merchant during invoicing ,If Direct Deposit select ‘DoorDash Platform Price’.</inlineHelpText>
+    <label>Commission Calculation Methodology</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DoorDash Platform Price</fullName>
+                <default>false</default>
+                <label>DoorDash Platform Price</label>
+            </value>
+            <value>
+                <fullName>Marqeta Swipe Price (in store)</fullName>
+                <default>false</default>
+                <label>Marqeta Swipe Price (in store)</label>
+            </value>
+            <value>
+                <fullName>Mx Controlled Inflation</fullName>
+                <default>false</default>
+                <label>Mx Controlled Inflation</label>
+            </value>
+            <value>
+                <fullName>Mx Swipe T-Log Price (in store)</fullName>
+                <default>false</default>
+                <label>Mx Swipe T-Log Price (in store)</label>
+            </value>
+            <value>
+                <fullName>In-Feed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>In-Feed</label>
+            </value>
+            <value>
+                <fullName>Swiped Price</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Swiped Price</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

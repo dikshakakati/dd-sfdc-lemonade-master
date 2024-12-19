@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObject>true</customObject>
+    <description>LEM-596,LEM-14667: Custom Tab for Initiative Object. Renamed Initiative to Mx Touchpoint.</description>
+    <motif>Custom84: Presenter</motif>
+</CustomTab>

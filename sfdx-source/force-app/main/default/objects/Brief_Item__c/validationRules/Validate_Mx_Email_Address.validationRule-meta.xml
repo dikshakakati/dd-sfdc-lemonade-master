@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Mx_Email_Address</fullName>
+    <active>true</active>
+    <description>LEM-5421</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+ISPICKVAL(Status__c, &quot;Campaign Building&quot;),
+ISPICKVAL(Product__c, &quot;Sponsored Listings&quot;),
+ISBLANK( Mx_Email_Address_for_Weekly_Reporting__c)
+)</errorConditionFormula>
+    <errorMessage>The ‘Mx Email Address for Weekly Reporting’ field must be populated to shift the Brief Item status to ‘Campaign Building’</errorMessage>
+</ValidationRule>

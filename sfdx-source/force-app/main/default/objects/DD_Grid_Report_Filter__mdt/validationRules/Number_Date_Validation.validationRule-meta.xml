@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_Date_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT(ISPICKVAL(Type__c,&apos;DateTime&apos;)),
+  NOT(ISPICKVAL(Type__c,&apos;Date&apos;)),
+  NOT(ISPICKVAL(Type__c,&apos;Number&apos;)),
+  NOT(ISPICKVAL(Type__c,&apos;Percent&apos;)),
+  Number_Date_Has_IS_BLANK_IS_NOT_BLANK__c
+)</errorConditionFormula>
+    <errorDisplayField>Type__c</errorDisplayField>
+    <errorMessage>Number/Date Filter section fields cannot be set for this type.</errorMessage>
+</ValidationRule>

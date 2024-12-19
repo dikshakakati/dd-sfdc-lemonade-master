@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Campaign_Vertical</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AQS_Quote__r.Account_Primary_Vertical__c = &apos;CPG&apos;
+
+			&amp;&amp;  ISPICKVAL(AQS_Quote__r.SBQQ__Opportunity2__r.Opportunity_Sub_Type__c, &apos;Ads &amp; Promos&apos;)
+
+			&amp;&amp; ISBLANK(AQS_Quote__r.SBQQ__Opportunity2__r.Campaign_Vertical__c)
+
+							, TRUE, FALSE)</errorConditionFormula>
+    <errorMessage>Campaign Vertical is required on Opportunity.</errorMessage>
+</ValidationRule>

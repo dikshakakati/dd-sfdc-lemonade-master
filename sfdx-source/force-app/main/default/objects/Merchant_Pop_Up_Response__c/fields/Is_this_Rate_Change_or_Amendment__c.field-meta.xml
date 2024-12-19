@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_this_Rate_Change_or_Amendment__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-1979: Captures if the user needs a Rate Change or Amendment.</description>
+    <externalId>false</externalId>
+    <label>Is this Rate Change or Amendment</label>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

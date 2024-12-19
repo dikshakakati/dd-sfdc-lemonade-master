@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Campaign_Vertical_Self_Serve</fullName>
+    <active>true</active>
+    <description>LEM-11036: &apos;Self-Serve&apos; Flow - &apos;Campaign Vertical&apos; AND &apos;Campaign Program&apos; Validations</description>
+    <errorConditionFormula>AND(
+    Opportunity_Deal_Type__c = &apos;Self-Serve&apos; , 
+				ISPICKVAL(Self_Serve_Status__c, &quot;Activated&quot;),
+    ISPICKVAL(SBQQ__Account__r.Primary_Vertical__c,&quot;CPG&quot;),
+    ISBLANK(SBQQ__Opportunity2__r.Campaign_Vertical__c)
+)</errorConditionFormula>
+    <errorMessage>Campaign Vertical is required on Opportunity</errorMessage>
+</ValidationRule>

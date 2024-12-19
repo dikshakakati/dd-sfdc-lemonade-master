@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximum_Selections_Variant_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK( Maximum_Selections__c )),
+ISBLANK(TEXT(Maximum_Selections_Variant__c))
+)</errorConditionFormula>
+    <errorDisplayField>Maximum_Selections_Variant__c</errorDisplayField>
+    <errorMessage>This is required if maximum selections is provided.</errorMessage>
+</ValidationRule>

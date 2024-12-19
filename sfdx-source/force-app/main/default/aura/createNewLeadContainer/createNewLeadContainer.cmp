@@ -1,0 +1,10 @@
+<!--
+@author Deloitte
+@date 04/16/2024
+@description Aura component to wrap createNewLead lightning web component.
+-->
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,lightning:actionOverride,force:hasRecordId,force:hasSObjectName"
+>
+  <c:createNewLead name="createLead" />
+</aura:component>

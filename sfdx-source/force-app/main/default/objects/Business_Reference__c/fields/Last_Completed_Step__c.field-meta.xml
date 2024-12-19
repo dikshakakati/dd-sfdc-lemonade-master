@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Completed_Step__c</fullName>
+    <description>LEM-3333:Capture the last completed step completed by mulesoft</description>
+    <externalId>false</externalId>
+    <label>Last Completed Step</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business and User Created</fullName>
+                <default>false</default>
+                <label>Business and User Created</label>
+            </value>
+            <value>
+                <fullName>Business Configuration Created</fullName>
+                <default>false</default>
+                <label>Business Configuration Created</label>
+            </value>
+            <value>
+                <fullName>Drive Withholding Business Request Processed</fullName>
+                <default>false</default>
+                <label>Drive Withholding Business Request Processed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

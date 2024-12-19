@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Menu_Information_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-1979: Based on input decides if the Menu Information of the Merchant is required or not.</description>
+    <externalId>false</externalId>
+    <label>Is Menu Information Required</label>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

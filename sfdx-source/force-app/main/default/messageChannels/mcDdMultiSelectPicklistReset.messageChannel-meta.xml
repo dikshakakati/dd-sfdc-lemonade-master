@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a message channel subscribed by lwcDdMultiSelectPicklist LWC.
+        If passed uniqueIdentifier matches (depends on searchType), then that component resets itself and notifies its parent.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>This is the name/uniqueIdentifier of the component which should be reset</description>
+        <fieldName>uniqueIdentifier</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is the search type to use - Equals / Starts With</description>
+        <fieldName>uniqueIdentifierSearchType</fieldName>
+    </lightningMessageFields>
+    <masterLabel>mcDdMultiSelectPicklistReset</masterLabel>
+</LightningMessageChannel>

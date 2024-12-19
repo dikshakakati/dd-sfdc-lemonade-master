@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_Account_Owner_When_Readiness_Check_Failed_On_Parent_Work_Order</fullName>
+        <description>Notify Account Owner When Readiness Check Failed On Parent Work Order</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email_Id__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Internal_Readiness_Check_Failed_Notification_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Activated_Centrally_No_Work_Order_Account_Owner_on_Onboarding_Completion</fullName>
+        <description>Notify Activated Centrally No Work Order Account Owner on Onboarding Completion</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email_Id__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Internal_Notify_AO_for_Onboarding_Complete_Activate_Centrally_No</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Activated_Centrally_Yes_Work_Order_Account_Owner_on_Onboarding_Completion</fullName>
+        <description>Notify Activated Centrally Yes Work Order Account Owner on Onboarding Completion</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email_Id__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Internal_Notify_AO_for_Onboarding_Complete_Activate_Centrally_Yes</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_COO_Work_Order_Account_Owner_for_Change_of_Ownership</fullName>
+        <description>Notify COO Work Order Account Owner for Change of Ownership</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email_Id__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Internal_Notify_Account_Owner_for_Change_of_Ownership</template>
+    </alerts>
+</Workflow>

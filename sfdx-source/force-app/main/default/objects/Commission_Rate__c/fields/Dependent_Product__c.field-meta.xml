@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dependent_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-185: Initial Setup of Commission Rate Object</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Identifies another product that must be present for this CRT entry to be valid.</inlineHelpText>
+    <label>Dependent Product</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Commission Rates</relationshipLabel>
+    <relationshipName>Commission_Rates</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

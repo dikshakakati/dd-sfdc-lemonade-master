@@ -1,0 +1,50 @@
+.my-error-icon {
+  --slds-c-icon-color-foreground-default: orange;
+  --slds-c-icon-color-background: red;
+}
+
+.error-color{
+  color: #ba0516;
+}
+
+.success-color{
+  color: #2e844a;
+}
+.clipboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.small-icon {
+  width: 40px;
+  height: 16px;
+}
+.hide{
+  display : none;
+}
+.show{
+  display : unset;
+}
+.doordashSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(201, 201, 201);
+  color: #000000;
+  padding-right: 23px;
+  padding-left: 23px;
+  margin-left : 20px;
+  margin-right : 20px;
+  position: relative;
+}
+.account-label-container {
+position: relative;
+display: inline-block;
+}
+.help-text-icon {
+position: absolute;
+top: 0;
+right: 0;
+transform: translate(10%, -30%);
+}

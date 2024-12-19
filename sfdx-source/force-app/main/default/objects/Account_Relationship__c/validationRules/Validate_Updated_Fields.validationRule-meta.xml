@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Updated_Fields</fullName>
+    <active>true</active>
+    <description>LEM-1337: Validates if the user is trying to update fields apart from Account and Related Account.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Opportunity_Validation_Rules),
+    OR(
+        ISCHANGED(Account__c),
+        ISCHANGED(Related_Account__c) 
+    )
+)</errorConditionFormula>
+    <errorMessage>Once an Account Relationship has been created, the applicable accounts cannot be changed. Please create a new Account Relationship if appropriate.</errorMessage>
+</ValidationRule>

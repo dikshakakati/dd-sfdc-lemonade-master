@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_No_Of_Testing_Errors</fullName>
+    <active>true</active>
+    <description>LEM - 9491 : Add 3 Additional Fields - Brief Item</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+TEXT(Status__c) = $Label.Pre_Live_Audit_New_Submission,
+OR(
+TEXT(Product__c) = $Label.Brief_Product_BuyAndGetOff,
+TEXT(Product__c) = $Label.Brief_Product_BuyOneGetOne,
+TEXT(Product__c) = $Label.Brief_Product_DoorDashDeals,
+TEXT(Product__c) = $Label.Brief_Product_TryMeFree,
+TEXT(Product__c) = $Label.Brief_Product_FirstOrderOff,
+TEXT(Product__c) = $Label.Brief_Product_FreeItemOverX,
+TEXT(Product__c) = $Label.Brief_Product_OrderAgain,
+TEXT(Product__c) = $Label.Brief_Product_SpendXGetY,
+TEXT(Product__c) = $Label.Brief_Product_Banners,
+TEXT(Product__c) = $Label.Brief_Product_CRM,
+TEXT(Product__c) = $Label.Brief_Product_SponsoredListing,
+TEXT(Product__c) = $Label.Brief_Product_CustomMarketing
+),
+ISBLANK( Number_of_Testing_Errors__c )
+)</errorConditionFormula>
+    <errorMessage>To move the Brief item Status to “Pre-Live Audit - New Submission” , the field “Number Of Testing Errors” Should be populated.</errorMessage>
+</ValidationRule>

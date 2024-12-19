@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ops_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-3674: It is used to store campaign fulfilment owner details related to the Brief Item.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate the campaign fulfilment owner of the campaign item here.</inlineHelpText>
+    <label>Ops Owner</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Brief_Items1</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,78 @@
+<!--
+  * @author Deloitte
+  * @date 26/07/2022
+  * @description LWC to show encrypted fields of an object.
+-->
+<template>
+  <lightning-card>
+    <template if:true={hasEncryptedInformationAccess}>
+      <template if:true={loaded}>
+        <lightning-input
+          class="toggleStyling slds-p-around_x-small"
+          type="toggle"
+          label={buttonLabel}
+          onchange={handleToggle}
+        >
+        </lightning-input>
+        <template if:true={showEncryptedFields}>
+          <div class={parentDivStyling}>
+            <template for:each={encryptedDetails} for:item="encryptedDetail">
+              <div
+                key={encryptedDetail.encryptedData.fieldApiName}
+                class="divStyling"
+              >
+                <template if:true={encryptedDetail.showEditIcon}>
+                  <lightning-icon
+                    icon-name={editIcon}
+                    size="x-small"
+                    onclick={handleEdit}
+                    class="iconStyling"
+                  ></lightning-icon>
+                </template>
+                <lightning-input
+                  data-identifier="encryptedDataInput"
+                  data-api-name={encryptedDetail.encryptedData.fieldApiName}
+                  data-input-type={encryptedDetail.inputType}
+                  date-style={dateStyle}
+                  field-level-help={encryptedDetail.encryptedData.fieldHelpText}
+                  type={encryptedDetail.inputType}
+                  label={encryptedDetail.encryptedData.fieldLabel}
+                  value={encryptedDetail.encryptedData.fieldValue}
+                  max-length={encryptedDetail.encryptedData.fieldLength}
+                  class="inputStyling slds-p-left_xx-small slds-m-bottom_small"
+                  readonly={encryptedDetail.isReadOnly}
+                ></lightning-input>
+              </div>
+            </template>
+          </div>
+          <template if:true={showButtons}>
+            <div slot="footer">
+              <lightning-button
+                variant={buttonVariantNeutral}
+                label={cancelAction}
+                onclick={handleCancel}
+                class="buttonStyling"
+              ></lightning-button>
+              <lightning-button
+                variant={buttonVariantBrand}
+                label="Save"
+                onclick={handleSave}
+                class="buttonStyling"
+              ></lightning-button>
+            </div>
+          </template>
+        </template>
+      </template>
+      <div if:false={loaded} class="spinnerStyling">
+        <lightning-spinner
+          alternative-text={loadingAlternativeText}
+        ></lightning-spinner>
+      </div>
+    </template>
+    <template if:false={hasEncryptedInformationAccess}>
+      <div class="messageBoxStyling">
+        <p class="messageStyling">{noEncryptedDataPermissionMessage}</p>
+      </div>
+    </template>
+  </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Campaign_Source_Name__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15472: It represents the Primary Campaign Source Name.</description>
+    <externalId>false</externalId>
+    <formula>Primary_Campaign_Source__r.Name</formula>
+    <label>Primary Campaign Source Name</label>
+    <securityClassification>Proprietary</securityClassification>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

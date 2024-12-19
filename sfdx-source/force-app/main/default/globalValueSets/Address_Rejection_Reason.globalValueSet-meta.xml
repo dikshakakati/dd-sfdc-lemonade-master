@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Bad Address</fullName>
+        <default>false</default>
+        <label>Bad Address</label>
+    </customValue>
+    <customValue>
+        <fullName>Incomplete Address</fullName>
+        <default>false</default>
+        <label>Incomplete Address</label>
+    </customValue>
+    <customValue>
+        <fullName>Technical Error</fullName>
+        <default>false</default>
+        <label>Technical Error</label>
+    </customValue>
+    <customValue>
+        <fullName>Does not exist</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Does not exist</label>
+    </customValue>
+    <description>LEM-13404: It stores values for reasons why address was rejected</description>
+    <masterLabel>Address Rejection Reason</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

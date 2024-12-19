@@ -1,0 +1,91 @@
+.divStyling {
+  overflow-y: auto;
+  height: 500px;
+}
+.leftStyling {
+  float: left;
+}
+.rightStyling {
+  float: right;
+}
+.messageBoxStyling {
+  background-color: rgb(243, 243, 243);
+  text-align: center;
+  margin: 0.75rem;
+  border-radius: 0.25rem;
+}
+.messageStyling {
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+}
+.filter-panel {
+  position: relative;
+  height: 25px;
+}
+.panel-box {
+  position: absolute;
+  right: 15px;
+  z-index: 5001;
+}
+.filter-box {
+  margin-left: 70%;
+  background-color: rgb(252, 252, 252);
+  border: 1px groove;
+  border-radius: 5px;
+}
+.table_width {
+  width: 98.5%;
+}
+.table_child_padding {
+  padding-left: 2rem;
+}
+.balance {
+  text-wrap: balance;
+}
+.slds-accordion__content {
+  display: none;
+}
+.slds-accordion__content.slds-is-open {
+  display: block;
+}
+.section-styling {
+  display: none;
+}
+.modal-content {
+  overflow-y: hidden;
+  overflow: hidden;
+}
+.slds-modal__container {
+  width: 90% !important;
+  max-width: 90% !important;
+  height: 80% !important;
+  max-height: 80% !important;
+}
+.table_second_child_padding {
+  padding-left: 3rem;
+}
+.table_second_store_padding {
+  padding-left: 4rem;
+}
+.table_third_child_padding {
+  padding-left: 4rem;
+}
+.table_third_store_padding {
+  padding-left: 5.5rem;
+}
+.table_fourth_child_padding {
+  padding-left: 5rem;
+}
+.table_fourth_store_padding {
+  padding-left: 6.5rem;
+}
+.slds-accordion__summary[c-accountHierarchy_accountHierarchy] {
+  padding: 0px !important;
+  margin-top: -4px !important;
+  margin-bottom: -3px !important;
+}
+.slds-accordion__section[c-accountHierarchy_accountHierarchy] {
+  padding: 0px !important;
+  margin-left: 10px !important;
+}

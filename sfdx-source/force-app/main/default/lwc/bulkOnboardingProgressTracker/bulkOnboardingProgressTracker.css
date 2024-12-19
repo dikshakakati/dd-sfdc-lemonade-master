@@ -1,0 +1,27 @@
+.option-container {
+    padding: 20px;
+}
+
+.option-container p {
+    text-align: left;
+}
+
+.option-container-buttons {
+    text-align: right;
+}
+
+.option-text {
+    font-size: 1.1em;
+}
+
+.store-row {
+    cursor: pointer;
+}
+
+.stores-table {
+    width: 60%;
+}
+
+lightning-button {
+    margin-left: 10px; 
+}

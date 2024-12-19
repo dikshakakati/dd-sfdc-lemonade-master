@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Deal_Type_Update</fullName>
+    <active>true</active>
+    <description>LEM-12257
+LEM-20589 : Added the &apos;Bypass Opportunity Validation Rule&apos; condition to bypass it for Integration scenarios.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Opportunity_Validation_Rules),
+    TEXT(Account.Segment__c) != $Label.AccountSegmentSMB,
+    AND(
+        ISPICKVAL( SBQQ__PrimaryQuote__r.Self_Serve_Status__c, &apos;Activated&apos;),
+        ISPICKVAL( Deal_Type__c, &apos;Full-Serve&apos;)
+    ) ||
+    AND(
+        NOT(ISPICKVAL( SBQQ__PrimaryQuote__r.SBQQ__Status__c, &apos;Draft&apos;)),
+        ISPICKVAL(Deal_Type__c, &apos;Self-Serve&apos;),
+	    NOT( ISBLANK( SBQQ__PrimaryQuote__c))
+    )
+)</errorConditionFormula>
+    <errorMessage>Deal Type cannot be updated from Full-Serve to Self-Serve if Quote is not in “Draft” status.  Deal Type cannot be updated from Self-Serve to Full-Serve if Self-Serve Status on Quote is “Activated</errorMessage>
+</ValidationRule>

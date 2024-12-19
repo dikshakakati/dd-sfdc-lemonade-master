@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>MS to MFS HTTP Gateway Timeout</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Business_Friendly_Message__c</field>
+        <value xsi:type="xsd:string">Store provisioning failed due to an internal application error from MFS. Please refer to the error message for further details and retry in a few minutes. If the issue persists, raise a support ticket - MX Finance board: (https://doordash.atlassian.net/secure/CreateIssue.jspa?pid=13864&amp;issuetype=1&amp;priority=4) and slack on #eng-mx-finance channel : (https://app.slack.com/client/E02180LFT96/CUT5HLH2P).</value>
+    </values>
+    <values>
+        <field>Integration_Key_String__c</field>
+        <value xsi:type="xsd:string">HTTP:GATEWAY_TIMEOUT</value>
+    </values>
+    <values>
+        <field>Integration_Type__c</field>
+        <value xsi:type="xsd:string">Xref Provisioning</value>
+    </values>
+    <values>
+        <field>Message_Category__c</field>
+        <value xsi:type="xsd:string">FullSend Create</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">132.0</value>
+    </values>
+</CustomMetadata>

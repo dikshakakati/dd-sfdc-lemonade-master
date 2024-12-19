@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amend_CLM_Contract</fullName>
+    <availability>online</availability>
+    <description>This button is created as part of CLM Setup and will be used to launch Amendment CLM Contract from Account.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Amend CLM Contract</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://demo.ironcladapp.com/workflows/664762c960d0d98a484e91ef/launch/6699459ca57f4d530504b387?source=753770e5-fe8f-457f-b48f-014787957407&amp;externalId={!Account.Id}</url>
+</WebLink>

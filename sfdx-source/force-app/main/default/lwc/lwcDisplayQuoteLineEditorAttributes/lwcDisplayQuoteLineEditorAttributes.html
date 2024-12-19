@@ -1,0 +1,107 @@
+<template>
+  <template if:true={isSpinner}>
+    <div class="spinner">
+      <lightning-spinner
+        alternative-text="Loading..."
+        size="medium"
+      ></lightning-spinner>
+    </div>
+  </template>
+  <lightning-card icon-name="standard:catalog">
+    <h1 slot="title">
+      This page is to configure attributes for {packageName} {prodName}
+    </h1>
+    <lightning-layout multiple-rows="true">
+      <lightning-layout-item flexibility="auto" padding="around-small">
+        <lightning-messages data-id="message"></lightning-messages>
+
+        <template if:true={hasAnyFieldstoDisplay}>
+          <lightning-record-edit-form
+            record-id={recordId}
+            object-api-name="SBQQ__QuoteLine__c"
+            onsuccess={handleSuccess}
+            onerror={handleError}
+            onsubmit={handleSubmit}
+            layout-type="full"
+          >
+            <lightning-accordion
+              allow-multiple-sections-open
+              class="slds-m-around_medium"
+              active-section-name={activeSections}
+            >
+              <template if:true={hasRequiredFields}>
+                <!-- This Section shows all the Required fields on the Page-->
+                <lightning-accordion-section
+                  label="Required Fields"
+                  name="Required_Fields"
+                  class="slds-form-element_compound"
+                >
+                  <!-- This Section shows all the Required fields on the Page-->
+                  <div class="slds-grid slds-wrap">
+                    <template for:each={requiredFieldsList} for:item="r">
+                      <div key={r.Id} class="slds-col slds-size_1-of-2">
+                        <lightning-input-field
+                          field-name={r}
+                          required="true"
+                        ></lightning-input-field>
+                      </div>
+                    </template>
+                  </div>
+                </lightning-accordion-section>
+              </template>
+              <template if:true={hasfields}>
+                <!-- This Section shows all the Optional fields on the Page-->
+                <lightning-accordion-section
+                  label="Optional Fields"
+                  name="Optional_Fields"
+                  class="slds-form-element_compound"
+                >
+                  <div class="slds-grid slds-wrap">
+                    <template for:each={optionalFieldsList} for:item="f">
+                      <div key={f.Id} class="slds-col slds-size_1-of-2">
+                        <lightning-input-field
+                          field-name={f}
+                        ></lightning-input-field>
+                      </div>
+                    </template>
+                  </div>
+                </lightning-accordion-section>
+              </template>
+              <template if:true={hasActivePrice}>
+                <!-- This Section shows all the Active price fields on the Page -->
+                <lightning-accordion-section
+                  label="Active Price"
+                  name="Active_Price"
+                  class="slds-form-element_compound"
+                >
+                  <div class="slds-grid slds-wrap">
+                    <template for:each={activePriceList} for:item="a">
+                      <div key={a.Id} class="slds-col slds-size_1-of-2">
+                        <lightning-output-field
+                          field-name={a}
+                        ></lightning-output-field>
+                      </div>
+                    </template>
+                  </div>
+                </lightning-accordion-section>
+              </template>
+            </lightning-accordion>
+            <div class="slds-align_absolute-center">
+              <lightning-button
+                class="slds-m-top_small"
+                variant="brand"
+                label="Update"
+                type="submit"
+              ></lightning-button>
+            </div>
+          </lightning-record-edit-form>
+        </template>
+        <template if:false={hasAnyFieldstoDisplay}>
+          <div class="slds-align_absolute-center">
+            <p>No attributes to configure for this product</p>
+          </div>
+        </template>
+      </lightning-layout-item>
+    </lightning-layout>
+  </lightning-card>
+</template>

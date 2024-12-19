@@ -1,0 +1,40 @@
+<template>
+  <div class="slds-p-horizontal_medium option-container slds-box">
+
+      <!-- Stage / Progress Indicator -->
+      <c-bulk-onboarding-stage-bar current-step={currentStep}></c-bulk-onboarding-stage-bar>
+      <lightning-card  class="slds-theme_shade">
+          <div class="slds-p-horizontal_medium">
+              <div lwc:if={isDataLoaded}>
+                  <!-- Instructions -->
+                  <p class="option-text">{label.linkBusinessVerticalInstructions}</p>
+                  <div class="slds-p-vertical_medium slds-grid">
+                      <div class="slds-col slds-size_8-of-12">
+                          <c-lookup-search
+                              label="Select Business Vertical for Stores"
+                              selected-icon-name="standard:account"
+                              object-label="Business Vertical"
+                              object-api-name="Business_Vertical__c"
+                              field-api-name="Name"
+                              other-field-api-name="Primary_Vertical__c"
+                              selected-record-id={businessVerticalRxId}
+                              onvalueselected={handleBusinessVerticalSelection}
+                          >
+                          </c-lookup-search>
+                      </div>
+                  </div>
+              </div>
+              <div lwc:else>
+                      <div class="slds-spinner slds-spinner_brand slds-spinner_medium" role="status">
+                          <span class="slds-assistive-text"></span>
+                          <div class="slds-spinner__dot-a"></div>
+                          <div class="slds-spinner__dot-b"></div>
+                      </div>
+              </div>
+              <div class="slds-p-vertical_medium slds-grid slds-grid_align-end slds-border_top slds-border_light">
+                  <lightning-button variant="brand" label="Next" onclick={updateFlowRequestWithBusinessVertical} disabled={disableButton}></lightning-button>
+              </div>
+          </div>
+      </lightning-card>
+  </div>
+</template>

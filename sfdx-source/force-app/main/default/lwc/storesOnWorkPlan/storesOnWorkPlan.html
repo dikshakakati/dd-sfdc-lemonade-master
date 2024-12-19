@@ -1,0 +1,173 @@
+<!--
+  * @author Deloitte
+  * @date 04/29/2022
+  * @description LWC to show onboarding details on Work Plan record Page.
+-->
+<template>
+  <lightning-card title={title} icon-name={icon}>
+    <template if:true={loaded}>
+      <template if:true={showSearchBar}>
+        <div class="slds-p-around_x-small">
+          <c-search-box
+            enable-server-search={enableServerSearch}
+            name-field={nameField}
+            search-box-placeholder={searchBoxPlaceholder}
+            all-records={storeDetails}
+            onshowfiltereddata={fetchFilteredDetails}
+            onclearsearchdata={clearSearch}
+          ></c-search-box>
+        </div>
+      </template>
+      <template if:true={showMessage}>
+        <div class="messageBoxStyling">
+          <p class="messageStyling">{noDataFoundMessage}</p>
+        </div>
+      </template>
+      <template if:true={storeRecords}>
+        <!--
+        Using scrollable class to add scroll bar if number of stores are going beyond the screen.
+      -->
+        <div class="slds-scrollable_y scrollableDivStyling">
+          <lightning-accordion class="cardStyling">
+            <template for:each={storeRecords} for:item="storeItem">
+              <div
+                key={storeItem.storeData.accountId}
+                data-id={storeItem.storeData.accountId}
+                class="divStyling"
+              >
+                <lightning-accordion-section
+                  name={storeItem.storeData.accountId}
+                  label={storeItem.storeData.accountName}
+                  data-id={storeItem.storeData.accountId}
+                  data-workorderid={storeItem.storeData.workOrderId}
+                  onclick={handleToggleSection}
+                >
+                  <template if:true={storeItem.isActive}>
+                    <template for:each={sectionDetails} for:item="section">
+                      <div
+                        key={storeItem.storeData.accountId}
+                        class="divStyling"
+                        data-id={storeItem.storeData.accountId}
+                        data-workorderid={storeItem.storeData.workOrderId}
+                      >
+                        <template if:true={section.showSectionHeader}>
+                          <div
+                            data-id={storeItem.storeData.accountId}
+                            data-workorderid={storeItem.storeData.workOrderId}
+                            class="sectionHeadingStyling"
+                          >
+                            {section.sectionName}
+                          </div>
+                        </template>
+                        <template if:true={section.recordId}>
+                          <template if:true={section.showEncrytedData}>
+                            <c-view-encrypted-data
+                              business-account-id={storeItem.storeData.businessAccountId}
+                              component-location={objectApiName}
+                              record-id={section.recordId}
+                              work-order-id={storeItem.storeData.workOrderId}
+                              object-api-name={section.objectName}
+                              payment-account-ids={paymentAccountIds}
+                              data-id={storeItem.storeData.accountId}
+                              data-workorderid={storeItem.storeData.workOrderId}
+                              ontoggleencrypteddata={toggleEncryptedData}
+                            >
+                            </c-view-encrypted-data>
+                          </template>
+                          <template if:true={section.isSupportedObject}>
+                            <lightning-record-form
+                              data-object-identifier={section.objectName}
+                              data-record-id={section.recordId}
+                              data-section-identifier={section.sectionName}
+                              object-api-name={section.objectName}
+                              record-id={section.recordId}
+                              fields={section.fields}
+                              columns="2"
+                              mode="readonly"
+                              density={recordFormDensity}
+                              data-id={storeItem.storeData.accountId}
+                              data-workorderid={storeItem.storeData.workOrderId}
+                            >
+                            </lightning-record-form>
+                          </template>
+                          <template if:false={section.isSupportedObject}>
+                            <div>
+                              <c-dynamic-record-view-form
+                                object-name={section.objectName}
+                                output-fields={section.fields}
+                                record-id={section.recordId}
+                                data-id={storeItem.storeData.accountId}
+                                data-workorderid={storeItem.storeData.workOrderId}
+                              ></c-dynamic-record-view-form>
+                            </div>
+                          </template>
+                        </template>
+                        <template if:false={section.recordId}>
+                          <!--
+                            Added viewEncryptedData component to show business Account and Work Order
+                            encrypted fields when Payment Account is not associated with store Account.
+                          -->
+                          <template if:true={section.showEncrytedData}>
+                            <c-view-encrypted-data
+                              business-account-id={storeItem.storeData.businessAccountId}
+                              component-location={objectApiName}
+                              record-id={storeItem.storeData.businessAccountId}
+                              work-order-id={storeItem.storeData.workOrderId}
+                              object-api-name={section.objectName}
+                              data-id={storeItem.storeData.accountId}
+                              data-workorderid={storeItem.storeData.workOrderId}
+                              ontoggleencrypteddata={toggleEncryptedData}
+                            >
+                            </c-view-encrypted-data>
+                          </template>
+                          <div
+                            class="recordNotFoundBoxStyling"
+                            data-div-identifier="recordNotFoundDiv"
+                            data-section-identifier={section.sectionName}
+                          >
+                            <p class="messageStyling">
+                              <lightning-icon
+                                icon-name="utility:warning"
+                                variant="warning"
+                              >
+                              </lightning-icon>
+                              &nbsp;{noRecordFoundMessage}
+                            </p>
+                          </div>
+                        </template>
+                      </div>
+                    </template>
+                  </template>
+                  <template if:true={sectionError}>
+                    <div class="recordNotFoundBoxStyling">
+                      <p class="messageStyling">
+                        <lightning-icon
+                          icon-name="utility:warning"
+                          variant="warning"
+                        >
+                        </lightning-icon>
+                        &nbsp;{sectionError}
+                      </p>
+                    </div>
+                  </template>
+                  <div if:false={isSectionLoaded} class="spinnerStyling">
+                    <br />
+                    <lightning-spinner
+                      alternative-text={loadingAlternativeText}
+                    ></lightning-spinner>
+                  </div>
+                </lightning-accordion-section>
+              </div>
+            </template>
+            <template if:true={storeError}> {storeError} </template>
+          </lightning-accordion>
+        </div>
+      </template>
+    </template>
+    <div if:false={loaded} class="spinnerStyling">
+      <lightning-spinner
+        alternative-text={loadingAlternativeText}
+      ></lightning-spinner>
+    </div>
+  </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Encryption_Key__c</fullName>
+    <defaultValue>TEXT(3)</defaultValue>
+    <description>LEM-2133: Store the Encryption Key to hash the Salesforce Id of Merchant Pop-Up Response record.</description>
+    <externalId>false</externalId>
+    <label>Encryption Key</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

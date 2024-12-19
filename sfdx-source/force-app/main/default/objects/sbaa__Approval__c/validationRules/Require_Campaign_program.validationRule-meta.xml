@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Campaign_program</fullName>
+    <active>true</active>
+    <description>LEM-9256: New &apos;Campaign Vertical&apos; field on the Opportunity &amp; Update &apos;Campaign Program&apos; to Mandatory on Opportunity
+LEM-10765: A&amp;P Validation Rule Enhancements
+LEM-22680: Added bypass for &apos;SMB&apos; Segment</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Campaign_Program_Validation),
+  Segment__c != $Label.AccountSegmentSMB,
+  AQS_Quote__r.Opportunity_Sub_Type__c = $Label.Opportunity_Sub_Type_Ads_Promos,
+  TEXT(AQS_Quote__r.SBQQ__Opportunity2__r.Campaign_Program_is_N_A__c) = $Label.Yes_Decision,
+  ISBLANK(AQS_Quote__r.SBQQ__Opportunity2__r.Campaign_Program__c)
+)</errorConditionFormula>
+    <errorMessage>Campaign Program is required if ‘Is there a Campaign Program?’ = Yes</errorMessage>
+</ValidationRule>

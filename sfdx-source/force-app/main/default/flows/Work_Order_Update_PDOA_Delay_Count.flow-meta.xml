@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <description>LEM-6211</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Add1toPDOADelayCount</description>
+        <name>Add1toPDOADelayCount</name>
+        <dataType>Number</dataType>
+        <expression>IF(ISNULL({!$Record.PDOA_Delay_Count__c}), 1,
+{!$Record.PDOA_Delay_Count__c} + 1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Work Order - Update PDOA {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Work Order - Update PDOA Delay Count</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_PDOA_Delay_Count</name>
+        <label>Update PDOA Delay Count</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>PDOA_Delay_Count__c</field>
+            <value>
+                <elementReference>Add1toPDOADelayCount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_PDOA_Delay_Count</targetReference>
+        </connector>
+        <filterFormula>NOT({!$Permission.Bypass_Work_Order_Flows}) &amp;&amp;
+PRIORVALUE({!$Record.Proposed_Date_of_Activation__c}) &lt; {!$Record.Proposed_Date_of_Activation__c}  &amp;&amp;
+ISBLANK({!$Record.ParentWorkOrderId})</filterFormula>
+        <object>WorkOrder</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

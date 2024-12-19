@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Signed_Contract__c</fullName>
+    <description>LEM-5021: It is used to store the link to the Signed Contract from the associated Quote.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(SBQQ_Quote__r.Signed_Contract_link__c, SBQQ_Quote__r.Signed_Contract_link__c)</formula>
+    <label>Signed Contract</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

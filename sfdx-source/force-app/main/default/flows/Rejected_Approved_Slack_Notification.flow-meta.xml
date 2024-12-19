@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Approved_Slack_Notification</name>
+        <label>Approved Slack Notification</label>
+        <locationX>440</locationX>
+        <locationY>492</locationY>
+        <actionName>custom__Approval_Approved_Slack_Notification</actionName>
+        <actionType>sendNotification</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>UserId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>custom__Approval_Approved_Slack_Notification</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>LEM-13538: Sends the Slack Notification to the associated User along with the related record.</description>
+        <name>Rejected_Slack_Notification</name>
+        <label>Rejected Slack Notification</label>
+        <locationX>176</locationX>
+        <locationY>492</locationY>
+        <actionName>custom__Approval_Rejection_Slack_Notification</actionName>
+        <actionType>sendNotification</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>UserId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>custom__Approval_Rejection_Slack_Notification</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>LEM-13538: Retrieves the User Id of the User who sent the Quote for approval.</description>
+        <name>Requested_User</name>
+        <label>Requested User</label>
+        <locationX>440</locationX>
+        <locationY>276</locationY>
+        <assignmentItems>
+            <assignToReference>UserId</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.CreatedBy.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approval_Status</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>LEM-13538: Checks if the Approval Request is Approved or Rejected</description>
+        <name>Approval_Status</name>
+        <label>Approval Status</label>
+        <locationX>440</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Approval_Rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rejected_Slack_Notification</targetReference>
+            </connector>
+            <label>Approval Rejected</label>
+        </rules>
+        <rules>
+            <name>Approval_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AQS_Quote__r.SBQQ__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Approved_Slack_Notification</targetReference>
+            </connector>
+            <label>Approval Approved</label>
+        </rules>
+    </decisions>
+    <description>LEM-13538: Sends a Slack Notification to the User once the Quote Approval is &apos;Rejected&apos; or &apos;Approved&apos;.</description>
+    <environments>Default</environments>
+    <interviewLabel>Rejected/Approved Slack Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Rejected/Approved Slack Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>sbaa__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Rejected</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>sbaa__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </filters>
+        <object>sbaa__Approval__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Requested_User</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-13538: Stores the Id&apos;s of all the related User.</description>
+        <name>UserId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

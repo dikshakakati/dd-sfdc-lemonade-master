@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <description>LEM-1271: Type of request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Type of request</inlineHelpText>
+    <label>Sub-Type</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ads and Promo - Activate</fullName>
+                <default>false</default>
+                <label>Ads and Promo - Activate</label>
+            </value>
+            <value>
+                <fullName>Ads and Promo - Deactivate</fullName>
+                <default>false</default>
+                <label>Ads and Promo - Deactivate</label>
+            </value>
+            <value>
+                <fullName>Auto-Activations</fullName>
+                <default>false</default>
+                <label>Auto-Activations</label>
+            </value>
+            <value>
+                <fullName>Business/store mapping update</fullName>
+                <default>false</default>
+                <label>Business/store mapping update</label>
+            </value>
+            <value>
+                <fullName>Caviar - Cross Listing</fullName>
+                <default>false</default>
+                <label>Caviar - Cross Listing</label>
+            </value>
+            <value>
+                <fullName>COO</fullName>
+                <default>false</default>
+                <label>COO</label>
+            </value>
+            <value>
+                <fullName>Invoicing group/NetSuite setup/update</fullName>
+                <default>false</default>
+                <label>Invoicing group/NetSuite setup/update</label>
+            </value>
+            <value>
+                <fullName>Menu Updates</fullName>
+                <default>false</default>
+                <label>Menu Updates</label>
+            </value>
+            <value>
+                <fullName>Metro Based Promo</fullName>
+                <default>false</default>
+                <label>Metro Based Promo</label>
+            </value>
+            <value>
+                <fullName>Net-new business</fullName>
+                <default>false</default>
+                <label>Net-new business</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Partnership creation/update</fullName>
+                <default>false</default>
+                <label>Partnership creation/update</label>
+            </value>
+            <value>
+                <fullName>Portal access</fullName>
+                <default>false</default>
+                <label>Portal access</label>
+            </value>
+            <value>
+                <fullName>Rate Change</fullName>
+                <default>false</default>
+                <label>Rate Change</label>
+            </value>
+            <value>
+                <fullName>SaaS Fee Setup</fullName>
+                <default>false</default>
+                <label>SaaS Fee Setup</label>
+            </value>
+            <value>
+                <fullName>Self Delivery</fullName>
+                <default>false</default>
+                <label>Self Delivery</label>
+            </value>
+            <value>
+                <fullName>Sponsored Listing</fullName>
+                <default>false</default>
+                <label>Sponsored Listing</label>
+            </value>
+            <value>
+                <fullName>COO Same Store</fullName>
+                <default>false</default>
+                <label>COO Same Store</label>
+            </value>
+            <value>
+                <fullName>Withholding</fullName>
+                <default>false</default>
+                <label>Withholding</label>
+            </value>
+            <value>
+                <fullName>Net-New</fullName>
+                <default>false</default>
+                <label>Net-New</label>
+            </value>
+            <value>
+                <fullName>Replacement</fullName>
+                <default>false</default>
+                <label>Replacement</label>
+            </value>
+            <value>
+                <fullName>Return</fullName>
+                <default>false</default>
+                <label>Return</label>
+            </value>
+            <value>
+                <fullName>Additional store creation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Additional store creation</label>
+            </value>
+            <value>
+                <fullName>Marketing Free Credit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing Free Credit</label>
+            </value>
+            <value>
+                <fullName>Partnership update</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Partnership update</label>
+            </value>
+            <value>
+                <fullName>Return and Replacement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Return and Replacement</label>
+            </value>
+            <value>
+                <fullName>Store Expansion</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Store Expansion</label>
+            </value>
+            <value>
+                <fullName>Virtual Kitchen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Virtual Kitchen</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>COO</controllingFieldValue>
+            <valueName>COO Same Store</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Auto-Activations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Business/store mapping update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>COO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Invoicing group/NetSuite setup/update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Metro Based Promo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Net-new business</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Partnership creation/update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Portal access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>SaaS Fee Setup</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Withholding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales</controllingFieldValue>
+            <valueName>Ads and Promo - Activate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales</controllingFieldValue>
+            <valueName>Ads and Promo - Deactivate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales</controllingFieldValue>
+            <valueName>Caviar - Cross Listing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales</controllingFieldValue>
+            <valueName>Menu Updates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales</controllingFieldValue>
+            <valueName>Rate Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales</controllingFieldValue>
+            <valueName>Self Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales</controllingFieldValue>
+            <valueName>Sponsored Listing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tablet</controllingFieldValue>
+            <valueName>Net-New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tablet</controllingFieldValue>
+            <valueName>Replacement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tablet</controllingFieldValue>
+            <valueName>Return</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

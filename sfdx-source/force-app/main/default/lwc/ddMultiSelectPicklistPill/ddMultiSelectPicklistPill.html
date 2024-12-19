@@ -1,0 +1,36 @@
+<template>
+    <template if:true={showAvatar}>
+      <c-dd-pill
+        unique-identifier={rec.value}
+        label={rec.pillLabel}
+        has-focus={hasFocus}
+        close-button-text="Remove"
+        avatar-src={rec.iconSrc}
+        avatar-title={rec.pillLabel}
+        icon-name={iconName}
+        show-remove
+        onremove={handlePillRemove}
+      ></c-dd-pill>
+    </template>
+    <template if:true={showIcon}>
+      <c-dd-pill
+        unique-identifier={rec.value}
+        label={rec.pillLabel}
+        has-focus={hasFocus}
+        close-button-text="Remove"
+        icon-name={iconName}
+        show-remove
+        onremove={handlePillRemove}
+      ></c-dd-pill>
+    </template>
+    <template if:true={hasNoIcon}>
+      <c-dd-pill
+        unique-identifier={rec.value}
+        label={rec.pillLabel}
+        has-focus={hasFocus}
+        close-button-text="Remove"
+        show-remove
+        onremove={handlePillRemove}
+      ></c-dd-pill>
+    </template>
+  </template>

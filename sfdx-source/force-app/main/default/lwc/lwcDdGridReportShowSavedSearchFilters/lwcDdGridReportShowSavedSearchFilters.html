@@ -1,0 +1,38 @@
+<template>
+    <lightning-button variant="neutral"
+        label="Show Saved Searches"
+        title="Show Saved Searches"
+        icon-name="utility:list"
+        onclick={handleShowModal}>
+    </lightning-button>
+    <c-dd-modal data-id="modal"
+        title="Load Saved Filters and Sort Configuration"
+        size="medium"
+        type="info"
+        modal-content-overflow>
+        <div slot="content" style="display: unset;">
+            <template if:true={doesSavedSearchesExist}>
+                <lightning-datatable key-field="Id"
+                data={savedSearches}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction}>
+                </lightning-datatable> 
+            </template> 
+            <template if:false={doesSavedSearchesExist}>
+                <div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+                    <lightning-icon class="slds-p-right_x-small" icon-name="utility:warning" alternative-text="Warning!" size="xx-small" title="Warning"></lightning-icon>
+                    <h2>{errorMessage}</h2>
+                </div>
+            </template>
+        </div>
+    </c-dd-modal>
+    <c-dd-modal data-id="areYouSureModal"
+        title={areYouSureModalTitle}
+        content={areYouSureModalContent}
+        type="confirm"
+        size="small"
+        onprimarybuttonclick={handleAreYouSureYes}
+        onsecondarybuttonclick={handleAreYouSureNo}>
+    </c-dd-modal>
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Language__c</fullName>
+    <description>LEM-14053: It is used to store the language preference of the product bundle.</description>
+    <externalId>false</externalId>
+    <label>Language</label>
+    <length>180</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <securityClassification>Confidential</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

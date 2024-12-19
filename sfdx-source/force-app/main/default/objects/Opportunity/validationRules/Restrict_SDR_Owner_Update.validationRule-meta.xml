@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_SDR_Owner_Update</fullName>
+    <active>true</active>
+    <description>LEM-25660:It ensures SDR Owner can only be updated if the Opportunity is open and the logged-in user is the current or new SDR Owner.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  ISCHANGED(SDR_Opportunity_Owner__c),
+  NOT(IsClosed),
+  NOT(
+    OR(
+      ISBLANK(PRIORVALUE(SDR_Opportunity_Owner__c)),
+      PRIORVALUE(SDR_Opportunity_Owner__c) = $User.Id
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>A SDR cannot edit a SDR Owner if a different owner is listed. Please contact the current owner to have that SDR reassign to you.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eligible_for_Product__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-6458- True if this attribute should show for this product when sold standalone</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Eligible for Product</label>
+    <type>Checkbox</type>
+</CustomField>

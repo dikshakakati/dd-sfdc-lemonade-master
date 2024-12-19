@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-15223: It is used to create Account Plan record for the Business Account.</description>
+    <flowDefinition>Create_Account_Plan</flowDefinition>
+    <label>Create Account Plan</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

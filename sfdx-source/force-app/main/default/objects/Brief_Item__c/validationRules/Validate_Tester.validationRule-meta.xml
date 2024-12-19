@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Tester</fullName>
+    <active>true</active>
+    <description>LEM-5338
+Tester of the Brief Item required prior to moving to Pre-Live Audit status.</description>
+    <errorConditionFormula>AND(
+ NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+ ISBLANK( Tester__c ),
+ ISCHANGED(Status__c),
+ TEXT(Product__c)=$Label.Brief_Product_SponsoredListing,
+ OR(
+ TEXT(Status__c)=$Label.Testing_Ready_for_Edits,
+ TEXT(Status__c)=$Label.Testing_Second_Review,
+ TEXT(Status__c)=$Label.Testing_Ready_to_Schedule_Live,
+ TEXT(Status__c)=$Label.Pre_Live_Audit_Ready_for_Edits,
+ TEXT(Status__c)=$Label.Live_QA_Completed,
+ TEXT(Status__c)=$Label.Fully_Executed
+ )
+)</errorConditionFormula>
+    <errorMessage>Please indicate the Tester of the Brief Item, prior to moving to &quot;Testing - Ready for Edits&quot; or &quot;Testing - Second Review&quot; or &quot;Testing - Ready to Schedule status&quot; or &quot;Live QA Completed&quot; or &quot;Fully Executed&quot; or &quot;Pre-Live Audit - Ready for Edits&quot;.</errorMessage>
+</ValidationRule>

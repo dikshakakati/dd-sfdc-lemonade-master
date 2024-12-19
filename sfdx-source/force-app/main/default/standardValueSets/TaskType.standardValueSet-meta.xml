@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>AM &lt;&gt; AD Handoff</fullName>
+        <default>false</default>
+        <label>AM &lt;&gt; AD Handoff</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meeting</fullName>
+        <default>false</default>
+        <label>Meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone Call</fullName>
+        <default>false</default>
+        <label>Phone Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Social Media</fullName>
+        <default>false</default>
+        <label>Social Media</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SSMO Drop Off</fullName>
+        <default>false</default>
+        <label>SSMO Drop Off</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Text Message</fullName>
+        <default>false</default>
+        <label>Text Message</label>
+    </standardValue>
+</StandardValueSet>

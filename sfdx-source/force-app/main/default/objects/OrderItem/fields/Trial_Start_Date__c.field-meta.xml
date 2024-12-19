@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trial_Start_Date__c</fullName>
+    <description>LEM-182: Lookup to the Original Order Product</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+  AND( 
+    ISBLANK(TEXT(SBQQ__QuoteLine__r.Trial_Period__c)) ,
+    ISBLANK(TEXT(SBQQ__QuoteLine__r.Trial_End_Date__c)) 
+  ),
+  null,
+  IF( 
+    AND(
+      ISPICKVAL(SBQQ__Status__c, &apos;Draft&apos;),
+      Order.Account_Segment__c = &apos;SMB&apos;,
+      OR(
+        Package__c = &quot;Storefront&quot;,
+        Package__c  = &quot;Custom Storefront Package&quot;
+      )
+    ),
+    Order.Account.Proposed_Date_of_Implementation__c, 
+    IF(
+      ISPICKVAL(SBQQ__Status__c, &apos;Draft&apos;),
+      Order.Account.Proposed_Date_of_Activation__c,
+      ServiceDate
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Trial Start Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

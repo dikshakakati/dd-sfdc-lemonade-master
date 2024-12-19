@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Fields_Updates_On_Closed_Opp</fullName>
+    <active>true</active>
+    <description>LEM-3608: This validation rule is to restrict the users not to update any fields on closed opportunities except Purchase Order field.
+      LEM-15975, LEM-17578: It validates if the users have edit access on closed Opportunity owner &amp; Close Date.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  NOT( $Permission.Allow_Reopening_Opportunity),
+  NOT($Permission.Nintex_Integration_user_identifier),
+  NOT(ISCHANGED(ContractId)),
+  OR(
+    AND(
+      Text(PRIORVALUE(StageName)) = $Label.Opportunity_Stage_Closed_Won,
+      TEXT(Account.Segment__c) = $Label.AccountSegmentSMB,
+      OR(
+        AND(
+          NOT($Permission.Allow_Edit_Access_of_Opportunity_Fields),
+          NOT($Permission.Allow_Edit_Access_of_Mx_Portal_Opportunity)
+        ),
+        AND(
+          $Permission.Allow_Edit_Access_of_Opportunity_Fields,
+          NOT(
+            OR(
+              ISCHANGED(OwnerId),
+              ISCHANGED(CloseDate),
+              ISCHANGED(SDR_Touch_Required__c),
+              ISCHANGED(SDR_Opportunity_Owner__c)
+            )
+          )
+        )
+      )
+    ),
+    AND(
+      IsClosed,
+      NOT(ISCHANGED(Purchase_Order__c)),
+      NOT(ISCHANGED(StageName)),
+      TEXT(Account.Segment__c) != $Label.AccountSegmentSMB
+    ),
+    AND(
+      TEXT(Account.Segment__c) = $Label.AccountSegmentSMB,
+      OR(
+        AND(
+          TEXT(StageName) = $Label.Opportunity_Stage_Closed_Won,
+          OR(
+            AND(
+              TEXT(Source__c) = $Label.OpportunitySourceMxPortal,
+              OR(
+                NOT($Permission.Allow_Edit_Access_of_Mx_Portal_Opportunity),
+                AND(
+                  $Permission.Allow_Edit_Access_of_Mx_Portal_Opportunity,
+                  NOT(ISCHANGED(OwnerId))
+                )
+              )
+            ),
+            AND(
+              TEXT(Source__c) != $Label.OpportunitySourceMxPortal,
+              $Permission.Allow_Edit_Access_of_Mx_Portal_Opportunity
+            )
+          )
+        ),
+        AND(
+          TEXT(StageName) = $Label.Opportunity_Stage_Closed_Lost,
+          OR(
+            NOT($Permission.Allow_Edit_Access_of_Mx_Portal_Opportunity),
+            $Permission.Allow_Edit_Access_of_Mx_Portal_Opportunity
+          ),
+          AND(
+            NOT(ISCHANGED(Lost_Reason__c)),
+            NOT(ISCHANGED(Lost_Reason_Additional_Notes__c)),
+            NOT(ISCHANGED(Lost_Reason_Details__c))
+          )
+        )
+      )
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>This value cannot be edited once the opportunity has been closed.</errorMessage>
+</ValidationRule>

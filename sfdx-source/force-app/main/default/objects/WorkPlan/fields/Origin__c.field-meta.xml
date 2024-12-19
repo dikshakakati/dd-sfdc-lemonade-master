@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Origin__c</fullName>
+    <description>This field gets the pos request type from integration request object and this can be used in qeue views.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  NOT(ISBLANK(Integration_Request__c)),
+  IF(
+    ISPICKVAL(Integration_Request__r.Onboarding_Type__c, &quot;BULK_ACTIVATION&quot;),
+    &quot;Bulk Tool Automation&quot;,
+    IF(
+      ISPICKVAL(Integration_Request__r.Onboarding_Type__c, &quot;SELF_SERVE_INTEGRATION_ONBOARDING&quot;),
+      &quot;Px Initiated POS Integration [SSIO]&quot;,
+      &quot;&quot;
+    )
+  ),
+  &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Origin</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

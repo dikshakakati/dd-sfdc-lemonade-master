@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_PDOA_to_4_Days_Marketplace</fullName>
+    <active>true</active>
+    <description>LEM-14117: Marketplace type Work Orders must have PDOA to be set at least 4 business days in the future.</description>
+    <errorConditionFormula>AND (
+
+NOT($Permission.Bypass_Work_Order_Validation_Rules),
+
+OR(
+     ISCHANGED(Proposed_Date_of_Activation__c),
+     ISNEW()
+   ),
+
+ISPICKVAL(Type__c, &quot;Marketplace&quot;),
+ISPICKVAL( Provisioning_Status__c, &quot;Readiness Check Complete&quot;),
+
+
+AND(
+Proposed_Date_of_Activation__c&lt;
+CASE(MOD(TODAY() - DATE( 1900, 1, 7 ), 7 ),
+2, TODAY() + 2 + 4,
+3, TODAY() + 2 + 4,
+4, TODAY() + 2 + 4,
+5, TODAY() + 2 + 4,
+6, TODAY() + 1 + 4,
+TODAY() + 4
+)
+)
+)</errorConditionFormula>
+    <errorMessage>PDOA cannot be in the next 4 days. Please move PDOA to be more than 4 business days in the future.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-13474: It indicates whether buttons on Sales objects needs to be hidden or not.</description>
+    <isLicensed>false</isLicensed>
+    <label>Hide_Sales_Buttons</label>
+</CustomPermission>

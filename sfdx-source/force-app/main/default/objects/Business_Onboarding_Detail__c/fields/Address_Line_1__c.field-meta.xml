@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_Line_1__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15116: It stores address line 1.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Captures billing street</inlineHelpText>
+    <label>Address Line 1</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_BD_Pipeline_Product_Count__c</fullName>
+    <complianceGroup>PCI</complianceGroup>
+    <description>Created as part of LEM-10077 to store the count of New non BD Pipeline Product on Amendment quote</description>
+    <externalId>false</externalId>
+    <formula>IF(SBQQ__ProductCode__c &lt;&gt; &apos;10082&apos; &amp;&amp;
+SBQQ__Quantity__c = 1 &amp;&amp;
+SBQQ__Existing__c = false, 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Holds the count of New non BD Pipeline Product on Amendment quote</inlineHelpText>
+    <label>Non BD Pipeline Product Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

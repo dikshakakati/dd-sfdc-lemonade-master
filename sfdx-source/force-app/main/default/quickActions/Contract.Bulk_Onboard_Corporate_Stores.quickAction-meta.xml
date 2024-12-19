@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionSubtype>ScreenAction</actionSubtype>
+    <description>LEM-8471 - Initializes the Flow for onboarding corporate stores in bulk</description>
+    <label>Onboard Stores via CSV</label>
+    <lightningWebComponent>bulkOnboardingInitializer</lightningWebComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningWebComponent</type>
+</QuickAction>

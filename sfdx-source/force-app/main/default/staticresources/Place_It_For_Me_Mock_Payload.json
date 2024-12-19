@@ -1,0 +1,13 @@
+{
+    "uuid": "92108a53-e8d9-4a0c-9193-9152aeb86fe4",
+    "eventType": "ADD_STOREFRONT_LINK",
+    "business": {
+        "businessId": "28040568",
+        "isTest": false,
+        "businessName": "Los Pinchos de mi Abuela",
+        "phone": "+14074335545",
+        "websiteProvider": "websiteProvider:WIX",
+        "websiteUrl": "https://www.souvla.com/",
+        "placementRequest": "Storefront button to be placed on the main page"
+    }
+}

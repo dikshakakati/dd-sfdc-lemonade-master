@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-94: This field helps categorise the Mx into Enterprise, Mid-market or SMB.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Signifies the segment of the Mx. The segment is automatically set based on parent account&apos;s segment</inlineHelpText>
+    <label>Segment</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+                <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>Mid-Market</fullName>
+                <default>false</default>
+                <label>Mid-Market</label>
+            </value>
+            <value>
+                <fullName>SMB</fullName>
+                <default>false</default>
+                <label>SMB</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

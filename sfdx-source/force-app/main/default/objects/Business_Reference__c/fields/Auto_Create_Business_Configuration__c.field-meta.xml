@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto_Create_Business_Configuration__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-3333: If a Platform Event has been received for the Store Accounts mark this as true</description>
+    <externalId>false</externalId>
+    <label>Auto Create Business Configuration</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

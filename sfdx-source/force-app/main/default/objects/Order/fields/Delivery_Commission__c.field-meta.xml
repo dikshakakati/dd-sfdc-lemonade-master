@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Commission__c</fullName>
+    <description>Introduced in LEM-1851 to carry the final_commission value from the order item record forward.</description>
+    <externalId>false</externalId>
+    <label>Delivery Commission</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

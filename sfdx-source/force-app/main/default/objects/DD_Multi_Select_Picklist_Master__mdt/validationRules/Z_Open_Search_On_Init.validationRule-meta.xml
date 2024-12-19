@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Z_Open_Search_On_Init</fullName>
+    <active>false</active>
+    <errorConditionFormula>FALSE</errorConditionFormula>
+    <errorMessage>This can be checked only if we have &apos;Query and Cache on Init&apos;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Withholding Opt-out CA French</label>
+    <protected>false</protected>
+    <values>
+        <field>URL__c</field>
+        <value xsi:type="xsd:string">https://doordash-qa.workflowcloud.com/forms/5d681ec7-1146-4e05-a7da-98b27bb4e3e0</value>
+    </values>
+</CustomMetadata>

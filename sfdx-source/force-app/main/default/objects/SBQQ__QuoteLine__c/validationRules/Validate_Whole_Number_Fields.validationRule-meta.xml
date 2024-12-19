@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Whole_Number_Fields</fullName>
+    <active>true</active>
+    <description>LEM-18433: Allows certain fields to only have whole number values</description>
+    <errorConditionFormula>OR(
+AND(
+OR(ISCHANGED(Percent_of_Fee_to_Invoice_Merchant__c ), ISNEW()),
+OR (MOD((Percent_of_Fee_to_Invoice_Merchant__c)*100,1) &lt;&gt; 0, Percent_of_Fee_to_Invoice_Merchant__c  &lt; 0)
+),
+AND(
+OR(ISCHANGED(Discount_Percentage_for_Consumer__c ),ISNEW()),
+OR(MOD((Discount_Percentage_for_Consumer__c)*100,1) &lt;&gt; 0, Discount_Percentage_for_Consumer__c &lt;0)
+),
+AND(
+OR(ISCHANGED(Service_Fee_As_Percent_Budget__c), ISNEW()),
+OR(MOD((Service_Fee_As_Percent_Budget__c)*100,1) &lt;&gt; 0, Service_Fee_As_Percent_Budget__c &lt;0)
+),
+AND(
+OR(ISCHANGED( Data_Fee_As_Percent_Budget__c),ISNEW()),
+OR(MOD((Data_Fee_As_Percent_Budget__c)*100,1) &lt;&gt; 0, Data_Fee_As_Percent_Budget__c &lt;0)
+),
+AND(
+OR(ISCHANGED(Max_Number_of_Redemptions_Per_Cx__c),ISNEW()),
+OR(MOD((Max_Number_of_Redemptions_Per_Cx__c),1) &lt;&gt; 0, Max_Number_of_Redemptions_Per_Cx__c &lt;0)
+),
+AND(
+OR(ISCHANGED(Max_Number_of_Redemptions_per_Cart__c),ISNEW()),
+OR(MOD((Max_Number_of_Redemptions_per_Cart__c),1) &lt;&gt; 0, Max_Number_of_Redemptions_per_Cart__c &lt;0)
+)
+)</errorConditionFormula>
+    <errorMessage>Please enter Only Whole Numbers to the following fields- Percent of Fee to Invoice Merchant,
+Discount Percentage for Consumer,
+Service Fee and Data Fee (as % of budget),
+Max Number of Redemptions per Cx and per Cart</errorMessage>
+</ValidationRule>

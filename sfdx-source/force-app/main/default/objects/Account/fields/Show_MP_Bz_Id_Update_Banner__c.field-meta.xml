@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_MP_Bz_Id_Update_Banner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-9551: It is used to check whether the MP Bz Id field update is in progress.</description>
+    <externalId>false</externalId>
+    <label>Show_MP_Bz_Id_Update_Banner</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

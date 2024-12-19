@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_ApplicableDoordashOrderTypes</fullName>
+    <active>true</active>
+    <description>LEM-5982: Make this field mandatory to move a Brief Item to the &apos;Campaign
+        Building&apos; status for the products that have this field on their Brief Item</description>
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+        ISCHANGED(Status__c),
+        TEXT(Status__c) = $Label.Campaign_Building,
+        OR(
+        TEXT(Product__c) = $Label.Brief_Product_BuyAndGetOff,
+        TEXT(Product__c) = $Label.Brief_Product_BuyOneGetOne,
+        TEXT(Product__c) = $Label.Brief_Product_DoorDashDeals,
+        TEXT(Product__c) = $Label.Brief_Product_FirstOrderOff,
+        TEXT(Product__c) = $Label.Brief_Product_FreeItemOverX,
+        TEXT(Product__c) = $Label.Brief_Product_OrderAgain,
+        TEXT(Product__c) = $Label.Brief_Product_SpendXGetY,
+        TEXT(Product__c) = $Label.Brief_Product_TryMeFree,
+        TEXT(Product__c) = $Label.Brief_Product_CustomMarketing
+        ),
+        ISBLANK(Applicable_DoorDash_Order_Types__c)
+        )</errorConditionFormula>
+    <errorMessage>The ‘Applicable DoorDash Order Types’ field must be populated to shift the Brief
+        Item status to ‘Applicable DoorDash Order Types’.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-22055: It enables edit access on Status, Type and Start Date fields on Agreement object.</description>
+    <isLicensed>false</isLicensed>
+    <label>Allow Agreement Restricted Fields Update</label>
+</CustomPermission>

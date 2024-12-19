@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Initiatives__r$Account__c</field>
+    </columns>
+    <columns>
+        <field>Account.Initiatives__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Initiatives__r$Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Initiatives__r$Status__c</field>
+    </columns>
+    <columns>
+        <field>Account.Initiatives__r$Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Initiatives__r$End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Initiatives__r$Overall_Mx_Sentiment__c</field>
+    </columns>
+    <columns>
+        <field>Account.Initiatives__r$Partnership_Priorities__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>List of all open Initiatives for all Accounts I own</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Initiatives__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Completed</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Open Initiatives</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Initiatives__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Initiatives__r$Start_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

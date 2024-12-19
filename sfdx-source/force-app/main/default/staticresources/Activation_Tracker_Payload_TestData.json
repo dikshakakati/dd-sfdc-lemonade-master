@@ -1,0 +1,87 @@
+{
+  "StoreId": "24786630",
+  "DecisionMakerEmail": "",
+  "DecisionMakerPhone": "",
+  "OrderProtocol": "Email",
+  "OpportunityType": "New Partner (Create Menu + Nimda)",
+  "ActivationsChecklist": {
+    "Status": "Complete",
+    "StatusReason": null
+  },
+  "ActivateStore": {
+    "Status": "Not Started",
+    "StatusReason": null,
+    "ProposedDateofActivation": "2023-04-25"
+  },
+  "BusinessVerification": {
+    "Status": "Documentation Required",
+    "StatusReason": "",
+    "Documents": [
+      {
+        "Title": "",
+        "DocumentType": "EIN Verification Letter (147C)",
+        "Status": "Approved",
+        "Notes": "",
+        "Version": "1",
+        "CreatedDate": "",
+        "LastModifiedDate": ""
+      },
+      {
+        "Title": "",
+        "DocumentType": "Business License",
+        "Status": "Pending Review",
+        "Notes": "",
+        "Version": "2",
+        "CreatedDate": "",
+        "LastModifiedDate": ""
+      }
+    ]
+  },
+  "Banking": {
+    "Status": "Complete",
+    "StatusReason": "Stripe KYC Verification Successful"
+  },
+  "Case": {
+    "CreatedDateTime": "2023-03-02T22:37:06.000Z",
+    "Status": "Blocked",
+    "StatusReason": "Possible Fraud;Stripe KYC Verification Successful",
+    "stage": "Under Review"
+  },
+  "Menu": {
+    "Status": "Complete",
+    "StatusReason": null,
+    "ProposedDateofMenu": null,
+    "MenuUrl": null
+  },
+  "IngestPOSMenu": {
+    "Status": null,
+    "StatusReason": null
+  },
+  "SetupStore": {
+    "Status": "Complete",
+    "StatusReason": null
+  },
+  "StorePOSIntegrationSetup": {
+    "Status": null,
+    "StatusReason": null
+  },
+  "Tablet": {
+    "Status": null,
+    "StatusReason": null,
+    "OwnerFirstName": "",
+    "OwnerLastName": "",
+    "DeliveryMethod": null,
+    "TrackingNumber": "",
+    "ShippingCarrier": null,
+    "ShippingStatus": null,
+    "TrackingStatus": null,
+    "ReceivedDate": null,
+    "ShippingAddress": {
+      "AddressLine1": "",
+      "AddressLine2": null,
+      "City": null,
+      "State": null,
+      "Country": null
+    }
+  }
+}

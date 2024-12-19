@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_that_the_Case_is_Actively_Worked_Upon</fullName>
+        <description>Notify that the Case is Actively Worked Upon</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Case_is_Actively_Worked_Upon</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_Notifying_the_Case_is_assigned_to_MxSx_Bulk_Upload_queue</fullName>
+        <description>Send Email Notifying the Case is assigned to &apos;MxSx Bulk Upload&apos; queue</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>MxSx_team_members</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Notify_the_case_assigned_to_MxSx_Bulk_Upload_queue</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_Notifying_the_Case_is_assigned_to_SO_Support_queue</fullName>
+        <description>Send Email Notifying the Case is assigned to &apos;SO_Support&apos; queue</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>S_O_Team_Members</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Notify_the_case_assigned_to_SO_Support_Queue</template>
+    </alerts>
+</Workflow>

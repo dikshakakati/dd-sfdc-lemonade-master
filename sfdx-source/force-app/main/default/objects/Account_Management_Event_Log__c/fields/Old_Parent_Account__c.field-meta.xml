@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Old_Parent_Account__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-24069: It is used to store the Id of the old Parent Account.</description>
+    <externalId>false</externalId>
+    <label>Old Parent Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Account Management Event Logs (Old Parent Account)</relationshipLabel>
+    <relationshipName>Account_Management_Event_Logs2</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

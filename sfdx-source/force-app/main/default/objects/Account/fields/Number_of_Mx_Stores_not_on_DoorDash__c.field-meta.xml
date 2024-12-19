@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Mx_Stores_not_on_DoorDash__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-16306: It stores count of Mx Stores not on DoorDash for the Business.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/lightning/r/Report/&quot;+$CustomMetadata.Static_Configurations__mdt.Number_of_Mx_Stores_not_on_DoorDash.Configuration_Value__c +&quot;/view?fv2=&quot;+Id+&quot;&amp;fv3=&quot;+Id+&quot;&amp;fv4=&quot;+Id+&quot;&amp;fv5=&quot;+Id,Text(NumberOfMxStoresNotonDoorDashCalculate__c) ,&quot;_blank&quot;)</formula>
+    <inlineHelpText>Count of Stores for the Business that are not active on DoorDash.</inlineHelpText>
+    <label># of Mx Stores not on DoorDash</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_UI_Type__c</fullName>
+    <description>LEM-11076: This field is to capture the menu type of the vertical.</description>
+    <externalId>false</externalId>
+    <label>Menu UI Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Menu_UI</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateForScheduledLiveStatus</fullName>
+    <active>true</active>
+    <description>LEM-3674: It is used to validate if all the necessary fields requirements are matched to move Brief Item to Pre-Live Audit - Ready for Edits.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+  OR(
+    LEN(Pre_Live_Bulleted_Fixes__c)=0,
+    ISBLANK(Pre_Live_Number_of_Errors_Found__c)
+  ),
+  TEXT(Status__c) = $Label.Pre_Live_Audit_Ready_for_Edits
+)</errorConditionFormula>
+    <errorMessage>Please provide Pre Live Bulleted Fixes and Pre Live Number of Errors Found to move the Status to &apos;Pre-Live Audit - Ready for Edits&apos;</errorMessage>
+</ValidationRule>

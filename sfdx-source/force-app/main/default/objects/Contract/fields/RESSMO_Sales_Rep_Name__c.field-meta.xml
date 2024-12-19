@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RESSMO_Sales_Rep_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-23354 Stores current user who initiates RESSMO Onboarding</description>
+    <externalId>false</externalId>
+    <label>RESSMO Sales Rep Name</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Contracts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

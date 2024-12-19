@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Commission_Over_Max_Commission__c</fullName>
+    <description>LEM-13626: This field is used to check the value for Requested Commission over Ceiling Rate.</description>
+    <externalId>false</externalId>
+    <formula>IF(( Requested_Commission__c &gt; Ceiling_Rate__c ) &amp;&amp; Ceiling_Rate__c &gt;= 0.01, 1, 2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Requested Commission Over Max Commission</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

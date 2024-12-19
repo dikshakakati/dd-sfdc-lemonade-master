@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_submission_confirmation_to_emails__c</fullName>
+    <description>LEM-2297: Captures emails that should receive submission confirmations for form</description>
+    <externalId>false</externalId>
+    <inlineHelpText>To send email confirmation after Mx submits the form, enter the recipient email ids separated by semi colon(;).</inlineHelpText>
+    <label>Send submission confirmation to emails</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

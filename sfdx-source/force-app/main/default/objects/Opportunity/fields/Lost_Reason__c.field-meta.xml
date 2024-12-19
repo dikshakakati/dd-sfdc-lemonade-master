@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lost_Reason__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description>LEM-118/LEM:419: If an opportunity was lost, this field is used to indicate the reason the opportunity was lost.</description>
+    <externalId>false</externalId>
+    <label>Lost / Stalled Reason</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Exclusive with Competitor</fullName>
+                <default>false</default>
+                <label>Exclusive with Competitor</label>
+            </value>
+            <value>
+                <fullName>Incorrect Data</fullName>
+                <default>false</default>
+                <label>Incorrect Data</label>
+            </value>
+            <value>
+                <fullName>Lack of Internal Consensus</fullName>
+                <default>false</default>
+                <label>Lack of Internal Consensus</label>
+            </value>
+            <value>
+                <fullName>Language Barrier</fullName>
+                <default>false</default>
+                <label>Language Barrier</label>
+            </value>
+            <value>
+                <fullName>Negative Prior DoorDash Experience</fullName>
+                <default>false</default>
+                <label>Negative Prior DoorDash Experience</label>
+            </value>
+            <value>
+                <fullName>Not Bought Into Value Prop</fullName>
+                <default>false</default>
+                <label>Not Bought Into Value Prop</label>
+            </value>
+            <value>
+                <fullName>Not Currently a Priority</fullName>
+                <default>false</default>
+                <label>Not Currently a Priority</label>
+            </value>
+            <value>
+                <fullName>Operational Obstacles</fullName>
+                <default>false</default>
+                <label>Operational Obstacles</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Product / Feature Blockers</fullName>
+                <default>false</default>
+                <label>Product / Feature Blockers</label>
+            </value>
+            <value>
+                <fullName>Requested Product/Feature on Roadmap</fullName>
+                <default>false</default>
+                <label>Requested Product/Feature on Roadmap</label>
+            </value>
+            <value>
+                <fullName>Unresponsive DM</fullName>
+                <default>false</default>
+                <label>Unresponsive DM</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Duplicate</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Exclusive with Competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Incorrect Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Language Barrier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Negative Prior DoorDash Experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Not Bought Into Value Prop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Operational Obstacles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Product / Feature Blockers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Unresponsive DM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stalled</controllingFieldValue>
+            <valueName>Lack of Internal Consensus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stalled</controllingFieldValue>
+            <valueName>Not Currently a Priority</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stalled</controllingFieldValue>
+            <valueName>Requested Product/Feature on Roadmap</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

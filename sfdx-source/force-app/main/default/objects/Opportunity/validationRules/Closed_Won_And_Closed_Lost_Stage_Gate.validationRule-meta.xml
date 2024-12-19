@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_And_Closed_Lost_Stage_Gate</fullName>
+    <active>true</active>
+    <description>LEM-356: Opportunities cannot be moved out of Closed Won or Closed Lost.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  NOT($Permission.Allow_Reopening_Opportunity),
+  ISCHANGED(StageName),
+  OR(
+    TEXT(PRIORVALUE(StageName)) = $Label.Opportunity_Stage_Closed_Won,
+    TEXT(PRIORVALUE(StageName)) = $Label.Opportunity_Stage_Closed_Lost
+  )
+)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>After being Closed Won or Closed Lost, an opportunity cannot be re-opened. Please create a new opportunity to signify a new sales cycle.</errorMessage>
+</ValidationRule>

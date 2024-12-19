@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Brief_Item__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-3957: It is used to indicate if the Quote Line Item has a Brief Item associated.</description>
+    <externalId>false</externalId>
+    <label>Has Brief Item</label>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

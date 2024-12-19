@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SOSL_Returning_Fields_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISBLANK( TEXT(SOSL_Returning_Fields__c) ),
+  ISPICKVAL(Type__c,&apos;SOSL&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>SOSL_Returning_Fields__c</errorDisplayField>
+    <errorMessage>Field is required for this type.</errorMessage>
+</ValidationRule>

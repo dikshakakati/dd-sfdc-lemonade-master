@@ -1,0 +1,18 @@
+<!--
+  * @author Deloitte
+  * @date 10/28/2022
+  * @description Reusable LWC component for enabling server search.
+-->
+<template>
+  <template if:true={enableServerSearch}>
+    <div>
+      <lightning-button
+        variant="brand"
+        label={label}
+        title={title}
+        icon-name={icon}
+        onclick={notifyServerSearch}
+      ></lightning-button>
+    </div>
+  </template>
+</template>

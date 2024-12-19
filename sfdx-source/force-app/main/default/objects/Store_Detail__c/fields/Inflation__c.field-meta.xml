@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inflation__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15116: Signifies the menu inflation rate for the Mx.</description>
+    <externalId>false</externalId>
+    <label>Inflation</label>
+    <precision>7</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Public</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

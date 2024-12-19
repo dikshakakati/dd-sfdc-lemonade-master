@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-1517: This custom metadata stores static configurations. For Example: URLs to MINT or Merchant Portal</description>
+    <label>Static Configurations</label>
+    <pluralLabel>Static Configurations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

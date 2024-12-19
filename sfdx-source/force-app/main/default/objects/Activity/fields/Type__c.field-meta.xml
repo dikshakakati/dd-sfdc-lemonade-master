@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14155: It indicates the type of the task.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the task type</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>AM &lt;&gt; AD Handoff</fullName>
+                <default>false</default>
+                <label>AM &lt;&gt; AD Handoff</label>
+            </value>
+            <value>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+                <label>Meeting</label>
+            </value>
+            <value>
+                <fullName>Phone Call</fullName>
+                <default>false</default>
+                <label>Phone Call</label>
+            </value>
+            <value>
+                <fullName>SAD Role Change Request</fullName>
+                <default>false</default>
+                <label>SAD Role Change Request</label>
+            </value>
+            <value>
+                <fullName>Text Message</fullName>
+                <default>false</default>
+                <label>Text Message</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

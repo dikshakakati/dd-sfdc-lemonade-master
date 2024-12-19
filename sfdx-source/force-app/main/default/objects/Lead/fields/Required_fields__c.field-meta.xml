@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Required_fields__c</fullName>
+  <description>LEM-14086: It is created to store the information about required fields being populated on Lead.</description>
+  <externalId>false</externalId>
+  <formula>OR(
+  ISBLANK(TEXT(LeadSource)),
+  ISBLANK(TEXT(PrimaryVertical__c))
+  )</formula>
+  <label>Required Fields</label>
+  <type>Checkbox</type>
+</CustomField>

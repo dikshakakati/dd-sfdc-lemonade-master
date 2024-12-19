@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner__c</fullName>
+    <complianceGroup>PII</complianceGroup>
+    <description>LEM-1451: This is a formula field to sync the Lemonade Account Owner name to Figment.</description>
+    <externalId>false</externalId>
+    <formula>Owner.FirstName+&apos; &apos;+ Owner.LastName</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <inlineHelpText>Displays the First &amp; Last Name of the Account Owner as Text. Used to sync to Figment.</inlineHelpText>
+    <label>Account Owner Full Name</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

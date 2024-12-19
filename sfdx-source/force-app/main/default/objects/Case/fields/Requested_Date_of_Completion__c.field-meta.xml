@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Date_of_Completion__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1212: Indicates date requested for completion of bulk upload.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For Bulk Upload cases, Date Requested for Completion; For S&amp;O Support Cases, Date Requested for Case Resolution.</inlineHelpText>
+    <label>Requested Date of Completion</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

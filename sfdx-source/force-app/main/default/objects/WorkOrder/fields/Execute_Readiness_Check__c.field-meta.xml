@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Execute_Readiness_Check__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-10479: It is updated by Data Operations team through data scripts to trigger Readiness Check on the work orders as needed.</description>
+    <externalId>false</externalId>
+    <label>Execute Readiness Check</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

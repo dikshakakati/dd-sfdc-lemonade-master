@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UnitOfWorkRequiresAnExecutionOrder</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(ApplicationType__c) = &apos;UnitOfWork&apos; &amp;&amp; ISBLANK( Execution_Order__c )</errorConditionFormula>
+    <errorDisplayField>Execution_Order__c</errorDisplayField>
+    <errorMessage>Unit of Work binding requires an execution order.  Please select the order of execution for the object.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,77 @@
+<!--
+  @description       :
+  @author            : VenkateshDD
+  @group             :
+  @last modified on  : 06-18-2024
+  @last modified by  : VenkateshDD
+-->
+<template>
+    <div class="day-container">
+      <div style="display: flex; justify-content: flex-start; ">
+        <div style="padding: 5px; width: 150px; padding-top: 20px;">
+          <h2 class="slds-text-heading_s mall slds-m-bottom_small slds-text-title_bold">{dayInfo.name}</h2>
+        </div>
+        <div style="flex-grow: 1;">
+          <template if:false={dayInfo.isOpen}>
+            <div class="time-row slds-gutters_x-small" style="display: flex; justify-content: flex-start;">
+              <div>
+                <lightning-combobox class="my-custom-combobox inputWidth" name="open" disabled="true" placeholder="" options={startTimeOptions} onchange={handleTimeChange}></lightning-combobox>
+              </div>
+              <div class="startEndSeparator">
+                <img src={StartEndSeparatorIcon} alt="My Icon" />
+              </div>
+              <div>
+                <lightning-combobox class="my-custom-combobox inputWidth" name="close" disabled="true" placeholder="" options={endTimeOptions} onchange={handleTimeChange}></lightning-combobox>
+              </div>
+              <div style="padding: 5px; align-content: center; padding-top: 20px;">
+                <img style="height: 19px; width: 40px;" src={DisabledAddIcon} alt="My Icon" />
+              </div>
+              <div class="slds-col slds-grid slds-gutters slds-align-middle">
+                <lightning-input type="checkbox" label="Closed" checked={isClosed} onchange={toggleClosed} style="color:#767676" class="rounded-input slds-m-left_x-small slds-m-top_small"></lightning-input>
+              </div>
+            </div>
+          </template>
+          <template if:true={dayInfo.isOpen}>
+            <template for:each={dayInfo.hours} for:item="hourSet" for:index="index">
+              <div key={hourSet.key} class="time-row slds-gutters_x-small" style="display: flex; justify-content: flex-start;">
+                <div>
+                  <lightning-combobox class="my-custom-combobox inputWidth" name="open" value={hourSet.start} data-index={index} options={hourSet.startTimeOptions} onchange={handleTimeChange}></lightning-combobox>
+                </div>
+                <div class="startEndSeparator">
+                  <img src={StartEndSeparatorIcon} alt="My Icon" />
+                </div>
+                <div>
+                  <lightning-combobox class="my-custom-combobox inputWidth" name="close" value={hourSet.end} data-index={index} options={hourSet.endTimeOptions} onchange={handleTimeChange}></lightning-combobox>
+                </div>
+                <template if:true={hourSet.showRemove}>
+                  <div style="padding: 5px; align-content: center; padding-top: 20px;" data-index={index} onclick={removeTimeWindow}>
+                    <img style="height: 19px; width: 40px;" src={RemoveIcon} alt="My Icon" />
+                  </div>
+                </template>
+                <template if:false={hourSet.showRemove}>
+                  <template if:true={canAddMoreHours}>
+                    <div style="padding: 5px; align-content: center; padding-top: 20px;" onclick={addTimeWindow}>
+                      <img style="height: 22px; width: 40px;" src={EnabledAddIcon} alt="My Icon" />
+                    </div>
+                  </template>
+                  <template if:false={canAddMoreHours}>
+                    <div style="padding: 5px; align-content: center; padding-top: 20px;">
+                      <img style="height: 19px; width: 40px;" src={DisabledAddIcon} alt="My Icon" />
+                    </div>
+                  </template>
+                  <template if:true={showIsClosed}>
+                    <div class="slds-col slds-grid slds-gutters slds-align-middle">
+                      <lightning-input type="checkbox" label="Closed" checked={dayInfo.closed} onchange={toggleClosed} style="color:#767676" class="rounded-input slds-m-left_x-small slds-m-top_small"></lightning-input>
+                    </div>
+                  </template>
+                </template>
+              </div>
+              <template if:true={hourSet.invalidInput}>
+                <div key={hourSet.key} style="color: #B71000;"> Start time should be before end time </div>
+              </template>
+            </template>
+          </template>
+        </div>
+      </div>
+    </div>
+  </template>

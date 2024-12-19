@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Selector PricebookEntries Selector</label>
+    <protected>false</protected>
+    <values>
+        <field>ApplicationType__c</field>
+        <value xsi:type="xsd:string">Selector</value>
+    </values>
+    <values>
+        <field>BindingObjectApiName__c</field>
+        <value xsi:type="xsd:string">PricebookEntry</value>
+    </values>
+    <values>
+        <field>BindingObject__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>BindingType__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Execution_Order__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ImplementationType__c</field>
+        <value xsi:type="xsd:string">PricebookEntriesSelector</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Name__c</fullName>
+    <description>LEM-14633-DPEI Attributes to Opportunity Product, Order Product and Subscription objects</description>
+    <externalId>false</externalId>
+    <inlineHelpText>List out a single menu item the Mx would like to run as a DPEI. If requesting multiple DPEIs, please add each DPEI as a new product</inlineHelpText>
+    <label>Item Name</label>
+    <length>100</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

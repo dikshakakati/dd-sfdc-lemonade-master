@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Column</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>Section__c</columns>
+    <columns>Form_Type__c</columns>
+    <columns>Onboarding_Scenario__c</columns>
+    <columns>Products_on_Contract__c</columns>
+    <columns>Rep_Filling_on_Mx_Behalf__c</columns>
+    <columns>Order_Protocol__c</columns>
+    <columns>Alcohol__c</columns>
+    <columns>Seattle__c</columns>
+    <columns>Order__c</columns>
+    <columns>Is_it_Store_Section__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Column</label>
+</ListView>

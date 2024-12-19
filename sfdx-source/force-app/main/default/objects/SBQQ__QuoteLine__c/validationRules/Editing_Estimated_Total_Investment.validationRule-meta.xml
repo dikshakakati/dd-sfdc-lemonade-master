@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Editing_Estimated_Total_Investment</fullName>
+    <active>true</active>
+    <description>LEM-10149: Self Serve - Allow edit of Quote Line after Opp is C/W</description>
+    <errorConditionFormula>AND(NOT(ISPICKVAL(SBQQ__Quote__r.SBQQ__Opportunity2__r.Deal_Type__c, &apos;Self-Serve&apos;)),
+NOT(ISPICKVAL(SBQQ__Quote__r.SBQQ__Status__c, &apos;Draft&apos;)),
+ ISCHANGED(Estimated_Total_Investment__c))</errorConditionFormula>
+    <errorDisplayField>Estimated_Total_Investment__c</errorDisplayField>
+    <errorMessage>Estimated Total Investment is not editable for Deal Types that are not Self-Serve</errorMessage>
+</ValidationRule>

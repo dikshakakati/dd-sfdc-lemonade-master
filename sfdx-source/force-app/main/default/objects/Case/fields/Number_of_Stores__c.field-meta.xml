@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Stores__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1162 &amp; LEM-1212: It indicates the number of stores included in request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For a &apos;POS Integration Request&apos; this field represents the Number of Stores for which POS integration is requested; for a &apos;Bulk Upload Request&apos; this field represents the Number of Stores in the Bulk Upload request.</inlineHelpText>
+    <label>Number of Stores</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

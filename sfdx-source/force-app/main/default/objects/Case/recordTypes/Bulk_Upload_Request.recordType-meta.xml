@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bulk_Upload_Request</fullName>
+    <active>true</active>
+    <businessProcess>Bulk Upload Request</businessProcess>
+    <compactLayoutAssignment>Bulk_Upload_Request</compactLayoutAssignment>
+    <description>Bulk Upload Request for Pre-Sale (New partners, COO), Post-Sale (Existing Partner) and Fixing incorrect Data</description>
+    <label>Bulk Upload Request</label>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Bulk Activation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bulk Deactivation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caviar Marketplace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of Ownership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Drive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Marketplace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Request__c</picklist>
+        <values>
+            <fullName>Fixing incorrect Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post-Sale %28Existing Partner%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Sale %28New partners%2C COO%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

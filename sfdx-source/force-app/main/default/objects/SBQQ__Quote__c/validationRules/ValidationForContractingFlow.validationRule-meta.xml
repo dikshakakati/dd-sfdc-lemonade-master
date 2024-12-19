@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidationForContractingFlow</fullName>
+    <active>true</active>
+    <description>LEM-17244: It throws validation when store specification is yes.</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Quote_Validation_Rules),
+TEXT(Contracting_Flow__c) != &apos;Redlining&apos;,
+ISPICKVAL(Store_Specific_Variations__c, &apos;Yes&apos;)
+)</errorConditionFormula>
+    <errorMessage>Contracting Flow must be ‘Redlining’ when Store Specific Variations field to ‘Yes&apos;.</errorMessage>
+</ValidationRule>

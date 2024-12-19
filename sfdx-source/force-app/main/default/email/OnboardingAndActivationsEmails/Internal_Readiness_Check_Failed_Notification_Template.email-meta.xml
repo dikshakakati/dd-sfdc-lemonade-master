@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LEM-2083, LEM-1684: It notifies Account owner when readiness check on stores failed.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[Internal] Readiness Check Failed Notification Template</name>
+    <relatedEntityType>WorkOrder</relatedEntityType>
+    <style>none</style>
+    <subject>Attention Needed: Readiness Check Failed for Work Order - {{{WorkOrder.WorkOrderNumber}}}</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

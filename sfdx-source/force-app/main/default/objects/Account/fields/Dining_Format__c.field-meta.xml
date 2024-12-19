@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dining_Format__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13442:It indicates the type of Dining of the SMB Account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the type of Dining of the SMB Account</inlineHelpText>
+    <label>Dining Format</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Casual</fullName>
+                <default>false</default>
+                <label>Casual</label>
+            </value>
+            <value>
+                <fullName>Fast Casual</fullName>
+                <default>false</default>
+                <label>Fast Casual</label>
+            </value>
+            <value>
+                <fullName>Fine Dining</fullName>
+                <default>false</default>
+                <label>Fine Dining</label>
+            </value>
+            <value>
+                <fullName>Ghost</fullName>
+                <default>false</default>
+                <label>Ghost</label>
+            </value>
+            <value>
+                <fullName>Home Chef</fullName>
+                <default>false</default>
+                <label>Home Chef</label>
+            </value>
+            <value>
+                <fullName>QSR</fullName>
+                <default>false</default>
+                <label>QSR</label>
+            </value>
+            <value>
+                <fullName>Virtual Brand</fullName>
+                <default>false</default>
+                <label>Virtual Brand</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+.option-container {
+    padding: 20px;
+}
+
+.option-container-buttons {
+    text-align: right;
+}
+
+.option-text {
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.text-instructions {
+    font-style: italic;
+}

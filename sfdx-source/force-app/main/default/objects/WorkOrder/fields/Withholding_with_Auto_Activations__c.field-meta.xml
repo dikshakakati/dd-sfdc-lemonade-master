@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Withholding_with_Auto_Activations__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-10519: It indicates whether Work Order is a withholding with auto-activations i.e. the associated Contract has &quot;Payment Method&quot; as &apos;Withholding&apos; and &quot;Drive Auto-Activation Supported&quot; as &apos;Yes&apos;.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True when the contract is set to Drive Auto-Activation Supported and Payment Method is &quot;Withholding&quot;</inlineHelpText>
+    <label>Withholding with Auto-Activations?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

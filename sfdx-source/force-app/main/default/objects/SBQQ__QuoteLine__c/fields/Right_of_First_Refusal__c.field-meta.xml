@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Right_of_First_Refusal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-15212:Drive Fields for SMB</description>
+    <externalId>false</externalId>
+    <label>Right of First Refusal</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

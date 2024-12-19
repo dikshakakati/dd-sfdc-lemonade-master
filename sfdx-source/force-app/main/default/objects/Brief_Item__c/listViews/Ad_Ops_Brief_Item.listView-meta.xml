@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ad_Ops_Brief_Item</fullName>
+    <columns>NAME</columns>
+    <columns>Product__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <columns>Brief__c</columns>
+    <columns>Campaign_Name__c</columns>
+    <columns>Quote_Line__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Account__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Queue</filterScope>
+    <label>Ad Ops</label>
+    <queue>Ad_Ops</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

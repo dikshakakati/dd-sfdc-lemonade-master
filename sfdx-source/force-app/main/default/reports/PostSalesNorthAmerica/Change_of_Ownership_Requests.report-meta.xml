@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>WorkOrder$Name</field>
+    </columns>
+    <columns>
+        <field>WorkOrder$Account</field>
+    </columns>
+    <columns>
+        <field>WorkOrder$Actual_Number_Of_Stores__c</field>
+    </columns>
+    <columns>
+        <field>WorkOrder$Proposed_Date_of_Activation__c</field>
+    </columns>
+    <columns>
+        <field>WorkOrder$LastModifiedDate</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Displays the COO work orders assigned to each Account Manager.</description>
+    <filter>
+        <criteriaItems>
+            <column>WorkOrder$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>COO</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>WorkOrder$LastModifiedDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessThan</operator>
+            <value>LAST_N_DAYS:120</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Change of Ownership Requests</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>All_Open_Work_Orders__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>WorkOrder$LastModifiedDate</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>WorkOrder$Proposed_Date_of_Activation__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

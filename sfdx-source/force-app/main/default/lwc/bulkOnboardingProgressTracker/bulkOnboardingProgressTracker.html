@@ -1,0 +1,85 @@
+<template>
+    <lightning-card  class="slds-theme_shade">
+        <div class="slds-p-horizontal_medium option-container slds-box">
+            <!-- Stage / Progress Indicator -->
+            <c-bulk-onboarding-stage-bar current-step={currentStep}></c-bulk-onboarding-stage-bar>
+
+            <!-- Main content / results container -->
+            <div>
+                <template if:true={isRunning}>
+                    <p class="slds-text-title_bold slds-m-bottom_medium">Processing Stores</p>
+                    <p class="slds-m-bottom_medium bulk-onboarding-modal-font">The Stores are currently being processed and saved. Nothing else is required from your end at this time. The transaction can be tracked here, and this ID can be saved for your records: {flowRequestObj.Name}.</p>
+                    <p class="slds-m-bottom_medium bulk-onboarding-modal-font" if:true={workOrderObj}>
+                        Your Work Order Number is <a data-wo-id={workOrderObj.Id} onclick={navigateToWorkOrder} style="cursor: pointer;">{workOrderObj.WorkOrderNumber}</a>.
+                    </p>
+                </template>
+
+                <template if:false={isRunning}>
+                    <template if:false={hasFailures}>
+                        <p class="slds-text-title_bold slds-m-bottom_medium">Upload Completed</p>
+                        <p class="slds-m-bottom_medium bulk-onboarding-modal-font">The Stores have been processed successfully.</p>
+                        <p class="slds-m-bottom_medium bulk-onboarding-modal-font" if:true={workOrderObj}>
+                            Your Work Order Number is <a data-wo-id={workOrderObj.Id} onclick={navigateToWorkOrder} style="cursor: pointer;">{workOrderObj.WorkOrderNumber}</a>.
+                        </p>
+                    </template>
+
+                    <!-- Store Failures section -->
+                    <template if:true={hasFailures}>
+                        <p class="slds-text-title_bold slds-m-bottom_medium">Store Processing Errors</p>
+                        <p class="slds-m-bottom_medium bulk-onboarding-modal-font">The stores listed in the table below could not be added to the Work Order due to address verification issues. Please review and update the addresses for these stores. Once this is completed, click the "Retry" button to proceed with onboarding these stores.</p>
+
+                        <div class="slds-p-horizontal_medium">
+                            <template if:true={isLoading}>
+                                <div class="slds-spinner_container">
+                                    <div class="slds-spinner slds-spinner_brand slds-spinner_medium" role="status">
+                                        <span class="slds-assistive-text">Loading</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <template if:false={isLoading}>
+                                <div class="slds-scrollable slds-m-around_medium slds-p-top_medium" if:true={failedStores.length}>
+                                    <table class="slds-table slds-table_bordered slds-table_cell-buffer stores-table">
+                                        <thead>
+                                            <tr class="slds-text-title_caps">
+                                                <th scope="col">
+                                                    <div class="slds-truncate">Store Name</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <template for:each={failedStores} for:item="thisStore">
+                                                <tr key={thisStore.Id} onclick={navigateToAccount} class="store-row" style="cursor: pointer;">
+                                                    <td data-account-id={thisStore.Id}><a href="#">{thisStore.Name}</a></td>
+                                                </tr>
+                                            </template>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </template>
+                            <!-- Retry Button -->
+                            <div class="slds-p-vertical_medium slds-grid slds-grid_align-left slds-border_bottom slds-border_light">
+                                <lightning-button variant="brand" label="Retry" onclick={handleRetry} disabled={disableRetryButton}></lightning-button>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </div>
+
+            <!-- User Feedback Section -->
+            <div class="slds-p-vertical_medium">
+                <a onclick={toggleFeedbackSection} if:false={showFeedbackSection}>Share Your Experience?</a>
+                <div if:true={showFeedbackSection}>
+                    <c-user-feedback onrating={updateRating} oncomment={handleFeedbackChange}></c-user-feedback>
+                </div>
+            </div>
+
+            <!-- Finish/Next Button -->
+            <div class="slds-p-vertical_medium slds-grid slds-grid_align-end slds-border_top slds-border_light">
+                <lightning-button variant="brand" label="Finish" onclick={handleFinish}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

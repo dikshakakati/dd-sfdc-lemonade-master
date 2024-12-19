@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This permission is created to allow pilot team to see Launch Ironclad WF option on the Quote page layout</description>
+    <isLicensed>false</isLicensed>
+    <label>Ironclad Workflow Launch</label>
+</CustomPermission>

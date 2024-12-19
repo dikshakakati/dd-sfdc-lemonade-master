@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SF_Child_WorkOrder_to_Store_Account</fullName>
+    <description>LEM-25334: To sync PDOI value from 'Storefront' Work Order to Store Account.</description>
+    <displayedFields>
+        <field>Proposed_Date_of_Implementation__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Storefront Child WorkOrder to Store Account Sync</label>
+</FieldSet>

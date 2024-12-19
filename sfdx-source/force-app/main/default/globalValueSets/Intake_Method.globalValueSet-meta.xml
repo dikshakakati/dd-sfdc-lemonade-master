@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Email Ingestion</fullName>
+        <default>false</default>
+        <label>Email Ingestion</label>
+    </customValue>
+    <customValue>
+        <fullName>Middleware Provider</fullName>
+        <default>false</default>
+        <label>Middleware Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Direct API</fullName>
+        <default>false</default>
+        <label>Direct API</label>
+    </customValue>
+    <description>LEM-2064: Drive Product Attributes</description>
+    <masterLabel>Intake Method</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

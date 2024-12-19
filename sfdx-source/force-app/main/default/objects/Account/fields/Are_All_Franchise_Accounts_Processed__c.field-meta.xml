@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Are_All_Franchise_Accounts_Processed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-10617: It indicates whether Payment Method switched on all the associated franchise Accounts.</description>
+    <externalId>false</externalId>
+    <label>Are All Franchise Accounts Processed?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

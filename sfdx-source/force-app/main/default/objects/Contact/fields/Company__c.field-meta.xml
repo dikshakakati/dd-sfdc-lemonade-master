@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14818: It is used to Store the Company Name received in payload on SSMO fallout.</description>
+    <externalId>false</externalId>
+    <label>Company</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

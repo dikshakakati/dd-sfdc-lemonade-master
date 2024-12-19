@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Postal_Code__c</fullName>
+    <description>The ZIP or Postal Code(s) to evaluate, separated by semi-colons. If multiple codes are specified, the logic will find a match if the evaluated record is in any of the supplied postal codes.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The ZIP or Postal Code(s) to evaluate, separated by semi-colons. If multiple codes are specified, the logic will find a match if the evaluated record is in any of the supplied postal codes.</inlineHelpText>
+    <label>Postal Code</label>
+    <length>131072</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

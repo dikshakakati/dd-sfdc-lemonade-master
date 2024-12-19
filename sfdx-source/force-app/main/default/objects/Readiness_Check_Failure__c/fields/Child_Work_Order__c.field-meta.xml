@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Child_Work_Order__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-1684: It indicates the Work Order related to store associated to this failure record.</description>
+    <externalId>false</externalId>
+    <label>Child Work Order</label>
+    <referenceTo>WorkOrder</referenceTo>
+    <relationshipLabel>Store Level Readiness Check Corrections</relationshipLabel>
+    <relationshipName>Store_Level_Readiness_Check_Corrections</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

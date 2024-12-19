@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_Quote_is_OFS__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13475: It stores number of days Quote is out for signature.</description>
+    <externalId>false</externalId>
+    <formula>IF (
+  TEXT(SBQQ__PrimaryQuote__r.SBQQ__Status__c) = $Label.Quote_Status_Out_for_Signature,
+  TODAY() - SBQQ__PrimaryQuote__r.Out_For_Signature_Date__c,
+  0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Days Quote is OFS</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

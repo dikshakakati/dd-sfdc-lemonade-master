@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selection_Intel_Mx_Database_ID__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13443: It stores Selection Intelligence Merchant Database Id on Account.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Used to join DDMx with Selection Intel tables for store creation or update, deck and medal ranking, sales intelligence components, etc.</inlineHelpText>
+    <label>Selection Intel Mx Database ID</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Properietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

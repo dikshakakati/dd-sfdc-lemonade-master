@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Query_IDs__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Contract_Generation_Path__c, &apos;Non-Templatized&apos;) , &apos;&apos;, &quot;&amp;QueryID=&quot;+
+CASE(Contract_Generation_Path__c, &quot;Templatized&quot;,
+&quot;[OrderAgainSaveQL]0Q_002EAI753819,&quot;+
+&quot;[ZeroDollarDeliveryQL]0Q_003EAI613673,&quot;+
+&quot;[DDDealsPromoQL]0Q_004EAI227927,&quot;+
+&quot;[CustomMktPromoQL]0Q_005EAI788574,&quot;+
+&quot;[BuyOneGetOneQL]0Q_006EAI632691,&quot;+
+&quot;[SponsListAdQL]0Q_007EAI488806,&quot;+
+&quot;[BannerAdQL]0Q_008EAI768855,&quot;+
+&quot;[CRMAdQL]0Q_009EAI075538,&quot;+
+&quot;[SpendXGetYPromoQL]0Q_010EAI967644,&quot;+
+&quot;[BuyItemGetXQL]0Q_011EAI628122,&quot;+
+&quot;[SponsProdAdQL]0Q_012EAI615146,&quot;+
+&quot;[FreeItemQL]0Q_016EAQ591455,&quot;+
+&quot;[PayAccount]0Q_018EAQ240783,&quot;+
+&quot;[AgencyAccount]0Q_064EAU411827,&quot;+
+&quot;[SamplingQL]0Q_019UAQ906110,&quot;+
+&quot;[BrandedQL]0Q_020UAQ854207,&quot;+
+&quot;[SBQL]0Q_063EAU013863,&quot;+
+&quot;[DPEIQL]0Q_065EAU596142,&quot;+
+&quot;[SponsorshipsAdQL]0Q_033UAY478454,&quot;+
+&quot;[SRQL]0Q_066EAU772622,&quot;+
+&quot;[OffsiteAdQL]0Q_067EAU173790,&quot;+
+&quot;[DIPQL]0Q_068EAU732100,&quot;+
+&quot;[CDQL]0Q_069EAU208535,&quot;+
+&quot;[TDQL]0Q_070EAU780282,&quot;+
+&quot;[OffsiteAdPresent]0Q_040MAJ868676,&quot;+
+&quot;[OppContact]0Q_017EAQ220108?pv0=&quot;+SBQQ__Opportunity2__r.Id+&quot;,&quot;+
+&quot;[OppCampaignProgram]0Q_029UAY230296?pv0=&quot;+SBQQ__Opportunity2__r.Id+&quot;,&quot;+
+&quot;[LatestIOTemplate]0Q_030UAY948095?pv0=&quot;+SBQQ__MasterEvergreenContract__r.SBQQ__Quote__r.Id+&quot;,&quot;+
+&quot;[FirstOrderOffPromoQL]0Q_001EAI975295&quot;,
+&quot;&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Conga Query IDs</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

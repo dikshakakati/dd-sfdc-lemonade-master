@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Updated_from_Nintex__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-2882: Checkbox used to signify if the Update is occurring from Nintex.</description>
+    <externalId>false</externalId>
+    <label>Is Updated from Nintex</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

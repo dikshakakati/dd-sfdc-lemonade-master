@@ -1,0 +1,10 @@
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName"
+  access="global"
+>
+  <c:lwcManageStores
+    onclose="{!c.closeQA}"
+    recordId="{!v.recordId}"
+    sobjectName="{!v.sObjectName}"
+  ></c:lwcManageStores>
+</aura:component>

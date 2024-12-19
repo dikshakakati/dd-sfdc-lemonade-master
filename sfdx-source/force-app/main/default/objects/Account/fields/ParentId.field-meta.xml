@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ParentId</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-85,86,98: This field is used to capture a single parent account name based on the hierarchy of the account.</description>
+    <inlineHelpText>Enter the name of the parent account that is an immediate parent in the hierarchy.</inlineHelpText>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Business</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Hierarchy</type>
+</CustomField>

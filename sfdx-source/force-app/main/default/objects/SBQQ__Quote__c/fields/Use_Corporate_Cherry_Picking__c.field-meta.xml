@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Corporate_Cherry_Picking__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-12453-Determines if the products are auto provisioned or the user needs to use CCP</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please check this box if you would like to manually apply the amendment changes to existing stores under the Contract using the &quot;Manage Stores&quot; process. Please Leave this box unchecked if you would like the amendment changes to automatically apply to all existing stores under the Contract.</inlineHelpText>
+    <label>Use Corporate Cherry Picking</label>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

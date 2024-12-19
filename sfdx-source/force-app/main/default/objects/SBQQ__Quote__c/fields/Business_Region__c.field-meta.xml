@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Region__c</fullName>
+    <description>LEM-14395: Custom/Unique Terms - Attributes.</description>
+    <externalId>false</externalId>
+    <label>Business Region</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SoCal</fullName>
+                <default>false</default>
+                <label>SoCal</label>
+            </value>
+            <value>
+                <fullName>NorCal</fullName>
+                <default>false</default>
+                <label>NorCal</label>
+            </value>
+            <value>
+                <fullName>NY</fullName>
+                <default>false</default>
+                <label>NY</label>
+            </value>
+            <value>
+                <fullName>Northeast</fullName>
+                <default>false</default>
+                <label>Northeast</label>
+            </value>
+            <value>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+                <label>Southeast</label>
+            </value>
+            <value>
+                <fullName>Florida</fullName>
+                <default>false</default>
+                <label>Florida</label>
+            </value>
+            <value>
+                <fullName>US Central Selection</fullName>
+                <default>false</default>
+                <label>US Central Selection</label>
+            </value>
+            <value>
+                <fullName>Canada</fullName>
+                <default>false</default>
+                <label>Canada</label>
+            </value>
+            <value>
+                <fullName>Australia</fullName>
+                <default>false</default>
+                <label>Australia</label>
+            </value>
+            <value>
+                <fullName>New Zealand</fullName>
+                <default>false</default>
+                <label>New Zealand</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

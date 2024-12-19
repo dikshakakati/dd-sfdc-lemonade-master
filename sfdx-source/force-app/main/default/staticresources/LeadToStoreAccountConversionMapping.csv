@@ -1,0 +1,18 @@
+Object name,Field name,Value
+Account,Activation_Status__c,Inactive
+Account,BillingCity,City
+Account,BillingCountry,Country
+Account,BillingPostalCode,PostalCode
+Account,BillingState,State
+Account,BillingStreet,Street
+Account,Creation_Source__c,Lead
+Account,Coverage_Start_Date__c,Coverage_Start_Date__c
+Account,Hours_of_Operation__c,HoursOfOperation__c
+Account,Medal_Rank__c,MedalRank__c
+Account,Menu_URL__c,Menu_URL__c
+Account,Name,Company
+Account,Order_Protocol__c,Order_Protocol__c
+Account,ParentId,ConvertedAccountId
+Account,POS_System__c,POSSystem__c
+Account,Preferred_Language__c,PreferredLanguage__c
+Account,TAM__c,TAM__c

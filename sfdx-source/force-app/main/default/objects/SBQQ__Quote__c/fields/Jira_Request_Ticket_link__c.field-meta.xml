@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jira_Request_Ticket_link__c</fullName>
+    <description>LEM-913: Attach Jira Request Ticket and Signed Contract links on the quote</description>
+    <externalId>false</externalId>
+    <label>Jira Request Ticket link</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

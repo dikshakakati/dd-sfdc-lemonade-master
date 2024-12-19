@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Type__c</fullName>
+    <description>LEM-13267 - DPEI Brief Item Generation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose the item type that best characterises the potential DPEI</inlineHelpText>
+    <label>Item Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Limited Time Only Menu Item / Limited Time Offer (LTO)</fullName>
+                <default>false</default>
+                <label>Limited Time Only Menu Item / Limited Time Offer (LTO)</label>
+            </value>
+            <value>
+                <fullName>Bundle / Combo</fullName>
+                <default>false</default>
+                <label>Bundle / Combo</label>
+            </value>
+            <value>
+                <fullName>Menu Hack</fullName>
+                <default>false</default>
+                <label>Menu Hack</label>
+            </value>
+            <value>
+                <fullName>Permanent New Menu Item</fullName>
+                <default>false</default>
+                <label>Permanent New Menu Item</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

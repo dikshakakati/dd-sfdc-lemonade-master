@@ -1,0 +1,75 @@
+<template>
+  <template if:true={displayContactSection}>
+    <lightning-input
+      type="text"
+      name="contactFirstName"
+      label="First Name"
+      value={contactFirstName}
+      disabled
+      onchange={handleInputChange}
+    ></lightning-input>
+    <lightning-input
+      type="text"
+      name="contactLastName"
+      label="Last Name"
+      value={contactLastName}
+      disabled
+      onchange={handleInputChange}
+    ></lightning-input>
+    <lightning-input
+      type="email"
+      name="contactEmail"
+      label="Email"
+      value={contactEmail}
+      disabled
+      onchange={handleInputChange}
+    ></lightning-input>
+    <lightning-input
+      type="tel"
+      name="contactPhone"
+      label="Phone"
+      value={contactPhone}
+      disabled
+      onchange={handleInputChange}
+    ></lightning-input>
+    <lightning-input
+      type="tel"
+      name="contactMobilePhone"
+      label="Mobile Phone"
+      value={contactMobilePhone}
+      disabled
+      onchange={handleInputChange}
+    ></lightning-input>
+  </template>
+  <template if:true={isNotHiddenField}>
+    <lightning-input
+      type="text"
+      name="menuUrlText"
+      label="Menu Url"
+      value={menuUrlText}
+      onchange={handleInputChange}
+    ></lightning-input>
+  </template>
+  <template if:true={displayAccountSection}>
+    <lightning-input-address
+      disabled
+      country-disabled
+      province-readonly
+      address-label="Address"
+      street-label="Street"
+      city-label="City"
+      country-label="Country"
+      province-label="State"
+      postal-code-label="PostalCode"
+      street={address.street}
+      city={address.city}
+      country={address.country}
+      province={address.province}
+      postal-code={address.postalCode}
+      field-level-help="Help Text for inputAddress field"
+      country-options={getCountryOptions}
+      province-options={getProvinceOptions}
+      onchange={handleChange}
+    ></lightning-input-address>
+  </template>
+</template>

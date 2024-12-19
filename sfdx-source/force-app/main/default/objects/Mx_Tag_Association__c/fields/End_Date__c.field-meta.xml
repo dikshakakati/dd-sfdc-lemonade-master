@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_Date__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14987: It is used to populate the most recent date that the Mx Tag association became Inactive.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the most recent date that the Mx Tag association became Inactive.</inlineHelpText>
+    <label>End Date</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

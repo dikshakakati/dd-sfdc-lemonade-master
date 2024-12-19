@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Lead Status Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Status Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Contact Identified&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Represents when a rep has identified the DM. &lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>DM Found</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Status Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Non-prospect&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Represents when an Mx is not a viable Mx to sell to now or ever (i.e., permanently closed, is not a business but is a person&amp;#39;s home, etc).&lt;/li&gt;&lt;li&gt;“Disposition Reason” picklist should be presented to user automatically upon selection of the “Disqualified” status&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Disqualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Status Overview&lt;/u&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Marketing Qualified Lead&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Represents when a lead has been qualified through Marketing Platforms or Digital Campaigns.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Marketing Qualification</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Status Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Disengaged&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Represents when an Mx is not currently interested in DoorDash, but may be a viable Mx to sell to in future. &lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Not Interested - Cool Down</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Status Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Initiating Communication&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Represents when a rep has reached out (via phone, email, text, social media, etc.) but has not yet gotten in touch with / identified the DM. &lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Trying to Reach</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Status Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Unexplored&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Default status on lead creation&lt;/li&gt;&lt;li&gt;Represents when a lead has not been reached out to yet.&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Untouched</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

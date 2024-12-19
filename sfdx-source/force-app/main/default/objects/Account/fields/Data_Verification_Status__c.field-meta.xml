@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Verification_Status__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-88: It is used to track status of the account in order for Data Ops to ensure there are no duplicate accounts.</description>
+    <externalId>false</externalId>
+    <label>Data Verification Status</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unverified</fullName>
+                <default>true</default>
+                <label>Unverified</label>
+            </value>
+            <value>
+                <fullName>Verified</fullName>
+                <default>false</default>
+                <label>Verified</label>
+            </value>
+            <value>
+                <fullName>Blocked - Flagged For Clean Up</fullName>
+                <default>false</default>
+                <label>Blocked - Flagged For Clean Up</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

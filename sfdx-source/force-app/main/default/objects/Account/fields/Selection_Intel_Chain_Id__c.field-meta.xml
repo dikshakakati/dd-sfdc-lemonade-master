@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selection_Intel_Chain_Id__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-25383: This Id represents Selection Intel’s grouping of related stores. All stores are given a nTAM value, then multi-location stores are grouped by chain Id to drive Deck Ranks and prioritization. This is only used for initial store creation as hierarchies are subject to change by Sales.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Represents Selection Intel’s grouping of related stores. All stores are given a nTAM value, then multi-location stores are grouped by chain Id to drive Deck Ranks and prioritization. This is only used for initial store creation as hierarchies are subject to change by Sales.</inlineHelpText>
+    <label>Selection Intel Chain Id</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

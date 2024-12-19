@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM 995 Add field permissions to System Administrator Profile and QuoteToCash Permission Set and Create CommOps Permissions</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Commercial Operations</label>
+    <mutingPermissionSets>Commercial_Operations_Muted</mutingPermissionSets>
+    <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>Approval_Fields_Edit_Access</permissionSets>
+    <permissionSets>CPQ_AA_License</permissionSets>
+    <permissionSets>CPQ_License</permissionSets>
+    <permissionSets>Churned_Merchant_Access</permissionSets>
+    <permissionSets>CommOps</permissionSets>
+    <permissionSets>Enable_SSO</permissionSets>
+    <permissionSets>Enterprise_Sales_App</permissionSets>
+    <permissionSets>Enable_VSP_Recommendations</permissionSets>
+    <permissionSets>force__SlackSalesCloud</permissionSets>
+    <permissionSets>Ironclad_Workflow_Launch</permissionSets>
+    <permissionSets>Nintex_URL_Access</permissionSets>
+    <permissionSets>QuoteToCash</permissionSets>
+    <permissionSets>My_Items_To_Approve</permissionSets>
+    <permissionSets>SBQQ__SteelBrickCPQUser</permissionSets>
+    <permissionSets>Sales</permissionSets>
+    <permissionSets>activeprime__ActivePrime_Sales_Rep</permissionSets>
+    <permissionSets>dfsle__DocuSign_Login</permissionSets>
+    <permissionSets>dfsle__DocuSign_Sender</permissionSets>
+    <permissionSets>dfsle__DocuSign_User</permissionSets>
+    <permissionSets>sbaa__AdvancedApprovalsUser</permissionSets>
+    <permissionSets>SMB_Vendor_Sales_Create_Quote</permissionSets>
+    <permissionSets>SMB_Sales_App</permissionSets>
+    <permissionSets>HighVelocitySalesUser</permissionSets>
+    <permissionSets>Log_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

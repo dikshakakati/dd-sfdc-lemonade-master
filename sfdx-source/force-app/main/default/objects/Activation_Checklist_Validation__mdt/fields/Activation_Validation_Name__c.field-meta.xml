@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activation_Validation_Name__c</fullName>
+    <description>LEM-13305: It is used to store the name of validations required for activation.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Activation Validation Name</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PDOA</fullName>
+                <default>true</default>
+                <label>PDOA</label>
+            </value>
+            <value>
+                <fullName>Duplicate Work Orders</fullName>
+                <default>false</default>
+                <label>Duplicate Work Orders</label>
+            </value>
+            <value>
+                <fullName>MSID</fullName>
+                <default>false</default>
+                <label>MSID</label>
+            </value>
+            <value>
+                <fullName>Submarket</fullName>
+                <default>false</default>
+                <label>Submarket</label>
+            </value>
+            <value>
+                <fullName>Starting Point ID</fullName>
+                <default>false</default>
+                <label>Starting Point ID</label>
+            </value>
+            <value>
+                <fullName>Commission Rates</fullName>
+                <default>false</default>
+                <label>Commission Rates</label>
+            </value>
+            <value>
+                <fullName>Tier Level</fullName>
+                <default>false</default>
+                <label>Tier Level</label>
+            </value>
+            <value>
+                <fullName>Banking Information</fullName>
+                <default>false</default>
+                <label>Banking Information</label>
+            </value>
+            <value>
+                <fullName>Store Is Partner</fullName>
+                <default>false</default>
+                <label>Store Is Partner</label>
+            </value>
+            <value>
+                <fullName>Business Is Active</fullName>
+                <default>false</default>
+                <label>Business Is Active</label>
+            </value>
+            <value>
+                <fullName>Active Menu Count</fullName>
+                <default>false</default>
+                <label>Active Menu Count</label>
+            </value>
+            <value>
+                <fullName>Business ID</fullName>
+                <default>false</default>
+                <label>Business ID</label>
+            </value>
+            <value>
+                <fullName>Order Protocol</fullName>
+                <default>false</default>
+                <label>Order Protocol</label>
+            </value>
+            <value>
+                <fullName>Offers Pickup/Delivery/Dashpass</fullName>
+                <default>false</default>
+                <label>Offers Pickup/Delivery/Dashpass</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

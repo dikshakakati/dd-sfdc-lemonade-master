@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand_Logo__c</fullName>
+    <description>LEM-9349: Minor Field Addition to Brief Item</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Brand&apos;s logo, in a 1:1 aspect ratio, at lest 200x200 resolution</inlineHelpText>
+    <label>Brand Logo</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

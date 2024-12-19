@@ -1,0 +1,43 @@
+/**
+ * @author Deloitte
+ * @date 27/06/2022
+ * @description CSS for addStoresOnWorkOrder lightning web component.
+ */
+.buttonStyling {
+  padding: 0.5rem;
+  float: right;
+}
+.messageBoxStyling {
+  background-color: rgb(243, 243, 243);
+  text-align: center;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+}
+.messageStyling {
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+}
+/**
+ * Setting the dimension of datatable for managing the UI when server search is enabled.
+ */
+.dataTableStylingOnScroll {
+  height: 23.5rem !important;
+}
+.dataTableStylingOnSearch {
+  height: 20rem !important;
+}
+.searchBoxStyling {
+  height: 3.5rem;
+  text-align: center;
+}
+.serverSearchMessageBoxStyling {
+  background-color: rgb(255, 250, 230);
+  text-align: center;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+}
+.titleStyling {
+  font-weight: bolder;
+  border-width: 0.115rem;
+}

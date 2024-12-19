@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-13778: It stores the configuration details related to each internal processes utilising interface transaction records.</description>
+    <label>Interface Transaction Configuration</label>
+    <pluralLabel>Interface Transaction Configurations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

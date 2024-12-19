@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lost_Reason_Details__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <label>Lost Reason Details</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Lost_Reason__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Change of Ownership</fullName>
+                <default>false</default>
+                <label>Change of Ownership</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Grub Hub</fullName>
+                <default>false</default>
+                <label>Grub Hub</label>
+            </value>
+            <value>
+                <fullName>Invalid Contact Info</fullName>
+                <default>false</default>
+                <label>Invalid Contact Info</label>
+            </value>
+            <value>
+                <fullName>Kitchen at Capacity</fullName>
+                <default>false</default>
+                <label>Kitchen at Capacity</label>
+            </value>
+            <value>
+                <fullName>Mx Out of Business</fullName>
+                <default>false</default>
+                <label>Mx Out of Business</label>
+            </value>
+            <value>
+                <fullName>No Interest in 3rd Party Delivery</fullName>
+                <default>false</default>
+                <label>No Interest in 3rd Party Delivery</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Out of Coverage</fullName>
+                <default>false</default>
+                <label>Out of Coverage</label>
+            </value>
+            <value>
+                <fullName>POS Integration</fullName>
+                <default>false</default>
+                <label>POS Integration</label>
+            </value>
+            <value>
+                <fullName>Postmates</fullName>
+                <default>false</default>
+                <label>Postmates</label>
+            </value>
+            <value>
+                <fullName>Delivery Pricing</fullName>
+                <default>false</default>
+                <label>Delivery Pricing</label>
+            </value>
+            <value>
+                <fullName>Seamless</fullName>
+                <default>false</default>
+                <label>Seamless</label>
+            </value>
+            <value>
+                <fullName>Skip the Dishes</fullName>
+                <default>false</default>
+                <label>Skip the Dishes</label>
+            </value>
+            <value>
+                <fullName>Uber Eats</fullName>
+                <default>false</default>
+                <label>Uber Eats</label>
+            </value>
+            <value>
+                <fullName>Undergoing new menu</fullName>
+                <default>false</default>
+                <label>Undergoing new menu</label>
+            </value>
+            <value>
+                <fullName>Do not buy into incrementality</fullName>
+                <default>false</default>
+                <label>Do not buy into incrementality</label>
+            </value>
+            <value>
+                <fullName>Not a restaurant</fullName>
+                <default>false</default>
+                <label>Not a restaurant</label>
+            </value>
+            <value>
+                <fullName>Current DoorDash partner</fullName>
+                <default>false</default>
+                <label>Current DoorDash partner</label>
+            </value>
+            <value>
+                <fullName>Blocked by gatekeeper</fullName>
+                <default>false</default>
+                <label>Blocked by gatekeeper</label>
+            </value>
+            <value>
+                <fullName>Will not return calls after 7+ attempts</fullName>
+                <default>false</default>
+                <label>Will not return calls after 7+ attempts</label>
+            </value>
+            <value>
+                <fullName>Preferred Language: Spanish</fullName>
+                <default>false</default>
+                <label>Preferred Language: Spanish</label>
+            </value>
+            <value>
+                <fullName>Preferred Language: Mandarin</fullName>
+                <default>false</default>
+                <label>Preferred Language: Mandarin</label>
+            </value>
+            <value>
+                <fullName>Preferred Language: Vietnamese</fullName>
+                <default>false</default>
+                <label>Preferred Language: Vietnamese</label>
+            </value>
+            <value>
+                <fullName>Preferred Language: Tagalog</fullName>
+                <default>false</default>
+                <label>Preferred Language: Tagalog</label>
+            </value>
+            <value>
+                <fullName>Preferred Language: French</fullName>
+                <default>false</default>
+                <label>Preferred Language: French</label>
+            </value>
+            <value>
+                <fullName>Preferred Language: Unknown</fullName>
+                <default>false</default>
+                <label>Preferred Language: Unknown</label>
+            </value>
+            <value>
+                <fullName>Preferred Language: Other</fullName>
+                <default>false</default>
+                <label>Preferred Language: Other</label>
+            </value>
+            <value>
+                <fullName>Signed up without consent</fullName>
+                <default>false</default>
+                <label>Signed up without consent</label>
+            </value>
+            <value>
+                <fullName>Unprofessional drivers</fullName>
+                <default>false</default>
+                <label>Unprofessional drivers</label>
+            </value>
+            <value>
+                <fullName>Onboarding issues</fullName>
+                <default>false</default>
+                <label>Onboarding issues</label>
+            </value>
+            <value>
+                <fullName>Customer support issues</fullName>
+                <default>false</default>
+                <label>Customer support issues</label>
+            </value>
+            <value>
+                <fullName>Low order volume</fullName>
+                <default>false</default>
+                <label>Low order volume</label>
+            </value>
+            <value>
+                <fullName>Poor product experience</fullName>
+                <default>false</default>
+                <label>Poor product experience</label>
+            </value>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>Order Capping/Throttling</fullName>
+                <default>false</default>
+                <label>Order Capping/Throttling</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Incorrect Data</controllingFieldValue>
+            <valueName>Duplicate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Incorrect Data</controllingFieldValue>
+            <valueName>Invalid Contact Info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Incorrect Data</controllingFieldValue>
+            <valueName>Mx Out of Business</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Incorrect Data</controllingFieldValue>
+            <valueName>Out of Coverage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Incorrect Data</controllingFieldValue>
+            <valueName>Not a restaurant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Incorrect Data</controllingFieldValue>
+            <valueName>Current DoorDash partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Language Barrier</controllingFieldValue>
+            <valueName>Preferred Language: Spanish</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Language Barrier</controllingFieldValue>
+            <valueName>Preferred Language: Mandarin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Language Barrier</controllingFieldValue>
+            <valueName>Preferred Language: Vietnamese</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Language Barrier</controllingFieldValue>
+            <valueName>Preferred Language: Tagalog</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Language Barrier</controllingFieldValue>
+            <valueName>Preferred Language: French</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Language Barrier</controllingFieldValue>
+            <valueName>Preferred Language: Unknown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Language Barrier</controllingFieldValue>
+            <valueName>Preferred Language: Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unresponsive DM</controllingFieldValue>
+            <valueName>Blocked by gatekeeper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unresponsive DM</controllingFieldValue>
+            <valueName>Will not return calls after 7+ attempts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exclusive with Competitor</controllingFieldValue>
+            <valueName>Grub Hub</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exclusive with Competitor</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exclusive with Competitor</controllingFieldValue>
+            <valueName>Postmates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exclusive with Competitor</controllingFieldValue>
+            <valueName>Seamless</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exclusive with Competitor</controllingFieldValue>
+            <valueName>Skip the Dishes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exclusive with Competitor</controllingFieldValue>
+            <valueName>Uber Eats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Negative Prior DoorDash Experience</controllingFieldValue>
+            <valueName>Signed up without consent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Negative Prior DoorDash Experience</controllingFieldValue>
+            <valueName>Unprofessional drivers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Negative Prior DoorDash Experience</controllingFieldValue>
+            <valueName>Onboarding issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Negative Prior DoorDash Experience</controllingFieldValue>
+            <valueName>Customer support issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Negative Prior DoorDash Experience</controllingFieldValue>
+            <valueName>Low order volume</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Negative Prior DoorDash Experience</controllingFieldValue>
+            <valueName>Poor product experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Bought Into Value Prop</controllingFieldValue>
+            <valueName>No Interest in 3rd Party Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Bought Into Value Prop</controllingFieldValue>
+            <valueName>Delivery Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Bought Into Value Prop</controllingFieldValue>
+            <valueName>Do not buy into incrementality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Operational Obstacles</controllingFieldValue>
+            <valueName>Change of Ownership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Operational Obstacles</controllingFieldValue>
+            <valueName>Kitchen at Capacity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Operational Obstacles</controllingFieldValue>
+            <valueName>POS Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Operational Obstacles</controllingFieldValue>
+            <valueName>Undergoing new menu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product / Feature Blockers</controllingFieldValue>
+            <valueName>Catering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product / Feature Blockers</controllingFieldValue>
+            <valueName>Order Capping/Throttling</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

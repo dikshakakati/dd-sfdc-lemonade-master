@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_Code_Alpha_2__c</fullName>
+    <description>LEM-1285: Given a country, calculates the Alpha-2 ISO Code. Currently used for Netsuite integration.</description>
+    <externalId>false</externalId>
+    <formula>Case( Country__c ,
+&apos;United States&apos;, &apos;US&apos;,
+&apos;Canada&apos;, &apos;CA&apos;,
+&apos;Australia&apos;, &apos;AU&apos;,
+&apos;New Zealand&apos;, &apos;NZ&apos;,
+&apos;Japan&apos;, &apos;JP&apos;,
+&apos;Germany&apos;, &apos;DE&apos;,
+NULL)</formula>
+    <label>Country Code (Alpha-2)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

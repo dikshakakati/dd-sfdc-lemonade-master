@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SDR_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-14186: It indicates the SDR Owner.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the SDR Owner</inlineHelpText>
+    <label>SDR Owner</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Leads</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

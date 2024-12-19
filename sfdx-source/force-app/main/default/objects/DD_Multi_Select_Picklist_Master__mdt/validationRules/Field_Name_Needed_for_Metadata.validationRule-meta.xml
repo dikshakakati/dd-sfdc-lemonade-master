@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Name_Needed_for_Metadata</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISBLANK( Picklist_Metadata_Field_Name__c ),
+  ISPICKVAL( Type__c , &apos;Object Field Picklist Metadata&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Picklist_Metadata_Field_Name__c</errorDisplayField>
+    <errorMessage>Required for &apos;Object Field Picklist Metadata&apos; Types</errorMessage>
+</ValidationRule>

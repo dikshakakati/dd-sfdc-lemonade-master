@@ -1,0 +1,7 @@
+.disable-url-click{
+  pointer-events: none;
+  cursor: default;
+}
+.disable-url-click a{
+  color: black !important; 
+}

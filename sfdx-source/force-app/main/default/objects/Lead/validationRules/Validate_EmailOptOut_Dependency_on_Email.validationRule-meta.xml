@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_EmailOptOut_Dependency_on_Email</fullName>
+    <active>true</active>
+    <description>LEM-13618: It ensures EmailOptOut should not be populated unless Email is populated.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Lead_Validation_Rules),
+  ISBLANK(Email),
+  HasOptedOutOfEmail
+)</errorConditionFormula>
+    <errorDisplayField>HasOptedOutOfEmail</errorDisplayField>
+    <errorMessage>Email Opt Out” field can only be completed if “Email” field is populated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confidence_Level__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15226: It indicates the confidence level of Lever.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the confidence level of Implementing this Lever.</inlineHelpText>
+    <label>Confidence Level</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Low</fullName>
+                <default>false</default>
+                <label>Low</label>
+            </value>
+            <value>
+                <fullName>Medium</fullName>
+                <default>false</default>
+                <label>Medium</label>
+            </value>
+            <value>
+                <fullName>High</fullName>
+                <default>false</default>
+                <label>High</label>
+            </value>
+            <value>
+                <fullName>Certain</fullName>
+                <default>false</default>
+                <label>Certain</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

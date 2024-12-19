@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Reference_Id__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>LEM-22084 Field used to link an incoming email with the work plan</description>
+    <externalId>true</externalId>
+    <label>Email Reference Id</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

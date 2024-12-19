@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>no-reply@doordash.com.invalid</email>
+    <name>Ad Ops</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>SO_Support</publicGroup>
+        </publicGroups>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Brief_Item__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Brief__c</sobjectType>
+    </queueSobject>
+</Queue>

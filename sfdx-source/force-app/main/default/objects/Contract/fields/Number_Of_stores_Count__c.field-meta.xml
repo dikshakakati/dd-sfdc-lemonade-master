@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_Of_stores_Count__c</fullName>
+    <description>LEM-14235: It indicates the total number of stores count on business account is higher than number of stores on quote.</description>
+    <externalId>false</externalId>
+    <formula>IF(Contract_Split_Category__c  = $Label.SplitCategoryAandP,
+IF(
+OR(
+Account.Total_Number_Of_Stores__c = 1,
+SBQQ__Quote__r.Number_of_Stores__c  &gt;=  Account.Total_Number_Of_Stores__c
+),
+TRUE,
+FALSE
+),
+FALSE
+)</formula>
+    <label>Number Of Stores Count</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-623: Lookup on Campaign Product on Insight</description>
+    <externalId>false</externalId>
+    <label>Solutions</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>A Product Insight cannot be associated with an inactive Campaign Product. Please choose an active Campaign Product and try again.</errorMessage>
+        <filterItems>
+            <field>Campaign_Product__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Campaign_Product__c</referenceTo>
+    <relationshipLabel>Product Insights</relationshipLabel>
+    <relationshipName>Product_Insights</relationshipName>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

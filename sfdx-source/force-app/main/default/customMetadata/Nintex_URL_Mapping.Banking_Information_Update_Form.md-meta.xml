@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Banking Information Update Form</label>
+    <protected>false</protected>
+    <values>
+        <field>URL__c</field>
+        <value xsi:type="xsd:string">https://lemonade-dev.workflowcloud.com/forms/af5acaee-6cb1-42ac-8e83-87f0e8f34371</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,18 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.slds-has-focus {
+    background-color: #F2F2F2;
+    border-color: rgb(217, 219, 221);
+    cursor: pointer;
+}
+
+.separator {
+    padding: .5rem;
+    border-bottom: 1px solid rgb(217, 219, 221);
+}

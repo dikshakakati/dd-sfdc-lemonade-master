@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Free Trial</fullName>
+        <default>false</default>
+        <label>Free Trial</label>
+    </customValue>
+    <customValue>
+        <fullName>Promotional Period</fullName>
+        <default>false</default>
+        <label>Promotional Period</label>
+    </customValue>
+    <customValue>
+        <fullName>Package Promotional Period</fullName>
+        <default>false</default>
+        <label>Package Promotional Period</label>
+    </customValue>
+    <description>LEM-179 – Initial Setup of Quote object.</description>
+    <masterLabel>Trial Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

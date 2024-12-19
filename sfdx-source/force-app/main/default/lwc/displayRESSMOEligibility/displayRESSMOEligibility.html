@@ -1,0 +1,113 @@
+<!--
+  @description       :
+  @author            : VenkateshDD
+  @group             :
+  @last modified on  : 10-16-2024
+  @last modified by  : Soumya Dash
+-->
+<template>
+    <div class={dynamicInitialClasss}>
+    <lightning-card title="SSMO Eligibility">
+
+        <div style="max-height: 300px; overflow-y: auto;">
+
+            <template if:true={loadSpinner}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+
+            <template if:false={loadSpinner}>
+                <c-ressmo-store-account-header
+                    store-account={storeAccount}
+                    quote={quote}
+                    contract={contract}
+                    is-opened-from-contract={isOpenedFromContract}
+                    source="eligibility"
+                    fetch-store-screen={showAddStore}
+                    is-store-prepopulated={storePresent}
+                    onconfirm={handleConfirm}
+                    onrefresheligibility={refreshEligibility}
+                    store-record-type-id={storeRecordTypeId}>
+                </c-ressmo-store-account-header>
+                <template if:true={ShowEligibility}>
+                <template if:true={noValidations}>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                      <lightning-layout vertical-align="top" horizontal-align="left">
+                        <lightning-layout-item style="padding-left: 20px;">
+                            <lightning-icon
+                                icon-name="utility:priority"
+                                variant={flagVariant}
+                                size="x-small">
+                            </lightning-icon>
+                            <div class={titleColor} style=" padding-left: 10px; display: inline-block; font-size: 16px;">{title}</div>
+                        </lightning-layout-item>
+                     </lightning-layout>
+                    </div>
+                  </template>
+                </template>
+            </template>
+
+            <template if:true={showValidations}>
+                <div>
+                    <lightning-accordion class="eligibility-accordion" allow-multiple-sections-open	 onsectiontoggle={handleToggleSection} active-section-name={activeSection}>
+                        <lightning-accordion-section name="EligibilitySection" label={eligibilitySectionLabel}>
+                    <lightning-layout vertical-align="top" horizontal-align="left">
+                        <lightning-layout-item style="padding-left: 20px;">
+                            <div style="padding-left: 30px; padding-right: 10px; padding-top:10px;">
+                                <ul style="list-style-type:disc">
+                                    <template for:each={validations} for:item="error">
+                                        <li key={error}>{error}</li>
+                                    </template>
+                                </ul>
+                            </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        </lightning-accordion-section>
+                    </lightning-accordion>
+                    </div>
+                </template>
+                <br>
+
+      <template if:true={showCopySSMOLink}>
+          <div style="display: flex; justify-content: center; align-items: center;">
+              <lightning-layout vertical-align="top" horizontal-align="left">
+                  <lightning-layout-item style="padding-left: 20px;">
+                      <lightning-layout vertical-align="center" horizontal-align="left">
+                          <lightning-layout-item>
+                              <lightning-icon
+                                  icon-name="utility:priority"
+                                  variant='success'
+                                  size="x-small">
+                              </lightning-icon>
+                          </lightning-layout-item>
+                          <lightning-layout-item>
+                              <template lwc:if={isOpenedFromContract}>
+                                <p style="color:green; margin: 0 10px;">A SSMO link was previously sent</p>
+                              </template>
+                              <template lwc:else>
+                                <p style="color:green; margin: 0 10px;">A quote was previously sent to SSMO</p>
+                              </template>
+                          </lightning-layout-item>
+                      </lightning-layout>
+                  </lightning-layout-item>
+              </lightning-layout>
+          </div>
+
+          <div style="display: flex; justify-content: center; align-items: center;">
+              <lightning-layout vertical-align="top" horizontal-align="left">
+                  <lightning-layout-item style="padding-left: 20px;padding-top: 10px;">
+                      <c-copy-to-clipboard
+                          display-text="Copy SSMO Link"
+                          copy-text={SSMOLink}
+                          click-to-copy-tool-tip="click to copy"
+                          copied-tool-tip="copied"
+                          icon-resent-after-copied-in-seconds="1"
+                      ></c-copy-to-clipboard>
+                  </lightning-layout-item>
+              </lightning-layout>
+          </div>
+
+          </template>
+        </div>
+    </lightning-card>
+    </div>
+</template>

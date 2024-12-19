@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Product_Compact_Layout</fullName>
+    <fields>Product2Id</fields>
+    <fields>OrderId</fields>
+    <fields>SBQQ__QuoteLine__c</fields>
+    <label>Order Product Compact Layout</label>
+</CompactLayout>

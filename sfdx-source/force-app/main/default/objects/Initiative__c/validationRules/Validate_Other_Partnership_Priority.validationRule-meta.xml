@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Other_Partnership_Priority</fullName>
+    <active>true</active>
+    <description>LEM-596: Validate if Other Partnership Priority is populated when Partnership Priority is &apos;Other&apos;</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Initiative_Validation_Rules),
+    INCLUDES(Partnership_Priorities__c, &apos;Other&apos;),
+    ISBLANK(Other_Partnership_Priority__c)
+)</errorConditionFormula>
+    <errorDisplayField>Other_Partnership_Priority__c</errorDisplayField>
+    <errorMessage>Please enter a value for Other Partnership Priority or choose other Partnership Priorities value(s).</errorMessage>
+</ValidationRule>

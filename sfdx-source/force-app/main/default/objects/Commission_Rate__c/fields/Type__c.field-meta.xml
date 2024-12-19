@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>LEM-13822: Initial Setup of Commission Rate Object</description>
+    <externalId>false</externalId>
+    <formula>
+        IF( AND(NOT(ISBLANK(Package__c)),NOT(ISBLANK(Submarket__c))) , "Submkt-Pkg",
+        IF( AND(NOT(ISBLANK(Package__c)),ISBLANK(TEXT(Account_Primary_Vertical__c)),ISBLANK( TEXT(Region__c) ),ISBLANK(Submarket__c)) , "Product-Pkg",
+        IF( AND(NOT(ISBLANK(Package__c)),NOT(ISBLANK(TEXT(Region__c) ))) , "Region-Pkg",
+        IF( AND(NOT(ISBLANK(Package__c)),NOT(ISBLANK( TEXT(Account_Primary_Vertical__c ))),ISBLANK(Submarket__c)) , "PMC-Product-Pkg",
+        IF( NOT(ISBLANK(Submarket__c)) , "Submarket",
+        IF( NOT(ISBLANK(TEXT(Region__c) )), "Region",
+        IF( AND(NOT(ISBLANK( Filter_Value_1__c )),ISBLANK( TEXT(Account_Primary_Vertical__c )), ISBLANK(Employee_Commitment__c)), "FV1-Product",
+        IF( AND(NOT(ISBLANK( Filter_Value_1__c )),ISBLANK( TEXT(Account_Primary_Vertical__c )), NOT(ISBLANK(Employee_Commitment__c))), "FV1-Product-Commitment",
+
+        "Product") )))))))
+    </formula>
+    <label>Type</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

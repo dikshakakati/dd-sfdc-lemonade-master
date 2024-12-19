@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Segment_Edit_Access</fullName>
+    <active>true</active>
+    <description>LEM-5429: This Validation rule restricts updating the Account Segment for all users except DataOps and System Admin.</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Account_Validation_Rules),
+NOT($Permission.Allow_Account_Segment_Update),
+NOT($Permission.Edit_Account_Fields),
+ISCHANGED(Segment__c),
+$Profile.Name != $Label.System_Administrator)</errorConditionFormula>
+    <errorMessage>Please reach out to your admin to edit Segment field.</errorMessage>
+</ValidationRule>

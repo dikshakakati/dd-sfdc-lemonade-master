@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Merchant_Orders_Creation__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-22064: It indicates whether the Merchant Orders creation is enabled in the org. It enables Mx Order creation for SMB accounts and test accounts based on Mx Order Creation custom configuration flag.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    $CustomMetadata.Static_Configurations__mdt.Tablet_Updates_By_Mx_Order.Configuration_Value__c == $Label.Boolean_Value_True_String,
+    Is_Test__c,
+    BEGINS(
+      LOWER(Name),
+      $Label.Test_Lower_Case_String
+    )
+  ),
+  true,
+  false
+)</formula>
+    <label>Enable Merchant Orders Creation</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

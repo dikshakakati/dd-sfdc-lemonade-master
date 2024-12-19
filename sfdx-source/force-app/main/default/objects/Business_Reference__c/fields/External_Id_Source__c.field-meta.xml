@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Id_Source__c</fullName>
+    <description>LEM-2082 Identifies the external system or database where the External Id resides.</description>
+    <externalId>false</externalId>
+    <label>External Id Source</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>External_Id_Source</valueSetName>
+    </valueSet>
+</CustomField>

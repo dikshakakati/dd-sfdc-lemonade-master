@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fixed_Store_IDs__c</fullName>
+    <description>Lists the IDs, in comma-delimited format, of the Stores that had various issues that had to be fixed through the ANSO flow -- such as address verification issues. This is used so that the counts of fixed stores remain accurate and do not duplicate results.</description>
+    <externalId>false</externalId>
+    <label>Fixed Store IDs</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

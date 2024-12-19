@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform_Event_Channel__c</fullName>
+    <description>LEM-24197: It stores the Platform Event Channel to utilize for processing a particular topic related payload.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Platform Event Channel</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

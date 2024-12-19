@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateCloseDateOnStalledSMBOpportunity</fullName>
+    <active>true</active>
+    <description>LEM-14422: It validates Close Date should be required to be at least 14 days in the future when moving a SMB Opportunity Stage to “Stalled”.
+LEM-15636: Updated error message for SMB Implementation.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  TEXT(Account.Segment__c) = $Label.AccountSegmentSMB,
+  TEXT(StageName) = $Label.Opportunity_Stage_Stalled,
+  ISCHANGED(StageName),
+  CloseDate &lt; (TODAY() + VALUE($Label.RequiredNumberOfDaysToCloseOpportunity)),
+  CloseDate &lt; PRIORVALUE(CloseDate)
+)</errorConditionFormula>
+    <errorDisplayField>CloseDate</errorDisplayField>
+    <errorMessage>Close Date must be at least 14 days from today to move Stage to Stalled.</errorMessage>
+</ValidationRule>

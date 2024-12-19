@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MP_Bz_Id__c</fullName>
+    <description>LEM-9128/LEM-10180: It is used to capture &quot;MP Bz Id&quot; value from the associated opportunity and contract  for work order with &apos;Drive&apos; type and &apos;Auto-Activations&apos;/&apos;Withholding&apos; sub-type.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND (
+    TEXT(Type__c) = $Label.WorkOrderTypeDrive,
+    OR (
+      TEXT(Sub_Type__c) = $Label.WorkOrderSubTypeWithholding,
+      AND (
+          TEXT(Sub_Type__c) = $Label.WorkOrderSubTypeAutoActivations,
+          Withholding_with_Auto_Activations__c
+      )
+    )
+  ),
+  IF(
+    AND(
+      NOT(ISBLANK(Opportunity__c)),
+      TEXT(Opportunity__r.Nintex_Use_Case__c) = $Label.NintexUseCaseIntegratedFranchise
+    ),
+    Opportunity__r.Mp_Bz_Id__c,
+    IF(
+      NOT(ISBLANK(Contract__c)),
+       Contract__r.MP_Bz_Id__c,
+       &apos;&apos;
+    )
+  ),
+    $Label.MP_Bz_Id_Not_Applicable
+)</formula>
+    <label>MP Bz Id</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

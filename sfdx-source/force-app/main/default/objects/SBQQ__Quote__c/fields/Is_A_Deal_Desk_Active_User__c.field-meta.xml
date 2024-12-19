@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_A_Deal_Desk_Active_User__c</fullName>
+    <description>LEM-15216: It is used to bypass validation rules for deal desk team.</description>
+    <externalId>false</externalId>
+    <formula>$Permission.Bypass_Validations_For_Deal_Desk_Team</formula>
+    <label>Is A Deal Desk Active User?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

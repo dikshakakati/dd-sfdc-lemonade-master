@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Deck_Rank_For_SMB</fullName>
+    <active>true</active>
+    <description>LEM-14098: It is used to validate that for SMB accounts do not allow the record to be saved if Deck Rank = Ace of Spades, King of Spades.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  NOT($Permission.Bypass_Self_Serve_Account_Validation),
+  TEXT( Segment__c ) == $Label.AccountSegmentSMB,
+  OR(
+    TEXT( Deck_Rank__c ) == $Label.DeckRankAceOfSpades,
+    TEXT( Deck_Rank__c ) ==  $Label.DeckRankKingOfSpades
+  )
+)</errorConditionFormula>
+    <errorMessage>SMB Accounts cannot have Deck Rank = Ace of Spades, King of Spades. Please update the Segment or the Deck Rank before saving.</errorMessage>
+</ValidationRule>

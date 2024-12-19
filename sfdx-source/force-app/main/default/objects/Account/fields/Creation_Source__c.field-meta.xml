@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creation_Source__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-97,13751: It is used to identify the source of account creation.</description>
+    <externalId>false</externalId>
+    <label>Creation Source</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Data Loader</fullName>
+                <default>false</default>
+                <label>Data Loader</label>
+            </value>
+            <value>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+                <label>Inbound</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>Lead</fullName>
+                <default>false</default>
+                <label>Lead</label>
+            </value>
+            <value>
+                <fullName>Manual</fullName>
+                <default>true</default>
+                <label>Manual</label>
+            </value>
+            <value>
+                <fullName>Marketing Automation</fullName>
+                <default>false</default>
+                <label>Marketing Automation</label>
+            </value>
+            <value>
+                <fullName>Mx Portal</fullName>
+                <default>false</default>
+                <label>Mx Portal</label>
+            </value>
+            <value>
+                <fullName>Selection Intel</fullName>
+                <default>false</default>
+                <label>Selection Intel</label>
+            </value>
+            <value>
+                <fullName>SSMO</fullName>
+                <default>false</default>
+                <label>SSMO</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>SSOB</fullName>
+                <default>false</default>
+                <label>SSOB</label>
+            </value>
+            <value>
+                <fullName>Nintex</fullName>
+                <default>false</default>
+                <label>Nintex</label>
+            </value>
+            <value>
+                <fullName>RESSMO</fullName>
+                <default>false</default>
+                <label>RESSMO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

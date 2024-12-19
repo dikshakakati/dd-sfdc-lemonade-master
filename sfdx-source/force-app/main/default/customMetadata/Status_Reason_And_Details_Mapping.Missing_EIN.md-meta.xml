@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Missing EIN</label>
+    <protected>false</protected>
+    <values>
+        <field>Business_Friendly_Mapping__c</field>
+        <value xsi:type="xsd:string">DNU_For_Flow_Mapping</value>
+    </values>
+    <values>
+        <field>Quick_Action_Name__c</field>
+        <value xsi:type="xsd:string">Update_Tax_Id</value>
+    </values>
+    <values>
+        <field>Status_Reason__c</field>
+        <value xsi:type="xsd:string">Missing EIN</value>
+    </values>
+    <values>
+        <field>Status__c</field>
+        <value xsi:type="xsd:string">Blocked</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">Setup Banking</value>
+    </values>
+</CustomMetadata>

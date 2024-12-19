@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Work_Step__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-527: It is used to maintain relationship with WorkStep of Parent Work Order.</description>
+    <externalId>false</externalId>
+    <label>Parent Work Step</label>
+    <referenceTo>WorkStep</referenceTo>
+    <relationshipLabel>Child Work Steps</relationshipLabel>
+    <relationshipName>Child_Work_Steps</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

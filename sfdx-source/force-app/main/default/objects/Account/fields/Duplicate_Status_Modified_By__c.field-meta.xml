@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Status_Modified_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-3673: To track the user who has updated the &apos;Duplicate Status&apos; field.</description>
+    <externalId>false</externalId>
+    <label>Duplicate Status Modified By</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Accounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

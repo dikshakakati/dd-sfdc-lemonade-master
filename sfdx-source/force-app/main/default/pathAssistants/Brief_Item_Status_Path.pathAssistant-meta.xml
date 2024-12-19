@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Brief_Item__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Brief Item Status Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 9pt; &quot;&gt;The Ad Ops Team should be vetting all inputs to the brief to ensure we have everything needed for execution.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Campaign Building</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 9pt; &quot;&gt;If a campaign has been cancelled please comment the reason for cancellation.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Cancelled</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 9pt; &quot;&gt;If a campaign has been deactivated before expected end date, please comment the reason for deactivation.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Deactivated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;- At this stage, the campaign has been QA&amp;#39;d in the app and metrics have been checked.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;- See the &amp;quot;Campaign QA Checklist for Operators&amp;quot; wiki resource in the Ad Ops Wiki for more information.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;- If any errors are found, please add them to the &amp;quot;Post-Live QA Number of Errors Found&amp;quot; and &amp;quot;Post-Live QA Bulleted Errors&amp;quot; fields.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Live QA Completed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;Audit DRI should review all fields listed in the “Pre-Live Audit Review” tab in the &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/spreadsheets/d/1uIUkhKGgEKmzgZ5q63w13N-VxDJaNXS25o0TF1nAT1s/edit#gid=1980785214&quot; target=&quot;_blank&quot; style=&quot; font-size: 9pt;&quot;&gt;&lt;u&gt;Ad Ops Project Resources&lt;/u&gt;&lt;/a&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;Audit DRI will provide feedback by adding the number of fixes and the description of each fix to the &amp;quot;Pre-Live Number of Errors Found&amp;quot; and &amp;quot;Pre-Live Bulleted Fixes&amp;quot; fields. &lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Pre-Live Audit - New Submission</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;If the Audit DRI has feedback/edits/questions, it will be called out in &amp;quot;Pre-Live Bulleted Fixes&amp;quot; and tag the Campaign DRI to make adjustments to the campaign. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;The Campaign DRI inform Audit DRI that the edits/questions are addressed. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;The Audit DRI will review the campaign once more before moving the brief item forward to ‘Scheduled Live’.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Pre-Live Audit - Ready for Edits</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;At this stage, the campaign is scheduled to go live and is awaiting live QA, which should happen on the first business day a campaign is live and cover the following:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;-Metrics&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;-Testing in-app&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;-Testing on desktop&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;See the &amp;quot;Campaign QA Checklist for Operators&amp;quot; wiki resource in the Ad Ops Wiki for more information.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Scheduled Live</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;During this stage, the team should cross-check the contract against the campaign to ensure the fields listed in the &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/spreadsheets/d/1uIUkhKGgEKmzgZ5q63w13N-VxDJaNXS25o0TF1nAT1s/edit#gid=1980785214&quot; target=&quot;_blank&quot; style=&quot;font-size: 9pt;&quot;&gt;&lt;u&gt;Ad Ops Project Resources sheet&lt;/u&gt;&lt;/a&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt; within the Contract and Campaign Review tab. If edits are needed, in the comment section, please tag the Campaign DRI and provide any feedback/edits needed. Then fill out the &amp;quot;Testing QA Fixes Needed&amp;quot; field. &lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Testing - Contract and Campaign Review</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;During this stage, the tester will review the campaign in-app using the “Testing - In-App Review” process listed in the &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/spreadsheets/d/1uIUkhKGgEKmzgZ5q63w13N-VxDJaNXS25o0TF1nAT1s/edit#gid=1980785214&quot; target=&quot;_blank&quot; style=&quot;font-size: 9pt;&quot;&gt;&lt;u&gt;Ad Ops Project Resources&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;If edits are needed, in the comment section, please tag the Campaign DRI and provide any feedback/edits needed. Then add them to the &amp;quot;Testing QA Fixes Needed&amp;quot; field. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;If no edits needed, the Testing DRI will confirm that the QA is complete with no flags to the Campaign DRI and change the status to “Testing - Ready to Schedule Live”.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Testing - In-App Review</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;During this stage, the brief item must have an assigned tester (either self-assigned or assigned by Campaign DRI) to review the campaign.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Testing - New Submission</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;If the Testing DRI has discovered some edits, review the following: &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt; Edits have been flagged in the “Testing QA Fixes Needed” field towards the bottom of the brief item and in the comment section. &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt; The Campaign DRI will make those adjustments. &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt; Once those adjustments are made, the brief item must go through a second round of testing. &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt; Campaign DRI will change the brief status to “Testing - Second Review”.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Testing - Ready for Edits</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 9pt; &quot;&gt;Once the campaign(s) have passed the testing stages, the Campaign DRI will set the campaign live by adjusting the following in Campaign Manager:&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 9pt; &quot;&gt;If Promotion/Banners: &lt;/span&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 9pt;&quot;&gt;Start Date &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;Audience&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;Campaign-Level Scheduling/Dayparting (if applicable) &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 9pt; &quot;&gt;Banner Scheduling/Dayparting (if applicable) &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;Frequency Capping (if applicable) &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;Banner Priority &lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;If Sponsored Listings:&lt;/span&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;Toggle campaign Active at the General and Ad Group levels&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Testing - Ready to Schedule Live</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt;During the Testing-Second Review, the Testing DRI will test the campaign one more ensuring that the previously requested edits have been addressed. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt; Once the campaign has passed the second round of edits, the Testing DRI will move the brief item to “Testing - Ready to Schedule Live” and let the campaign DRI know that the campaign is Ready to Schedule Live. &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot; font-size: 9pt;&quot;&gt; If there were more edits that needed to be made after the second review, the Testing DRI will add on to the feedback/callouts in the &amp;quot;Testing QA Fixes Needed&amp;quot; field and tag the campaign DRI for another round of edits, and change the status back to “Testing - Ready for Edits”. &lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Testing - Second Review</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 9pt; &quot;&gt;This item must be shifted to &amp;quot;Campaign Building&amp;quot; in order for the Ad Ops team to begin executing. Standard SLA is 1-2 weeks after shifting to &amp;quot;Campaign Building&amp;quot;. See the &amp;quot;Campaign Creation Blockers resource&amp;quot; in the Ad Ops Wiki for more information.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Waiting for Inputs</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

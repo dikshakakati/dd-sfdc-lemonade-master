@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiring_Agmt_Nintex_COO__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-222497: It is used to indicate agreement expire through nintex process.</description>
+    <externalId>false</externalId>
+    <label>Expiring Agmt Nintex COO</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

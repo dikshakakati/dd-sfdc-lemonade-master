@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-23682: It is used to Create Contacts/Opportunity Contact Roles from Stores.</description>
+    <flowDefinition>Create_Opportunity_Contact_Roles_from_Stores</flowDefinition>
+    <label>Create Opportunity Contact Roles from Stores</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Franchise_Enrollment_Process__c</fullName>
+    <description>This field is to get Franchise Owned Store count from Account over to the quote for https://doordash.atlassian.net/browse/LEM-5316</description>
+    <externalId>false</externalId>
+    <formula>SBQQ__Account__r.Franchise_Owned_Store_Count__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Franchise Enrollment Process</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completed_Menu_URLs__c</fullName>
+    <description>LEM-793: Indicates the complete Menu URLs in Dime.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the complete Menu URLs in Dime</inlineHelpText>
+    <label>Completed Menu URLs</label>
+    <length>10000</length>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

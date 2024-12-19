@@ -1,0 +1,47 @@
+<template>
+    <template if:true={isMultiSelectFilter}>
+        <c-dd-multi-select-picklist unique-identifier={filter.name}
+            custom-search-name={filter.definition.MultiSelect_Ref__r.DeveloperName}
+            selected-records={filter.value}
+            is-expanded={filter.definition.isExpanded__c}
+            onchange={handleOnChange}>
+        </c-dd-multi-select-picklist>
+    </template>
+    <template if:true={isToggleFilter}>
+        <c-dd-toggle unique-identifier={filter.name}
+            variant="filter"
+            label={filter.definition.Label__c}
+            filter-selection-is-required={filter.definition.Toggle_Filter_Required__c}
+            checked={filter.value}
+            onclick={handleOnChange}>
+        </c-dd-toggle>
+    </template>
+    <template if:true={isDateFilter}>
+        <c-dd-date-filter unique-identifier={filter.name}
+            label={filter.definition.Label__c}
+            filters={filter.value}
+            is-expanded={filter.definition.isExpanded__c}
+            allow-is-blank-and-is-not-blank={filter.definition.Number_Date_Has_IS_BLANK_IS_NOT_BLANK__c}
+            onchange={handleOnChange}>
+        </c-dd-date-filter>
+    </template>
+    <template if:true={isNumberFilter}>
+        <c-dd-number-filter unique-identifier={filter.name}
+            label={filter.definition.Label__c}
+            filters={filter.value}
+            is-expanded={filter.definition.isExpanded__c}
+            allow-is-blank-and-is-not-blank={filter.definition.Number_Date_Has_IS_BLANK_IS_NOT_BLANK__c}
+            onchange={handleOnChange}>
+        </c-dd-number-filter>
+    </template>
+    <template if:true={isPercentFilter}>
+        <c-dd-number-filter unique-identifier={filter.name}
+            formatter="percent"
+            label={filter.definition.Label__c}
+            filters={filter.value}
+            is-expanded={filter.definition.isExpanded__c}
+            allow-is-blank-and-is-not-blank={filter.definition.Number_Date_Has_IS_BLANK_IS_NOT_BLANK__c}
+            onchange={handleOnChange}>
+        </c-dd-number-filter>
+    </template>
+</template>

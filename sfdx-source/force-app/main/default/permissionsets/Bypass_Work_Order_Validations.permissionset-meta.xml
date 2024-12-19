@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Work_Order_Validation_Rules</name>
+    </customPermissions>
+    <description>LEM-813: Used to bypass validation rules on Work Order object.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Work Order Validations</label>
+</PermissionSet>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notes__c</fullName>
+    <description>LEM-964: Used to hold notes about the work step to help other team members understand additional context.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to hold notes about the work step to help other team members understand additional context</inlineHelpText>
+    <label>Notes</label>
+    <length>20000</length>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

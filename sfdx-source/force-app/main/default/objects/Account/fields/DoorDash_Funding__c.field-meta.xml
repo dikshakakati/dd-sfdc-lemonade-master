@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DoorDash_Funding__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13442: It indicates the amount of funding DoorDash has committed to the Mx.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the amount of funding DoorDash has committed to the Mx</inlineHelpText>
+    <label>DoorDash Funding</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

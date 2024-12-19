@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Store_Deck_Rank</fullName>
+    <active>true</active>
+    <description>LEM-22508: It is used to prevent updating the deck rank on Stores to a value that does not match the deck rank of the parent account.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  TEXT( Segment__c ) = $Label.AccountSegmentSMB,
+  Record_Type_Name__c = $Label.StoreAccountRecordTypeName,
+  ISCHANGED(Deck_Rank__c),
+  TEXT(Deck_Rank__c) &lt;&gt; TEXT(Parent.Deck_Rank__c)
+)</errorConditionFormula>
+    <errorMessage>The Deck Rank on this store must match the Deck Rank of its parent. Please update the Deck Rank before saving.</errorMessage>
+</ValidationRule>

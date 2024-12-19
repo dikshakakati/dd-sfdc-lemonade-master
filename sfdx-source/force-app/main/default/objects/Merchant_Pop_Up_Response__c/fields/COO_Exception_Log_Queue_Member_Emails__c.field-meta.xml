@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COO_Exception_Log_Queue_Member_Emails__c</fullName>
+    <description>LEM-5305: This is used to store the list of emails in a string format for the user in the queue called &apos;Nintex COO Store No Match Exception Log&apos;.</description>
+    <externalId>false</externalId>
+    <label>COO Exception Log - Queue Member Emails</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

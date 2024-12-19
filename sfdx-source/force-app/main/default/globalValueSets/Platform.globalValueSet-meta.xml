@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>DoorDash</fullName>
+        <default>false</default>
+        <label>DoorDash</label>
+    </customValue>
+    <customValue>
+        <fullName>Caviar</fullName>
+        <default>false</default>
+        <label>Caviar</label>
+    </customValue>
+    <customValue>
+        <fullName>Storefront</fullName>
+        <default>false</default>
+        <label>Storefront</label>
+    </customValue>
+    <customValue>
+        <fullName>Drive</fullName>
+        <default>false</default>
+        <label>Drive</label>
+    </customValue>
+    <customValue>
+        <fullName>Voice</fullName>
+        <default>false</default>
+        <label>Voice</label>
+    </customValue>
+    <description>LEM-174 - Identifies if the bundle product is related to the DoorDash, Storefront, or Caviar platform.</description>
+    <masterLabel>Platform</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

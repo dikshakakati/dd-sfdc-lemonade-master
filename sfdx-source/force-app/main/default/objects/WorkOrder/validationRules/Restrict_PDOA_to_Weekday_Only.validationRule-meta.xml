@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_PDOA_to_Weekday_Only</fullName>
+    <active>true</active>
+    <description>LEM-10442 </description>
+    <errorConditionFormula>AND (
+
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  Segment__c != $Label.AccountSegmentSMB,
+  ISCHANGED( Proposed_Date_of_Activation__c),
+  CASE(MOD(Proposed_Date_of_Activation__c  - DATE(1900, 1, 7), 7), 0, 0, 6, 0, 1) = 0
+
+)</errorConditionFormula>
+    <errorDisplayField>Proposed_Date_of_Activation__c</errorDisplayField>
+    <errorMessage>PDOA cannot be on a Saturday or Sunday.</errorMessage>
+</ValidationRule>

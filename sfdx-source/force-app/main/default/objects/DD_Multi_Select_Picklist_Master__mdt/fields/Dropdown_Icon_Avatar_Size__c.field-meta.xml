@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dropdown_Icon_Avatar_Size__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Dropdown Icon/Avatar Size</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>medium</fullName>
+                <default>true</default>
+                <label>medium</label>
+            </value>
+            <value>
+                <fullName>x-small</fullName>
+                <default>false</default>
+                <label>x-small</label>
+            </value>
+            <value>
+                <fullName>small</fullName>
+                <default>false</default>
+                <label>small</label>
+            </value>
+            <value>
+                <fullName>large</fullName>
+                <default>false</default>
+                <label>large</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

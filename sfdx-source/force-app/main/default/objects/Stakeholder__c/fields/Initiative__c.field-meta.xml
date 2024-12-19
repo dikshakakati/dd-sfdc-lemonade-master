@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initiative__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-601, LEM-14667: This field indicates the relationship between Initiative and Stakeholder object. Updated label to Mx Touchpoint.</description>
+    <externalId>false</externalId>
+    <label>Mx Touchpoint</label>
+    <referenceTo>Initiative__c</referenceTo>
+    <relationshipLabel>Stakeholders</relationshipLabel>
+    <relationshipName>Stakeholders</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

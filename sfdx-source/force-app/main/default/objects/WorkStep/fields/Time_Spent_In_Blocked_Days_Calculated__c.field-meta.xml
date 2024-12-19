@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Spent_In_Blocked_Days_Calculated__c</fullName>
+    <description>LEM-964: Number of days the work step remain in Blocked status.
+LEM-1489: Changed the data type from number to formula for real-time calculation.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  TEXT(Status__c) = $Label.Work_Step_Status_Blocked,
+  ((5 * FLOOR((Today() - DATE(2000, 1, 3)) / 7)
+  + MIN(5, MOD(Today() - DATE(2000, 1, 3), 7)))) /*Calculates the number of Working days between the current day and 01/03/2000 - Monday*/
+  - ((5 * FLOOR((DATEVALUE(Last_Blocked_Date_Time__c) - DATE(2000, 1, 3)) / 7)
+  + MIN(5, MOD(DATEVALUE(Last_Blocked_Date_Time__c) - DATE(2000, 1, 3), 7)))) /*Calculates the number of Working days between the Last Blocked Date and 01/03/2000 - Monday*/
+  + Previous_Spent_Days_In_Blocked_Status__c,
+  Previous_Spent_Days_In_Blocked_Status__c
+)</formula>
+    <inlineHelpText>Number of days the work step remain in Blocked status</inlineHelpText>
+    <label>Time Spent In Blocked (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

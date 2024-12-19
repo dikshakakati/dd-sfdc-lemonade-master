@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-1158: This configuration will be used for storesOnWorkPlan LWC to store sequence, section name, object name &amp; list of fields to be displayed in &quot;Onboarding Details&quot; on Work Plan</description>
+    <label>Onboarding Details Configuration</label>
+    <pluralLabel>Onboarding Details Configurations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

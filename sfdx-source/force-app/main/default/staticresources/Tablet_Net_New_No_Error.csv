@@ -1,0 +1,2 @@
+Request Type,Store ID (18 Digit ID),Business ID (18 Digit ID),Order Protocol,Product Bundle,Contact ID (18 Digit ID),Country,Street,City,State/Province,Zip/Postal Code,Shipping Type (standard or expedited)
+Net-New,{StoreId},{BusinessId},Tablet (DoorDash Owns),Tablet Bundle (US),{ContactId},United States,786 Mission Street,San Francisco,California,94112,Standard

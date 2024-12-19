@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Reporting_Asks__c</fullName>
+    <description>LEM-2983: It captures any information obtained as a part of custom reporting.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If applicable, provide custom reporting asks.</inlineHelpText>
+    <label>Custom Reporting Asks</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

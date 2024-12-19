@@ -1,0 +1,51 @@
+<template>
+  <p class="slds-text-title_bold slds-m-bottom_medium">
+    Regulatory Business Details Required
+  </p>
+  <p class="slds-m-bottom_medium bulk-onboarding-modal-font">
+    {instructionalText}
+  </p>
+
+  <!-- Saving Spinner -->
+  <template if:true={isSaving}>
+    <div class="slds-spinner_container">
+      <div
+        class="slds-spinner slds-spinner_brand slds-spinner_medium"
+        role="status"
+      >
+        <span class="slds-assistive-text">Saving</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+    </div>
+  </template>
+
+  <div class="accordion">
+    <template for:each={contacts} for:item="contact">
+      <div key={contact.key} class="accordion-panel">
+        <button
+          class="accordion-header"
+          onclick={toggleSection}
+          data-key={contact.key}
+        >
+          {contact.label}
+        </button>
+        <div class={contact.contentClass}>
+          <c-bulk-onboarding-contact-creation
+            flow-request-id={flowRequestId}
+            contract-id={contractId}
+            vertical-padding="medium"
+            custom-instructions={contact.instructionalText}
+            contact-details={contact}
+            parent-error-message={contact.errorMessage}
+            specified-fields={contact.fields}
+            hide-create-form={hideCreateFormByDefault}
+            parent-page="FinalErrorCheck"
+            oncontactcreated={handleSaveAndContinue}
+            updatesavestatus={handleUpdateSaveStatus}
+          ></c-bulk-onboarding-contact-creation>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

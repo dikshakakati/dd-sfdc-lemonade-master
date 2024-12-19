@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Edit_Access_of_Mx_Portal_Opportunity</name>
+    </customPermissions>
+    <description>LEM-17578: It enables SMB Vendor Post-Sales Manager users to transfer the ownership of the Closed Won Opportunity, that has Source = Mx Portal.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Edit Access of Mx Portal Opportunity</label>
+</PermissionSet>

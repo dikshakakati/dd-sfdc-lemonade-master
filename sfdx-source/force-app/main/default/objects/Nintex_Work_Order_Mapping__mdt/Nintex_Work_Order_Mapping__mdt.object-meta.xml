@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-2348: It stores mapping of Nintex use case to Work Order type and sub-type for parent Work Order creation from Opportunity.</description>
+    <label>Nintex Use Case To Work Order Mapping</label>
+    <pluralLabel>Nintex Use Case To Work Order Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

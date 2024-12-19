@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Routing_Number_Input</fullName>
+    <active>true</active>
+    <description>LEM-2837: This Validation Rule is used to validate that only numerical values are allowed to enter for Routing Number.</description>
+    <errorConditionFormula>AND(
+        !ISBLANK(RoutingNumber__c),
+        NOT(ISNUMBER(RoutingNumber__c))
+        )</errorConditionFormula>
+    <errorDisplayField>RoutingNumber__c</errorDisplayField>
+    <errorMessage>Please enter only numeric values for the Routing Number.</errorMessage>
+</ValidationRule>

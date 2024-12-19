@@ -1,0 +1,21 @@
+<template>
+    <c-dd-modal data-id="modal"
+        title={modalTitle}
+        content={modalContent}
+        type={modalType}
+        size={modalSize}
+        onprimarybuttonclick={handleModalPrimaryButtonClick}
+        onsecondarybuttonclick={handleModalSecondaryButtonClick}
+        onclose={handleModalClose}>
+    </c-dd-modal>
+
+    <c-dd-modal data-id="areYouSureModal"
+        title={areYouSureModalTitle}
+        content={areYouSureModalContent}
+        type="confirm"
+        size="small"
+        onprimarybuttonclick={handleAreYouSureYes}
+        onsecondarybuttonclick={handleAreYouSureNo}
+        onclose={handleAreYouSureModalClose}>
+    </c-dd-modal>
+</template>

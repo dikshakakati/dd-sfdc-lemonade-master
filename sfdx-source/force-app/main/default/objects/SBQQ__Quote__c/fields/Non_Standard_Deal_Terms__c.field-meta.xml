@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Standard_Deal_Terms__c</fullName>
+    <description>LEM-451: Indicate if non-productized deal terms are included on Quote</description>
+    <externalId>false</externalId>
+    <label>Non-Standard Deal Terms</label>
+    <length>10000</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

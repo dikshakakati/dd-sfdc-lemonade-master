@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-6457-Active Rate Provisioning</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Contract lookup to which rate change applies to.</inlineHelpText>
+    <label>Contract_Name</label>
+    <securityClassification>Internal</securityClassification>
+    <referenceTo>Contract</referenceTo>
+    <relationshipLabel>Cases (Contract_Name)</relationshipLabel>
+    <relationshipName>SO_Support_Cases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

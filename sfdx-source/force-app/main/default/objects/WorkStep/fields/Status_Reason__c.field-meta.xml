@@ -1,0 +1,2737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Reason__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1686: Indicates the overall status of the work plan based on status of the work steps.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the overall status of the work plan based on status of the work steps</inlineHelpText>
+    <label>Status Reason</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account and Opportunity is a dupe with the same location</fullName>
+                <default>false</default>
+                <label>Account and Opportunity is a dupe with the same location</label>
+            </value>
+            <value>
+                <fullName>Account Merge</fullName>
+                <default>false</default>
+                <label>Account Merge</label>
+            </value>
+            <value>
+                <fullName>Account Type is Parent</fullName>
+                <default>false</default>
+                <label>Account Type is Parent</label>
+            </value>
+            <value>
+                <fullName>Alcohol addendum signed, but no alcohol on menu</fullName>
+                <default>false</default>
+                <label>Alcohol addendum signed, but no alcohol on menu</label>
+            </value>
+            <value>
+                <fullName>Appears to be Change of Ownership - Provide Original Store ID</fullName>
+                <default>false</default>
+                <label>Appears to be Change of Ownership - Provide Original Store ID</label>
+            </value>
+            <value>
+                <fullName>Appears to be Change of Ownership - Update Type</fullName>
+                <default>false</default>
+                <label>Appears to be Change of Ownership - Update Type</label>
+            </value>
+            <value>
+                <fullName>Banking not listed in portal after provisioning</fullName>
+                <default>false</default>
+                <label>Banking not listed in portal after provisioning</label>
+            </value>
+            <value>
+                <fullName>Blurry or poorly cropped menu source</fullName>
+                <default>false</default>
+                <label>Blurry or poorly cropped menu source</label>
+            </value>
+            <value>
+                <fullName>Bulk Activation Failed</fullName>
+                <default>false</default>
+                <label>Bulk Activation Failed</label>
+            </value>
+            <value>
+                <fullName>Bulk P&amp;P Error</fullName>
+                <default>false</default>
+                <label>Bulk P&amp;P Error</label>
+            </value>
+            <value>
+                <fullName>Bulk tool Failure</fullName>
+                <default>false</default>
+                <label>Bulk tool Failure</label>
+            </value>
+            <value>
+                <fullName>Business reference not found</fullName>
+                <default>false</default>
+                <label>Business reference not found</label>
+            </value>
+            <value>
+                <fullName>Business/Store Already Exists</fullName>
+                <default>false</default>
+                <label>Business/Store Already Exists</label>
+            </value>
+            <value>
+                <fullName>Business ID mismatch in SFDC and Mint</fullName>
+                <default>false</default>
+                <label>Business ID mismatch in SFDC and Mint</label>
+            </value>
+            <value>
+                <fullName>Business Provisioning Failed - Please refer to Provisioning Errors tab</fullName>
+                <default>false</default>
+                <label>Business Provisioning Failed - Please refer to Provisioning Errors tab</label>
+            </value>
+            <value>
+                <fullName>Catalog / Grocery account</fullName>
+                <default>false</default>
+                <label>Catalog / Grocery account</label>
+            </value>
+            <value>
+                <fullName>Closed Lost, Mx not interested in Storefront</fullName>
+                <default>false</default>
+                <label>Closed Lost, Mx not interested in Storefront</label>
+            </value>
+            <value>
+                <fullName>Contract Format (Must be PDF)</fullName>
+                <default>false</default>
+                <label>Contract Format (Must be PDF)</label>
+            </value>
+            <value>
+                <fullName>Contract not Signed</fullName>
+                <default>false</default>
+                <label>Contract not Signed</label>
+            </value>
+            <value>
+                <fullName>Contract Unrelated to Business/Request</fullName>
+                <default>false</default>
+                <label>Contract Unrelated to Business/Request</label>
+            </value>
+            <value>
+                <fullName>COO Same Store Cancelled</fullName>
+                <default>false</default>
+                <label>COO Same Store Cancelled</label>
+            </value>
+            <value>
+                <fullName>Customer Provided More Info</fullName>
+                <default>false</default>
+                <label>Customer Provided More Info</label>
+            </value>
+            <value>
+                <fullName>DM Email associated to another Business</fullName>
+                <default>false</default>
+                <label>DM Email associated to another Business</label>
+            </value>
+            <value>
+                <fullName>Doesn&apos;t see value in own online ordering</fullName>
+                <default>false</default>
+                <label>Doesn&apos;t see value in own online ordering</label>
+            </value>
+            <value>
+                <fullName>Do not know what Storefront is</fullName>
+                <default>false</default>
+                <label>Do not know what Storefront is</label>
+            </value>
+            <value>
+                <fullName>Drive Partner</fullName>
+                <default>false</default>
+                <label>Drive Partner</label>
+            </value>
+            <value>
+                <fullName>Duplicate Account based on Store ID, Phone, or Address</fullName>
+                <default>false</default>
+                <label>Duplicate Account based on Store ID, Phone, or Address</label>
+            </value>
+            <value>
+                <fullName>Duplicate Onboarding Record</fullName>
+                <default>false</default>
+                <label>Duplicate Onboarding Record</label>
+            </value>
+            <value>
+                <fullName>Duplicate POS Integration ID - Already in Use</fullName>
+                <default>false</default>
+                <label>Duplicate POS Integration ID - Already in Use</label>
+            </value>
+            <value>
+                <fullName>Equipment Never Sent</fullName>
+                <default>false</default>
+                <label>Equipment Never Sent</label>
+            </value>
+            <value>
+                <fullName>Error on Intake Form</fullName>
+                <default>false</default>
+                <label>Error on Intake Form</label>
+            </value>
+            <value>
+                <fullName>Escalated to Eng Team</fullName>
+                <default>false</default>
+                <label>Escalated to Eng Team</label>
+            </value>
+            <value>
+                <fullName>Escalated to Tam Team</fullName>
+                <default>false</default>
+                <label>Escalated to Tam Team</label>
+            </value>
+            <value>
+                <fullName>Final inflated prices not present</fullName>
+                <default>false</default>
+                <label>Final inflated prices not present</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>ID&apos;s not on Drive</fullName>
+                <default>false</default>
+                <label>ID&apos;s not on Drive</label>
+            </value>
+            <value>
+                <fullName>Inactive menu</fullName>
+                <default>false</default>
+                <label>Inactive menu</label>
+            </value>
+            <value>
+                <fullName>Inactive Starting Point</fullName>
+                <default>false</default>
+                <label>Inactive Starting Point</label>
+            </value>
+            <value>
+                <fullName>Inactive Store (MINT)</fullName>
+                <default>false</default>
+                <label>Inactive Store (MINT)</label>
+            </value>
+            <value>
+                <fullName>Incomplete Intake Form</fullName>
+                <default>false</default>
+                <label>Incomplete Intake Form</label>
+            </value>
+            <value>
+                <fullName>In contract with competitor</fullName>
+                <default>false</default>
+                <label>In contract with competitor</label>
+            </value>
+            <value>
+                <fullName>Incorrect Legal Business Address</fullName>
+                <default>false</default>
+                <label>Incorrect Legal Business Address</label>
+            </value>
+            <value>
+                <fullName>Incorrect level of access</fullName>
+                <default>false</default>
+                <label>Incorrect level of access</label>
+            </value>
+            <value>
+                <fullName>Incorrect Starting Point</fullName>
+                <default>false</default>
+                <label>Incorrect Starting Point</label>
+            </value>
+            <value>
+                <fullName>Incorrect Submarket</fullName>
+                <default>false</default>
+                <label>Incorrect Submarket</label>
+            </value>
+            <value>
+                <fullName>Internal Menu - Cloning</fullName>
+                <default>false</default>
+                <label>Internal Menu - Cloning</label>
+            </value>
+            <value>
+                <fullName>Invalid Account Number</fullName>
+                <default>false</default>
+                <label>Invalid Account Number</label>
+            </value>
+            <value>
+                <fullName>Invalid Address</fullName>
+                <default>false</default>
+                <label>Invalid Address</label>
+            </value>
+            <value>
+                <fullName>Invalid Contract</fullName>
+                <default>false</default>
+                <label>Invalid Contract</label>
+            </value>
+            <value>
+                <fullName>Invalid EIN</fullName>
+                <default>false</default>
+                <label>Invalid EIN</label>
+            </value>
+            <value>
+                <fullName>Invalid IBAN Number</fullName>
+                <default>false</default>
+                <label>Invalid IBAN Number</label>
+            </value>
+            <value>
+                <fullName>Invalid KYC Document</fullName>
+                <default>false</default>
+                <label>Invalid KYC Document</label>
+            </value>
+            <value>
+                <fullName>Invalid POS Integration ID</fullName>
+                <default>false</default>
+                <label>Invalid POS Integration ID</label>
+            </value>
+            <value>
+                <fullName>Invalid Routing Number</fullName>
+                <default>false</default>
+                <label>Invalid Routing Number</label>
+            </value>
+            <value>
+                <fullName>Invalid Store Phone</fullName>
+                <default>false</default>
+                <label>Invalid Store Phone</label>
+            </value>
+            <value>
+                <fullName>Issue Not Resolved</fullName>
+                <default>false</default>
+                <label>Issue Not Resolved</label>
+            </value>
+            <value>
+                <fullName>Language barrier</fullName>
+                <default>false</default>
+                <label>Language barrier</label>
+            </value>
+            <value>
+                <fullName>Language not supported by vendor</fullName>
+                <default>false</default>
+                <label>Language not supported by vendor</label>
+            </value>
+            <value>
+                <fullName>Liquor store account</fullName>
+                <default>false</default>
+                <label>Liquor store account</label>
+            </value>
+            <value>
+                <fullName>Logo tool failure</fullName>
+                <default>false</default>
+                <label>Logo tool failure</label>
+            </value>
+            <value>
+                <fullName>Manual Store Creation Needed</fullName>
+                <default>false</default>
+                <label>Manual Store Creation Needed</label>
+            </value>
+            <value>
+                <fullName>Mapping Already Exists</fullName>
+                <default>false</default>
+                <label>Mapping Already Exists</label>
+            </value>
+            <value>
+                <fullName>Max item limit exceeded in menu</fullName>
+                <default>false</default>
+                <label>Max item limit exceeded in menu</label>
+            </value>
+            <value>
+                <fullName>Meeting Scheduled</fullName>
+                <default>false</default>
+                <label>Meeting Scheduled</label>
+            </value>
+            <value>
+                <fullName>Menu Compliance failure</fullName>
+                <default>false</default>
+                <label>Menu Compliance failure</label>
+            </value>
+            <value>
+                <fullName>Menu failed to ingest - POS system blocked</fullName>
+                <default>false</default>
+                <label>Menu failed to ingest - POS system blocked</label>
+            </value>
+            <value>
+                <fullName>Menu ingested is blank - POS provider error</fullName>
+                <default>false</default>
+                <label>Menu ingested is blank - POS provider error</label>
+            </value>
+            <value>
+                <fullName>Menu ingested with no hours - POS Provider error</fullName>
+                <default>false</default>
+                <label>Menu ingested with no hours - POS Provider error</label>
+            </value>
+            <value>
+                <fullName>Menu ingested with no pricing - POS provider error</fullName>
+                <default>false</default>
+                <label>Menu ingested with no pricing - POS provider error</label>
+            </value>
+            <value>
+                <fullName>Menu is mostly alcohol (no addendum)</fullName>
+                <default>false</default>
+                <label>Menu is mostly alcohol (no addendum)</label>
+            </value>
+            <value>
+                <fullName>Menu source is for wrong brand</fullName>
+                <default>false</default>
+                <label>Menu source is for wrong brand</label>
+            </value>
+            <value>
+                <fullName>Menu source is mostly non-alcohol restricted items</fullName>
+                <default>false</default>
+                <label>Menu source is mostly non-alcohol restricted items</label>
+            </value>
+            <value>
+                <fullName>Menu upload failed</fullName>
+                <default>false</default>
+                <label>Menu upload failed</label>
+            </value>
+            <value>
+                <fullName>Merchant no-show</fullName>
+                <default>false</default>
+                <label>Merchant no-show</label>
+            </value>
+            <value>
+                <fullName>Merchant not Ready to Integrate POS</fullName>
+                <default>false</default>
+                <label>Merchant not Ready to Integrate POS</label>
+            </value>
+            <value>
+                <fullName>Merchant rescheduled</fullName>
+                <default>false</default>
+                <label>Merchant rescheduled</label>
+            </value>
+            <value>
+                <fullName>MINT Rates do not Match SFDC Opportunity</fullName>
+                <default>false</default>
+                <label>MINT Rates do not Match SFDC Opportunity</label>
+            </value>
+            <value>
+                <fullName>Missing/Invalid Deck Rank</fullName>
+                <default>false</default>
+                <label>Missing/Invalid Deck Rank</label>
+            </value>
+            <value>
+                <fullName>Missing Account Number</fullName>
+                <default>false</default>
+                <label>Missing Account Number</label>
+            </value>
+            <value>
+                <fullName>Missing Business ID</fullName>
+                <default>false</default>
+                <label>Missing Business ID</label>
+            </value>
+            <value>
+                <fullName>Missing Contract (Business Onboarding tab) URL</fullName>
+                <default>false</default>
+                <label>Missing Contract (Business Onboarding tab) URL</label>
+            </value>
+            <value>
+                <fullName>Missing Contract (Partnership(s) tab) URL</fullName>
+                <default>false</default>
+                <label>Missing Contract (Partnership(s) tab) URL</label>
+            </value>
+            <value>
+                <fullName>Missing EIN</fullName>
+                <default>false</default>
+                <label>Missing EIN</label>
+            </value>
+            <value>
+                <fullName>Mismatched Info Between Contract and Intake Form</fullName>
+                <default>false</default>
+                <label>Mismatched Info Between Contract and Intake Form</label>
+            </value>
+            <value>
+                <fullName>Missing Legal Business Address</fullName>
+                <default>false</default>
+                <label>Missing Legal Business Address</label>
+            </value>
+            <value>
+                <fullName>Missing Legal Representative Name and DOB</fullName>
+                <default>false</default>
+                <label>Missing Legal Representative Name and/or DOB</label>
+            </value>
+            <value>
+                <fullName>Missing Menu contents</fullName>
+                <default>false</default>
+                <label>Missing Menu contents</label>
+            </value>
+            <value>
+                <fullName>Missing Menu Link</fullName>
+                <default>false</default>
+                <label>Missing Menu Link</label>
+            </value>
+            <value>
+                <fullName>Missing Opportunity</fullName>
+                <default>false</default>
+                <label>Missing Closed/Won Opportunity</label>
+            </value>
+            <value>
+                <fullName>Missing or incomplete store hours</fullName>
+                <default>false</default>
+                <label>Missing or incomplete store hours</label>
+            </value>
+            <value>
+                <fullName>Missing Parent Account</fullName>
+                <default>false</default>
+                <label>Missing Parent Account</label>
+            </value>
+            <value>
+                <fullName>Missing Partnership Logic Approval from Fin Ops</fullName>
+                <default>false</default>
+                <label>Missing Partnership Logic Approval from Fin Ops</label>
+            </value>
+            <value>
+                <fullName>Missing POS Integration ID</fullName>
+                <default>false</default>
+                <label>Missing POS Integration ID</label>
+            </value>
+            <value>
+                <fullName>Missing POS Integration type</fullName>
+                <default>false</default>
+                <label>Missing POS Integration type</label>
+            </value>
+            <value>
+                <fullName>Missing Routing Number</fullName>
+                <default>false</default>
+                <label>Missing Routing Number</label>
+            </value>
+            <value>
+                <fullName>Missing Starting Point</fullName>
+                <default>false</default>
+                <label>Missing Starting Point</label>
+            </value>
+            <value>
+                <fullName>Missing Store hours</fullName>
+                <default>false</default>
+                <label>Missing Store hours</label>
+            </value>
+            <value>
+                <fullName>Missing Submarket</fullName>
+                <default>false</default>
+                <label>Missing Submarket</label>
+            </value>
+            <value>
+                <fullName>Most of menu has no pricing</fullName>
+                <default>false</default>
+                <label>Most of menu has no pricing</label>
+            </value>
+            <value>
+                <fullName>Multiple Tier Pricing in Menu Source</fullName>
+                <default>false</default>
+                <label>Multiple Tier Pricing in Menu Source</label>
+            </value>
+            <value>
+                <fullName>Mx No Longer Integrating with POS Provider</fullName>
+                <default>false</default>
+                <label>Mx No Longer Integrating with POS Provider</label>
+            </value>
+            <value>
+                <fullName>Mx requested Order Protocol change</fullName>
+                <default>false</default>
+                <label>Mx requested Order Protocol change</label>
+            </value>
+            <value>
+                <fullName>Mx thought that Storefront was a promotion</fullName>
+                <default>false</default>
+                <label>Mx thought that Storefront was a promotion</label>
+            </value>
+            <value>
+                <fullName>Mx Unresponsive</fullName>
+                <default>false</default>
+                <label>Mx Unresponsive</label>
+            </value>
+            <value>
+                <fullName>Needs Coverage Extension - Location is out of Starting Point</fullName>
+                <default>false</default>
+                <label>Needs Coverage Extension - Location is out of Starting Point</label>
+            </value>
+            <value>
+                <fullName>Needs DD help placing link on Google Biz/Social media</fullName>
+                <default>false</default>
+                <label>Needs DD help placing link on Google Biz/Social media</label>
+            </value>
+            <value>
+                <fullName>Needs implementation help</fullName>
+                <default>false</default>
+                <label>Needs implementation help</label>
+            </value>
+            <value>
+                <fullName>New and Curious</fullName>
+                <default>false</default>
+                <label>New and Curious</label>
+            </value>
+            <value>
+                <fullName>New Merchant thought that Storefront is DoorDash.com</fullName>
+                <default>false</default>
+                <label>New Merchant thought that Storefront is DoorDash.com</label>
+            </value>
+            <value>
+                <fullName>New request / question</fullName>
+                <default>false</default>
+                <label>New request / question</label>
+            </value>
+            <value>
+                <fullName>No access to menu source</fullName>
+                <default>false</default>
+                <label>No access to menu source</label>
+            </value>
+            <value>
+                <fullName>No access to website login</fullName>
+                <default>false</default>
+                <label>No access to website login</label>
+            </value>
+            <value>
+                <fullName>No Contact Number</fullName>
+                <default>false</default>
+                <label>No Contact Number</label>
+            </value>
+            <value>
+                <fullName>No Intake Form</fullName>
+                <default>false</default>
+                <label>No Intake Form</label>
+            </value>
+            <value>
+                <fullName>No Intake Form Access</fullName>
+                <default>false</default>
+                <label>No Intake Form Access</label>
+            </value>
+            <value>
+                <fullName>No menu source found</fullName>
+                <default>false</default>
+                <label>No menu source found</label>
+            </value>
+            <value>
+                <fullName>No Response</fullName>
+                <default>false</default>
+                <label>No Response</label>
+            </value>
+            <value>
+                <fullName>Not a priority and didn&apos;t have time to add link</fullName>
+                <default>false</default>
+                <label>Not a priority and didn&apos;t have time to add link</label>
+            </value>
+            <value>
+                <fullName>Not Available for Signature</fullName>
+                <default>false</default>
+                <label>Not Available for Signature</label>
+            </value>
+            <value>
+                <fullName>Not in Coverage - Location is out of Starting Point</fullName>
+                <default>false</default>
+                <label>Not in Coverage - Location is out of Starting Point</label>
+            </value>
+            <value>
+                <fullName>Not Partnered / Missing CW MP Opp</fullName>
+                <default>false</default>
+                <label>Not Partnered / Missing CW MP Opp</label>
+            </value>
+            <value>
+                <fullName>Not Ready</fullName>
+                <default>false</default>
+                <label>Not Ready</label>
+            </value>
+            <value>
+                <fullName>Not the Decision Maker</fullName>
+                <default>false</default>
+                <label>Not the Decision Maker</label>
+            </value>
+            <value>
+                <fullName>No value in changing from competitor</fullName>
+                <default>false</default>
+                <label>No value in changing from competitor</label>
+            </value>
+            <value>
+                <fullName>No website access</fullName>
+                <default>false</default>
+                <label>No website access</label>
+            </value>
+            <value>
+                <fullName>OO requesting Opportunity update</fullName>
+                <default>false</default>
+                <label>OO requesting Opportunity update</label>
+            </value>
+            <value>
+                <fullName>Opportunity is not Closed Won</fullName>
+                <default>false</default>
+                <label>Opportunity is not Closed Won</label>
+            </value>
+            <value>
+                <fullName>Opportunity Missing Primary Quote</fullName>
+                <default>false</default>
+                <label>Opportunity Missing Primary Quote</label>
+            </value>
+            <value>
+                <fullName>Opportunity missing tier level</fullName>
+                <default>false</default>
+                <label>Opportunity missing tier level</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Outdated Intake Form</fullName>
+                <default>false</default>
+                <label>Outdated Intake Form</label>
+            </value>
+            <value>
+                <fullName>Partnerships already added</fullName>
+                <default>false</default>
+                <label>Partnerships Already Exists</label>
+            </value>
+            <value>
+                <fullName>POS Ingestion Failure</fullName>
+                <default>false</default>
+                <label>POS Ingestion Failure</label>
+            </value>
+            <value>
+                <fullName>POS Integration Type not built in SFDC</fullName>
+                <default>false</default>
+                <label>POS Integration Type not built in SFDC</label>
+            </value>
+            <value>
+                <fullName>POS Mx Requests Additional Testing</fullName>
+                <default>false</default>
+                <label>POS Mx Requests Additional Testing</label>
+            </value>
+            <value>
+                <fullName>POS Team Troubleshooting</fullName>
+                <default>false</default>
+                <label>POS Team Troubleshooting</label>
+            </value>
+            <value>
+                <fullName>POS Testing Error</fullName>
+                <default>false</default>
+                <label>POS Testing Error</label>
+            </value>
+            <value>
+                <fullName>Post-sign up steps unclear</fullName>
+                <default>false</default>
+                <label>Post-sign up steps unclear</label>
+            </value>
+            <value>
+                <fullName>Pricing Tier Incorrect</fullName>
+                <default>false</default>
+                <label>Pricing Tier Incorrect</label>
+            </value>
+            <value>
+                <fullName>Pricing Tier Missing</fullName>
+                <default>false</default>
+                <label>Pricing Tier Missing</label>
+            </value>
+            <value>
+                <fullName>Provider is in Pilot Stage</fullName>
+                <default>false</default>
+                <label>Provider is in Pilot Stage</label>
+            </value>
+            <value>
+                <fullName>Px Unresponsive</fullName>
+                <default>false</default>
+                <label>Px Unresponsive</label>
+            </value>
+            <value>
+                <fullName>Qualifying questions not answered</fullName>
+                <default>false</default>
+                <label>Qualifying questions not answered</label>
+            </value>
+            <value>
+                <fullName>Returned to Sender</fullName>
+                <default>false</default>
+                <label>Returned to Sender</label>
+            </value>
+            <value>
+                <fullName>Service Fee Incorrect</fullName>
+                <default>false</default>
+                <label>Service Fee Incorrect</label>
+            </value>
+            <value>
+                <fullName>Service Fee Missing</fullName>
+                <default>false</default>
+                <label>Service Fee Missing</label>
+            </value>
+            <value>
+                <fullName>Shipping Delays - DoorDash</fullName>
+                <default>false</default>
+                <label>Shipping Delays - DoorDash</label>
+            </value>
+            <value>
+                <fullName>Shipping Delays - Provider</fullName>
+                <default>false</default>
+                <label>Shipping Delays - Provider</label>
+            </value>
+            <value>
+                <fullName>Square OAuth not completed</fullName>
+                <default>false</default>
+                <label>Square OAuth not completed</label>
+            </value>
+            <value>
+                <fullName>SSMO Franchise</fullName>
+                <default>false</default>
+                <label>SSMO Franchise</label>
+            </value>
+            <value>
+                <fullName>Store Info Request</fullName>
+                <default>false</default>
+                <label>Store Info Request</label>
+            </value>
+            <value>
+                <fullName>Store name not formatted correctly</fullName>
+                <default>false</default>
+                <label>Store name not formatted correctly</label>
+            </value>
+            <value>
+                <fullName>Store Parent Account and Work Order do not match</fullName>
+                <default>false</default>
+                <label>Store Parent Account and Work Order do not match</label>
+            </value>
+            <value>
+                <fullName>Store Provisioning Failed - Please refer to Provisioning Errors tab</fullName>
+                <default>false</default>
+                <label>Store Provisioning Failed - Please refer to Provisioning Errors tab</label>
+            </value>
+            <value>
+                <fullName>Stripe KYC Verification Failed</fullName>
+                <default>false</default>
+                <label>Stripe KYC Verification Failed</label>
+            </value>
+            <value>
+                <fullName>Stripe KYC Verification Pending</fullName>
+                <default>false</default>
+                <label>Stripe KYC Verification Pending</label>
+            </value>
+            <value>
+                <fullName>Stripe KYC Verification Successful</fullName>
+                <default>false</default>
+                <label>Stripe KYC Verification Successful</label>
+            </value>
+            <value>
+                <fullName>Stripe verification error</fullName>
+                <default>false</default>
+                <label>Stripe verification error</label>
+            </value>
+            <value>
+                <fullName>Stripe verification needed</fullName>
+                <default>false</default>
+                <label>Stripe verification needed</label>
+            </value>
+            <value>
+                <fullName>Subdomain Tool Error</fullName>
+                <default>false</default>
+                <label>Subdomain Tool Error</label>
+            </value>
+            <value>
+                <fullName>Submarket is not live and Launch Date is TBD</fullName>
+                <default>false</default>
+                <label>Submarket is not live and Launch Date is TBD</label>
+            </value>
+            <value>
+                <fullName>Submitted implementation help and waiting</fullName>
+                <default>false</default>
+                <label>Submitted implementation help and waiting</label>
+            </value>
+            <value>
+                <fullName>Tablet/Merchant Profile Missing in Nimda</fullName>
+                <default>false</default>
+                <label>Tablet/Merchant Profile Missing in Nimda</label>
+            </value>
+            <value>
+                <fullName>Tablet Case Creation Failed</fullName>
+                <default>false</default>
+                <label>Tablet Case Creation Failed</label>
+            </value>
+            <value>
+                <fullName>Tablet Case Rejected</fullName>
+                <default>false</default>
+                <label>Tablet Case Rejected</label>
+            </value>
+            <value>
+                <fullName>Tablet Case Update Failed</fullName>
+                <default>false</default>
+                <label>Tablet Case Update Failed</label>
+            </value>
+            <value>
+                <fullName>Tablet Profile missing</fullName>
+                <default>false</default>
+                <label>Tablet Profile missing</label>
+            </value>
+            <value>
+                <fullName>Test Onboarding Record</fullName>
+                <default>false</default>
+                <label>Test Onboarding Record</label>
+            </value>
+            <value>
+                <fullName>Timelock or geo-lock</fullName>
+                <default>false</default>
+                <label>Timelock or geo-lock</label>
+            </value>
+            <value>
+                <fullName>Unable to Access Contract</fullName>
+                <default>false</default>
+                <label>Unable to Access Contract</label>
+            </value>
+            <value>
+                <fullName>Unable to Locate Terms in Contract</fullName>
+                <default>false</default>
+                <label>Unable to Locate Terms in Contract</label>
+            </value>
+            <value>
+                <fullName>Unable to QA: Menu source and completed menu are for different brands</fullName>
+                <default>false</default>
+                <label>Unable to QA: Menu source and completed menu are for different brands</label>
+            </value>
+            <value>
+                <fullName>Unable to QA: Missing completed menu</fullName>
+                <default>false</default>
+                <label>Unable to QA: Missing completed menu</label>
+            </value>
+            <value>
+                <fullName>Unable to QA: No access to menu source</fullName>
+                <default>false</default>
+                <label>Unable to QA: No access to menu source</label>
+            </value>
+            <value>
+                <fullName>Unidentified banking error - manual portal entry needed</fullName>
+                <default>false</default>
+                <label>Unidentified banking error - manual portal entry needed</label>
+            </value>
+            <value>
+                <fullName>Unidentified Provisioning Error</fullName>
+                <default>false</default>
+                <label>Unidentified Provisioning Error</label>
+            </value>
+            <value>
+                <fullName>Unidentified S2N error</fullName>
+                <default>false</default>
+                <label>Unidentified S2N error</label>
+            </value>
+            <value>
+                <fullName>Unsupported POS Provider</fullName>
+                <default>false</default>
+                <label>Unsupported POS Provider</label>
+            </value>
+            <value>
+                <fullName>VB does not pass QC</fullName>
+                <default>false</default>
+                <label>VB does not pass QC</label>
+            </value>
+            <value>
+                <fullName>Waiting on web designer to implement Storefront link</fullName>
+                <default>false</default>
+                <label>Waiting on web designer to implement Storefront link</label>
+            </value>
+            <value>
+                <fullName>Was just checking it out</fullName>
+                <default>false</default>
+                <label>Was just checking it out</label>
+            </value>
+            <value>
+                <fullName>Website controlled by Corporate</fullName>
+                <default>false</default>
+                <label>Website controlled by Corporate</label>
+            </value>
+            <value>
+                <fullName>Website tied to online ordering competitor</fullName>
+                <default>false</default>
+                <label>Website tied to online ordering competitor</label>
+            </value>
+            <value>
+                <fullName>Work Order missing Proposed Date of Activation</fullName>
+                <default>false</default>
+                <label>Work Order missing Proposed Date of Activation</label>
+            </value>
+            <value>
+                <fullName>Work Order missing Proposed Date of Menu</fullName>
+                <default>false</default>
+                <label>Work Order missing Proposed Date of Menu</label>
+            </value>
+            <value>
+                <fullName>Invalid payment account details</fullName>
+                <default>false</default>
+                <label>Invalid payment account details</label>
+            </value>
+            <value>
+                <fullName>Missing Billing Contact Name</fullName>
+                <default>false</default>
+                <label>Missing Billing Contact Name</label>
+            </value>
+            <value>
+                <fullName>Invalid POS details</fullName>
+                <default>false</default>
+                <label>Invalid POS details</label>
+            </value>
+            <value>
+                <fullName>Missing Decision Maker contact info on Store</fullName>
+                <default>false</default>
+                <label>Missing Decision Maker contact info on Store</label>
+            </value>
+            <value>
+                <fullName>Services set incorrectly</fullName>
+                <default>false</default>
+                <label>Services set incorrectly</label>
+            </value>
+            <value>
+                <fullName>System error</fullName>
+                <default>false</default>
+                <label>System error</label>
+            </value>
+            <value>
+                <fullName>Menu Rework</fullName>
+                <default>false</default>
+                <label>Menu Rework</label>
+            </value>
+            <value>
+                <fullName>Photo Linking</fullName>
+                <default>false</default>
+                <label>Photo Linking</label>
+            </value>
+            <value>
+                <fullName>Error on Mx Order</fullName>
+                <default>false</default>
+                <label>Error on Mx Order</label>
+            </value>
+            <value>
+                <fullName>No response/ Mx did not pick up</fullName>
+                <default>false</default>
+                <label>No response/ Mx did not pick up</label>
+            </value>
+            <value>
+                <fullName>Invalid / Incorrect store phone</fullName>
+                <default>false</default>
+                <label>Invalid / Incorrect store phone</label>
+            </value>
+            <value>
+                <fullName>Call sent to voicemail</fullName>
+                <default>false</default>
+                <label>Call sent to voicemail</label>
+            </value>
+            <value>
+                <fullName>Mx is ready to go live</fullName>
+                <default>false</default>
+                <label>Mx is ready to go live</label>
+            </value>
+            <value>
+                <fullName>Mx is not ready/ Mx refused</fullName>
+                <default>false</default>
+                <label>Mx is not ready/ Mx refused</label>
+            </value>
+            <value>
+                <fullName>Menu issues</fullName>
+                <default>false</default>
+                <label>Menu issues</label>
+            </value>
+            <value>
+                <fullName>Mx changing OP</fullName>
+                <default>false</default>
+                <label>Mx changing OP</label>
+            </value>
+            <value>
+                <fullName>Tablet Tech issues delaying Mx</fullName>
+                <default>false</default>
+                <label>Tablet Tech issues delaying Mx</label>
+            </value>
+            <value>
+                <fullName>Menu Setup in Progress</fullName>
+                <default>false</default>
+                <label>Menu Setup in Progress</label>
+            </value>
+            <value>
+                <fullName>SSME to Doordash</fullName>
+                <default>false</default>
+                <label>SSME to Doordash</label>
+            </value>
+            <value>
+                <fullName>Menu Source PDF in Opp needs to be added</fullName>
+                <default>false</default>
+                <label>Menu Source PDF in Opp needs to be added</label>
+            </value>
+            <value>
+                <fullName>Waitlist POS Provider</fullName>
+                <default>false</default>
+                <label>Waitlist POS Provider</label>
+            </value>
+            <value>
+                <fullName>Mx Unresponsive for POS Pull Request</fullName>
+                <default>false</default>
+                <label>Mx Unresponsive for POS Pull Request</label>
+            </value>
+            <value>
+                <fullName>Toast Onboarding Not Completed</fullName>
+                <default>false</default>
+                <label>Toast Onboarding Not Completed</label>
+            </value>
+            <value>
+                <fullName>Mx has not provided header</fullName>
+                <default>false</default>
+                <label>Mx has not provided header</label>
+            </value>
+            <value>
+                <fullName>PIFM Lead</fullName>
+                <default>false</default>
+                <label>PIFM Lead</label>
+            </value>
+            <value>
+                <fullName>Provisioning Failed</fullName>
+                <default>false</default>
+                <label>Provisioning Failed</label>
+            </value>
+            <value>
+                <fullName>Touchpoints in Progress</fullName>
+                <default>false</default>
+                <label>Touchpoints in Progress</label>
+            </value>
+            <value>
+                <fullName>Mx no-show Attempting to Reconnect</fullName>
+                <default>false</default>
+                <label>Mx no-show Attempting to Reconnect</label>
+            </value>
+            <value>
+                <fullName>Unable to reach DM</fullName>
+                <default>false</default>
+                <label>Unable to reach DM</label>
+            </value>
+            <value>
+                <fullName>Mx Declined Meeting</fullName>
+                <default>false</default>
+                <label>Mx Declined Meeting</label>
+            </value>
+            <value>
+                <fullName>Meeting Rescheduled</fullName>
+                <default>false</default>
+                <label>Meeting Rescheduled</label>
+            </value>
+            <value>
+                <fullName>Pending Collaborator Access</fullName>
+                <default>false</default>
+                <label>Pending Collaborator Access</label>
+            </value>
+            <value>
+                <fullName>Storefront Experience Update Needed</fullName>
+                <default>false</default>
+                <label>Storefront Experience Update Needed</label>
+            </value>
+            <value>
+                <fullName>Pending SF Logo Update</fullName>
+                <default>false</default>
+                <label>Pending SF Logo Update</label>
+            </value>
+            <value>
+                <fullName>Flagged for Fraud</fullName>
+                <default>false</default>
+                <label>Flagged for Fraud</label>
+            </value>
+            <value>
+                <fullName>Pending SF Customizations</fullName>
+                <default>false</default>
+                <label>Pending SF Customizations</label>
+            </value>
+            <value>
+                <fullName>MP Not Active</fullName>
+                <default>false</default>
+                <label>MP Not Active</label>
+            </value>
+            <value>
+                <fullName>Website Manager Delaying Implementation</fullName>
+                <default>false</default>
+                <label>Website Manager Delaying Implementation</label>
+            </value>
+            <value>
+                <fullName>Social Media Only</fullName>
+                <default>false</default>
+                <label>Social Media Only</label>
+            </value>
+            <value>
+                <fullName>GFO Only</fullName>
+                <default>false</default>
+                <label>GFO Only</label>
+            </value>
+            <value>
+                <fullName>Mx not sold/educated on SF</fullName>
+                <default>false</default>
+                <label>Mx not sold/educated on SF</label>
+            </value>
+            <value>
+                <fullName>Website Manager - Cannot Reach/Impeding Implementation</fullName>
+                <default>false</default>
+                <label>Website Manager - Cannot Reach/Impeding Implementation</label>
+            </value>
+            <value>
+                <fullName>Mx Not Interested in SF</fullName>
+                <default>false</default>
+                <label>Mx Not Interested in SF</label>
+            </value>
+            <value>
+                <fullName>Waiting for Mx to Implement</fullName>
+                <default>false</default>
+                <label>Waiting for Mx to Implement</label>
+            </value>
+            <value>
+                <fullName>Waiting for Webmaster to Implement</fullName>
+                <default>false</default>
+                <label>Waiting for Webmaster to Implement</label>
+            </value>
+            <value>
+                <fullName>Waiting on MxS to Implement</fullName>
+                <default>false</default>
+                <label>Waiting on MxS to Implement</label>
+            </value>
+            <value>
+                <fullName>MP Issue blocking SF Implementation</fullName>
+                <default>false</default>
+                <label>MP Issue blocking SF Implementation</label>
+            </value>
+            <value>
+                <fullName>Mx does not have access to GMB</fullName>
+                <default>false</default>
+                <label>Mx does not have access to GMB</label>
+            </value>
+            <value>
+                <fullName>Mx temporarily unable to access Website</fullName>
+                <default>false</default>
+                <label>Mx temporarily unable to access Website</label>
+            </value>
+            <value>
+                <fullName>DM or Web Master temporarily not available</fullName>
+                <default>false</default>
+                <label>DM or Web Master temporarily not available</label>
+            </value>
+            <value>
+                <fullName>SF missing locations</fullName>
+                <default>false</default>
+                <label>SF missing locations</label>
+            </value>
+            <value>
+                <fullName>Contact doesn&apos;t have access to website (not DM)</fullName>
+                <default>false</default>
+                <label>Contact doesn&apos;t have access to website (not DM)</label>
+            </value>
+            <value>
+                <fullName>SF not a priority and didn&apos;t have time</fullName>
+                <default>false</default>
+                <label>SF not a priority and didn&apos;t have time</label>
+            </value>
+            <value>
+                <fullName>GMB/Social media only</fullName>
+                <default>false</default>
+                <label>GMB/Social media only</label>
+            </value>
+            <value>
+                <fullName>Mx does not have online channels</fullName>
+                <default>false</default>
+                <label>Mx does not have online channels</label>
+            </value>
+            <value>
+                <fullName>No value from changing from competitor</fullName>
+                <default>false</default>
+                <label>No value from changing from competitor</label>
+            </value>
+            <value>
+                <fullName>Website owned by competitor</fullName>
+                <default>false</default>
+                <label>Website owned by competitor</label>
+            </value>
+            <value>
+                <fullName>Mx in contract with competitor</fullName>
+                <default>false</default>
+                <label>Mx in contract with competitor</label>
+            </value>
+            <value>
+                <fullName>No Website and declined Wix site</fullName>
+                <default>false</default>
+                <label>No Website and declined Wix site</label>
+            </value>
+            <value>
+                <fullName>No access to website login and cannot reach Webmaster</fullName>
+                <default>false</default>
+                <label>No access to website login and cannot reach Webmaster</label>
+            </value>
+            <value>
+                <fullName>Optimized</fullName>
+                <default>false</default>
+                <label>Optimized</label>
+            </value>
+            <value>
+                <fullName>Unoptimized</fullName>
+                <default>false</default>
+                <label>Unoptimized</label>
+            </value>
+            <value>
+                <fullName>Smart Button - Unoptimized</fullName>
+                <default>false</default>
+                <label>Smart Button - Unoptimized</label>
+            </value>
+            <value>
+                <fullName>Smart Button - Optimized</fullName>
+                <default>false</default>
+                <label>Smart Button - Optimized</label>
+            </value>
+            <value>
+                <fullName>Store can&apos;t be activated - Incomplete signup steps</fullName>
+                <default>false</default>
+                <label>Store can&apos;t be activated - Incomplete signup steps</label>
+            </value>
+            <value>
+                <fullName>Pickup Only</fullName>
+                <default>false</default>
+                <label>Pickup Only</label>
+            </value>
+            <value>
+                <fullName>Delivery Only</fullName>
+                <default>false</default>
+                <label>Delivery Only</label>
+            </value>
+            <value>
+                <fullName>Pickup and Delivery</fullName>
+                <default>false</default>
+                <label>Pickup and Delivery</label>
+            </value>
+            <value>
+                <fullName>Webhook Delay</fullName>
+                <default>false</default>
+                <label>Webhook Delay</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Contract Format (Must be PDF)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Contract not Signed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Contract Unrelated to Business/Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Final inflated prices not present</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Language not supported by vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Menu source is for wrong brand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Menu source is mostly non-alcohol restricted items</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Merchant no-show</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <valueName>Merchant rescheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Missing Contract (Business Onboarding tab) URL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Missing Contract (Partnership(s) tab) URL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Mismatched Info Between Contract and Intake Form</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Missing or incomplete store hours</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Missing Partnership Logic Approval from Fin Ops</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Most of menu has no pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>No access to menu source</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>No menu source found</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Outdated Intake Form</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Unable to Access Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Unable to Locate Terms in Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <valueName>Multiple Tier Pricing in Menu Source</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Alcohol addendum signed, but no alcohol on menu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Blurry or poorly cropped menu source</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Catalog / Grocery account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Internal Menu - Cloning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Liquor store account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Max item limit exceeded in menu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Menu is mostly alcohol (no addendum)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Menu upload failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Mx Unresponsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Px Unresponsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Square OAuth not completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Timelock or geo-lock</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Unable to QA: Menu source and completed menu are for different brands</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Unable to QA: Missing completed menu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Unable to QA: No access to menu source</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Menu Rework</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Photo Linking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Menu Setup in Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>SSME to Doordash</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <valueName>Menu Source PDF in Opp needs to be added</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Bulk Activation Failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Duplicate POS Integration ID - Already in Use</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Escalated to Eng Team</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Escalated to Tam Team</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <valueName>Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Invalid POS Integration ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Menu failed to ingest - POS system blocked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Menu ingested is blank - POS provider error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Menu ingested with no hours - POS Provider error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Menu ingested with no pricing - POS provider error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Missing POS Integration ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Missing POS Integration type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <valueName>POS Ingestion Failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>POS Integration Type not built in SFDC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>POS Mx Requests Additional Testing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>POS Team Troubleshooting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>POS Testing Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <valueName>Provider is in Pilot Stage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <valueName>Unsupported POS Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <valueName>Webhook Delay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Appears to be Change of Ownership - Provide Original Store ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Business reference not found</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Invalid Address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Invalid Store Phone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Manual Store Creation Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Mx requested Order Protocol change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Needs Coverage Extension - Location is out of Starting Point</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Not in Coverage - Location is out of Starting Point</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Store Provisioning Failed - Please refer to Provisioning Errors tab</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Submarket is not live and Launch Date is TBD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Unidentified Provisioning Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>VB does not pass QC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Invalid payment account details</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Missing Billing Contact Name</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Invalid POS details</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Missing Decision Maker contact info on Store</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <valueName>Services set incorrectly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <valueName>System error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Appears to be Change of Ownership - Update Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Bulk P&amp;P Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Bulk tool Failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Business ID mismatch in SFDC and Mint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Closed Lost, Mx not interested in Storefront</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Inactive Store (MINT)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <valueName>Invalid Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Logo tool failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Missing Business ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <valueName>Opportunity is not Closed Won</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Opportunity Missing Primary Quote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Subdomain Tool Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Tablet Profile missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Unidentified S2N error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <valueName>Provisioning Failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <valueName>Customer Provided More Info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <valueName>Issue Not Resolved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <valueName>New request / question</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <valueName>COO Same Store Cancelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Duplicate Onboarding Record</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <valueName>Merchant not Ready to Integrate POS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <valueName>Mx No Longer Integrating with POS Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <valueName>Missing Menu contents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <valueName>Missing Store hours</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <valueName>Waitlist POS Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <valueName>Mx Unresponsive for POS Pull Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <valueName>Toast Onboarding Not Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Business/Store Already Exists</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Business Provisioning Failed - Please refer to Provisioning Errors tab</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Error on Intake Form</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>ID&apos;s not on Drive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Incomplete Intake Form</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Mapping Already Exists</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Missing Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>No Intake Form</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>No Intake Form Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Partnerships already added</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <valueName>Store Info Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <valueName>Menu Compliance failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <valueName>Store can&apos;t be activated - Incomplete signup steps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>DM Email associated to another Business</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>Mx thought that Storefront was a promotion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>Needs DD help placing link on Google Biz/Social media</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>Needs implementation help</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>New and Curious</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>New Merchant thought that Storefront is DoorDash.com</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>No access to website login</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>Not a priority and didn&apos;t have time to add link</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>Not the Decision Maker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>No value in changing from competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>No website access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>Post-sign up steps unclear</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <valueName>Qualifying questions not answered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Meeting Scheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>PIFM Lead</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Touchpoints in Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Mx no-show Attempting to Reconnect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Unable to reach DM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Mx Declined Meeting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Meeting Rescheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Website controlled by Corporate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Pending Collaborator Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Storefront Experience Update Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Pending SF Logo Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Flagged for Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Pending SF Customizations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>MP Not Active</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Website Manager Delaying Implementation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Social Media Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>GFO Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Mx not sold/educated on SF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Website Manager - Cannot Reach/Impeding Implementation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Mx Not Interested in SF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Waiting for Mx to Implement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Waiting for Webmaster to Implement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Waiting on MxS to Implement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>MP Issue blocking SF Implementation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Mx does not have access to GMB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Mx temporarily unable to access Website</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>DM or Web Master temporarily not available</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>SF missing locations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Contact doesn&apos;t have access to website (not DM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>SF not a priority and didn&apos;t have time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>GMB/Social media only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Mx does not have online channels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>No value from changing from competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Website owned by competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Mx in contract with competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>No Website and declined Wix site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>No access to website login and cannot reach Webmaster</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Pickup Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Delivery Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <valueName>Pickup and Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <valueName>No response/ Mx did not pick up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <valueName>Invalid / Incorrect store phone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <valueName>Call sent to voicemail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <valueName>Mx is ready to go live</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <valueName>Mx is not ready/ Mx refused</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <valueName>Menu issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <valueName>Mx changing OP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <valueName>Tablet Tech issues delaying Mx</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <valueName>Optimized</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <valueName>Unoptimized</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <valueName>Smart Button - Unoptimized</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <valueName>Smart Button - Optimized</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vendor Photoshoot</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <valueName>Error on Mx Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Account and Opportunity is a dupe with the same location</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Account Merge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Account Type is Parent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Doesn&apos;t see value in own online ordering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Do not know what Storefront is</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Drive Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Duplicate Account based on Store ID, Phone, or Address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Inactive menu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>In contract with competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Incorrect level of access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Language barrier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Missing/Invalid Deck Rank</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Missing Parent Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Not Partnered / Missing CW MP Opp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>OO requesting Opportunity update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Opportunity missing tier level</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>SSMO Franchise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Store name not formatted correctly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Store Parent Account and Work Order do not match</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Test Onboarding Record</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Work Order missing Proposed Date of Activation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <valueName>Work Order missing Proposed Date of Menu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <valueName>Not Ready</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <valueName>Mx has not provided header</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Inactive Starting Point</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Incorrect Starting Point</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Incorrect Submarket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>MINT Rates do not Match SFDC Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Missing Menu Link</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Missing Starting Point</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Missing Submarket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Pricing Tier Incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Pricing Tier Missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Service Fee Incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Service Fee Missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <valueName>Tablet/Merchant Profile Missing in Nimda</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>Equipment Never Sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>No Contact Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>No Response</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>Not Available for Signature</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>Returned to Sender</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>Shipping Delays - DoorDash</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>Shipping Delays - Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>Tablet Case Creation Failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>Tablet Case Rejected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <valueName>Tablet Case Update Failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Banking not listed in portal after provisioning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Incorrect Legal Business Address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Invalid Account Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Invalid EIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Invalid IBAN Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Invalid KYC Document</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Invalid Routing Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Missing Account Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Missing EIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Missing Legal Business Address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Missing Legal Representative Name and DOB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Missing Routing Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Stripe KYC Verification Failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Stripe KYC Verification Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Stripe KYC Verification Successful</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Stripe verification error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Stripe verification needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <valueName>Unidentified banking error - manual portal entry needed</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

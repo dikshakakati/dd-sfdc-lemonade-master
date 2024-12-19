@@ -1,0 +1,48 @@
+<!--
+@date 27/05/2022
+@description Aura component used to display toast message on save record in flow
+-->
+<aura:component
+  implements="lightning:availableForFlowActions,force:hasRecordId"
+  access="global"
+>
+  <lightning:messageChannel type="Publish_Event__c" aura:id="publishEvent"></lightning:messageChannel>
+  <aura:attribute
+    name="message"
+    type="String"
+    description="Message to be displayed on UI"
+  />
+  <aura:attribute
+    name="mode"
+    type="String"
+    description="Mode of the message to be displayed on UI"
+  />
+  <aura:attribute
+    name="recordId"
+    type="String"
+    description="Id of the currect record"
+  />
+  <aura:attribute
+    name="redirect"
+    type="String"
+    description="Page to redirect after the end of flow"
+  />
+  <aura:attribute
+    name="title"
+    type="String"
+    description="Title of the message to be displayed on UI"
+  />
+  <aura:attribute
+    name="type"
+    type="String"
+    description="Type of the message to be displayed on UI"
+  />
+  <aura:attribute
+    name="enableRefreshView"
+    type="Boolean"
+    default="false"
+    description="To enable refresh view"
+  />
+  <aura:dependency resource="markup://force:navigateToURL" type="EVENT" />
+  <lightning:navigationItemAPI aura:id="navigationItem" />
+</aura:component>

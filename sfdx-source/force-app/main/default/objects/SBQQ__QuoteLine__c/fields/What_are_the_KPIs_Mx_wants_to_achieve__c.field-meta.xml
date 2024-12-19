@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_are_the_KPIs_Mx_wants_to_achieve__c</fullName>
+    <description>LEM-13256 - DPEI Quote Line Attributes</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What are the top metrics that are most important for the Mx when launching this item as a DashPass exclusive: e.g. New customer acq, order frequency, etc. Please highlight what is most important</inlineHelpText>
+    <label>What are the KPIs Mx wants to achieve?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matched_By__c</fullName>
+    <description>LEM-4338: It indicates the criteria for associating child Work Order with a parent Work Order.</description>
+    <externalId>false</externalId>
+    <label>Matched By</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contract</fullName>
+                <default>false</default>
+                <label>Contract</label>
+            </value>
+            <value>
+                <fullName>PDOA</fullName>
+                <default>false</default>
+                <label>PDOA</label>
+            </value>
+            <value>
+                <fullName>Nintex Id</fullName>
+                <default>false</default>
+                <label>Nintex Id</label>
+            </value>
+            <value>
+                <fullName>Type</fullName>
+                <default>false</default>
+                <label>Type</label>
+            </value>
+            <value>
+                <fullName>Onboarding Link</fullName>
+                <default>false</default>
+                <label>Onboarding Link</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

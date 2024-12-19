@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nintex_Mapping__c</fullName>
+    <description>LEM-2796: It indicates the related Nintex Use Case To Work Order Mapping for current PDOA mapping.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Nintex Mapping</label>
+    <referenceTo>Nintex_Work_Order_Mapping__mdt</referenceTo>
+    <relationshipLabel>Opportunity Status To PDOA Mappings</relationshipLabel>
+    <relationshipName>PDOAMappings</relationshipName>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

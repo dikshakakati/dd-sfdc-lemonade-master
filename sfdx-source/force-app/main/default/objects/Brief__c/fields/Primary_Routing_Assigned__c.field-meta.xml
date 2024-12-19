@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Routing_Assigned__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-3676: Flag for primary routing assignment. If this flag is true then Q-Assign won&apos;t be assigned WorkPlan to Primary Queue.</description>
+    <externalId>false</externalId>
+    <label>Primary Routing Assigned</label>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

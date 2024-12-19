@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coverage__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1157: This field describes whether the store is in coverage or not.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates whether the store is in coverage or not. Store not in coverage will not be onboarded to DoorDash platform</inlineHelpText>
+    <label>Coverage</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In Coverage</fullName>
+                <default>false</default>
+                <label>In Coverage</label>
+            </value>
+            <value>
+                <fullName>Not in Coverage</fullName>
+                <default>false</default>
+                <label>Not in Coverage</label>
+            </value>
+            <value>
+                <fullName>Coverage check failed</fullName>
+                <default>false</default>
+                <label>Coverage check failed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

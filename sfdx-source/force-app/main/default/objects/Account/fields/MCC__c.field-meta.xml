@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MCC__c</fullName>
+    <description>LEM-14343: (Stripe KYC) this field maps verticals to Merchant Category Codes. The codes in this field are supported by and based on Stripe&apos;s documentation, which can be found here: https://docs.stripe.com/issuing/categories</description>
+    <externalId>false</externalId>
+    <formula>TEXT(5812)</formula>
+    <label>MCC</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

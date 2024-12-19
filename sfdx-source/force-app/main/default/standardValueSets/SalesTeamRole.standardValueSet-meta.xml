@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>Account Executive</fullName>
+        <default>false</default>
+        <label>Account Executive</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Associate Partner Manager</fullName>
+        <default>false</default>
+        <label>Associate Partner Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Brand Licensing Rep</fullName>
+        <default>false</default>
+        <label>Brand Licensing Rep</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Business Dev. Rep</fullName>
+        <default>false</default>
+        <label>Business Dev. Rep</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Commercial Operations</fullName>
+        <default>false</default>
+        <label>Commercial Operations</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Drive Specialist</fullName>
+        <default>false</default>
+        <label>Drive Specialist</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Franchise Representative</fullName>
+        <default>false</default>
+        <label>Franchise Representative</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Marketplace AD Rep</fullName>
+        <default>false</default>
+        <label>Marketplace AD Rep</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Merchant Experience Partner</fullName>
+        <default>false</default>
+        <label>Merchant Experience Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New Business Representative</fullName>
+        <default>false</default>
+        <label>New Business Representative</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partner Manager</fullName>
+        <default>false</default>
+        <label>Partner Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Platform AD Rep</fullName>
+        <default>false</default>
+        <label>Platform AD Rep</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pod Manager</fullName>
+        <default>false</default>
+        <label>Pod Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pre-Sales Representative</fullName>
+        <default>false</default>
+        <label>Pre-Sales Representative</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales Development Rep</fullName>
+        <default>false</default>
+        <label>Sales Development Rep</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Storefront Specialist</fullName>
+        <default>false</default>
+        <label>Storefront Specialist</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Team Lead</fullName>
+        <default>false</default>
+        <label>Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Drive Franchise Representative</fullName>
+        <default>false</default>
+        <label>Drive Franchise Representative</label>
+    </standardValue>
+</StandardValueSet>

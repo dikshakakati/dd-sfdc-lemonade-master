@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Integration_Sync__c</fullName>
+    <description>LEM-2082 The date/time this record was last updated in its external source.</description>
+    <externalId>false</externalId>
+    <label>Last Integration Sync</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

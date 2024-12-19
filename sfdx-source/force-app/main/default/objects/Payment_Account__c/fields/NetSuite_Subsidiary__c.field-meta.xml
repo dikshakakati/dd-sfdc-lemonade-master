@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NetSuite_Subsidiary__c</fullName>
+    <description>LEM-1371: Payment Account Object setup</description>
+    <externalId>false</externalId>
+    <formula>Case(CurrencyIsoCode,
+
+&quot;USD&quot;, 1,
+
+&quot;CAD&quot;, 2,
+
+&quot;AUD&quot;, 4,
+
+1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Sets the NetSuite ID for the subsidiary assigned to the Account in NetSuite. Leveraged by integration layer.</inlineHelpText>
+    <label>NetSuite Subsidiary</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

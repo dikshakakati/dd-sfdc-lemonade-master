@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Live_Bulleted_Fixes__c</fullName>
+    <description>LEM-3674: It stores the bulleted fixes made before the Brief Item went live.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Describe any corrections made as part of the Pre-Live QA process.</inlineHelpText>
+    <label>Pre-Live Bulleted Fixes</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

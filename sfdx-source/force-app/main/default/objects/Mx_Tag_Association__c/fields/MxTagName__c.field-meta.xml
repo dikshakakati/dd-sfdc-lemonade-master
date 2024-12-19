@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MxTagName__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14105: It stores the name of the associated Mx Tag.</description>
+    <externalId>false</externalId>
+    <formula>MxTag__r.Name</formula>
+    <label>Mx Tag Name</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

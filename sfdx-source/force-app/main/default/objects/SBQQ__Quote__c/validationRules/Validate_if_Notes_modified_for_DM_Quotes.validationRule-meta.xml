@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_if_Notes_modified_for_DM_Quotes</fullName>
+    <active>true</active>
+    <description>LEM-21643: Notes field shouldn&apos;t be edited in the &apos;Contract Signed&apos; status for Migrated Quotes.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Quote_Validation_Rules),
+    $Profile.Name != $Label.System_Administrator,
+    ISCHANGED(SBQQ__Notes__c),
+    Segment__c = $Label.AccountSegmentSMB,
+    Text(SBQQ__Status__c) =$Label.Quote_Contract_Signed,
+    Legacy_ID__c != null
+)</errorConditionFormula>
+    <errorMessage>Notes field shouldn&apos;t be edited in the &apos;Contract Signed&apos; status for Migrated Quotes</errorMessage>
+</ValidationRule>

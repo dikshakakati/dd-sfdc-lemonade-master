@@ -1,0 +1,14 @@
+Object name,Field name,Value
+Business_Reference__c,External_Id_Source__c,MDS
+Business_Reference__c,External_Id__c,Business_ID__c
+Business_Reference__c,Default_Type__c,Corporate
+Business_Reference__c,Business_Name__c,Company
+Business_Reference__c,Primary_Vertical__c,Rx
+Business_Reference__c,Menu_UI_Type__c,Restaurant
+Business_Reference__c,CurrencyIsoCode,CurrencyIsoCode
+Business_Reference__c,Integration_Status__c,New
+Business_Reference__c,Converted_Lead_Id__c,Id
+Xref__c,Xref_Status__c,Inactive
+Xref__c,Integration_Status__c,New
+Xref__c,External_ID_Source__c,MDS
+Xref__c,External_ID__c,Store_ID__c

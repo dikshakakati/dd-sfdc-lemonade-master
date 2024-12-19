@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partition_Key__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-23322: It stores the platform event partition key value.</description>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Partition Key</label>
+    <length>255</length>
+    <required>true</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

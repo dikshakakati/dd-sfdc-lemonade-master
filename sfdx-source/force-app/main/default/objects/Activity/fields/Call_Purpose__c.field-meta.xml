@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Purpose__c</fullName>
+    <description>LEM-16583: Outreach Call Purpose values to the Call Purpose field</description>
+    <externalId>false</externalId>
+    <label>Call Purpose</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Activations Call</fullName>
+                <default>false</default>
+                <label>Activations Call</label>
+            </value>
+            <value>
+                <fullName>Decision Maker Call</fullName>
+                <default>false</default>
+                <label>Decision Maker Call</label>
+            </value>
+            <value>
+                <fullName>Follow-Up Call</fullName>
+                <default>false</default>
+                <label>Follow-Up Call</label>
+            </value>
+            <value>
+                <fullName>Gate Keeper Call</fullName>
+                <default>false</default>
+                <label>Gate Keeper Call</label>
+            </value>
+            <value>
+                <fullName>Influencer Call</fullName>
+                <default>false</default>
+                <label>Influencer Call</label>
+            </value>
+            <value>
+                <fullName>Introduction Call</fullName>
+                <default>false</default>
+                <label>Introduction Call</label>
+            </value>
+            <value>
+                <fullName>Troubleshooting Call</fullName>
+                <default>false</default>
+                <label>Troubleshooting Call</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

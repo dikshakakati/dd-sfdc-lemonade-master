@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Encrypted_Fields</fullName>
+    <description>LEM-2966: It is used to display encrypted fields on the account.</description>
+    <displayedFields>
+        <field>TaxID__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Encrypted Fields</label>
+</FieldSet>

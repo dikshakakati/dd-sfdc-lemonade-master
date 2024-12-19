@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submarket__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-13822: Initial Setup of Commission Rate Object</description>
+    <externalId>false</externalId>
+    <label>Submarket</label>
+    <referenceTo>Submarket__c</referenceTo>
+    <relationshipLabel>Commission Rates</relationshipLabel>
+    <relationshipName>Commission_Rates1</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

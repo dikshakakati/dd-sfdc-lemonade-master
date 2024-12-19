@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_SSN_Input</fullName>
+    <active>true</active>
+    <description>LEM-2837: This Validation Rule is used to validate that only numerical values are allowed to enter for SSN.</description>
+    <errorConditionFormula>AND(
+        !ISBLANK( SSN_Last_4Digits__c ),
+        NOT(ISNUMBER(SSN_Last_4Digits__c))
+        )</errorConditionFormula>
+    <errorDisplayField>SSN_Last_4Digits__c</errorDisplayField>
+    <errorMessage>Please enter only numeric values for the Mx&apos;s social security number.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Partnership_Priorities</fullName>
+    <active>false</active>
+    <description>LEM-596: Validate if Partnership Priorities is populated when Status is Completed</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Initiative_Validation_Rules),
+    TEXT(Status__c) = $Label.Completed_Value,
+    ISBLANK(Partnership_Priorities__c)
+)</errorConditionFormula>
+    <errorDisplayField>Partnership_Priorities__c</errorDisplayField>
+    <errorMessage>Please select at least one Partnership Priorities value before saving the initiative as completed.</errorMessage>
+</ValidationRule>

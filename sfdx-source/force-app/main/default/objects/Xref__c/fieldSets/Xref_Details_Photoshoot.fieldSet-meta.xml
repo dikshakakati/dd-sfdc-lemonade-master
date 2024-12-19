@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Xref_Details_Photoshoot</fullName>
+    <description>LEM-13492: It is used to display &apos;Account Details&apos; section of the onboarding details on photoshoot work plan.</description>
+    <displayedFields>
+        <field>External_ID__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>BusinessID__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Xref Details Photoshoot</label>
+</FieldSet>

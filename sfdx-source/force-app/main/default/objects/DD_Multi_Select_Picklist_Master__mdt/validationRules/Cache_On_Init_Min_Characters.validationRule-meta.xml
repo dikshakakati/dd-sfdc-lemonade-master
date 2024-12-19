@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cache_On_Init_Min_Characters</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  Query_and_Cache_on_Init__c,
+  Minimum_Characters__c &lt;&gt; 0
+)</errorConditionFormula>
+    <errorDisplayField>Minimum_Characters__c</errorDisplayField>
+    <errorMessage>This must be 0 if you intend to &apos;Query and Cache on Init&apos;</errorMessage>
+</ValidationRule>

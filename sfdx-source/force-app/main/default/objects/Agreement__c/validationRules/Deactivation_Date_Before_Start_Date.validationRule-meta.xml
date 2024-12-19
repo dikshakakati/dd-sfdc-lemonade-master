@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deactivation_Date_Before_Start_Date</fullName>
+    <active>true</active>
+    <description>LEM-4109 Deactivation Date should be greater than the Start Date</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Agreement_Validation_Rules),
+IF( AND( NOT(ISNULL(Deactivation_Date__c)), Deactivation_Date__c &lt; Start_Date__c), TRUE, null)
+)</errorConditionFormula>
+    <errorDisplayField>Deactivation_Date__c</errorDisplayField>
+    <errorMessage>The Deactivation Date must come after the Start Date.</errorMessage>
+</ValidationRule>

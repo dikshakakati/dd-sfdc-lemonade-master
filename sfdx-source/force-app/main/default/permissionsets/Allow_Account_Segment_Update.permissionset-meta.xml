@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Account_Segment_Update</name>
+    </customPermissions>
+    <description>LEM-5429: It enables access to allow segment update on business and store accounts.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Account Segment Update</label>
+</PermissionSet>

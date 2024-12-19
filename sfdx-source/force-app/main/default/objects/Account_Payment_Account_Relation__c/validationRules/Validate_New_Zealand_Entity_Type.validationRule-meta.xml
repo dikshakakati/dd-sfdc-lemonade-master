@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_New_Zealand_Entity_Type</fullName>
+    <active>true</active>
+    <description>LEM-12047</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Payment_Account_Validation_Rules),
+Payment_Account__r.Business_Account__r.BillingCountry = &apos;New Zealand&apos;,
+Payment_Account__r.RecordType.DeveloperName = &apos;Payments&apos;,
+NOT(
+OR(
+ISPICKVAL(Payment_Account__r.Entity_Type__c , &quot;Company&quot;),
+ISPICKVAL(Payment_Account__r.Entity_Type__c, &quot;Sole Proprietorship&quot;)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Entity Type for this payment account can only be Company or Sole Proprietorship. Please select a different value.</errorMessage>
+</ValidationRule>

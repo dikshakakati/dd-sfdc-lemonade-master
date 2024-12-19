@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COO_Batch_Run_Date__c</fullName>
+    <description>LEM-3648 Set the Batch run date for COO status Update</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+                WEEKDAY(Proposed_Date_of_Activation__c),
+                2, Proposed_Date_of_Activation__c - 1,
+                3, Proposed_Date_of_Activation__c - 1,
+                4, Proposed_Date_of_Activation__c - 1,
+                5, Proposed_Date_of_Activation__c - 1,
+                6, Proposed_Date_of_Activation__c - 1,
+                7, Proposed_Date_of_Activation__c - 1,
+                1 , Proposed_Date_of_Activation__c - 2,
+                Proposed_Date_of_Activation__c - 1)
+        </formula>
+    <label>COO Batch Run Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

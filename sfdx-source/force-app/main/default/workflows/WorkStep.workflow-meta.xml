@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_Initial_Email_Notification_To_Account_Owner_When_Parent_Work_Step_Blocked</fullName>
+        <description>Send Initial Email Notification To Account Owner When Parent Work Step Blocked</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email_Id__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Internal_Rescue_Record_Initial_Notification_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Secondary_Email_Notification_To_Account_Owner_When_Child_Work_Steps_Blocked</fullName>
+        <description>Send Secondary Email Notification To Account Owner When Child Work Steps Blocked</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email_Id__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/Internal_Rescue_Record_Secondary_Notification_Template</template>
+    </alerts>
+</Workflow>

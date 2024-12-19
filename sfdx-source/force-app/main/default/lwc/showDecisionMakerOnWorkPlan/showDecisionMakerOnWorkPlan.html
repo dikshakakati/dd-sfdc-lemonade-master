@@ -1,0 +1,28 @@
+<!--
+  * @author Deloitte
+  * @date 07/12/2024
+  * @description LWC to display decision maker information on Parent Work Plan.
+-->
+<template>
+  <lightning-card title="Store Account(s)" icon-name="standard:account" icon-size="xxx-small">
+    <template lwc:if={workPlanDetails}>
+      <lightning-accordion class="cardStyling">
+        <template for:each={workPlanDetails} for:item="eachWorkPlan">
+          <lightning-accordion-section name={eachWorkPlan.contactName} label={eachWorkPlan.contactName}
+            key={eachWorkPlan.phoneNumber}>
+            <p>
+              <lightning-click-to-dial record-id={recordId} params={eachWorkPlan.contactId}
+                value={eachWorkPlan.phoneNumber}></lightning-click-to-dial>
+            </p>
+            <lightning-datatable key-field="recordId" data={eachWorkPlan.decisionMakerDetail} columns={columns}
+              onsave={handleSave} draft-values={draftValues} hide-checkbox-column>
+            </lightning-datatable>
+          </lightning-accordion-section>
+        </template>
+      </lightning-accordion>
+    </template>
+    <template lwc:else>
+      <c-lwc-illustration class="slds-p-around_small" message={checkListValidateMessage}></c-lwc-illustration>
+    </template>
+  </lightning-card>
+</template>

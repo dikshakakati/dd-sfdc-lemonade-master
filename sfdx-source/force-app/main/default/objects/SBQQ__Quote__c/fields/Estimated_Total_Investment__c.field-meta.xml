@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimated_Total_Investment__c</fullName>
+    <description>LEM-5334: It is used to indicate the total investment by including all the related quote line items.</description>
+    <externalId>false</externalId>
+    <label>Estimated Total Investment</label>
+    <securityClassification>Internal</securityClassification>
+    <summarizedField>SBQQ__QuoteLine__c.Estimated_Total_Investment__c</summarizedField>
+    <summaryForeignKey>SBQQ__QuoteLine__c.SBQQ__Quote__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Account_Owner_Edit_Access</fullName>
+    <active>true</active>
+    <description>LEM-326 To validate the edit access to the Account Owner field given to the owner of the account.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Account_Validation_Rules),
+    NOT(IsValidationRuleBypassedByFlow__c),
+    TEXT(Segment__c)!= $Label.AccountSegmentSMB,
+    $User.Id &lt;&gt; PRIORVALUE(OwnerId),
+    NOT($Permission.Edit_Account_Fields),
+    ISCHANGED(OwnerId),
+    $Profile.Name &lt;&gt; $Label.System_Administrator
+)</errorConditionFormula>
+    <errorMessage>Please reach out to your Admin to edit the Account Owner field.</errorMessage>
+</ValidationRule>

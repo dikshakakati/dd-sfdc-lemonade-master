@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DPEI_Item_Tagging__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-13267 - DPEI Brief Item Generation</description>
+    <externalId>false</externalId>
+    <label>DPEI Item Tagging</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

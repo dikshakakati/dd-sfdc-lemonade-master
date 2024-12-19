@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Record_Ids_for_Dedup</name>
+        <label>Record Ids for Dedup</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Record_Ids_for_Dedup__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RecordIdsforDedup</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>RecordIdsforDedup</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Product__c}+TEXT({!$Record.Region__c})+{!$Record.Submarket__c}+{!$Record.Package__c}+TEXT({!$Record.CurrencyIsoCode})+TEXT({!$Record.Start__c})+TEXT({!$Record.End__c})+{!$Record.Deck_Rank__c}+TEXT({!$Record.Account_Primary_Vertical__c})+{!$Record.Dependent_Product__c}+{!$Record.Filter_Value_1__c}+{!$Record.Segment__c}+{!$Record.Employee_Commitment__c}</expression>
+    </formulas>
+    <interviewLabel>Commission Rates - Populate Ids for Deduplication Functionality {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Commission Rates - Populate Ids for Deduplication Functionality</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Record_Ids_for_Dedup</targetReference>
+        </connector>
+        <object>Commission_Rate__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

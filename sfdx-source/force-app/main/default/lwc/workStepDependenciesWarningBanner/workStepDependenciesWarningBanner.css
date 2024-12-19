@@ -1,0 +1,21 @@
+/**
+ * @author Deloitte
+ * @date 10/04/2022
+ * @description CSS for workStepDependenciesWarningBanner lightning web component.
+ */
+:host {
+  --slds-c-card-color-background: #fffae6;
+}
+.messageStyling {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.spinnerStyling {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}

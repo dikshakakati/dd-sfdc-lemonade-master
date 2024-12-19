@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ads_Promo_Applicability__c</fullName>
+    <description>LEM-16431: It is being used as a verification for the Store Association regarding Ads and Promos Contracts.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        OR(
+            TEXT(SBQQ__Opportunity__r.Opportunity_Sub_Type__c) = $Label.Ads_Promos,
+            TEXT(SBQQ__Opportunity__r.Opportunity_Sub_Type__c) = $Label.Opportunity_Sub_Type_Upgrade
+        ),
+        TEXT(SBQQ__Opportunity__r.Type) = $Label.Opportunity_Type_Existing,
+        OR(
+            AND(
+                TEXT(SBQQ__Order__r.SBQQ__Quote__r.SBQQ__Type__c) = &apos;Amendment&apos;,
+                Is_Contract_Amended__c = FALSE
+            ),
+            AND(
+                TEXT(SBQQ__Order__r.SBQQ__Quote__r.SBQQ__Type__c) = &apos;Quote&apos;,
+                TEXT(SBQQ__Order__r.SBQQ__Quote__r.Is_this_for_Ads_Promos__c) = &apos;Yes&apos;
+            ),
+            AND(
+                TEXT(SBQQ__Order__r.SBQQ__Quote__r.SBQQ__Type__c) = &apos;Quote&apos;,
+                TEXT(SBQQ__Order__r.SBQQ__Quote__r.Is_this_for_Ads_Promos__c) = &apos;No&apos;,
+                Contract_Split_Category__c = &apos;A&amp;P&apos;
+            )
+        )
+    ),
+    true,
+    false
+)</formula>
+    <label>Ads Promo Applicability</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

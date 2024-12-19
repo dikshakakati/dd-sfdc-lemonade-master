@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_CoFunded_Promo_Structure_Before</fullName>
+    <active>true</active>
+    <description>LEM-16860: Validation to check the value of DD promo annual benefit.</description>
+    <errorConditionFormula>AND(
+  ISCHANGED(ApprovalStatus__c),
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  DD_Promo_Benefit_Annual__c &gt; 0,
+  OR(
+    Co_Funded_Promo_Structure_DoorDash__c = 0,
+    ISNULL(Co_Funded_Promo_Structure_DoorDash__c)
+  ),
+  Segment__c = &apos;SMB&apos;,
+  OR(
+    Account_Billing_Country_Code__c = &apos;US&apos;,
+    Account_Billing_Country_Code__c = &apos;CA&apos;,
+    Account_Billing_Country_Code__c = &apos;AU&apos;,
+    Account_Billing_Country_Code__c = &apos;NZ&apos;
+  )
+)</errorConditionFormula>
+    <errorMessage>Co-Funded Promo Structure - DoorDash cannot be left blank when DD Promo Benefit (Annual) is &gt; 0</errorMessage>
+</ValidationRule>

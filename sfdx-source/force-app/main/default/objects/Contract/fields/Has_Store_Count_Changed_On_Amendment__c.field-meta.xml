@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Store_Count_Changed_On_Amendment__c</fullName>
+    <description>LEM-17563: It is used to compare the number of stores on latest amended quote vs. the original quote.</description>
+    <externalId>false</externalId>
+    <formula>(SBQQ__Order__r.SBQQ__Quote__r.Number_of_Stores__c &gt; SBQQ__Quote__r.Number_of_Stores__c)</formula>
+    <label>Has Store Count Changed On Amendment?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

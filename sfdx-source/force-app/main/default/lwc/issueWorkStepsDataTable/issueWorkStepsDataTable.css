@@ -1,0 +1,11 @@
+/**
+ * @author Aethereus
+ * @date 10/16/2024
+ * @description CSS for issueWorkStepsDataTable lightning web component.
+ */
+ .THIS .slds-modal__content {
+    overflow: initial;
+  }
+  .bgColor {
+    background-color: white;
+  }

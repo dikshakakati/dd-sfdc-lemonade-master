@@ -1,0 +1,13 @@
+<template>
+  <template lwc:if={doNotShowActivationCheckList}>
+    <c-lwc-illustration
+      class="slds-p-around_small"
+      message={checkListValidateMessage}
+    ></c-lwc-illustration>
+  </template>
+  <template lwc:else>
+    <c-lwc-activation-checklist-validation-related-list
+      record-id={recordId}
+    ></c-lwc-activation-checklist-validation-related-list>
+  </template>
+</template>

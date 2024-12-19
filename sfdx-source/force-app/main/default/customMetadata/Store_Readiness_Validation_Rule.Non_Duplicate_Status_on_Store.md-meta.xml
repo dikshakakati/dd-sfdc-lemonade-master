@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Non-Duplicate Status on Store</label>
+    <protected>false</protected>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">LEM-3621: It validates that Duplicate Status is set to “Non-Duplicate” on the Store Account.</value>
+    </values>
+    <values>
+        <field>Error_Message__c</field>
+        <value xsi:type="xsd:string">This account is a duplicate of an existing account. Please open a ticket with the Data Ops team.</value>
+    </values>
+    <values>
+        <field>Field_Label__c</field>
+        <value xsi:type="xsd:string">Duplicate Status</value>
+    </values>
+    <values>
+        <field>Field_Name__c</field>
+        <value xsi:type="xsd:string">Duplicate_Status__c</value>
+    </values>
+    <values>
+        <field>Is_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Object_Label__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+    <values>
+        <field>Object_Name__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+    <values>
+        <field>Service_Class_Name__c</field>
+        <value xsi:type="xsd:string">IAccountValidationsService</value>
+    </values>
+    <values>
+        <field>Service_Method_Name__c</field>
+        <value xsi:type="xsd:string">validateDuplicateStatusOnStore</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,44 @@
+<!--
+  @description       :
+  @author            : Soumya Dash
+  @group             :
+  @last modified on  : 09-20-2024
+  @last modified by  : Soumya Dash
+-->
+<template>
+        <div class={storeHeaderCSS}>
+            <div lwc:dom="manual" class="account-label"></div>
+            <div>
+                <lightning-button-icon class="slds-m-left_x-small doordashButtonIconInverse" icon-name="utility:refresh" alternative-text="Refresh" title="Refresh" size={iconSize} onclick={handleRefresh}></lightning-button-icon>
+                <lightning-button-icon class="slds-m-left_x-small doordashButtonIconInverse" icon-name="utility:edit"  alternative-text="Edit" title="Edit" size={iconSize} onclick={fetchStore}></lightning-button-icon>
+            </div>
+        </div>
+        <div class="slds-p-around_none slds-m-top_x-small slds-m-horizontal_none">
+            <template lwc:if={fetchStoreScreen}>
+                <lightning-layout multiple-rows pull-to-boundary="small">
+                        <lightning-layout-item size="7" padding="">
+                            <div class="slds-p-left_medium slds-p-right_medium slds-p-bottom_medium">
+                            <lightning-record-picker
+                                label="Store Accounts"
+                                placeholder="Search Accounts..."
+                                object-api-name="Account"
+                                value={storeId}
+                                onchange={handleStoreRecordPicker}
+                                filter={filter}
+                                field-level-help={storeRecordPickerHelpText}
+                                disabled={isRecordPickerDisabled}>
+                            </lightning-record-picker>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="5" padding="">
+                            <div style="margin-top: 20px">
+                            <lightning-button class="slds-var-m-left_x-small doordashButtonBrand" variant="Brand" label="Confirm" onclick={onConfirmStoreChange} disabled={storeChangeDisabled}></lightning-button>
+                                <a href="" target="_blank" class="link slds-text-heading_small slds-var-m-left_small slds-truncate doordashLink" onclick={handleCreateStoreLink}>
+                                    New Store
+                                </a>
+                            </div>
+                        </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </div>
+</template>

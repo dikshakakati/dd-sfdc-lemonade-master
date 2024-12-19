@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-21910: It is used for bypassing flows on Mx Order object.</description>
+    <isLicensed>false</isLicensed>
+    <label>Bypass Mx Order Flows</label>
+</CustomPermission>

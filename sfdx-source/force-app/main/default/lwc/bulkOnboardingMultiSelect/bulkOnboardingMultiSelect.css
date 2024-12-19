@@ -1,0 +1,38 @@
+.left-grid-column {
+  text-align: left;
+}
+
+.selected-records-list {
+  display: block;
+}
+
+.selected-records-list li {
+  cursor: pointer;
+}
+
+.unsaved-record-name {
+  font-style: italic;
+}
+
+/* LEFT-SIDE RECORD LIST BUTTONS */
+.slds-vertical-tabs .slds-vertical-tabs__link {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.record-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.record-subfields {
+  margin-top: 0.3em;
+  font-size: 0.85rem;
+  color: #666666;
+  display: block;
+}
+
+.record-tab {
+  display: block;
+  text-align: left;
+}

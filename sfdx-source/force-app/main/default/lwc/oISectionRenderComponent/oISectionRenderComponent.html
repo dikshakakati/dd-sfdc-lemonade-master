@@ -1,0 +1,102 @@
+<template>
+  <template if:true={isbusinessInfoLoad}>
+    <template for:each={businessInfoSectionFields} for:item="eachSection">
+      {eachSection.Section__c} <br key={eachSection.Id} />
+      <c-o-i-field-render-component
+        section-fields={eachSection.OIAttributesConfigs__r}
+        key={eachSection.Id}
+        contract-info={contractInfo}
+        onpopulateorderprotocolinformation={populateOrderProtocolInformation}
+      ></c-o-i-field-render-component>
+      <br key={eachSection.Id} />
+    </template>
+  </template>
+  <template if:true={isRequiredMessageDisplay}>
+    <div class="slds-theme_error">
+      <lightning-icon
+        icon-name="utility:error"
+        variant="inverse"
+        size="small"
+      ></lightning-icon>
+      <span class="slds-p-left_xx-small"
+        >Please fill all the required details in needed format!</span
+      >
+    </div>
+  </template>
+  <template if:true={isMaximumStore}>
+    <div class="slds-theme_error">
+      <lightning-icon
+        icon-name="utility:error"
+        variant="inverse"
+        size="small"
+      ></lightning-icon>
+      <span class="slds-p-left_xx-small"
+        >You can allow to add upto 10 stores only!</span
+      >
+    </div>
+  </template>
+  <template if:true={isStoreInfoLoad}>
+    <template if:false={loadAllStore}>
+      Please enter details for Store {noOfStore} <br />
+      <template for:each={storeSectionFieldsDisplay} for:item="eachSection">
+        {eachSection.Section__c} <br key={eachSection.Id} />
+        <c-o-i-field-render-component
+          auto-apply-fields={autoApplyAllStores}
+          current-screen={currentScreen}
+          section-fields={eachSection.OIAttributesConfigs__r}
+          key={eachSection.Id}
+          onshowseattledasherdetailssection={handleSeattleDasherDetailsSectionVisibility}
+          contract-info={contractInfo}
+        ></c-o-i-field-render-component>
+        <br key={eachSection.Id} />
+      </template>
+    </template>
+    <template if:true={loadAllStore}>
+      <lightning-accordion allow-multiple-sections-open active-section-name="0">
+        <template
+          for:each={allStoreSectionFieldsDisplay}
+          for:item="storeSection"
+        >
+          <div
+            class="slds-box store-div"
+            key={storeSection.storeNumber}
+            div-id={storeSection.storeNumber}
+          >
+            <lightning-accordion-section
+              name={storeSection.storeNumber}
+              label={storeSection.storeName}
+              key={storeSection.storeNumber}
+            >
+              <template
+                for:each={storeSection.oiFieldWrappers}
+                for:item="eachSection"
+              >
+                {eachSection.Section__c}<br key={eachSection.Id} />
+                <c-o-i-field-render-component
+                  auto-apply-fields={autoApplyAllStores}
+                  current-screen={currentScreen}
+                  section-fields={eachSection.OIAttributesConfigs__r}
+                  key={eachSection.Id}
+                  onshowseattledasherdetailssection={handleSeattleDasherDetailsSectionVisibility}
+                  contract-info={contractInfo}
+                ></c-o-i-field-render-component>
+                <br key={eachSection.Id} />
+              </template>
+            </lightning-accordion-section>
+            <template if:true={storeSection.showCloneCheckbox}>
+              <lightning-button
+                variant="neutral"
+                label="Copy details to all Stores"
+                title="Copy details to all Stores"
+                onclick={copyDetailsToAllStores}
+                class="slds-m-left_x-small"
+              ></lightning-button>
+            </template>
+          </div>
+        </template>
+      </lightning-accordion>
+    </template>
+  </template>
+
+  <!-- Have Business info and addtional info section rendering and child as oIFieldRenderCompoent -->
+</template>

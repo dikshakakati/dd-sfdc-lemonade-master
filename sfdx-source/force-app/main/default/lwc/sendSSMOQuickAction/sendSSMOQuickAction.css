@@ -1,0 +1,102 @@
+.slds-hide {
+    display: unset;
+}
+.slds-modal__header .slds-modal__close {
+    display: none;
+}
+
+lightning-button-icon.slds-modal__close {
+    display: none;
+}
+
+.slds-popover_error .slds-popover__body{
+    padding-left: 1rem;
+}
+
+.searchBox{
+    margin-top: -1.5rem;
+    margin-left: 0.4rem;
+}
+
+.AccountHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightgray;
+}
+
+.address{
+    --slds-c-legend-weight-font : var(--lwc-fontWeightBold,Unset);
+}
+
+.link{
+    color: var(--lwc-brandTextLink, rgb(1, 118, 211));
+}
+
+
+.doordashLink{
+    /*color:  #D94100;*/
+    text-decoration: underline;
+}
+
+.doordashSectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(201, 201, 201);
+    color: #000000;
+  /*  border-radius: 24px;*/
+    padding-right: 16px;
+    padding-left: 16px;
+}
+/*
+.doordashButtonBrand{
+    --slds-c-button-brand-color-background : #EB1700;
+    --slds-c-button-radius-border: 15px;
+    --slds-c-button-brand-color-border : #EB1700;
+    --slds-c-button-brand-color-background-hover : #EB1700;
+}
+.doordashButtonNeutral{
+    --slds-c-button-radius-border: 15px;
+    --slds-c-button-brand-color-background-hover : white;
+    --slds-c-button-brand-text-color: #EB1700;
+    --slds-c-button-brand-color-background: white;
+    --slds-c-button-brand-color-border: #EB1700;
+}
+.doordashButtonIconInverse{
+ --slds-c-icon-color-background: white;
+    --slds-c-icon-color-foreground: white;
+}*/
+/* :host{
+    --slds-c-input-color-background:#F7F7F7;
+    --sds-c-input-color-border: #F7F7F7;
+   --slds-c-textarea-color-background: #F7F7F7;
+   --slds-c-textarea-color-border: #F7F7F7;
+   --slds-c-checkbox-color-background: #F7F7F7;
+   --slds-c-checkbox-color-border: #F7F7F7;
+   --slds-c-checkbox-color-background-checked : #F7F7F7;
+   --slds-c-checkbox-color-border-checked :  #F7F7F7;
+
+
+
+   --sds-c-checkbox-toggle-color-background-checked:  #EB1700;
+   --sds-c-checkbox-toggle-color-background-checked-hover:  #EB1700;
+   --sds-c-checkbox-toggle-color-border-checked:  #EB1700;
+   --sds-c-checkbox-toggle-color-background-checked-focus:  #EB1700;
+} */
+.slds-input{
+    border: var(--sds-c-input-color-border);
+    background-color: var(--slds-c-input-color-background);
+}
+.slds-textarea{
+    border: var(--sds-c-input-color-border);
+    background-color: var(--slds-c-input-color-background);
+}
+.slds-checkbox{
+    border: var(--sds-c-input-color-border);
+    background-color: var(--slds-c-input-color-background);
+}
+/* .slds-checkbox_faux
+{
+    background-color:  #EB1700 !important;
+} */

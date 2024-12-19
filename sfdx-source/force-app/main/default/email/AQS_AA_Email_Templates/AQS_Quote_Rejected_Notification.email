@@ -1,0 +1,33 @@
+<messaging:emailTemplate subject="Quote Approval - REJECTED: {!relatedTo.AQS_Quote__r.Name} for {!relatedTo.AQS_Quote__r.SBQQ__Opportunity2__r.Name}"
+recipientType="User"
+relatedToType="sbaa__Approval__c">
+<messaging:HtmlEmailBody >
+<html>
+<body>
+
+<apex:image value="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}/servlet/servlet.ImageServer?id={!$Setup.AQS_AA_Enablement_IDs__c.AQS_Approval_Email_Logo_ID__c}&oid={!$Organization.Id}" 
+/>
+
+<b></b>
+<p></p><br/>
+
+Hello {!recipient.name}, 
+
+<p> Your quote for customer {!relatedTo.AQS_Quote__r.SBQQ__Account__r.Name} has been rejected for the below reason. Please revise the quote as needed and re-submit for approval.
+</p>
+
+<b>Quote Rejected Comments:</b> {!relatedTo.sbaa__CommentsLong__c}
+
+<p><b>Quote: </b>&nbsp;<apex:outputLink value="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}/{!relatedTo.AQS_Quote__r.Id}" 
+>{!relatedTo.AQS_Quote__r.Name}</apex:outputLink><br/>
+<b>Account: </b>&nbsp;<apex:outputLink value="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}/{!relatedTo.AQS_Quote__r.SBQQ__Account__r.Id}" 
+>{!relatedTo.AQS_Quote__r.SBQQ__Account__r.Name}</apex:outputLink><br/>
+<b>Opportunity: </b>&nbsp;<apex:outputLink value="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}/{!relatedTo.AQS_Quote__r.SBQQ__Opportunity2__r.Id}" 
+>{!relatedTo.AQS_Quote__r.SBQQ__Opportunity2__r.Name}</apex:outputLink><br/></p>
+
+<p style="color:white"><apex:outputText value="{!relatedTo.Id}"/></p>
+
+</body>
+</html>
+</messaging:HtmlEmailBody>
+</messaging:emailTemplate>

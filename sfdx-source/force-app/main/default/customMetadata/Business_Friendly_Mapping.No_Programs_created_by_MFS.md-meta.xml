@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>No Programs created by MFS</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Business_Friendly_Message__c</field>
+        <value xsi:type="xsd:string">Programs being requested as part of the draft Order Line Items do not exist or are not active. Please slack us on #ask-lemonade [https://doordash.enterprise.slack.com/archives/C02F1PLCCSX]</value>
+    </values>
+    <values>
+        <field>Integration_Key_String__c</field>
+        <value xsi:type="xsd:string">Empty Program Response Created</value>
+    </values>
+    <values>
+        <field>Integration_Type__c</field>
+        <value xsi:type="xsd:string">Xref Provisioning</value>
+    </values>
+    <values>
+        <field>Message_Category__c</field>
+        <value xsi:type="xsd:string">FullSend Create</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">655.0</value>
+    </values>
+</CustomMetadata>

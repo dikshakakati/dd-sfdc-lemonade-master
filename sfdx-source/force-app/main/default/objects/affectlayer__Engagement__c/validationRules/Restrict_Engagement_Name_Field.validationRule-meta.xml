@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Engagement_Name_Field</fullName>
+    <active>true</active>
+    <description>LEM-16059:It is used to restrict user to update on Engagement Name field as it should auto populate through Chorus Integration User</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Engagement_Validation_Rules),
+    ISCHANGED(Name)
+)</errorConditionFormula>
+    <errorMessage>You can&apos;t edit Name after creation of Engagement Record</errorMessage>
+</ValidationRule>

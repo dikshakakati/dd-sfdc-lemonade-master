@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LEM-13579 - It is used to notify Mx when email received does not contain reference Id/ system unable to find the thread.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Mx Email Thread Failure Response</name>
+    <style>none</style>
+    <subject>[External] Merchant Support - email no longer monitored</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

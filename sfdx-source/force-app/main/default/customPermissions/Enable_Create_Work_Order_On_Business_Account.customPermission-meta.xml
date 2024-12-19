@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-1466: It enables visibility of &quot;Create Work Order&quot; quick action on the Business Account layout.</description>
+    <isLicensed>false</isLicensed>
+    <label>Enable Create Work Order On Business Account</label>
+</CustomPermission>

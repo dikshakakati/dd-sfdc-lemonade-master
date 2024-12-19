@@ -1,0 +1,36 @@
+<!--
+  @description       :
+  @author            : rishab.goyal
+  @group             :
+  @last modified on  : 03-20-2024
+  @last modified by  : rishab.goyal
+-->
+<template>
+    <template if:false={noAccess}>
+        <lightning-card title="Related Business IDs">
+
+
+            <template if:true={businessReferences}>
+                <div class="slds-p-around_xx-small">
+                <c-custom-type-datatable
+                key-field="Id"
+                data={businessReferences}
+                columns={columns}
+                hide-checkbox-column
+                show-row-number-column
+                default-sort-direction={defaultSortDirection}
+                sorted-direction={sortDirection}
+                sorted-by={sortedBy}
+                onsort={onHandleSort}
+                onrefreshdatatable={handleRefresh}
+                min-column-width="100"
+            >
+            </c-custom-type-datatable>
+            </div>
+            </template>
+            <template if:false={businessReferences}>
+                No data available.
+            </template>
+        </lightning-card>
+    </template>
+</template>

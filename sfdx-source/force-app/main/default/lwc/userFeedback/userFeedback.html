@@ -1,0 +1,29 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <p class="slds-text-title_bold">Tell Us What You Think</p>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <p class="slds-text-body_small">How would you rate the bulk store onboarding experience?</p>
+            <!-- Star Rating System -->
+            <lightning-tile type="media">
+                <div class="rate">
+                    <input type="radio" id="star5" name="Delivery" value="5" onchange={updateRating} />
+                    <label for="star5" title="text">5 stars</label>
+                    <input type="radio" id="star4" name="Delivery" value="4" onchange={updateRating} />
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="Delivery" value="3" onchange={updateRating} />
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="Delivery" value="2" onchange={updateRating} />
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="Delivery" value="1" onchange={updateRating} />
+                    <label for="star1" title="text">1 star</label>
+                </div>
+            </lightning-tile>
+
+            <!-- Feedback Text Area -->
+            <div class="slds-m-top_medium">
+                <lightning-textarea name="feedback" label="Please share any comments, suggestions, or concerns about your bulk store onboarding experience. Your feedback helps us improve!" value={feedbackText} onchange={handleFeedbackChange}></lightning-textarea>
+            </div>
+        </div>
+    </div>
+</template>

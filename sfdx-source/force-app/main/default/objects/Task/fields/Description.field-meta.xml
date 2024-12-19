@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14155: It stores additional context about the activity.</description>
+    <fullName>Description</fullName>
+    <inlineHelpText>Additional context about the activity</inlineHelpText>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+</CustomField>

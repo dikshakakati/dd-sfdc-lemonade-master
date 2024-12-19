@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_ID_Source__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-800: Represents the Business ID for the Mx in product.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents product backend source of the Store ID for the Mx</inlineHelpText>
+    <label>External ID Source</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Figment</fullName>
+                <default>false</default>
+                <label>Figment</label>
+            </value>
+            <value>
+                <fullName>MDS - Catering</fullName>
+                <default>false</default>
+                <label>MDS - Catering</label>
+            </value>
+            <value>
+                <fullName>MDS</fullName>
+                <default>false</default>
+                <label>MDS</label>
+            </value>
+            <value>
+                <fullName>DriveDb</fullName>
+                <default>false</default>
+                <label>DriveDb</label>
+            </value>
+            <value>
+                <fullName>Drive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Drive</label>
+            </value>
+            <value>
+                <fullName>Marketplace</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketplace</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>LEM-1536: It queries parent and child records for selected WorkPlan Ids using Apex invocable method.</description>
+        <name>Get_Parent_And_Child_Work_Plans</name>
+        <label>Get Parent And Child Work Plans</label>
+        <locationX>809</locationX>
+        <locationY>278</locationY>
+        <actionName>WorkPlansService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Null_Check_For_WorkPlan_Records</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>workPlanIds</name>
+            <value>
+                <elementReference>recordIds</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>workPlanRecords</assignToReference>
+            <name>output</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <description>LEM-1536: It adds the updated Work Plan record to workPlans list.</description>
+        <name>Add_Owner_Updated_WorkPlan_In_WorkPlans_List</name>
+        <label>Add Owner Updated WorkPlan In WorkPlans List</label>
+        <locationX>732</locationX>
+        <locationY>878</locationY>
+        <assignmentItems>
+            <assignToReference>workPlans</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_Over_Selected_WorkPlan_Records</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Child_or_Parent_Work_Plan</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3158: It sets the count of total number of child Work Plan records.</description>
+        <name>Set_count_of_child_Work_Plans</name>
+        <label>Set count of child Work Plans</label>
+        <locationX>864</locationX>
+        <locationY>1118</locationY>
+        <assignmentItems>
+            <assignToReference>childWorkPlanRecordCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_Over_Selected_WorkPlan_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3158: It sets the count of total number of parent Work Plan records.</description>
+        <name>Set_count_of_parent_Work_Plans</name>
+        <label>Set count of parent Work Plans</label>
+        <locationX>600</locationX>
+        <locationY>1118</locationY>
+        <assignmentItems>
+            <assignToReference>parentWorkPlanRecordCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_Over_Selected_WorkPlan_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM:1536: It sets the count of total number of Work Plan records.</description>
+        <name>Set_Count_Of_Records</name>
+        <label>Set Count Of Records</label>
+        <locationX>182</locationX>
+        <locationY>1886</locationY>
+        <assignmentItems>
+            <assignToReference>totalRecordCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>workPlans</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_If_Owner_Is_User_Or_Queue</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets error flag to true when Work Plan has DML failure during update.</description>
+        <name>Set_Error_Flag_To_True_On_WorkPlan_Update</name>
+        <label>Set Error Flag To True On WorkPlan Update</label>
+        <locationX>578</locationX>
+        <locationY>1766</locationY>
+        <assignmentItems>
+            <assignToReference>isError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Error_Message_On_WorkPlan_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets error flag value to True when passed Work Plan record Ids are null.</description>
+        <name>Set_Error_Flag_To_True_When_Passed_WorkPlan_Ids_Are_Null</name>
+        <label>Set Error Flag To True When Passed WorkPlan Ids Are Null</label>
+        <locationX>1370</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>isError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Error_Message_For_When_Passed_WorkPlan_Ids_Are_Null</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets error flag with True to display error message when Work Plan records are null on owner assignment.</description>
+        <name>Set_Error_Flag_True_For_Null_WorkPlans_On_Owner_Assignment</name>
+        <label>Set Error Flag True For Null WorkPlans On Owner Assignment</label>
+        <locationX>842</locationX>
+        <locationY>1646</locationY>
+        <assignmentItems>
+            <assignToReference>isError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Error_Message_For_Null_WorkPlans_On_Owner_Assignment</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets the error message for no record selected by end user.</description>
+        <name>Set_Error_Message_For_No_Record_Selected</name>
+        <label>Set Error Message For No Record Selected</label>
+        <locationX>1106</locationX>
+        <locationY>638</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Select at least one record and try again.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets error message for when no WorkPlans have Owner assigned during iteration.</description>
+        <name>Set_Error_Message_For_Null_WorkPlans_On_Owner_Assignment</name>
+        <label>Set Error Message For Null WorkPlans On Owner Assignment</label>
+        <locationX>842</locationX>
+        <locationY>1766</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Work Plans are already owned by selected owner/queue.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets error message for when passed Work Plan Ids are null.</description>
+        <name>Set_Error_Message_For_When_Passed_WorkPlan_Ids_Are_Null</name>
+        <label>Set Error Message For When Passed WorkPlan Ids Are Null</label>
+        <locationX>1370</locationX>
+        <locationY>398</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Select at least one record and try again.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It updates fault message in output message when Work Plan update has a DML failure.</description>
+        <name>Set_Error_Message_On_WorkPlan_Update</name>
+        <label>Set Error Message On WorkPlan Update</label>
+        <locationX>578</locationX>
+        <locationY>1886</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It updates message in output message when Work Plan is updated partially successful.</description>
+        <name>Set_Partial_Success_Message_On_WorkPlan_Update</name>
+        <label>Set Partial Success Message On WorkPlan Update</label>
+        <locationX>50</locationX>
+        <locationY>2462</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>partialSuccessMessageToDisplay</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>isPartialSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>isSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets success flag to true when Work Plan is updated successfully.</description>
+        <name>Set_Success_Flag_To_True_On_WorkPlan_Update</name>
+        <label>Set Success Flag To True On WorkPlan Update</label>
+        <locationX>182</locationX>
+        <locationY>1766</locationY>
+        <assignmentItems>
+            <assignToReference>isSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Count_Of_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It updates message in output message when Work Plan is updated successfully.</description>
+        <name>Set_Success_Message_On_WorkPlan_Update</name>
+        <label>Set Success Message On WorkPlan Update</label>
+        <locationX>314</locationX>
+        <locationY>2462</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>successMessageToDisplay</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets the isCurrentOwnerSame value to true and stores count of Work Plan records when the owner is the same as selected queue or current user.</description>
+        <name>Set_Values_If_Owner_And_Selected_User_Are_Same</name>
+        <label>Set Values If Owner And Selected User Are Same</label>
+        <locationX>1128</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>isCurrentOwnerSame</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>totalWorkPlansWithCurrentUser</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_Over_Selected_WorkPlan_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets error flag with True to display error message later.</description>
+        <name>Update_Error_Flag_To_True_On_Null_WorkPlans</name>
+        <label>Update Error Flag To True On Null WorkPlans</label>
+        <locationX>1106</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>isError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Error_Message_For_No_Record_Selected</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It updates Work Plan owner with current user or selected queue Id.</description>
+        <name>Update_Owner_Id_With_Current_User_Or_Selected_Queue</name>
+        <label>Update Owner Id With Current User Or Selected Queue</label>
+        <locationX>732</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>Iterate_Over_Selected_WorkPlan_Records.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>updatedOwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Owner_Updated_WorkPlan_In_WorkPlans_List</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>LEM-1536: It checks whether current user or selected queue is not the owner of the Work Plan.</description>
+        <name>Check_Current_Owner_Of_WorkPlan</name>
+        <label>Check Current Owner Of WorkPlan</label>
+        <locationX>930</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>Set_Values_If_Owner_And_Selected_User_Are_Same</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Owner_Not_Current_User_Or_Selected_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iterate_Over_Selected_WorkPlan_Records.OwnerId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>updatedOwnerId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Owner_Id_With_Current_User_Or_Selected_Queue</targetReference>
+            </connector>
+            <label>Is Owner Not Current User Or Selected Queue?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-1536: It checks if current user or queue is the Owner of Work Plan.</description>
+        <name>Check_Current_User_Is_Owner</name>
+        <label>Check Current User Is Owner</label>
+        <locationX>182</locationX>
+        <locationY>2342</locationY>
+        <defaultConnector>
+            <targetReference>Set_Success_Message_On_WorkPlan_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Owner_User_Or_Selected_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isCurrentOwnerSame</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Partial_Success_Message_On_WorkPlan_Update</targetReference>
+            </connector>
+            <label>Is Owner User Or Selected Queue?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-1536: It checks whether the Owner is a user or selected queue.</description>
+        <name>Check_If_Owner_Is_User_Or_Queue</name>
+        <label>Check If Owner Is User Or Queue</label>
+        <locationX>182</locationX>
+        <locationY>2006</locationY>
+        <defaultConnector>
+            <targetReference>Get_Queue_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Owner_A_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>updatedOwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_User_Name</targetReference>
+            </connector>
+            <label>Is Owner A User?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-3158: It checks whether the Work Plan is child or parent Work Plan.</description>
+        <name>Is_Child_or_Parent_Work_Plan</name>
+        <label>Is Child or Parent Work Plan?</label>
+        <locationX>732</locationX>
+        <locationY>998</locationY>
+        <defaultConnector>
+            <targetReference>Set_count_of_child_Work_Plans</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Child Work Plan?</defaultConnectorLabel>
+        <rules>
+            <name>Is_Parent_Work_Plan</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iterate_Over_Selected_WorkPlan_Records.Parent_Work_Plan__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_count_of_parent_Work_Plans</targetReference>
+            </connector>
+            <label>Is Parent Work Plan?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-1536: It checks whether the apex action returned WorkPlans are null.</description>
+        <name>Null_Check_For_WorkPlan_Records</name>
+        <label>Null Check For WorkPlan Records</label>
+        <locationX>809</locationX>
+        <locationY>398</locationY>
+        <defaultConnector>
+            <targetReference>Update_Error_Flag_To_True_On_Null_WorkPlans</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Are_WorkPlans_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>workPlanRecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_Over_Selected_WorkPlan_Records</targetReference>
+            </connector>
+            <label>Are WorkPlans Not Null?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-1536: It checks whether Work Plan records are not null and updated.</description>
+        <name>Null_Check_For_WorkPlans</name>
+        <label>Null Check For WorkPlans</label>
+        <locationX>512</locationX>
+        <locationY>1526</locationY>
+        <defaultConnector>
+            <targetReference>Set_Error_Flag_True_For_Null_WorkPlans_On_Owner_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Are_WorkPlans_To_Update_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>workPlans</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WorkPlans_In_System</targetReference>
+            </connector>
+            <label>Are WorkPlans To Update Not Null?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-1536: It checks whether the passed record Ids are null.</description>
+        <name>Null_Check_On_Passed_Ids</name>
+        <label>Null Check On Passed Ids</label>
+        <locationX>1089</locationX>
+        <locationY>158</locationY>
+        <defaultConnector>
+            <targetReference>Set_Error_Flag_To_True_When_Passed_WorkPlan_Ids_Are_Null</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Are_Record_Ids_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordIds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Parent_And_Child_Work_Plans</targetReference>
+            </connector>
+            <label>Are Record Ids Not Null?</label>
+        </rules>
+    </decisions>
+    <description>LEM-1536: It is a subflow which updates owner with current user or selected queue Id.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-1536: It stores partial success message to display to end user.</description>
+        <name>partialSuccessMessageToDisplay</name>
+        <dataType>String</dataType>
+        <expression>{!successMessageToDisplay}&amp;&quot;  &quot;&amp;TEXT({!totalWorkPlansWithCurrentUser})&amp;&quot; records are already owned by current user/queue.&quot;</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-1536: It stores the success message to be displayed to end user.</description>
+        <name>successMessageToDisplay</name>
+        <dataType>String</dataType>
+        <expression>&quot;Success. &quot;&amp;TEXT({!parentWorkPlanRecordCount})&amp;&quot; work plan(s) have been assigned to &quot;&amp;{!userFirstName}&amp;&quot;&quot;&amp;IF(ISBLANK({!userLastName}),&quot;&quot;,&quot; &quot;+{!userLastName})&amp;&quot;.&quot;</expression>
+    </formulas>
+    <interviewLabel>Subflow - Work Plan Owner Assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow - Work Plan Owner Assignment</label>
+    <loops>
+        <description>LEM-1536: It iterates over the apex action returned Work Plan Records.</description>
+        <name>Iterate_Over_Selected_WorkPlan_Records</name>
+        <label>Iterate Over Selected WorkPlan Records</label>
+        <locationX>512</locationX>
+        <locationY>518</locationY>
+        <collectionReference>workPlanRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_Current_Owner_Of_WorkPlan</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Null_Check_For_WorkPlans</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>LEM-1536: It gets the queue name from system using passed owner Id.</description>
+        <name>Get_Queue_Name</name>
+        <label>Get Queue Name</label>
+        <locationX>314</locationX>
+        <locationY>2126</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Current_User_Is_Owner</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>updatedOwnerId</elementReference>
+            </value>
+        </filters>
+        <object>Group</object>
+        <outputAssignments>
+            <assignToReference>userFirstName</assignToReference>
+            <field>Name</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-1536: It gets the user name from the system using passed owner Id.</description>
+        <name>Get_User_Name</name>
+        <label>Get User Name</label>
+        <locationX>50</locationX>
+        <locationY>2126</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Current_User_Is_Owner</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>updatedOwnerId</elementReference>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputAssignments>
+            <assignToReference>userFirstName</assignToReference>
+            <field>FirstName</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>userLastName</assignToReference>
+            <field>LastName</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordUpdates>
+        <description>LEM-1536: It updates Work Plan records in the system.</description>
+        <name>Update_WorkPlans_In_System</name>
+        <label>Update WorkPlans In System</label>
+        <locationX>182</locationX>
+        <locationY>1646</locationY>
+        <connector>
+            <targetReference>Set_Success_Flag_To_True_On_WorkPlan_Update</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Set_Error_Flag_To_True_On_WorkPlan_Update</targetReference>
+        </faultConnector>
+        <inputReference>workPlans</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>963</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Null_Check_On_Passed_Ids</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-3158: It stores number of child Work Plan records.</description>
+        <name>childWorkPlanRecordCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-1536: It controls updation of records if current owner and selected queue or user is the same.</description>
+        <name>isCurrentOwnerSame</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-1536: It controls visibility of the error message to the end user.</description>
+        <name>isError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-1536: It indicates if flow is partially successful.</description>
+        <name>isPartialSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It controls visibility of the success message to the end user.</description>
+        <name>isSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores the message depending on the decision outcome.</description>
+        <name>outputMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-3158: It stores number of parent Work Plan records.</description>
+        <name>parentWorkPlanRecordCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores the selected work plan record Ids.</description>
+        <name>recordIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores number of selected Work Plan records.</description>
+        <name>totalRecordCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores count of Work Plan records where owner is same as current user or selected queue.</description>
+        <name>totalWorkPlansWithCurrentUser</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores current user Id or selected queue Id.</description>
+        <name>updatedOwnerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores the queue name or first name of the user.</description>
+        <name>userFirstName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores the last name of the user.</description>
+        <name>userLastName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores child and parent WorkPlan records.</description>
+        <name>workPlanRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>WorkPlan</objectType>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores updated Work Plan records.</description>
+        <name>workPlans</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>WorkPlan</objectType>
+    </variables>
+</Flow>

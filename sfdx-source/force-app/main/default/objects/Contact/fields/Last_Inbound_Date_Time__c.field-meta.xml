@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Inbound_Date_Time__c</fullName>
+    <description>LEM-19889: It refers Inbound Ingestion’s “Created Date Time” field for stamping the “Last Inbound Date/Time” field on Opportunity for Q-assign routing to Inbound Sales Omni channel.</description>
+    <externalId>false</externalId>
+    <formula>Inbound_Ingestion_Log__r.Created_Date_Time__c</formula>
+    <label>Last Inbound Date/Time</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+    <securityClassification>Proprietary</securityClassification>
+    <complianceGroup>GDPR</complianceGroup>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Institution_Number_Length</fullName>
+    <active>true</active>
+    <description>LEM-10159
+For Canada, length must equal 3</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Payment_Account_Validation_Rules),
+NOT(ISBLANK( Payment_Account__r.Institution_Number__c)),
+LEN( Payment_Account__r.Institution_Number__c ) != 3,
+Account__r.BillingCountry = &apos;Canada&apos;
+)</errorConditionFormula>
+    <errorMessage>Institution Number should only be 3 digits for Canada</errorMessage>
+</ValidationRule>

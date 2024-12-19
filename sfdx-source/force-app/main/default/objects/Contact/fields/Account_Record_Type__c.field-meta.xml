@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Record_Type__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-2206: This field stores the record type of account associated to the contact record.</description>
+    <externalId>false</externalId>
+    <formula>Account.Record_Type_Name__c</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Account Record Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

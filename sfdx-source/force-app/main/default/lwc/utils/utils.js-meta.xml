@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <masterLabel>JavaScript Utility Methods</masterLabel>
+    <description>It is used to maintain reusable JavaScript utility methods for usage across lighting web components.</description>
+    <isExposed>false</isExposed>
+</LightningComponentBundle>

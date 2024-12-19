@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4359: It is used to enable access for developers.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Developer Admin</label>
+    <mutingPermissionSets>Developer_Admin_Muted</mutingPermissionSets>
+    <permissionSets>Admin_Lite</permissionSets>
+    <permissionSets>Allow_Business_Group_Id_Update</permissionSets>
+    <permissionSets>Enable_SSO</permissionSets>
+    <permissionSets>Enterprise_Sales_App</permissionSets>
+    <permissionSets>NamedCredentialAccess</permissionSets>
+    <permissionSets>Log_Access</permissionSets>
+    <permissionSets>Onboarding_and_Activations_App</permissionSets>
+    <permissionSets>RESSMO</permissionSets>
+    <permissionSets>View_Only</permissionSets>
+    <permissionSets>MX_Onboarding_Link_PS</permissionSets>
+    <permissionSets>HighVelocitySalesUser</permissionSets>
+    <permissionSets>SMB_Sales_App</permissionSets>
+    <permissionSets>Allow_Initial_Brand_Creation</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

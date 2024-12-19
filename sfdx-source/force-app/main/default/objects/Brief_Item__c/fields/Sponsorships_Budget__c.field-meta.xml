@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sponsorships_Budget__c</fullName>
+    <description>LEM-7342 Sponsorships - Campaign Fulfillment</description>
+    <externalId>false</externalId>
+    <formula>IF( AND(Quote_Line__r.Package__c =&apos;Sponsorships&apos; ,NOT(ISNULL(Quote_Line__r.SBQQ__RequiredBy__c)))
+,Quote_Line__r.SBQQ__RequiredBy__r.Budget__c
+,null)</formula>
+    <label>Sponsorships Budget</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

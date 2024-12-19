@@ -1,0 +1,73 @@
+{
+  "event_uuid": {
+    "value": "85443739-e60b-4756-ba8c-84a025ea4173"
+  },
+  "updated_store": {
+    "id": {
+      "value": "27873838"
+    },
+    "business_id": {
+      "value": 12750348
+    },
+    "is_active": {
+      "value": true
+    },
+    "order_protocol": {
+      "value": "POINT_OF_SALE"
+    }
+  },
+  "updated_fields": [
+    {
+      "updated_field_name": {
+        "value": "is_active"
+      },
+      "old_value": {
+        "value": "false"
+      },
+      "new_value": {
+        "value": "true"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "activated_at"
+      },
+      "old_value": {
+        "value": ""
+      },
+      "new_value": {
+        "value": "2024-03-06T18:25:25.642119Z"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "name"
+      },
+      "old_value": {
+        "value": "Spaceage Stereo-July-2024 - X8842627712"
+      },
+      "new_value": {
+        "value": "[DNU][[COO]]Spaceage Stereo-July-2024"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "activation_source"
+      },
+      "old_value": {
+        "value": ""
+      },
+      "new_value": {
+        "value": "nimda"
+      }
+    }
+  ],
+  "created_at": {
+    "seconds": 1709749525,
+    "nanos": 844057000
+  },
+  "point_of_sale": {
+    "provider_type": "test-provider-type",
+    "location_id": "test-location"
+  }
+}

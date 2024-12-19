@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Chantel_Test1</fullName>
+    <columns>Name</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Name__c</columns>
+    <columns>Work_Order_Provisional_Status__c</columns>
+    <columns>Status__c</columns>
+    <columns>Proposed_Date_of_Menu__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Work_Order_Type__c</columns>
+    <columns>Vertical__c</columns>
+    <columns>Number_of_Workable_WorkSteps__c</columns>
+    <columns>CreatedDate</columns>
+    <columns>LastModifiedDate</columns>
+    <columns>Owner_Link__c</columns>
+    <columns>Integration_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Name</field>
+        <operation>equals</operation>
+        <value>Onboarding</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Not Workable,Ready for QA,QA Complete,Blocked,Complete,Dead</value>
+    </filters>
+    <filters>
+        <field>Owner_Link__c</field>
+        <operation>equals</operation>
+        <value>Marketplace ENT Under Review</value>
+    </filters>
+    <filters>
+        <field>Parent_Work_Plan__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Account_Name__c</field>
+        <operation>notContain</operation>
+        <value>Test,test,test test</value>
+    </filters>
+    <label>ENT Onboarding - Under Review (AG)</label>
+</ListView>

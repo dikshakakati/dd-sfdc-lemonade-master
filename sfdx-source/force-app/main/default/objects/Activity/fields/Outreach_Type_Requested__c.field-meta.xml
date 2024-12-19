@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outreach_Type_Requested__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14155: It stores the type of outreach needed from handoff rep based on expectation set with Mx.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Type of outreach needed from handoff rep based on expectation set with Mx</inlineHelpText>
+    <label>Outreach Type Requested</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Conference Call Request</fullName>
+                <default>false</default>
+                <label>Conference Call Request</label>
+            </value>
+            <value>
+                <fullName>Meeting Already Booked on Calendar</fullName>
+                <default>false</default>
+                <label>Meeting Already Booked on Calendar</label>
+            </value>
+            <value>
+                <fullName>Solo Outreach</fullName>
+                <default>false</default>
+                <label>Solo Outreach</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

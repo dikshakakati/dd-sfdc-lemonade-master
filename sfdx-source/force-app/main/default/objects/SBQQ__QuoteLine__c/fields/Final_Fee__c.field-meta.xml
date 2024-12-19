@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Fee__c</fullName>
+    <description>LEM-441: This is the agreed-upon fee for the quote to be used for integration, activation, and billing.LEM-6457: Active fee check</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  SBQQ__Quote__r.Segment__c = $Label.AccountSegmentSMB,
+  IF(
+    NOT(
+      ISBLANK(SBQQ__SpecialPrice__c)
+    ),
+    SBQQ__SpecialPrice__c,
+    IF(
+      SBQQ__ListPrice__c != 0,
+      SBQQ__ListPrice__c,
+      null
+      )
+    )  ,
+    IF(
+      NOT(
+        ISNULL( Active_Fee__c )
+      ),
+      Active_Fee__c,
+      IF(
+        NOT(
+          ISNULL(SBQQ__SpecialPrice__c)
+        ),
+      SBQQ__SpecialPrice__c,
+      0
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Final Fee</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

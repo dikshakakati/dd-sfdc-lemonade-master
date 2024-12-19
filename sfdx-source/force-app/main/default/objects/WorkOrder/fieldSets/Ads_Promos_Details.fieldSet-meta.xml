@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ads_Promos_Details</fullName>
+    <description>LEM-16579: It is used to display ads &amp; promo details section of the onboarding details on work plan.</description>
+    <displayedFields>
+        <field>Opportunity__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Contract__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Ads &amp; Promos Details</label>
+</FieldSet>

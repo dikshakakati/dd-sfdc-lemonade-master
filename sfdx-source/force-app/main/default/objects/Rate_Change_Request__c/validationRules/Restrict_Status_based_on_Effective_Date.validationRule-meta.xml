@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Status_based_on_Effective_Date</fullName>
+    <active>false</active>
+    <description>LEM-6457 Active Rate Provisioning</description>
+    <errorConditionFormula>AND (
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+ISPICKVAL(Status__c, &apos;Cancelled&apos;),
+Effective_Date__c  &lt;=  Today())</errorConditionFormula>
+    <errorMessage>You can only cancel the request if the effective date is in future.</errorMessage>
+</ValidationRule>

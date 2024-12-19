@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Delay_After_Activation_For_A_P__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-16645 Check Delay After Activation should not blank for A&amp;P product during New Quote</description>
+    <externalId>false</externalId>
+    <label>Check Delay After Activation For A&amp;P</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

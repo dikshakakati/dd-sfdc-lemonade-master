@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Initiative_Validation_Rules</name>
+    </customPermissions>
+    <description>LEM-596: This permission set to bypass validation rules on Initiative object.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Initiative Validations</label>
+</PermissionSet>

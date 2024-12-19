@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IMEI_Number_Required_for_Replace_Return</fullName>
+    <active>true</active>
+    <description>LEM-15978: IMEI number is required for Return or Replacement request types.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.ByPass_Bulk_Update_Staging_Validation),
+    (Type__c = $Label.Work_Order_Tablet),
+    OR(
+       (Request_Type__c = $Label.Work_Order_Sub_Type_Replacement),
+        AND(
+            (Request_Type__c = $Label.Work_Order_Sub_Type_Return),
+             ISPICKVAL(Return_Components__c, &apos;Yes&apos;)
+        )
+    ),
+    ISBLANK(Defective_Tablet_IMEI__c),
+    ISBLANK(Defective_Printer_IMEI__c)
+   )</errorConditionFormula>
+    <errorMessage>Tablet or Printer IMEI must be filled out to proceed.</errorMessage>
+</ValidationRule>

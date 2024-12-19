@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LEM-1240: When COO Work Order is opened and in Confirmed status, notify the Account Owner.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[Internal] Notify Account Owner for Change of Ownership</name>
+    <relatedEntityType>WorkOrder</relatedEntityType>
+    <style>none</style>
+    <subject>Your Account, {{{WorkOrder.Account}}} has indicated a change of ownership</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

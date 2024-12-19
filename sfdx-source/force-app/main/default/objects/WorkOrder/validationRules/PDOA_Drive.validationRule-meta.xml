@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDOA_Drive</fullName>
+    <active>true</active>
+    <description>LEM-10448
+Do not allow for PDOA to be changed to earlier than original PDOA</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Work_Order_Validation_Rules),
+    ISPICKVAL(Type__c,&apos;Drive&apos;),
+    ISCHANGED(Proposed_Date_of_Activation__c),
+    Proposed_Date_of_Activation__c &lt; Proposed_Date_of_Activation_Original__c
+)</errorConditionFormula>
+    <errorDisplayField>Proposed_Date_of_Activation__c</errorDisplayField>
+    <errorMessage>You are not able to change the PDOA for this Drive Work Order due to internal SLAs.</errorMessage>
+</ValidationRule>

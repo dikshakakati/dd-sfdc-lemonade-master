@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Commission__c</fullName>
+    <description>LEM-184: Initial Setup of Subscription. LEM-6457: Updated label and help text.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field was created to capture the base Commission captured in the contract.</inlineHelpText>
+    <label>Contracted Commission</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

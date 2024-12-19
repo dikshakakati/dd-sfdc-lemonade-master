@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Less_Deal_Desk_Commission__c</fullName>
+    <description>LEM-13986: This field determines if commission is less than the threshold set.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        SBQQ__Existing__c = false,
+        AND(
+          Package__c != $Label.SmallOrderFulfillment_Package,
+          Package__c != $Label.LargeOrderFulfillment_Package
+        ),
+        OR(
+            ((Requested_Commission__c &lt;= Deal_Desk_Commission_Threshold__c) &amp;&amp;
+            Deal_Desk_Commission_Threshold__c &gt;= 0.01 &amp;&amp;
+            Requested_Commission__c &gt;= 0.01 &amp;&amp; ISBLANK(TEXT(Prior_Approved_Commission_Percent__c))),
+            ((Requested_Commission__c &lt;= Prior_Approved_Commission_Percent__c) &amp;&amp;
+            Prior_Approved_Commission_Percent__c &gt;= 0.01 &amp;&amp;
+            Requested_Commission__c &gt;= 0.01 &amp;&amp; !ISBLANK(TEXT(Prior_Approved_Commission_Percent__c))
+            &amp;&amp; Prior_Approved_Commission_Percent__c != Requested_Commission__c),
+            (( SBQQ__SpecialPrice__c &lt;= Deal_Desk_Fee_Threshold__c) &amp;&amp; Deal_Desk_Fee_Threshold__c &gt;= 0.01 &amp;&amp;
+            SBQQ__SpecialPrice__c &gt;= 0.01 &amp;&amp; ISBLANK(TEXT(Prior_Approved_Commission_Fee__c))),
+            (( SBQQ__SpecialPrice__c &lt;= Prior_Approved_Commission_Fee__c) &amp;&amp; Prior_Approved_Commission_Fee__c &gt;= 0.01 &amp;&amp;
+            SBQQ__SpecialPrice__c &gt;= 0.01 &amp;&amp; !ISBLANK(TEXT(Prior_Approved_Commission_Fee__c))
+            &amp;&amp; Prior_Approved_Commission_Fee__c != SBQQ__SpecialPrice__c)
+        )
+    ),
+    1,
+    2
+)</formula>
+    <label>Requested Less Than Deal Desk Commission</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,21 @@
+.slds-modal__container {
+    margin: auto;
+    width: 50%;
+    max-width: 40rem;
+    height: 70%;
+    max-height: 60rem;
+}
+
+.slds-backdrop_open {
+    z-index: 1040;
+}
+
+.slds-modal__content {
+    padding: 1rem;
+    color: #000203;
+}
+.slds-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Object_Link__c</fullName>
+    <description>LEM-1684: It generates url of the record that requires readiness check correction.</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+  Object_Name__c,
+  $Label.Readiness_Check_Failure_Object_Name_Account,
+    HYPERLINK(&apos;/&apos; + Account_Name__c, $Label.Readiness_Check_Failure_Object_Name_Account, &apos;_self&apos;),
+  $Label.Readiness_Check_Failure_Object_Name_Contact,
+    IF(
+      ISBLANK(Contact_Name__c),
+      HYPERLINK(LEFT($Api.Enterprise_Server_URL_540, FIND($CustomMetadata.Static_Configurations__mdt.Enterprise_Server_URL_Search_Key.Configuration_Value__c, $Api.Enterprise_Server_URL_540, 0) - 1) + $CustomMetadata.Static_Configurations__mdt.Store_Related_Services_URL_Prefix.Configuration_Value__c + Account_Name__c + $CustomMetadata.Static_Configurations__mdt.ACR_Related_List_URL_Suffix.Configuration_Value__c, $Label.Readiness_Check_Failure_Object_Name_Contact),
+      HYPERLINK(&apos;/&apos; + Contact_Name__c, $Label.Readiness_Check_Failure_Object_Name_Contact, &apos;_self&apos;)
+    ),
+  $Label.Readiness_Check_Failure_Object_Name_WorkOrder,
+    HYPERLINK(&apos;/&apos; + Child_Work_Order__c, $Label.Readiness_Check_Failure_Object_Name_WorkOrder, &apos;_self&apos;),
+  $Label.Readiness_Check_Failure_Object_Name_Payment_Account,
+    IF(
+      ISBLANK(Payment_Account_Name__c),
+      HYPERLINK(LEFT($Api.Enterprise_Server_URL_540, FIND($CustomMetadata.Static_Configurations__mdt.Enterprise_Server_URL_Search_Key.Configuration_Value__c, $Api.Enterprise_Server_URL_540, 0) - 1) + $CustomMetadata.Static_Configurations__mdt.Store_Related_Services_URL_Prefix.Configuration_Value__c + Account_Name__c + $CustomMetadata.Static_Configurations__mdt.APAR_Related_List_URL_Suffix.Configuration_Value__c, $Label.Readiness_Check_Failure_Object_Name_Payment_Account),
+      HYPERLINK(&apos;/&apos; + Payment_Account_Name__c, $Label.Readiness_Check_Failure_Object_Name_Payment_Account, &apos;_self&apos;)
+    ),
+  $Label.Readiness_Check_Failure_Object_Name_Brand,
+    HYPERLINK(&apos;/&apos; + Account_Name__r.Brand__c, $Label.Readiness_Check_Failure_Object_Name_Brand, &apos;_self&apos;),
+  $Label.Readiness_Check_Failure_Contract_Object_Name,
+    HYPERLINK(&apos;/&apos; + Parent_Work_Order__r.Contract__c, $Label.Readiness_Check_Failure_Contract_Object_Name, &apos;_self&apos;),
+  $Label.Readiness_Check_Failure_Object_Name_Opportunity,
+    HYPERLINK(&apos;/&apos; + Parent_Work_Order__r.Opportunity__c, $Label.Readiness_Check_Failure_Object_Name_Opportunity, &apos;_self&apos;),
+  Object_Name__c
+)</formula>
+    <label>Object Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

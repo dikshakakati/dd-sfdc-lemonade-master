@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outreach_Strategy__c</fullName>
+    <description>LEM-14107: It is used to store the Outreach Strategy preference.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <label>Outreach Strategy</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AM Led</fullName>
+                <default>false</default>
+                <label>Type A: AM Led</label>
+            </value>
+            <value>
+                <fullName>AM and AD Co-Led</fullName>
+                <default>false</default>
+                <label>Type B: AM and AD Co-Led</label>
+            </value>
+            <value>
+                <fullName>AD Unblocked</fullName>
+                <default>false</default>
+                <label>Type C: AD Unblocked</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

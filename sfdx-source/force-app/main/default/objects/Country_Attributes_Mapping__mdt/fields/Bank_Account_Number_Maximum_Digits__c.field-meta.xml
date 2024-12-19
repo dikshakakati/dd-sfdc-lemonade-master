@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bank_Account_Number_Maximum_Digits__c</fullName>
+    <description>LEM-10692: It is used to store the maximum number of digits required for &apos;Bank Account Number&apos; field on payment account.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Bank Account Number Maximum Digits</label>
+    <length>50</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

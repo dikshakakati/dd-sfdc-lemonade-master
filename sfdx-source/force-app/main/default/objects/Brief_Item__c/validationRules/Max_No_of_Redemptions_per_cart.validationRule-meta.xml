@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_No_of_Redemptions_per_cart</fullName>
+    <active>true</active>
+    <description>LEM-18230: Validation to enforce Max Number of Redemptions per Cart for SKU Level Deals and Threshold Promos products</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+OR(
+  Quote_Line__r.SBQQ__Product__r.ProductCode = &apos;10111&apos;,
+  Quote_Line__r.SBQQ__Product__r.ProductCode = &apos;10112&apos;),
+  ISCHANGED(Status__c),
+  ISPICKVAL(Status__c, &apos;Campaign Building&apos;),
+  ISBLANK(Max_Number_of_Redemptions_per_Cart__c)
+  )</errorConditionFormula>
+    <errorDisplayField>Max_Number_of_Redemptions_per_Cart__c</errorDisplayField>
+    <errorMessage>Max Number of Redemptions per Cart fields must be populated to move the Brief Item status to Campaign Building</errorMessage>
+</ValidationRule>

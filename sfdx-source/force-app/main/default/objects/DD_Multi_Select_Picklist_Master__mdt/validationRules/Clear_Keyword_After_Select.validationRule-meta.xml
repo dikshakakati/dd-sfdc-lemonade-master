@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clear_Keyword_After_Select</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ Clear_Keyword_After_Select__c,
+ NOT( Keep_SearchRes_Open_After_Select__c)
+)</errorConditionFormula>
+    <errorDisplayField>Clear_Keyword_After_Select__c</errorDisplayField>
+    <errorMessage>Can be checked only for those searches which have &apos;Keep SearchRes Open After Select&apos; checked.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounts_with_Contracts__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15847: It stores the URL for Accounts with Contracts report.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+  LEFT($Api.Partner_Server_URL_300, FIND(&apos;/services&apos;, $Api.Partner_Server_URL_300)) +
+  &apos;/lightning/r/Report/00O8Y000008s0XgUAI/view?queryScope=userFolders&apos;,
+  &apos;Link to Report&apos;,
+  &apos;_blank&apos;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Accounts with Contracts</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merchant_Order__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-15592: - Merchant Order Lookup</description>
+    <externalId>false</externalId>
+    <label>Merchant Order</label>
+    <referenceTo>MX_Order__c</referenceTo>
+    <relationshipLabel>Mx Order History</relationshipLabel>
+    <relationshipName>Mx_Order_History</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlatformEventSubscriberConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>WorkOrderProcessorEventsTriggerConfig</masterLabel>
+    <numPartitions>4</numPartitions>
+    <partitionKey>Work_Order_Processor__e.Partition_Key__c</partitionKey>
+    <platformEventConsumer>WorkOrderProcessor</platformEventConsumer>
+</PlatformEventSubscriberConfig>

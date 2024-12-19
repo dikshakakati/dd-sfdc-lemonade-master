@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AQS_Approval_Step_Cannot_Be_Null</fullName>
+    <active>true</active>
+    <description>Validates that the Approval Step field is populated to ensure proper rule behavior.</description>
+    <errorConditionFormula>ISBLANK(sbaa__ApprovalStep__c)</errorConditionFormula>
+    <errorDisplayField>sbaa__ApprovalStep__c</errorDisplayField>
+    <errorMessage>Approval step must be populated to ensure rules fire correctly.</errorMessage>
+</ValidationRule>

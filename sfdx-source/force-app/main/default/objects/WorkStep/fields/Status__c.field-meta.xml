@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>LEM-977: Indicates the status of the work step.
+LEM-1120: Created custom Status field to implement dependency on WorkStep Type field.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the status of the work step</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Workable</fullName>
+                <default>true</default>
+                <label>Not Workable</label>
+            </value>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Ready for QA</fullName>
+                <default>false</default>
+                <label>Ready for QA</label>
+            </value>
+            <value>
+                <fullName>QA Complete</fullName>
+                <default>false</default>
+                <label>QA Complete</label>
+            </value>
+            <value>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+                <label>Escalated</label>
+            </value>
+            <value>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+                <label>Blocked</label>
+            </value>
+            <value>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+                <label>Resolved</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Complete - DoorDash to implement link</fullName>
+                <default>false</default>
+                <label>Complete - DoorDash to implement link</label>
+            </value>
+            <value>
+                <fullName>Complete - Mx to implement link</fullName>
+                <default>false</default>
+                <label>Complete - Mx to implement link</label>
+            </value>
+            <value>
+                <fullName>Complete - Implemented on the call</fullName>
+                <default>false</default>
+                <label>Complete - Implemented on the call</label>
+            </value>
+            <value>
+                <fullName>Dead</fullName>
+                <default>false</default>
+                <label>Dead</label>
+            </value>
+            <value>
+                <fullName>Gone Dark</fullName>
+                <default>false</default>
+                <label>Gone Dark</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Deliver Return Label</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <valueName>Not Workable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Deliver Return Label</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Vendor Photoshoot</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Not Started</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Deliver Return Label</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Vendor Photoshoot</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <valueName>Ready for QA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <valueName>QA Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Deliver Return Label</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Vendor Photoshoot</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Escalated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Deliver Return Label</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Vendor Photoshoot</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Blocked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Deliver Return Label</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Vendor Photoshoot</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <valueName>Resolved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Deliver Return Label</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Vendor Photoshoot</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Setup Catalog</controllingFieldValue>
+            <controllingFieldValue>Setup Custom Delivery Radius</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Setup POS</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Storefront Page</controllingFieldValue>
+            <controllingFieldValue>Sponsored Listing</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>Drive</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Fee Credit</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>COO Same Store</controllingFieldValue>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <controllingFieldValue>Deliver Return Label</controllingFieldValue>
+            <controllingFieldValue>Link Implementation</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Link Optimization</controllingFieldValue>
+            <controllingFieldValue>Vendor Photoshoot</controllingFieldValue>
+            <controllingFieldValue>Menu Updates</controllingFieldValue>
+            <controllingFieldValue>Photo Linking</controllingFieldValue>
+            <controllingFieldValue>Post-Sales - Other</controllingFieldValue>
+            <controllingFieldValue>Photo QA</controllingFieldValue>
+            <controllingFieldValue>Rate Change</controllingFieldValue>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Add Marketing</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Activate</controllingFieldValue>
+            <controllingFieldValue>Ads and Promo - Deactivate</controllingFieldValue>
+            <controllingFieldValue>Cross Listing - Caviar</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Deliver Marketing Kit</controllingFieldValue>
+            <controllingFieldValue>Promos</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Ads</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <valueName>Dead</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Complete - DoorDash to implement link</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Complete - Mx to implement link</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Implementation Call</controllingFieldValue>
+            <valueName>Complete - Implemented on the call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Review &amp; Triage</controllingFieldValue>
+            <controllingFieldValue>Setup Store</controllingFieldValue>
+            <controllingFieldValue>Setup Business</controllingFieldValue>
+            <controllingFieldValue>Setup Banking</controllingFieldValue>
+            <controllingFieldValue>Grant Portal Access</controllingFieldValue>
+            <controllingFieldValue>Setup Menu</controllingFieldValue>
+            <controllingFieldValue>Deliver Tablet</controllingFieldValue>
+            <controllingFieldValue>Complete pre-work</controllingFieldValue>
+            <controllingFieldValue>Configure POS</controllingFieldValue>
+            <controllingFieldValue>Ingest Menu</controllingFieldValue>
+            <controllingFieldValue>QA Menu</controllingFieldValue>
+            <controllingFieldValue>Enable Integration</controllingFieldValue>
+            <controllingFieldValue>Activations Checklist</controllingFieldValue>
+            <controllingFieldValue>Activations Outreach</controllingFieldValue>
+            <controllingFieldValue>Activate Store</controllingFieldValue>
+            <valueName>Gone Dark</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

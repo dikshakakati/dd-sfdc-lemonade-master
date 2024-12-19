@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Branded_Collection_Working_Sheet__c</fullName>
+    <description>LEM-5110: To improve the Brief Item process.</description>
+    <externalId>false</externalId>
+    <label>Branded Collection: Working Sheet</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

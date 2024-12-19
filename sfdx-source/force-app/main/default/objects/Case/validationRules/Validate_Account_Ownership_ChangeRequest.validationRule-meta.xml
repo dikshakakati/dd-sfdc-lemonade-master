@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Account_Ownership_ChangeRequest</fullName>
+    <active>true</active>
+    <description>LEM-14106: It is used to validate that Account Ownership Change Request Reason is provided for S&amp;O Support Cases with SubType as Account ownership change.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Case_Validation_Rules),
+  RecordType.Name=$Label.SandOSupportRequest,
+  TEXT(Type) = $Label.BusinessHierarchyAssistance,
+  TEXT(Sub_Type__c)=$Label.AccountOwnershipChange,
+  ISBLANK(TEXT(Account_Ownership_Change_Request_Reason__c))
+)</errorConditionFormula>
+    <errorDisplayField>Account_Ownership_Change_Request_Reason__c</errorDisplayField>
+    <errorMessage>Please enter in Account Ownership Change Reason in order to submit a Account Ownership Change S&amp;O Support Case.</errorMessage>
+</ValidationRule>

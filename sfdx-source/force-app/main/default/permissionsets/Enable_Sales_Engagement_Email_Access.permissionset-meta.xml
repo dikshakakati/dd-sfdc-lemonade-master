@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-14735: It enables hidden &quot;Manage Email Templates&quot; system permission and lightning experience user which allows &quot;View Steps&quot; on Sales Engagement.
+
+Reference: https://help.salesforce.com/s/articleView?id=000380513&amp;type=1</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Enable Sales Engagement Email Access</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>LightningExperienceUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>PreventClassicExperience</name>
+    </userPermissions>
+</PermissionSet>

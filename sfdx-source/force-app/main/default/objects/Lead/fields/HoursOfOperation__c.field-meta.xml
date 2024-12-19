@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HoursOfOperation__c</fullName>
+    <description>LEM-13618: It indicates the hours during which the restaurant is open.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Hours the Rx is open</inlineHelpText>
+    <label>Hours of Operation</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

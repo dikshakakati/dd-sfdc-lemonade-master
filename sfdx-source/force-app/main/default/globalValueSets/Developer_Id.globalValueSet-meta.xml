@@ -1,0 +1,2376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>&amp;pizza - 137923832</fullName>
+        <default>false</default>
+        <label>&amp;pizza - 137923832</label>
+    </customValue>
+    <customValue>
+        <fullName>1800 Flowers - 93607411</fullName>
+        <default>false</default>
+        <label>1800 Flowers - 93607411</label>
+    </customValue>
+    <customValue>
+        <fullName>411 Eat - 830399177</fullName>
+        <default>false</default>
+        <label>411 Eat - 830399177</label>
+    </customValue>
+    <customValue>
+        <fullName>4 Leaf Labs - 709379330</fullName>
+        <default>false</default>
+        <label>4 Leaf Labs - 709379330</label>
+    </customValue>
+    <customValue>
+        <fullName>7-Eleven (AU) - 440104182</fullName>
+        <default>false</default>
+        <label>7-Eleven (AU) - 440104182</label>
+    </customValue>
+    <customValue>
+        <fullName>7-Eleven (CAN) - 573582915</fullName>
+        <default>false</default>
+        <label>7-Eleven (CAN) - 573582915</label>
+    </customValue>
+    <customValue>
+        <fullName>7-Eleven (US) - 50712610</fullName>
+        <default>false</default>
+        <label>7-Eleven (US) - 50712610</label>
+    </customValue>
+    <customValue>
+        <fullName>9Fold - 421604916</fullName>
+        <default>false</default>
+        <label>9Fold - 421604916</label>
+    </customValue>
+    <customValue>
+        <fullName>A&amp;W (CAN) - 552021018</fullName>
+        <default>false</default>
+        <label>A&amp;W (CAN) - 552021018</label>
+    </customValue>
+    <customValue>
+        <fullName>A&amp;W - 552021018</fullName>
+        <default>false</default>
+        <label>A&amp;W - 552021018</label>
+    </customValue>
+    <customValue>
+        <fullName>Abacus - 367423576</fullName>
+        <default>false</default>
+        <label>Abacus - 367423576</label>
+    </customValue>
+    <customValue>
+        <fullName>Adora - 473750231</fullName>
+        <default>false</default>
+        <label>Adora - 473750231</label>
+    </customValue>
+    <customValue>
+        <fullName>Advance Auto Parts - 398859239</fullName>
+        <default>false</default>
+        <label>Advance Auto Parts - 398859239</label>
+    </customValue>
+    <customValue>
+        <fullName>Aiya Order - 887778247</fullName>
+        <default>false</default>
+        <label>Aiya Order - 887778247</label>
+    </customValue>
+    <customValue>
+        <fullName>Albertsons (ABS) - 59911238</fullName>
+        <default>false</default>
+        <label>Albertsons (ABS) - 59911238</label>
+    </customValue>
+    <customValue>
+        <fullName>Albertsons DSD - 1181205775</fullName>
+        <default>false</default>
+        <label>Albertsons DSD - 1181205775</label>
+    </customValue>
+    <customValue>
+        <fullName>Alcohol Addendums MWP - 1053109523</fullName>
+        <default>false</default>
+        <label>Alcohol Addendums MWP - 1053109523</label>
+    </customValue>
+    <customValue>
+        <fullName>AllValue - 1791015947</fullName>
+        <default>false</default>
+        <label>AllValue - 1791015947</label>
+    </customValue>
+    <customValue>
+        <fullName>Ambassador AI - 625757502</fullName>
+        <default>false</default>
+        <label>Ambassador AI - 625757502</label>
+    </customValue>
+    <customValue>
+        <fullName>Amber Specialty Pharmacy - 364515190</fullName>
+        <default>false</default>
+        <label>Amber Specialty Pharmacy - 364515190</label>
+    </customValue>
+    <customValue>
+        <fullName>Anejo - 931893034</fullName>
+        <default>false</default>
+        <label>Anejo - 931893034</label>
+    </customValue>
+    <customValue>
+        <fullName>Appfront - 72514055</fullName>
+        <default>false</default>
+        <label>Appfront - 72514055</label>
+    </customValue>
+    <customValue>
+        <fullName>Applova - 642208479</fullName>
+        <default>false</default>
+        <label>Applova - 642208479</label>
+    </customValue>
+    <customValue>
+        <fullName>AppSuite - 320299581</fullName>
+        <default>false</default>
+        <label>AppSuite - 320299581</label>
+    </customValue>
+    <customValue>
+        <fullName>Arrow POS - 710689911</fullName>
+        <default>false</default>
+        <label>Arrow POS - 710689911</label>
+    </customValue>
+    <customValue>
+        <fullName>Atlantis Fresh Market - 632292944</fullName>
+        <default>false</default>
+        <label>Atlantis Fresh Market - 632292944</label>
+    </customValue>
+    <customValue>
+        <fullName>Auphan - 421605585</fullName>
+        <default>false</default>
+        <label>Auphan - 421605585</label>
+    </customValue>
+    <customValue>
+        <fullName>Auphan Software - 421605585</fullName>
+        <default>false</default>
+        <label>Auphan Software - 421605585</label>
+    </customValue>
+    <customValue>
+        <fullName>AutoZone (via Bringg) - 1118232565</fullName>
+        <default>false</default>
+        <label>AutoZone (via Bringg) - 1118232565</label>
+    </customValue>
+    <customValue>
+        <fullName>Bashas Pharmacy - 362255265</fullName>
+        <default>false</default>
+        <label>Bashas Pharmacy - 362255265</label>
+    </customValue>
+    <customValue>
+        <fullName>Bbot (AUS) - 365335815</fullName>
+        <default>false</default>
+        <label>Bbot (AUS) - 365335815</label>
+    </customValue>
+    <customValue>
+        <fullName>Bbot (CA) - 299201404</fullName>
+        <default>false</default>
+        <label>Bbot (CA) - 299201404</label>
+    </customValue>
+    <customValue>
+        <fullName>Bbot (US) - 262094458</fullName>
+        <default>false</default>
+        <label>Bbot (US) - 262094458</label>
+    </customValue>
+    <customValue>
+        <fullName>Bell Canada (via Bringg) - 1205645204</fullName>
+        <default>false</default>
+        <label>Bell Canada (via Bringg) - 1205645204</label>
+    </customValue>
+    <customValue>
+        <fullName>BentoBox (CA) - 365357955</fullName>
+        <default>false</default>
+        <label>BentoBox (CA) - 365357955</label>
+    </customValue>
+    <customValue>
+        <fullName>BentoBox - 333972943</fullName>
+        <default>false</default>
+        <label>BentoBox - 333972943</label>
+    </customValue>
+    <customValue>
+        <fullName>Bepoz - 421606020</fullName>
+        <default>false</default>
+        <label>Bepoz - 421606020</label>
+    </customValue>
+    <customValue>
+        <fullName>BetterTrucks - 1124316421</fullName>
+        <default>false</default>
+        <label>BetterTrucks - 1124316421</label>
+    </customValue>
+    <customValue>
+        <fullName>bevmo_freshop - 306736784</fullName>
+        <default>false</default>
+        <label>bevmo_freshop - 306736784</label>
+    </customValue>
+    <customValue>
+        <fullName>Bevz - 337748364</fullName>
+        <default>false</default>
+        <label>Bevz - 337748364</label>
+    </customValue>
+    <customValue>
+        <fullName>bgood - 109450450</fullName>
+        <default>false</default>
+        <label>bgood - 109450450</label>
+    </customValue>
+    <customValue>
+        <fullName>Bier Markt - 931889370</fullName>
+        <default>false</default>
+        <label>Bier Markt - 931889370</label>
+    </customValue>
+    <customValue>
+        <fullName>Big Deal Burger (VR Concept of Dickey&apos;s BBQ) - 1130925037</fullName>
+        <default>false</default>
+        <label>Big Deal Burger (VR Concept of Dickey&apos;s BBQ) - 1130925037</label>
+    </customValue>
+    <customValue>
+        <fullName>Big Deal Burger - 1130925037</fullName>
+        <default>false</default>
+        <label>Big Deal Burger - 1130925037</label>
+    </customValue>
+    <customValue>
+        <fullName>Big Deal Burger - 641438415</fullName>
+        <default>false</default>
+        <label>Big Deal Burger - 641438415</label>
+    </customValue>
+    <customValue>
+        <fullName>BigZpoon NonPreferred - 884078350</fullName>
+        <default>false</default>
+        <label>BigZpoon NonPreferred - 884078350</label>
+    </customValue>
+    <customValue>
+        <fullName>BigZpoon Preferred - 884077831</fullName>
+        <default>false</default>
+        <label>BigZpoon Preferred - 884077831</label>
+    </customValue>
+    <customValue>
+        <fullName>Birdcall - 352586321</fullName>
+        <default>false</default>
+        <label>Birdcall - 352586321</label>
+    </customValue>
+    <customValue>
+        <fullName>BJ&apos;s Restaurant and Brewhouse - 22455741</fullName>
+        <default>false</default>
+        <label>BJ&apos;s Restaurant and Brewhouse - 22455741</label>
+    </customValue>
+    <customValue>
+        <fullName>BJs - 848589854</fullName>
+        <default>false</default>
+        <label>BJs - 848589854</label>
+    </customValue>
+    <customValue>
+        <fullName>Blanco Cantina - 931898212</fullName>
+        <default>false</default>
+        <label>Blanco Cantina - 931898212</label>
+    </customValue>
+    <customValue>
+        <fullName>Blank Street - 587715430</fullName>
+        <default>false</default>
+        <label>Blank Street - 587715430</label>
+    </customValue>
+    <customValue>
+        <fullName>Blizzfull - 406368739</fullName>
+        <default>false</default>
+        <label>Blizzfull - 406368739</label>
+    </customValue>
+    <customValue>
+        <fullName>Bloomin Brands - 730911538</fullName>
+        <default>false</default>
+        <label>Bloomin Brands - 730911538</label>
+    </customValue>
+    <customValue>
+        <fullName>Boozer - 319192594</fullName>
+        <default>false</default>
+        <label>Boozer - 319192594</label>
+    </customValue>
+    <customValue>
+        <fullName>Bopple - 421607571</fullName>
+        <default>false</default>
+        <label>Bopple - 421607571</label>
+    </customValue>
+    <customValue>
+        <fullName>Boston Market - 445065399</fullName>
+        <default>false</default>
+        <label>Boston Market - 445065399</label>
+    </customValue>
+    <customValue>
+        <fullName>Bouclair Canada (via Delivery Solutions) - 1170267467</fullName>
+        <default>false</default>
+        <label>Bouclair Canada (via Delivery Solutions) - 1170267467</label>
+    </customValue>
+    <customValue>
+        <fullName>Brandibble - 46530074</fullName>
+        <default>false</default>
+        <label>Brandibble - 46530074</label>
+    </customValue>
+    <customValue>
+        <fullName>Bringg (1800 Radiator) - 776218246</fullName>
+        <default>false</default>
+        <label>Bringg (1800 Radiator) - 776218246</label>
+    </customValue>
+    <customValue>
+        <fullName>Bringg (Burger King CAN) - RBI - 975154728</fullName>
+        <default>false</default>
+        <label>Bringg (Burger King CAN) - RBI - 975154728</label>
+    </customValue>
+    <customValue>
+        <fullName>Bringg (Burger King US) - RBI - 174365952</fullName>
+        <default>false</default>
+        <label>Bringg (Burger King US) - RBI - 174365952</label>
+    </customValue>
+    <customValue>
+        <fullName>Bringg (Non-Enterprise) - 290864125</fullName>
+        <default>false</default>
+        <label>Bringg (Non-Enterprise) - 290864125</label>
+    </customValue>
+    <customValue>
+        <fullName>Bringg (Popeyes US) - RBI - 99277133</fullName>
+        <default>false</default>
+        <label>Bringg (Popeyes US) - RBI - 99277133</label>
+    </customValue>
+    <customValue>
+        <fullName>Bringg (Sweetgreen) - 786736739</fullName>
+        <default>false</default>
+        <label>Bringg (Sweetgreen) - 786736739</label>
+    </customValue>
+    <customValue>
+        <fullName>Bringg (Tim Horton&apos;s - CAN) - RBI - 293800638</fullName>
+        <default>false</default>
+        <label>Bringg (Tim Horton&apos;s - CAN) - RBI - 293800638</label>
+    </customValue>
+    <customValue>
+        <fullName>Bringg (Tim Horton&apos;s - US) - RBI - 429393865</fullName>
+        <default>false</default>
+        <label>Bringg (Tim Horton&apos;s - US) - RBI - 429393865</label>
+    </customValue>
+    <customValue>
+        <fullName>Bristol Farms - 458749677</fullName>
+        <default>false</default>
+        <label>Bristol Farms - 458749677</label>
+    </customValue>
+    <customValue>
+        <fullName>Brygid - 75307438</fullName>
+        <default>false</default>
+        <label>Brygid - 75307438</label>
+    </customValue>
+    <customValue>
+        <fullName>Buffalo Wild Wings - 156392969</fullName>
+        <default>false</default>
+        <label>Buffalo Wild Wings - 156392969</label>
+    </customValue>
+    <customValue>
+        <fullName>Bunnings - 875405956</fullName>
+        <default>false</default>
+        <label>Bunnings - 875405956</label>
+    </customValue>
+    <customValue>
+        <fullName>Burger King (CAN) - 975154728</fullName>
+        <default>false</default>
+        <label>Burger King (CAN) - 975154728</label>
+    </customValue>
+    <customValue>
+        <fullName>Burger King (Canada) - 975154728</fullName>
+        <default>false</default>
+        <label>Burger King (Canada) - 975154728</label>
+    </customValue>
+    <customValue>
+        <fullName>Burger King - 174365952</fullName>
+        <default>false</default>
+        <label>Burger King - 174365952</label>
+    </customValue>
+    <customValue>
+        <fullName>Burger’s Priest - 931894403</fullName>
+        <default>false</default>
+        <label>Burger’s Priest - 931894403</label>
+    </customValue>
+    <customValue>
+        <fullName>Butter&amp; - 43056814</fullName>
+        <default>false</default>
+        <label>Butter&amp; - 43056814</label>
+    </customValue>
+    <customValue>
+        <fullName>Buyback Technologies - 708712725</fullName>
+        <default>false</default>
+        <label>Buyback Technologies - 708712725</label>
+    </customValue>
+    <customValue>
+        <fullName>Cafe Zupas - 1248717661</fullName>
+        <default>false</default>
+        <label>Cafe Zupas - 1248717661</label>
+    </customValue>
+    <customValue>
+        <fullName>CAKE POS - 1270842479</fullName>
+        <default>false</default>
+        <label>CAKE POS - 1270842479</label>
+    </customValue>
+    <customValue>
+        <fullName>Canadian Tire - 746479370</fullName>
+        <default>false</default>
+        <label>Canadian Tire - 746479370</label>
+    </customValue>
+    <customValue>
+        <fullName>CaptainAI (US) - 918557861</fullName>
+        <default>false</default>
+        <label>CaptainAI (US) - 918557861</label>
+    </customValue>
+    <customValue>
+        <fullName>CardFree - 421608987</fullName>
+        <default>false</default>
+        <label>CardFree - 421608987</label>
+    </customValue>
+    <customValue>
+        <fullName>Cartwheel - 829135814</fullName>
+        <default>false</default>
+        <label>Cartwheel - 829135814</label>
+    </customValue>
+    <customValue>
+        <fullName>CaryRx - 664404180</fullName>
+        <default>false</default>
+        <label>CaryRx - 664404180</label>
+    </customValue>
+    <customValue>
+        <fullName>Casey&apos;s General Store - 470838831</fullName>
+        <default>false</default>
+        <label>Casey&apos;s General Store - 470838831</label>
+    </customValue>
+    <customValue>
+        <fullName>Cava Zoe&apos;s - 339480541</fullName>
+        <default>false</default>
+        <label>Cava Zoe&apos;s - 339480541</label>
+    </customValue>
+    <customValue>
+        <fullName>Caviar for Companies - 254724852</fullName>
+        <default>false</default>
+        <label>Caviar for Companies - 254724852</label>
+    </customValue>
+    <customValue>
+        <fullName>Chemist Warehouse - 707499441</fullName>
+        <default>false</default>
+        <label>Chemist Warehouse - 707499441</label>
+    </customValue>
+    <customValue>
+        <fullName>Chili&apos;s (Brinker) - 134725573</fullName>
+        <default>false</default>
+        <label>Chili&apos;s (Brinker) - 134725573</label>
+    </customValue>
+    <customValue>
+        <fullName>Chip Cookies - 466153352</fullName>
+        <default>false</default>
+        <label>Chip Cookies - 466153352</label>
+    </customValue>
+    <customValue>
+        <fullName>Chipotle - 41263002</fullName>
+        <default>false</default>
+        <label>Chipotle - 41263002</label>
+    </customValue>
+    <customValue>
+        <fullName>Chk Plz - 488018076</fullName>
+        <default>false</default>
+        <label>Chk Plz - 488018076</label>
+    </customValue>
+    <customValue>
+        <fullName>Chowly - 135151260</fullName>
+        <default>false</default>
+        <label>Chowly - 135151260</label>
+    </customValue>
+    <customValue>
+        <fullName>ChowNow - 61409049</fullName>
+        <default>false</default>
+        <label>ChowNow - 61409049</label>
+    </customValue>
+    <customValue>
+        <fullName>Cinch - 1084443822</fullName>
+        <default>false</default>
+        <label>Cinch - 1084443822</label>
+    </customValue>
+    <customValue>
+        <fullName>City of San Jose - 264285264</fullName>
+        <default>false</default>
+        <label>City of San Jose - 264285264</label>
+    </customValue>
+    <customValue>
+        <fullName>Clorder - 44218459</fullName>
+        <default>false</default>
+        <label>Clorder - 44218459</label>
+    </customValue>
+    <customValue>
+        <fullName>Clover - 421788342</fullName>
+        <default>false</default>
+        <label>Clover - 421788342</label>
+    </customValue>
+    <customValue>
+        <fullName>Cluster - 488019391</fullName>
+        <default>false</default>
+        <label>Cluster - 488019391</label>
+    </customValue>
+    <customValue>
+        <fullName>Coborn&apos;s - 258599297</fullName>
+        <default>false</default>
+        <label>Coborn&apos;s - 258599297</label>
+    </customValue>
+    <customValue>
+        <fullName>Code Fusion - 761735498</fullName>
+        <default>false</default>
+        <label>Code Fusion - 761735498</label>
+    </customValue>
+    <customValue>
+        <fullName>Coles (Direct) - 585516899</fullName>
+        <default>false</default>
+        <label>Coles (Direct) - 585516899</label>
+    </customValue>
+    <customValue>
+        <fullName>Coles (via Bringg) - 1130246611</fullName>
+        <default>false</default>
+        <label>Coles (via Bringg) - 1130246611</label>
+    </customValue>
+    <customValue>
+        <fullName>Combined Jewish Philanthropies - 273799532</fullName>
+        <default>false</default>
+        <label>Combined Jewish Philanthropies - 273799532</label>
+    </customValue>
+    <customValue>
+        <fullName>Computer Perfect - 1242406471</fullName>
+        <default>false</default>
+        <label>Computer Perfect - 1242406471</label>
+    </customValue>
+    <customValue>
+        <fullName>Country Greenery via Bringg - 1105463448</fullName>
+        <default>false</default>
+        <label>Country Greenery via Bringg - 1105463448</label>
+    </customValue>
+    <customValue>
+        <fullName>Craveable Brands - 448275710</fullName>
+        <default>false</default>
+        <label>Craveable Brands - 448275710</label>
+    </customValue>
+    <customValue>
+        <fullName>Craver (CA) - 157869811</fullName>
+        <default>false</default>
+        <label>Craver (CA) - 157869811</label>
+    </customValue>
+    <customValue>
+        <fullName>Craver (US) - 277065317</fullName>
+        <default>false</default>
+        <label>Craver (US) - 277065317</label>
+    </customValue>
+    <customValue>
+        <fullName>Crisp - 307435397</fullName>
+        <default>false</default>
+        <label>Crisp - 307435397</label>
+    </customValue>
+    <customValue>
+        <fullName>CRMBoost - 460032308</fullName>
+        <default>false</default>
+        <label>CRMBoost - 460032308</label>
+    </customValue>
+    <customValue>
+        <fullName>Crumbl (DEPRECATED API KEY) - 140170137</fullName>
+        <default>false</default>
+        <label>Crumbl (DEPRECATED API KEY) - 140170137</label>
+    </customValue>
+    <customValue>
+        <fullName>Crumbl - 141074924</fullName>
+        <default>false</default>
+        <label>Crumbl - 141074924</label>
+    </customValue>
+    <customValue>
+        <fullName>Cub Foods - 1116558585</fullName>
+        <default>false</default>
+        <label>Cub Foods - 1116558585</label>
+    </customValue>
+    <customValue>
+        <fullName>Cue Health - 776151359</fullName>
+        <default>false</default>
+        <label>Cue Health - 776151359</label>
+    </customValue>
+    <customValue>
+        <fullName>CulinaryFlo - 504201102</fullName>
+        <default>false</default>
+        <label>CulinaryFlo - 504201102</label>
+    </customValue>
+    <customValue>
+        <fullName>DarkStore - 213009190</fullName>
+        <default>false</default>
+        <label>DarkStore - 213009190</label>
+    </customValue>
+    <customValue>
+        <fullName>DaVinci - 1145769623</fullName>
+        <default>false</default>
+        <label>DaVinci - 1145769623</label>
+    </customValue>
+    <customValue>
+        <fullName>Deliverect - 597914909</fullName>
+        <default>false</default>
+        <label>Deliverect - 597914909</label>
+    </customValue>
+    <customValue>
+        <fullName>DeliverIT - 841652158</fullName>
+        <default>false</default>
+        <label>DeliverIT - 841652158</label>
+    </customValue>
+    <customValue>
+        <fullName>Deliverr - 906057473</fullName>
+        <default>false</default>
+        <label>Deliverr - 906057473</label>
+    </customValue>
+    <customValue>
+        <fullName>Delivery Solutions - 54366893</fullName>
+        <default>false</default>
+        <label>Delivery Solutions - 54366893</label>
+    </customValue>
+    <customValue>
+        <fullName>Dick&apos;s Sporting Goods - 1098515279</fullName>
+        <default>false</default>
+        <label>Dick&apos;s Sporting Goods - 1098515279</label>
+    </customValue>
+    <customValue>
+        <fullName>Dickey&apos;s BBQ (Deprecated Key) - 128733135</fullName>
+        <default>false</default>
+        <label>Dickey&apos;s BBQ (Deprecated Key) - 128733135</label>
+    </customValue>
+    <customValue>
+        <fullName>Dickey&apos;s BBQ - 135150373</fullName>
+        <default>false</default>
+        <label>Dickey&apos;s BBQ - 135150373</label>
+    </customValue>
+    <customValue>
+        <fullName>Dierbergs - 990347904</fullName>
+        <default>false</default>
+        <label>Dierbergs - 990347904</label>
+    </customValue>
+    <customValue>
+        <fullName>Dig Inn - 438494308</fullName>
+        <default>false</default>
+        <label>Dig Inn - 438494308</label>
+    </customValue>
+    <customValue>
+        <fullName>DishDivvy - 60639909</fullName>
+        <default>false</default>
+        <label>DishDivvy - 60639909</label>
+    </customValue>
+    <customValue>
+        <fullName>doa-developer - 268325805</fullName>
+        <default>false</default>
+        <label>doa-developer - 268325805</label>
+    </customValue>
+    <customValue>
+        <fullName>Donatos - 241481965</fullName>
+        <default>false</default>
+        <label>Donatos - 241481965</label>
+    </customValue>
+    <customValue>
+        <fullName>DoorDash Pharmacy Services - 1025065829</fullName>
+        <default>false</default>
+        <label>DoorDash Pharmacy Services - 1025065829</label>
+    </customValue>
+    <customValue>
+        <fullName>Dragontail (US) - 240431880</fullName>
+        <default>false</default>
+        <label>Dragontail (US) - 240431880</label>
+    </customValue>
+    <customValue>
+        <fullName>drive_email_ingestion_grubhub - 387805431</fullName>
+        <default>false</default>
+        <label>drive_email_ingestion_grubhub - 387805431</label>
+    </customValue>
+    <customValue>
+        <fullName>Drizly - 72373000</fullName>
+        <default>false</default>
+        <label>Drizly - 72373000</label>
+    </customValue>
+    <customValue>
+        <fullName>Durty Dawgs - 931894079</fullName>
+        <default>false</default>
+        <label>Durty Dawgs - 931894079</label>
+    </customValue>
+    <customValue>
+        <fullName>East Side Mario’s - 931889636</fullName>
+        <default>false</default>
+        <label>East Side Mario’s - 931889636</label>
+    </customValue>
+    <customValue>
+        <fullName>ECRS - 938086030</fullName>
+        <default>false</default>
+        <label>ECRS - 938086030</label>
+    </customValue>
+    <customValue>
+        <fullName>Edible (CA) - 75744891</fullName>
+        <default>false</default>
+        <label>Edible (CA) - 75744891</label>
+    </customValue>
+    <customValue>
+        <fullName>Edible Arrangements (US) - 71362159</fullName>
+        <default>false</default>
+        <label>Edible Arrangements (US) - 71362159</label>
+    </customValue>
+    <customValue>
+        <fullName>Edible Arrangements - 71362159</fullName>
+        <default>false</default>
+        <label>Edible Arrangements - 71362159</label>
+    </customValue>
+    <customValue>
+        <fullName>Edible Blooms - 549826588</fullName>
+        <default>false</default>
+        <label>Edible Blooms - 549826588</label>
+    </customValue>
+    <customValue>
+        <fullName>eGrowcery - 890821958</fullName>
+        <default>false</default>
+        <label>eGrowcery - 890821958</label>
+    </customValue>
+    <customValue>
+        <fullName>Elephant &amp; Castle - 931889868</fullName>
+        <default>false</default>
+        <label>Elephant &amp; Castle - 931889868</label>
+    </customValue>
+    <customValue>
+        <fullName>Eliqs - 418887216</fullName>
+        <default>false</default>
+        <label>Eliqs - 418887216</label>
+    </customValue>
+    <customValue>
+        <fullName>Email Ingestion (DD) - 413453425</fullName>
+        <default>false</default>
+        <label>Email Ingestion (DD) - 413453425</label>
+    </customValue>
+    <customValue>
+        <fullName>EPOS - 761735797</fullName>
+        <default>false</default>
+        <label>EPOS - 761735797</label>
+    </customValue>
+    <customValue>
+        <fullName>Erewhon - 392575116</fullName>
+        <default>false</default>
+        <label>Erewhon - 392575116</label>
+    </customValue>
+    <customValue>
+        <fullName>EZChow - 574018843</fullName>
+        <default>false</default>
+        <label>EZChow - 574018843</label>
+    </customValue>
+    <customValue>
+        <fullName>Famous Brands - 369065147</fullName>
+        <default>false</default>
+        <label>Famous Brands - 369065147</label>
+    </customValue>
+    <customValue>
+        <fullName>Farmstead - 701650846</fullName>
+        <default>false</default>
+        <label>Farmstead - 701650846</label>
+    </customValue>
+    <customValue>
+        <fullName>Fedelta - 482943834</fullName>
+        <default>false</default>
+        <label>Fedelta - 482943834</label>
+    </customValue>
+    <customValue>
+        <fullName>Firehouse Subs CA - 1260045146</fullName>
+        <default>false</default>
+        <label>Firehouse Subs CA - 1260045146</label>
+    </customValue>
+    <customValue>
+        <fullName>Firehouse Subs CAN (Direct) - 1260045146</fullName>
+        <default>false</default>
+        <label>Firehouse Subs CAN (Direct) - 1260045146</label>
+    </customValue>
+    <customValue>
+        <fullName>Firehouse Subs US - 1325000510</fullName>
+        <default>false</default>
+        <label>Firehouse Subs US - 1325000510</label>
+    </customValue>
+    <customValue>
+        <fullName>Flex Catering - 488005478</fullName>
+        <default>false</default>
+        <label>Flex Catering - 488005478</label>
+    </customValue>
+    <customValue>
+        <fullName>FlipDish - 315614535</fullName>
+        <default>false</default>
+        <label>FlipDish - 315614535</label>
+    </customValue>
+    <customValue>
+        <fullName>Flowspace - 672888715</fullName>
+        <default>false</default>
+        <label>Flowspace - 672888715</label>
+    </customValue>
+    <customValue>
+        <fullName>Foodtec (Email Ingestion) - 44280713</fullName>
+        <default>false</default>
+        <label>Foodtec (Email Ingestion) - 44280713</label>
+    </customValue>
+    <customValue>
+        <fullName>Foodtec - 463618020</fullName>
+        <default>false</default>
+        <label>Foodtec - 463618020</label>
+    </customValue>
+    <customValue>
+        <fullName>Fooji - 59692116</fullName>
+        <default>false</default>
+        <label>Fooji - 59692116</label>
+    </customValue>
+    <customValue>
+        <fullName>Founders Table (Chopt, Dos Toros) - 551562672</fullName>
+        <default>false</default>
+        <label>Founders Table (Chopt, Dos Toros) - 551562672</label>
+    </customValue>
+    <customValue>
+        <fullName>Fox Ordering - 627530257</fullName>
+        <default>false</default>
+        <label>Fox Ordering - 627530257</label>
+    </customValue>
+    <customValue>
+        <fullName>Foxtrot - 1186529109</fullName>
+        <default>false</default>
+        <label>Foxtrot - 1186529109</label>
+    </customValue>
+    <customValue>
+        <fullName>Franklin Junction - 1084008233</fullName>
+        <default>false</default>
+        <label>Franklin Junction - 1084008233</label>
+    </customValue>
+    <customValue>
+        <fullName>Fresh - 931894217</fullName>
+        <default>false</default>
+        <label>Fresh - 931894217</label>
+    </customValue>
+    <customValue>
+        <fullName>FreshBytes - 400283997</fullName>
+        <default>false</default>
+        <label>FreshBytes - 400283997</label>
+    </customValue>
+    <customValue>
+        <fullName>Freshii - 884586491</fullName>
+        <default>false</default>
+        <label>Freshii - 884586491</label>
+    </customValue>
+    <customValue>
+        <fullName>FTD - 37726128</fullName>
+        <default>false</default>
+        <label>FTD - 37726128</label>
+    </customValue>
+    <customValue>
+        <fullName>GiveX (AUS) - 433719745</fullName>
+        <default>false</default>
+        <label>GiveX (AUS) - 433719745</label>
+    </customValue>
+    <customValue>
+        <fullName>GiveX (CA) - 267057601</fullName>
+        <default>false</default>
+        <label>GiveX (CA) - 267057601</label>
+    </customValue>
+    <customValue>
+        <fullName>GiveX (US) - 280019733</fullName>
+        <default>false</default>
+        <label>GiveX (US) - 280019733</label>
+    </customValue>
+    <customValue>
+        <fullName>Go Grocer - 1048766383</fullName>
+        <default>false</default>
+        <label>Go Grocer - 1048766383</label>
+    </customValue>
+    <customValue>
+        <fullName>GoodGood - 761736193</fullName>
+        <default>false</default>
+        <label>GoodGood - 761736193</label>
+    </customValue>
+    <customValue>
+        <fullName>Good Reason - 464406412</fullName>
+        <default>false</default>
+        <label>Good Reason - 464406412</label>
+    </customValue>
+    <customValue>
+        <fullName>Good Reason - 679359117</fullName>
+        <default>false</default>
+        <label>Good Reason - 679359117</label>
+    </customValue>
+    <customValue>
+        <fullName>Goody Goody - 919950013</fullName>
+        <default>false</default>
+        <label>Goody Goody - 919950013</label>
+    </customValue>
+    <customValue>
+        <fullName>GoParrot - 82716911</fullName>
+        <default>false</default>
+        <label>GoParrot - 82716911</label>
+    </customValue>
+    <customValue>
+        <fullName>GoTab - 606902856</fullName>
+        <default>false</default>
+        <label>GoTab - 606902856</label>
+    </customValue>
+    <customValue>
+        <fullName>Great Notion - 406818596</fullName>
+        <default>false</default>
+        <label>Great Notion - 406818596</label>
+    </customValue>
+    <customValue>
+        <fullName>Group Sini - 906295072</fullName>
+        <default>false</default>
+        <label>Group Sini - 906295072</label>
+    </customValue>
+    <customValue>
+        <fullName>Grubhub/Seamless (Email Ingestion) - 61391149</fullName>
+        <default>false</default>
+        <label>Grubhub/Seamless (Email Ingestion) - 61391149</label>
+    </customValue>
+    <customValue>
+        <fullName>Habit Burger - 313802055</fullName>
+        <default>false</default>
+        <label>Habit Burger - 313802055</label>
+    </customValue>
+    <customValue>
+        <fullName>Haida Sandwich - 65711010</fullName>
+        <default>false</default>
+        <label>Haida Sandwich - 65711010</label>
+    </customValue>
+    <customValue>
+        <fullName>hairhouse - 316386758</fullName>
+        <default>false</default>
+        <label>hairhouse - 316386758</label>
+    </customValue>
+    <customValue>
+        <fullName>Harvey’s - 931890504</fullName>
+        <default>false</default>
+        <label>Harvey’s - 931890504</label>
+    </customValue>
+    <customValue>
+        <fullName>HealNow - 639408477</fullName>
+        <default>false</default>
+        <label>HealNow - 639408477</label>
+    </customValue>
+    <customValue>
+        <fullName>Hibbett Sports (via Bringg) - 798080788</fullName>
+        <default>false</default>
+        <label>Hibbett Sports (via Bringg) - 798080788</label>
+    </customValue>
+    <customValue>
+        <fullName>Hngr - 220233284</fullName>
+        <default>false</default>
+        <label>Hngr - 220233284</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Depot CAN (THD) - 766797151</fullName>
+        <default>false</default>
+        <label>Home Depot CAN (THD) - 766797151</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Depot US (THD) - 718666436</fullName>
+        <default>false</default>
+        <label>Home Depot US (THD) - 718666436</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Goods/Bed, Bath &amp; Beyond U.S. and Canada(BBBY), Harmon - 619221498</fullName>
+        <default>false</default>
+        <label>Home Goods/Bed, Bath &amp; Beyond U.S. and Canada(BBBY), Harmon - 619221498</label>
+    </customValue>
+    <customValue>
+        <fullName>honeygrow - 243595720</fullName>
+        <default>false</default>
+        <label>honeygrow - 243595720</label>
+    </customValue>
+    <customValue>
+        <fullName>Hong Shing - 703193557</fullName>
+        <default>false</default>
+        <label>Hong Shing - 703193557</label>
+    </customValue>
+    <customValue>
+        <fullName>Hotplate - 375458365</fullName>
+        <default>false</default>
+        <label>Hotplate - 375458365</label>
+    </customValue>
+    <customValue>
+        <fullName>HyVee (G&amp;C) - 197213836</fullName>
+        <default>false</default>
+        <label>HyVee (G&amp;C) - 197213836</label>
+    </customValue>
+    <customValue>
+        <fullName>HyVee (Pharma) - 293746562</fullName>
+        <default>false</default>
+        <label>HyVee (Pharma) - 293746562</label>
+    </customValue>
+    <customValue>
+        <fullName>iFexo - 243199116</fullName>
+        <default>false</default>
+        <label>iFexo - 243199116</label>
+    </customValue>
+    <customValue>
+        <fullName>IGA (Independent Grocers Alliance) - 477666205</fullName>
+        <default>false</default>
+        <label>IGA (Independent Grocers Alliance) - 477666205</label>
+    </customValue>
+    <customValue>
+        <fullName>Ikes Sandwiches - 104896840</fullName>
+        <default>false</default>
+        <label>Ikes Sandwiches - 104896840</label>
+    </customValue>
+    <customValue>
+        <fullName>Imagatec - 417509242</fullName>
+        <default>false</default>
+        <label>Imagatec - 417509242</label>
+    </customValue>
+    <customValue>
+        <fullName>Implicit Labs - 288371649</fullName>
+        <default>false</default>
+        <label>Implicit Labs - 288371649</label>
+    </customValue>
+    <customValue>
+        <fullName>Incentivio - 138913811</fullName>
+        <default>false</default>
+        <label>Incentivio - 138913811</label>
+    </customValue>
+    <customValue>
+        <fullName>Inspire Brands - 156392969</fullName>
+        <default>false</default>
+        <label>Inspire Brands - 156392969</label>
+    </customValue>
+    <customValue>
+        <fullName>Intouch - 271219922</fullName>
+        <default>false</default>
+        <label>Intouch - 271219922</label>
+    </customValue>
+    <customValue>
+        <fullName>IPC - 613179883</fullName>
+        <default>false</default>
+        <label>IPC - 613179883</label>
+    </customValue>
+    <customValue>
+        <fullName>IQmetrix - 488018902</fullName>
+        <default>false</default>
+        <label>IQmetrix - 488018902</label>
+    </customValue>
+    <customValue>
+        <fullName>Ishopfood - 624754176</fullName>
+        <default>false</default>
+        <label>Ishopfood - 624754176</label>
+    </customValue>
+    <customValue>
+        <fullName>It&apos;s Just Wings (Brinker) - 261403726</fullName>
+        <default>false</default>
+        <label>It&apos;s Just Wings (Brinker) - 261403726</label>
+    </customValue>
+    <customValue>
+        <fullName>Jenny Craig (CAN) - 398496505</fullName>
+        <default>false</default>
+        <label>Jenny Craig (CAN) - 398496505</label>
+    </customValue>
+    <customValue>
+        <fullName>Jenny Craig (US) - 380516685</fullName>
+        <default>false</default>
+        <label>Jenny Craig (US) - 380516685</label>
+    </customValue>
+    <customValue>
+        <fullName>Jersey Mike&apos;s - 196336588</fullName>
+        <default>false</default>
+        <label>Jersey Mike&apos;s - 196336588</label>
+    </customValue>
+    <customValue>
+        <fullName>Joey&apos;s Restaurants - 455100314</fullName>
+        <default>false</default>
+        <label>Joey&apos;s Restaurants - 455100314</label>
+    </customValue>
+    <customValue>
+        <fullName>Jimmy Johns - 1439786980</fullName>
+        <default>false</default>
+        <label>Jimmy Johns - 1439786980</label>
+    </customValue>
+    <customValue>
+        <fullName>Just Salad - 421795734</fullName>
+        <default>false</default>
+        <label>Just Salad - 421795734</label>
+    </customValue>
+    <customValue>
+        <fullName>Kelsey’s - 931890696</fullName>
+        <default>false</default>
+        <label>Kelsey’s - 931890696</label>
+    </customValue>
+    <customValue>
+        <fullName>KFC - 738089805</fullName>
+        <default>false</default>
+        <label>KFC - 738089805</label>
+    </customValue>
+    <customValue>
+        <fullName>KFC Cognizant (Australia) - 1018189693</fullName>
+        <default>false</default>
+        <label>KFC Cognizant (Australia) - 1018189693</label>
+    </customValue>
+    <customValue>
+        <fullName>Khamu Solutions - 730597964</fullName>
+        <default>false</default>
+        <label>Khamu Solutions - 730597964</label>
+    </customValue>
+    <customValue>
+        <fullName>Kitch Meals - 675562987</fullName>
+        <default>false</default>
+        <label>Kitch Meals - 675562987</label>
+    </customValue>
+    <customValue>
+        <fullName>Koomi - 488015974</fullName>
+        <default>false</default>
+        <label>Koomi - 488015974</label>
+    </customValue>
+    <customValue>
+        <fullName>Lavu - 262989448</fullName>
+        <default>false</default>
+        <label>Lavu - 262989448</label>
+    </customValue>
+    <customValue>
+        <fullName>Lazy Dog - 27099267</fullName>
+        <default>false</default>
+        <label>Lazy Dog - 27099267</label>
+    </customValue>
+    <customValue>
+        <fullName>Leda - 730081998</fullName>
+        <default>false</default>
+        <label>Leda - 730081998</label>
+    </customValue>
+    <customValue>
+        <fullName>LevelUP - 421796472</fullName>
+        <default>false</default>
+        <label>LevelUP - 421796472</label>
+    </customValue>
+    <customValue>
+        <fullName>Levi&apos;s - 416922190</fullName>
+        <default>false</default>
+        <label>Levi&apos;s - 416922190</label>
+    </customValue>
+    <customValue>
+        <fullName>Lightspeed - 482127396</fullName>
+        <default>false</default>
+        <label>Lightspeed - 482127396</label>
+    </customValue>
+    <customValue>
+        <fullName>LineTen Grocery (CA) - 530653241</fullName>
+        <default>false</default>
+        <label>LineTen Grocery (CA) - 530653241</label>
+    </customValue>
+    <customValue>
+        <fullName>LingaPOS - 791479712</fullName>
+        <default>false</default>
+        <label>LingaPOS - 791479712</label>
+    </customValue>
+    <customValue>
+        <fullName>Liquor Engine - 770775371</fullName>
+        <default>false</default>
+        <label>Liquor Engine - 770775371</label>
+    </customValue>
+    <customValue>
+        <fullName>Liquor Legends - 678432510</fullName>
+        <default>false</default>
+        <label>Liquor Legends - 678432510</label>
+    </customValue>
+    <customValue>
+        <fullName>Little Caesars (LCE) - 172133602</fullName>
+        <default>false</default>
+        <label>Little Caesars (LCE) - 172133602</label>
+    </customValue>
+    <customValue>
+        <fullName>Little Caesars - 172133602</fullName>
+        <default>false</default>
+        <label>Little Caesars - 172133602</label>
+    </customValue>
+    <customValue>
+        <fullName>Loblaws - 1300899979</fullName>
+        <default>false</default>
+        <label>Loblaws - 1300899979</label>
+    </customValue>
+    <customValue>
+        <fullName>Loblaws CAN - 986220461</fullName>
+        <default>false</default>
+        <label>Loblaws CAN - 986220461</label>
+    </customValue>
+    <customValue>
+        <fullName>Local Food Group - 695381916</fullName>
+        <default>false</default>
+        <label>Local Food Group - 695381916</label>
+    </customValue>
+    <customValue>
+        <fullName>Local For You - 625763977</fullName>
+        <default>false</default>
+        <label>Local For You - 625763977</label>
+    </customValue>
+    <customValue>
+        <fullName>LOKE - 421797756</fullName>
+        <default>false</default>
+        <label>LOKE - 421797756</label>
+    </customValue>
+    <customValue>
+        <fullName>LPQ - 24242414</fullName>
+        <default>false</default>
+        <label>LPQ - 24242414</label>
+    </customValue>
+    <customValue>
+        <fullName>Lucas Group - 336953856</fullName>
+        <default>false</default>
+        <label>Lucas Group - 336953856</label>
+    </customValue>
+    <customValue>
+        <fullName>Lunchbox - 208727341</fullName>
+        <default>false</default>
+        <label>Lunchbox - 208727341</label>
+    </customValue>
+    <customValue>
+        <fullName>Lush - 803930733</fullName>
+        <default>false</default>
+        <label>Lush - 803930733</label>
+    </customValue>
+    <customValue>
+        <fullName>M&amp;M Meats - 1002055380</fullName>
+        <default>false</default>
+        <label>M&amp;M Meats - 1002055380</label>
+    </customValue>
+    <customValue>
+        <fullName>MAC (CAN) - 502866542</fullName>
+        <default>false</default>
+        <label>MAC (CAN) - 502866542</label>
+    </customValue>
+    <customValue>
+        <fullName>Macys / Bloomingdales - 403156829</fullName>
+        <default>false</default>
+        <label>Macys / Bloomingdales - 403156829</label>
+    </customValue>
+    <customValue>
+        <fullName>Macys via Proship - 403156829</fullName>
+        <default>false</default>
+        <label>Macys via Proship - 403156829</label>
+    </customValue>
+    <customValue>
+        <fullName>Madison-Reed - 763162678</fullName>
+        <default>false</default>
+        <label>Madison-Reed - 763162678</label>
+    </customValue>
+    <customValue>
+        <fullName>Maegan - 40002834</fullName>
+        <default>false</default>
+        <label>Maegan - 40002834</label>
+    </customValue>
+    <customValue>
+        <fullName>Major Food Group - 279151314</fullName>
+        <default>false</default>
+        <label>Major Food Group - 279151314</label>
+    </customValue>
+    <customValue>
+        <fullName>MakeitButter - 104896857</fullName>
+        <default>false</default>
+        <label>MakeitButter - 104896857</label>
+    </customValue>
+    <customValue>
+        <fullName>Mamouns - 532641794</fullName>
+        <default>false</default>
+        <label>Mamouns - 532641794</label>
+    </customValue>
+    <customValue>
+        <fullName>McDonald&apos;s (AU) - 464647758</fullName>
+        <default>false</default>
+        <label>McDonald&apos;s (AU) - 464647758</label>
+    </customValue>
+    <customValue>
+        <fullName>McDonald&apos;s (MCD) - CAN - 1084267317</fullName>
+        <default>false</default>
+        <label>McDonald&apos;s (MCD) - CAN - 1084267317</label>
+    </customValue>
+    <customValue>
+        <fullName>McDonald&apos;s (MCD) - US - 889954922</fullName>
+        <default>false</default>
+        <label>McDonald&apos;s (MCD) - US - 889954922</label>
+    </customValue>
+    <customValue>
+        <fullName>MCR POS - 909397700</fullName>
+        <default>false</default>
+        <label>MCR POS - 909397700</label>
+    </customValue>
+    <customValue>
+        <fullName>Meal Connect - 33476994</fullName>
+        <default>false</default>
+        <label>Meal Connect - 33476994</label>
+    </customValue>
+    <customValue>
+        <fullName>Mealsy - 193759206</fullName>
+        <default>false</default>
+        <label>Mealsy - 193759206</label>
+    </customValue>
+    <customValue>
+        <fullName>MedMate - 443147692</fullName>
+        <default>false</default>
+        <label>MedMate - 443147692</label>
+    </customValue>
+    <customValue>
+        <fullName>Menufy - 41943788</fullName>
+        <default>false</default>
+        <label>Menufy - 41943788</label>
+    </customValue>
+    <customValue>
+        <fullName>Menulabs - 793874533</fullName>
+        <default>false</default>
+        <label>Menulabs - 793874533</label>
+    </customValue>
+    <customValue>
+        <fullName>Menuu - 830920805</fullName>
+        <default>false</default>
+        <label>Menuu - 830920805</label>
+    </customValue>
+    <customValue>
+        <fullName>Mercari - 860909672</fullName>
+        <default>false</default>
+        <label>Mercari - 860909672</label>
+    </customValue>
+    <customValue>
+        <fullName>Merchant Signage Dropoff - 270957654</fullName>
+        <default>false</default>
+        <label>Merchant Signage Dropoff - 270957654</label>
+    </customValue>
+    <customValue>
+        <fullName>META / Facebook Marketplace - 897237406</fullName>
+        <default>false</default>
+        <label>META / Facebook Marketplace - 897237406</label>
+    </customValue>
+    <customValue>
+        <fullName>MetisPro - 767356068</fullName>
+        <default>false</default>
+        <label>MetisPro - 767356068</label>
+    </customValue>
+    <customValue>
+        <fullName>Miami Heat - 612316896</fullName>
+        <default>false</default>
+        <label>Miami Heat - 612316896</label>
+    </customValue>
+    <customValue>
+        <fullName>Microworks POS Solutions - 828987722</fullName>
+        <default>false</default>
+        <label>Microworks POS Solutions - 828987722</label>
+    </customValue>
+    <customValue>
+        <fullName>MiGrocer - 492201714</fullName>
+        <default>false</default>
+        <label>MiGrocer - 492201714</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobi2Go (AUS) - 267929872</fullName>
+        <default>false</default>
+        <label>Mobi2Go (AUS) - 267929872</label>
+    </customValue>
+    <customValue>
+        <fullName>Moby Dick House of Kabob - 32617560</fullName>
+        <default>false</default>
+        <label>Moby Dick House of Kabob - 32617560</label>
+    </customValue>
+    <customValue>
+        <fullName>Moduurn - 421798127</fullName>
+        <default>false</default>
+        <label>Moduurn - 421798127</label>
+    </customValue>
+    <customValue>
+        <fullName>Monet Digital - 488017473</fullName>
+        <default>false</default>
+        <label>Monet Digital - 488017473</label>
+    </customValue>
+    <customValue>
+        <fullName>Monkey Media - 24767931</fullName>
+        <default>false</default>
+        <label>Monkey Media - 24767931</label>
+    </customValue>
+    <customValue>
+        <fullName>Montana’s - 931891407</fullName>
+        <default>false</default>
+        <label>Montana’s - 931891407</label>
+    </customValue>
+    <customValue>
+        <fullName>mowsacramento - 307780414</fullName>
+        <default>false</default>
+        <label>mowsacramento - 307780414</label>
+    </customValue>
+    <customValue>
+        <fullName>Mr.Yum - 417149988</fullName>
+        <default>false</default>
+        <label>Mr.Yum - 417149988</label>
+    </customValue>
+    <customValue>
+        <fullName>Myfoodlink - 804339321</fullName>
+        <default>false</default>
+        <label>Myfoodlink - 804339321</label>
+    </customValue>
+    <customValue>
+        <fullName>MYR POS - 895942787</fullName>
+        <default>false</default>
+        <label>MYR POS - 895942787</label>
+    </customValue>
+    <customValue>
+        <fullName>NCR (APAC) - 466632383</fullName>
+        <default>false</default>
+        <label>NCR (APAC) - 466632383</label>
+    </customValue>
+    <customValue>
+        <fullName>NCR Aloha - 44229529</fullName>
+        <default>false</default>
+        <label>NCR Aloha - 44229529</label>
+    </customValue>
+    <customValue>
+        <fullName>New York Fries - 931891570</fullName>
+        <default>false</default>
+        <label>New York Fries - 931891570</label>
+    </customValue>
+    <customValue>
+        <fullName>Novadine - 137279222</fullName>
+        <default>false</default>
+        <label>Novadine - 137279222</label>
+    </customValue>
+    <customValue>
+        <fullName>nyc-doe - 270912094</fullName>
+        <default>false</default>
+        <label>nyc-doe - 270912094</label>
+    </customValue>
+    <customValue>
+        <fullName>O&apos;Reilly Auto Parts - 564887052</fullName>
+        <default>false</default>
+        <label>O&apos;Reilly Auto Parts - 564887052</label>
+    </customValue>
+    <customValue>
+        <fullName>Ohi - 745034948</fullName>
+        <default>false</default>
+        <label>Ohi - 745034948</label>
+    </customValue>
+    <customValue>
+        <fullName>Olo - 19792449</fullName>
+        <default>false</default>
+        <label>Olo - 19792449</label>
+    </customValue>
+    <customValue>
+        <fullName>Omnivore - 421799321</fullName>
+        <default>false</default>
+        <label>Omnivore - 421799321</label>
+    </customValue>
+    <customValue>
+        <fullName>OneDine - 586534484</fullName>
+        <default>false</default>
+        <label>OneDine - 586534484</label>
+    </customValue>
+    <customValue>
+        <fullName>Online Orders Now - 709378894</fullName>
+        <default>false</default>
+        <label>Online Orders Now - 709378894</label>
+    </customValue>
+    <customValue>
+        <fullName>Onosys - 70933407</fullName>
+        <default>false</default>
+        <label>Onosys - 70933407</label>
+    </customValue>
+    <customValue>
+        <fullName>OpenDining-Paytronix - 58431075</fullName>
+        <default>false</default>
+        <label>OpenDining-Paytronix - 58431075</label>
+    </customValue>
+    <customValue>
+        <fullName>OrderB4 - 489085797</fullName>
+        <default>false</default>
+        <label>OrderB4 - 489085797</label>
+    </customValue>
+    <customValue>
+        <fullName>Ordermark - 143601100</fullName>
+        <default>false</default>
+        <label>Ordermark - 143601100</label>
+    </customValue>
+    <customValue>
+        <fullName>OrderUp - 393772029</fullName>
+        <default>false</default>
+        <label>OrderUp - 393772029</label>
+    </customValue>
+    <customValue>
+        <fullName>OrdrSlip - 544801075</fullName>
+        <default>false</default>
+        <label>OrdrSlip - 544801075</label>
+    </customValue>
+    <customValue>
+        <fullName>Original Joe’s - 931891938</fullName>
+        <default>false</default>
+        <label>Original Joe’s - 931891938</label>
+    </customValue>
+    <customValue>
+        <fullName>Otter - 989666621</fullName>
+        <default>false</default>
+        <label>Otter - 989666621</label>
+    </customValue>
+    <customValue>
+        <fullName>PacSun - 54366893</fullName>
+        <default>false</default>
+        <label>PacSun - 54366893</label>
+    </customValue>
+    <customValue>
+        <fullName>Pandion - 884926981</fullName>
+        <default>false</default>
+        <label>Pandion - 884926981</label>
+    </customValue>
+    <customValue>
+        <fullName>Panera (Direct) - LOF - 830297416</fullName>
+        <default>false</default>
+        <label>Panera (Direct) - LOF - 830297416</label>
+    </customValue>
+    <customValue>
+        <fullName>Panera (Direct) - SOF - 565511413</fullName>
+        <default>false</default>
+        <label>Panera (Direct) - SOF - 565511413</label>
+    </customValue>
+    <customValue>
+        <fullName>Panera - 44345945</fullName>
+        <default>false</default>
+        <label>Panera - 44345945</label>
+    </customValue>
+    <customValue>
+        <fullName>Papa John&apos;s - 236312114</fullName>
+        <default>false</default>
+        <label>Papa John&apos;s - 236312114</label>
+    </customValue>
+    <customValue>
+        <fullName>Papa Johns (PJI) - CAN - 236312114</fullName>
+        <default>false</default>
+        <label>Papa Johns (PJI) - CAN - 236312114</label>
+    </customValue>
+    <customValue>
+        <fullName>Papa Johns (PJI) - US - 236312114</fullName>
+        <default>false</default>
+        <label>Papa Johns (PJI) - US - 236312114</label>
+    </customValue>
+    <customValue>
+        <fullName>Party City - 1297423809</fullName>
+        <default>false</default>
+        <label>Party City - 1297423809</label>
+    </customValue>
+    <customValue>
+        <fullName>Patron Path - 136494378</fullName>
+        <default>false</default>
+        <label>Patron Path - 136494378</label>
+    </customValue>
+    <customValue>
+        <fullName>Patxis - 27622266</fullName>
+        <default>false</default>
+        <label>Patxis - 27622266</label>
+    </customValue>
+    <customValue>
+        <fullName>Petco - 424152664</fullName>
+        <default>false</default>
+        <label>Petco - 424152664</label>
+    </customValue>
+    <customValue>
+        <fullName>Petco via Proship - 1145680803</fullName>
+        <default>false</default>
+        <label>Petco via Proship - 1145680803</label>
+    </customValue>
+    <customValue>
+        <fullName>Pet Food Express - 1033107705</fullName>
+        <default>false</default>
+        <label>Pet Food Express - 1033107705</label>
+    </customValue>
+    <customValue>
+        <fullName>PetSmart (CA) - 434397445</fullName>
+        <default>false</default>
+        <label>PetSmart (CA) - 434397445</label>
+    </customValue>
+    <customValue>
+        <fullName>Petsmart (US) - 348847403</fullName>
+        <default>false</default>
+        <label>Petsmart (US) - 348847403</label>
+    </customValue>
+    <customValue>
+        <fullName>PETstock (via We are Digital MWP) - 612223522</fullName>
+        <default>false</default>
+        <label>PETstock (via We are Digital MWP) - 612223522</label>
+    </customValue>
+    <customValue>
+        <fullName>PETstock - 612223522</fullName>
+        <default>false</default>
+        <label>PETstock - 612223522</label>
+    </customValue>
+    <customValue>
+        <fullName>Pet Supermarket - 1213932696</fullName>
+        <default>false</default>
+        <label>Pet Supermarket - 1213932696</label>
+    </customValue>
+    <customValue>
+        <fullName>Phygital24 - 550274363</fullName>
+        <default>false</default>
+        <label>Phygital24 - 550274363</label>
+    </customValue>
+    <customValue>
+        <fullName>Pickle Barrel - 931892851</fullName>
+        <default>false</default>
+        <label>Pickle Barrel - 931892851</label>
+    </customValue>
+    <customValue>
+        <fullName>Pizza Hut (Flynn) - 995410560</fullName>
+        <default>false</default>
+        <label>Pizza Hut (Flynn) - 995410560</label>
+    </customValue>
+    <customValue>
+        <fullName>Pizza Hut Canada DT - 905615340</fullName>
+        <default>false</default>
+        <label>Pizza Hut Canada DT - 905615340</label>
+    </customValue>
+    <customValue>
+        <fullName>Pizza Hut SUS - 926001561</fullName>
+        <default>false</default>
+        <label>Pizza Hut SUS - 926001561</label>
+    </customValue>
+    <customValue>
+        <fullName>Pizza Hut US (Dragontail) - 831463323</fullName>
+        <default>false</default>
+        <label>Pizza Hut US (Dragontail) - 831463323</label>
+    </customValue>
+    <customValue>
+        <fullName>Placepull - 411818201</fullName>
+        <default>false</default>
+        <label>Placepull - 411818201</label>
+    </customValue>
+    <customValue>
+        <fullName>PlatePick - 917384913</fullName>
+        <default>false</default>
+        <label>PlatePick - 917384913</label>
+    </customValue>
+    <customValue>
+        <fullName>Popeyes (Canada) - 975155667</fullName>
+        <default>false</default>
+        <label>Popeyes (Canada) - 975155667</label>
+    </customValue>
+    <customValue>
+        <fullName>Popeyes - 99277133</fullName>
+        <default>false</default>
+        <label>Popeyes - 99277133</label>
+    </customValue>
+    <customValue>
+        <fullName>Popmenu - 435866004</fullName>
+        <default>false</default>
+        <label>Popmenu - 435866004</label>
+    </customValue>
+    <customValue>
+        <fullName>Portland Public Schools - 273792155</fullName>
+        <default>false</default>
+        <label>Portland Public Schools - 273792155</label>
+    </customValue>
+    <customValue>
+        <fullName>POSIST - 1270836581</fullName>
+        <default>false</default>
+        <label>POSIST - 1270836581</label>
+    </customValue>
+    <customValue>
+        <fullName>POSnet - 175262831</fullName>
+        <default>false</default>
+        <label>POSnet - 175262831</label>
+    </customValue>
+    <customValue>
+        <fullName>Potbelly - 191087835</fullName>
+        <default>false</default>
+        <label>Potbelly - 191087835</label>
+    </customValue>
+    <customValue>
+        <fullName>Precision POS - 421799974</fullName>
+        <default>false</default>
+        <label>Precision POS - 421799974</label>
+    </customValue>
+    <customValue>
+        <fullName>Pressed Juicery - 263105113</fullName>
+        <default>false</default>
+        <label>Pressed Juicery - 263105113</label>
+    </customValue>
+    <customValue>
+        <fullName>Prime Pubs - 931892178</fullName>
+        <default>false</default>
+        <label>Prime Pubs - 931892178</label>
+    </customValue>
+    <customValue>
+        <fullName>QuBeyond - 690114589</fullName>
+        <default>false</default>
+        <label>QuBeyond - 690114589</label>
+    </customValue>
+    <customValue>
+        <fullName>QuickPOS - 499097646</fullName>
+        <default>false</default>
+        <label>QuickPOS - 499097646</label>
+    </customValue>
+    <customValue>
+        <fullName>Ralph Lauren - 994990584</fullName>
+        <default>false</default>
+        <label>Ralph Lauren - 994990584</label>
+    </customValue>
+    <customValue>
+        <fullName>RECIPE - 904806207</fullName>
+        <default>false</default>
+        <label>RECIPE - 904806207</label>
+    </customValue>
+    <customValue>
+        <fullName>Redcat - 262667438</fullName>
+        <default>false</default>
+        <label>Redcat - 262667438</label>
+    </customValue>
+    <customValue>
+        <fullName>Red Lobster (Direct) - 1032194705</fullName>
+        <default>false</default>
+        <label>Red Lobster (Direct) - 1032194705</label>
+    </customValue>
+    <customValue>
+        <fullName>Re-Plate - 62036440</fullName>
+        <default>false</default>
+        <label>Re-Plate - 62036440</label>
+    </customValue>
+    <customValue>
+        <fullName>Restolabs - 634689942</fullName>
+        <default>false</default>
+        <label>Restolabs - 634689942</label>
+    </customValue>
+    <customValue>
+        <fullName>Revel - 421812987</fullName>
+        <default>false</default>
+        <label>Revel - 421812987</label>
+    </customValue>
+    <customValue>
+        <fullName>Revention - 87805962</fullName>
+        <default>false</default>
+        <label>Revention - 87805962</label>
+    </customValue>
+    <customValue>
+        <fullName>Revolution Parts - 143260334</fullName>
+        <default>false</default>
+        <label>Revolution Parts - 143260334</label>
+    </customValue>
+    <customValue>
+        <fullName>Ritual (AUS) - 421690181</fullName>
+        <default>false</default>
+        <label>Ritual (AUS) - 421690181</label>
+    </customValue>
+    <customValue>
+        <fullName>Ritual (CAN) - 421689723</fullName>
+        <default>false</default>
+        <label>Ritual (CAN) - 421689723</label>
+    </customValue>
+    <customValue>
+        <fullName>Ritual (US) - 421689205</fullName>
+        <default>false</default>
+        <label>Ritual (US) - 421689205</label>
+    </customValue>
+    <customValue>
+        <fullName>Rival Software - 1453239125</fullName>
+        <default>false</default>
+        <label>Rival Software - 1453239125</label>
+    </customValue>
+    <customValue>
+        <fullName>routessocialimpactprod - 271936097</fullName>
+        <default>false</default>
+        <label>routessocialimpactprod - 271936097</label>
+    </customValue>
+    <customValue>
+        <fullName>RRT - 44770441</fullName>
+        <default>false</default>
+        <label>RRT - 44770441</label>
+    </customValue>
+    <customValue>
+        <fullName>RTO - 163929512</fullName>
+        <default>false</default>
+        <label>RTO - 163929512</label>
+    </customValue>
+    <customValue>
+        <fullName>Rumby Laundry - 684136210</fullName>
+        <default>false</default>
+        <label>Rumby Laundry - 684136210</label>
+    </customValue>
+    <customValue>
+        <fullName>Sam&apos;s Club (Pharma) - 307611524</fullName>
+        <default>false</default>
+        <label>Sam&apos;s Club (Pharma) - 307611524</label>
+    </customValue>
+    <customValue>
+        <fullName>Say2Eat (CA) - 189553034</fullName>
+        <default>false</default>
+        <label>Say2Eat (CA) - 189553034</label>
+    </customValue>
+    <customValue>
+        <fullName>Say2Eat (US) - 165094916</fullName>
+        <default>false</default>
+        <label>Say2Eat (US) - 165094916</label>
+    </customValue>
+    <customValue>
+        <fullName>ScriptDrop - 131034016</fullName>
+        <default>false</default>
+        <label>ScriptDrop - 131034016</label>
+    </customValue>
+    <customValue>
+        <fullName>SeeMyApps - 876916509</fullName>
+        <default>false</default>
+        <label>SeeMyApps - 876916509</label>
+    </customValue>
+    <customValue>
+        <fullName>SEG (via Mercatus) - 903545426</fullName>
+        <default>false</default>
+        <label>SEG (via Mercatus) - 903545426</label>
+    </customValue>
+    <customValue>
+        <fullName>Sephora CA (via Delivery Solutions) - 844406994</fullName>
+        <default>false</default>
+        <label>Sephora CA (via Delivery Solutions) - 844406994</label>
+    </customValue>
+    <customValue>
+        <fullName>Sephora US (via Delivery Solutions) - 811084961</fullName>
+        <default>false</default>
+        <label>Sephora US (via Delivery Solutions) - 811084961</label>
+    </customValue>
+    <customValue>
+        <fullName>SevenRooms (AUS) - 504275209</fullName>
+        <default>false</default>
+        <label>SevenRooms (AUS) - 504275209</label>
+    </customValue>
+    <customValue>
+        <fullName>SevenRooms (CA) - 477603784</fullName>
+        <default>false</default>
+        <label>SevenRooms (CA) - 477603784</label>
+    </customValue>
+    <customValue>
+        <fullName>SevenRooms - 463621105</fullName>
+        <default>false</default>
+        <label>SevenRooms - 463621105</label>
+    </customValue>
+    <customValue>
+        <fullName>Sharebite - 438512180</fullName>
+        <default>false</default>
+        <label>Sharebite - 438512180</label>
+    </customValue>
+    <customValue>
+        <fullName>Sheetz - 812000255</fullName>
+        <default>false</default>
+        <label>Sheetz - 812000255</label>
+    </customValue>
+    <customValue>
+        <fullName>Shift4 - 806085255</fullName>
+        <default>false</default>
+        <label>Shift4 - 806085255</label>
+    </customValue>
+    <customValue>
+        <fullName>Shift8 - 1081448227</fullName>
+        <default>false</default>
+        <label>Shift8 - 1081448227</label>
+    </customValue>
+    <customValue>
+        <fullName>Shippit - 625760751</fullName>
+        <default>false</default>
+        <label>Shippit - 625760751</label>
+    </customValue>
+    <customValue>
+        <fullName>Shoe Carnival (via Bringg) - 671326285</fullName>
+        <default>false</default>
+        <label>Shoe Carnival (via Bringg) - 671326285</label>
+    </customValue>
+    <customValue>
+        <fullName>Shopify - 421805638</fullName>
+        <default>false</default>
+        <label>Shopify - 421805638</label>
+    </customValue>
+    <customValue>
+        <fullName>Silverware - 421806068</fullName>
+        <default>false</default>
+        <label>Silverware - 421806068</label>
+    </customValue>
+    <customValue>
+        <fullName>Skipli - 800955745</fullName>
+        <default>false</default>
+        <label>Skipli - 800955745</label>
+    </customValue>
+    <customValue>
+        <fullName>Slice - 292311672</fullName>
+        <default>false</default>
+        <label>Slice - 292311672</label>
+    </customValue>
+    <customValue>
+        <fullName>Smooth Commerce - 261546717</fullName>
+        <default>false</default>
+        <label>Smooth Commerce - 261546717</label>
+    </customValue>
+    <customValue>
+        <fullName>Snap Kitchen - 40692638</fullName>
+        <default>false</default>
+        <label>Snap Kitchen - 40692638</label>
+    </customValue>
+    <customValue>
+        <fullName>Snappy (US) - 255490659</fullName>
+        <default>false</default>
+        <label>Snappy (US) - 255490659</label>
+    </customValue>
+    <customValue>
+        <fullName>Sociavore - 625774855</fullName>
+        <default>false</default>
+        <label>Sociavore - 625774855</label>
+    </customValue>
+    <customValue>
+        <fullName>SoftPoint - 421806716</fullName>
+        <default>false</default>
+        <label>SoftPoint - 421806716</label>
+    </customValue>
+    <customValue>
+        <fullName>Sourdough &amp; Co - 722658380</fullName>
+        <default>false</default>
+        <label>Sourdough &amp; Co - 722658380</label>
+    </customValue>
+    <customValue>
+        <fullName>SpartanNash - 1152367390</fullName>
+        <default>false</default>
+        <label>SpartanNash - 1152367390</label>
+    </customValue>
+    <customValue>
+        <fullName>Spec&apos;s - 981447175</fullName>
+        <default>false</default>
+        <label>Spec&apos;s - 981447175</label>
+    </customValue>
+    <customValue>
+        <fullName>SpeedETab - 274505988</fullName>
+        <default>false</default>
+        <label>SpeedETab - 274505988</label>
+    </customValue>
+    <customValue>
+        <fullName>Speedline - 421807188</fullName>
+        <default>false</default>
+        <label>Speedline - 421807188</label>
+    </customValue>
+    <customValue>
+        <fullName>Splick.it - 157381333</fullName>
+        <default>false</default>
+        <label>Splick.it - 157381333</label>
+    </customValue>
+    <customValue>
+        <fullName>Spoonfed - 649015097</fullName>
+        <default>false</default>
+        <label>Spoonfed - 649015097</label>
+    </customValue>
+    <customValue>
+        <fullName>Spoonity - 421807549</fullName>
+        <default>false</default>
+        <label>Spoonity - 421807549</label>
+    </customValue>
+    <customValue>
+        <fullName>Sportchek / Canadian Tire - 746479370</fullName>
+        <default>false</default>
+        <label>Sportchek / Canadian Tire - 746479370</label>
+    </customValue>
+    <customValue>
+        <fullName>Sporting Life / Golftown - 989248079</fullName>
+        <default>false</default>
+        <label>Sporting Life / Golftown - 989248079</label>
+    </customValue>
+    <customValue>
+        <fullName>Sports Basement - 911776779</fullName>
+        <default>false</default>
+        <label>Sports Basement - 911776779</label>
+    </customValue>
+    <customValue>
+        <fullName>SpotHopper - 923428714</fullName>
+        <default>false</default>
+        <label>SpotHopper - 923428714</label>
+    </customValue>
+    <customValue>
+        <fullName>SpotOn - 416219569</fullName>
+        <default>false</default>
+        <label>SpotOn - 416219569</label>
+    </customValue>
+    <customValue>
+        <fullName>Square - 398159815</fullName>
+        <default>false</default>
+        <label>Square - 398159815</label>
+    </customValue>
+    <customValue>
+        <fullName>State &amp; Main - 931892408</fullName>
+        <default>false</default>
+        <label>State &amp; Main - 931892408</label>
+    </customValue>
+    <customValue>
+        <fullName>St Hubert - 931898643</fullName>
+        <default>false</default>
+        <label>St Hubert - 931898643</label>
+    </customValue>
+    <customValue>
+        <fullName>Subsational - 581191351</fullName>
+        <default>false</default>
+        <label>Subsational - 581191351</label>
+    </customValue>
+    <customValue>
+        <fullName>Subway (AUS) - 1241605588</fullName>
+        <default>false</default>
+        <label>Subway (AUS) - 1241605588</label>
+    </customValue>
+    <customValue>
+        <fullName>Subway (US) - 629256992</fullName>
+        <default>false</default>
+        <label>Subway (US) - 629256992</label>
+    </customValue>
+    <customValue>
+        <fullName>Subway AU - 1241605588</fullName>
+        <default>false</default>
+        <label>Subway AU - 1241605588</label>
+    </customValue>
+    <customValue>
+        <fullName>Subway NZ - 1241605706</fullName>
+        <default>false</default>
+        <label>Subway NZ - 1241605706</label>
+    </customValue>
+    <customValue>
+        <fullName>Swigg LLC - 1096321005</fullName>
+        <default>false</default>
+        <label>Swigg LLC - 1096321005</label>
+    </customValue>
+    <customValue>
+        <fullName>Swiss Chalet - 931892611</fullName>
+        <default>false</default>
+        <label>Swiss Chalet - 931892611</label>
+    </customValue>
+    <customValue>
+        <fullName>SwyftScripts - 603241248</fullName>
+        <default>false</default>
+        <label>SwyftScripts - 603241248</label>
+    </customValue>
+    <customValue>
+        <fullName>TabSquare - 1248755607</fullName>
+        <default>false</default>
+        <label>TabSquare - 1248755607</label>
+    </customValue>
+    <customValue>
+        <fullName>Tabsquare - 454603052</fullName>
+        <default>false</default>
+        <label>Tabsquare - 454603052</label>
+    </customValue>
+    <customValue>
+        <fullName>Taco bell - 967696506</fullName>
+        <default>false</default>
+        <label>Taco bell - 967696506</label>
+    </customValue>
+    <customValue>
+        <fullName>Taco Bell CAN - 1084368162</fullName>
+        <default>false</default>
+        <label>Taco Bell CAN - 1084368162</label>
+    </customValue>
+    <customValue>
+        <fullName>Taco Bell US (Direct) - 967696506</fullName>
+        <default>false</default>
+        <label>Taco Bell US (Direct) - 967696506</label>
+    </customValue>
+    <customValue>
+        <fullName>TapMango - 372948147</fullName>
+        <default>false</default>
+        <label>TapMango - 372948147</label>
+    </customValue>
+    <customValue>
+        <fullName>TapTap Eat - 421808104</fullName>
+        <default>false</default>
+        <label>TapTap Eat - 421808104</label>
+    </customValue>
+    <customValue>
+        <fullName>TASK - 421808605</fullName>
+        <default>false</default>
+        <label>TASK - 421808605</label>
+    </customValue>
+    <customValue>
+        <fullName>TechRyde - 673282054</fullName>
+        <default>false</default>
+        <label>TechRyde - 673282054</label>
+    </customValue>
+    <customValue>
+        <fullName>Thanx - 421809048</fullName>
+        <default>false</default>
+        <label>Thanx - 421809048</label>
+    </customValue>
+    <customValue>
+        <fullName>The Landing Group - 931893575</fullName>
+        <default>false</default>
+        <label>The Landing Group - 931893575</label>
+    </customValue>
+    <customValue>
+        <fullName>Theory - 916603131</fullName>
+        <default>false</default>
+        <label>Theory - 916603131</label>
+    </customValue>
+    <customValue>
+        <fullName>Thrive - 145851479</fullName>
+        <default>false</default>
+        <label>Thrive - 145851479</label>
+    </customValue>
+    <customValue>
+        <fullName>Tillster - 140596536</fullName>
+        <default>false</default>
+        <label>Tillster - 140596536</label>
+    </customValue>
+    <customValue>
+        <fullName>Tim Horton&apos;s US - 429393865</fullName>
+        <default>false</default>
+        <label>Tim Horton&apos;s US - 429393865</label>
+    </customValue>
+    <customValue>
+        <fullName>Tim Hortons - 293800638</fullName>
+        <default>false</default>
+        <label>Tim Hortons - 293800638</label>
+    </customValue>
+    <customValue>
+        <fullName>Toast - 262014700</fullName>
+        <default>false</default>
+        <label>Toast - 262014700</label>
+    </customValue>
+    <customValue>
+        <fullName>Tock - 333003254</fullName>
+        <default>false</default>
+        <label>Tock - 333003254</label>
+    </customValue>
+    <customValue>
+        <fullName>ToGo - 461624115</fullName>
+        <default>false</default>
+        <label>ToGo - 461624115</label>
+    </customValue>
+    <customValue>
+        <fullName>Total Wines - 34228911</fullName>
+        <default>false</default>
+        <label>Total Wines - 34228911</label>
+    </customValue>
+    <customValue>
+        <fullName>TouchBistro - 855972620</fullName>
+        <default>false</default>
+        <label>TouchBistro - 855972620</label>
+    </customValue>
+    <customValue>
+        <fullName>TouchPoint - 176829536</fullName>
+        <default>false</default>
+        <label>TouchPoint - 176829536</label>
+    </customValue>
+    <customValue>
+        <fullName>Toys-R-Us (CAN) - 435994238</fullName>
+        <default>false</default>
+        <label>Toys-R-Us (CAN) - 435994238</label>
+    </customValue>
+    <customValue>
+        <fullName>Trailer Birds (VR Concept of Dickey&apos;s BBQ) - 1123281050</fullName>
+        <default>false</default>
+        <label>Trailer Birds (VR Concept of Dickey&apos;s BBQ) - 1123281050</label>
+    </customValue>
+    <customValue>
+        <fullName>Trailer Birds - 1123281050</fullName>
+        <default>false</default>
+        <label>Trailer Birds - 1123281050</label>
+    </customValue>
+    <customValue>
+        <fullName>Trailer Birds - 835066657</fullName>
+        <default>false</default>
+        <label>Trailer Birds - 835066657</label>
+    </customValue>
+    <customValue>
+        <fullName>TripleSeat Software - 875096094</fullName>
+        <default>false</default>
+        <label>TripleSeat Software - 875096094</label>
+    </customValue>
+    <customValue>
+        <fullName>UEAT (CA) - 262909407</fullName>
+        <default>false</default>
+        <label>UEAT (CA) - 262909407</label>
+    </customValue>
+    <customValue>
+        <fullName>Ulta - 744887814</fullName>
+        <default>false</default>
+        <label>Ulta - 744887814</label>
+    </customValue>
+    <customValue>
+        <fullName>Ultimate Kitchens - 931893843</fullName>
+        <default>false</default>
+        <label>Ultimate Kitchens - 931893843</label>
+    </customValue>
+    <customValue>
+        <fullName>United (Albertsons) via Delivery Solutions - 877999175</fullName>
+        <default>false</default>
+        <label>United (Albertsons) via Delivery Solutions - 877999175</label>
+    </customValue>
+    <customValue>
+        <fullName>Unplug - 1248289827</fullName>
+        <default>false</default>
+        <label>Unplug - 1248289827</label>
+    </customValue>
+    <customValue>
+        <fullName>Uptown Pharmacy - 613180603</fullName>
+        <default>false</default>
+        <label>Uptown Pharmacy - 613180603</label>
+    </customValue>
+    <customValue>
+        <fullName>Vault Health - 460749554</fullName>
+        <default>false</default>
+        <label>Vault Health - 460749554</label>
+    </customValue>
+    <customValue>
+        <fullName>Virginia ABC (VA ABC) - 549706550</fullName>
+        <default>false</default>
+        <label>Virginia ABC (VA ABC) - 549706550</label>
+    </customValue>
+    <customValue>
+        <fullName>Vromo - 569458841</fullName>
+        <default>false</default>
+        <label>Vromo - 569458841</label>
+    </customValue>
+    <customValue>
+        <fullName>Wakefern (G&amp;C) - 238705438</fullName>
+        <default>false</default>
+        <label>Wakefern (G&amp;C) - 238705438</label>
+    </customValue>
+    <customValue>
+        <fullName>WakeFern (Pharmacy) - 296978951</fullName>
+        <default>false</default>
+        <label>WakeFern (Pharmacy) - 296978951</label>
+    </customValue>
+    <customValue>
+        <fullName>Walgreens - 196662068</fullName>
+        <default>false</default>
+        <label>Walgreens - 196662068</label>
+    </customValue>
+    <customValue>
+        <fullName>Walmart Grocery - Canada - 56900019</fullName>
+        <default>false</default>
+        <label>Walmart Grocery - Canada - 56900019</label>
+    </customValue>
+    <customValue>
+        <fullName>Walmart Grocery - USA - 35020858</fullName>
+        <default>false</default>
+        <label>Walmart Grocery - USA - 35020858</label>
+    </customValue>
+    <customValue>
+        <fullName>Walmart Pharmacy - USA - 330446693</fullName>
+        <default>false</default>
+        <label>Walmart Pharmacy - USA - 330446693</label>
+    </customValue>
+    <customValue>
+        <fullName>Wawa - 438656943</fullName>
+        <default>false</default>
+        <label>Wawa - 438656943</label>
+    </customValue>
+    <customValue>
+        <fullName>Wawa Catering - 675692501</fullName>
+        <default>false</default>
+        <label>Wawa Catering - 675692501</label>
+    </customValue>
+    <customValue>
+        <fullName>Wawa Web - 1025833249</fullName>
+        <default>false</default>
+        <label>Wawa Web - 1025833249</label>
+    </customValue>
+    <customValue>
+        <fullName>Wegmans (via Bringg) - 1124052346</fullName>
+        <default>false</default>
+        <label>Wegmans (via Bringg) - 1124052346</label>
+    </customValue>
+    <customValue>
+        <fullName>Wegmans - 80979584</fullName>
+        <default>false</default>
+        <label>Wegmans - 80979584</label>
+    </customValue>
+    <customValue>
+        <fullName>Wendys - 215624555</fullName>
+        <default>false</default>
+        <label>Wendys - 215624555</label>
+    </customValue>
+    <customValue>
+        <fullName>Whole Foods Market - 546880380</fullName>
+        <default>false</default>
+        <label>Whole Foods Market - 546880380</label>
+    </customValue>
+    <customValue>
+        <fullName>Wild Fork - 335232027</fullName>
+        <default>false</default>
+        <label>Wild Fork - 335232027</label>
+    </customValue>
+    <customValue>
+        <fullName>Wild Fork Foods (Canada) - 1163995660</fullName>
+        <default>false</default>
+        <label>Wild Fork Foods (Canada) - 1163995660</label>
+    </customValue>
+    <customValue>
+        <fullName>Wing Boss (VR Concept of Dickey&apos;s BBQ) - 1130926897</fullName>
+        <default>false</default>
+        <label>Wing Boss (VR Concept of Dickey&apos;s BBQ) - 1130926897</label>
+    </customValue>
+    <customValue>
+        <fullName>Wingboss - 1130926897</fullName>
+        <default>false</default>
+        <label>Wingboss - 1130926897</label>
+    </customValue>
+    <customValue>
+        <fullName>Wing Boss - 641441767</fullName>
+        <default>false</default>
+        <label>Wing Boss - 641441767</label>
+    </customValue>
+    <customValue>
+        <fullName>Wingstop - 1479685647</fullName>
+        <default>false</default>
+        <label>Wingstop - 1479685647</label>
+    </customValue>
+    <customValue>
+        <fullName>Wix - 694270802</fullName>
+        <default>false</default>
+        <label>Wix - 694270802</label>
+    </customValue>
+    <customValue>
+        <fullName>Woodman&apos;s - 99551816</fullName>
+        <default>false</default>
+        <label>Woodman&apos;s - 99551816</label>
+    </customValue>
+    <customValue>
+        <fullName>World Central Kitchen (WCK) - 658713298</fullName>
+        <default>false</default>
+        <label>World Central Kitchen (WCK) - 658713298</label>
+    </customValue>
+    <customValue>
+        <fullName>X Delivery - 896769619</fullName>
+        <default>false</default>
+        <label>X Delivery - 896769619</label>
+    </customValue>
+    <customValue>
+        <fullName>xDine - 744575724</fullName>
+        <default>false</default>
+        <label>xDine - 744575724</label>
+    </customValue>
+    <customValue>
+        <fullName>Xoikos - 55308006</fullName>
+        <default>false</default>
+        <label>Xoikos - 55308006</label>
+    </customValue>
+    <customValue>
+        <fullName>YourFare - 170742150</fullName>
+        <default>false</default>
+        <label>YourFare - 170742150</label>
+    </customValue>
+    <customValue>
+        <fullName>Zapiet - 421812412</fullName>
+        <default>false</default>
+        <label>Zapiet - 421812412</label>
+    </customValue>
+    <customValue>
+        <fullName>Zaytech - 903343888</fullName>
+        <default>false</default>
+        <label>Zaytech - 903343888</label>
+    </customValue>
+    <customValue>
+        <fullName>Zips - 1270834436</fullName>
+        <default>false</default>
+        <label>Zips - 1270834436</label>
+    </customValue>
+    <customValue>
+        <fullName>Zoe&apos;s Kitchen - 50068092</fullName>
+        <default>false</default>
+        <label>Zoe&apos;s Kitchen - 50068092</label>
+    </customValue>
+    <customValue>
+        <fullName>Zume Pizza - 53222860</fullName>
+        <default>false</default>
+        <label>Zume Pizza - 53222860</label>
+    </customValue>
+    <customValue>
+        <fullName>Zuppler (Catering) - 182288487</fullName>
+        <default>false</default>
+        <label>Zuppler (Catering) - 182288487</label>
+    </customValue>
+    <customValue>
+        <fullName>Zuppler - 40049067</fullName>
+        <default>false</default>
+        <label>Zuppler - 40049067</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiesta Mexican Kennewick (via Menuocity) - 1764255520</fullName>
+        <default>false</default>
+        <label>Fiesta Mexican Kennewick (via Menuocity) - 1764255520</label>
+    </customValue>
+    <customValue>
+        <fullName>Twirll - 1996688123</fullName>
+        <default>false</default>
+        <label>Twirll - 1996688123</label>
+    </customValue>
+    <customValue>
+        <fullName>HungryHungry - 1297007748</fullName>
+        <default>false</default>
+        <label>HungryHungry - 1297007748</label>
+    </customValue>
+    <description>LEM-3006: Represents the Drive Developer ID for the business or channel partner.</description>
+    <masterLabel>Developer Id</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

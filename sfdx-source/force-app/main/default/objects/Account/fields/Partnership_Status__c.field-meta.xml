@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partnership_Status__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-89: This field is used to know the partnership status of the account.</description>
+    <externalId>false</externalId>
+    <label>Partnership Status</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Prospective Partner</fullName>
+                <default>true</default>
+                <label>Prospective Partner</label>
+            </value>
+            <value>
+                <fullName>Existing Partner</fullName>
+                <default>false</default>
+                <label>Existing Partner</label>
+            </value>
+            <value>
+                <fullName>Former Partner</fullName>
+                <default>false</default>
+                <label>Former Partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

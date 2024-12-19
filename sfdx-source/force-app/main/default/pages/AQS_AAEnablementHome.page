@@ -1,0 +1,81 @@
+<apex:page id="AQS_AAEnablementHome" showHeader="true" sidebar="true" controller="AQS_AAEnablementHomeController" lightningStylesheets="true">
+
+    <!-- messages for page -->
+    <apex:outputPanel id="messages">
+        <apex:pageMessages />
+    </apex:outputPanel>
+
+    <!-- form/section that controls email templates -->
+    <apex:form >
+
+        <apex:pageBlock title="Email Template Creation">
+
+            <!-- contains the button to create email templates -->
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!createTemplates}" value="Create Email Templates" reRender="messages,emailTemplateList" />
+            </apex:pageBlockButtons>
+
+            <!-- list of current email templates -->
+            <apex:pageBlockSection id="emailTemplateList" title="This Org's Email Templates">
+
+                <apex:pageBlockTable value="{!currentEmailTemplates}" var="emailTemplate" id="emailTemplateList">
+                    <apex:column value="{!emailTemplate.Name}" />
+                    <apex:column value="{!emailTemplate.sbaa__TemplateId__c}" />
+                    <apex:column value="{!emailTemplate.CreatedDate}" />
+                    <apex:column value="{!emailTemplate.CreatedBy.Name}" />
+                </apex:pageBlockTable>
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+    <!-- form/section that controls custom setting -->
+    <apex:form >
+
+        <apex:pageBlock title="Record Type Custom Setting Definition">
+
+            <!-- button to execute custom setting population -->
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!updateCustomSetting}" value="Update Custom Setting" reRender="messages, customSettingValues"
+                />
+            </apex:pageBlockButtons>
+
+            <!-- section to display custom setting values  -->
+            <apex:pageBlockSection id="customSettingValues" title="Record Type ID Values">
+
+                <apex:outputText value="Approved Quote RT Value: {!recordTypeSetting.AQS_Approved_Quote_RT__c}"> </apex:outputText>
+                <apex:outputText value="Draft Quote RT Value: {!recordTypeSetting.AQS_Draft_Quote_RT__c}"> </apex:outputText>
+                <apex:outputText value="In Progress Quote RT Value: {!recordTypeSetting.AQS_In_Progress_Quote_RT__c}"> </apex:outputText>
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+
+    <!-- form/section that controls the logo document id-->
+    <apex:form >
+
+        <apex:pageBlock title="Email Logo Custom Setting Definition">
+
+            <!-- button to execute custom setting population -->
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!updateEmailLogoId}" value="Update Email Custom Setting" reRender="messages, emailCustomSettingValue"
+                />
+            </apex:pageBlockButtons>
+
+            <!-- section to display custom setting values  -->
+            <apex:pageBlockSection id="emailCustomSettingValue" title="Logo Document ID">
+
+                <apex:inputField value="{!recordTypeSetting.AQS_Approval_Email_Logo_ID__c}" />
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>

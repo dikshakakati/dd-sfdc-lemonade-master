@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tablet_Escalation_Notes__c</fullName>
+    <description>LEM-1395: Notes provided by 3rd Party Provider when the tablet case needs to be escalated.</description>
+    <externalId>false</externalId>
+    <label>Tablet Escalation Notes</label>
+    <length>32768</length>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

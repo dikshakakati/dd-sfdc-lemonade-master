@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Sale_Ads</fullName>
+    <columns>Name</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Name__c</columns>
+    <columns>Work_Order_Type__c</columns>
+    <columns>Parent_Work_Plan__c</columns>
+    <columns>Status__c</columns>
+    <columns>Opportunity_Name__c</columns>
+    <columns>CreatedBy</columns>
+    <columns>CreatedDate</columns>
+    <columns>Activated_Centrally__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Parent_Work_Plan__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Display_Ads_Promos_ListView_Filter__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Opportunity_Type__c</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Not Workable,Ready for QA,QA Complete,Blocked,Complete,Dead,Gone Dark</value>
+    </filters>
+    <filters>
+        <field>Work_Order_Provisional_Status__c</field>
+        <operation>equals</operation>
+        <value>Readiness Check Complete,Ready for Provisioning</value>
+    </filters>
+    <filters>
+        <field>Owner_Link__c</field>
+        <operation>equals</operation>
+        <value>PSA Ads</value>
+    </filters>
+    <filters>
+        <field>Experience__c</field>
+        <operation>notContain</operation>
+        <value>Caviar</value>
+    </filters>
+    <filters>
+        <field>Is_Store_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Pre - Sale Ads</label>
+    <queue>PSA_Ads</queue>
+</ListView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Initiative_Status</fullName>
+    <active>true</active>
+    <description>LEM-1596: Validate when Status equals to In Progress or Complete, require Response field is populated.</description>
+    <errorConditionFormula>IF(
+    AND(TEXT(Type__c)= $Label.Strategic_Effort,
+    ISBLANK(TEXT(Response__c)),
+     NOT($Permission.Bypass_Initiative_Validation_Rules),
+     OR(
+    TEXT(Status__c) = $Label.Status_In_Progress,
+    TEXT(Status__c) = $Label.Status_Complete
+  )),true,false)</errorConditionFormula>
+    <errorDisplayField>Response__c</errorDisplayField>
+    <errorMessage>A Strategic Effort initiative cannot be moved to In Progress or Complete until the Response field has been populated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DD_Team_to_Have_CC_d_on_Reporting__c</fullName>
+    <description>LEM-2983: Captures the email address who would received weekly reporting from DD.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the email address of the DD employees you want to receive weekly reporting</inlineHelpText>
+    <label>DD Team to Have CC&apos;d on Reporting</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,25 @@
+<!--
+@author Deloitte
+@date 25/07/2022
+@description Aura component to wrap merchantPopUpResponse lightning web component.
+-->
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"
+  access="global"
+>
+  <c:merchantPopUpResponse
+    contractId="{!v.recordId}"
+    onclose="{!c.closeQuickAction}"
+    onrecordidlog="{!c.getRecordValue}"
+  ></c:merchantPopUpResponse>
+  <aura:attribute
+    name="recordId"
+    type="String"
+    description="Id of current Contract Record"
+  />
+  <aura:attribute
+    name="responseRecordId"
+    type="String"
+    description="Id of the new Merchant Pop-Up Response record"
+  />
+</aura:component>

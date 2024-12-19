@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>LEM-964: Onboarding event type.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Onboarding event type</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Activate Store</fullName>
+                <default>false</default>
+                <label>Activate Store</label>
+            </value>
+            <value>
+                <fullName>Activations Checklist</fullName>
+                <default>false</default>
+                <label>Activations Checklist</label>
+            </value>
+            <value>
+                <fullName>Add Marketing</fullName>
+                <default>false</default>
+                <label>Add Marketing</label>
+            </value>
+            <value>
+                <fullName>Ads and Promo</fullName>
+                <default>false</default>
+                <label>Ads and Promo</label>
+            </value>
+            <value>
+                <fullName>Ads and Promo - Activate</fullName>
+                <default>false</default>
+                <label>Ads and Promo - Activate</label>
+            </value>
+            <value>
+                <fullName>Ads and Promo - Deactivate</fullName>
+                <default>false</default>
+                <label>Ads and Promo - Deactivate</label>
+            </value>
+            <value>
+                <fullName>Cross Listing - Caviar</fullName>
+                <default>false</default>
+                <label>Cross Listing - Caviar</label>
+            </value>
+            <value>
+                <fullName>Deliver Tablet</fullName>
+                <default>false</default>
+                <label>Deliver Tablet</label>
+            </value>
+            <value>
+                <fullName>Deliver Return Label</fullName>
+                <default>false</default>
+                <label>Deliver Return Label</label>
+            </value>
+            <value>
+                <fullName>Drive</fullName>
+                <default>false</default>
+                <label>Drive</label>
+            </value>
+            <value>
+                <fullName>Fee Credit</fullName>
+                <default>false</default>
+                <label>Fee Credit</label>
+            </value>
+            <value>
+                <fullName>Grant Portal Access</fullName>
+                <default>false</default>
+                <label>Grant Portal Access</label>
+            </value>
+            <value>
+                <fullName>Implementation Call</fullName>
+                <default>false</default>
+                <label>Implementation Call</label>
+            </value>
+            <value>
+                <fullName>Link Implementation</fullName>
+                <default>false</default>
+                <label>Link Implementation</label>
+            </value>
+            <value>
+                <fullName>Link Optimization</fullName>
+                <default>false</default>
+                <label>Link Optimization</label>
+            </value>
+            <value>
+                <fullName>Menu Updates</fullName>
+                <default>false</default>
+                <label>Menu Updates</label>
+            </value>
+            <value>
+                <fullName>Post-Sales - Other</fullName>
+                <default>false</default>
+                <label>Post-Sales - Other</label>
+            </value>
+            <value>
+                <fullName>Rate Change</fullName>
+                <default>false</default>
+                <label>Rate Change</label>
+            </value>
+            <value>
+                <fullName>Review &amp; Triage</fullName>
+                <default>true</default>
+                <label>Review &amp; Triage</label>
+            </value>
+            <value>
+                <fullName>Setup Banking</fullName>
+                <default>false</default>
+                <label>Setup Banking</label>
+            </value>
+            <value>
+                <fullName>Setup Business</fullName>
+                <default>false</default>
+                <label>Setup Business</label>
+            </value>
+            <value>
+                <fullName>Setup Catalog</fullName>
+                <default>false</default>
+                <label>Setup Catalog</label>
+            </value>
+            <value>
+                <fullName>Setup Custom Delivery Radius</fullName>
+                <default>false</default>
+                <label>Setup Custom Delivery Radius</label>
+            </value>
+            <value>
+                <fullName>Setup Menu</fullName>
+                <default>false</default>
+                <label>Setup Menu</label>
+            </value>
+            <value>
+                <fullName>Setup POS</fullName>
+                <default>false</default>
+                <label>Setup POS</label>
+            </value>
+            <value>
+                <fullName>Setup Store</fullName>
+                <default>false</default>
+                <label>Setup Store</label>
+            </value>
+            <value>
+                <fullName>Setup Storefront Page</fullName>
+                <default>false</default>
+                <label>Setup Storefront Page</label>
+            </value>
+            <value>
+                <fullName>Sponsored Listing</fullName>
+                <default>false</default>
+                <label>Sponsored Listing</label>
+            </value>
+            <value>
+                <fullName>Complete pre-work</fullName>
+                <default>false</default>
+                <label>Complete pre-work</label>
+            </value>
+            <value>
+                <fullName>Configure POS</fullName>
+                <default>false</default>
+                <label>Configure POS</label>
+            </value>
+            <value>
+                <fullName>Ingest Menu</fullName>
+                <default>false</default>
+                <label>Ingest Menu</label>
+            </value>
+            <value>
+                <fullName>QA Menu</fullName>
+                <default>false</default>
+                <label>QA Menu</label>
+            </value>
+            <value>
+                <fullName>Enable Integration</fullName>
+                <default>false</default>
+                <label>Enable Integration</label>
+            </value>
+            <value>
+                <fullName>COO Same Store</fullName>
+                <default>false</default>
+                <label>COO Same Store</label>
+            </value>
+            <value>
+                <fullName>Vendor Photoshoot</fullName>
+                <default>false</default>
+                <label>Vendor Photoshoot</label>
+            </value>
+            <value>
+                <fullName>Photo Linking</fullName>
+                <default>false</default>
+                <label>Photo Linking</label>
+            </value>
+            <value>
+                <fullName>Photo QA</fullName>
+                <default>false</default>
+                <label>Photo QA</label>
+            </value>
+            <value>
+                <fullName>Activations Outreach</fullName>
+                <default>false</default>
+                <label>Activations Outreach</label>
+            </value>
+            <value>
+                <fullName>Deliver Marketing Kit</fullName>
+                <default>false</default>
+                <label>Deliver Marketing Kit</label>
+            </value>
+            <value>
+                <fullName>Promos</fullName>
+                <default>false</default>
+                <label>Promos</label>
+            </value>
+            <value>
+                <fullName>Ads</fullName>
+                <default>false</default>
+                <label>Ads</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

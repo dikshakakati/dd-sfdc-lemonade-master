@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_AverageDailyBudgetValue</fullName>
+    <active>falsep</active>
+    <description>LEM-2983: Validates if Average Daily Budget is less than total Budget.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+    NOT(
+        ISBLANK(Average_Daily_Budget__c)
+    ),
+    NOT(
+        ISBLANK(Budget__c)
+    ),
+    Average_Daily_Budget__c&gt;Budget__c
+)</errorConditionFormula>
+    <errorDisplayField>Average_Daily_Budget__c</errorDisplayField>
+    <errorMessage>Average daily budget cannot be greater than total budget.</errorMessage>
+</ValidationRule>

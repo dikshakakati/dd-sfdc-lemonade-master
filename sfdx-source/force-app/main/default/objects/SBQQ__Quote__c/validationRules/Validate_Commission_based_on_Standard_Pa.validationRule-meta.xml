@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Commission_based_on_Standard_Pa</fullName>
+    <active>true</active>
+    <description>LEM-16860: Validations for Custom partnership.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Quote_Validation_Rules),
+    ISPICKVAL(Custom_Partnership_Type__c, &apos;Standard w/benefits&apos;),
+    Segment__c = &apos;SMB&apos;,
+    ISCHANGED(ApprovalStatus__c),
+    OR(
+        TEXT(ApprovalStatus__c) = $Label.Approval_Status_Pending,
+        AND(
+                TEXT(ApprovalStatus__c) = $Label.Approval_Status_Approved,
+                ISBLANK(TEXT(PRIORVALUE(ApprovalStatus__c)))
+        )
+    ),
+    OR(
+        NOT(ISPICKVAL(Eligible_location_for_0_Commission_Rate__c,&quot;&quot;)),
+        NOT(ISBLANK(X0_Commission_Start_Date__c)),
+        NOT(ISPICKVAL(Eligible_location_for_0_Commission_Rate__c,&quot;&quot;))
+    )
+)</errorConditionFormula>
+    <errorMessage>0% CR start date’, ‘# of days for 0% commission’, ‘Eligible Locations’ cannot be valued when Custom Partnership Type = Standard w/benefits for the Net New Merchant</errorMessage>
+</ValidationRule>

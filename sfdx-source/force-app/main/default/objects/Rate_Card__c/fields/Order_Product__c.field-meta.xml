@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-8764 Look up to Rate Card</description>
+    <externalId>false</externalId>
+    <label>Order Product</label>
+    <referenceTo>OrderItem</referenceTo>
+    <relationshipLabel>Rate Cards</relationshipLabel>
+    <relationshipName>Rate_Cards</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

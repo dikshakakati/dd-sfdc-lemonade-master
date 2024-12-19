@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Split_Category__c</fullName>
+    <description>LEM-14231: Indicates if the associated product(s) is Marketplace (Core) or Ads &amp; Promo.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  SBQQ__Quote__r.Segment__c = $Label.AccountSegmentSMB,
+  IF(
+      OR(
+        SBQQ__ProductFamily__c = $Label.Marketplace,
+        SBQQ__ProductFamily__c = $Label.Default_Form_Selector_As_Drive,
+        SBQQ__ProductFamily__c = $Label.Hardware,
+        SBQQ__RequiredBy__r.SBQQ__ProductFamily__c = $Label.Marketplace,
+        SBQQ__RequiredBy__r.SBQQ__ProductFamily__c = $Label.Default_Form_Selector_As_Drive,
+        SBQQ__RequiredBy__r.SBQQ__ProductFamily__c = $Label.Hardware
+      ),
+      $Label.SplitCategoryCORE,
+    IF(
+        OR(
+          SBQQ__ProductFamily__c = $Label.ProductFamilyAsAdvertisement,
+          SBQQ__ProductFamily__c = $Label.ProductFamilyAsMarketplacePromotion
+        ),
+        $Label.SplitCategoryAandP,
+        null
+      )
+    ),
+  null
+)</formula>
+    <inlineHelpText>Indicates if the associated product(s) is Marketplace (Core) or Ads &amp; Promo</inlineHelpText>
+    <label>Split Category</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

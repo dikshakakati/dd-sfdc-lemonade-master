@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Replacement_Reason_Required</fullName>
+    <active>true</active>
+    <description>LEM-15978: Replacement Reason is required for Tablet type and Replacement request type.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.ByPass_Bulk_Update_Staging_Validation),
+    Type__c = $Label.Work_Order_Tablet,
+    Request_Type__c != $Label.Work_Order_Sub_Type_NetNew,
+    ISPICKVAL(Replacement_Reason__c, &quot;&quot;)
+   )</errorConditionFormula>
+    <errorMessage>Reason for Replacement is required for return component.</errorMessage>
+</ValidationRule>

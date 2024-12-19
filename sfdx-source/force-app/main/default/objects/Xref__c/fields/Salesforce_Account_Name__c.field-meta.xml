@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Account_Name__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-800: Represents the name of the business or store account in SFDC.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents the name of the business or store account in SFDC</inlineHelpText>
+    <label>Salesforce Account Name</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <filterItems>
+            <field>Account.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Business</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Store</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Xrefs</relationshipLabel>
+    <relationshipName>Xrefs</relationshipName>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

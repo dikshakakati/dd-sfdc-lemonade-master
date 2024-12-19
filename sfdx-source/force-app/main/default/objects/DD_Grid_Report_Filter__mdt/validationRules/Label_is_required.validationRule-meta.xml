@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Label_is_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT(ISPICKVAL(Type__c,&apos;MultiSelect Picklist&apos;)),
+  ISBLANK( Label__c )
+)</errorConditionFormula>
+    <errorDisplayField>Label__c</errorDisplayField>
+    <errorMessage>This field is required for the type selected.</errorMessage>
+</ValidationRule>

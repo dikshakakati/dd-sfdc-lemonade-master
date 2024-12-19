@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Opportunity_On_Parent_WorkOrder</fullName>
+    <active>true</active>
+    <description>LEM-10032: It validates Opportunity is required or not when Type is Marketplace (Net-New Onboarding) or Storefront or Drive or Post-Sales with Rate Change Sub-Type on parent Work Order.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  ISBLANK(ParentWorkOrderId),
+  ISBLANK(Opportunity__c),
+  OR(
+    AND(
+      TEXT(Type__c) = $Label.WorkOrder_Type_Marketplace,
+      OR (
+        /*Net-New Corporate Onboarding Identifier*/
+        AND (
+          TEXT(Account.Type) = $Label.Type_Corporate,
+          Account.Corporate_Owned_Store_Count__c = 0
+        ),
+        /*Net-New non-Nintex Franchise Onboarding Identifier*/
+        AND (
+          TEXT(Account.Type) = $Label.Type_Franchisee,
+          Account.Franchise_Owned_Store_Count__c = 0
+        )
+      )
+    ),
+    AND (
+      TEXT(Type__c) = $Label.WorkOrderTypeStorefront,
+      TEXT(Creation_Source__c) != $Label.WorkOrderCreationSourcePlaceItForMe
+      ),
+    AND (
+      TEXT(Type__c) = $Label.WorkOrderTypeDrive,
+      OR (
+        TEXT(Sub_Type__c) = $Label.WorkOrderSubTypeAutoActivations,
+        TEXT(Sub_Type__c) = $Label.WorkOrderSubTypeNetNewBusiness,
+        TEXT(Sub_Type__c) = $Label.WorkOrderSubTypePartnershipCreationUpdate,
+        TEXT(Sub_Type__c) = $Label.WorkOrderSubTypeWithholding
+      )
+    ),
+    AND(
+      TEXT(Type__c) = $Label.WorkOrderTypePostSales,
+      TEXT(Sub_Type__c)= $Label.WorkOrderSubTypeRateChange,
+      TEXT(Creation_Source__c) != $Label.WorkOrderCreationSourceManagePricing
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>Please ensure the relevant opportunity is associated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>SBQQ__Quote__c</entityName>
+    <fieldName>SBQQ__Status__c</fieldName>
+    <masterLabel>AQS Approved Quote Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Quote is approved and ready to be sent to Mx for Signatures.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Approved</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Mx has signed the contract and quote is closed.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Contract Signed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Please reconfigure Quote and resubmit for approval.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Denied</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Please add products and configure or reconfigure if approvals were rejected/recalled.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Draft</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Quote has been submitted for approval and is in review.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>In Review</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Contract is out for signatures with Mx.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Out for Signature</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>AQS_Approved_Quote</recordTypeName>
+</PathAssistant>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Val__c</fullName>
+    <description>LEM-6823
+LEM-9347 - Updates for Agency Account</description>
+    <externalId>false</externalId>
+    <formula>IF( Agency_Opportunity_Name__c != NULL,  Agency_Opportunity_Name__r.Account.Name , Opportunity_Name__r.Account.Name)</formula>
+    <inlineHelpText>Captures Account Id related to opportunity</inlineHelpText>
+    <label>Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

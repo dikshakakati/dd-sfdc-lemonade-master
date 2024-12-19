@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Descriptor__c</fullName>
+    <complianceGroup>PII</complianceGroup>
+    <description>LEM-15117: To store Information appearing on the Mx bank statement.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Information appearing on the Mx bank statement</inlineHelpText>
+    <label>Payment Descriptor</label>
+    <length>32768</length>
+    <securityClassification>Confidential</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

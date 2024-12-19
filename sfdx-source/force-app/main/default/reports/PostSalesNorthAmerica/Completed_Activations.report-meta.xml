@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>WorkOrder$Account</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>WorkOrder$Actual_Number_Of_Stores__c</field>
+    </columns>
+    <columns>
+        <field>WorkOrder$Type__c</field>
+    </columns>
+    <columns>
+        <field>WorkOrder$Status</field>
+    </columns>
+    <columns>
+        <field>WorkOrder$Proposed_Date_of_Activation__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Displays number of stores that have been activated on DoorDash.</description>
+    <filter>
+        <criteriaItems>
+            <column>WorkOrder$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Onboarding Complete</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>WorkOrder$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name># of Stores Completed Onboarding</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>All_Open_Work_Orders__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>WorkOrder$Proposed_Date_of_Activation__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

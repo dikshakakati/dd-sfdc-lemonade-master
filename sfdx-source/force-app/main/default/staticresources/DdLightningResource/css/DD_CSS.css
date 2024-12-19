@@ -1,0 +1,21 @@
+/* Adding a custom CSS scrollbar, typically for windows users */
+.customWebkitScrollbar {
+  scrollbar-color: #D8D8D8 #efefef;
+  scrollbar-width: thin;
+}
+.customWebkitScrollbar::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.customWebkitScrollbar::-webkit-scrollbar:vertical {
+    width: 8px;
+    background-color: #efefef;
+}
+.customWebkitScrollbar::-webkit-scrollbar:horizontal {
+    height: 8px;
+    background-color: #efefef;
+}
+.customWebkitScrollbar::-webkit-scrollbar-thumb {
+    border-radius: 2.5px;
+    border: 1px solid #D8D8D8;
+    background-color: #D8D8D8;
+}

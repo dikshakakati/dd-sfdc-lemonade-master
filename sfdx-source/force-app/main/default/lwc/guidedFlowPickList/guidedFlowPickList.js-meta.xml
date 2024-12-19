@@ -1,0 +1,30 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>59.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>Guided Flow PickList</masterLabel>
+	<description>LEM-13511 : Guided Flow PickList</description>
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<property name="pickListName" type="String" label="PickList Name" required="false" role="inputOnly"/>
+			<property name="options" type="String" label="Options" required="false" role="inputOnly"/>
+			<property name="pickListValue" type="String" label="PickList Value" role="inputOnly"/>
+			<property name="otherReasonValue" type="String" label="Value for Other" role="inputOnly"/>
+			<property name="pickListLabel" type="String" label="PickList Label" role="inputOnly" />
+			<property name="isRequired" type="Boolean" label="Required?" role="inputOnly"/>
+			<property name="isProgressIndicator" type="Boolean" label="isProgressIndicator?" role="inputOnly" default="true"/>
+			<property name="isDisabled" type="Boolean" label="isDisabled?" role="inputOnly" default="false"/>
+			<property name="outPutValue" type="String" label="Output" role="outputOnly" />
+			<property name="errorMessage" type="String" label="Error Message" role="inputOnly" default="Please select a choice."/>
+			<property name="objectName" type="String" label="Object Name" required="false" role="inputOnly"/>
+      <property name="pickListFieldName" type="String" label="Picklist" required="false" role="inputOnly"/>
+			<property name="parentPickListValue" type="String" label="Parent Picklist Value" required="false" role="inputOnly"/>
+			<property name="otherOption" type="String" label="Other Picklist Value" required="false" role="inputOnly"/>
+			<property name="otherReason" type="String" label="Reason Output" role="outputOnly" />
+			<property name="otheOptionFieldLabel" type="String" label="Field Label For Other Reason" role="inputOnly" default="Other Reason" />
+			<property name="otheOptionFieldVariant" type="String" label="Field Label Variant For Other Reason" role="inputOnly" default="label-hidden" />
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

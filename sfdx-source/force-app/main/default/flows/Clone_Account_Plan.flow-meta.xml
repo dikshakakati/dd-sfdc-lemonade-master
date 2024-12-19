@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Clone_Account_Plan_Record</name>
+        <label>Clone Account Plan</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <actionName>CloneAccountPlanController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Check_if_Account_Plan_created</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>accountPlanRecord</name>
+            <value>
+                <elementReference>Get_Account_Plan_Details</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>runningUserId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>createdAccountPlanId</assignToReference>
+            <name>output</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <decisions>
+        <description>LEM-15227: It checks whether the Account Plan is created or not</description>
+        <name>Check_if_Account_Plan_created</name>
+        <label>Check if Account Plan created?</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Error_Screen_for_Account_Plan_creation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Account Plan not created</defaultConnectorLabel>
+        <rules>
+            <name>Account_Plan_created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>createdAccountPlanId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_old_Account_Plan</targetReference>
+            </connector>
+            <label>Account Plan created</label>
+        </rules>
+    </decisions>
+    <description>LEM-15227: It is used to clone the Account Plan Record.</description>
+    <environments>Default</environments>
+    <interviewLabel>Clone Account Plan {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Clone Account Plan</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Account_Plan_Details</name>
+        <label>Get Account Plan Details</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Clone_Account_Plan_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account_Plan__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>LEM-17006: Update the New Account Plan status as Active</description>
+        <name>Update_Status_for_New_Account_Plan</name>
+        <label>Update Status for New Account Plan to Active</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Create_Account_Plan</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>createdAccountPlanId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account_Plan__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>LEM-15227: It is used to update the old Account Plan record to Inactive.</description>
+        <name>Update_the_old_Account_Plan</name>
+        <label>Update the old Account Plan</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Update_Status_for_New_Account_Plan</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>End_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Inactive</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account_Plan__c</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithSharing</runInMode>
+    <screens>
+        <name>Create_Account_Plan</name>
+        <label>Create Account Plan</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>createdIds</name>
+            <fieldText>&lt;p&gt;Click &lt;a href=&quot;/{!createdAccountPlanId}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt; to view the created Record.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Screen_for_Account_Plan_creation</name>
+        <label>Error Screen for Account Plan creation</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessageForAccountPlanCreation</name>
+            <fieldText>&lt;p&gt;This Account Plan was unable to be cloned.Please try again, and if there are still issues, reach out to your DDMx support POC.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Account_Plan_Details</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-15227: It stores the created Account Plan Id.</description>
+        <name>createdAccountPlanId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-15227: It stores the record Id of the triggering record.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

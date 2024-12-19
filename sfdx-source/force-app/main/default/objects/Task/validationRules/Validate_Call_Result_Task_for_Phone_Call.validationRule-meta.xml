@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Validate_Call_Result_Task_for_Phone_Call</fullName>
+  <active>true</active>
+  <description>LEM-14106: It is used to validate Call Result &amp;
+    Call Type are required in order to Log a Call.</description>
+  <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Task_Validation_Rules),
+  TEXT(Type) = $Label.Task_Type_Phone_Call,
+  TEXT(Status) = $Label.Task_Status_Completed,
+  OR(
+    ISBLANK(TEXT(Call_Result__c)),
+    ISBLANK(TEXT(Call_Type__c))
+  )
+  )</errorConditionFormula>
+  <errorMessage>Call Result &amp; Call Type are required in order to Log a Call.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Portal_Name_Format__c</fullName>
+    <securityClassification>Confidential</securityClassification>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-16823:  Mx Portal Name format field is added to the Merchant Pop-Up to select the pattern that should appear on the &quot;Alternative Store Name (Mx Portal)&quot; in the store account.</description>
+    <externalId>false</externalId>
+    <label>Mx Portal Name Format</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>[Brand] - ([MSID])</fullName>
+                <default>false</default>
+                <label>[Brand] - ([MSID])</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Date_of_Menu__c</fullName>
+    <description>LEM-813: Onboarding event proposed date of menu.
+LEM-1252: PDOM will be available for Marketplace type.
+LEM-4669: PDOM calculation enabled for COO type.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    TEXT(Type__c) = $Label.WorkOrder_Type_Marketplace,
+    TEXT(Type__c) = $Label.WorkOrderTypeCOO
+  ),
+  CASE(
+    MOD(Proposed_Date_of_Activation__c - DATE(1900, 1, 7), 7),
+    0, Proposed_Date_of_Activation__c - 1 - 4, /*Sun*/
+    1, Proposed_Date_of_Activation__c - 2 - 4, /*Mon*/
+    2, Proposed_Date_of_Activation__c - 2 - 4, /*Tue*/
+    3, Proposed_Date_of_Activation__c - 2 - 4, /*Wed*/
+    4, Proposed_Date_of_Activation__c - 2 - 4, /*Thu*/
+    Proposed_Date_of_Activation__c - 4 /*Fri*//*Sat*/
+  ),
+  null
+)</formula>
+    <inlineHelpText>Onboarding event proposed date of menu</inlineHelpText>
+    <label>Proposed Date of Menu</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

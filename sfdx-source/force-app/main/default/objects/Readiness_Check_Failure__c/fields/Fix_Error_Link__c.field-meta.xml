@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fix_Error_Link__c</fullName>
+    <description>LEM-12937 , LEM-13133</description>
+    <externalId>false</externalId>
+    <formula>IF( Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.MenuToBeCompletedBy_req_on_Store_for_Mkt.Error_Message__c ,  HYPERLINK($CustomMetadata.Store_Readiness_Validation_Rule__mdt.MenuToBeCompletedBy_req_on_Store_for_Mkt.Quick_Action_Name__c + CASESAFEID(Account_Name__c), &quot;Update Menu&quot;,&quot;_self&quot;),
+
+IF(Error_Message__c = $CustomMetadata.Store_Readiness_Validation_Rule__mdt.Non_Duplicate_Status_on_Business.Error_Message__c , &apos;Please re-run readiness check and if the error persists, &apos; +  HYPERLINK($CustomMetadata.Store_Readiness_Validation_Rule__mdt.Non_Duplicate_Status_on_Business.Quick_Action_Name__c, &quot;open a ticket with Data Ops.&quot;,&quot;_self&quot;),
+
+IF(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.PDOA_on_Store_cannot_be_in_past.Error_Message__c ,  HYPERLINK($CustomMetadata.Store_Readiness_Validation_Rule__mdt.PDOA_on_Store_cannot_be_in_past.Quick_Action_Name__c + CASESAFEID(Account_Name__c), &quot;Update PDOA&quot;,&quot;_self&quot;)
+,
+IF(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.Tax_ID_req_on_Account.Error_Message__c ,  HYPERLINK($CustomMetadata.Store_Readiness_Validation_Rule__mdt.Tax_ID_req_on_Account.Quick_Action_Name__c + CASESAFEID(Account_Name__c), &quot;Update Tax Id&quot;,&quot;_self&quot;)
+,
+IF(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.Store_Order_Protocol_match_to_parent_WO.Error_Message__c
+,  HYPERLINK($CustomMetadata.Store_Readiness_Validation_Rule__mdt.Store_Order_Protocol_match_to_parent_WO.Quick_Action_Name__c + CASESAFEID(Id), &quot;Update Order Protocol&quot;,&quot;_self&quot;)
+,
+IF(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.SSN_is_blank_on_Contact.Error_Message__c ,  HYPERLINK($CustomMetadata.Store_Readiness_Validation_Rule__mdt.SSN_is_blank_on_Contact.Quick_Action_Name__c + CASESAFEID(Contact_Name__c), &quot;Update SSN&quot;,&quot;_self&quot;)
+,
+IF(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.Decision_Maker_Contact_required_on_Store.Error_Message__c ,  HYPERLINK(&apos;/lightning/action/quick/Account.Create_Update_Decision_Maker_Contact?recordId=&apos;+ CASESAFEID(Account_Name__c), &quot;Update/Create Contact&quot;,&quot;_self&quot;)
+,
+IF(
+(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.PDOA_on_WO_cannot_be_in_past.Error_Message__c)||(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.PDOM_on_WO_cannot_be_in_past.Error_Message__c)||(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.PDOT_on_WO_cannot_be_in_past.Error_Message__c)
+,  HYPERLINK($CustomMetadata.Store_Readiness_Validation_Rule__mdt.PDOA_on_WO_cannot_be_in_past.Quick_Action_Name__c + CASESAFEID(Parent_Work_Order__c), &quot;Update PDOA/PDOT&quot;,&quot;_self&quot;)
+,IF(Error_Message__c =  $CustomMetadata.Store_Readiness_Validation_Rule__mdt.Accessibilities_not_available_on_Seattle.Error_Message__c , HYPERLINK(&apos;/flow/Update_Seattle_Dasher_Accessibilities_and_Allergens_Fields?recordId=&apos;+ Account_Name__r.Id , &quot;Update Accessibilities&quot;,&quot;_self&quot;)
+,&apos;&apos;)))))))))</formula>
+    <label>Fix Error Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

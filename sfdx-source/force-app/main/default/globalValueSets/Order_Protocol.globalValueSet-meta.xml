@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Android Tablet (Merchant Owns)</fullName>
+        <default>false</default>
+        <label>Android Tablet (Merchant Owns)</label>
+    </customValue>
+    <customValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Fax</fullName>
+        <default>false</default>
+        <label>Fax</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet (DoorDash Owns)</fullName>
+        <default>false</default>
+        <label>Tablet (DoorDash Owns)</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet and Printer (DoorDash Owns)</fullName>
+        <default>false</default>
+        <label>Tablet and Printer (DoorDash Owns)</label>
+    </customValue>
+    <customValue>
+        <fullName>POS</fullName>
+        <default>false</default>
+        <label>POS</label>
+    </customValue>
+    <customValue>
+        <fullName>POS and Tablet (Merchant Owns)</fullName>
+        <default>false</default>
+        <label>POS and Tablet (Merchant Owns)</label>
+    </customValue>
+    <customValue>
+        <fullName>POS and Tablet (DoorDash Owns)</fullName>
+        <default>false</default>
+        <label>POS and Tablet (DoorDash Owns)</label>
+    </customValue>
+    <customValue>
+        <fullName>POS and Tablet Return Label</fullName>
+        <default>false</default>
+        <label>POS and Tablet Return Label</label>
+    </customValue>
+    <customValue>
+        <fullName>POS (Caviar Owns)</fullName>
+        <default>false</default>
+        <label>POS (Caviar Owns)</label>
+    </customValue>
+    <customValue>
+        <fullName>2 Tablets (Caviar and DoorDash Own)</fullName>
+        <default>false</default>
+        <label>2 Tablets (Caviar and DoorDash Own)</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet (Caviar Owns)</fullName>
+        <default>false</default>
+        <label>Tablet (Caviar Owns)</label>
+    </customValue>
+    <customValue>
+        <fullName>POS and Tablet (Caviar Owns)</fullName>
+        <default>false</default>
+        <label>POS and Tablet (Caviar Owns)</label>
+    </customValue>
+    <customValue>
+        <fullName>POS and 2 Tablets (DoorDash POS, DoorDash and Caviar Tablets)</fullName>
+        <default>false</default>
+        <label>POS and 2 Tablets (DoorDash POS, DoorDash and Caviar Tablets)</label>
+    </customValue>
+    <customValue>
+        <fullName>POS and 2 Tablets (Caviar POS, DoorDash and Caviar Tablets)</fullName>
+        <default>false</default>
+        <label>POS and 2 Tablets (Caviar POS, DoorDash and Caviar Tablets)</label>
+    </customValue>
+    <customValue>
+        <fullName>One Time Tablet and Printer Fee</fullName>
+        <default>false</default>
+        <label>One Time Tablet and Printer Fee</label>
+    </customValue>
+    <customValue>
+        <fullName>Indicator Unspecified</fullName>
+        <default>false</default>
+        <label>Indicator Unspecified</label>
+    </customValue>
+    <customValue>
+        <fullName>Phone</fullName>
+        <default>false</default>
+        <label>Phone</label>
+    </customValue>
+    <description>LEM-179 – Initial Setup of Quote object</description>
+    <masterLabel>Order Protocol</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target2GreaterThanZeroRebateBlank</fullName>
+    <active>true</active>
+    <description>LEM-14402: Validates that Rebate 2 (%) is not blank when Target 2 ($) is greater than zero.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  ISCHANGED(Target_2__c),
+  Target_2__c &gt; 0,
+  ISBLANK(Rebate_2__c)
+)</errorConditionFormula>
+    <errorDisplayField>Rebate_2__c</errorDisplayField>
+    <errorMessage>Rebate 2 (%) is required when Target 2 ($) &gt;0.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictManualProvisioningProcess</fullName>
+    <active>true</active>
+    <description>LEM-3332: It restricts from selecting Provisioning Process as Manual on parent Work Order creation for Auto-Activations Work Order sub-type.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  NOT(
+    AND(
+      OR (
+        TEXT(Work_Order_Source__c) = $Label.WorkOrderSourceSystem,
+        TEXT(Work_Order_Source__c) = $Label.SOURCE_SSMO
+      ),
+      Account_Record_Type_Name__c = $Label.StoreAccountRecordTypeName
+    )
+  ),
+  TEXT(Business_to_Store_Assignment__c) = $Label.WorkOrderProvisioningProcessManual,
+  NOT(ISBLANK(TEXT(Sub_Type__c))),
+  TEXT(Sub_Type__c) = $Label.WorkOrderSubTypeAutoActivations
+)</errorConditionFormula>
+    <errorDisplayField>Business_to_Store_Assignment__c</errorDisplayField>
+    <errorMessage>Provisioning Process should always be automatic for Auto-Activations scenarios.</errorMessage>
+</ValidationRule>

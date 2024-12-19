@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-1212: Indicates link to contract that case is related to.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Link to contract that case is related to</inlineHelpText>
+    <label>Contract</label>
+    <referenceTo>Contract</referenceTo>
+    <relationshipLabel>Bulk Upload Request Cases</relationshipLabel>
+    <relationshipName>Bulk_Upload_Request_Cases</relationshipName>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

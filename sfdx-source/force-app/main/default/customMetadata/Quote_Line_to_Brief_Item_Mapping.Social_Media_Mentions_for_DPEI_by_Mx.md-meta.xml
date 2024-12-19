@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Social Media Mentions for DPEI by Mx</label>
+    <protected>false</protected>
+    <values>
+        <field>BriefItemFieldAPIName__c</field>
+        <value xsi:type="xsd:string">Influencer_Campaign_Platforms__c</value>
+    </values>
+    <values>
+        <field>OpportunityFieldAPIName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>QuoteLineFieldAPIName__c</field>
+        <value xsi:type="xsd:string">Social_Media_Mentions_for_DPEI_by_Mx__c</value>
+    </values>
+</CustomMetadata>

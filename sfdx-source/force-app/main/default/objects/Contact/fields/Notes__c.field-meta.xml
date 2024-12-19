@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notes__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13790: It stores any notes related to the SMB Contact.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please add any notes about the SMB contact</inlineHelpText>
+    <label>Notes</label>
+    <length>32768</length>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

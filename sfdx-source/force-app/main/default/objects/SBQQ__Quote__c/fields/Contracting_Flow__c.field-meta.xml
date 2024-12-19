@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracting_Flow__c</fullName>
+    <description>LEM-14726: Field to indicate if the redlining is required for the Contract</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates if redlining is required for the CLM Contract</inlineHelpText>
+    <label>Contracting Flow</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Templatized e-sign</fullName>
+                <default>true</default>
+                <label>Templatized e-sign</label>
+            </value>
+            <value>
+                <fullName>Templatized wet-sign</fullName>
+                <default>false</default>
+                <label>Templatized wet-sign</label>
+            </value>
+            <value>
+                <fullName>Redlining</fullName>
+                <default>false</default>
+                <label>Redlining</label>
+            </value>
+            <value>
+                <fullName>No Redlining</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Redlining</label>
+            </value>
+            <value>
+                <fullName>Redlining Requested</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Redlining Requested</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

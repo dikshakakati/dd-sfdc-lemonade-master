@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : puneet.gaur@ext.doordash.com
+  @group             : 
+  @last modified on  : 10-09-2022
+  @last modified by  : puneet.gaur@ext.doordash.com
+-->
+<template>
+    <template if:true={showToastBar}>
+         <div class="slds-notify_container">
+             <div class={outerClass} role="status">
+                 <span class="slds-assistive-text">{type}</span>
+                 <span class={innerClass} title={message}>
+                     <lightning-icon icon-name={getIconName} alternative-text="icon" class="slds-icon slds-icon_small" variant="inverse" size="small"  ></lightning-icon>
+                 </span>
+                 <div class="slds-notify__content">
+                     <h2 class="slds-text-heading_small">
+                         <lightning-formatted-rich-text value={message}></lightning-formatted-rich-text>
+                     </h2>
+                 </div>
+                 <div class="slds-notify__close slds-border_top slds-border_right slds-border_bottom slds-border_left" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                    <lightning-icon aria-hidden="true"  variant="inverse" size="small" icon-name="utility:close" alternative-text="close"  class="slds-button slds-button_icon slds-button_icon-inverse" onclick={closeModal} ></lightning-icon>
+                 </div>
+             </div>
+         </div>
+    </template>
+ </template>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_fields_for_Business_Accounts</fullName>
+    <active>true</active>
+    <description>LEM-15901 Auto Verify New Accounts</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+  $Profile.Name &lt;&gt; &quot;Mulesoft Integration&quot;,
+  $Profile.Name &lt;&gt; &quot;Nintex Integration&quot;,
+  OR($RecordType.Name = $Label.BusinessAccountRecordTypeName, $RecordType.DeveloperName = $Label.Account_RecordType_ChannelPartner),
+  ISNEW(),
+  NOT(ISPICKVAL( Type ,&quot;Franchisee&quot;)),
+  OR(
+  ISPICKVAL(Segment__c, &apos;&apos;),
+  ISBLANK(BillingCountry),
+  AND(
+     TEXT( Segment__c ) != $Label.AccountSegmentSMB,
+     ISBLANK(Legal_Business_Name__c))
+  ),
+  ISBLANK(Converted_Lead_Id__c)
+  )</errorConditionFormula>
+    <errorMessage>Segment and Billing Country are required fields on all Business and Channel Partner Accounts. Legal Business Name is required only for ENT Business and Channel Partner Accounts.</errorMessage>
+</ValidationRule>

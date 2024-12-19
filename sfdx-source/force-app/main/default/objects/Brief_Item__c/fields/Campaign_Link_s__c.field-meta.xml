@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_Link_s__c</fullName>
+    <description>LEM-2983: Links associated to the Campaign will be captured.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the link to the campaign(s) here.</inlineHelpText>
+    <label>Campaign Link(s)</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tablet_Validation_Record_Create_Type</fullName>
+    <active>true</active>
+    <description>LEM-14097: It is used to validate record create action for Tablet Work Order.</description>
+    <errorConditionFormula>AND(
+        Create_Record_Action__c = True,
+        ISNEW(),
+        ISPICKVAL( Type__c , &quot;Tablet&quot;)
+    )</errorConditionFormula>
+    <errorMessage>Tablet Work Orders can only be created through Equipment Requests. Please navigate to store account and click “Equipment Request” button for tablet-related requests.</errorMessage>
+</ValidationRule>

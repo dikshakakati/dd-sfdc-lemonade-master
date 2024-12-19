@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opt_In_Opt_Out_Response_Time_in_Days__c</fullName>
+    <description>LEM-1363 - Capture Opt In/Out and Responsible Party</description>
+    <externalId>false</externalId>
+    <label>Opt-In/Opt-Out Response Time (in Days)</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

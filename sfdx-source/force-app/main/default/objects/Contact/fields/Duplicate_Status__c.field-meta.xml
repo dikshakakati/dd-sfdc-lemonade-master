@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Status__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14701: To track the duplicate status of Contact.</description>
+    <externalId>false</externalId>
+    <label>Duplicate Status</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Non-Duplicate</fullName>
+                <default>false</default>
+                <label>Non-Duplicate</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Unverified</fullName>
+                <default>true</default>
+                <label>Unverified</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

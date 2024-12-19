@@ -1,0 +1,24 @@
+<template>
+    <template lwc:if={showError}>
+        <div class="slds-modal_large">
+            <div class="slds-modal__content ">
+                <div class="slds-p-around_large">
+                    <lightning-icon icon-name="utility:error" alternative-text="Error" title="Error" variant="error"></lightning-icon>
+                    <span class="slds-p-left_xx-small slds-hyphenate">{workOrderTypeError}</span>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template lwc:else>
+        <div class="slds-p-horizontal_medium option-container">
+
+            <p class="option-text slds-m-bottom_xx-small">You have a Store Onboarding Request already in progress. Would you like to continue where you left off or start a new request?</p>
+            <p class="note-text slds-m-bottom_large"><strong>Note: Starting a new request will close the existing onboarding process. Any unsaved progress in the current request will be lost.</strong></p>
+
+            <div class="option-container-buttons">
+                <lightning-button label="Continue Existing Request" variant="brand" onclick={handleSelectExisting}></lightning-button>
+                <lightning-button label="Start New Request" variant="neutral" onclick={handleCreateNew}></lightning-button>
+            </div>
+        </div>
+    </template>
+</template>

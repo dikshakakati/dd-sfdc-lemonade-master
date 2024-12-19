@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-1684: It is used to re-run readiness validation checks on stores associated with child Work Orders of the parent Work Order.
+LEM-2914: Changed the label to accommodate manual readiness check.</description>
+    <height>250</height>
+    <label>Run Readiness Check</label>
+    <lightningComponent>ReadinessCheckQuickAction</lightningComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningComponent</type>
+    <width>-100</width>
+</QuickAction>

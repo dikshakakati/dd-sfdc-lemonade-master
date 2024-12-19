@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Picklist_Metadata_Search_Label_Format__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Picklist Metadata Search Label Format</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>{Label}</fullName>
+                <default>true</default>
+                <label>{Label}</label>
+            </value>
+            <value>
+                <fullName>{Value} - {Label}</fullName>
+                <default>false</default>
+                <label>{Value} - {Label}</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

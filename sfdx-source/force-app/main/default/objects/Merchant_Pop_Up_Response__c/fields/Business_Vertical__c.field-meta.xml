@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Vertical__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-11257: It is used to associate the Business Vertical to a Merchant Popup.</description>
+    <externalId>false</externalId>
+    <label>Business Vertical</label>
+    <referenceTo>Business_Vertical__c</referenceTo>
+    <relationshipLabel>Franchise Form Requests</relationshipLabel>
+    <relationshipName>Franchise_Form_Requests</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

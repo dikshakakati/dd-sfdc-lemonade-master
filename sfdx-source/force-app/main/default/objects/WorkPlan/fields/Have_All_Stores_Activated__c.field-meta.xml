@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Have_All_Stores_Activated__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <defaultValue>false</defaultValue>
+    <description>LEM-2132: It is used to route the Parent Work Plan whenever all store Accounts related to child Work Plans are activated.</description>
+    <externalId>false</externalId>
+    <label>Have All Stores Activated?</label>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

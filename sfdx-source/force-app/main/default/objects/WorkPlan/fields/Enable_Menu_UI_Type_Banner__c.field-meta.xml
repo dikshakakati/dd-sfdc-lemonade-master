@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Menu_UI_Type_Banner__c</fullName>
+    <description>LEM-3493: It is used to check whether to enable Menu UI Type banner on parent Work Plan.</description>
+    <externalId>false</externalId>
+    <formula>AND(
+  ISBLANK(Parent_Work_Plan__c),
+  CONTAINS(
+    $CustomMetadata.Static_Configurations__mdt.WorkPlanTypesToDisplayMenuUITypeBanner.Configuration_Value__c,
+    TEXT(Type__c)
+  ),
+  WorkOrder.HasCatalogWorkPlan__c,
+  WorkOrder.HasMenuWorkPlan__c
+)</formula>
+    <label>Enable Menu UI Type Banner</label>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

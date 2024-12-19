@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SDR_Assisted__c</fullName>
+    <description>LEM-16065: Determine the date when a meeting is held by SDR</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Date of a held meeting that was scheduled by a SDR</inlineHelpText>
+    <label>SDR Assisted</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

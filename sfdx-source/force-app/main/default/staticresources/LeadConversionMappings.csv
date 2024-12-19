@@ -1,0 +1,24 @@
+Object,Field name,Update if blank
+Account,BillingStreet,FALSE
+Account,BillingCity,FALSE
+Account,BillingCountry,FALSE
+Account,BillingState,FALSE
+Account,BillingPostalCode,FALSE
+Account,Deck_Rank__c,FALSE
+Account,Segment__c,TRUE
+Account,Preferred_Language__c,TRUE
+Account,OwnerId,FALSE
+Account,Type,FALSE
+Account,Creation_Source__c,FALSE
+Account,Type,FALSE
+Contact,OwnerId,TRUE
+Contact,OwnerId,FALSE
+Contact,Contact_Source__c,FALSE
+Contact,Preferred_Language__c,TRUE
+Opportunity,Source__c,FALSE
+Opportunity,OwnerId,FALSE
+Opportunity,StageName,FALSE
+Opportunity,Substage__c,FALSE
+Opportunity,Type,FALSE
+Opportunity,Opportunity_Sub_Type__c,FALSE
+Opportunity,Primary_Routing_Assigned__c,TRUE

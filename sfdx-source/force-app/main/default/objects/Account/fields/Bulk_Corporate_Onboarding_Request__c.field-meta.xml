@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bulk_Corporate_Onboarding_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-8466 - Connects Store Accounts to the Bulk Corporate Onboarding Request (Process_Flow_Request__c) from which they originated</description>
+    <externalId>false</externalId>
+    <label>Bulk Corporate Onboarding Request</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Only Store Accounts can be affiliated to Bulk Corporate Onboarding Requests.</errorMessage>
+        <filterItems>
+            <field>$Source.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Store</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Process_Flow_Request__c</referenceTo>
+    <relationshipLabel>Stores</relationshipLabel>
+    <relationshipName>Accounts1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

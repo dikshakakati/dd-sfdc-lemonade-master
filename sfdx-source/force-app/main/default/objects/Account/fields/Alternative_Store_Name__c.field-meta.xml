@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alternative_Store_Name__c</fullName>
+    <description>LEM-5025: This represents the alternative name of the store account.</description>
+    <externalId>false</externalId>
+    <label>Alternative Store Name (Mx Portal)</label>
+    <length>80</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

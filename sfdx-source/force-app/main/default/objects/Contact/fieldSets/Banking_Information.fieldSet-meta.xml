@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Banking_Information</fullName>
+    <description>LEM-2255: It is used to display banking information related to Contact of the onboarding details on work plan.</description>
+    <displayedFields>
+        <field>SSN_Last_4Digits__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Birthdate</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Banking Information</label>
+</FieldSet>

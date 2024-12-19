@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Name_Required_For_SO_Case</fullName>
+    <active>true</active>
+    <description>LEM-13453: It validates that Account name is required to create S&amp;O support case.</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Case_Validation_Rules),
+RecordType.Name=$Label.SandOSupportRequest,
+TEXT(Type) = $Label.BusinessHierarchyAssistance,
+TEXT(Sub_Type__c)=$Label.AccountOwnershipChange,
+ISBLANK(AccountId)
+)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>Please populate the account you wish to change Account ownership.</errorMessage>
+</ValidationRule>

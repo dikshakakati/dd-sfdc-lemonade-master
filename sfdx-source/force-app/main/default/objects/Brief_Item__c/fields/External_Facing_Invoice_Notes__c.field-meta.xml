@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Facing_Invoice_Notes__c</fullName>
+    <description>LEM-2983: Captures the product description to be added in the manual invoice.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this product requires a manual invoice, please provide the product description to be included on this invoice here.</inlineHelpText>
+    <label>External-Facing Invoice Notes</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

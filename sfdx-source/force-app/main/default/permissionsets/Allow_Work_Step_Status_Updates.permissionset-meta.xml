@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Work_Step_Status_Updates</name>
+    </customPermissions>
+    <description>LEM-25149: It provides access to Work Step&apos;s status value updates (other than &apos;Resolved&apos; value) for non-MxS persona&apos;s users.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Work Step Status Update</label>
+</PermissionSet>

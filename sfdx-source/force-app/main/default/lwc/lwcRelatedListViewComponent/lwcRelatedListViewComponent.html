@@ -1,0 +1,23 @@
+<template>
+<div class="c-container" >
+        <slot name="removecontainer" onslotchange={removecontainers}></slot>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="12">
+                <slot name="displayMessage"></slot>
+             </lightning-layout-item>
+            <lightning-layout-item size="12">
+               <slot name="displayHeader"></slot>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout>
+                    <lightning-layout-item size="12">
+                        <slot name="displayRecord"></slot>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" size="12">
+               <slot name="displayFooter"></slot>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

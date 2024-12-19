@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Interface_Transactions_Created_By_Automated_Process</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-22460: Share Interface Transactions created by Automated Process.</description>
+        <label>Share Interface Transactions Created By Automated Process</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Integration_Transaction_All_User</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-20904: It is used to give edit access for Integration Transaction records.</description>
+        <label>Integration Transaction All User</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

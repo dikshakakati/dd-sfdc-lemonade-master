@@ -1,0 +1,111 @@
+<template>
+   <form>
+     <div if:true={enableSpinner}>
+         <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+     </div>
+  </form>
+  <c-show-toast-message></c-show-toast-message>
+   <c-lwc-related-list-view-component>
+     <div if:true={ExecuteActivationExecution} class="slds-p-around_small slds-theme_warning" slot="displayMessage">
+        <article class="slds-tile slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+           <p><b>{displayValidationInProgressmessage}</b></p>
+        </article>
+     </div>
+     <div if:true={executeActivationEscalation} class="slds-p-around_small slds-theme_warning" slot="displayMessage">
+        <article class="slds-tile slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+           <p><b>{systemErrorMessage}</b></p>
+        </article>
+     </div>
+      <div class="lgc-bg slds-p-around_small" slot="displayHeader">
+         <article class="slds-tile">
+            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+               <h3 class="slds-tile__title slds-truncate" title="Tile Title">
+                  <p><b>{displayValidationMessage}</b></p>
+                  <template lwc:if={showActivationChecklistDependentWorkStepMessage}>
+                     <p>{activationChecklistDepenentWorkSteps}</p>
+                  </template>
+                  <template lwc:else>
+                     <template lwc:if={displayIllustrationScreen}>
+                        <p>{checkListValidateMessage}</p>
+                       </template>
+                       <template lwc:else>
+                           <p>{lastValidationRunOn}&nbsp;<lightning-formatted-date-time value={LastValidationExecution} year="numeric" month="numeric" day="numeric" hour="2-digit"
+                              minute="2-digit" time-zone-name="short"></lightning-formatted-date-time></p></p>
+                       </template>
+                  </template>
+               </h3>
+               <div class="slds-shrink-none">
+                  <lightning-button label="Validate" slot="actions" variant="brand" onclick={updateLastValidationExecution} disabled={isDisableValidate}></lightning-button>
+                  <lightning-button-icon  if:true={ExecuteActivationExecution} slot="actions" icon-name="utility:refresh"  alternative-text="Settings" class="slds-m-left_xxx-small" onclick={refreshActivationChecklist}></lightning-button-icon>
+               </div>
+            </div>
+         </article>
+      </div>
+      <div if:true={enableSpinner}>
+         <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+      </div>
+      <div slot="displayRecord">
+         <template lwc:if={displayIllustrationScreen}>
+           <c-lwc-illustration class="slds-p-around_small" message={checkListValidateMessage}></c-lwc-illustration>
+         </template>
+         <template lwc:else>
+           <template lwc:if={displayFailure}>
+              <c-lwc-related-list-view-component>
+                 <div slot="removecontainer"></div>
+                 <div class="slds-p-around_small slds" slot="displayHeader">
+
+
+                     <div class="slds-grid slds-grid_align-left">
+                         <div class="slds-col slds-grow-none ">
+                           <span><lightning-icon icon-name="utility:error" alternative-text="Error!" variant="error"
+                             title="success variant xx-small" size="x-small"></lightning-icon></span>
+                         </div>
+                         <div class="slds-col slds-grow-none">
+                           <span><p><b>&nbsp;Failed({totalFailedRecords})</b></p></span>
+                         </div>
+                       </div>
+
+                 </div>
+                 <div slot="displayRecord">
+                    <lightning-datatable
+                       key-field="id"
+                       data={failedRecords}
+                       hide-checkbox-column
+                       show-row-number-column
+                       onrowaction={handleRowAction}
+                       columns={columns}>
+                    </lightning-datatable>
+                 </div>
+              </c-lwc-related-list-view-component>
+             </template>
+             <template lwc:if={displaySuccess}>
+              <c-lwc-related-list-view-component>
+                 <div slot="removecontainer"></div>
+                 <div class="slds-p-around_small" slot="displayHeader">
+                    <div class="slds-grid slds-grid_align-left">
+                     <div class="slds-col slds-grow-none ">
+                       <span><lightning-icon icon-name="utility:success" alternative-text="Error!" variant="success"
+                         title="success variant xx-small" size="x-small"></lightning-icon></span>
+                     </div>
+                     <div class="slds-col slds-grow-none">
+                       <span><p><b>&nbsp;Passed({totalSuccessRecords})</b></p></span>
+                     </div>
+                   </div>
+                 </div>
+                 <div slot="displayRecord">
+                    <lightning-datatable
+                       key-field="id"
+                       data={successRecords}
+                       hide-checkbox-column
+                       show-row-number-column
+                       onrowaction={handleRowAction}
+                       columns={columns}>
+                    </lightning-datatable>
+                 </div>
+              </c-lwc-related-list-view-component>
+             </template>
+
+         </template>
+      </div>
+   </c-lwc-related-list-view-component>
+</template>

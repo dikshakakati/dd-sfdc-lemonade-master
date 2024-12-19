@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Terms_Number__c</fullName>
+    <description>LEM-1520 Background Field for Approval Rule</description>
+    <externalId>false</externalId>
+    <formula>CASE(SBQQ__PaymentTerms__c , 
+&apos;Due on receipt&apos;, 1, 
+&apos;Net 7&apos;, 7, 
+&apos;Net 15&apos;, 15, 
+&apos;Net 20&apos;, 20, 
+&apos;Net 30&apos;, 30, 
+&apos;Net 45&apos;, 45,
+&apos;Net 60&apos;, 60,
+&apos;Net 70&apos;, 70, 
+&apos;Net 90&apos;, 90, 
+&apos;Net 120&apos;, 120
+,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Payment Terms Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

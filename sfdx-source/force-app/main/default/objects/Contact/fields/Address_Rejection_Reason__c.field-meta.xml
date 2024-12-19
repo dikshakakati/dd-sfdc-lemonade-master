@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_Rejection_Reason__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14822: It represents the address rejection reasons.</description>
+    <externalId>false</externalId>
+    <label>Address Rejection Reason</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bad Address</fullName>
+                <default>false</default>
+                <label>Bad Address</label>
+            </value>
+            <value>
+                <fullName>Incomplete Address</fullName>
+                <default>false</default>
+                <label>Incomplete Address</label>
+            </value>
+            <value>
+                <fullName>Technical Error</fullName>
+                <default>false</default>
+                <label>Technical Error</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

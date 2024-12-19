@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Storefront_Premium_Implementation_WorkPlan</fullName>
+    <columns>Name</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Owner_Link__c</columns>
+    <columns>Number_of_Workable_WorkSteps__c</columns>
+    <columns>CreatedBy</columns>
+    <columns>CreatedDate</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Parent_Work_Plan__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Storefront - Premium Implementation</label>
+    <queue>Storefront_Premium_Implementation</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-2013: It is used to create child Work Order on the parent Work Order for the selected verified store Accounts.</description>
+    <height>650</height>
+    <label>Add Stores</label>
+    <lightningComponent>AddStores</lightningComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningComponent</type>
+    <width>-100</width>
+</QuickAction>

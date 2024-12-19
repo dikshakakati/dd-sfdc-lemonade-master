@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Store_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-793: Store associated to the Work Step.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Store associated to the Work Step</inlineHelpText>
+    <label>Store Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Store</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Work Steps</relationshipLabel>
+    <relationshipName>Work_Steps</relationshipName>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

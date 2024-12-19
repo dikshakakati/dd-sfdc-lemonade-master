@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Treatment_Group__c</fullName>
+    <description>LEM-15721</description>
+    <externalId>false</externalId>
+    <label>Treatment Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Singularity</fullName>
+                <default>false</default>
+                <label>Singularity</label>
+            </value>
+            <value>
+                <fullName>Singularity_2</fullName>
+                <default>false</default>
+                <label>Singularity_2</label>
+            </value>
+            <value>
+                <fullName>Mandatory Header Enabled</fullName>
+                <default>false</default>
+                <label>Mandatory Header Enabled</label>
+            </value>
+            <value>
+                <fullName>Optional Banking Enabled</fullName>
+                <default>false</default>
+                <label>Optional Banking Enabled</label>
+            </value>
+            <value>
+                <fullName>Stripe FC</fullName>
+                <default>false</default>
+                <label>Stripe FC</label>
+            </value>
+            <value>
+                <fullName>Auto Run Ads</fullName>
+                <default>false</default>
+                <label>Auto Run Ads</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

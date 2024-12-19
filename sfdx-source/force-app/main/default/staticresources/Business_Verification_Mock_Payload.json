@@ -1,0 +1,8 @@
+{
+    "StoreId":"987654",
+    "BusinessVerification":{
+    "Status":"Documentation Required",
+    "StatusReason":"Other",
+    "StatusNotes" : "Testing notes"
+    }
+}

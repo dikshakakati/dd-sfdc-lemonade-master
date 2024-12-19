@@ -1,0 +1,22 @@
+.border-container {
+    border: 2px solid black; /* Add a border to the container */
+    border-radius: 10px; /* Optional: Add rounded corners to the container */
+    padding: 10px;
+}
+/* Header/Logo Title */
+.header {
+    padding: 5px;
+    text-align: center;
+    background: #1c3937;
+    color: white;
+    font-size: 25px;
+}
+.nextButton {
+    padding-top: 25px;
+}
+.datatable-container {
+    border: 2px solid #dddddd; /* Add a border to the container */
+    border-radius: 10px; /* Optional: Add rounded corners to the container */
+    overflow: hidden; /* Optional: Hide overflow content */
+    text-overflow: inherit;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCR_Flag_From_Nintex__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <defaultValue>false</defaultValue>
+    <description>LEM-2272: Flag value set by Nintex user and based on the flag flow will create OCR record.</description>
+    <externalId>false</externalId>
+    <label>OCR Flag From Nintex</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

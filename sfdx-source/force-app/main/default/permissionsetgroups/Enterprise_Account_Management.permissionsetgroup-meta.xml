@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-502: It enables access for Account Executive and Account Executive Manager persona.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Enterprise Account Management</label>
+    <mutingPermissionSets>Enterprise_Account_Management_Muted</mutingPermissionSets>
+    <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>Account_Management</permissionSets>
+    <permissionSets>Allow_PA_Sync_With_Netsuite</permissionSets>
+    <permissionSets>CPQ_AA_License</permissionSets>
+    <permissionSets>CPQ_License</permissionSets>
+    <permissionSets>CRMC_PP__ActionGrid_Users</permissionSets>
+    <permissionSets>Conga_Grid_Access</permissionSets>
+    <permissionSets>Create_Public_Links_Access</permissionSets>
+    <permissionSets>Enable_SSO</permissionSets>
+    <permissionSets>Enable_View_Setup_Access</permissionSets>
+    <permissionSets>Enterprise_Account_Management_In_App_Guidance</permissionSets>
+    <permissionSets>Enterprise_Sales_App</permissionSets>
+    <permissionSets>Files_Connect</permissionSets>
+    <permissionSets>Log_Access</permissionSets>
+    <permissionSets>Manage_Stores</permissionSets>
+    <permissionSets>Onboarding_and_Activations_App</permissionSets>
+    <permissionSets>Opportunity_Nintex_Fields_Access</permissionSets>
+    <permissionSets>Outbound_Integration_Named_Credentials_Access</permissionSets>
+    <permissionSets>QuoteToCash</permissionSets>
+    <permissionSets>Remove_Stores</permissionSets>
+    <permissionSets>SBQQ__SteelBrickCPQUser</permissionSets>
+    <permissionSets>Salesforce_for_CPQ_User_Restricted_Access</permissionSets>
+    <permissionSets>activeprime__ActivePrime_Sales_Rep</permissionSets>
+    <permissionSets>dfsle__DocuSign_Login</permissionSets>
+    <permissionSets>dfsle__DocuSign_Sender</permissionSets>
+    <permissionSets>dfsle__DocuSign_User</permissionSets>
+    <permissionSets>sbaa__AdvancedApprovalsUser</permissionSets>
+    <permissionSets>Hide_Sales_Buttons</permissionSets>
+    <permissionSets>Grid_Report_Framework</permissionSets>
+    <permissionSets>Create_Equipment_Request_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

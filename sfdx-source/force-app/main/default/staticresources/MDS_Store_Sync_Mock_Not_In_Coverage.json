@@ -1,0 +1,130 @@
+{
+  "event_uuid": {
+    "value": "85443739-e60b-4756-ba8c-84a025ea4173"
+  },
+  "updated_store": {
+    "id": {
+      "value": "27873838"
+    },
+    "business_id": {
+      "value": 12750348
+    },
+    "is_active": {
+      "value": true
+    },
+    "order_protocol": {
+      "value": "PHONE"
+    }
+  },
+  "updated_fields": [
+    {
+      "updated_field_name": {
+        "value": "is_active"
+      },
+      "old_value": {
+        "value": "false"
+      },
+      "new_value": {
+        "value": "true"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "name"
+      },
+      "old_value": {
+        "value": "old-test-account"
+      },
+      "new_value": {
+        "value": "new-test-account"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "activated_at"
+      },
+      "old_value": {
+        "value": ""
+      },
+      "new_value": {
+        "value": "2024-03-06T18:25:25.642119Z"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "order_protocol"
+      },
+      "old_value": {
+        "value": "EMAIL"
+      },
+      "new_value": {
+        "value": "PHONE"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "activation_source"
+      },
+      "old_value": {
+        "value": ""
+      },
+      "new_value": {
+        "value": "nimda"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "phone_number"
+      },
+      "old_value": {
+        "value": "4694546532"
+      },
+      "new_value": {
+        "value": "4694546531"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "address_id"
+      },
+      "old_value": {
+        "value": "264237582"
+      },
+      "new_value": {
+        "value": "264237581"
+      }
+    },
+    {
+      "updated_field_name": {
+        "value": "drive_store_id"
+      },
+      "old_value": {
+        "value": "abcdef"
+      },
+      "new_value": {
+        "value": "uvwxyz"
+      }
+    }
+  ],
+  "created_at": {
+    "seconds": 1709749525,
+    "nanos": 844057000
+  },
+  "addressValidationResponse" :{
+    "addressResponse": {
+      "Address_ID__c": "264237581",
+      "BillingStreet": "11434 West Broad Street",
+      "BillingPostalCode": "23060",
+      "BillingCity": "Glen Allen",
+      "BillingLatitude": 37.65367579999999,
+      "BillingLongitude": -77.6084803,
+      "Address_Verification_Status__c": "Verified",
+      "Rejected_Reason__c": null,
+      "Address_Verification_Date__c": "2024-02-28T21:54:15.224Z",
+      "BillingStateCode": "VA",
+      "BillingCountryCode": "US",
+      "Coverage__c": "Not In Coverage",
+      "Last_Coverage_Check_Time__c": "2024-02-28T21:54:15.224Z"
+    }
+  }
+}

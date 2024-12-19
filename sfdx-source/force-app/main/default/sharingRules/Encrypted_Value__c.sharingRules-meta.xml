@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_Encrypted_Values_With_All_Internal_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>LEM-2144: It will provide read access on Encrypted Values to all internal Users.</description>
+        <label>Share Encrypted Values With All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

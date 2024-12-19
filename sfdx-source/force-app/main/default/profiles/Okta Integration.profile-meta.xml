@@ -1,0 +1,3010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>true</custom>
+    <description>LEM-3859: It is used to enforce IP ranges related to Okta integration.</description>
+    <layoutAssignments>
+        <layout>Case-Bulk Upload Request</layout>
+        <recordType>Case.Bulk_Upload_Request</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Xref__c-Xref Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Business Account Layout</layout>
+        <recordType>Account.Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Store Account Layout</layout>
+        <recordType>Account.Store</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Business Account Layout</layout>
+        <recordType>Account.Channel_Partner</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brand__c-Brand Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brand_Association__c-Brand Association Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account_Payment_Account_Relation__c-Account Payment Account Relation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account_Relationship__c-Account Relationship Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Campaign-Campaign Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-POS Integration</layout>
+        <recordType>Case.POS_Integrations</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-SO Support Request</layout>
+        <recordType>Case.SO_Support_Request</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Contact-Contact Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Contact_Payment_Account_Relation__c-Contact Payment Account Relation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lead-Lead</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Log__c-Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Order-SBQQ__CPQ Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>OrderItem-SBQQ__CPQ Order Product Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Brief__c-Brief Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity_Brand_Relationship__c-Opportunity Brand Relationship</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Campaign_Program__c-Campaign Program</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Payment_Account__c-Invoice Page Layout</layout>
+        <recordType>Payment_Account__c.Invoice</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Payment_Account__c-Payment Account Layout</layout>
+        <recordType>Payment_Account__c.Payments</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PricebookEntry-Price Book Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Provisioning_History__c-Provisioning History</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Readiness_Check_Failure__c-Readiness Check Failure</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS Approved Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_Approved_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS Draft Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_Draft_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SBQQ__Quote__c-AQS In Progress Layout with AA</layout>
+        <recordType>SBQQ__Quote__c.AQS_In_Progress_Quote</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkOrder-Work Order</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlan-Work Plan</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlanTemplateEntry-Work Plan Template Entry</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStep-Work Step</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStepDependencyTemplate__c-Work Step Dependency Template</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStepDependency__c-Work Step Dependency</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Outlook-Email Sync</layout>
+    </layoutAssignments>
+    <loginIpRanges>
+        <description>Temporarily bypassing IP ranges till final resolution on external systems.</description>
+        <endAddress>255.255.255.255</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.136.245</endAddress>
+        <startAddress>3.33.136.245</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.145.223</endAddress>
+        <startAddress>3.33.145.223</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.145.233</endAddress>
+        <startAddress>3.33.145.233</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.150.225</endAddress>
+        <startAddress>3.33.150.225</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.152.248</endAddress>
+        <startAddress>3.33.152.248</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.159.206</endAddress>
+        <startAddress>3.33.159.206</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.173.250</endAddress>
+        <startAddress>3.33.173.250</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.176.199</endAddress>
+        <startAddress>3.33.176.199</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.182.230</endAddress>
+        <startAddress>3.33.182.230</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.185.234</endAddress>
+        <startAddress>3.33.185.234</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.190.194</endAddress>
+        <startAddress>3.33.190.194</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.190.255</endAddress>
+        <startAddress>3.33.190.255</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.194.197</endAddress>
+        <startAddress>3.33.194.197</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.194.234</endAddress>
+        <startAddress>3.33.194.234</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.195.254</endAddress>
+        <startAddress>3.33.195.254</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.199.193</endAddress>
+        <startAddress>3.33.199.193</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.201.229</endAddress>
+        <startAddress>3.33.201.229</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.206.212</endAddress>
+        <startAddress>3.33.206.212</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.207.203</endAddress>
+        <startAddress>3.33.207.203</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.207.222</endAddress>
+        <startAddress>3.33.207.222</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.211.211</endAddress>
+        <startAddress>3.33.211.211</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.215.209</endAddress>
+        <startAddress>3.33.215.209</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.224.198</endAddress>
+        <startAddress>3.33.224.198</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.224.229</endAddress>
+        <startAddress>3.33.224.229</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.226.239</endAddress>
+        <startAddress>3.33.226.239</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.226.241</endAddress>
+        <startAddress>3.33.226.241</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.234.235</endAddress>
+        <startAddress>3.33.234.235</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.235.225</endAddress>
+        <startAddress>3.33.235.225</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.237.204</endAddress>
+        <startAddress>3.33.237.204</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.238.255</endAddress>
+        <startAddress>3.33.238.255</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.242.249</endAddress>
+        <startAddress>3.33.242.249</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.248.222</endAddress>
+        <startAddress>3.33.248.222</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.33.253.249</endAddress>
+        <startAddress>3.33.253.249</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.82.0.92</endAddress>
+        <startAddress>3.82.0.92</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.89.235.71</endAddress>
+        <startAddress>3.89.235.71</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.93.155.251</endAddress>
+        <startAddress>3.93.155.251</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.209.155.17</endAddress>
+        <startAddress>3.209.155.17</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.209.190.45</endAddress>
+        <startAddress>3.209.190.45</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.211.11.39</endAddress>
+        <startAddress>3.211.11.39</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.211.36.37</endAddress>
+        <startAddress>3.211.36.37</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.213.199.23</endAddress>
+        <startAddress>3.213.199.23</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.214.65.180</endAddress>
+        <startAddress>3.214.65.180</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.215.62.127</endAddress>
+        <startAddress>3.215.62.127</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.219.96.46</endAddress>
+        <startAddress>3.219.96.46</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.223.66.238</endAddress>
+        <startAddress>3.223.66.238</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.224.216.125</endAddress>
+        <startAddress>3.224.216.125</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.226.27.146</endAddress>
+        <startAddress>3.226.27.146</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.228.125.233</endAddress>
+        <startAddress>3.228.125.233</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.228.137.207</endAddress>
+        <startAddress>3.228.137.207</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.230.200.115</endAddress>
+        <startAddress>3.230.200.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.232.206.170</endAddress>
+        <startAddress>3.232.206.170</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>3.234.176.133</endAddress>
+        <startAddress>3.234.176.133</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.130.81</endAddress>
+        <startAddress>13.248.130.81</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.134.123</endAddress>
+        <startAddress>13.248.134.123</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.165.67</endAddress>
+        <startAddress>13.248.165.67</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.168.94</endAddress>
+        <startAddress>13.248.168.94</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.176.111</endAddress>
+        <startAddress>13.248.176.111</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.194.80</endAddress>
+        <startAddress>13.248.194.80</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.195.81</endAddress>
+        <startAddress>13.248.195.81</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.198.65</endAddress>
+        <startAddress>13.248.198.65</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.198.88</endAddress>
+        <startAddress>13.248.198.88</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.209.106</endAddress>
+        <startAddress>13.248.209.106</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.222.83</endAddress>
+        <startAddress>13.248.222.83</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.240.102</endAddress>
+        <startAddress>13.248.240.102</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.241.107</endAddress>
+        <startAddress>13.248.241.107</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>13.248.243.103</endAddress>
+        <startAddress>13.248.243.103</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.129.88</endAddress>
+        <startAddress>15.197.129.88</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.134.95</endAddress>
+        <startAddress>15.197.134.95</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.139.67</endAddress>
+        <startAddress>15.197.139.67</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.143.65</endAddress>
+        <startAddress>15.197.143.65</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.146.112</endAddress>
+        <startAddress>15.197.146.112</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.151.86</endAddress>
+        <startAddress>15.197.151.86</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.171.98</endAddress>
+        <startAddress>15.197.171.98</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.171.110</endAddress>
+        <startAddress>15.197.171.110</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.176.120</endAddress>
+        <startAddress>15.197.176.120</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.177.64</endAddress>
+        <startAddress>15.197.177.64</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.185.83</endAddress>
+        <startAddress>15.197.185.83</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.186.118</endAddress>
+        <startAddress>15.197.186.118</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.201.95</endAddress>
+        <startAddress>15.197.201.95</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.205.100</endAddress>
+        <startAddress>15.197.205.100</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.208.92</endAddress>
+        <startAddress>15.197.208.92</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.208.115</endAddress>
+        <startAddress>15.197.208.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.211.77</endAddress>
+        <startAddress>15.197.211.77</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.214.115</endAddress>
+        <startAddress>15.197.214.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.216.73</endAddress>
+        <startAddress>15.197.216.73</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.217.66</endAddress>
+        <startAddress>15.197.217.66</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.217.104</endAddress>
+        <startAddress>15.197.217.104</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.224.92</endAddress>
+        <startAddress>15.197.224.92</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.229.123</endAddress>
+        <startAddress>15.197.229.123</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.233.105</endAddress>
+        <startAddress>15.197.233.105</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.238.86</endAddress>
+        <startAddress>15.197.238.86</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.238.110</endAddress>
+        <startAddress>15.197.238.110</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.242.105</endAddress>
+        <startAddress>15.197.242.105</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.243.65</endAddress>
+        <startAddress>15.197.243.65</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.244.112</endAddress>
+        <startAddress>15.197.244.112</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.248.88</endAddress>
+        <startAddress>15.197.248.88</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.252.76</endAddress>
+        <startAddress>15.197.252.76</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>15.197.253.65</endAddress>
+        <startAddress>15.197.253.65</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.204.109.174</endAddress>
+        <startAddress>18.204.109.174</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.204.121.42</endAddress>
+        <startAddress>18.204.121.42</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.205.120.122</endAddress>
+        <startAddress>18.205.120.122</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.205.121.184</endAddress>
+        <startAddress>18.205.121.184</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.206.1.0</endAddress>
+        <startAddress>18.206.1.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.206.6.207</endAddress>
+        <startAddress>18.206.6.207</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.206.105.228</endAddress>
+        <startAddress>18.206.105.228</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.207.62.254</endAddress>
+        <startAddress>18.207.62.254</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.208.93.55</endAddress>
+        <startAddress>18.208.93.55</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.208.97.91</endAddress>
+        <startAddress>18.208.97.91</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.209.52.228</endAddress>
+        <startAddress>18.209.52.228</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.209.75.116</endAddress>
+        <startAddress>18.209.75.116</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.209.113.190</endAddress>
+        <startAddress>18.209.113.129</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.210.185.123</endAddress>
+        <startAddress>18.210.185.123</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.210.202.65</endAddress>
+        <startAddress>18.210.202.65</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.210.226.134</endAddress>
+        <startAddress>18.210.226.134</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.210.226.249</endAddress>
+        <startAddress>18.210.226.249</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.210.249.209</endAddress>
+        <startAddress>18.210.249.209</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.211.150.170</endAddress>
+        <startAddress>18.211.150.170</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.211.204.6</endAddress>
+        <startAddress>18.211.204.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.211.217.115</endAddress>
+        <startAddress>18.211.217.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.212.0.168</endAddress>
+        <startAddress>18.212.0.168</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.212.43.70</endAddress>
+        <startAddress>18.212.43.70</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.213.72.172</endAddress>
+        <startAddress>18.213.72.172</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.213.152.156</endAddress>
+        <startAddress>18.213.152.156</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.213.162.39</endAddress>
+        <startAddress>18.213.162.39</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.213.173.112</endAddress>
+        <startAddress>18.213.173.112</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.213.221.208</endAddress>
+        <startAddress>18.213.221.208</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.213.244.31</endAddress>
+        <startAddress>18.213.244.31</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.213.255.14</endAddress>
+        <startAddress>18.213.255.14</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.13.226</endAddress>
+        <startAddress>18.214.13.226</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.29.252</endAddress>
+        <startAddress>18.214.29.252</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.43.227</endAddress>
+        <startAddress>18.214.43.227</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.61.20</endAddress>
+        <startAddress>18.214.61.20</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.70.68</endAddress>
+        <startAddress>18.214.70.68</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.80.21</endAddress>
+        <startAddress>18.214.80.21</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.91.146</endAddress>
+        <startAddress>18.214.91.146</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.105.0</endAddress>
+        <startAddress>18.214.105.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.106.230</endAddress>
+        <startAddress>18.214.106.230</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.118.120</endAddress>
+        <startAddress>18.214.118.120</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.129.49</endAddress>
+        <startAddress>18.214.129.49</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.138.155</endAddress>
+        <startAddress>18.214.138.155</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.141.37</endAddress>
+        <startAddress>18.214.141.37</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.199.63</endAddress>
+        <startAddress>18.214.199.63</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.207.134</endAddress>
+        <startAddress>18.214.207.134</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.216.102</endAddress>
+        <startAddress>18.214.216.102</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.233.127</endAddress>
+        <startAddress>18.214.233.127</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.237.3</endAddress>
+        <startAddress>18.214.237.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.214.247.61</endAddress>
+        <startAddress>18.214.247.61</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.24.11</endAddress>
+        <startAddress>18.215.24.11</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.25.6</endAddress>
+        <startAddress>18.215.25.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.26.4</endAddress>
+        <startAddress>18.215.26.4</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.46.180</endAddress>
+        <startAddress>18.215.46.180</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.65.99</endAddress>
+        <startAddress>18.215.65.99</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.67.36</endAddress>
+        <startAddress>18.215.67.36</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.69.215</endAddress>
+        <startAddress>18.215.69.215</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.105.244</endAddress>
+        <startAddress>18.215.105.244</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.110.184</endAddress>
+        <startAddress>18.215.110.184</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.139.76</endAddress>
+        <startAddress>18.215.139.76</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.139.221</endAddress>
+        <startAddress>18.215.139.221</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.215.139.251</endAddress>
+        <startAddress>18.215.139.251</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.232.27.190</endAddress>
+        <startAddress>18.232.27.190</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.232.39.36</endAddress>
+        <startAddress>18.232.39.36</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.232.196.203</endAddress>
+        <startAddress>18.232.196.203</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.232.217.162</endAddress>
+        <startAddress>18.232.217.162</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.232.226.254</endAddress>
+        <startAddress>18.232.226.254</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.233.145.54</endAddress>
+        <startAddress>18.233.145.54</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.236.11.229</endAddress>
+        <startAddress>18.236.11.229</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>18.236.59.136</endAddress>
+        <startAddress>18.236.59.136</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.56.100</endAddress>
+        <startAddress>23.21.56.100</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.111.242</endAddress>
+        <startAddress>23.21.111.242</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.113.84</endAddress>
+        <startAddress>23.21.113.84</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.120.216</endAddress>
+        <startAddress>23.21.120.216</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.188.136</endAddress>
+        <startAddress>23.21.188.136</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.202.177</endAddress>
+        <startAddress>23.21.202.177</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.203.151</endAddress>
+        <startAddress>23.21.203.151</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.220.245</endAddress>
+        <startAddress>23.21.220.245</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.230.22</endAddress>
+        <startAddress>23.21.230.22</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.21.231.189</endAddress>
+        <startAddress>23.21.231.189</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.22.192.73</endAddress>
+        <startAddress>23.22.192.73</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.22.252.160</endAddress>
+        <startAddress>23.22.252.160</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.23.124.137</endAddress>
+        <startAddress>23.23.124.137</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>23.23.234.166</endAddress>
+        <startAddress>23.23.234.166</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.192.82.184</endAddress>
+        <startAddress>34.192.82.184</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.193.146.128</endAddress>
+        <startAddress>34.193.146.128</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.193.149.9</endAddress>
+        <startAddress>34.193.149.9</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.196.16.97</endAddress>
+        <startAddress>34.196.16.97</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.196.126.232</endAddress>
+        <startAddress>34.196.126.232</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.197.132.26</endAddress>
+        <startAddress>34.197.132.26</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.198.71.253</endAddress>
+        <startAddress>34.198.71.253</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.198.207.37</endAddress>
+        <startAddress>34.198.207.37</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.201.226.82</endAddress>
+        <startAddress>34.201.226.82</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.202.89.251</endAddress>
+        <startAddress>34.202.89.251</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.202.114.70</endAddress>
+        <startAddress>34.202.114.70</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.202.149.224</endAddress>
+        <startAddress>34.202.149.224</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.202.222.15</endAddress>
+        <startAddress>34.202.222.15</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.203.255.254</endAddress>
+        <startAddress>34.203.255.193</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.206.249.118</endAddress>
+        <startAddress>34.206.249.118</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.207.51.94</endAddress>
+        <startAddress>34.207.51.94</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.209.107.230</endAddress>
+        <startAddress>34.209.107.230</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.217.170.83</endAddress>
+        <startAddress>34.217.170.83</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.218.156.127</endAddress>
+        <startAddress>34.218.156.127</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.223.95.158</endAddress>
+        <startAddress>34.223.95.129</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.224.190.91</endAddress>
+        <startAddress>34.224.190.91</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.225.170.33</endAddress>
+        <startAddress>34.225.170.33</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.226.25.226</endAddress>
+        <startAddress>34.226.25.226</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.230.237.20</endAddress>
+        <startAddress>34.230.237.20</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.231.149.193</endAddress>
+        <startAddress>34.231.149.193</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.232.9.172</endAddress>
+        <startAddress>34.232.9.172</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.232.43.168</endAddress>
+        <startAddress>34.232.43.168</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.232.82.186</endAddress>
+        <startAddress>34.232.82.186</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.232.145.255</endAddress>
+        <startAddress>34.232.145.255</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.233.96.147</endAddress>
+        <startAddress>34.233.96.147</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.233.180.48</endAddress>
+        <startAddress>34.233.180.48</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.234.37.64</endAddress>
+        <startAddress>34.234.37.64</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.234.133.222</endAddress>
+        <startAddress>34.234.133.222</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.235.212.255</endAddress>
+        <startAddress>34.235.212.255</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.236.97.182</endAddress>
+        <startAddress>34.236.97.182</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.237.50.173</endAddress>
+        <startAddress>34.237.50.173</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.238.6.63</endAddress>
+        <startAddress>34.238.6.63</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.238.196.244</endAddress>
+        <startAddress>34.238.196.244</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.239.14.207</endAddress>
+        <startAddress>34.239.14.207</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.239.36.97</endAddress>
+        <startAddress>34.239.36.97</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.239.60.253</endAddress>
+        <startAddress>34.239.60.253</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>34.239.73.6</endAddress>
+        <startAddress>34.239.73.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.128.194</endAddress>
+        <startAddress>35.71.128.194</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.133.245</endAddress>
+        <startAddress>35.71.133.245</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.136.234</endAddress>
+        <startAddress>35.71.136.234</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.140.215</endAddress>
+        <startAddress>35.71.140.215</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.140.216</endAddress>
+        <startAddress>35.71.140.216</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.144.196</endAddress>
+        <startAddress>35.71.144.196</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.153.225</endAddress>
+        <startAddress>35.71.153.225</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.156.238</endAddress>
+        <startAddress>35.71.156.238</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.157.229</endAddress>
+        <startAddress>35.71.157.229</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.158.223</endAddress>
+        <startAddress>35.71.158.223</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.158.239</endAddress>
+        <startAddress>35.71.158.239</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.159.217</endAddress>
+        <startAddress>35.71.159.217</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.164.254</endAddress>
+        <startAddress>35.71.164.254</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.166.211</endAddress>
+        <startAddress>35.71.166.211</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.168.214</endAddress>
+        <startAddress>35.71.168.214</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.178.224</endAddress>
+        <startAddress>35.71.178.224</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.187.236</endAddress>
+        <startAddress>35.71.187.236</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.71.190.245</endAddress>
+        <startAddress>35.71.190.245</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.81.174.165</endAddress>
+        <startAddress>35.81.174.165</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.82.213.112</endAddress>
+        <startAddress>35.82.213.112</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.83.59.190</endAddress>
+        <startAddress>35.83.59.190</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.85.225.30</endAddress>
+        <startAddress>35.85.225.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.153.214.153</endAddress>
+        <startAddress>35.153.214.153</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.155.83.50</endAddress>
+        <startAddress>35.155.83.50</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.155.128.3</endAddress>
+        <startAddress>35.155.128.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.160.153.62</endAddress>
+        <startAddress>35.160.153.62</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.160.174.115</endAddress>
+        <startAddress>35.160.174.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.163.186.214</endAddress>
+        <startAddress>35.163.186.214</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.164.78.160</endAddress>
+        <startAddress>35.164.78.160</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.165.94.114</endAddress>
+        <startAddress>35.165.94.114</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.165.238.96</endAddress>
+        <startAddress>35.165.238.96</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.166.101.225</endAddress>
+        <startAddress>35.166.101.225</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.166.141.128</endAddress>
+        <startAddress>35.166.141.128</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.166.214.252</endAddress>
+        <startAddress>35.166.214.252</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.167.147.26</endAddress>
+        <startAddress>35.167.147.26</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.167.177.126</endAddress>
+        <startAddress>35.167.177.126</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.167.185.142</endAddress>
+        <startAddress>35.167.185.142</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.168.104.66</endAddress>
+        <startAddress>35.168.104.66</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.168.141.22</endAddress>
+        <startAddress>35.168.141.22</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.168.177.210</endAddress>
+        <startAddress>35.168.177.210</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.168.197.35</endAddress>
+        <startAddress>35.168.197.35</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.168.202.253</endAddress>
+        <startAddress>35.168.202.253</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.168.242.145</endAddress>
+        <startAddress>35.168.242.145</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.169.12.81</endAddress>
+        <startAddress>35.169.12.81</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.170.4.157</endAddress>
+        <startAddress>35.170.4.157</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.171.97.176</endAddress>
+        <startAddress>35.171.97.176</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.171.141.170</endAddress>
+        <startAddress>35.171.141.170</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.171.210.106</endAddress>
+        <startAddress>35.171.210.106</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.171.242.74</endAddress>
+        <startAddress>35.171.242.74</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.172.126.60</endAddress>
+        <startAddress>35.172.126.60</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.172.152.16</endAddress>
+        <startAddress>35.172.152.16</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.174.20.41</endAddress>
+        <startAddress>35.174.20.41</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.174.48.156</endAddress>
+        <startAddress>35.174.48.156</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.174.103.86</endAddress>
+        <startAddress>35.174.103.86</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.174.121.25</endAddress>
+        <startAddress>35.174.121.25</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>35.174.169.125</endAddress>
+        <startAddress>35.174.169.125</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.194.111.94</endAddress>
+        <startAddress>44.194.111.65</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.195.203.222</endAddress>
+        <startAddress>44.195.203.193</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.227.233.166</endAddress>
+        <startAddress>44.227.233.166</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.229.222.178</endAddress>
+        <startAddress>44.229.222.178</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.232.71.176</endAddress>
+        <startAddress>44.232.71.176</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.235.240.204</endAddress>
+        <startAddress>44.235.240.204</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.236.57.165</endAddress>
+        <startAddress>44.236.57.165</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.236.81.92</endAddress>
+        <startAddress>44.236.81.92</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.237.73.115</endAddress>
+        <startAddress>44.237.73.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.237.114.154</endAddress>
+        <startAddress>44.237.114.154</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.237.123.56</endAddress>
+        <startAddress>44.237.123.56</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.237.181.25</endAddress>
+        <startAddress>44.237.181.25</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.240.7.25</endAddress>
+        <startAddress>44.240.7.25</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.240.62.136</endAddress>
+        <startAddress>44.240.62.136</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.240.106.180</endAddress>
+        <startAddress>44.240.106.180</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.240.156.104</endAddress>
+        <startAddress>44.240.156.104</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>44.242.133.164</endAddress>
+        <startAddress>44.242.133.164</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.16.242.108</endAddress>
+        <startAddress>50.16.242.108</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.16.242.193</endAddress>
+        <startAddress>50.16.242.193</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.17.60.249</endAddress>
+        <startAddress>50.17.60.249</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.17.176.180</endAddress>
+        <startAddress>50.17.176.180</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.17.248.46</endAddress>
+        <startAddress>50.17.248.46</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.19.107.73</endAddress>
+        <startAddress>50.19.107.73</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.19.107.116</endAddress>
+        <startAddress>50.19.107.116</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.19.107.162</endAddress>
+        <startAddress>50.19.107.162</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.19.107.226</endAddress>
+        <startAddress>50.19.107.226</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.19.225.214</endAddress>
+        <startAddress>50.19.225.214</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.19.250.62</endAddress>
+        <startAddress>50.19.250.62</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.110.29</endAddress>
+        <startAddress>50.112.110.29</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.120.112</endAddress>
+        <startAddress>50.112.120.112</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.120.122</endAddress>
+        <startAddress>50.112.120.122</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.120.162</endAddress>
+        <startAddress>50.112.120.162</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.120.189</endAddress>
+        <startAddress>50.112.120.189</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.120.226</endAddress>
+        <startAddress>50.112.120.226</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.121.165</endAddress>
+        <startAddress>50.112.121.165</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.121.193</endAddress>
+        <startAddress>50.112.121.193</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.124.45</endAddress>
+        <startAddress>50.112.124.45</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>50.112.124.47</endAddress>
+        <startAddress>50.112.124.47</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.0.61.215</endAddress>
+        <startAddress>52.0.61.215</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.1.31.19</endAddress>
+        <startAddress>52.1.31.19</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.1.56.75</endAddress>
+        <startAddress>52.1.56.75</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.1.65.161</endAddress>
+        <startAddress>52.1.65.161</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.1.145.184</endAddress>
+        <startAddress>52.1.145.184</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.1.235.71</endAddress>
+        <startAddress>52.1.235.71</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.3.238.237</endAddress>
+        <startAddress>52.3.238.237</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.5.78.161</endAddress>
+        <startAddress>52.5.78.161</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.7.28.177</endAddress>
+        <startAddress>52.7.28.177</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.7.101.96</endAddress>
+        <startAddress>52.7.101.96</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.11.208.2</endAddress>
+        <startAddress>52.11.208.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.11.249.255</endAddress>
+        <startAddress>52.11.249.255</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.13.138.51</endAddress>
+        <startAddress>52.13.138.51</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.13.177.77</endAddress>
+        <startAddress>52.13.177.77</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.13.233.100</endAddress>
+        <startAddress>52.13.233.100</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.21.12.93</endAddress>
+        <startAddress>52.21.12.93</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.21.118.50</endAddress>
+        <startAddress>52.21.118.50</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.22.21.123</endAddress>
+        <startAddress>52.22.21.123</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.24.65.21</endAddress>
+        <startAddress>52.24.65.21</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.24.130.170</endAddress>
+        <startAddress>52.24.130.170</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.24.159.51</endAddress>
+        <startAddress>52.24.159.51</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.25.36.15</endAddress>
+        <startAddress>52.25.36.15</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.25.138.88</endAddress>
+        <startAddress>52.25.138.88</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.26.184.33</endAddress>
+        <startAddress>52.26.184.33</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.27.149.252</endAddress>
+        <startAddress>52.27.149.252</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.35.50.192</endAddress>
+        <startAddress>52.35.50.192</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.35.51.135</endAddress>
+        <startAddress>52.35.51.135</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.35.147.181</endAddress>
+        <startAddress>52.35.147.181</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.36.207.230</endAddress>
+        <startAddress>52.36.207.230</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.38.32.46</endAddress>
+        <startAddress>52.38.32.46</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.40.7.213</endAddress>
+        <startAddress>52.40.7.213</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.41.113.175</endAddress>
+        <startAddress>52.41.113.175</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.42.29.218</endAddress>
+        <startAddress>52.42.29.218</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.43.110.95</endAddress>
+        <startAddress>52.43.110.95</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.44.155.8</endAddress>
+        <startAddress>52.44.155.8</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.70.98.56</endAddress>
+        <startAddress>52.70.98.56</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.71.67.120</endAddress>
+        <startAddress>52.71.67.120</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.71.70.64</endAddress>
+        <startAddress>52.71.70.64</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.71.74.113</endAddress>
+        <startAddress>52.71.74.113</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.71.112.101</endAddress>
+        <startAddress>52.71.112.101</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.72.34.134</endAddress>
+        <startAddress>52.72.34.134</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.73.143.191</endAddress>
+        <startAddress>52.73.143.191</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.86.16.174</endAddress>
+        <startAddress>52.86.16.174</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.87.4.159</endAddress>
+        <startAddress>52.87.4.159</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.88.30.84</endAddress>
+        <startAddress>52.88.30.84</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.88.245.156</endAddress>
+        <startAddress>52.88.245.156</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.200.115.227</endAddress>
+        <startAddress>52.200.115.227</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.200.197.156</endAddress>
+        <startAddress>52.200.197.156</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.202.44.14</endAddress>
+        <startAddress>52.202.44.14</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.204.217.72</endAddress>
+        <startAddress>52.204.217.72</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.206.198.212</endAddress>
+        <startAddress>52.206.198.212</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.207.21.207</endAddress>
+        <startAddress>52.207.21.207</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.207.88.176</endAddress>
+        <startAddress>52.207.88.176</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.0.68</endAddress>
+        <startAddress>52.223.0.68</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.2.120</endAddress>
+        <startAddress>52.223.2.120</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.7.86</endAddress>
+        <startAddress>52.223.7.86</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.7.101</endAddress>
+        <startAddress>52.223.7.101</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.12.112</endAddress>
+        <startAddress>52.223.12.112</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.20.101</endAddress>
+        <startAddress>52.223.20.101</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.21.89</endAddress>
+        <startAddress>52.223.21.89</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.24.125</endAddress>
+        <startAddress>52.223.24.125</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.30.84</endAddress>
+        <startAddress>52.223.30.84</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.37.120</endAddress>
+        <startAddress>52.223.37.120</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.38.87</endAddress>
+        <startAddress>52.223.38.87</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.38.91</endAddress>
+        <startAddress>52.223.38.91</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.40.102</endAddress>
+        <startAddress>52.223.40.102</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.45.111</endAddress>
+        <startAddress>52.223.45.111</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.48.118</endAddress>
+        <startAddress>52.223.48.118</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.49.115</endAddress>
+        <startAddress>52.223.49.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.50.94</endAddress>
+        <startAddress>52.223.50.94</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.50.96</endAddress>
+        <startAddress>52.223.50.96</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>52.223.52.90</endAddress>
+        <startAddress>52.223.52.90</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.68.221.171</endAddress>
+        <startAddress>54.68.221.171</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.69.197.96</endAddress>
+        <startAddress>54.69.197.96</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.71.107.12</endAddress>
+        <startAddress>54.71.107.12</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.81.1.92</endAddress>
+        <startAddress>54.81.1.92</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.82.97.76</endAddress>
+        <startAddress>54.82.97.76</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.82.186.104</endAddress>
+        <startAddress>54.82.186.104</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.83.39.70</endAddress>
+        <startAddress>54.83.39.70</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.83.39.79</endAddress>
+        <startAddress>54.83.39.79</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.83.45.80</endAddress>
+        <startAddress>54.83.45.80</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.86.175.97</endAddress>
+        <startAddress>54.86.175.97</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.86.204.118</endAddress>
+        <startAddress>54.86.204.118</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.89.52.11</endAddress>
+        <startAddress>54.89.52.11</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.145.255.140</endAddress>
+        <startAddress>54.145.255.140</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.147.140.211</endAddress>
+        <startAddress>54.147.140.211</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.148.92.73</endAddress>
+        <startAddress>54.148.92.73</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.156.5.212</endAddress>
+        <startAddress>54.156.5.212</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.158.173.127</endAddress>
+        <startAddress>54.158.173.127</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.161.96.70</endAddress>
+        <startAddress>54.161.96.70</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.162.72.87</endAddress>
+        <startAddress>54.162.72.87</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.163.224.96</endAddress>
+        <startAddress>54.163.224.96</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.163.240.100</endAddress>
+        <startAddress>54.163.240.100</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.163.247.137</endAddress>
+        <startAddress>54.163.247.137</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.163.250.93</endAddress>
+        <startAddress>54.163.250.93</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.163.250.175</endAddress>
+        <startAddress>54.163.250.175</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.163.255.229</endAddress>
+        <startAddress>54.163.255.229</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.165.163.230</endAddress>
+        <startAddress>54.165.163.230</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.165.170.15</endAddress>
+        <startAddress>54.165.170.15</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.166.200.68</endAddress>
+        <startAddress>54.166.200.68</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.172.51.31</endAddress>
+        <startAddress>54.172.51.31</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.174.84.81</endAddress>
+        <startAddress>54.174.84.81</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.186.145.246</endAddress>
+        <startAddress>54.186.145.246</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.189.238.173</endAddress>
+        <startAddress>54.189.238.173</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.189.255.254</endAddress>
+        <startAddress>54.189.255.225</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.190.90.9</endAddress>
+        <startAddress>54.190.90.9</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.197.88.168</endAddress>
+        <startAddress>54.197.88.168</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.197.107.46</endAddress>
+        <startAddress>54.197.107.46</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.197.192.190</endAddress>
+        <startAddress>54.197.192.161</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.200.53.172</endAddress>
+        <startAddress>54.200.53.172</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.201.170.125</endAddress>
+        <startAddress>54.201.170.125</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.201.225.95</endAddress>
+        <startAddress>54.201.225.95</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.203.145.181</endAddress>
+        <startAddress>54.203.145.181</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.203.188.154</endAddress>
+        <startAddress>54.203.188.154</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.203.248.112</endAddress>
+        <startAddress>54.203.248.112</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.203.252.78</endAddress>
+        <startAddress>54.203.252.78</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.208.240.221</endAddress>
+        <startAddress>54.208.240.221</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.208.253.212</endAddress>
+        <startAddress>54.208.253.212</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.210.77.10</endAddress>
+        <startAddress>54.210.77.10</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.211.44.254</endAddress>
+        <startAddress>54.211.44.254</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.213.254.193</endAddress>
+        <startAddress>54.213.254.193</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.214.191.114</endAddress>
+        <startAddress>54.214.191.114</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.214.251.247</endAddress>
+        <startAddress>54.214.251.247</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.214.252.78</endAddress>
+        <startAddress>54.214.252.78</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.214.253.241</endAddress>
+        <startAddress>54.214.253.241</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.214.254.193</endAddress>
+        <startAddress>54.214.254.193</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.218.192.52</endAddress>
+        <startAddress>54.218.192.52</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.218.219.9</endAddress>
+        <startAddress>54.218.219.9</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.218.245.98</endAddress>
+        <startAddress>54.218.245.98</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.221.216.145</endAddress>
+        <startAddress>54.221.216.145</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.221.217.68</endAddress>
+        <startAddress>54.221.217.68</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.221.217.72</endAddress>
+        <startAddress>54.221.217.72</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.221.222.17</endAddress>
+        <startAddress>54.221.222.17</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.224.122.158</endAddress>
+        <startAddress>54.224.122.158</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.227.135.148</endAddress>
+        <startAddress>54.227.135.148</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.64.85</endAddress>
+        <startAddress>54.235.64.85</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.64.95</endAddress>
+        <startAddress>54.235.64.95</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.64.96</endAddress>
+        <startAddress>54.235.64.96</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.64.100</endAddress>
+        <startAddress>54.235.64.100</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.64.102</endAddress>
+        <startAddress>54.235.64.102</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.68.73</endAddress>
+        <startAddress>54.235.68.72</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.68.74</endAddress>
+        <startAddress>54.235.68.74</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.68.76</endAddress>
+        <startAddress>54.235.68.76</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.68.78</endAddress>
+        <startAddress>54.235.68.78</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.89.255</endAddress>
+        <startAddress>54.235.89.255</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.107.71</endAddress>
+        <startAddress>54.235.107.71</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.118.189</endAddress>
+        <startAddress>54.235.118.189</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.235.244.173</endAddress>
+        <startAddress>54.235.244.173</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.237.172.125</endAddress>
+        <startAddress>54.237.172.125</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.243.50.205</endAddress>
+        <startAddress>54.243.50.205</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.243.51.23</endAddress>
+        <startAddress>54.243.51.23</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.243.198.44</endAddress>
+        <startAddress>54.243.198.44</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.243.207.71</endAddress>
+        <startAddress>54.243.207.71</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.243.212.161</endAddress>
+        <startAddress>54.243.212.161</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.243.212.165</endAddress>
+        <startAddress>54.243.212.165</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.244.90.165</endAddress>
+        <startAddress>54.244.90.165</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.244.92.253</endAddress>
+        <startAddress>54.244.92.253</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.244.92.254</endAddress>
+        <startAddress>54.244.92.254</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.244.93.0</endAddress>
+        <startAddress>54.244.93.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.244.115.143</endAddress>
+        <startAddress>54.244.115.143</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.77.225</endAddress>
+        <startAddress>54.245.77.225</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.89.3</endAddress>
+        <startAddress>54.245.89.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.89.24</endAddress>
+        <startAddress>54.245.89.24</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.89.26</endAddress>
+        <startAddress>54.245.89.26</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.89.35</endAddress>
+        <startAddress>54.245.89.35</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.89.46</endAddress>
+        <startAddress>54.245.89.46</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.93.35</endAddress>
+        <startAddress>54.245.93.35</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.102.6</endAddress>
+        <startAddress>54.245.102.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>54.245.109.251</endAddress>
+        <startAddress>54.245.109.251</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.8.118</endAddress>
+        <startAddress>75.2.8.118</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.16.120</endAddress>
+        <startAddress>75.2.16.120</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.41.113</endAddress>
+        <startAddress>75.2.41.113</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.44.79</endAddress>
+        <startAddress>75.2.44.79</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.44.90</endAddress>
+        <startAddress>75.2.44.90</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.50.116</endAddress>
+        <startAddress>75.2.50.116</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.56.69</endAddress>
+        <startAddress>75.2.56.69</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.63.115</endAddress>
+        <startAddress>75.2.63.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.66.109</endAddress>
+        <startAddress>75.2.66.109</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.69.100</endAddress>
+        <startAddress>75.2.69.100</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.87.65</endAddress>
+        <startAddress>75.2.87.65</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.106.85</endAddress>
+        <startAddress>75.2.106.85</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.2.114.79</endAddress>
+        <startAddress>75.2.114.79</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>75.101.132.60</endAddress>
+        <startAddress>75.101.132.60</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.1.216</endAddress>
+        <startAddress>76.223.1.216</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.2.241</endAddress>
+        <startAddress>76.223.2.241</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.42.213</endAddress>
+        <startAddress>76.223.42.213</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.53.194</endAddress>
+        <startAddress>76.223.53.194</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.59.226</endAddress>
+        <startAddress>76.223.59.226</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.70.214</endAddress>
+        <startAddress>76.223.70.214</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.71.210</endAddress>
+        <startAddress>76.223.71.210</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.78.225</endAddress>
+        <startAddress>76.223.78.225</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.79.249</endAddress>
+        <startAddress>76.223.79.249</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.91.207</endAddress>
+        <startAddress>76.223.91.207</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.94.197</endAddress>
+        <startAddress>76.223.94.197</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.111.216</endAddress>
+        <startAddress>76.223.111.216</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.114.238</endAddress>
+        <startAddress>76.223.114.238</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>76.223.115.216</endAddress>
+        <startAddress>76.223.115.216</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.144.240</endAddress>
+        <startAddress>99.83.144.240</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.148.234</endAddress>
+        <startAddress>99.83.148.234</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.160.202</endAddress>
+        <startAddress>99.83.160.202</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.180.198</endAddress>
+        <startAddress>99.83.180.198</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.186.246</endAddress>
+        <startAddress>99.83.186.246</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.192.225</endAddress>
+        <startAddress>99.83.192.225</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.213.230</endAddress>
+        <startAddress>99.83.213.230</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.218.249</endAddress>
+        <startAddress>99.83.218.249</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.226.210</endAddress>
+        <startAddress>99.83.226.210</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.239.245</endAddress>
+        <startAddress>99.83.239.245</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.239.254</endAddress>
+        <startAddress>99.83.239.254</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.241.219</endAddress>
+        <startAddress>99.83.241.219</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>99.83.247.192</endAddress>
+        <startAddress>99.83.247.192</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>100.26.39.159</endAddress>
+        <startAddress>100.26.39.159</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>107.20.82.76</endAddress>
+        <startAddress>107.20.82.76</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>107.20.244.149</endAddress>
+        <startAddress>107.20.244.149</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>107.21.220.50</endAddress>
+        <startAddress>107.21.220.50</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>107.22.173.115</endAddress>
+        <startAddress>107.22.173.115</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>107.22.174.147</endAddress>
+        <startAddress>107.22.174.147</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>107.22.176.74</endAddress>
+        <startAddress>107.22.176.74</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>107.22.222.34</endAddress>
+        <startAddress>107.22.222.34</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>184.72.166.120</endAddress>
+        <startAddress>184.72.166.120</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>184.72.239.181</endAddress>
+        <startAddress>184.72.239.181</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>184.72.239.183</endAddress>
+        <startAddress>184.72.239.183</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>184.73.186.14</endAddress>
+        <startAddress>184.73.186.14</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>184.73.186.54</endAddress>
+        <startAddress>184.73.186.54</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>184.73.186.59</endAddress>
+        <startAddress>184.73.186.59</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>184.73.186.64</endAddress>
+        <startAddress>184.73.186.64</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>https://s3.amazonaws.com/okta-ip-ranges/ip_ranges.json - us_cell_2</description>
+        <endAddress>204.236.220.124</endAddress>
+        <startAddress>204.236.220.124</startAddress>
+    </loginIpRanges>
+    <userLicense>Salesforce</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ActivitiesAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AddDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AllowViewKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ApexRestServices</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ApiEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AssignTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterEditOwnPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterFileLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterInternalUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterInviteExternalUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ChatterOwnGroups</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ContentWorkspaces</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateCustomizeFilters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateCustomizeReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>CreateTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>DistributeFromPersWksp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditEvent</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EmailMass</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EmailSingle</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EnableNotifications</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ExportReport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>LightningConsoleAllowedForUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>LightningExperienceUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ListEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>MassInlineEdit</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RunReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ShowCompanyNameAsUserBadge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>SubscribeToLightningReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>TransactionalEmailSend</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewDeveloperName</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewHelpLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewRoles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewSetup</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewTrustMeasures</name>
+    </userPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Okta_Integration</name>
+    </customPermissions>
+</Profile>

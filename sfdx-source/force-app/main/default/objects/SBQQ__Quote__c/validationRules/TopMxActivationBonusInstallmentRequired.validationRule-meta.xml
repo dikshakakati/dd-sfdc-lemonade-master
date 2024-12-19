@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TopMxActivationBonusInstallmentRequired</fullName>
+    <active>true</active>
+    <description>LEM-14401: Validates that the Activation bonus amount is same as the sum of the installment payment amounts.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  OR(
+    Account_Billing_Country_Code__c = $Label.US,
+    Account_Billing_Country_Code__c = $Label.AU,
+    Account_Billing_Country_Code__c = $Label.CA,
+    Account_Billing_Country_Code__c = $Label.NZ
+  ),
+  BLANKVALUE(Activation_Bonus_Amount__c, 0) &lt;&gt;
+  (BLANKVALUE(Installment_1_Payment_Amount__c, 0) + 
+   BLANKVALUE(Installment_2_Payment_Amount__c, 0) + 
+   BLANKVALUE(Installment_3_Payment_Amount__c, 0) + 
+   BLANKVALUE(Installment_4_Payment_Amount__c, 0)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Activation_Bonus_Amount__c</errorDisplayField>
+    <errorMessage>The activation bonus amount must equal the sum of all installment payment amounts.</errorMessage>
+</ValidationRule>

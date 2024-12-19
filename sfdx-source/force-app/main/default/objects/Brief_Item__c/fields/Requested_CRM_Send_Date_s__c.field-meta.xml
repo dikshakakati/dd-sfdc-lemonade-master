@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_CRM_Send_Date_s__c</fullName>
+    <description>LEM-2983: Captures the dates for CRM Communication.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the date you wish to have each CRM communication sent.</inlineHelpText>
+    <label>Requested CRM Send Date(s)</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,52 @@
+<template>
+    <li class={rootClass} onclick={handleOnclick}>
+      <article class={tileClass}>
+        <template if:true={hasMedia}>
+          <div class="slds-media__figure">
+            <template if:true={isAvatar}>
+              <lightning-avatar src={rec.iconSrc}
+                fallback-icon-name={iconName}
+                variant="circle"
+                size={iconAvatarSize}
+                alternative-text={rec.Name}>
+              </lightning-avatar>
+            </template>
+            <template if:true={isIcon}>
+              <lightning-icon icon-name={iconName}
+                size={iconAvatarSize}
+                alternative-text="icon">
+              </lightning-icon>
+            </template>
+          </div>
+          <div class="slds-media__body">
+            <!-- Not using lightning-tile because of this, dont want anchor tag here-->
+            <h3 class={titleClass} title={rec.dropDownLabel}>
+              {rec.dropDownLabel}
+            </h3>
+            <template if:true={hasTileBody}>
+              <div class="slds-tile__detail slds-text-body_small">
+                <ul>
+                  <li class="slds-item">{rec.dropDownSubLabel}</li>
+                </ul>
+              </div>
+            </template>
+          </div>
+        </template>
+        <template if:false={hasMedia}>
+          <div class="slds-var-p-left_x-small">
+            <!-- Not using lightning-tile because of this, dont want anchor tag here-->
+            <h3 class={titleClass} title={rec.dropDownLabel}>
+              {rec.dropDownLabel}
+            </h3>
+            <template if:true={hasTileBody}>
+              <div class="slds-tile__detail">
+                <ul>
+                  <li class="slds-item">{rec.dropDownSubLabel}</li>
+                </ul>
+              </div>
+            </template>
+          </div>
+        </template>
+      </article>
+    </li>
+  </template>

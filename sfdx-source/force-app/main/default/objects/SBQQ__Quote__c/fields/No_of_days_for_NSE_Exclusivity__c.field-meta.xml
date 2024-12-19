@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_days_for_NSE_Exclusivity__c</fullName>
+    <description>LEM-16860: Custom/Unique Terms - Attributes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field should only be used for triggering time-bound Marketing Promo Exclusivities with DoorDash when not already a part of the contract terms (ex. Preferred Partnerships)</inlineHelpText>
+    <label># of days for NSE Exclusivity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

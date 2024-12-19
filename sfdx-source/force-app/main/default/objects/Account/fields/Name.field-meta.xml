@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name</fullName>
+    <trackFeedHistory>true</trackFeedHistory>
+    <inlineHelpText>This name will appear in official communications between DoorDash and the Mx and should therefore represent the true name of the business</inlineHelpText>
+    <securityClassification>Internal</securityClassification>
+    <complianceGroup>PII</complianceGroup>
+    <trackHistory>true</trackHistory>
+</CustomField>

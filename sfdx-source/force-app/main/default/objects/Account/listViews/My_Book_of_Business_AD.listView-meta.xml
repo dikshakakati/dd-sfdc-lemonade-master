@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Book_of_Business_AD</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>PARENT_NAME</columns>
+    <columns>Total_Number_Of_Stores_Report__c</columns>
+    <columns>Total_Number_of_Open_Opportunities__c</columns>
+    <columns>Partnership_Level__c</columns>
+    <columns>Product_Priority__c</columns>
+    <columns>Outreach_Strategy__c</columns>
+    <columns>Medal_Rank__c</columns>
+    <columns>Deck_Rank__c</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Business</value>
+    </filters>
+    <label>My Book of Business - AD</label>
+</ListView>

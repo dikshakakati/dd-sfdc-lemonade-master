@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Representative_Phone__c</fullName>
+    <complianceGroup>PII</complianceGroup>
+    <description>LEM-15116: It indicates representative phone.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the Representative Phone for Stripe Connected Account</inlineHelpText>
+    <label>Representative Phone</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Phone</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;">Hi {{{WorkOrder.Account_Owner_Name__c}}},&nbsp;</span></span></p>
+
+<p><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;">A change of ownership work order has been created for {{{WorkOrder.Account}}}.You're the Account Owner so we thought you should know since this request needs support from Sales. Here's more information:</span></span></p>
+
+<p><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Account Name:&nbsp;</strong>{{{WorkOrder.Account_Link__c}}}</span></span><br />
+<span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Work Order:</strong> </span></span><a href="{{{WorkOrder.link}}}"><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{WorkOrder.Work_Order_Name__c}}}</span></span></a><br />
+<span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Number of Stores:</strong> {{{WorkOrder.Actual_Number_Of_Stores__c}}}</span></span></p>
+
+<p><span style="font-size:12px;"><span style="font-family:Arial,Helvetica,sans-serif;">Thank you,<br />
+DoorDash Merchant Support</span></span></p>
+<br />
+&nbsp;
+</body></html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Virtual</fullName>
+        <default>false</default>
+        <label>Virtual</label>
+    </customValue>
+    <customValue>
+        <fullName>Ghost</fullName>
+        <default>false</default>
+        <label>Ghost</label>
+    </customValue>
+    <customValue>
+        <fullName>Brick &amp; Mortar</fullName>
+        <default>false</default>
+        <label>Brick &amp; Mortar</label>
+    </customValue>
+    <description>LEM-14186: It stores the information about the type of kitchen.</description>
+    <masterLabel>Kitchen Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

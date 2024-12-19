@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_By__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>DO NOT ADD &apos;ORDER BY &apos;
+
+Enter Fields + Asc/Desc -- just like you would do in a query -- but without &apos;ORDER BY &apos;</inlineHelpText>
+    <label>Order By</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

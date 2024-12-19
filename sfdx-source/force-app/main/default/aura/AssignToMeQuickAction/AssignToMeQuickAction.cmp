@@ -1,0 +1,26 @@
+<!--
+@author Deloitte
+@date 27/05/2022
+@description Aura component to call "Assign To Me" auto launched flow.
+-->
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,lightning:availableForFlowActions,force:hasRecordId"
+>
+  <!--
+    @description It is used to hide the modal on clicking Assign To Me quick action.
+    -->
+  <aura:html tag="style">
+    .slds-modal { visibility: hidden; display: none; } .slds-backdrop { display:
+    none; }
+  </aura:html>
+  <aura:attribute
+    name="recordId"
+    type="String"
+    description="Id of the currect record"
+  />
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <lightning:flow
+    aura:id="assignToMeFlow"
+    onstatuschange="{!c.handleStatusChange}"
+  />
+</aura:component>

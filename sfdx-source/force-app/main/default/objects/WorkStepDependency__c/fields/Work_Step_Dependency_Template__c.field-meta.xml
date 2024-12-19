@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Step_Dependency_Template__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-1061: It indicates WorkStepDependencyTemplate record used for creation of WorkStepDependency record.</description>
+    <externalId>false</externalId>
+    <label>Work Step Dependency Template</label>
+    <referenceTo>WorkStepDependencyTemplate__c</referenceTo>
+    <relationshipLabel>Work Step Dependencies</relationshipLabel>
+    <relationshipName>Work_Step_Dependencies</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

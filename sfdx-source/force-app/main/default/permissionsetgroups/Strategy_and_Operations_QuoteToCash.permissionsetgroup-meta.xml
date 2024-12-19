@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4677: It enables access to CPQ objects for Strategy and Operations persona.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Strategy and Operations - QuoteToCash</label>
+    <mutingPermissionSets>Strategy_and_Operations_QuoteToCash_Muted</mutingPermissionSets>
+    <permissionSets>CPQ_AA_License</permissionSets>
+    <permissionSets>CPQ_License</permissionSets>
+    <permissionSets>My_Items_To_Approve</permissionSets>
+    <permissionSets>QuoteToCash</permissionSets>
+    <permissionSets>Salesforce_for_CPQ_User_Restricted_Access</permissionSets>
+    <permissionSets>force__SlackSalesCloud</permissionSets>
+    <permissionSets>sbaa__AdvancedApprovalsUser</permissionSets>
+    <permissionSets>SMB_Sales_App</permissionSets>
+    <permissionSets>HighVelocitySalesUser</permissionSets>
+    <permissionSets>SMB_Vendor_Sales_Create_Quote</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_Assets__c</fullName>
+    <description>LEM-2983: Captures the web link to Assets</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Add a Gdrive folder (one per Mx) to the Brand Asset folder, then add one folder per campaign to the Mx folder and link this campaign’s folder here. Follow Creative Best Practices to ensure smooth process.</inlineHelpText>
+    <label>Link to Assets</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

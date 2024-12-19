@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Item_For_Status_Testing</fullName>
+    <active>true</active>
+<description>LEM-2983: Validates if the Brief Item satisfies to be moved to Status Testing.
+LEM-17006: remove the Campaign ID(s) check and include the Campaign ID(s) (36-digit ID only) check
+LEM-17777: remove the Campaign ID(s) (36-digit ID only) check</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),  TEXT(Brief__r.Configuration__c)=$Label.Brief_Configuration_Custom,
+ISBLANK(Campaign_Link_s__c),
+TEXT(Status__c)=$Label.Testing_New_Submission
+)</errorConditionFormula>
+    <errorMessage>‘Campaign Link(s)’ is required before moving to the ‘Testing - New Submission’ status.</errorMessage>
+</ValidationRule>

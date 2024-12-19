@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Handoff_Details__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14155: It indicates the Hand-off rep and the product or topic for the outreach.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Hand-off rep and the product or topic for the outreach</inlineHelpText>
+    <label>Handoff Details</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AD - Marketplace</fullName>
+                <default>false</default>
+                <label>AD - Marketplace</label>
+            </value>
+            <value>
+                <fullName>AD - Platform</fullName>
+                <default>false</default>
+                <label>AD - Platform</label>
+            </value>
+            <value>
+                <fullName>AM - NSE</fullName>
+                <default>false</default>
+                <label>AM - NSE</label>
+            </value>
+            <value>
+                <fullName>AM - QBR/General Consultation</fullName>
+                <default>false</default>
+                <label>AM - QBR/General Consultation</label>
+            </value>
+            <value>
+                <fullName>AM - Support Delays</fullName>
+                <default>false</default>
+                <label>AM - Support Delays</label>
+            </value>
+            <value>
+                <fullName>AM - Menu Bug</fullName>
+                <default>false</default>
+                <label>AM - Menu Bug</label>
+            </value>
+            <value>
+                <fullName>AM - Inflation</fullName>
+                <default>false</default>
+                <label>AM - Inflation</label>
+            </value>
+            <value>
+                <fullName>AM - Other</fullName>
+                <default>false</default>
+                <label>AM - Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

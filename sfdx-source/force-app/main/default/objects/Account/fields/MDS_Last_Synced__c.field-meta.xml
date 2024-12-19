@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MDS_Last_Synced__c</fullName>
+    <description>Created this field to have a MDS Last synced date/time stamp for each and every field which we want to sync from MDS on Account object</description>
+    <externalId>false</externalId>
+    <label>MDS Last Synced</label>
+    <length>131072</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

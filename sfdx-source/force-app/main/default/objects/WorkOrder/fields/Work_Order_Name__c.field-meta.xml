@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order_Name__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-982: It indicates Work Order name generated from a combination of Work Order number, Account name, Work Order type, Account billing country, Work Order PDOA original.</description>
+    <externalId>false</externalId>
+    <formula>WorkOrderNumber + &apos; - &apos; + Account.Name + &apos; - &apos; + TEXT(Type__c) +
+IF(
+  ISBLANK(Account.BillingCountry),
+  &apos;&apos;,
+  &apos; - &apos; + Account.BillingCountry
+) +
+IF(
+  ISBLANK(Proposed_Date_of_Activation_Original__c),
+  &apos;&apos;,
+  &apos; - &apos; + TEXT(MONTH(Proposed_Date_of_Activation_Original__c)) + &apos;/&apos; + TEXT(DAY(Proposed_Date_of_Activation_Original__c)) + &apos;/&apos; + TEXT(YEAR(Proposed_Date_of_Activation_Original__c))
+)</formula>
+    <label>Work Order Name</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

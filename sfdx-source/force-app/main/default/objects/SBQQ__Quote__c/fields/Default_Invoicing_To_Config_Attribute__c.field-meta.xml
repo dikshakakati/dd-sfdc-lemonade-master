@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Invoicing_To_Config_Attribute__c</fullName>
+    <description>LEM-18287: It is used to default Payment Method as Invoicing to Drive Products.</description>
+    <externalId>false</externalId>
+    <label>Default Invoicing To Config Attribute</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Withholding</fullName>
+                <default>false</default>
+                <label>Withholding</label>
+            </value>
+            <value>
+                <fullName>Invoicing</fullName>
+                <default>true</default>
+                <label>Invoicing</label>
+            </value>
+            <value>
+                <fullName>Marketing Fund</fullName>
+                <default>false</default>
+                <label>Marketing Fund</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

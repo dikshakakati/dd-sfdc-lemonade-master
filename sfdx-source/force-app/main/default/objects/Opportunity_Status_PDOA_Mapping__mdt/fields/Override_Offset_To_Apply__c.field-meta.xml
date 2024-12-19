@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Override_Offset_To_Apply__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>LEM-2796: It indicates offset value to be added if any sub type is overriden in &apos;Sub Type To Override&apos; field to populate PDOA.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>It is applied when 'Sub Type To Override' sub type to is populated</inlineHelpText>
+    <label>Override Offset To Apply</label>
+    <precision>2</precision>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

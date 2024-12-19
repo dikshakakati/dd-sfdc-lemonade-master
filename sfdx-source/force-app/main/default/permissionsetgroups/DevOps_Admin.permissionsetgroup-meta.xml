@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4359: Permission Set Group to provide DevOps access to Production.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>DevOps Admin</label>
+    <permissionSets>Admin_Lite</permissionSets>
+    <permissionSets>Approval_Fields_Edit_Access</permissionSets>
+    <permissionSets>CPQ_License</permissionSets>
+    <permissionSets>Conga_Grid_Access</permissionSets>
+    <permissionSets>Debug_Access</permissionSets>
+    <permissionSets>Modify_Metadata</permissionSets>
+    <permissionSets>QuoteToCash</permissionSets>
+    <permissionSets>RESSMO</permissionSets>
+    <permissionSets>Salesforce_CPQ_User_View_Access</permissionSets>
+    <permissionSets>View_Only</permissionSets>
+    <permissionSets>View_Only_QuoteToCash</permissionSets>
+    <permissionSets>ortoo_qra__Q_assign_Administrator</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

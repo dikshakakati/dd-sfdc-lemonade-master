@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_MDS_Activated__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-5503: It is used to indicate if the Store Account has an activated Marketplace external reference.</description>
+    <externalId>false</externalId>
+    <label>Is_MDS_Activated</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

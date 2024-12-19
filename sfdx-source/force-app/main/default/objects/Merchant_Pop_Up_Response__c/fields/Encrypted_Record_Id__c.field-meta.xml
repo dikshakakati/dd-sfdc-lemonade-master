@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Encrypted_Record_Id__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>LEM-2133: Stores the encrypted form of the Salesforce Record Id. The encrypted form is necessary to add the record identifier in a URL parameter that is publicly available.</description>
+    <externalId>false</externalId>
+    <label>Encrypted Record Id</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

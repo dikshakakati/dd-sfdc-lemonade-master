@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>POS System</label>
+    <protected>false</protected>
+    <values>
+        <field>Data_Type__c</field>
+        <value xsi:type="xsd:string">Picklist</value>
+    </values>
+    <values>
+        <field>Decimal_Places__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Field_API_Name__c</field>
+        <value xsi:type="xsd:string">POS_System__c</value>
+    </values>
+    <values>
+        <field>Field_Name__c</field>
+        <value xsi:type="xsd:string">POS System</value>
+    </values>
+    <values>
+        <field>Field_length__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Picklist_Values__c</field>
+        <value xsi:type="xsd:string">Abacus;AccuPOS;Aldelo POS;Aloha NCR;Amber Systems Technology;Arrow POS;Auphan;Brilliant POS;Cake;Casio;Centro;Champion POS;Clover;Cluster;Comtrex;Crisp;Custom Propietary POS;Dig Inn;Digital Dining;Dinerware;Exa Touch;Figure POS;Focus POS;FoodTech;Future POS;Givex;HarbourTouch;Heartland;HungerRush;InTouchPOS;JK Restaurant Systems;Koomi;Lavu;Lighthouse;Lightspeed;Linga POS;Local Kitchens;Maitre D;Mediaworks;Menusifu;Micros;Microsale;Microworks;Mobile Bytes;MobiPOS;NCR Cloud Connect;NCR Silver;NetPOS;None (no in-store POS system);Northstar POS;Not sure;One POS;Other;ParBrink;Paytouch;PDQ;PixelPoint;Positouch;POS Now;Profitech;QST;QuBeyond;QuickServe;Recipe;Restaurant Manager;Revel;Roti;RPower;RRT;Shift4;Shopify POS;Shopkeep;SICOM;Silverware;Simphony;SmartPOS;SoftTouch;SpeedLine;SpotOn POS;Square;Squirrel;Super Menu;Talech;Task POS;Thrive;Tillster;Toast;TouchBistro;TouchPoint;Upserve;Upsolution;VendPOS;Verona;Virtual Kitchens (varied POS systems);Visual Touch;Xenial;Xoikos;Xperio;XPient;Zonal</value>
+    </values>
+</CustomMetadata>

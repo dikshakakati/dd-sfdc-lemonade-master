@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ops_My_Expired_Campaign_Items</fullName>
+    <columns>NAME</columns>
+    <columns>Product__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <columns>Brief__c</columns>
+    <columns>Campaign_Name__c</columns>
+    <columns>Quote_Line__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Account__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Fully Executed</value>
+    </filters>
+    <filters>
+        <field>End_Date__c</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Ops: My Expired Campaign Items</label>
+</ListView>

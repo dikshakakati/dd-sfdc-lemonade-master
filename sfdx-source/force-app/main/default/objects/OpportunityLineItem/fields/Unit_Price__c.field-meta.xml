@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit_Price__c</fullName>
+    <description>LEM-1602: Create New Fields for Ads and Promos</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Email + Push (1M sends) → $15k Email Only (1M sends) → $10k Push Only (1M sends) → $7.5k  or Manual entry</inlineHelpText>
+    <label>Unit Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

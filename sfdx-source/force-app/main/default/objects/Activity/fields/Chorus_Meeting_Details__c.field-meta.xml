@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chorus_Meeting_Details__c</fullName>
+    <description>LEM-16059: It stores chorus meeting details associated with Activity.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Chorus Meeting Details associated with Activity</inlineHelpText>
+    <label>Chorus Meeting Details</label>
+    <required>false</required>
+    <type>Url</type>
+</CustomField>

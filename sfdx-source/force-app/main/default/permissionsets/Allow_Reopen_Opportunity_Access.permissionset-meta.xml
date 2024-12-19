@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Reopening_Opportunity</name>
+    </customPermissions>
+    <description>LEM-21261: It enables access to move an Opportunity back from Closed Lost/Won Stage.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Reopen Opportunity Access</label>
+</PermissionSet>

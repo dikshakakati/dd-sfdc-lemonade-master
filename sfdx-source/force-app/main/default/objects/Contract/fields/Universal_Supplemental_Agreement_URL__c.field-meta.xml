@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Universal_Supplemental_Agreement_URL__c</fullName>
+    <description>LEM-2771: URL for Universal Supplemental Agreement</description>
+    <externalId>false</externalId>
+    <label>Universal Supplemental Agreement URL</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Url</type>
+</CustomField>

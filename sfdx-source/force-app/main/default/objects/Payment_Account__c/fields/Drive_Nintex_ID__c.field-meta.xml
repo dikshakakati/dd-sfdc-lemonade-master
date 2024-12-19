@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_Nintex_ID__c</fullName>
+    <description>LEM-9127:This field stores the workflow instance and also serves as identification of the source that initiated the change of payment method on the account.</description>
+    <externalId>false</externalId>
+    <label>Drive Nintex ID</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

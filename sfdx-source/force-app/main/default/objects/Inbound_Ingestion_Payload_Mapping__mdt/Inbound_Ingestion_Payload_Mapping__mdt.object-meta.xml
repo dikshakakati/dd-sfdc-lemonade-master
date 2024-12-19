@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-16349: It is used to store the Mulesoft payload attribute and corresponding Salesforce field mappings.</description>
+    <label>Inbound Ingestion Payload Mapping</label>
+    <pluralLabel>Inbound Ingestion Payload Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

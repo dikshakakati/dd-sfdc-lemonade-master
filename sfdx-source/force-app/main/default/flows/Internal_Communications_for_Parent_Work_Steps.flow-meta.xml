@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>LEM-2045: It sends initial email notification to Account Owner regarding Blocked parent Work Step.</description>
+        <name>Send_Initial_Email_Notification</name>
+        <label>Send Initial Email Notification</label>
+        <locationX>50</locationX>
+        <locationY>528</locationY>
+        <actionName>WorkStep.Send_Initial_Email_Notification_To_Account_Owner_When_Parent_Work_Step_Blocked</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Assign_Email_Template_Name_for_Primary_Email</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Log_Failure</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>LEM-13581: It sends initial email notification to Account Owner regarding Blocked parent Work Step for Segment SMB.</description>
+        <name>Send_Initial_Email_Notification_SMB</name>
+        <label>Send Initial Email Notification SMB</label>
+        <locationX>578</locationX>
+        <locationY>492</locationY>
+        <actionName>WorkStep.Send_Initial_Email_Notification_To_Account_Owner_When_Parent_Work_Step_Blocked</actionName>
+        <actionType>emailAlert</actionType>
+        <faultConnector>
+            <targetReference>Log_Failure_SMB</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>LEM-2045: It sends secondary email notification to Account owner when Blocked child Work Steps.</description>
+        <name>Send_Secondary_Email_Notification</name>
+        <label>Send Secondary Email Notification</label>
+        <locationX>1106</locationX>
+        <locationY>528</locationY>
+        <actionName>WorkStep.Send_Secondary_Email_Notification_To_Account_Owner_When_Child_Work_Steps_Blocked</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Assign_Email_Template_Name_for_Secondary_Email</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>LEM-13581: It sends secondary email notification to Account owner when Blocked child Work Steps for Segment equals SMB</description>
+        <name>Send_Secondary_Email_Notification_SMB</name>
+        <label>Send Secondary Email Notification SMB</label>
+        <locationX>1898</locationX>
+        <locationY>492</locationY>
+        <actionName>WorkStep.Send_Secondary_Email_Notification_To_Account_Owner_When_Child_Work_Steps_Blocked</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <description>LEM-5727: It assigns the Email Template name for primary email notification.</description>
+        <name>Assign_Email_Template_Name_for_Primary_Email</name>
+        <label>Assign Email Template Name for Primary Email</label>
+        <locationX>50</locationX>
+        <locationY>648</locationY>
+        <assignmentItems>
+            <assignToReference>emailTemplateName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>[Internal] Rescue Record Initial Notification Template</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Work_Order_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-5727: It assigns the Email Template name for secondary email notification.</description>
+        <name>Assign_Email_Template_Name_for_Secondary_Email</name>
+        <label>Assign Email Template Name for Secondary Email</label>
+        <locationX>1106</locationX>
+        <locationY>648</locationY>
+        <assignmentItems>
+            <assignToReference>emailTemplateName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>[Internal] Rescue Record Secondary Notification Template</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Work_Order_Type</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <description>Store segment SMB value.</description>
+        <name>Segment_SMB</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>SMB</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>LEM-5727: It checks whether the associated Account Owner is &apos;Active&apos;.</description>
+        <name>Check_Account_Owner_is_Active</name>
+        <label>Check Account Owner is Active</label>
+        <locationX>578</locationX>
+        <locationY>288</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Account_Owner_Active</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WorkOrder.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Status_for_Initial_Email_Notification</targetReference>
+            </connector>
+            <label>Is Account Owner Active?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-5727: It checks whether the associated Account Owner is &apos;Active&apos; for Secondary Email.</description>
+        <name>Check_Account_Owner_is_Active_for_Secondary_Email</name>
+        <label>Check Account Owner is Active for Secondary Email</label>
+        <locationX>1436</locationX>
+        <locationY>288</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Account_Owner_Active_for_Secondary_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WorkOrder.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Status_for_Secondary_Notification</targetReference>
+            </connector>
+            <label>Is Account Owner Active for Secondary Email?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-2045: It checks whether Work Step Status is changed to Blocked for sending initial email notification.</description>
+        <name>Check_Status_for_Initial_Email_Notification</name>
+        <label>Check Status for Initial Email Notification</label>
+        <locationX>314</locationX>
+        <locationY>408</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_Status_Changed_To_Blocked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>POS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Segment__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Segment_SMB</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Initial_Email_Notification</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Has Status Changed To Blocked?</label>
+        </rules>
+        <rules>
+            <name>Segment_SMB_and_Status_Blocked</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Segment_SMB</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>POS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tablet</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Vendor Photoshoot</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Initial_Email_Notification_SMB</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Segment SMB and Status Blocked?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-2045: It checks whether Work Step Status is Blocked before sending secondary email notification at the scheduled time.</description>
+        <name>Check_Status_for_Secondary_Notification</name>
+        <label>Check Status for Secondary Notification</label>
+        <locationX>1238</locationX>
+        <locationY>408</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Status_Blocked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>POS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Segment__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Segment_SMB</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Secondary_Email_Notification</targetReference>
+            </connector>
+            <label>Is Status Blocked?</label>
+        </rules>
+        <rules>
+            <name>Is_Segment_SMB_and_Status_Blocked</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4) AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Segment_SMB</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>POS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tablet</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkPlan.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Vendor Photoshoot</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Blocked</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Secondary_Email_Notification_SMB</targetReference>
+            </connector>
+            <label>Is Segment SMB and Status Blocked?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-5727: It checks whether the Work Order Type is &apos;Drive&apos;.</description>
+        <name>Check_Work_Order_Type</name>
+        <label>Check Work Order Type</label>
+        <locationX>1007</locationX>
+        <locationY>1223</locationY>
+        <defaultConnectorLabel>Is Non-Drive Work Order?</defaultConnectorLabel>
+        <rules>
+            <name>Is_Drive_Work_Order</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WorkOrder.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Drive</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Internal_MxS_Communications_To_Drive_Specialists</targetReference>
+            </connector>
+            <label>Is Drive Work Order?</label>
+        </rules>
+    </decisions>
+    <description>LEM-2045, LEM-5727: It is used to send communications related to changes on parent Work Steps.</description>
+    <environments>Default</environments>
+    <interviewLabel>Internal Communications for Parent Work Steps {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Internal Communications for Parent Work Steps</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>LEM-2045: It logs the fault message as Log record.</description>
+        <name>Log_Failure</name>
+        <label>Log Failure</label>
+        <locationX>314</locationX>
+        <locationY>648</locationY>
+        <inputAssignments>
+            <field>Class_Method_Name__c</field>
+            <value>
+                <elementReference>$Flow.CurrentStage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Class_Name__c</field>
+            <value>
+                <elementReference>$Flow.InterviewGuid</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Detailed_Message__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Record_Id__c</field>
+            <value>
+                <elementReference>$Flow.CurrentRecord</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>LEM-13581: It logs the fault message as Log record.</description>
+        <name>Log_Failure_SMB</name>
+        <label>Log Failure SMB</label>
+        <locationX>842</locationX>
+        <locationY>600</locationY>
+        <inputAssignments>
+            <field>Class_Method_Name__c</field>
+            <value>
+                <elementReference>$Flow.CurrentStage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Class_Name__c</field>
+            <value>
+                <elementReference>$Flow.InterviewGuid</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Detailed_Message__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Record_Id__c</field>
+            <value>
+                <elementReference>$Flow.CurrentRecord</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>881</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Account_Owner_is_Active</targetReference>
+        </connector>
+        <filterFormula>AND(
+  NOT({!$Permission.Bypass_Work_Step_Flows}),
+  ISBLANK({!$Record.Parent_Work_Step__c}),
+  NOT(ISBLANK({!$Record.Account_Owner_Email_Id__c}))
+)</filterFormula>
+        <object>WorkStep</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Send_Secondary_Notification_Email</name>
+            <connector>
+                <targetReference>Check_Account_Owner_is_Active_for_Secondary_Email</targetReference>
+            </connector>
+            <label>Send Secondary Notification Email</label>
+            <offsetNumber>-5</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>Secondary_Email_Next_Schedule__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>LEM-5727: It is used to send emails to &quot;Drive Specialists&quot; when Work Step is &apos;Blocked&apos;.</description>
+        <name>Internal_MxS_Communications_To_Drive_Specialists</name>
+        <label>Internal MxS Communications To Drive Specialists</label>
+        <locationX>875</locationX>
+        <locationY>1343</locationY>
+        <flowName>Subflow_Internal_MxS_Communications_By_Account_Team_Members</flowName>
+        <inputAssignments>
+            <name>AccountTeamMemberRole</name>
+            <value>
+                <stringValue>Drive Specialist</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>EmailTemplateName</name>
+            <value>
+                <elementReference>emailTemplateName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>OrgWideAddressDisplayName</name>
+            <value>
+                <stringValue>No Reply</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>SObjectType</name>
+            <value>
+                <stringValue>WorkStep</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>WorkStep</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <description>LEM-5727: It stores the Email Template name for the primary and secondary notification.</description>
+        <name>emailTemplateName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

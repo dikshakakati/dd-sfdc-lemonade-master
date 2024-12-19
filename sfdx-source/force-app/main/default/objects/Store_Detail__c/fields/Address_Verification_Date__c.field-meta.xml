@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_Verification_Date__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-18245: It stores Address verification date for an entity address.</description>
+    <label>Address Verification Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <securityClassification>Proprietary</securityClassification>
+    <type>DateTime</type>
+</CustomField>

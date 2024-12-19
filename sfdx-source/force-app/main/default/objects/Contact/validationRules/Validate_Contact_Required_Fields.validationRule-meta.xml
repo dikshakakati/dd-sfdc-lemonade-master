@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Contact_Required_Fields</fullName>
+    <active>true</active>
+    <description>LEM-453: This rule makes the fields first name and email or phone mandatory to enter.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  OR(
+    ISBLANK(FirstName),
+    AND(
+      ISBLANK(Email),
+      ISBLANK(Phone)
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Please enter minimum required information, including: First Name, Last Name, &amp; Email OR Phone.</errorMessage>
+</ValidationRule>

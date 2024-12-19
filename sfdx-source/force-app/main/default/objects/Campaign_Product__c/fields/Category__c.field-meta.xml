@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <description>LEM-15224: This field represents the Category of the Solution.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <securityClassification>Propietary</securityClassification>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Advertisements</fullName>
+                <default>false</default>
+                <label>Advertisements</label>
+            </value>
+            <value>
+                <fullName>Discoverability</fullName>
+                <default>false</default>
+                <label>Discoverability</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Marketplace Products</fullName>
+                <default>false</default>
+                <label>Marketplace Products</label>
+            </value>
+            <value>
+                <fullName>Menu Optimizations</fullName>
+                <default>false</default>
+                <label>Menu Optimizations</label>
+            </value>
+            <value>
+                <fullName>Operations</fullName>
+                <default>false</default>
+                <label>Operations</label>
+            </value>
+            <value>
+                <fullName>Platform</fullName>
+                <default>false</default>
+                <label>Platform</label>
+            </value>
+            <value>
+                <fullName>Promos</fullName>
+                <default>false</default>
+                <label>Promos</label>
+            </value>
+            <value>
+                <fullName>Selection</fullName>
+                <default>false</default>
+                <label>Selection</label>
+            </value>
+            <value>
+                <fullName>Sponsored Listings</fullName>
+                <default>false</default>
+                <label>Sponsored Listings</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Secondary_Phone_Dependency</fullName>
+    <active>true</active>
+    <description>LEM-13618: It ensures Secondary Phone should not be populated unless Phone or Mobile are populated.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Lead_Validation_Rules),
+  ISBLANK(Phone),
+  ISBLANK(MobilePhone),
+  NOT(ISBLANK(SecondaryPhone__c))
+)</errorConditionFormula>
+    <errorDisplayField>SecondaryPhone__c</errorDisplayField>
+    <errorMessage>“Secondary Phone” field can only be completed if “Phone” or “Mobile” fields are populated.</errorMessage>
+</ValidationRule>

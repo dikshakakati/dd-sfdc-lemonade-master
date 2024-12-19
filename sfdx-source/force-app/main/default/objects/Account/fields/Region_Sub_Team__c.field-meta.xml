@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_Sub_Team__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-17007: It is used to represent the Region or Sub team of the Mx.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Region / Sub Team that manages the Mx</inlineHelpText>
+    <label>Region / Sub Team</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Managed_Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Builder</fullName>
+                <default>false</default>
+                <label>Builder</label>
+            </value>
+            <value>
+                <fullName>Pioneer</fullName>
+                <default>false</default>
+                <label>Pioneer</label>
+            </value>
+            <value>
+                <fullName>Shaper</fullName>
+                <default>false</default>
+                <label>Shaper</label>
+            </value>
+            <value>
+                <fullName>Canada</fullName>
+                <default>false</default>
+                <label>Canada</label>
+            </value>
+            <value>
+                <fullName>Groundhog</fullName>
+                <default>false</default>
+                <label>Groundhog</label>
+            </value>
+            <value>
+                <fullName>Midwest</fullName>
+                <default>false</default>
+                <label>Midwest</label>
+            </value>
+            <value>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+                <label>Mountain</label>
+            </value>
+            <value>
+                <fullName>National</fullName>
+                <default>false</default>
+                <label>National</label>
+            </value>
+            <value>
+                <fullName>Northeast</fullName>
+                <default>false</default>
+                <label>Northeast</label>
+            </value>
+            <value>
+                <fullName>Northern California</fullName>
+                <default>false</default>
+                <label>Northern California</label>
+            </value>
+            <value>
+                <fullName>Premium East - NE</fullName>
+                <default>false</default>
+                <label>Premium East - NE</label>
+            </value>
+            <value>
+                <fullName>Premium East - SE</fullName>
+                <default>false</default>
+                <label>Premium East - SE</label>
+            </value>
+            <value>
+                <fullName>Premium West - CA</fullName>
+                <default>false</default>
+                <label>Premium West - CA</label>
+            </value>
+            <value>
+                <fullName>Premium West - MM</fullName>
+                <default>false</default>
+                <label>Premium West - MM</label>
+            </value>
+            <value>
+                <fullName>South - 1</fullName>
+                <default>false</default>
+                <label>South - 1</label>
+            </value>
+            <value>
+                <fullName>South - 2</fullName>
+                <default>false</default>
+                <label>South - 2</label>
+            </value>
+            <value>
+                <fullName>Southern California</fullName>
+                <default>false</default>
+                <label>Southern California</label>
+            </value>
+            <value>
+                <fullName>Texas</fullName>
+                <default>false</default>
+                <label>Texas</label>
+            </value>
+            <value>
+                <fullName>Australia</fullName>
+                <default>false</default>
+                <label>Australia</label>
+            </value>
+            <value>
+                <fullName>New Zealand</fullName>
+                <default>false</default>
+                <label>New Zealand</label>
+            </value>
+            <value>
+                <fullName>TaskUs</fullName>
+                <default>false</default>
+                <label>TaskUs</label>
+            </value>
+            <value>
+                <fullName>Concentrix</fullName>
+                <default>false</default>
+                <label>Concentrix</label>
+            </value>
+            <value>
+                <fullName>Cognizant</fullName>
+                <default>false</default>
+                <label>Cognizant</label>
+            </value>
+            <value>
+                <fullName>MarketStar</fullName>
+                <default>false</default>
+                <label>MarketStar</label>
+            </value>
+            <value>
+                <fullName>Teleperformance</fullName>
+                <default>false</default>
+                <label>Teleperformance</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>IAM Managed</controllingFieldValue>
+            <valueName>Builder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAM Managed</controllingFieldValue>
+            <valueName>Pioneer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAM Managed</controllingFieldValue>
+            <valueName>Shaper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAM Managed</controllingFieldValue>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Canada</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAM Managed</controllingFieldValue>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Australia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAM Managed</controllingFieldValue>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>New Zealand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Groundhog</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Midwest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Mountain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>National</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Northeast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Northern California</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Premium East - NE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Premium East - SE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Premium West - CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Premium West - MM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>South - 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>South - 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Southern California</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OAM Managed</controllingFieldValue>
+            <valueName>Texas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long-Tail Managed</controllingFieldValue>
+            <controllingFieldValue>Long-Tail Covered</controllingFieldValue>
+            <valueName>TaskUs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long-Tail Managed</controllingFieldValue>
+            <controllingFieldValue>Long-Tail Covered</controllingFieldValue>
+            <valueName>Concentrix</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long-Tail Managed</controllingFieldValue>
+            <controllingFieldValue>Long-Tail Covered</controllingFieldValue>
+            <valueName>Cognizant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long-Tail Managed</controllingFieldValue>
+            <controllingFieldValue>Long-Tail Covered</controllingFieldValue>
+            <valueName>MarketStar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long-Tail Managed</controllingFieldValue>
+            <controllingFieldValue>Long-Tail Covered</controllingFieldValue>
+            <valueName>Teleperformance</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

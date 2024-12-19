@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_Flow_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-10720: Reference to related Process Flow Request, which represents the overall state of the operation.</description>
+    <externalId>false</externalId>
+    <label>Process Flow Request</label>
+    <referenceTo>Process_Flow_Request__c</referenceTo>
+    <relationshipLabel>Process Flow Request Chunks</relationshipLabel>
+    <relationshipName>Process_Flow_Request_Chunks</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Puerto_Rico_Locations__c</fullName>
+    <description>LEM-16955: Determines if the Mx is from or has Store(s) in Puerto Rico</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Update the value to Yes if the Mx is from or has Store(s) in Puerto Rico</inlineHelpText>
+    <label>Has Puerto Rico Location(s)?</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No</valueSetName>
+    </valueSet>
+</CustomField>

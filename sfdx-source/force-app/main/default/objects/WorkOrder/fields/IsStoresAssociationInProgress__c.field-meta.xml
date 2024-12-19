@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsStoresAssociationInProgress__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-3711: It is used to check whether the stores association is in progress for parent Work Order in order to display the banner message.</description>
+    <externalId>false</externalId>
+    <label>IsStoreAssociationInProgress</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

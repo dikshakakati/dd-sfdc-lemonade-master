@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Step_Sequence__c</fullName>
+    <description>LEM-1061: Execution Order of controlling WorkStep.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Dependee_Work_Step__r.Work_Step_Sequence__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Work Step Sequence</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

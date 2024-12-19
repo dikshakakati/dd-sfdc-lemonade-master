@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fulfillment_Fee_Validation__c</fullName>
+    <description>LEM-13626: This field is used to check appropriate range for minimum and maximum delivery distance.</description>
+    <externalId>false</externalId>
+    <formula>AND(
+  (SBQQ__ProductCode__c =  $Label.Fulfillment_Fee_ProductCode),
+   NOT(SBQQ__Existing__c), 
+  IF(
+    OR(
+      AND(
+        NOT(ISBLANK(Max_Delivery_Distance__c)),
+        ISBLANK(Min_Delivery_Distance__c)
+      ),
+      AND(
+        NOT(ISBLANK(Min_Delivery_Distance__c)),
+        ISBLANK(Max_Delivery_Distance__c)
+      ),
+      AND(
+        NOT(ISBLANK(Min_Delivery_Distance__c)),
+        OR(
+          Min_Delivery_Distance__c &lt; 100,
+          Min_Delivery_Distance__c &gt; VALUE($Label.Delivery_Distance_Value),
+          Min_Delivery_Distance__c &gt; Max_Delivery_Distance__c - 100,
+          Max_Delivery_Distance__c &gt; VALUE($Label.Delivery_Distance_Value)
+        )
+      )
+    ),
+    True,
+    False
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fulfillment Fee Validation</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

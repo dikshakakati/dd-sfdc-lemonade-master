@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Lost_Reason_Additional_Notes</fullName>
+    <active>true</active>
+    <description>LEM-143: This validation rule is to validate the Lost Reason Additional Notes field when Lost Reason field is set to Product / Feature Blockers.
+LEM-108: This validation rule incorporated with bypass framework.
+LEM-420: Including Stalled Stage</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  OR(
+    AND(
+      OR(
+        TEXT(Lost_Reason__c) = $Label.Product_Feature_Blocker_Value,
+        TEXT(StageName) = $Label.Opportunity_Stage_Stalled
+      ),
+      ISBLANK(Lost_Reason_Additional_Notes__c)
+    ),
+      AND(
+        TEXT(PRIORVALUE(StageName)) = $Label.Opportunity_Stage_Stalled,
+        TEXT(StageName) = $Label.Closed_Lost_Stage_Value,
+        NOT(ISCHANGED(Lost_Reason_Additional_Notes__c))
+      )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Lost_Reason_Additional_Notes__c</errorDisplayField>
+    <errorMessage>Please update the Lost / Stalled Reason Additional Notes before moving the opportunity to Stalled or Closed Lost</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Location_Activation__c</fullName>
+    <description>LEM-14395: Custom/Unique Terms - Attributes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the % of Mx Locations activated and live on the DD platform</inlineHelpText>
+    <label>Mx Location Activation %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

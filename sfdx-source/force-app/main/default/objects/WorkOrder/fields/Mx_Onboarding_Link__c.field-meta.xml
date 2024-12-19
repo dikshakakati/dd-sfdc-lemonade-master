@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Onboarding_Link__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-24784: It is used to associate the Mx Onboarding Link which resulted into the Work Order creation.</description>
+    <externalId>false</externalId>
+    <label>Mx Onboarding Link</label>
+    <referenceTo>Mx_Onboarding_Link__c</referenceTo>
+    <relationshipLabel>Work Orders</relationshipLabel>
+    <relationshipName>Work_Orders</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

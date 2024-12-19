@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Oppty_Stage_Franchisee_OptOut</fullName>
+    <active>true</active>
+    <description>LEM-2511: This validation rule is to validate the Franchisee opt-out period has
+     been elapsed before moving the Opportunity stage to Closed Won.</description>
+    <errorConditionFormula>AND(
+      NOT($Permission.Bypass_Opportunity_Validation_Rules),
+      NOT(TEXT(Deal_Type__c) = $Label.Opportunity_Lite),
+      TEXT(Type) = $Label.Opportunity_Type_Existing,
+      TEXT(FranchiseAmendmentProcess__c) = $Label.Franchise_Opt_Out,
+      ISCHANGED(StageName) ,
+      TEXT(StageName) = $Label.Opportunity_Stage_Closed_Won,
+      OR(
+        NOT(ISBLANK(Nintex_Signed_Date__c)),
+        Today() - DATEVALUE(CreatedDate) &lt;= Opt_In_Opt_Out_Response_Time__c + 3
+      )
+    )</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Please ensure that the allotted Franchisee opt-out period has elapsed before marking this opportunity as Closed Won.</errorMessage>
+</ValidationRule>

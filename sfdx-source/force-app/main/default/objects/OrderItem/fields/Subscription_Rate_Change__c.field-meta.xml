@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subscription_Rate_Change__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-13931 Associated Subscription Rate Change</description>
+    <externalId>false</externalId>
+    <label>Subscription Rate Change</label>
+    <referenceTo>Subscription_Rate_Change__c</referenceTo>
+    <relationshipLabel>Order Products</relationshipLabel>
+    <relationshipName>Order_Products</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,154 @@
+<template>
+  <div lwc:if={contactDetails}>
+    <div class={verticalPadding}>
+      <div>
+        <!-- Instructions -->
+        <p class="option-text">{customInstructions}</p>
+
+        <!-- Contact Search Lookup -->
+        <div
+          class="slds-p-vertical_medium slds-grid"
+          if:false={hideLookupSearchPrivate}
+        >
+          <div class="slds-col slds-size_8-of-12">
+            <c-lookup-search
+              label="Select Contact"
+              selected-icon-name="standard:contact"
+              object-label={contactDetails.label}
+              object-api-name="Contact"
+              primary-field-to-search="Name"
+              secondary-field="Email"
+              fields-to-query={contactDetails.fieldsToQuery}
+              default-selection={contactDetails.updatedContactData}
+              onvalueselected={handleSelectionOfExistingContact}
+              onvalueremoved={handleRemovalOfExistingContact}
+            >
+            </c-lookup-search>
+          </div>
+          <div
+            class="slds-col slds-size_4-of-12 slds-align-bottom slds-p-left_small"
+          >
+            <a onclick={toggleShowLookupSearch}
+              >Create a new Contact / {contactDetails.label}</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Error messages, if any -->
+      <template if:true={errors}>
+        <div class="slds-text-color_error slds-m-top_medium">
+          <strong>Please fix the following errors:</strong>
+          <ul class="slds-list_dotted">
+            <template for:each={errors} for:item="thisError">
+              <li key={thisError}>{thisError}</li>
+            </template>
+          </ul>
+        </div>
+      </template>
+    </div>
+
+    <!-- The main form and its input fields -->
+    <template if:false={hideCreateFormPrivate}>
+      <template if:false={showCreateFormOnlyPrivate}>
+        <div
+          class="slds-p-vertical_medium slds-grid"
+          if:true={hideLookupSearchPrivate}
+        >
+          <div
+            class="slds-col slds-size_8-of-12"
+            if:false={showCreateFormOnlyPrivate}
+          >
+            <p class="option-text">
+              Please enter the details for the {contactDetails.label} below.
+            </p>
+          </div>
+          <div
+            class="slds-col slds-size_4-of-12 slds-align-bottom slds-p-left_small"
+          >
+            <a onclick={toggleShowLookupSearch}
+              >Search for an existing Contact instead</a
+            >
+          </div>
+        </div>
+      </template>
+
+      <div class="slds-p-bottom_medium">
+        <lightning-record-edit-form
+          object-api-name="Contact"
+          onsubmit={handleSubmit}
+          onsuccess={handleSuccess}
+          onerror={handleError}
+        >
+          <lightning-layout multiple-rows="true">
+            <lightning-layout-item size={layoutColumnWidth}>
+              <template for:each={leftFields} for:item="field">
+                <lightning-input-field
+                  key={field.name}
+                  field-name={field.name}
+                  data-field={field.name}
+                  required={field.required}
+                  variant="label-stacked"
+                  onchange={handleEvaluateCompletion}
+                >
+                </lightning-input-field>
+              </template>
+            </lightning-layout-item>
+
+            <template if:true={useTwoColumnLayout}>
+              <lightning-layout-item size={layoutColumnWidth}>
+                <template for:each={rightFields} for:item="field">
+                  <!-- Tooltip container -->
+                  <div
+                    class="slds-p-around_small"
+                    key={field.name}
+                    if:true={field.helpText}
+                    style="
+                      font-style: italic;
+                      font-size: 0.75em;
+                      margin-bottom: -1em;
+                    "
+                  >
+                    <lightning-icon
+                      icon-name="utility:info"
+                      size="xx-small"
+                      alternative-text={field.helpText}
+                      title="Help"
+                      class="small-tooltip-icon"
+                    ></lightning-icon>
+                    <span> &nbsp; {field.helpText} </span>
+                  </div>
+
+                  <div
+                    key={field.name}
+                    if:true={field.name}
+                    class="field-container"
+                  >
+                    <!-- Input Field -->
+                    <lightning-input-field
+                      field-name={field.name}
+                      data-field={field.name}
+                      variant="label-stacked"
+                      required={field.required}
+                      onchange={handleEvaluateCompletion}
+                    ></lightning-input-field>
+                  </div>
+                </template>
+              </lightning-layout-item>
+            </template>
+          </lightning-layout>
+
+          <div class="slds-p-bottom_medium">
+            <lightning-button
+              variant="brand"
+              disabled={disableButton}
+              type="submit"
+              name="save"
+              label="Save & Continue"
+            ></lightning-button>
+          </div>
+        </lightning-record-edit-form>
+      </div>
+    </template>
+  </div>
+</template>

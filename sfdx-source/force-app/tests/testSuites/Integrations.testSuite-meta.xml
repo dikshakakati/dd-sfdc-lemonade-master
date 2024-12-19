@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>AQS_QuoteExtControllerTest</testClassName>
+    <testClassName>AccountRelationExpirationIntegrationTest</testClassName>
+    <testClassName>AccountRelationshipsIntegrationTest</testClassName>
+    <testClassName>AttachmentsIntegrationTest</testClassName>
+    <testClassName>BatchErrorEventIntergrationTest</testClassName>
+    <testClassName>CPQTestDataFactory</testClassName>
+    <testClassName>CampaignMembersServiceImplIntTest</testClassName>
+    <testClassName>NdaExpirationBatchIntegrationTest</testClassName>
+    <testClassName>NotifierEventsIntegrationTest</testClassName>
+    <testClassName>OpportunitiesIntegrationTest</testClassName>
+    <testClassName>OpportunityChangeEventsIntegrationTest</testClassName>
+    <testClassName>OrderItemChangeEventsTest</testClassName>
+    <testClassName>TestDataFactory</testClassName>
+    <testClassName>UpdateAccTopDownAutomationIntgrBatchTest</testClassName>
+    <testClassName>WorkOrderChangeEventsTest</testClassName>
+    <testClassName>WorkPlanMapperIntegrationTest</testClassName>
+    <testClassName>WorkPlansMapperSrvcImplIntegrationTest</testClassName>
+</ApexTestSuite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14727: It stores Mx&apos;s website URL on Account.</description>
+    <inlineHelpText>Displays the Mx&apos;s website.</inlineHelpText>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+</CustomField>

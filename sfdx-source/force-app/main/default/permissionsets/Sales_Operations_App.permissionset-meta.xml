@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>Sales_Operations</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>LEM-1005: It provides access to Sales Operations Application.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Operations - App</label>
+</PermissionSet>

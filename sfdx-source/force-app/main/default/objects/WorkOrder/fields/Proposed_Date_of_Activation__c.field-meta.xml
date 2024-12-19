@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Date_of_Activation__c</fullName>
+    <description>LEM-813: Onboarding event proposed date of activation.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Onboarding event proposed date of activation</inlineHelpText>
+    <label>Proposed Date of Activation</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Date</type>
+</CustomField>

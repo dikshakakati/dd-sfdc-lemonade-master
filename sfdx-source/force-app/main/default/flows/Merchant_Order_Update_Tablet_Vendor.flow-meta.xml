@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>LEM-13490: It is used to assign vendor and product to Merchant Order.</description>
+        <name>Assign_OCUS_Vendor</name>
+        <label>Assign OCUS Vendor</label>
+        <locationX>578</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Vendor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>OCUS</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Product_Bundle__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_OCUS_Product_Bundle.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Work_Step__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Work_Step.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-13490: It is used to assign vendor and product to Merchant Order.</description>
+        <name>Assign_Snappr_Vendor</name>
+        <label>Assign Snappr Vendor</label>
+        <locationX>842</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Vendor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Snappr</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Product_Bundle__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Snappr_Product_Bundle.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Work_Step__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Work_Step_For_Snappr_Order.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-21576: Assign WorkStep and Product Bundle Record Ids.</description>
+        <name>Assign_WorkStep_and_Product_Bundle_Record_Ids</name>
+        <label>Assign WorkStep and Product Bundle Record Ids</label>
+        <locationX>50</locationX>
+        <locationY>719</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Product_Bundle__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Product_Bundle_Record_Id.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Work_Step__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Work_Step_For_Selected_Vendor_In_Bulk_Request.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-13485: It is assign the product bundle of Mx Order to the Mx Order Product Bundle Id.</description>
+        <name>asssignProductBundleId</name>
+        <label>asssignProductBundleId</label>
+        <locationX>1370</locationX>
+        <locationY>719</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Product_Bundle__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getMxOrderProductBundle.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-13505 : Based on decision outcome updating Vendor field with Blank value</description>
+        <name>Update_Vendor_Field_value_with_Blank</name>
+        <label>Update Vendor Field value with Blank</label>
+        <locationX>2426</locationX>
+        <locationY>719</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Vendor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Failed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Order_Status_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Vendor cannot be determined</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-13505 : Based on decision outcome updating Vendor field with Denali</description>
+        <name>Update_Vendor_Field_With_Denali</name>
+        <label>Update Vendor Field With Denali</label>
+        <locationX>2162</locationX>
+        <locationY>719</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Vendor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Denali</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-13505 : Based on decision outcome updating Vendor field with Social Mobile</description>
+        <name>Update_vendor_fields_with_Social_Mobile</name>
+        <label>Update vendor fields with Social Mobile</label>
+        <locationX>1898</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Vendor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Social Mobile</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>LEM-13490: It is used to assign photoshoot vendors.</description>
+        <name>Assign_Photoshoot_Vendor</name>
+        <label>Assign_Photoshoot_Vendor</label>
+        <locationX>842</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>No Assignment</defaultConnectorLabel>
+        <rules>
+            <name>OCUS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OCUS_BillingCountryCode_Criteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Work_Step</targetReference>
+            </connector>
+            <label>OCUS</label>
+        </rules>
+        <rules>
+            <name>Snappr</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Snappr_BillingCountryCode_Criteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Work_Step_For_Snappr_Order</targetReference>
+            </connector>
+            <label>Snappr</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13485: It is used to check the type of Merchant Order that got created.</description>
+        <name>Check_Merchant_Order_Type</name>
+        <label>Check Merchant Order Type</label>
+        <locationX>1469</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Social_Mobile_Vendor</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Tablet</defaultConnectorLabel>
+        <rules>
+            <name>Photoshoot_Type</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Photoshoot</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Photoshoot_Vendor</targetReference>
+            </connector>
+            <label>Photoshoot Type</label>
+        </rules>
+        <rules>
+            <name>Marketing_Kit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Marketing Kit</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getMxOrderProductBundle</targetReference>
+            </connector>
+            <label>Marketing Kit</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13485: It is used to check the Mx Order Product Bundle contains records</description>
+        <name>checkForMxOrderOnProductBundle</name>
+        <label>checkForMxOrderOnProductBundle</label>
+        <locationX>1502</locationX>
+        <locationY>611</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getMxOrderProductBundle</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_Bundle__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>asssignProductBundleId</targetReference>
+            </connector>
+            <label>Not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13505 - Assign Vendor With Denali</description>
+        <name>DenaliVendorAssignment</name>
+        <label>Denali Vendor</label>
+        <locationX>2294</locationX>
+        <locationY>611</locationY>
+        <defaultConnector>
+            <targetReference>Update_Vendor_Field_value_with_Blank</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Assign_With_Denali</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsDenaliVendor</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Vendor_Field_With_Denali</targetReference>
+            </connector>
+            <label>Assign With Denali</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-21576 : Check Request Type</description>
+        <name>Request_Type</name>
+        <label>Request Type</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PhotoShoot</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Photoshoot</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Work_Step_For_Selected_Vendor_In_Bulk_Request</targetReference>
+            </connector>
+            <label>PhotoShoot</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13505- Validate Social Mobile Vendor</description>
+        <name>Social_Mobile_Vendor</name>
+        <label>Social Mobile Vendor</label>
+        <locationX>2096</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>DenaliVendorAssignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Denali Vendor</defaultConnectorLabel>
+        <rules>
+            <name>AssignvendorWithSocialMobile</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsSocialMobileVendor</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_vendor_fields_with_Social_Mobile</targetReference>
+            </connector>
+            <label>Social Mobile Vendor</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13485 :  This decision box does check whether system need to bypass Auto routing or not.</description>
+        <name>Validate_Auto_Vendor_Routing_Skip</name>
+        <label>Validate Auto Vendor Routing Skip</label>
+        <locationX>825</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Check_Merchant_Order_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Skipped</defaultConnectorLabel>
+        <rules>
+            <name>Skipped</name>
+            <conditionLogic>( 1 OR 2 ) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Label.Skip_Auto_Vendor_Routing</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.Work_Order__r.Creation_Source__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Label.Skip_Auto_Vendor_Routing</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$User.Email</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Vendor__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Request_Type</targetReference>
+            </connector>
+            <label>Skipped</label>
+        </rules>
+    </decisions>
+    <description>LEM-13505 : Assign Tablet Vendor based on Country, Deck Rank, and Printer Requirements
+Update vendor__c field value either Denali or Social Mobile.
+Update Criteria
+AUS/NZ - Vendor: Denali
+CA - Vendor: Social Mobile
+US
+	Denali
+		Deck Rank IN (Ace, King)
+		Order Protocol contains Tablet and Printer
+	Social Mobile
+		Deck Rank IN (QJJU) OR
+		Deck Rank IN (Ace, King) AND Product contains only Tablet</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-13511 : Validate Denali Vendor Routing</description>
+        <name>IsDenaliVendor</name>
+        <dataType>Boolean</dataType>
+        <expression>if (
+CONTAINS({!$Record.Product_Bundle__r.Name}, &quot;Printer&quot;) &amp;&amp; CONTAINS($Label.Denali_Routing_Country_Code,TEXT({!$Record.Account__r.BillingCountryCode})),
+true,
+  if(TEXT({!$Record.Account__r.BillingCountryCode})= &apos;AU&apos; || TEXT({!$Record.Account__r.BillingCountryCode})= &apos;NZ&apos;, true,
+  if(TEXT({!$Record.Account__r.BillingCountryCode})= &apos;US&apos; &amp;&amp; (TEXT({!$Record.Account__r.Segment__c})= &apos;Enterprise&apos; || TEXT({!$Record.Account__r.Segment__c})=&apos;Mid-Market&apos;), true,
+  if(TEXT({!$Record.Account__r.BillingCountryCode})= &apos;US&apos;  &amp;&amp; TEXT({!$Record.Account__r.Segment__c})= &apos;SMB&apos; &amp;&amp; (TEXT({!$Record.Account__r.Deck_Rank__c})= &apos;Ace&apos; || TEXT({!$Record.Account__r.Deck_Rank__c})= &apos;King&apos;), true,false)
+)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-13485: It is used to get the Product Bundle should be derived based the Account’s location and language.</description>
+        <name>IsOvertureBox</name>
+        <dataType>String</dataType>
+        <expression>IF(
+        $Record.Account__r.BillingState = &quot;Quebec&quot; ||
+        (
+            $Record.Account__r.BillingCountry = &quot;Canada&quot; &amp;&amp;
+            TEXT($Record.Account__r.Preferred_Language__c) = &quot;French&quot;
+        ),
+        $Label.Overture_Box_Canada_French,
+        IF(
+            $Record.Account__r.BillingCountry = &quot;Canada&quot; &amp;&amp;
+            OR(
+                    TEXT($Record.Account__r.Preferred_Language__c) = &quot;English&quot;,
+                    ISNULL(TEXT($Record.Account__r.Preferred_Language__c)),
+                    ISBLANK(TEXT($Record.Account__r.Preferred_Language__c))
+                ),
+            $Label.Overture_Box_Canada_English,
+            IF(
+                $Record.Account__r.BillingCountry = &quot;United States&quot;,
+                $Label.Overture_Box_US,
+                IF(
+                    $Record.Account__r.BillingCountry = &quot;Australia&quot;,
+                    $Label.Overture_Box_Australia,
+                    IF(
+                        $Record.Account__r.BillingCountry = &quot;New Zealand&quot;,
+                        $Label.Overture_Box_New_Zealand,
+                        NULL
+                    )
+                )
+            )
+        )
+    )</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-13511 : This function to check Social Mobile vendor</description>
+        <name>IsSocialMobileVendor</name>
+        <dataType>Boolean</dataType>
+        <expression>if (
+  NOT CONTAINS({!$Record.Product_Bundle__r.Name}, &quot;Printer&quot;),
+  if (TEXT({!$Record.Account__r.BillingCountryCode}) = &apos;CA&apos;, true,
+    (
+      if (TEXT({!$Record.Account__r.BillingCountryCode}) = &apos;US&apos;,
+        if (Contains({!$Label.Social_Mobile_Billing_Country_State_Code}, Text({!$Record.Account__r.BillingStateCode})) || Contains({!$Label.Social_Mobile_Routing_Deck},
+            Text({!$Record.Account__r.Deck_Rank__c})) || Text({!$Record.Account__r.Deck_Rank__c}) == null , true, false), false)
+    )
+  ), false
+)</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-13490: It is used to resolve criteria for OCUS Vendor assignment.</description>
+        <name>OCUS_BillingCountryCode_Criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+TEXT({!$Record.Merchant_Address__CountryCode__s}) = {!United_States_Country_Code},
+TEXT({!$Record.Merchant_Address__CountryCode__s}) = {!Canada_Country_Code},
+TEXT({!$Record.Merchant_Address__StateCode__s}) = {!Puerto_Rico_State_Code}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-21576: Get Product Bundle Name Based on Vendor Type</description>
+        <name>productBundleName</name>
+        <dataType>String</dataType>
+        <expression>IF(ISPICKVAL({!$Record.Vendor__c}, &apos;OCUS&apos;), {!$Label.Product_Bundle_For_OCUS},
+(IF(
+    ISPICKVAL({!$Record.Vendor__c},&apos;Snappr&apos;), {!$Label.Product_Bundle_For_Snappr},
+null)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-13490: It is used to evaluate criteria for Snappr assignment.</description>
+        <name>Snappr_BillingCountryCode_Criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+TEXT({!$Record.Merchant_Address__CountryCode__s})= {!Australia_Country_Code},
+TEXT({!$Record.Merchant_Address__CountryCode__s})= {!New_Zealand_Country_Code},
+TEXT({!$Record.Merchant_Address__CountryCode__s})= &apos;&apos;
+)</expression>
+    </formulas>
+    <interviewLabel>Merchant Order - Update Tablet Vendor {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Merchant Order - Update Tablet Vendor</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>LEM-13595: It is used to fetch OCUS Product Bundle.</description>
+        <name>Get_OCUS_Product_Bundle</name>
+        <label>Get OCUS Product Bundle</label>
+        <locationX>578</locationX>
+        <locationY>719</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_OCUS_Vendor</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>20 items + header</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Mx_Order_Product_Bundle__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-21576: Get Product Bundle Record Id</description>
+        <name>Get_Product_Bundle_Record_Id</name>
+        <label>Get Product Bundle Record Id</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_WorkStep_and_Product_Bundle_Record_Ids</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>productBundleName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Mx_Order_Product_Bundle__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-13595: It is used to get the Snappr related Product Bundle.</description>
+        <name>Get_Snappr_Product_Bundle</name>
+        <label>Get Snappr Product Bundle</label>
+        <locationX>842</locationX>
+        <locationY>719</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Snappr_Vendor</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>1.5 hour</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Mx_Order_Product_Bundle__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-13595: Stamp Work Step</description>
+        <name>Get_Work_Step</name>
+        <label>Get_Work_Step</label>
+        <locationX>578</locationX>
+        <locationY>611</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_OCUS_Product_Bundle</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WorkPlanId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Work_Plan__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Vendor Photoshoot</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>WorkStep</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-21576: Get Work Step For Selected Vendor In Bulk Request</description>
+        <name>Get_Work_Step_For_Selected_Vendor_In_Bulk_Request</name>
+        <label>Get Work Step For Selected Vendor In Bulk Request</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Product_Bundle_Record_Id</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WorkPlanId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Work_Plan__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Vendor Photoshoot</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>WorkStep</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-13595: Stamp Work Step</description>
+        <name>Get_Work_Step_For_Snappr_Order</name>
+        <label>Get_Work_Step_For_Snappr_Order</label>
+        <locationX>842</locationX>
+        <locationY>611</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Snappr_Product_Bundle</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WorkPlanId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Work_Plan__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Vendor Photoshoot</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>WorkStep</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-13485: It is used to get the Mx Order Product bundle based on the Name.</description>
+        <name>getMxOrderProductBundle</name>
+        <label>getMxOrderProductBundle</label>
+        <locationX>1502</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>checkForMxOrderOnProductBundle</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>IsOvertureBox</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Mx_Order_Product_Bundle__c</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>699</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Validate_Auto_Vendor_Routing_Skip</targetReference>
+        </connector>
+        <filterFormula>AND(
+            NOT({!$Permission.Bypass_Mx_Order_Flows}),
+            OR(
+                TEXT({!$Record.Type__c}) = {!$Label.Mx_Order_Type_Tablet},
+                TEXT({!$Record.Type__c}) = {!$Label.Mx_Order_Type_Photoshoot},
+                TEXT({!$Record.Type__c}) = {!$Label.Mx_Order_Type_Marketing_Kit}
+            )
+        )</filterFormula>
+        <object>MX_Order__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-13490: It is used to store the country code of Australia</description>
+        <name>Australia_Country_Code</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>AU</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : Stores Billing Country code for Printer</description>
+        <name>BillingCountryForPrinter</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>AUS,NZ,US,CAN</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13490: It is used to store the country code of Canada.</description>
+        <name>Canada_Country_Code</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>CA</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : AUS/NZ regardless of deck rank</description>
+        <name>DenaliCountryCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>AUS,NZ</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : Country code for Deck Rank code</description>
+        <name>DenaliDeckRankCountryCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>US</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : Country codes for Enterprise Segment</description>
+        <name>DenaliEnterPriseSegmentCountry</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>US</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13490: It is used to store the country code of New Zealand</description>
+        <name>New_Zealand_Country_Code</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>NZ</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Peurto_Rico_Florida</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Florida, Puerto Rico</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : Check Printer in order protocol</description>
+        <name>Printer</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Printer</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13490: It is used to store the state code of Peurto Rico.</description>
+        <name>Puerto_Rico_State_Code</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>PR</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13490: It is used to store the Product from Snappr</description>
+        <name>Snappr_Product</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>1.5 hour</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : State Codes for Social media</description>
+        <name>SocialMediaStateCodes</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>FL,PR</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : Stores country code for Non printer request</description>
+        <name>SocialMobileCountryCodeForNonPrinter</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>CAN</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : Stores deck rank for Social Mobile</description>
+        <name>SocialMobileDeckRank</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Queen, Jack, Joker, Unranked</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13505 : Deck Rank For Tablet</description>
+        <name>TabletDeckRank</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Ace &amp; King</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13490: It is used to store the Country Code of United States</description>
+        <name>United_States_Country_Code</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>US</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-21576 : Set Vendor Name</description>
+        <name>vendorName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

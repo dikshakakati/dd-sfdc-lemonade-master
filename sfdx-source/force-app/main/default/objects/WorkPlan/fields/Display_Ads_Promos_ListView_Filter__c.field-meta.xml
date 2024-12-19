@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Ads_Promos_ListView_Filter__c</fullName>
+    <description>LEM-13560: It is used to determine if a work plan should be displayed for a particular list view.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND(
+    Segment__c == $Label.AccountSegmentSMB,
+    OR(
+       TEXT(Status__c) != $Label.Work_Order_Status_Dead, 
+       TEXT(Status__c) != $Label.Status_Complete
+    ),
+    OR(
+      Deck_Rank__c != $Label.DeckRankKingOfSpades,
+      Deck_Rank__c != $Label.DeckRankAceOfSpades
+    ),
+     Work_Order_Type__c == $Label.Ads_Promos
+  ),
+  TRUE,
+  FALSE
+)</formula>
+    <label>Display Ads Promos ListView Filter</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requester__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-1212: Indicated the user who requested bulk upload case.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The user requesting the case be completed.</inlineHelpText>
+    <label>Requester</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Cases</relationshipName>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

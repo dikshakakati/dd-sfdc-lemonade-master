@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <description>LEM-23241: It is used to display success message on creation of record.</description>
+        <name>SuccessMessage</name>
+        <label>SuccessMessage</label>
+        <locationX>819</locationX>
+        <locationY>374</locationY>
+        <actionName>c:ShowToastMessageOnSaveFlowScreen</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>SuccessTitleString</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>SuccessMessageOnCreationOfBrand</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <elementReference>SuccessTitleString</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>enableRefreshView</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>c:ShowToastMessageOnSaveFlowScreen</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <constants>
+        <description>LEM-23241: It stores success message to display when creation of Brand succeeds.</description>
+        <name>SuccessMessageOnCreationOfBrand</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Brand creation is successful.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>LEM-23241: It store title string Success.</description>
+        <name>SuccessTitleString</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Success</stringValue>
+        </value>
+    </constants>
+    <description>LEM-23241: It is used to create initial Brand for a Business Account. The flow runs in system mode as the Sales Rep do not have create permission on Brand but still they should be able to create initial Brand on the Business account using this flow.</description>
+    <dynamicChoiceSets>
+        <description>LEM-23241: It store the picklist values for Brand Type field.</description>
+        <name>BrandTypeChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Brand_Type__c</picklistField>
+        <picklistObject>Brand__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>LEM-23241: It store the picklist values for Price Range field.</description>
+        <name>PriceRangeChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Price_Range__c</picklistField>
+        <picklistObject>Brand__c</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <interviewLabel>Create Initial Brand {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Initial Brand</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>LEM-23241: It is used to create Brand record with details provide by user.</description>
+        <name>Create_Brand</name>
+        <label>Create Brand</label>
+        <locationX>819</locationX>
+        <locationY>222</locationY>
+        <assignRecordIdToReference>BrandId</assignRecordIdToReference>
+        <connector>
+            <targetReference>SuccessMessage</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorScreen</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Brand_Owner__c</field>
+            <value>
+                <elementReference>BrandOwner.recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Brand_Type__c</field>
+            <value>
+                <elementReference>BrandType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price_Range__c</field>
+            <value>
+                <elementReference>PriceRange</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Brand__c</object>
+    </recordCreates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <description>LEM-23241: It is used to display field to the user.</description>
+        <name>Create_Brand_Screen</name>
+        <label>Create Brand Screen</label>
+        <locationX>632</locationX>
+        <locationY>222</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Brand</targetReference>
+        </connector>
+        <fields>
+            <name>Create_Brand_Screen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Create_Brand_Screen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>BrandOwner</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>AccountId</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Brand Owner</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Opportunity</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>recordId.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>Name</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Name</elementReference>
+                    </defaultValue>
+                    <fieldText>Brand Name</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isReadOnly>
+                        <booleanValue>false</booleanValue>
+                    </isReadOnly>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Create_Brand_Screen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>PriceRange</name>
+                    <choiceReferences>PriceRangeChoiceSet</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <stringValue>$$</stringValue>
+                    </defaultValue>
+                    <fieldText>Price Range</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>BrandType</name>
+                    <choiceReferences>BrandTypeChoiceSet</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Brand Type</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-23241: It is used to display any error message if error encountered while creating brand.</description>
+        <name>ErrorScreen</name>
+        <label>ErrorScreen</label>
+        <locationX>992</locationX>
+        <locationY>222</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorTitle</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Error&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Error</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(176, 46, 46);&quot;&gt;{!$Label.Brand_Creation_Failure_Error_Message}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>506</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Create_Brand_Screen</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-23241: It is used to store newly created Brand Id.</description>
+        <name>BrandId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-23241: It stores the current Business Account record.</description>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+</Flow>

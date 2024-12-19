@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family__c</fullName>
+    <description>LEM-808, LEM-18931: This field is to indicate the Product Family of a new Campaign Product.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the &apos;product family&apos;, or product category, under which the campaign product falls.</inlineHelpText>
+    <label>Product Family</label>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ads</fullName>
+                <default>false</default>
+                <label>Ads</label>
+            </value>
+            <value>
+                <fullName>Alcohol</fullName>
+                <default>false</default>
+                <label>Alcohol</label>
+            </value>
+            <value>
+                <fullName>Cash on Delivery</fullName>
+                <default>false</default>
+                <label>Cash on Delivery</label>
+            </value>
+            <value>
+                <fullName>DashPass</fullName>
+                <default>false</default>
+                <label>DashPass</label>
+            </value>
+            <value>
+                <fullName>Drive</fullName>
+                <default>false</default>
+                <label>Drive</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Marketplace</fullName>
+                <default>false</default>
+                <label>Marketplace</label>
+            </value>
+            <value>
+                <fullName>New Business</fullName>
+                <default>false</default>
+                <label>New Business</label>
+            </value>
+            <value>
+                <fullName>Operations</fullName>
+                <default>false</default>
+                <label>Operations</label>
+            </value>
+            <value>
+                <fullName>Pick Up</fullName>
+                <default>false</default>
+                <label>Pick Up</label>
+            </value>
+            <value>
+                <fullName>Platform</fullName>
+                <default>false</default>
+                <label>Platform</label>
+            </value>
+            <value>
+                <fullName>Promos</fullName>
+                <default>false</default>
+                <label>Promos</label>
+            </value>
+            <value>
+                <fullName>Regulatory</fullName>
+                <default>false</default>
+                <label>Regulatory</label>
+            </value>
+            <value>
+                <fullName>Storefront</fullName>
+                <default>false</default>
+                <label>Storefront</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Weblinks</fullName>
+                <default>false</default>
+                <label>Weblinks</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

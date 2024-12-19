@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Store_Count_for_SMB_Opportunity</fullName>
+    <active>true</active>
+    <description>LEM-14670: It validates estimated number of stores must be at least one in order to create an SMB Opportunity.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  NOT($Permission.Allow_Edit_Access_of_Mx_Portal_Opportunity),
+  TEXT(Account.Segment__c) = $Label.AccountSegmentSMB,
+  OR(
+    ISBLANK(Estimated_Number_of_Stores__c),
+    Estimated_Number_of_Stores__c &lt; 1
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Estimated_Number_of_Stores__c</errorDisplayField>
+    <errorMessage>Estimated number of stores must be at least 1 in order to create an Opportunity</errorMessage>
+</ValidationRule>

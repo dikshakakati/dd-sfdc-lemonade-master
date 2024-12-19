@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DD_Budget_Name__c</fullName>
+    <description>LEM-2983: Captures the budget name funding the campaign related to the Brief.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Note that the business campaign name is equivalent to the budget name that will
+        fund this campaign. It must match a business campaign name in the Promo Budget &amp;
+        Forecast sheet. Note that this is common for New Vertical campaigns, though may also apply
+        to Rx campaigns, etc.</inlineHelpText>
+    <label>DD Funded Budget Name (Given by Finance)</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

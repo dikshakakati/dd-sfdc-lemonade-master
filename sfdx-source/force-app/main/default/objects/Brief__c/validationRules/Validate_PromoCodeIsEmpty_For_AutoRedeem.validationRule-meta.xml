@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_PromoCodeIsEmpty_For_AutoRedeem</fullName>
+    <active>false</active>
+    <description>LEM-2983: Validates if the Custom Promo Code is not populated for Auto-Redeem type Briefs.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Brief_Validation_Rules),
+    TEXT(Redemption_Type__c)=$Label.Auto_Redeem_Redemption_Type,
+    NOT(
+        ISBLANK(Custom_Promo_Code__c)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Custom_Promo_Code__c</errorDisplayField>
+    <errorMessage>If Auto-Redemption is selected, this field cannot be populated.</errorMessage>
+</ValidationRule>

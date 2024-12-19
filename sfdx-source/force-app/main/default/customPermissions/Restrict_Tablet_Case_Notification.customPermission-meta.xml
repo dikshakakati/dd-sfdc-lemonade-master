@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4400: It restricts Salesforce from sending Tablet Case notifications to Figment when Work Step status is updated through MuleSoft integration.</description>
+    <isLicensed>false</isLicensed>
+    <label>Restrict Tablet Case Notification</label>
+</CustomPermission>

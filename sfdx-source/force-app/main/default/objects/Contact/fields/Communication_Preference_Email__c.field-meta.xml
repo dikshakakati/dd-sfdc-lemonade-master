@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Communication_Preference_Email__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-16624: It stores Personalized URL for Mx to indicate communication preferences.</description>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(Email), &apos;&apos;, HYPERLINK(
+$CustomMetadata.Static_Configurations__mdt.Email_Preference_Base_URL.Configuration_Value__c  +
+$Label.Communication_Preference_License_ID +  $CustomMetadata.Static_Configurations__mdt.Email_Preferences_LicenseId.Configuration_Value__c  +
+$Label.CommunicationPreferenceEncVal +
+Email_Cassie_ID__c +
+$Label.CommunicationPreferenceGdId +  $CustomMetadata.Static_Configurations__mdt.Email_Preferences_GD_Id.Configuration_Value__c  +
+$Label.CommunicationPreferenceSourceCode +
+$CustomMetadata.Static_Configurations__mdt.Email_Preferences_Source_Code.Configuration_Value__c  +
+$Label.CommunicationPreferenceResponseChannel +
+$CustomMetadata.Static_Configurations__mdt.Email_Preferences_Response_Channel.Configuration_Value__c  +
+$Label.CommunicationPreferenceLanguageCode,
+$Label.CommunicationPreferenceHyperlinkText,
+&quot;_blank&quot;
+))</formula>
+    <inlineHelpText>Personalized URL for Mx to indicate communication preferences.</inlineHelpText>
+    <label>Communication Preference (Email)</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,17 @@
+<!--
+@author Sanidhya Jain
+@date Sept 2024
+@decription Container component for the MXP Case Reporting.
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:attribute name="options" type="List"
+        default="[{'label':'Figment Support Report','developerName':'Figment_Support_Report','active':true}]"/>
+    <lightning:workspaceAPI aura:id="workspace" />
+
+    <c:lwcDdGridReport
+        reportOptions="{!v.options}"
+        aura:id="lwcDdGridReport"
+        onreportactivated="{!c.handleReportActivation}"
+        onnavigatetorecord="{!c.handleNavigateToRecord}"
+    ></c:lwcDdGridReport>
+</aura:component>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Menu_Update__c</fullName>
+    <description>LEM-1683: The type of update(s) needed for Post-Sales menu update work order.</description>
+    <externalId>false</externalId>
+    <label>Type of Menu Update</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Add Content</fullName>
+                <default>false</default>
+                <label>Add Content</label>
+            </value>
+            <value>
+                <fullName>Remove Content</fullName>
+                <default>false</default>
+                <label>Remove Content</label>
+            </value>
+            <value>
+                <fullName>Edit Existing Content</fullName>
+                <default>false</default>
+                <label>Edit Existing Content</label>
+            </value>
+            <value>
+                <fullName>Pricing Only</fullName>
+                <default>false</default>
+                <label>Pricing Only</label>
+            </value>
+            <value>
+                <fullName>Nimda Update(s)</fullName>
+                <default>false</default>
+                <label>Nimda Update(s)</label>
+            </value>
+            <value>
+                <fullName>POS Menu Refresh</fullName>
+                <default>false</default>
+                <label>POS Menu Refresh</label>
+            </value>
+            <value>
+                <fullName>POS Menu Repull</fullName>
+                <default>false</default>
+                <label>POS Menu Repull</label>
+            </value>
+            <value>
+                <fullName>Add/Remove Bike Friendly</fullName>
+                <default>false</default>
+                <label>Add/Remove Bike Friendly</label>
+            </value>
+            <value>
+                <fullName>Pickup Pricing Only</fullName>
+                <default>false</default>
+                <label>Pickup Pricing Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

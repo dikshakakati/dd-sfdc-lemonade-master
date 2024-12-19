@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EditLinesFieldSetName__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+        Segment__c = $Label.AccountSegmentSMB, /*LEM-13379 - Added this condition to display the fields for SMB*/
+          &apos;SMB_Quote_Line_Editor_Visible_Fields&apos;,
+          IF(
+            AND(
+              TEXT(SBQQ__Type__c) = &apos;Amendment&apos;,
+              ISPICKVAL(Is_this_for_Ads_Promos__c, &apos;Yes&apos;)
+            ),
+            &apos;Ads_Promos_Amendment&apos;,
+            IF(
+        TEXT(SBQQ__Type__c) = &apos;Amendment&apos;,
+              &apos;Enterprise_Amendment&apos;,
+              IF(
+                AND(
+                  TEXT(SBQQ__Type__c) = &apos;Quote&apos;,
+                  ISPICKVAL(Is_this_for_Ads_Promos__c, &apos;Yes&apos;)
+                ),
+                &apos;Ads_Promos&apos;,
+                &apos;Enterprise&apos;
+              )
+            )
+          )
+        )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quote Line Field Set</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

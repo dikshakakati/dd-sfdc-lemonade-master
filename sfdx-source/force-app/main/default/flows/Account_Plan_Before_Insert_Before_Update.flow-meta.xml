@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <description>LEM-15223: It is used to assign values to the Account Plan Name field.</description>
+        <name>Populate_Account_Plan_Name</name>
+        <label>Populate Account Plan Name</label>
+        <locationX>182</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>accountPlanName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_for_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-15223: It is used to populate start date text field for duplicate check.</description>
+        <name>Populate_Start_Date_Text_field_for_duplicate_check</name>
+        <label>Populate Start Date Text field for duplicate check</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Account_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Populate_Account_Plan_Name</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>LEM:15222: It is used to check the status of the Account Plans.</description>
+        <name>Check_for_Status</name>
+        <label>Check for Status</label>
+        <locationX>314</locationX>
+        <locationY>695</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_is_Inactive</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Status__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inactive</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_End_Date</targetReference>
+            </connector>
+            <label>Status is Inactive</label>
+        </rules>
+        <rules>
+            <name>Status_is_Active</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inactive</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_End_date</targetReference>
+            </connector>
+            <label>Status is Active</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-15223: To check if Before Insert</description>
+        <name>Check_if_Before_Insert</name>
+        <label>Check if Before Insert</label>
+        <locationX>314</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Check_for_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_if_its_record_Before_Insert</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Start_Date_Text_field_for_duplicate_check</targetReference>
+            </connector>
+            <label>Check if its record Before Insert</label>
+        </rules>
+    </decisions>
+    <description>LEM-15222: It is used to populate fields values on Account Plan.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-15223: It is used to store the name of the account plan.</description>
+        <name>accountPlanName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account__r.Name}+  &apos;: &apos; + {!currentQuarterYear}</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-15223: It is used to store the current date in text format.</description>
+        <name>currentDateTextFormat</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!currentDate})</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-15223: It is used to calculate the current quarter and year</description>
+        <name>currentQuarterYear</name>
+        <dataType>String</dataType>
+        <expression>CASE(CEILING(MONTH(TODAY()) / 3),
+ 1, &quot;Q1 &quot; &amp; RIGHT(TEXT(YEAR(TODAY())),2),
+2, &quot;Q2 &quot; &amp;RIGHT(TEXT(YEAR(TODAY())),2),
+3, &quot;Q3 &quot; &amp; RIGHT(TEXT(YEAR(TODAY())),2),
+4, &quot;Q4 &quot; &amp; RIGHT(TEXT(YEAR(TODAY())),2),
+&quot; &quot;)</expression>
+    </formulas>
+    <interviewLabel>Account Plan - Before Insert Before Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Plan - Before Insert Before Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>LEM-15222: As status is active clear End date.</description>
+        <name>Clear_End_date</name>
+        <label>Clear End date</label>
+        <locationX>314</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>End_Date__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>LEM-15222: As status is Inactive populate End date.</description>
+        <name>Populate_End_Date</name>
+        <label>Populate End Date</label>
+        <locationX>50</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>End_Date__c</field>
+            <value>
+                <elementReference>currentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_if_Before_Insert</targetReference>
+        </connector>
+        <object>Account_Plan__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-15222: It is used to store Today&apos;s Date</description>
+        <name>currentDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDate</elementReference>
+        </value>
+    </variables>
+</Flow>

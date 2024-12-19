@@ -1,0 +1,17 @@
+<!--
+  @description       :
+  @author            : Soumya Dash
+  @group             :
+  @last modified on  : 08-07-2024
+  @last modified by  : rishab.goyal
+-->
+<template>
+    <div class="slds-box slds-box_x-small slds-text-heading_small slds-m-x_small doordashSectionHeader">{headerText}</div>
+    <div class="slds-var-p-around_medium">
+        <ul class="slds-list_dotted slds-list_vertical-space-medium">
+            <template for:each={formatedElligibilityMessages} for:item="message">
+                <li style="padding-block: 0.5rem;" key={message.id}>{message.message}</li>
+            </template>
+        </ul>
+    </div>
+</template>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-13518: SMB Vendor Post-Sales Rep Permission Group</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SMB Vendor Post-Sales Rep</label>
+    <mutingPermissionSets>SMB_Vendor_PostSales_Rep_Muted</mutingPermissionSets>
+    <permissionSets>Sales</permissionSets>
+    <permissionSets>SMB_Sales_App</permissionSets>
+    <permissionSets>HighVelocitySalesUser</permissionSets>
+    <permissionSets>Create_Public_Links_Access</permissionSets>
+    <permissionSets>Enable_VSP_Recommendations</permissionSets>
+    <permissionSets>Enable_Create_and_Customize_List_Views</permissionSets>
+    <permissionSets>Ironclad_Workflow_Launch</permissionSets>
+    <permissionSets>Manage_Stores</permissionSets>
+    <permissionSets>Remove_Stores</permissionSets>
+    <permissionSets>Allow_Account_Plan_Creation</permissionSets>
+    <permissionSets>Allow_Opportunity_Creation</permissionSets>
+    <permissionSets>Allow_Self_Owner_Opportunity_Transfer</permissionSets>
+    <permissionSets>force__SlackSalesCloud</permissionSets>
+    <permissionSets>Log_Access</permissionSets>
+    <permissionSets>Allow_Initial_Brand_Creation</permissionSets>
+    <permissionSets>Grid_Report_Framework</permissionSets>
+    <permissionSets>Allow_Netsuite_Restricted_Fields_Update</permissionSets>
+    <permissionSets>Allow_PA_Sync_With_Netsuite</permissionSets>
+    <permissionSets>RosterUser</permissionSets>
+    <permissionSets>Sales_Onboarding_Inputs_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

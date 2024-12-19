@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_Or_Menu_Preview_Link_Required</fullName>
+    <active>true</active>
+    <description>LEM-15978: Menu or Menu Preview link field are required for Photoshoot type.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.ByPass_Bulk_Update_Staging_Validation),
+    Type__c = $Label.Work_Order_Photoshoot,
+    ISBLANK(Menu_Preview_Link__c),
+    ISBLANK(Menu_URL__c)
+)</errorConditionFormula>
+    <errorMessage>Either Menu Preview Link OR Menu URL needs to be filled out to submit the request (one or the other).</errorMessage>
+</ValidationRule>

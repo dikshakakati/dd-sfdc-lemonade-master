@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Instructions_Max_Length__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1048: Indicates special instruction max length.</description>
+    <externalId>false</externalId>
+    <label>Special Instructions Max Length</label>
+    <length>2000</length>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

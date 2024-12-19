@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ParentWorkOrderId</fullName>
+    <inlineHelpText>Indicates whether this is a Parent or Child Work Order. This field will be blank if this Work Order is a Parent Work Order, and non-blank if this is a Child Work Order.</inlineHelpText>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

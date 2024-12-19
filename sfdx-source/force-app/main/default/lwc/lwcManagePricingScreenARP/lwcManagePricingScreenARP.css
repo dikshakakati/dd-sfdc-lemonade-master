@@ -1,0 +1,30 @@
+.border-container {
+    border: 2px solid black; /* Add a border to the container */
+    border-radius: 10px; /* Optional: Add rounded corners to the container */
+    padding: 10px;
+}
+.slds-modal__container {
+    max-width: 100rem !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100%;
+}
+details > summary {
+    background-color: #989faa;
+    border-radius: 0;
+    color: #4e4f52;
+}
+.THIS.slds-box {
+    border: 100px solid rgb(0, 0, 0);
+}
+.groupStyle {
+    border-style: groove
+}
+.datatable-container {
+    border: 2px solid #dddddd; /* Add a border to the container */
+    border-radius: 10px; /* Optional: Add rounded corners to the container */
+    overflow: hidden; /* Optional: Hide overflow content */
+}
+.inputStyle {
+    text-align: left;
+}

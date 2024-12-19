@@ -1,0 +1,41 @@
+<template>
+    <lightning-button variant="neutral"
+        label="Save Search"
+        title="Save Search"
+        icon-name="utility:save"
+        onclick={handleShowModal}>
+    </lightning-button>
+    <c-dd-modal data-id="modal"
+        title="Save Filters and Sort Configuration"
+        size="medium"
+        type="confirm"
+        primary-button-label-override="Save"
+        secondary-button-label-override="Cancel"
+        onprimarybuttonclick={handleSave}
+        disable-primary-button={allowSave}
+        modal-content-overflow>
+        <div slot="content" style="display: unset;">
+            <lightning-layout>
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="slds-text-heading_medium slds-align_absolute-center">Saved Search Information</div>
+                    <lightning-input
+                        class="slds-p-around_small"
+                        type="text"
+                        id="name"
+                        placeholder="Enter the name for your Saved Search"
+                        value={name}
+                        variant="label-hidden"
+                        onchange={handleNameChange} required>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <c-lwc-dd-grid-report-filter-view
+                        filter-configuration={filterConfiguration}
+                        sort-configuration={sortConfiguration}
+                        field-configuration={fieldConfiguration}>
+                    </c-lwc-dd-grid-report-filter-view>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </c-dd-modal>
+</template>

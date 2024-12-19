@@ -1,0 +1,42 @@
+<!--
+@author Deloitte
+@date 27/05/2022
+@description Design component of OverrideFlowSaveButton aura component.
+-->
+<design:component>
+  <design:attribute
+    name="recordId"
+    label="Record Id"
+    description="Id of the currect record"
+  />
+  <design:attribute
+    name="title"
+    label="Message Title"
+    description="Title of the message to be displayed on UI"
+  />
+  <design:attribute
+    name="message"
+    label="Display Message"
+    description="Message to be displayed on UI"
+  />
+  <design:attribute
+    name="type"
+    label="Message Type"
+    description="Type of the message to be displayed on UI"
+  />
+  <design:attribute
+    name="mode"
+    label="Message Mode"
+    description="Mode of the message to be displayed on UI"
+  />
+  <design:attribute
+    name="redirect"
+    label="Redirect To"
+    description="Page to redirect after the end of flow"
+  />
+  <design:attribute
+    name="enableRefreshView"
+    label="Enable Refresh View"
+    description="To enable refresh view"
+  />
+</design:component>

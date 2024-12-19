@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Spend_Benefit__c</fullName>
+    <description>LEM-14395: Custom/Unique Terms - Attributes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Marketing fund to spend on an in-app or OOH marketing activities as DD determines</inlineHelpText>
+    <label>Marketing Spend Benefit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

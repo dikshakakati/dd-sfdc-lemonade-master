@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Figment_URL__c</fullName>
+    <description>LEM-1395: Case URL generated in Figment to track tablet case from Lemonade instance.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(Figment_Id__c)),
+    HYPERLINK(
+    $CustomMetadata.Static_Configurations__mdt.FigmentCaseURLPrefix.Configuration_Value__c + Figment_Id__c + $CustomMetadata.Static_Configurations__mdt.FigmentCaseURLSuffix.Configuration_Value__c,
+    $CustomMetadata.Static_Configurations__mdt.FigmentCaseURLPrefix.Configuration_Value__c + Figment_Id__c + $CustomMetadata.Static_Configurations__mdt.FigmentCaseURLSuffix.Configuration_Value__c,
+    &apos;&apos;
+    ),
+    &apos;&apos;
+)</formula>
+    <label>Figment URL</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

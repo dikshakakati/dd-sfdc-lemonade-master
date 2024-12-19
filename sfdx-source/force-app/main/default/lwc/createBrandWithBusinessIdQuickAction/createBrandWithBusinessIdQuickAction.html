@@ -1,0 +1,252 @@
+<!-- sldsValidatorIgnore -->
+<!--
+  @description       :
+  @author            : Gaurav
+  @group             :
+  @last modified on  : 06-10-2024
+  @last modified by  : Gaurav
+-->
+<template>
+    <template lwc:if={showComponent}>
+         <lightning-quick-action-panel header="Create Brand">
+
+            <template lwc:if={existingBrandsSelectionScreen}>
+                <div style ={heightCSS} >
+                    <!--help text label-->
+                    <div class="slds-var-p-around_xx-small slds-var-m-bottom_small">
+                        <lightning-formatted-rich-text value={existingScreenLabel}></lightning-formatted-rich-text>
+                    </div>
+                    <c-existing-associated-brand-selectionfrom-o-c is-opened-from-contract={isOpenedFromContract} onnextevent={nextEventHandler} onbackevent={backEventHandler} record-id={recordId} existing-brands={existingBrands} existing-brands-next></c-existing-associated-brand-selectionfrom-o-c>
+                </div>
+            </template>
+            <template lwc:if={initialInputScreen}>
+                <div style ={heightCSS} >
+                    <!-- number of brand to create -->
+                    <template if:false={isBrandSelected}>
+                        <lightning-combobox class="slds-var-p-around_small slds-align-content-center"
+                            options={brandOptions}
+                            data-id="brand-combobox"
+                            value={brandInput}
+                            label={brandLabel}
+                            onchange={handleBrandInput}>
+                        </lightning-combobox>
+                    </template>
+
+                    <div>
+                        <template for:each={listOfBrands} for:item="brand">
+                            <div data-brand-id={brand.id} key={brand.id} class={brand.cssClass}>
+                                <h3  class="slds-text-heading_small slds-p-bottom_small">Brand {brand.index}</h3>
+
+                                <template if:false={isBrandSelected}>
+                                    <!--Drive help guidance text-->
+                                    <div class="slds-var-p-around_xx-small slds-var-m-bottom_small slds-form-element__help">
+                                        <lightning-formatted-rich-text value={driveHelpGuidanceText}></lightning-formatted-rich-text>
+                                    </div>
+
+
+                                    <!-- brand name input-->
+                                    <div class="slds-grid slds-gutters slds-var-p-around_small">
+                                        <div class="slds-col slds-size_2-of-4 slds-align-content-center">
+                                            <abbr title="required" class="slds-required">*</abbr>
+                                            <label class="slds-form-element__label slds-p-left — xx-small">Brand Name</label>
+                                                                                    </div>
+                                        <div class="slds-col slds-size_2-of-4">
+                                            <lightning-input type="text" variant="label-hidden" value={brand.name} placeholder="Enter Brand Name" onchange={handleBrandName} data-brand-id={brand.id} required="true"></lightning-input>
+                                        </div>
+                                    </div>
+                                    <div class="brandNameGuide slds-p-top_small slds-p-bottom_small slds-form-element__help">
+                                        <lightning-formatted-rich-text value={brandNameHelpText}></lightning-formatted-rich-text>
+                                    </div>
+
+                                     <!-- added price range input-->
+                                     <div class="slds-grid slds-gutters slds-var-p-around_small">
+                                        <div class="slds-col slds-size_2-of-4 slds-align-content-center">
+                                            <abbr title="required" class="slds-required">*</abbr>
+                                            <label class="slds-form-element__label slds-p-left — xx-small">Price Range</label>
+                                            <lightning-helptext content={priceRangeHelpText}></lightning-helptext>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-4">
+                                            <lightning-record-edit-form object-api-name="Brand__c">
+                                                <lightning-input-field  variant="label-hidden" class="clshelptexthide"  value={brand.selectedPriceRange} data-brand-id={brand.id} field-name="Price_Range__c"  onchange={handlePriceRange}></lightning-input-field>
+                                            </lightning-record-edit-form>
+                                        </div>
+                                    </div>
+
+                                     <!-- added brand type in brands input-->
+                                     <template if:true={isPrimaryVerticalRx}>
+                                        <div class="slds-grid slds-gutters slds-var-p-around_small">
+                                           <div class="slds-col slds-size_2-of-4 slds-align-content-center">
+                                             <label class="slds-form-element__label slds-p-left — xx-small">Brand Type</label>
+                                             <lightning-helptext content={brandTypeHelpText}></lightning-helptext>
+                                           </div>
+                                           <div class="slds-col slds-size_2-of-4">
+                                             <lightning-record-edit-form object-api-name="Brand__c">
+                                                 <lightning-input-field  variant="label-hidden" class="clshelptexthide"  value={brand.selectedBrandType} data-brand-id={brand.id} field-name="Brand_Type__c"  onchange={handleBrandType}></lightning-input-field>
+                                             </lightning-record-edit-form>
+                                           </div>
+                                         </div>
+                                     </template>
+
+                                     <template if:true={isPrimaryVerticalRx}>
+                                         <div class="slds-p-top_small slds-p-bottom_small slds-form-element__help">
+                                             <lightning-formatted-rich-text value={brandTypeGuideText}></lightning-formatted-rich-text>
+                                         </div>
+                                     </template>
+
+                                    <!-- toggle input only to be shown if the componnet initiated from opportunity-->
+                                    <template if:true={isOpportunity}>
+                                        <div class="slds-grid slds-gutters slds-var-p-around_small">
+                                            <div class="slds-col slds-size_2-of-4 slds-align-content-center">
+                                                <abbr title="required" class="slds-required">*</abbr>
+                                                <label class="slds-form-element__label slds-p-left — xx-small"> {toggleLabel}</label>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-4 ">
+                                                <lightning-input class="slds-p-top_small toggleShiftClass" variant="label-hidden" value={brand.bizRefToBeCreated} type="toggle" data-brand-id={brand.id}  onchange={handleToggleShift}  message-toggle-active="Yes" message-toggle-inactive="No" checked>
+                                                </lightning-input>
+                                            </div>
+                                        </div>
+                                    </template>
+
+                                </template>
+
+                                <template lwc:if={brand.bizRefToBeCreated}>
+                                    <!-- Biz Ref inputs-->
+                                    <template for:each={brand.listOfBusinessRef} for:item="biz">
+                                            <div data-brand-id={biz.id} key={biz.id} class={biz.cssClass}>
+                                                <h3  class="slds-text-heading_small">Business ID {biz.index}</h3>
+
+                                                <lightning-record-edit-form  object-api-name="Business_Reference__c">
+
+                                                    <div class="slds-grid slds-gutters slds-var-p-around_small">
+                                                        <div class="slds-col slds-size_1-of-3 slds-align-content-center">
+                                                            <abbr title="required" class="slds-required">*</abbr>
+                                                            <label class="slds-form-element__label slds-p-left — xx-small">Business Name</label>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-3">
+                                                            <lightning-input-field field-name="Business_Name__c" value={biz.businessName} data-brand-id={brand.id} data-biz-id={biz.id} variant="label-hidden" onchange={handleBusinessRefName}></lightning-input-field>
+                                                        </div>
+                                                    </div>
+                                                    <div class="businessNameGuide slds-p-top_small slds-p-bottom_small slds-form-element__help">
+                                                        <lightning-formatted-rich-text value={businessNameHelpText}></lightning-formatted-rich-text>
+                                                    </div>
+
+                                                    <div class="slds-grid slds-gutters slds-var-p-around_small">
+                                                        <div class="slds-col slds-size_1-of-3 slds-align-content-center">
+                                                            <abbr title="required" class="slds-required">*</abbr>
+                                                            <label class="slds-form-element__label slds-p-left — xx-small">Business Vertical</label>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-3">
+                                                            <lightning-input-field  field-name="Business_Vertical__c" value={biz.businessVertical} data-brand-id={brand.id} data-biz-id={biz.id} variant="label-hidden" onchange={handleBusinessVertical} ></lightning-input-field>
+                                                        </div>
+                                                    </div>
+                                                    <br/>
+                                                    <template if:true={biz.showBusinessVerticalError}>
+                                                        <div class="slds-text-color_error" role="alert">{errorMessage}</div>
+                                                        <lightning-formatted-rich-text  class="slds-text-color_error" value={businessVerticalEligibiltyMessage}></lightning-formatted-rich-text>
+                                                    </template>
+                                                    <!--BGID Guidance Text-->
+                                                    <br/>
+                                                    <div class="slds-p-top_small slds-p-bottom_small slds-form-element__help">
+                                                        <lightning-formatted-rich-text value={businessVerticalGuidanceText}></lightning-formatted-rich-text>
+                                                    </div>
+
+                                                    <template if:true={isOpenedFromContract}>
+                                                        <div class="slds-grid slds-gutters slds-var-p-around_small">
+                                                            <div class="slds-col slds-size_1-of-3 slds-align-content-center">
+                                                                <abbr title="required" class="slds-required">*</abbr>
+                                                                <label class="slds-form-element__label slds-p-left — xx-small">Business Group Id</label>
+                                                            </div>
+                                                            <template lwc:if={existingGroupIdsExist}>
+                                                                <div class="slds-col slds-size_2-of-3">
+                                                                    <lightning-combobox class="slds-var-p-around_small slds-align-content-center"
+                                                                        options={businessGroupIdOptions}
+                                                                        variant="label-hidden"
+                                                                        data-brand-id={brand.id}
+                                                                        data-biz-id={biz.id}
+                                                                        value={biz.businessGroupId}
+                                                                        label="Business Group Id"
+                                                                        onchange={handleBusinessRefGroupId}>
+                                                                    </lightning-combobox>
+                                                                </div>
+                                                            </template>
+                                                            <template lwc:else>
+                                                                <div class="slds-col slds-size_2-of-3">
+                                                                    <lightning-input-field  field-name="Business_Group_Id__c" value={biz.businessGroupId} data-brand-id={brand.id} data-biz-id={biz.id} variant="label-hidden" onchange={handleBusinessRefGroupId} ></lightning-input-field>
+                                                                </div>
+                                                            </template>
+                                                        </div>
+
+                                                        <div class="businessGroupIdGuide slds-p-top_small slds-p-bottom_small slds-form-element__help">
+                                                            <lightning-formatted-rich-text value={businessGroupIdHelpText}></lightning-formatted-rich-text>
+                                                        </div>
+
+                                                    </template>
+
+                                                </lightning-record-edit-form>
+
+                                                <template lwc:if={biz.showErrorMsg}>
+                                                    <div class="slds-text-color_error">
+                                                        <p>{biz.errorMsg}</p>
+                                                    </div>
+                                                </template>
+
+                                            </div>
+                                    </template>
+
+                                    <template lwc:if={brand.showErrorMsg}>
+                                        <div class="slds-text-color_error">
+                                            <p>{brand.errorMsg}</p>
+                                        </div>
+                                    </template>
+
+                                </template>
+
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+
+            <template lwc:if={confirmationScreen}>
+                <div style ={heightCSS} >
+                    <div>
+                        <div class={successLabelCss}>
+                            <lightning-formatted-rich-text  value={successLabel}></lightning-formatted-rich-text>
+                        </div>
+                        <div class="slds-text-align_right slds-p-bottom_large slds-var-p-top_small">
+                            <lightning-button label="Download as CSV" onclick={handleDownloadClick}></lightning-button>
+                        </div>
+                            <div>
+                                <c-custom-type-datatable
+                                key-field="Id"
+                                data={dataToDisplay}
+                                columns={columnToDisplay}
+                                hide-checkbox-column
+                                show-row-number-column
+                                min-column-width="100"
+                                >
+                                </c-custom-type-datatable>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div slot="footer" class=" slds-var-p-around_large">
+                <template lwc:if={confirmationScreen}>
+                    <lightning-button variant="brand-outline" label="OK" title="OK" onclick={handleCancel} class=" slds-var-m-left_x-small"></lightning-button>
+                </template>
+
+                <template lwc:else>
+                    <lightning-button variant="brand-outline" label="Cancel" title="Cancel" onclick={handleCancel} class="slds-var-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Next" title="Next" onclick={handleNextButton} disabled={isNextButtonDisabled} class="slds-var-m-left_x-small"></lightning-button>
+                </template>
+            </div>
+
+        </lightning-quick-action-panel>
+    </template>
+
+    <template lwc:else>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+
+ </template>

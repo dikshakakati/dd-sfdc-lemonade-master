@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-21261: It enables super user access for in-flight processes.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Inflight Process Super Users</label>
+    <mutingPermissionSets>Inflight_Process_Super_Users_Muted</mutingPermissionSets>
+    <permissionSets>Allow_Reopen_Opportunity_Access</permissionSets>
+    <permissionSets>Approval_Fields_Edit_Access</permissionSets>
+    <permissionSets>Allow_Account_Reparenting</permissionSets>
+    <permissionSets>QuoteToCash_Super_User_Access</permissionSets>
+    <permissionSets>CommOps</permissionSets>
+    <permissionSets>HighVelocitySalesUser</permissionSets>
+    <permissionSets>SBQQ__SteelBrickCPQUser</permissionSets>
+    <permissionSets>Ironclad_Workflow_Launch</permissionSets>
+    <permissionSets>MX_Onboarding_Link_PS</permissionSets>
+    <permissionSets>SMB_Sales_App</permissionSets>
+    <permissionSets>Sales</permissionSets>
+    <permissionSets>QuoteToCash</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

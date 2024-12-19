@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-25149: It provides francise parent, work step status fields access to COO team.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Merchant Services - COO Team</label>
+    <permissionSets>Allow_Work_Step_Status_Updates</permissionSets>
+    <permissionSets>Conga_Grid_Access</permissionSets>
+    <permissionSets>Onboarding_and_Activations_COO_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

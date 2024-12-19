@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MINT_Histories</fullName>
+    <description>To show the Account Histroy on WorkOrder page of this field</description>
+    <label>MINT Histories</label>
+</FieldSet>

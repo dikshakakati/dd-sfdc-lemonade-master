@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Closed_Date</fullName>
+    <active>true</active>
+    <description>LEM-142: Opportunity cannot have a closed date in the past, if the opportunity is not closed.
+LEM-108: This validation rule incorporated with bypass framework.
+LEM-9554: Validation does not fire if SubType is Ads &amp; Promos, LEM-5950: Stage = CW </description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  NOT($Permission.Allow_Edit_Access_of_Opportunity_Fields),
+  $User.LastName != $Label.Automated_Process_User_Last_Name,
+  NOT(ISPICKVAL(Opportunity_Sub_Type__c,&quot;Ads &amp; Promos&quot;)),
+  ISCHANGED(StageName),
+  TEXT(StageName) = $Label.Opportunity_Stage_Closed_Won,
+  CloseDate &lt; TODAY()
+)</errorConditionFormula>
+    <errorDisplayField>CloseDate</errorDisplayField>
+    <errorMessage>The Close Date cannot be a date in the past.</errorMessage>
+</ValidationRule>

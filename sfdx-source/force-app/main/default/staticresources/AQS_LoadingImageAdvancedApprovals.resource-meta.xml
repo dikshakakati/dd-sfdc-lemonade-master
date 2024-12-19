@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>image/gif</contentType>
+    <description>This is the spinning circles image displayed between submitting and recalling an approval and is part of the Advanced Approvals unmanaged package.</description>
+</StaticResource>

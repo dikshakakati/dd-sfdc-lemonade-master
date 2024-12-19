@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CoFundedPromoStructureMxAndDDSumEqual100</fullName>
+    <active>true</active>
+    <description>LEM-14400: Validates if the sum of Co-Funded Promo Structure - Merchant and DoorDash add up to be 100%.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  OR( 
+    NOT(ISBLANK(Co_Funded_Promo_Structure_DoorDash__c)), 
+    NOT(ISBLANK(Co_Funded_Promo_Structure_Merchant__c))
+  ),
+  ((BLANKVALUE(Co_Funded_Promo_Structure_DoorDash__c,0) + 
+   BLANKVALUE(Co_Funded_Promo_Structure_Merchant__c,0)) &lt;&gt; 1)
+)</errorConditionFormula>
+    <errorDisplayField>Co_Funded_Promo_Structure_DoorDash__c</errorDisplayField>
+    <errorMessage>The sum of Co-Funded Promo Structure - Merchant and DoorDash should add up to be 100%.</errorMessage>
+</ValidationRule>

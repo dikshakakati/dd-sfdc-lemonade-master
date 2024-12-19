@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-2504,13476: It captures the Source that led to Opportunity creation. It helps in deciding if certain validations can be bypassed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field can be populated during creation to indicate where opportunity data originated. It is also used to format opportunity names and helps decide if some validations should be applied or bypassed.</inlineHelpText>
+    <label>Source</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lead</fullName>
+                <default>false</default>
+                <label>Lead</label>
+            </value>
+            <value>
+                <fullName>Manual</fullName>
+                <default>true</default>
+                <label>Manual</label>
+            </value>
+            <value>
+                <fullName>Mx Portal</fullName>
+                <default>false</default>
+                <label>Mx Portal</label>
+            </value>
+            <value>
+                <fullName>Nintex</fullName>
+                <default>false</default>
+                <label>Nintex</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <label>Product</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Selection Intel</fullName>
+                <default>false</default>
+                <label>Selection Intel</label>
+            </value>
+            <value>
+                <fullName>SSMO</fullName>
+                <default>false</default>
+                <label>SSMO</label>
+            </value>
+            <value>
+                <fullName>SSOB</fullName>
+                <default>false</default>
+                <label>SSOB</label>
+            </value>
+            <value>
+                <fullName>VSP Recommendation</fullName>
+                <default>false</default>
+                <label>VSP Recommendation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

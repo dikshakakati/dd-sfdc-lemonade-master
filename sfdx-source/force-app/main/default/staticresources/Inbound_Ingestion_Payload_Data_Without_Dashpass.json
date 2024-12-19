@@ -1,0 +1,133 @@
+{
+   "store": {
+     "orderProducts": [
+       {
+         "productOptions": [
+           {
+             "trialDuration": 7,
+             "trialCommission": 0,
+             "commission": 15,
+             "productCode": null,
+             "name": "Delivery"
+           },
+           {
+             "trialDuration": 7,
+             "trialCommission": 0,
+             "commission": null,
+             "productCode": null,
+             "name": "Dashpass"
+           }
+         ],
+         "productCode": null,
+         "name": "Basic Package"
+       }
+
+     ],
+     "addressVerificationInfo": {
+       "alcoholRules": {
+         "alcoholAllowanceCategory": "Wet"
+       },
+       "startingPoint": {
+         "startingPoint": "FL: Downtown / Winter Park",
+         "id": 543
+       },
+       "submarket": {
+         "name": "Orlando",
+         "id": "61"
+       },
+       "validatedAddress": {
+         "timeZone": "America/New_York",
+         "addressId": "1186510767",
+         "postalCode": "32803",
+         "countryShortname": "US",
+         "country": "United States",
+         "state": "",
+         "stateCode": "FL",
+         "city": "Orlando",
+         "addressLine2": "",
+         "addressLine1": "1103 N Mills Ave Fl Us #Fl Us",
+         "longitude": -81.36422,
+         "latitude": 28.560637
+       },
+       "addressVerificationDate": "2024-09-13T21:37:50.224Z",
+       "rejectedReason": null,
+       "addressVerificationStatus": "Verified"
+     },
+     "hasValidEmail": false,
+     "matchedRecords": {
+       "account": [],
+       "contact": [],
+       "lead": []
+     },
+     "isAdditionalStore": false,
+     "isTest": true,
+     "isOnboardingCompleted": null,
+     "posUpdateRequired": null,
+     "storeAccountId": null,
+     "contractNumber": null,
+     "requestingMxPhotoShoot": true,
+     "numberOfFranchisee": "0",
+     "isFranchisee": false,
+     "vendorContractRecord": "https://app.pactsafe.com/api/activity/66e4b07b5daadd4bdf340af6/record",
+     "vendorActivityId": "66e4b07b5daadd4bdf340af6",
+     "vendorContractType": "SSMO Sign Up Sheet",
+     "preferredLanguage": "English",
+     "posIntegrationType": null,
+     "hoursOfOperation": "All days 8:00AM-10:00PM",
+     "numberOfAddressableLocations": "NUMBER_OF_LOCATIONS_TWO_TO_FIVE",
+     "menuSetupMethod": "Create New Menu(s) using Menu Source",
+     "menuCompletedBy": "DoorDash Onboarding Team",
+     "orderProtocolEmail": null,
+     "orderProtocolFax": null,
+     "orderProtocol": "ORDER_PROTOCOL_TABLET",
+     "menuUrls": [
+       "uat.com"
+     ],
+     "sfdcCampaignId": null,
+     "segmentType": "SMB",
+     "vertical": "VERTICAL_TYPE_RESTAURANT",
+     "phone": "+17028760986",
+     "country": "US",
+     "merchantTaxId": "112332322",
+     "state": "FL",
+     "ipadPassword": "3555",
+     "ipadUsername": "17028760986ovcp@ipad.doordash.com",
+     "deckRank": null,
+     "treatmentGroup": [
+       "SINGULARITY",
+       "OPTIONAL_BANKING"
+     ],
+     "city": "Orlando",
+     "postalCode": "32803",
+     "street": "1103 N Mills Ave",
+     "storeName": "TEST TEST TEST",
+     "storeType": "MERCHANT_TYPE_LOCAL",
+     "storeId": 73332936
+   },
+   "ipAddress": "67.164.6.60",
+   "businessGroup": {
+     "isNewBusinessGroup": null,
+     "businessGroupName": null,
+     "businessGroupId": null
+   },
+   "onboardingSource": "SSMO",
+   "merchantOwner": {
+     "userId": "2029123608",
+     "mobilePhone": "+17028760986",
+     "email": "tkdashpass2@yahoo.com",
+     "lastName": "SAPOSTOrlando",
+     "firstName": "UAT"
+   },
+   "business": {
+     "businessPhone": "7028760986",
+     "legalBusinessName": "tkdashpasstest2",
+     "name": "tkdashpasstest2",
+     "isTest": true,
+     "businessId": 33024874
+   },
+   "signupType": "SIGNUP_TYPE_MARKETPLACE",
+   "eventType": "ONBOARDING",
+   "createdAt": "2024-09-13T21:37:15.699Z",
+   "uuid": "92108a53-e8d9-4a0c-9193-9152aeb86fe4",
+   "id": "5b72016c-2059-e27a-d7cf-0e7c7f389979"
+ }

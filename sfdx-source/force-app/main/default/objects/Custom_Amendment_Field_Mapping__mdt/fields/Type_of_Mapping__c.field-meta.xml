@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Mapping__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Type of Mapping</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Copy from Source</fullName>
+                <default>true</default>
+                <label>Copy from Source</label>
+            </value>
+            <value>
+                <fullName>Fixed Value</fullName>
+                <default>false</default>
+                <label>Fixed Value</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

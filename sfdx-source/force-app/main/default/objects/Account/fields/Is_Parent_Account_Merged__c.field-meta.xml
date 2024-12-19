@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Parent_Account_Merged__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-3561: It is used to identify whether an Account is updated from Active Prime account merge process.</description>
+    <externalId>false</externalId>
+    <label>Is Parent Account Merged</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

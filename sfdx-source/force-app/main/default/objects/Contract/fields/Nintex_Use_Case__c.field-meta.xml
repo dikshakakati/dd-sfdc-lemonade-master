@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nintex_Use_Case__c</fullName>
+    <description>LEM-17162: It indicates "Nintex Use Case" value captured on the associated Quote.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(SBQQ__Quote__r.Nintex_Use_Case__c)</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Nintex Use Case</label>
+    <securityClassification>Proprietary</securityClassification>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

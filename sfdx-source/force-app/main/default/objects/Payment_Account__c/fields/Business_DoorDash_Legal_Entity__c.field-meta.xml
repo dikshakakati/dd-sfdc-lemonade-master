@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_DoorDash_Legal_Entity__c</fullName>
+    <description>LEM-3531: Read Business Account DoorDash Legal Entity Field Value</description>
+    <externalId>false</externalId>
+    <formula>IF(
+        NOT ISBLANK(TEXT(DoorDash_Legal_Entity__c)),
+        Text(DoorDash_Legal_Entity__c),
+        IF(RecordType.Name = &apos;Invoice&apos; &amp;&amp;
+        !$Setup.Sync_With_Netsuite_Process__c.Restlet_API_Call__c &amp;&amp;
+        ISBLANK(TEXT(DoorDash_Legal_Entity__c)),
+        Business_Account__r.DoorDash_Legal_Entity__c,
+        null
+        )
+        )</formula>
+    <label>Business DoorDash Legal Entity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

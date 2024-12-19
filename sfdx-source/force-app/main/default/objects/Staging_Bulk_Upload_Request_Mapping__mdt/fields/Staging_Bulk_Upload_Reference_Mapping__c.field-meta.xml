@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Staging_Bulk_Upload_Reference_Mapping__c</fullName>
+    <description>LEM-15978: Stores reference to the Staging_Bulk_Upload_Reference_Mapping.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Staging Bulk Upload Reference Mapping</label>
+    <securityClassification>Proprietary</securityClassification>
+    <referenceTo>Staging_Bulk_Upload_Reference_Mapping__mdt</referenceTo>
+    <relationshipLabel>Staging Bulk Upload Request Mappings</relationshipLabel>
+    <relationshipName>Staging_Bulk_Upload_Request_Mappings</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

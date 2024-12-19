@@ -1,0 +1,130 @@
+<template>
+  <div class='scrollpointerdiv'> </div>
+  <template lwc:if={loaded}>
+    <template lwc:if={showinfoMessage}>
+      <div class="slds-theme_info">
+        <lightning-icon
+          icon-name="utility:info"
+          variant="inverse"
+          size="small"
+        ></lightning-icon>
+        <span class="slds-p-left_xx-small">{infoMessage}</span>
+      </div>
+    </template>
+    <template lwc:if={showErrorMessage}>
+      <div class="slds-theme_error">
+        <lightning-icon
+          icon-name="utility:info"
+          variant="inverse"
+          size="small"
+        ></lightning-icon>
+        <span class="slds-p-left_xx-small">{errorMessage}</span>
+      </div>
+    </template>
+    <template lwc:else>
+      <template lwc:if={showRepCollectingOnMxBehalfScreen}>
+        <lightning-radio-group
+          name="radioGroup"
+          label="Are you filling out all inputs on behalf of the Mx?"
+          options={options}
+          value={repCollectingOnMxBehalf}
+          onchange={handleChange}
+          type="radio"
+          disabled={disableOptions}
+        >
+        </lightning-radio-group>
+      </template>
+    </template>
+    <br />
+    <template if:true={isRequiredMessageDisplay}>
+      <div class="slds-theme_error">
+        <lightning-icon
+          icon-name="utility:error"
+          variant="inverse"
+          size="small"
+        ></lightning-icon>
+        <span class="slds-p-left_xx-small">{requiredMessage}</span>
+      </div>
+    </template>
+
+    <template lwc:if={inputfields}>
+      <template lwc:if={showRepCollectingOnMxBehalfScreen}>
+        <lightning-input
+          type="email"
+          label="Mx Email"
+          required="true"
+          value={emailValue}
+          field-level-help="This email will be used to automatically send the Onboarding Inputs link to the Mx to fill out and submit."
+          onchange={handleEmailChange}
+        >
+        </lightning-input>
+      </template>
+      <br />
+      <c-o-i-section-render-component
+        current-screen={currentScreen}
+        business-account-info={contractData.businessAccountInstance}
+        input-fields={inputfields}
+        contract-info={contractData}
+        onincreasestorecount={hideAddStore}
+        onsendstoresection={handleStoreSection}
+        load-back-button-info={loadBackButtonInfo}
+        selected-order-protocol-values={orderProtocolValue}
+        back-button-section-info={backButtonSectionInfo}
+      ></c-o-i-section-render-component>
+    </template>
+    <footer class="slds-card__footer slds-grid slds-grid_align-end">
+      <lightning-button
+        variant="neutral"
+        label="Cancel"
+        title="Cancel"
+        onclick={handleCancel}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+      <lightning-button
+        variant="neutral"
+        label="Back"
+        title="Back"
+        onclick={handleBack}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+      <lightning-button
+        variant="neutral"
+        label="Next"
+        title="Next"
+        onclick={handleNext}
+        class="slds-m-left_x-small"
+        disabled={disableNextButton}
+      ></lightning-button>
+      <lightning-button
+        variant="neutral"
+        label="Add Store"
+        title="Add Store"
+        onclick={handleAddStore}
+        class="slds-m-left_x-small"
+        disabled={disableAddStoreButton}
+      ></lightning-button>
+      <lightning-button
+        variant="neutral"
+        label="Generate Mx link"
+        title="Generate Mx link"
+        onclick={handleGenerateLink}
+        class="slds-m-left_x-small"
+        disabled={disableMXlinkButton}
+      ></lightning-button>
+      <lightning-button
+        variant="neutral"
+        label="Submit Inputs"
+        title="Submit Inputs"
+        onclick={handleGenerateLink}
+        class="slds-m-left_x-small"
+        disabled={disableSubmitInputs}
+      ></lightning-button>
+    </footer>
+  </template>
+  <template lwc:else>
+    <div class="spinnerStyling">
+      <lightning-spinner
+        alternative-text={loadingAlternativeText}
+      ></lightning-spinner></div
+  ></template>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMB_Pricing_Tier_Clone__c</fullName>
+    <description>LEM-21389: It is used to capture the values cloned from the formula field &apos;SMB_Pricing_Tier&apos; so that it can be used for roll up summaries.</description>
+    <externalId>false</externalId>
+    <label>SMB Pricing Tier Clone</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Stores__c</fullName>
+    <description>LEM-14946: Number of stores to which this deal will apply.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of stores to which this deal will apply</inlineHelpText>
+    <label>Number of Stores</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

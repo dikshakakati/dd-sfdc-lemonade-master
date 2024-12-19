@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DoNotCall</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13618: It signifies whether the Lead has indicated to be contacted or not.</description>
+    <inlineHelpText>Signifies that the Lead has indicated to not be contacted</inlineHelpText>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

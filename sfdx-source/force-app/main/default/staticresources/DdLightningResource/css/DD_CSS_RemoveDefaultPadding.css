@@ -1,0 +1,4 @@
+/* Salesforce adds a default .75 rem padding to all pages, this will remove the default padding */
+.slds-template_default {
+    padding: 0px;
+}

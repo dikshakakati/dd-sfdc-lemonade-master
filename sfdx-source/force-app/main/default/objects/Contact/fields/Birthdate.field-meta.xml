@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Birthdate</fullName>
+    <complianceGroup>PII</complianceGroup>
+    <description>LEM-1150: Used to store Birthdate of the Mx contact.</description>
+    <inlineHelpText>Birthdate of the Mx contact. Required for banking set up in most countries.</inlineHelpText>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+</CustomField>

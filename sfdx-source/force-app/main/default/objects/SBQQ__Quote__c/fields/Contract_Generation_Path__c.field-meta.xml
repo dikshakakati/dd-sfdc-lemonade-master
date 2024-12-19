@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Generation_Path__c</fullName>
+    <description>LEM-1227: Create field to indicate Templatized vs Non-Templatized Quote Flow, LEM-16101: Help Text on Contract Generation Path</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field represents the mode of contracting, based on whether or not standard Contract templates and automations are available to Sales users during the contracting process. If your contract needs to go through a manual Commercial Operations approval outside of Conga or Ironclad, please select “Non-Templatized”</inlineHelpText>
+    <label>Contract Generation Path</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Templatized</fullName>
+                <default>false</default>
+                <label>Templatized</label>
+            </value>
+            <value>
+                <fullName>Non-Templatized</fullName>
+                <default>false</default>
+                <label>Non-Templatized</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

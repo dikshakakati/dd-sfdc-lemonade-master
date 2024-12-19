@@ -1,0 +1,6 @@
+Please review the Franchise Form URL generated for with below details:
+Contract #: {!Merchant_Pop_Up_Response__c.Contract_Number__c}
+Corporate Account: {!Merchant_Pop_Up_Response__c.Mx_Corporate_Account__c} 
+Franchise Form URL: {!Merchant_Pop_Up_Response__c.URL__c}
+Requested By: {!Merchant_Pop_Up_Response__c.OwnerFullName}
+Approval Request Link: {!ApprovalRequest.External_URL}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateDriveMeFreeFrequencyFields</fullName>
+    <active>true</active>
+    <description>LEM-14399: Validates that both Drive me Free Frequency fields are populated.</description>
+    <errorConditionFormula>OR(
+  AND(
+    NOT($Permission.Bypass_Quote_Validation_Rules),
+    NOT(TEXT(Drive_Me_Free_Frequency__c) = $Label.Drive_Me_Free_Frequency_PerQuarter),
+    NOT(TEXT(Drive_Me_Free_Frequency__c) = $Label.Drive_Me_Free_Frequency_PerYear),
+    OR(
+      TEXT(Drive_Me_Free_Frequency_number__c) = $Label.Drive_Me_Free_Frequency_1,
+      TEXT(Drive_Me_Free_Frequency_number__c) = $Label.Drive_Me_Free_Frequency_2,
+      TEXT(Drive_Me_Free_Frequency_number__c) = $Label.Drive_Me_Free_Frequency_3,
+      TEXT(Drive_Me_Free_Frequency_number__c) = $Label.Drive_Me_Free_Frequency_4
+    )
+  ),
+  AND(
+    NOT($Permission.Bypass_Quote_Validation_Rules),
+    NOT(TEXT(Drive_Me_Free_Frequency_number__c) = $Label.Drive_Me_Free_Frequency_1),
+    NOT(TEXT(Drive_Me_Free_Frequency_number__c) = $Label.Drive_Me_Free_Frequency_2),
+    NOT(TEXT(Drive_Me_Free_Frequency_number__c) = $Label.Drive_Me_Free_Frequency_3),
+    NOT(TEXT(Drive_Me_Free_Frequency_number__c) = $Label.Drive_Me_Free_Frequency_4),
+    OR(
+      TEXT(Drive_Me_Free_Frequency__c) = $Label.Drive_Me_Free_Frequency_PerQuarter,
+      TEXT(Drive_Me_Free_Frequency__c) = $Label.Drive_Me_Free_Frequency_PerYear
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>If the Drive me Free Frequency field or the Drive me Free Frequency (number) field is populated then the other must also be populated.</errorMessage>
+</ValidationRule>

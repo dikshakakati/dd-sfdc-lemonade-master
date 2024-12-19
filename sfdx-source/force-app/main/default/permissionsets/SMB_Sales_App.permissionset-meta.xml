@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>standard__HVSConsole</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>LEM-16001: It provides access to &apos;SMB Sales (standard__HVSConsole)&apos; application.</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ironclad__Ironclad_Contract__c.Opportunity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SMB Sales - App</label>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>ironclad__Ironclad_Contract__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+</PermissionSet>

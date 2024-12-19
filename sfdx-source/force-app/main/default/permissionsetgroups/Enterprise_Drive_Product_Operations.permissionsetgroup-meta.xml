@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4503: It enables access for Drive Product Ops persona.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Enterprise Drive Product Operations</label>
+    <mutingPermissionSets>Enterprise_Drive_Product_Operations_Muted</mutingPermissionSets>
+    <permissionSets>CPQ_AA_License</permissionSets>
+    <permissionSets>Approval_Fields_Edit_Access</permissionSets>
+    <permissionSets>CPQ_License</permissionSets>
+    <permissionSets>QuoteToCash</permissionSets>
+    <permissionSets>SBQQ__SteelBrickCPQUser</permissionSets>
+    <permissionSets>sbaa__AdvancedApprovalsUser</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Radius_UOM_miles_km__c</fullName>
+    <description>LEM-467: Specify additional attributes related to Drive products</description>
+    <externalId>false</externalId>
+    <label>UOM (miles/km)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mile</fullName>
+                <default>false</default>
+                <label>Mile</label>
+            </value>
+            <value>
+                <fullName>Km</fullName>
+                <default>false</default>
+                <label>Km</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

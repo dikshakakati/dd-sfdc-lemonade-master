@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_CRM_Iterable_Link_and_IDs</fullName>
+    <active>true</active>
+    <description>LEM-5331 The &apos;CRM Iterable Link&apos; and &apos;Iterable ID(s)&apos; fields must be populated to shift the Brief Item status to ‘Pre-Live Audit - Ready for Edits’.</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+TEXT(Status__c)=$Label.Pre_Live_Audit_Ready_for_Edits,
+TEXT(Product__c)=$Label.Brief_Product_CRM,
+OR(ISBLANK( CRM_Iterable_Link__c ))
+)</errorConditionFormula>
+    <errorMessage>The &apos;CRM Iterable Link&apos; field must be populated to shift the Brief Item status to ‘Pre-Live Audit - Ready for Edits’.</errorMessage>
+</ValidationRule>

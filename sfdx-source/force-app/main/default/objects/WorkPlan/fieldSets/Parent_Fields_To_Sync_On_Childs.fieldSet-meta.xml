@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Fields_To_Sync_On_Childs</fullName>
+    <description>LEM-6198 : Automatic Updates from Parent Work Plan to Child Work Plan</description>
+    <displayedFields>
+        <field>Parent_Work_Plan__r.Notes__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Parent Fields To Sync On Childs</label>
+</FieldSet>

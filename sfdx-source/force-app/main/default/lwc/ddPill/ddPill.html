@@ -1,0 +1,52 @@
+<template>
+    <span
+      class={pillClass}
+      onclick={handlePillClick}>
+      <template if:true={showAvatar}>
+        <span class="slds-var-m-right_x-small">
+          <lightning-avatar
+            src={avatarSrc}
+            fallback-icon-name={iconName}
+            variant="circle"
+            alternative-text={avatarTitle}
+            size="x-small"
+            title={avatarTitle}>
+          </lightning-avatar>
+        </span>
+      </template>
+      <template if:true={showIcon}>
+        <span class="slds-var-m-right_x-small">
+          <lightning-icon
+            icon-name={iconName}
+            size="x-small"
+            alternative-text={label}>
+          </lightning-icon>
+        </span>
+      </template>
+      <template if:true={href}>
+        <a
+          href={href}
+          target={hrefTarget}
+          title={label}>
+          <span class="slds-pill__label">{label}</span>
+        </a>
+      </template>
+      <template if:false={href}>
+        <span
+          title={label}
+          class="slds-pill__label pointer">
+          {label}
+        </span>
+      </template>
+      <template if:true={showRemove}>
+        <lightning-button-icon
+          alternative-text={closeButtonText}
+          icon-name = "utility:close"
+          variant="bare-inverse"
+          title={closeButtonText}
+          class="sls-icon_container slds-pill__remove"
+          onclick={handlePillRemove}>
+        </lightning-button-icon>
+      </template>
+    </span>
+  </template>

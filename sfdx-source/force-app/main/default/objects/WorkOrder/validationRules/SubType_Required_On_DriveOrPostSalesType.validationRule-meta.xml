@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SubType_Required_On_DriveOrPostSalesType</fullName>
+    <active>true</active>
+    <description>LEM-1271: Sub-Type is required when type is Drive or Post-Sales.
+LEM-1684: Bypassed it for Work Order created on store Account through system.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  NOT(
+    AND(
+      OR (
+        TEXT(Work_Order_Source__c) = $Label.WorkOrderSourceSystem,
+        TEXT(Work_Order_Source__c) = $Label.SOURCE_SSMO
+      ),
+      Account_Record_Type_Name__c = $Label.StoreAccountRecordTypeName
+    )
+  ),
+  ISBLANK(TEXT(Sub_Type__c)),
+  OR(
+    TEXT(Type__c) = $Label.WorkOrderTypeDrive,
+    TEXT(Type__c) = $Label.WorkOrderTypePostSales
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Sub_Type__c</errorDisplayField>
+    <errorMessage>Please select a Sub-Type if your 'Type' is Drive or Post-Sales.</errorMessage>
+</ValidationRule>

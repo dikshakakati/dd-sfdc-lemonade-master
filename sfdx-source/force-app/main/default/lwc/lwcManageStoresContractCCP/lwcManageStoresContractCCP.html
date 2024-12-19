@@ -1,0 +1,219 @@
+<!--
+  * @author Deloitte
+  * @date 12/18/2023
+  * @description LEM-11329 - The LWC application facilitates the retrieval of existing CAA records, the uploading of account IDs, and subsequently verifies the integrity of the uploaded IDs.
+-->
+<template>
+  <div class="slds-p-around_medium">
+    <div class="border-container">
+      <div class="header">
+        <h1 class="slds-p-around_medium">{labels.manageStoresHeadingLabel}</h1>
+      </div>
+      <div if:false={showEntitlementScreenComponent}>
+        <div if:false={showUploadScreen}>
+          <div class="messageBoxStyling">
+            <p class="messageStyling">
+              <lightning-formatted-rich-text
+                value={labels.popUpInstructionsLabel}
+              ></lightning-formatted-rich-text>
+            </p>
+          </div>
+          <div class="slds-text-align_right slds-p-top_x-small">
+            <lightning-button
+              label="Existing Accounts"
+              onclick={handleExistingAccounts}
+              class="slds-m-right_x-small"
+            ></lightning-button>
+            <lightning-button
+              variant="brand"
+              label="New Accounts / COO"
+              onclick={handleNewAccounts}
+            ></lightning-button>
+          </div>
+        </div>
+        <!-- Spinner -->
+        <div if:true={loadSpinner}>
+          <div class="flow-spinner-container">
+            <div
+              class="slds-spinner slds-spinner_brand slds-spinner_medium"
+              role="status"
+            >
+              <span class="slds-assistive-text"></span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+          </div>
+        </div>
+        <div if:false={loadSpinner}>
+          <lightning-card>
+            <div if:true={showUploadScreen}>
+              <div if:false={showEntitlementScreenComponent}>
+                <div class="slds-p-bottom_x-small">
+                  <lightning-button
+                    label="Back"
+                    variant="brand"
+                    onclick={viewSelectionPopUp}
+                  >
+                  </lightning-button>
+                  <div class="slds-float_right">
+                    <lightning-button
+                      label="Next"
+                      variant="brand"
+                      onclick={addAccounts}
+                      disabled={disableNextButton}
+                    >
+                    </lightning-button>
+                  </div>
+                </div>
+                <!-- Tabset -->
+                <div>
+                  <lightning-tabset variant="scoped" if:true={showTabs}>
+                    <lightning-tab
+                      label="CSV Import"
+                      value="3"
+                      onactive={handleActive}
+                    >
+                      <div class="messageBoxStyling">
+                        <p class="messageStyling">
+                          <lightning-formatted-rich-text
+                            value={labels.csvInstructionsLabel}
+                          ></lightning-formatted-rich-text>
+                          &nbsp;&nbsp;<a href={labels.CSVTemplateResource}
+                            >{labels.manageStoresCSVTemplateLabel}</a
+                          >
+                        </p>
+                      </div>
+                      <div class="slds-p-top_medium">
+                        <c-lwc-generic-upload-c-s-v
+                          onfileadded={handleFileAdded}
+                          onfilereaderror={handleFileReadError}
+                          onfileremoved={handleFileRemoved}
+                        >
+                        </c-lwc-generic-upload-c-s-v>
+                      </div>
+                      <div
+                        if:true={importShowTableSpinner}
+                        class="slds-is-relative"
+                      >
+                        <lightning-spinner
+                          alternative-text="Loading..."
+                          size="small"
+                          variant="base"
+                        ></lightning-spinner>
+                      </div>
+                      <div if:true={importShowTable}>
+                        <div
+                          class="slds-p-around_small lgc-bg"
+                          if:true={importShowTable}
+                        >
+                          {labels.selectedStoresLabel} <b>{selectedStores}</b>
+                        </div>
+                        <div
+                          lwc-if={importDataTable.length}
+                          class="datatable-container"
+                        >
+                          <lightning-datatable
+                            key-field="Id"
+                            data={importDataTable}
+                            columns={uploadColumns}
+                            onrowselection={selectedRowHandler}
+                            sorted-by="Name"
+                            data-id="Table1"
+                            selected-rows={preSelectedRows}
+                          >
+                          </lightning-datatable>
+                        </div>
+                      </div>
+                      <div if:true={importShowError}>
+                        <template
+                          for:each={importErrorMessages}
+                          for:item="errorMessage"
+                          for:index="index"
+                        >
+                          <div
+                            key={errorMessage.index}
+                            class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error"
+                            role="alert"
+                          >
+                            <span
+                              class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+                              title="Error Icon"
+                            >
+                              <lightning-icon
+                                icon-name="utility:error"
+                                alternative-text="Error"
+                                title="Error"
+                                variant="inverse"
+                              ></lightning-icon>
+                            </span>
+                            <h2>{errorMessage}</h2>
+                          </div>
+                        </template>
+                      </div>
+                      <div
+                        class="slds-p-top_medium slds-p-bottom_small"
+                        if:true={importShowTableAssociated}
+                      >
+                        <lightning-card
+                          title={labels.accountAssociatedLabel}
+                          icon-name="standard:account_info"
+                        >
+                          <div class="datatable-container">
+                            <lightning-datatable
+                              key-field="id"
+                              data={importDataTableAssociated}
+                              columns={columns}
+                              sorted-by="Name"
+                              data-id="Table0"
+                              hide-checkbox-column="true"
+                            >
+                            </lightning-datatable>
+                            <div if:true={ShowGetAssociatedAccountsError}>
+                              <div
+                                class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error"
+                                role="alert"
+                              >
+                                <span
+                                  class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+                                  title="Error Icon"
+                                >
+                                  <lightning-icon
+                                    icon-name="utility:error"
+                                    alternative-text="Error"
+                                    title="Error"
+                                    variant="inverse"
+                                  ></lightning-icon>
+                                </span>
+                                <h2>{getAssociatedAccountsError}</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </lightning-card>
+                      </div>
+                    </lightning-tab>
+                  </lightning-tabset>
+                </div>
+              </div>
+            </div>
+          </lightning-card>
+        </div>
+      </div>
+      <div if:true={showEntitlementScreenComponent}>
+        <c-lwc-manage-entitlements-screen
+          accounts-string={sendaccountIds}
+          record={recordId}
+          accounts-data={accountsDataTable}
+          filename={filename}
+          filecontents={filecontents}
+          is-business-ids-imported={isBusinessIdsImported}
+          onpassshowpricingscreencomponentvalue={handleBackButton}
+          is-processing-existing-accounts={isProcessingExistingAccounts}
+          is-processing-new-and-coo={isProcessingNewAndCoo}
+          is-processing-only-coo={isProcessingOnlyCoo}
+          is-processing-only-new={isProcessingOnlyNew}
+          onclose={handleCloseParent}
+        ></c-lwc-manage-entitlements-screen>
+      </div>
+    </div>
+  </div>
+</template>

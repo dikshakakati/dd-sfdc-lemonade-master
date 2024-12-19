@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Closed Won Opportunity req on parent WO</label>
+    <protected>false</protected>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">LEM-10031: It validates that Opportunity Stage is &apos;Closed/Won&apos; when Work Order type is &apos;Marketplace&apos;/&apos;Storefront&apos;/&apos;Drive&apos;/&apos;COO&apos; or Post-Sales&apos; with sub-type as &apos;Rate Change&apos;.</value>
+    </values>
+    <values>
+        <field>Error_Message__c</field>
+        <value xsi:type="xsd:string">Please ensure the opportunity on the work order is Closed/Won.</value>
+    </values>
+    <values>
+        <field>Field_Label__c</field>
+        <value xsi:type="xsd:string">Stage</value>
+    </values>
+    <values>
+        <field>Field_Name__c</field>
+        <value xsi:type="xsd:string">StageName</value>
+    </values>
+    <values>
+        <field>Is_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Object_Label__c</field>
+        <value xsi:type="xsd:string">Opportunity</value>
+    </values>
+    <values>
+        <field>Object_Name__c</field>
+        <value xsi:type="xsd:string">Opportunity</value>
+    </values>
+    <values>
+        <field>Service_Class_Name__c</field>
+        <value xsi:type="xsd:string">IWorkOrderValidationsService</value>
+    </values>
+    <values>
+        <field>Service_Method_Name__c</field>
+        <value xsi:type="xsd:string">validateOpportunityStage</value>
+    </values>
+</CustomMetadata>

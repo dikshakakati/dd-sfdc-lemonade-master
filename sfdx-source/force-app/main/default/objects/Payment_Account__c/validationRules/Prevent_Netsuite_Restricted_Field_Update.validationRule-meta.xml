@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Netsuite_Restricted_Field_Update</fullName>
+    <active>true</active>
+    <description>LEM-1285: Prevent NetSuite Id and DoorDash Legal Entity once is populated.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Allow_Netsuite_Restricted_Fields_Update),
+    RecordType.DeveloperName = &apos;Invoice&apos;,
+    NOT(ISBLANK(PRIORVALUE(NetSuite_ID__c))),
+    OR(
+        AND(
+           $Setup.Sync_With_Netsuite_Process__c.Restlet_API_Call__c,
+            ISCHANGED(NetSuite_ID__c)
+        ),
+        AND(
+            NOT($Setup.Sync_With_Netsuite_Process__c.Restlet_API_Call__c),
+            OR(
+                ISCHANGED(NetSuite_ID__c),
+                ISCHANGED(DoorDash_Legal_Entity__c),
+                ISCHANGED(Payment_Terms__c),
+                ISCHANGED(CurrencyIsoCode),
+                ISCHANGED(Business_Unit__c)
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>You do not have permission to update restricted fields.</errorMessage>
+</ValidationRule>

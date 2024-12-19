@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SelectorRequiresAnSObject</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(ApplicationType__c) = &apos;Selector&apos; &amp;&amp; ISBLANK( BindingObject__c ) &amp;&amp; ISBLANK( BindingObjectApiName__c )</errorConditionFormula>
+    <errorDisplayField>BindingObject__c</errorDisplayField>
+    <errorMessage>A Selector binding requires an SObject. Please select a Binding Object or enter a Binding Object API Name.</errorMessage>
+</ValidationRule>

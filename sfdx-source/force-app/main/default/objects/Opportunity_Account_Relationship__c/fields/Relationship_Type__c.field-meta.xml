@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Type__c</fullName>
+    <description>LEM-341: This field depicts the type of account with which the user is creating a relationship to.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Related_Account__r.Relationship_Type__c)</formula>
+    <label>Relationship Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

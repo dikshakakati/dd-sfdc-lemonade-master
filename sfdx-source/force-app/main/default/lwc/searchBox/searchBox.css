@@ -1,0 +1,17 @@
+/**
+ * @author Deloitte
+ * @date 10/28/2022
+ * @description CSS for searchBox lightning web component.
+ */
+.divStyling {
+  height: auto;
+  width: 100%;
+}
+.localSearchStyling {
+  float: left;
+  width: 80%;
+}
+.serverSearchStyling {
+  float: right;
+  width: 20%;
+}

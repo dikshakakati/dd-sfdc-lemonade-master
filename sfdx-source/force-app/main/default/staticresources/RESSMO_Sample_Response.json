@@ -1,0 +1,11 @@
+{
+  "message": "Your message here",
+  "error_message": "Any error message",
+  "uuid": "123-456-789",
+  "storeAccountId": "store-001",
+  "onboardingLink": "https://www.example.com/onboarding",
+  "banking": {
+    "success": true,
+    "errors": []
+  }
+}

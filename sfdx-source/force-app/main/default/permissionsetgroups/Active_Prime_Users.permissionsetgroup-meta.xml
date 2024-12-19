@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-2861: This Permission Set Group will provide access for Active Prime User.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Active Prime Users</label>
+    <permissionSets>Active_Prime</permissionSets>
+    <permissionSets>Active_Prime_QuoteToCash</permissionSets>
+    <permissionSets>Allow_Account_Reparenting</permissionSets>
+    <permissionSets>Allow_Account_Segment_Update</permissionSets>
+    <permissionSets>CPQ_License</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

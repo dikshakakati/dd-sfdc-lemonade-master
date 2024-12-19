@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-5153: Custom Permission to Show Onboarding and Activations’s quick action buttons and conga grid component to user.</description>
+    <isLicensed>false</isLicensed>
+    <label>Show Onboarding Activations Quick Actions</label>
+</CustomPermission>

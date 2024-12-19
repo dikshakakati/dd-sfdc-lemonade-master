@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Teams_Accounts</fullName>
+    <columns>Account_Owner__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Segment__c</columns>
+    <columns>Primary_Vertical__c</columns>
+    <columns>Total_Number_Of_Stores__c</columns>
+    <columns>Partnership_Status__c</columns>
+    <columns>Account_Lifecycle_Status__c</columns>
+    <filterScope>Team</filterScope>
+    <label>My Account Team’s Accounts</label>
+</ListView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Workable_WorkSteps_Roll_Up__c</fullName>
+    <description>LEM-1181: Number of WorkSteps that are workable i.e. WorkStep&apos;s status is in Not Started, In Progress, Ready for QA, QA Complete, Blocked and Escalated.
+It calculates workable WorkSteps on child WorkPlan through Roll-Up Summary.</description>
+    <externalId>false</externalId>
+    <label>Number of Workable WorkSteps Roll-Up</label>
+    <securityClassification>Internal</securityClassification>
+    <summaryFilterItems>
+        <field>WorkStep.Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started, In Progress, Ready for QA, QA Complete, Escalated, Blocked</value>
+    </summaryFilterItems>
+    <summaryForeignKey>WorkStep.WorkPlanId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

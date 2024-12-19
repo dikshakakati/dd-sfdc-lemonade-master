@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opt_In_Opt_Out</fullName>
+    <active>false</active>
+    <description>LEM-1363: Capture Opt-in/Out and Responsible Party</description>
+    <errorConditionFormula>IF(AQS_Quote__c = NULL, FALSE,
+IF(AND(TEXT(AQS_Quote__r.SBQQ__Type__c) = &apos;Amendment&apos;,
+AQS_Quote__r.SBQQ__Account__r.Franchise_Owned_Store_Count__c &gt; 0,
+OR(TEXT(AQS_Quote__r.Opt_In_Opt_Out_Decision__c) = NULL,											TEXT(AQS_Quote__r.Opt_In_Out_Responsible_Party__c) = NULL,
+ISNULL(AQS_Quote__r.Opt_In_Opt_Out_Response_Time_in_Days__c), AQS_Quote__r.Opt_In_Opt_Out_Response_Time_in_Days__c &lt; 1)),
+TRUE,FALSE))</errorConditionFormula>
+    <errorMessage>“Franchise Amendment Process”, “Opt-In/Opt-Out Response Time (in Days)” and “Opt-In/Out Responsible Party” must be populated before saving the quote when the corporate business account has franchisees.</errorMessage>
+</ValidationRule>

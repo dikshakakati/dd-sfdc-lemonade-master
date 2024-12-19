@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>All_Fraud_Document_Access_For_Mx_Fraud_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-22246: It is used to provide Read/Write access to all Mx Fraud Document records for Fraud team.</description>
+        <label>All Fraud Document Access For Fraud Users</label>
+        <sharedTo>
+            <group>Mx_Fraud_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Pending_Document_Access_For_MxS_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-22246: It is used to provide Read/Write access to Mx Fraud Documents in &apos;Pending Review&apos;/&apos;Rejected&apos; status.</description>
+        <label>Pending Document Access For MxS Users</label>
+        <sharedTo>
+            <group>Merchant_Services_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Mx_Document_Verification_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Review</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Mx_Document_Verification_Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Pending_Document_Access_For_Mx_Support_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-22246: It is used to provide Read/Write access to Mx Fraud Documents in &apos;Pending Review&apos;/&apos;Rejected&apos; status.</description>
+        <label>Pending Document Access For Mx Support Users</label>
+        <sharedTo>
+            <group>Merchant_Support_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Mx_Document_Verification_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Review</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Mx_Document_Verification_Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

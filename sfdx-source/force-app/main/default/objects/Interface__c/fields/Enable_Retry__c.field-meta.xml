@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Retry__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-92: This field is to specify whether failure classes needs to re-execute or not</description>
+    <externalId>false</externalId>
+    <label>Enable Retry</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

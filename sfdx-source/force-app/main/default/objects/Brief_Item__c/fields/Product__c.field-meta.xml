@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <description>LEM-2983: Captures the type of campaign product associated with the Brief Item.</description>
+    <externalId>false</externalId>
+    <label>Product</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Order Again</fullName>
+                <default>false</default>
+                <label>Order Again</label>
+            </value>
+            <value>
+                <fullName>First Order, Percentage Off</fullName>
+                <default>false</default>
+                <label>First Order, Percentage Off</label>
+            </value>
+            <value>
+                <fullName>Try Me Free</fullName>
+                <default>false</default>
+                <label>Try Me Free</label>
+            </value>
+            <value>
+                <fullName>DoorDash Deals</fullName>
+                <default>false</default>
+                <label>DoorDash Deals</label>
+            </value>
+            <value>
+                <fullName>Spend X, Get Y</fullName>
+                <default>false</default>
+                <label>Spend X, Get Y</label>
+            </value>
+            <value>
+                <fullName>Buy Item, Get $X or Y% Off</fullName>
+                <default>false</default>
+                <label>Buy Item, Get $X or Y% Off</label>
+            </value>
+            <value>
+                <fullName>Buy One, Get One</fullName>
+                <default>false</default>
+                <label>Buy One, Get One</label>
+            </value>
+            <value>
+                <fullName>Free Item Over $X</fullName>
+                <default>false</default>
+                <label>Free Item Over $X</label>
+            </value>
+            <value>
+                <fullName>CRM</fullName>
+                <default>false</default>
+                <label>CRM</label>
+            </value>
+            <value>
+                <fullName>Sponsored Products</fullName>
+                <default>false</default>
+                <label>Sponsored Products</label>
+            </value>
+            <value>
+                <fullName>Banners</fullName>
+                <default>false</default>
+                <label>Banners</label>
+            </value>
+            <value>
+                <fullName>Sponsored Listings</fullName>
+                <default>false</default>
+                <label>Sponsored Listings</label>
+            </value>
+            <value>
+                <fullName>Custom Marketing Promotion</fullName>
+                <default>false</default>
+                <label>Custom Marketing Promotion</label>
+            </value>
+            <value>
+                <fullName>CnG DoubleDash</fullName>
+                <default>false</default>
+                <label>CnG DoubleDash</label>
+            </value>
+            <value>
+                <fullName>CnG Search</fullName>
+                <default>false</default>
+                <label>CnG Search</label>
+            </value>
+            <value>
+                <fullName>CnG Collections</fullName>
+                <default>false</default>
+                <label>CnG Collections</label>
+            </value>
+            <value>
+                <fullName>CnG Categories</fullName>
+                <default>false</default>
+                <label>CnG Categories</label>
+            </value>
+            <value>
+                <fullName>Sampling</fullName>
+                <default>false</default>
+                <label>Sampling</label>
+            </value>
+            <value>
+                <fullName>Branded Collections</fullName>
+                <default>false</default>
+                <label>Branded Collections</label>
+            </value>
+            <value>
+                <fullName>Sponsored Brands</fullName>
+                <default>false</default>
+                <label>Sponsored Brands</label>
+            </value>
+            <value>
+                <fullName>SKU Level Deals (Buy X in group, get $Y or Z% off)</fullName>
+                <default>false</default>
+                <label>SKU Level Deals (Buy X in group, get $Y or Z% off)</label>
+            </value>
+            <value>
+                <fullName>Sponsorships</fullName>
+                <default>false</default>
+                <label>Sponsorships</label>
+            </value>
+            <value>
+                <fullName>DashPass Exclusive Item</fullName>
+                <default>false</default>
+                <label>DashPass Exclusive Item</label>
+            </value>
+            <value>
+                <fullName>Threshold Deals: Buy $X subtotal in group, get Y off</fullName>
+                <default>false</default>
+                <label>Threshold Deals: Buy $X subtotal in group, get Y off</label>
+            </value>
+            <value>
+                <fullName>Discounted Item Promo</fullName>
+                <default>false</default>
+                <label>Discounted Item Promo</label>
+            </value>
+            <value>
+                <fullName>Store Rewards (DD Loyalty)</fullName>
+                <default>false</default>
+                <label>Store Rewards (DD Loyalty)</label>
+            </value>
+            <value>
+                <fullName>Offsite Ad</fullName>
+                <default>false</default>
+                <label>Offsite Ad</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

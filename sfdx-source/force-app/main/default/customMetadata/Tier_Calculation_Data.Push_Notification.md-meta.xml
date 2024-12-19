@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Push-Notification</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Data_Type_Of_Field_On_Quote_Line__c</field>
+        <value xsi:type="xsd:string">Multi Picklist</value>
+    </values>
+    <values>
+        <field>Eligible_Products_for_Tier_Calculation__c</field>
+        <value xsi:type="xsd:string">DashPass_Exclusive_Item</value>
+    </values>
+    <values>
+        <field>Field_Value__c</field>
+        <value xsi:type="xsd:string">Push-Notification</value>
+    </values>
+    <values>
+        <field>Maximum_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Minimum_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Quote_Line_Field_API_Name__c</field>
+        <value xsi:type="xsd:string">DPEI_Mentions_on_Mx_Owned_Channels_by_Mx__c</value>
+    </values>
+    <values>
+        <field>Scorecard__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+</CustomMetadata>

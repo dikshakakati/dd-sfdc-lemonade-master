@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Figment_Heroku_Integration_Errors__x.Object__c</field>
+    </columns>
+    <columns>
+        <field>Figment_Heroku_Integration_Errors__x.Lemonade_Record_Id__c</field>
+    </columns>
+    <columns>
+        <field>Figment_Heroku_Integration_Errors__x.Error_Message__c</field>
+    </columns>
+    <columns>
+        <field>Figment_Heroku_Integration_Errors__x.Source__c</field>
+    </columns>
+    <columns>
+        <field>Figment_Heroku_Integration_Errors__x.Created_Date__c</field>
+    </columns>
+    <columns>
+        <field>Figment_Heroku_Integration_Errors__x.Processed_Date__c</field>
+    </columns>
+    <columns>
+        <field>Figment_Heroku_Integration_Errors__x.Figment_Record_Id__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>This report displays a list of errors that have occurred while syncing records
+    (Accounts, Contacts, Account Contact Relationship) from Lemonade to Figment</description>
+    <format>Tabular</format>
+    <name>Lemonade to Figment Sync Errors</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Figment_Heroku_Integration_Errors__x</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

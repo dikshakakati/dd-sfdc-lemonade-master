@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LEM-23683: It is used to notify Mx Onboarding Link Record Creator, Opportunity Owner and Opportunity Team when Mx Onboarding Inputs form is submitted.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[Internal] Onboarding Inputs - Mx Submission Email Template</name>
+    <relatedEntityType>Mx_Onboarding_Link__c</relatedEntityType>
+    <style>none</style>
+    <subject>Onboarding Inputs: Notification of Mx Submission</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

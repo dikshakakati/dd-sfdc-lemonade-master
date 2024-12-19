@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4094: It is used to enable a user to change status of current Work Order and related child Work Orders with allowed values (Planning/Confirmed/Dead).</description>
+    <flowDefinition>Work_Order_Change_Status</flowDefinition>
+    <label>Change Status</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

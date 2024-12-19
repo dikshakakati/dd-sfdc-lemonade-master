@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>New Zealand</label>
+    <protected>false</protected>
+    <values>
+        <field>Bank_Account_Number_Maximum_Digits__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Bank_Account_Number_Minimum_Digits__c</field>
+        <value xsi:type="xsd:string">4</value>
+    </values>
+    <values>
+        <field>Bank_Account_Number_Regex__c</field>
+        <value xsi:type="xsd:string">^\d{13,16}$</value>
+    </values>
+    <values>
+        <field>Country_Code__c</field>
+        <value xsi:type="xsd:string">NZ</value>
+    </values>
+    <values>
+        <field>Country__c</field>
+        <value xsi:type="xsd:string">New Zealand</value>
+    </values>
+    <values>
+        <field>Currency_Code__c</field>
+        <value xsi:type="xsd:string">NZD</value>
+    </values>
+    <values>
+        <field>Currency__c</field>
+        <value xsi:type="xsd:string">New Zealand dollar</value>
+    </values>
+    <values>
+        <field>Institution_Number_Total_Digits__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Phone_Country_Code__c</field>
+        <value xsi:type="xsd:string">64</value>
+    </values>
+    <values>
+        <field>Phone_Maximum_Digits__c</field>
+        <value xsi:type="xsd:double">10</value>
+    </values>
+    <values>
+        <field>Phone_Minimum_Digits__c</field>
+        <value xsi:type="xsd:double">8</value>
+    </values>
+    <values>
+        <field>Phone_Regex_Match__c</field>
+        <value xsi:type="xsd:string">^\d{8,10}$</value>
+    </values>
+    <values>
+        <field>Phone_Validation_Error__c</field>
+        <value xsi:type="xsd:string">Phone number must be between 8 and 10 digits.</value>
+    </values>
+    <values>
+        <field>Routing_Number_Restricted_Starting_Digit__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Routing_Number_Total_Digits__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Tax_ID_Total_Digits__c</field>
+        <value xsi:type="xsd:double">13.0</value>
+    </values>
+</CustomMetadata>

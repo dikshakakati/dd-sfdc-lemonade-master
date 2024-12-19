@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FieldSet_Name__c</fullName>
+    <description>LEM-1397: Indicates the fields set name which will be used to display the fields on UI.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>FieldSet Name</label>
+    <length>80</length>
+    <securityClassification>Internal</securityClassification>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

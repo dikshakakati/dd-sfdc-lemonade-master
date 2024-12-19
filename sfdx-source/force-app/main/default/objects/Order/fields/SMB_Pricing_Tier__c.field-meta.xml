@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMB_Pricing_Tier__c</fullName>
+    <description>LEM-16377: It is used to roll up the max value from order product&apos;s field &apos;SMB Pricing Tier Clone&apos;.</description>
+    <externalId>false</externalId>
+    <label>SMB Pricing Tier</label>
+    <securityClassification>Proprietary</securityClassification>
+    <summarizedField>OrderItem.SMB_Pricing_Tier_Clone__c</summarizedField>
+    <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

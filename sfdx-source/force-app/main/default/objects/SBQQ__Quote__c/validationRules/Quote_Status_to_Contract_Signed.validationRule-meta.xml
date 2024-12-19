@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Status_to_Contract_Signed</fullName>
+    <active>true</active>
+    <description>LEM-984: Allow only Comm Ops or System Admins to manually update the quote status to &apos;Contract Signed&apos; and LEM-915: Restrict user from changing the quote stage to Contract Signed based on additional conditions. LEM-2639: Update Validation Rule</description>
+    <errorConditionFormula>If(
+    AND(
+        $Profile.Name != $Label.System_Administrator,
+        !$Permission.Ironclad_Integration_User,
+        !$Permission.CommOps_User,
+        !$Permission.Nintex_Integration_user_identifier,
+        !$Permission.Bypass_Quote_Validation_Rules
+    ),
+    IF(
+        DocuSign_Executed__c = TRUE,
+        FALSE,
+        IF(
+            OR(
+                AND(
+                    TEXT(PRIORVALUE(SBQQ__Status__c)) = $Label.Quote_Contract_Signed,
+                    ISCHANGED(SBQQ__Status__c)
+                ),
+                AND(
+                    TEXT(SBQQ__Status__c) = $Label.Quote_Contract_Signed, 
+                    NOT(ISCHANGED(SBQQ__Status__c)),
+                    OR(
+                        ISCHANGED(Signed_Contract_link__c),
+                        ISCHANGED(Contract_Signed_Date__c)
+                    )
+                ),
+                AND(
+                    Segment__c = $Label.AccountSegmentSMB,
+                    TEXT(SBQQ__Status__c) = $Label.Quote_Contract_Signed,
+                    OR(
+                        Signed_Contract_link__c = NULL,
+                        ISBLANK(Contract_Signed_Date__c)
+                    )
+                )
+            ),
+            TRUE,
+            FALSE
+        )
+    ),
+    If(
+        AND(
+            Segment__c = $Label.AccountSegmentSMB,
+            TEXT(SBQQ__Status__c) = $Label.Quote_Contract_Signed,
+            OR(
+                Signed_Contract_link__c = NULL,
+                ISBLANK(Contract_Signed_Date__c)
+            ),
+            AND(
+                !$Permission.Ironclad_Integration_User,
+                !$Permission.Nintex_Integration_user_identifier,
+                !$Permission.Bypass_Quote_Validation_Rules,
+                OR(
+                    $Profile.Name = $Label.System_Administrator,
+                    $Permission.CommOps_User
+                )
+            )
+        ),
+        TRUE,
+        FALSE
+    )
+)</errorConditionFormula>
+    <errorMessage>Only Comm Ops and System Admins can manually update Quote Status to &apos;Contract Signed&apos;. Please ensure both the Signed Contract Link and Contract Signed Date are populated before updating the quote status to Contract Signed</errorMessage>
+</ValidationRule>

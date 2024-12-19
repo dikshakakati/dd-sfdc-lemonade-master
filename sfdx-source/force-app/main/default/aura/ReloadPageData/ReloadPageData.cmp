@@ -1,0 +1,3 @@
+<aura:component implements="lightning:availableForFlowActions,force:hasRecordId">
+    <!-- LEM-8059 - This component implements page reload functionality -->
+</aura:component>

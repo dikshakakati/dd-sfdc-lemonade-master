@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-12888: It is used to provide special permissions to Data Operations persona’s user(s) on need basis. This permission set currently enables to set audit fields and Read/Edit on restricted/encrypted fields.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>AAR Data Ops Special Permissions</label>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.SSN_Last_4Digits__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.TaxID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Encrypted_Tax_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CreateAuditFields</name>
+    </userPermissions>
+</PermissionSet>

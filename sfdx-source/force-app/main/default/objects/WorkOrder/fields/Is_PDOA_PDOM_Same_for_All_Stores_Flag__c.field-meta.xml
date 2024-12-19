@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_PDOA_PDOM_Same_for_All_Stores_Flag__c</fullName>
+    <description>LEM-5126: It is used to indicate whether the parent work order PDOx fields matches with the store level PDOx fields</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(Is_PDOA_PDOM_Same_for_All_Stores__c), IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;red&quot;, 15, 15 ), IMAGE ( &quot;/img/samples/flag_green.gif&quot;, &quot;green&quot;, 15 , 15 ))</formula>
+    <label>Is PDOA/PDOM Same for All Stores?</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

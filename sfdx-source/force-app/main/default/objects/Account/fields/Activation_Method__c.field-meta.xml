@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activation_Method__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>POS Activation Method
+BZAP-19603</description>
+    <externalId>false</externalId>
+    <inlineHelpText>POS Activation Method</inlineHelpText>
+    <label>Activation Method</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Request_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Light up</fullName>
+                <default>false</default>
+                <label>Light up</label>
+            </value>
+            <value>
+                <fullName>Test order</fullName>
+                <default>false</default>
+                <label>Test order</label>
+            </value>
+            <value>
+                <fullName>Test order and call</fullName>
+                <default>false</default>
+                <label>Test order and call</label>
+            </value>
+            <value>
+                <fullName>Demo</fullName>
+                <default>false</default>
+                <label>Demo</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>POS Integration Request</controllingFieldValue>
+            <valueName>Light up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>POS Integration Request</controllingFieldValue>
+            <valueName>Test order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>POS Integration Request</controllingFieldValue>
+            <valueName>Test order and call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>POS Test Store for New Partner</controllingFieldValue>
+            <valueName>Demo</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

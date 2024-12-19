@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Brand_On_Business_Reference</fullName>
+    <active>true</active>
+    <description>LEM-9435</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Businessref_Validation_Rules),
+  $User.Full_Name__c != &quot;Mulesoft Integration User&quot;,
+  $Profile.Name != $Label.System_Administrator,
+  $User.Full_Name__c != &apos;Automated Process&apos;,
+  $User.Full_Name__c != &apos;Process Automation User&apos;,
+  ISBLANK(Brand__c),
+  (ISNEW() || ISCHANGED(Brand__c) || ISCHANGED(External_Id_Source__c)),
+  NOT (ISPICKVAL ( External_Id_Source__c , &quot;DriveDb&quot;)),
+  NOT (ISPICKVAL ( Default_Type__c , &quot;COO Graveyard&quot;)),
+  ISBLANK( Converted_Lead_Id__c )
+  )</errorConditionFormula>
+    <errorMessage>Brand is required for all new Business References. Select a Brand before creating a new Business Reference.</errorMessage>
+</ValidationRule>

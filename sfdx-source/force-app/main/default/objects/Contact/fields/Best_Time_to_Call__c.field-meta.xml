@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Best_Time_to_Call__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14733: It indicates the best time to contact the Mx.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Best time period to contact the Mx</inlineHelpText>
+    <label>Best Time to Call</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>9 am -11 am</fullName>
+                <default>false</default>
+                <label>9 am -11 am</label>
+            </value>
+            <value>
+                <fullName>11 am - 1 pm</fullName>
+                <default>false</default>
+                <label>11 am - 1 pm</label>
+            </value>
+            <value>
+                <fullName>1 pm - 3 pm</fullName>
+                <default>false</default>
+                <label>1 pm - 3 pm</label>
+            </value>
+            <value>
+                <fullName>3 pm - 5 pm</fullName>
+                <default>false</default>
+                <label>3 pm - 5 pm</label>
+            </value>
+            <value>
+                <fullName>5 pm- 7 pm</fullName>
+                <default>false</default>
+                <label>5 pm- 7 pm</label>
+            </value>
+            <value>
+                <fullName>7 pm- 9 pm</fullName>
+                <default>false</default>
+                <label>7 pm- 9 pm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

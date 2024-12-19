@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-2983: Captures the Account with which the current Brief is associated to.</description>
+    <externalId>false</externalId>
+    <label>ZAccount</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Briefs</relationshipLabel>
+    <relationshipName>Briefs</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

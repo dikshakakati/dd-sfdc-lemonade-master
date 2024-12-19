@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X0_Commission_End_Date__c</fullName>
+    <description>LEM-16860: Custom/Unique Ter ms - Attributes.</description>
+    <externalId>false</externalId>
+    <formula>X0_Commission_Start_Date__c +
+  CASE(
+    X0_Commission_of_days__c,
+    &apos;7 days&apos;, 7,
+    &apos;30 days&apos;, 30,
+    &apos;60 days&apos;, 60,
+    &apos;90 days&apos;, 90,
+    &apos;120 days&apos;, 120,
+    0
+  )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>End date for the 0% Commission Rate.</inlineHelpText>
+    <label>0% Commission End Date</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

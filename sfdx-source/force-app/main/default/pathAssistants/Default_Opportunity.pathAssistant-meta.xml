@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Default</masterLabel>
+    <pathAssistantSteps>
+        <picklistValueName>Closed Lost</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Stage Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Crossing the Finish Line&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Quotes have been generated (if applicable)&lt;/li&gt;&lt;li&gt;Negotiations are nearly complete&lt;/li&gt;&lt;li&gt;Business and DoorDash are ready to create a contract&lt;/li&gt;&lt;li&gt;Redlines to the contract are still occurring&lt;/li&gt;&lt;li&gt;Deal has not yet been won&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Contracting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;strong&gt;&lt;u&gt;Stage Overview&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Determining the Best Products and Rates&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Business has shown interest in any or all products pitched&lt;/li&gt;&lt;li&gt;Actively negotiating which products and rates will be sold to the business&lt;/li&gt;&lt;li&gt;Specific individuals pertaining to deal and their role have been identified&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Required Actions: Add at least 1 Quote to the Opportunity and have it tagged as “Primary”. (N/A for Franchise Accounts)&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Negotiating</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Stage Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;﻿Initial Conversations&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Successfully made contact with business&lt;/li&gt;&lt;li&gt;Pitch meeting scheduled&lt;/li&gt;&lt;li&gt;Yet to begin quoting of rates /terms&lt;/li&gt;&lt;li&gt;For SMB:&lt;ul&gt;&lt;li&gt;Discovery: Initial Call with Mx scheduled.&lt;/li&gt;&lt;li&gt;Demo: Call with Mx scheduled for pitch.&lt;/li&gt;&lt;li&gt;Business Considerations: Follow-up meetings are needed to understand business needs.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Required Actions:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;1 Primary Contact and 1 Contact Role of Contract Signatory must be associated with this opportunity. You may have 2 separate contacts (1 Primary Contact and 1 Contract Signatory) or a single contact serving as both (Primary Contact having a role of Contract Signatory)&lt;/li&gt;&lt;li&gt;Add 1+ Opportunity Brand Relationship to Opportunity&lt;/li&gt;&lt;li&gt;For SMB Opportunities with a SDR &amp;amp; Type = New, add at least 1 Event Activity with Status &amp;quot;Event Held&amp;quot; to Opportunity&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Pitching</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Stage Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;﻿&lt;strong&gt;Pre-Pipeline Idea&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;For tracking potential deals that aren’t ready to be committed to pipeline&lt;/li&gt;&lt;li&gt;Can be for a net new or existing business&lt;/li&gt;&lt;li&gt;Will not show on forecast reports&lt;/li&gt;&lt;li&gt;&lt;u&gt;Untouched:&lt;/u&gt; No work has begun on the opportunity.&lt;/li&gt;&lt;li&gt;&lt;u&gt;Trying to Reach&lt;/u&gt;: Currently working to identify the Decision Maker. Opportunity is not ready to be committed to pipeline.&lt;/li&gt;&lt;li&gt;&lt;u&gt;DM Identified&lt;/u&gt;: DM has been identified. Currently working on scheduling meeting with DM. Opportunity is not ready to be committed to pipeline.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Prospecting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Lost_Reason_Additional_Notes__c</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <info>&lt;p&gt;&lt;u style=&quot;font-size: 14px;&quot;&gt;Stage Overview&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Sales Cycle Temporarily Suspended&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;SMB Opportunity will not close in the next 14 days&lt;/li&gt;&lt;li&gt;ENT Opportunity will not close in the next 90 days&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Required Fields: Close Date, Lost / Stalled Reason Additional Notes&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Stalled</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

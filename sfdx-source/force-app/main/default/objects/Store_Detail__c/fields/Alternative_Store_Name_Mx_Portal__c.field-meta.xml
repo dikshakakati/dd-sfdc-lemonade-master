@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alternative_Store_Name_Mx_Portal__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15116: It indicates store name.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>ID provided by the Merchant</inlineHelpText>
+    <label>Alternative Store Name (Mx Portal)</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

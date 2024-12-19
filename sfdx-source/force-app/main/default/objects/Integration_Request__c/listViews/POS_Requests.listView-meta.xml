@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POS_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Action__c</columns>
+    <columns>Integration_Id__c</columns>
+    <columns>Integration_Provider__c</columns>
+    <columns>Sfdc_Status__c</columns>
+    <columns>SFDC_Org__c</columns>
+    <columns>Store_Id__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Onboarding_Id__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Integration_Type__c</field>
+        <operation>equals</operation>
+        <value>POS Requests</value>
+    </filters>
+    <label>POS Requests</label>
+</ListView>

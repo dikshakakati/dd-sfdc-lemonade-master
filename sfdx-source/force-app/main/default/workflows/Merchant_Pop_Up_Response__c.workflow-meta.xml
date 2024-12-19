@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Nintex_URL_Approved_Email</fullName>
+        <description>LEM-3214: Nintex URL Approval Request Approved Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Nintex_Approval_Emails/Nintex_URL_Approval_Completed_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Nintex_URL_Rejected_Email</fullName>
+        <description>LEM-3214: Nintex URL Approval Request Rejected Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Nintex_Approval_Emails/Nintex_URL_Approval_Completed_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved</fullName>
+        <description>LEM-3214: Approval Status field updated to approved</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Nintex_URL_Approved</fullName>
+        <description>LEM-3214: Approval Status field updated to Approved</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Nintex URL Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Nintex_URL_Pending_Approval</fullName>
+        <description>LEM-3214: Approval Status field updated to Pending</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Nintex URL Pending Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Nintex_URL_Rejected</fullName>
+        <description>LEM-3214: Approval Status status updated to Rejected</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Nintex URL Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pending_Approval</fullName>
+        <description>LEM-3214: Approval Status field updated to pending</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Pending Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <description>LEM-3214: Approval Status status updated to Rejected</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

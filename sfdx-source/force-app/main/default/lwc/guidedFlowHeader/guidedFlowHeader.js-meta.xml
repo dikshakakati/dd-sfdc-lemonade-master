@@ -1,0 +1,19 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>61.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>Add Custom Header</masterLabel>
+	<description>LEM-15978-This component allows to add custom header in flow</description>
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<property name="headerText" type="String" description="Main Header Text" label="Header Text" required="true" role="inputOnly" />
+			<property name="headerCSS" type="String" description="Main Header CSS" label="Header CSS" default="slds-clearfix slds-text-heading_medium"/>
+			<property name="subHeaderText" type="String" description="Sub Header Text" label="Sub-Header Text"/>
+			<property name="subHeaderCSS" type="String" description="Sub Header CSS" label="Sub-Header CSS" default="slds-text-title slds-text-color_destructive" />
+			<property name="isSubHeaderBackGroundColor" type="Boolean" description="Add Subheader Background[True/False]" label="Is Subheader Background Required?"/>
+			<property name="subHeaderStyle" type="String" description="Sub Header Style" label="Sub-Header Style" default="padding:0.5rem;background:#16325c" />
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

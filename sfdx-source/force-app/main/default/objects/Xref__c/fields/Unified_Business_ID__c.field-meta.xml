@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unified_Business_ID__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-2197: Signifies the backend unified ID tying Marketplace and Drive business IDs.</description>
+    <externalId>false</externalId>
+    <formula>Business_Reference__r.Unified_Business_ID__c</formula>
+    <inlineHelpText>Signifies the backend unified ID tying Marketplace and Drive business IDs</inlineHelpText>
+    <label>Unified Business ID</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

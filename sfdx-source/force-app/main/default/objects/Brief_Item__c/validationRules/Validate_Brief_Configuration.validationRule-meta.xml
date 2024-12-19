@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Brief_Configuration</fullName>
+    <active>true</active>
+    <description>LEM-5552,LEM-5954
+        Brief.Configuration Or Either Brief.Store ID Or Brief.Business ID is required when moving
+        status = Campaign Building</description>
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+        ISCHANGED(Status__c),
+        TEXT(Status__c) == $Label.Campaign_Building,
+        OR(
+        ISBLANK(TEXT(Brief__r.Configuration__c)),
+        AND(
+        ISBLANK(Brief__r.Store_ID_List__c),
+        ISBLANK(Brief__r.Business_ID_List__c)
+        )
+        )
+        )</errorConditionFormula>
+    <errorMessage>To move this Brief Item to the “Campaign Building” status, you must first set the
+        “Configuration” to either Standard (Mx Services) or Custom (Ad Ops) and populate either
+        “Store ID List” or “Business ID List”  fields on the related Brief.</errorMessage>
+</ValidationRule>

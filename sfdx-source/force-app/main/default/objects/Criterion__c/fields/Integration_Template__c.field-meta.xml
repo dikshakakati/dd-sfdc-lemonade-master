@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration_Template__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-13777: It stores the Integration Template specific to the integration scenario for which the criteria needs to be evaluated.</description>
+    <externalId>false</externalId>
+    <label>Integration Template</label>
+    <referenceTo>Integration_Template__c</referenceTo>
+    <relationshipLabel>Criteria</relationshipLabel>
+    <relationshipName>Criteria</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

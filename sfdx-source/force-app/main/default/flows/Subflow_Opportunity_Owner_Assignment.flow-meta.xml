@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>LEM-13474: It adds the current Opportunity record to opportunitiesToUpdate list.</description>
+        <name>Add_Current_Opportunity_to_Opportunities_list</name>
+        <label>Add Current Opportunity to Opportunities list</label>
+        <locationX>1249</locationX>
+        <locationY>1190</locationY>
+        <assignmentItems>
+            <assignToReference>opportunitiesToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_Over_Selected_Opportunities</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_Over_Selected_Opportunities</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-23851: It is used to add Opportunities which are not owned by current user to the list.</description>
+        <name>Add_Opportunities_which_are_not_owned_by_current_user</name>
+        <label>Add Opportunities which are not owned by current user</label>
+        <locationX>1381</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>opportunitiesNotOwnedByCurrentUser</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_Over_Selected_Opportunities</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Owner_Id_with_Selected_User_Id</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-23851: It is used to add self owned Opportunities to the list.</description>
+        <name>Add_Self_owned_Opportunities</name>
+        <label>Add Self owned Opportunities</label>
+        <locationX>1117</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>opportunitiesOwnedByCurrentUser</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_Over_Selected_Opportunities</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Owner_Id_with_Selected_User_Id</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-23851: It is used to collect the errored opportunities.</description>
+        <name>Assign_Errored_Opportunities</name>
+        <label>Assign Errored Opportunities</label>
+        <locationX>50</locationX>
+        <locationY>1790</locationY>
+        <assignmentItems>
+            <assignToReference>erroredOpportunitesToDisplay</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>opportunitiesNotOwnedByCurrentUser</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Self_Owned_Opportunity_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It sets error flag with True to display error message when Opportunity records are null on owner assignment.</description>
+        <name>Set_Error_Flag_for_Null_Opportunities_On_Owner_Assignment</name>
+        <label>Set Error Flag for Null Opportunities On Owner Assignment</label>
+        <locationX>1458</locationX>
+        <locationY>1574</locationY>
+        <assignmentItems>
+            <assignToReference>isError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Error_Message_for_Null_Opportunities_On_Owner_Assignment</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It sets error flag to true when Opportunity has DML failure during update.</description>
+        <name>Set_Error_Flag_to_True_on_Opportunity_Update</name>
+        <label>Set Error Flag to True on Opportunity Update</label>
+        <locationX>50</locationX>
+        <locationY>2198</locationY>
+        <assignmentItems>
+            <assignToReference>isError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Error_Message_on_Opportunity_update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It sets error flag value to True when passed Opportunity record Ids are null.</description>
+        <name>Set_Error_Flag_to_True_When_Passed_Opportunity_Ids_Are_Null</name>
+        <label>Set Error Flag to True When Passed Opportunity Ids Are Null</label>
+        <locationX>1986</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>isError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Error_Message_when_Passed_Opportunity_Ids_are_Null</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It sets the error message when no record is selected by the end user.</description>
+        <name>Set_Error_Message_for_No_Record_Selected</name>
+        <label>Set Error Message for No Record Selected</label>
+        <locationX>1722</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.ErrorMessageWhenNoRecordIsSelected</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It sets error message when no Opportunities have owner assigned during iteration.</description>
+        <name>Set_Error_Message_for_Null_Opportunities_On_Owner_Assignment</name>
+        <label>Set Error Message for Null Opportunities On Owner Assignment</label>
+        <locationX>1458</locationX>
+        <locationY>1682</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.ErrorMessageWhenSelectedUserIsOwner</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It updates fault message in output message when Opportunity update has a DML failure.</description>
+        <name>Set_Error_Message_on_Opportunity_update</name>
+        <label>Set Error Message on Opportunity update</label>
+        <locationX>50</locationX>
+        <locationY>2306</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Transfer_Ownership_Generic_Error_Message</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It updates the error message when passed Opportunity Ids are null.</description>
+        <name>Set_Error_Message_when_Passed_Opportunity_Ids_are_Null</name>
+        <label>Set Error Message when Passed Opportunity Ids are Null</label>
+        <locationX>1986</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.ErrorMessageWhenNoRecordIsSelected</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It sets success flag to true when Opportunity is updated successfully.</description>
+        <name>Set_Success_Flag_to_True_on_Opportunity_Update</name>
+        <label>Set Success Flag to True on Opportunity Update</label>
+        <locationX>314</locationX>
+        <locationY>2198</locationY>
+        <assignmentItems>
+            <assignToReference>isSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Success_Message_on_Opportunity_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It updates message in output message when Opportunity is updated successfully.</description>
+        <name>Set_Success_Message_on_Opportunity_Update</name>
+        <label>Set Success Message on Opportunity Update</label>
+        <locationX>314</locationX>
+        <locationY>2306</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.SuccessMessageOnOpportunityOwnerTransfer</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>LEM-1536: It updates the error flag with True to display error message later.</description>
+        <name>Update_Error_Flag_to_True_on_Null_Opportunities</name>
+        <label>Update Error Flag to True on Null Opportunities</label>
+        <locationX>1722</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>isError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Error_Message_for_No_Record_Selected</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It updates the Opportunity owner with selected user Id.</description>
+        <name>Update_Owner_Id_with_Selected_User_Id</name>
+        <label>Update Owner Id with Selected User Id</label>
+        <locationX>1249</locationX>
+        <locationY>1082</locationY>
+        <assignmentItems>
+            <assignToReference>Iterate_Over_Selected_Opportunities.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>updatedOwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Current_Opportunity_to_Opportunities_list</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-13474: It updates the Opportunity owner with selected user Id.</description>
+        <name>Update_Self_Owner_Opportunity_Owner_Id</name>
+        <label>Update Self Owner Opportunity Owner Id</label>
+        <locationX>1117</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>Iterate_Over_Selected_Opportunities.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>updatedOwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Self_owned_Opportunities</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>LEM-23851: It is used to check if the opportunities are owned by current user.</description>
+        <name>Are_opportunities_owned_by_current_user</name>
+        <label>Are opportunities owned by current user?</label>
+        <locationX>1249</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Add_Opportunities_which_are_not_owned_by_current_user</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not owned by Current User</defaultConnectorLabel>
+        <rules>
+            <name>Owned_by_Current_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iterate_Over_Selected_Opportunities.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <elementReference>$User.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Self_Owner_Opportunity_Owner_Id</targetReference>
+            </connector>
+            <label>Owned by Current User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13474: It checks whether selected user is owner of the Opportunity or not.</description>
+        <name>Check_Current_Owner_of_Opportunity</name>
+        <label>Check Current Owner of Opportunity</label>
+        <locationX>1447</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Iterate_Over_Selected_Opportunities</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Selected User Owner?</defaultConnectorLabel>
+        <rules>
+            <name>Is_Selected_User_Not_Owner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Iterate_Over_Selected_Opportunities.OwnerId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>updatedOwnerId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Are_opportunities_owned_by_current_user</targetReference>
+            </connector>
+            <label>Is Selected User Not Owner?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13474: It checks whether the Opportunity records returned are null.</description>
+        <name>Check_for_Null_Opportunity_Records</name>
+        <label>Check for Null Opportunity Records</label>
+        <locationX>1375</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Update_Error_Flag_to_True_on_Null_Opportunities</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Are Opportunities Null?</defaultConnectorLabel>
+        <rules>
+            <name>Are_Opportunities_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_Over_Selected_Opportunities</targetReference>
+            </connector>
+            <label>Are Opportunities Not Null?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-23851: It is used to check whether there are any opportunities not owned by current user.</description>
+        <name>Is_Opportunity_Not_Owned_By_Current_User_selected</name>
+        <label>Is Opportunity Not Owned By Current User selected?</label>
+        <locationX>182</locationX>
+        <locationY>1682</locationY>
+        <defaultConnector>
+            <targetReference>Update_Self_Owned_Opportunity_Records</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Errored_Opportunity_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>opportunitiesNotOwnedByCurrentUser</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Errored_Opportunities</targetReference>
+            </connector>
+            <label>Is Errored Opportunity Present ?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-23851: It is used to check whether current user has Self Owned Opportunity Transfer Permission Assigned or not.</description>
+        <name>Is_Self_Owned_Opportunity_Transfer_Permission_Assigned</name>
+        <label>Is Self Owned Opportunity Transfer Permission Assigned?</label>
+        <locationX>600</locationX>
+        <locationY>1574</locationY>
+        <defaultConnector>
+            <targetReference>Update_Opportunity_Records</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Self_Owned_Opportunity_Transfer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.Allow_Self_Owner_Opportunity_Transfer</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Permission.Allow_Bulk_Opportunity_Transfer</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Opportunity_Not_Owned_By_Current_User_selected</targetReference>
+            </connector>
+            <label>Self Owned Opportunity Transfer</label>
+        </rules>
+        <rules>
+            <name>Current_user_SMB_Manager</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.Allow_Bulk_Opportunity_Transfer</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opportunity_Records</targetReference>
+            </connector>
+            <label>Current user SMB Manager</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-23851: It is used to check if all opportunities were transferred or not.</description>
+        <name>Is_Success_or_Partial_Success</name>
+        <label>Is Success or Partial Success?</label>
+        <locationX>182</locationX>
+        <locationY>2090</locationY>
+        <defaultConnector>
+            <targetReference>Set_Success_Flag_to_True_on_Opportunity_Update</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Partial_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>erroredOpportunitesToDisplay</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Error_Flag_to_True_on_Opportunity_Update</targetReference>
+            </connector>
+            <label>Partial Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13474: It checks whether the opportunities to update are null or not.</description>
+        <name>Null_Check_for_Updated_Opportunities</name>
+        <label>Null Check for Updated Opportunities</label>
+        <locationX>1029</locationX>
+        <locationY>1466</locationY>
+        <defaultConnector>
+            <targetReference>Set_Error_Flag_for_Null_Opportunities_On_Owner_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Opportunities to update null?</defaultConnectorLabel>
+        <rules>
+            <name>Opportunities_to_update_not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>opportunitiesToUpdate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Self_Owned_Opportunity_Transfer_Permission_Assigned</targetReference>
+            </connector>
+            <label>Opportunities to update not null?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-13474: It checks whether the passed Ids are null or not.</description>
+        <name>Null_Check_on_Passed_Ids</name>
+        <label>Null Check on Passed Ids</label>
+        <locationX>1680</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Set_Error_Flag_to_True_When_Passed_Opportunity_Ids_Are_Null</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Are Record Ids Null?</defaultConnectorLabel>
+        <rules>
+            <name>Are_Record_Ids_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordIds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opportunity_Records</targetReference>
+            </connector>
+            <label>Are Record Ids Not Null?</label>
+        </rules>
+    </decisions>
+    <description>LEM-13474: Subflow for Opportunity Owner Transfer</description>
+    <environments>Default</environments>
+    <interviewLabel>Subflow - Opportunity Owner Assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow - Opportunity Owner Assignment</label>
+    <loops>
+        <description>LEM-13474: It iterates over the selected opportunities.</description>
+        <name>Iterate_Over_Selected_Opportunities</name>
+        <label>Iterate Over Selected Opportunities</label>
+        <locationX>1029</locationX>
+        <locationY>458</locationY>
+        <collectionReference>Get_Opportunity_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_Current_Owner_of_Opportunity</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Null_Check_for_Updated_Opportunities</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>LEM-13474: It collects the Opportunity records for the passed Ids.</description>
+        <name>Get_Opportunity_Records</name>
+        <label>Get Opportunity Records</label>
+        <locationX>1375</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_for_Null_Opportunity_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>recordIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>LEM-13474: It updates the Opportunity records in the system.</description>
+        <name>Update_Opportunity_Records</name>
+        <label>Update Opportunity Records</label>
+        <locationX>600</locationX>
+        <locationY>2690</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Success_Flag_to_True_on_Opportunity_Update</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Error_Flag_to_True_on_Opportunity_Update</targetReference>
+        </faultConnector>
+        <inputReference>opportunitiesToUpdate</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>LEM-13474: It updates the Opportunity records in the system.</description>
+        <name>Update_Self_Owned_Opportunity_Records</name>
+        <label>Update Self Owned Opportunity Records</label>
+        <locationX>182</locationX>
+        <locationY>1982</locationY>
+        <connector>
+            <targetReference>Is_Success_or_Partial_Success</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Error_Flag_to_True_on_Opportunity_Update</targetReference>
+        </faultConnector>
+        <inputReference>opportunitiesOwnedByCurrentUser</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1554</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Null_Check_on_Passed_Ids</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-23851: It is used to store opportunities which did not transfer.</description>
+        <name>erroredOpportunitesToDisplay</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>LEM-13474: It controls visibility of the error message to the end user.</description>
+        <name>isError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-13474: It controls visibility of the success message to the end user.</description>
+        <name>isSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-23851: It is used to store opportunities which are not owned by Current User.</description>
+        <name>opportunitiesNotOwnedByCurrentUser</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>LEM-23851: It is used to store opportunities which are owned by current user.</description>
+        <name>opportunitiesOwnedByCurrentUser</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>LEM-13474: It stores the opportunity records to be updated.</description>
+        <name>opportunitiesToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>LEM-13474: It stores the Opportunity Records</description>
+        <name>opportunityRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>LEM-13474: It stores the message depending on the decision outcome.</description>
+        <name>outputMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-13474: It stores the selected Opportunity record Ids.</description>
+        <name>recordIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores selected user Id.</description>
+        <name>updatedOwnerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

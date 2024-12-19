@@ -1,0 +1,158 @@
+<template>
+  <!-- Saving indicator -->
+  <template if:true={showSpinner}>
+    <div class="flow-spinner-container" style="min-height: 160px">
+      <div
+        class="slds-spinner slds-spinner_brand slds-spinner_medium"
+        role="status"
+      >
+        <span class="slds-assistive-text"></span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+    </div>
+  </template>
+
+  <template if:false={showSpinner}>
+    <!-- Error Messages Container -->
+    <div if:true={importShowError}>
+      <!--To render errors during entitlement selection/deselection-->
+      <template
+        for:each={importErrorMessages}
+        for:item="errorMessage"
+        for:index="index"
+      >
+        <div
+          key={errorMessage.index}
+          class="slds-scoped-notification slds-media slds-media_center slds-theme_error"
+          role="status"
+        >
+          <div class="slds-media__figure">
+            <span
+              class="slds-icon_container slds-icon-utility-error"
+              title="error"
+            >
+              <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                <use
+                  xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"
+                ></use>
+              </svg>
+              <span class="slds-assistive-text">error</span>
+            </span>
+          </div>
+          <div class="slds-media__body">
+            <p>{errorMessage}</p>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <!--To render ccp enabled products on this contract for selection/deselection-->
+    <div if:false={working} class="slds-p-top_small">
+      <div>
+        <p class="slds-p-around_medium bulk-onboarding-modal-font">
+          Use ‘Next’ to continue phase onboarding stores on selected
+          packages/products. Click ‘Skip’ to onboard the stores on all the
+          packages/products available on the contract.
+        </p>
+      </div>
+      <lightning-modal-body>
+        <lightning-accordion>
+          <template for:each={wrapperList} for:item="wrap">
+            <div key={wrap.packageRecord}>
+              <lightning-card>
+                <div>
+                    <summary class="slds-page-header slds-theme_alt-inverse">
+                      Store(s) to be added: {wrap.accountIds.length}
+                    </summary>
+                    <template for:each={wrap.packageList} for:item="pack">
+                      <div
+                        key={pack.packageId}
+                        lwc:if={pack.isSelectionEnabled}
+                      >
+                        <!-- Section to show marketplace packages available for selection/deselection-->
+                        <div if:false={pack.isDrivePackage}>
+                          <summary class="slds-page-header package-selection">
+                            <lightning-input
+                              type="checkbox"
+                              name="packages"
+                              value={pack.packageId}
+                              data-id="packages"
+                              checked=""
+                              onchange={handlePackageCheckboxChange}
+                            ></lightning-input
+                            ><b>Package: {pack.packageName}</b>
+                          </summary>
+                          <div lwc:if={pack.subsList.length}>
+                            <lightning-datatable
+                              key-field="Id"
+                              data={pack.subsList}
+                              columns={columns}
+                              class="tab"
+                              data-id="Subs"
+                              selected-rows={preSelectedRows}
+                              onrowselection={handleProductSelection}
+                            >
+                            </lightning-datatable>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Section to show drive packages as default selected and readonly-->
+                      <div key={pack.subsList.Id} if:true={pack.isDrivePackage}>
+                        <summary class="slds-page-header package-selection">
+                          <lightning-input
+                            type="checkbox"
+                            value={pack.packageId}
+                            data-id="packages"
+                            disabled=""
+                            checked=""
+                          ></lightning-input
+                          ><b>Package: {pack.packageName}</b>
+                        </summary>
+                      </div>
+                    </template>
+                </div>
+              </lightning-card>
+            </div>
+          </template>
+        </lightning-accordion>
+      </lightning-modal-body>
+    </div>
+
+    <div if:true={showSubscriptionsError}>
+      <div
+        class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error"
+        role="alert"
+      >
+        <span
+          class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+          title="Error Icon"
+        >
+          <lightning-icon
+            icon-name="utility:error"
+            alternative-text="Error"
+            title="Error"
+            variant="inverse"
+          ></lightning-icon>
+        </span>
+        <p><lightning-formatted-text value={fetchSubscriptionsError}></lightning-formatted-text></p>
+      </div>
+    </div>
+  </template>
+
+  <!-- Button for next & skip -->
+  <div class="slds-grid slds-grid_align-end slds-m-around_medium">
+    <lightning-button
+      class="slds-col_bump-left"
+      label="Next"
+      variant="brand"
+      onclick={validateSelection}
+    ></lightning-button>
+    <lightning-button
+      class="slds-p-left_medium"
+      label="Skip"
+      variant="brand"
+      onclick={handleCCPSkip}
+    ></lightning-button>
+  </div>
+</template>

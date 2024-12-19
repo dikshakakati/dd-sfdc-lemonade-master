@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Prepared_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-793: The last person who prepared the menu.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The last person who prepared the menu</inlineHelpText>
+    <label>Last Prepared By</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Prepared_Work_Steps</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

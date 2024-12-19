@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Marketplace</fullName>
+        <default>false</default>
+        <label>Marketplace</label>
+    </customValue>
+    <customValue>
+        <fullName>Storefront</fullName>
+        <default>false</default>
+        <label>Storefront</label>
+    </customValue>
+    <customValue>
+        <fullName>COO</fullName>
+        <default>false</default>
+        <label>COO</label>
+    </customValue>
+    <customValue>
+        <fullName>Drive</fullName>
+        <default>false</default>
+        <label>Drive</label>
+    </customValue>
+    <customValue>
+        <fullName>Post-Sales</fullName>
+        <default>false</default>
+        <label>Post-Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>POS</fullName>
+        <default>false</default>
+        <label>POS</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet</fullName>
+        <default>false</default>
+        <label>Tablet</label>
+    </customValue>
+    <customValue>
+        <fullName>Photoshoot</fullName>
+        <default>false</default>
+        <label>Photoshoot</label>
+    </customValue>
+    <customValue>
+        <fullName>Ads &amp; Promos</fullName>
+        <default>false</default>
+        <label>Ads &amp; Promos</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Kit</fullName>
+        <default>false</default>
+        <label>Marketing Kit</label>
+    </customValue>
+    <description>LEM-1874: It is set of Work Order type values.</description>
+    <masterLabel>Work Order Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

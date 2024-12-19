@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tracking_Url__c</fullName>
+    <businessStatus>Hidden</businessStatus>
+    <description>LEM-15978: Generate Tracking Url for Shipping Carrier and Tracking number</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND(
+    NOT(ISBLANK(Shipping_Carrier__c)),
+    NOT(ISBLANK(TRIM(Tracking_Number__c)))
+  ),
+  CASE(
+    UPPER(TRIM(Shipping_Carrier__c)),
+    $Label.Shipping_Carrier_Fedex,
+    $Label.FedDex_Shipping_Tracking_Url&amp;Tracking_Number__c,
+    $Label.Shipping_Carrier_DHL,
+    $Label.DHL_Shipping_Tracking_Url&amp;Tracking_Number__c,
+    $Label.Shipping_Carrier_Startrack,
+    $Label.StarTrack_Shipping_Tracking_Url&amp;Tracking_Number__c,
+    null
+  ),
+  null
+)</formula>
+    <label>Tracking Url</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

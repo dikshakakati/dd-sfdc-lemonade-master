@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Store_Location_for_Photoshoot__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-14603: It is used to store the designated store location that photoshoot will take place at when AC = No.</description>
+    <externalId>false</externalId>
+    <label>Store Location for Photoshoot</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Store</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Store Accounts</relationshipLabel>
+    <relationshipName>Store_Accounts</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

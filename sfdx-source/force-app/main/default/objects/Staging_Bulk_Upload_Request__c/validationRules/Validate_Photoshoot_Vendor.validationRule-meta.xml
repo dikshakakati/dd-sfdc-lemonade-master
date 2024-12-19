@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Validate_Photoshoot_Vendor</fullName>
+  <active>true</active>
+  <description>LEM-21576: Photoshoot Vendor should be either &apos;OCUS&apos; or &apos;Snappr&apos; if Work Order type is &apos;Photoshoot&apos;.</description>
+  <errorConditionFormula>AND(
+    NOT($Permission.ByPass_Bulk_Update_Staging_Validation),
+    Type__c = $Label.Work_Order_Photoshoot,
+    NOT(ISBLANK(TEXT(Vendor__c))),
+    NOT(
+      OR(
+        TEXT(Vendor__c) = $Label.Photoshoot_Vendor_OCUS,
+        TEXT(Vendor__c) = $Label.Photoshoot_Vendor_Snappr
+      )
+    )
+  )</errorConditionFormula>
+  <errorMessage>Please select OCUS or Snappr For PhotoShoot Request</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Serialized_Entitlements_Data__c</fullName>
+    <externalId>false</externalId>
+    <description>LEM-11329 To store the manage stores entitlement details in JSON format.Selected: Contains ‘Selected packages and selected entitlement’Deselected: Contains ‘Selected packages and deselected entitlements'</description>
+    <label>Serialized Entitlements Data</label>
+    <securityClassification>Internal</securityClassification>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

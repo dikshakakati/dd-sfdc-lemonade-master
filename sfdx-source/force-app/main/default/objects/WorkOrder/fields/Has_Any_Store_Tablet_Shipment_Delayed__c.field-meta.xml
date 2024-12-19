@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Any_Store_Tablet_Shipment_Delayed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-3968: It indicates whether parent Work Order has a store Account with Delay_Tablet_Shipment__c as &apos;Yes&apos;.</description>
+    <externalId>false</externalId>
+    <label>Has Any Store Tablet Shipment Delayed?</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

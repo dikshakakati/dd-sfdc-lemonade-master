@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Private</cacheControl>
+    <contentType>text/csv</contentType>
+    <description>LEM-8658: Stores CSV template file to support the Bulk Stores Upload process. This is referenced in LWCs that initiate this process. The main ticket / epic for this effort is LEM-8212</description>
+</StaticResource>

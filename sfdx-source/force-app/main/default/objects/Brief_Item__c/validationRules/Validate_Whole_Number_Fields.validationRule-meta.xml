@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Whole_Number_Fields</fullName>
+    <active>true</active>
+    <description>LEM-18433: Allows certain fields to only have whole number values</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+OR(
+AND(
+    ISCHANGED(Percentof_ConsumerDiscFee_Contra_Funded__c ),
+    OR(MOD((Percentof_ConsumerDiscFee_Contra_Funded__c)*100,1) &lt;&gt; 0, Percentof_ConsumerDiscFee_Contra_Funded__c &lt; 0)
+    ),
+AND(
+    ISCHANGED(Percentof_ConsumerDiscFee_DashPassFunded__c),
+    OR (MOD((Percentof_ConsumerDiscFee_DashPassFunded__c)*100,1) &lt;&gt; 0, Percentof_ConsumerDiscFee_DashPassFunded__c &lt; 0)
+    ),
+AND(
+    ISCHANGED( Percentof_Consumer_DiscFee_DD_Funded__c),
+    OR (MOD((Percentof_Consumer_DiscFee_DD_Funded__c)*100,1) &lt;&gt; 0, Percentof_Consumer_DiscFee_DD_Funded__c&lt; 0)
+    ),
+AND(
+    ISCHANGED(Percent_of_ConsumerDisc_or_Fee_Mx_Funded__c),
+   OR( MOD((Percent_of_ConsumerDisc_or_Fee_Mx_Funded__c)*100,1) &lt;&gt; 0, Percent_of_ConsumerDisc_or_Fee_Mx_Funded__c &lt; 0)
+    ),
+AND(
+    ISCHANGED(Discount_Percentage_for_Consumer__c),
+    OR (MOD((Discount_Percentage_for_Consumer__c)*100,1) &lt;&gt; 0, Discount_Percentage_for_Consumer__c &lt; 0)
+    )
+))</errorConditionFormula>
+    <errorMessage>Please Enter Only Whole Numbers to the following fields- % of Consumer Discount DD-Funded,
+% of Consumer Discount Contra-Funded,
+% of Consumer Discount DashPass-Funded,
+% of Consumer Discount Mx-Funded and
+Discount Percentage for Consumer</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fixed_Stores_Count__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Counts the Store IDs from the `Fixed_Store_IDs__c` field, this will tell us the number of Stores that had their address issues resolved in ANSO.</description>
+    <externalId>false</externalId>
+    <label>Fixed Stores Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicable_Account_Record_Type__c</fullName>
+    <description>LEM-2516: It indicates the record type of Account for which the section is applicable on onboarding details.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Applicable Account Record Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business</fullName>
+                <default>true</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Store</fullName>
+                <default>false</default>
+                <label>Store</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

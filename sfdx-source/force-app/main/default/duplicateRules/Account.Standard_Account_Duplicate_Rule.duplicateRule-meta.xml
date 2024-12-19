@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Allow</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText xsi:nil="true"/>
+    <description>Duplicate Rule for Accounts using the Standard Account Matching Rule</description>
+    <duplicateRuleFilter>
+        <booleanFilter>1 AND 2 AND 3 AND ((4 AND 6) OR (5 AND 7 AND 8))</booleanFilter>
+        <duplicateRuleFilterItems>
+            <field>Username</field>
+            <operation>notEqual</operation>
+            <value>nintex.integrationuser@ext.doordash.com.lem.uat</value>
+            <sortOrder>1</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Username</field>
+            <operation>notEqual</operation>
+            <value>biz-apps@doordash.com.uat.mulesoft</value>
+            <sortOrder>2</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Username</field>
+            <operation>notEqual</operation>
+            <value>biz-apps@doordash.com.dmiu.lem.uat</value>
+            <sortOrder>3</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Creation_Source__c</field>
+            <operation>notEqual</operation>
+            <value>Data Loader</value>
+            <sortOrder>4</sortOrder>
+            <table>Account</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Username</field>
+            <operation>notEqual</operation>
+            <value>processautomation.user@doordash.com.lem.uat</value>
+            <sortOrder>5</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Segment__c</field>
+            <operation>notEqual</operation>
+            <value>SMB</value>
+            <sortOrder>6</sortOrder>
+            <table>Account</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Creation_Source__c</field>
+            <operation>notEqual</operation>
+            <value>Integration</value>
+            <sortOrder>7</sortOrder>
+            <table>Account</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Segment__c</field>
+            <operation>equals</operation>
+            <value>SMB</value>
+            <sortOrder>8</sortOrder>
+            <table>Account</table>
+        </duplicateRuleFilterItems>
+    </duplicateRuleFilter>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Account</matchRuleSObjectType>
+        <matchingRule>Standard_Account_Match_Rule_v1_0</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>true</isActive>
+    <masterLabel>Standard Account Duplicate Rule</masterLabel>
+    <operationsOnInsert>Report</operationsOnInsert>
+    <operationsOnUpdate>Report</operationsOnUpdate>
+    <securityOption>EnforceSharingRules</securityOption>
+    <sortOrder>1</sortOrder>
+</DuplicateRule>

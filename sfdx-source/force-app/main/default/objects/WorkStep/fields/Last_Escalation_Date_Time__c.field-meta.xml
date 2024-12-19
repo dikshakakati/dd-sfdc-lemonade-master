@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Escalation_Date_Time__c</fullName>
+    <description>LEM-964: Date/Time timestamp of the last time the work step was escalated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date/Time timestamp of the last time the work step was escalated</inlineHelpText>
+    <label>Last Escalation Date/Time</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <type>DateTime</type>
+</CustomField>

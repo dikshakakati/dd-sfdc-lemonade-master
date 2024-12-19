@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MobilePhone</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13618: It represents the mobile phone number of the Lead.</description>
+    <inlineHelpText>Represents the mobile phone number of the lead</inlineHelpText>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

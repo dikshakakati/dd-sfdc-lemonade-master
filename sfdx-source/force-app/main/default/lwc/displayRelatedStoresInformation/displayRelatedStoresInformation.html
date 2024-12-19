@@ -1,0 +1,30 @@
+<!--
+  * @author Deloitte
+  * @date 12/12/2023
+  * @description LWC to display related store account information on parent work order.
+-->
+<template>
+  <template lwc:if={loading}>
+    <lightning-spinner
+      alternative-text={loadingAlternativeText}
+    ></lightning-spinner>
+  </template>
+  <template if:true={showComponent}>
+    <c-generic-related-list
+      view-all={viewAllRecords}
+      related-data={recordsToBeDisplayed}
+      columns={columns}
+      view-all-columns={viewAllColumns}
+      title={labels.relatedStoreAccounts}
+      record-id={recordId}
+      object-name={objectApiName}
+      record-name={recordName}
+      parent-component-name="c:displayRelatedStoresInformation"
+      show-export-button={showExportButton}
+      onexportdata={handleExport}
+      export-button-label={labels.exportButtonLabel}
+      export-file-title={exportFileTitle}
+    ></c-generic-related-list>
+  </template>
+  <c-show-toast-message></c-show-toast-message>
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment_Required_On_Account</fullName>
+    <active>true</active>
+    <description>LEM-13515: It is used to validate if the associated account has Segment valued populated.</description>
+    <errorConditionFormula>AND(
+      NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  Account.Record_Type_Name__c = $Label.BusinessAccountRecordTypeName,
+  ISBLANK(TEXT(Account.Segment__c))
+)</errorConditionFormula>
+    <errorMessage>In order to create an opportunity against this account, please select a value in the Segment field on this account page.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-1684: It indicates the Contact related to Payment Account of store Account that needs correction to resolve the failure.</description>
+    <externalId>false</externalId>
+    <label>Contact Name</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Readiness Check Failures</relationshipLabel>
+    <relationshipName>Readiness_Check_Failures</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

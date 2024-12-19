@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disposition_Reason__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13419: It stores disposition Reason of Disqualified or Not Interested Lead.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reason for Lead moving to  Disqualified or Not Interested - Cool Down status</inlineHelpText>
+    <label>Disposition Reason</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Invalid Contact Info</fullName>
+                <default>false</default>
+                <label>Invalid Contact Info</label>
+            </value>
+            <value>
+                <fullName>Mx Out of Business</fullName>
+                <default>false</default>
+                <label>Mx Out of Business</label>
+            </value>
+            <value>
+                <fullName>Out of Coverage</fullName>
+                <default>false</default>
+                <label>Out of Coverage</label>
+            </value>
+            <value>
+                <fullName>Not a Merchant</fullName>
+                <default>false</default>
+                <label>Not a Merchant</label>
+            </value>
+            <value>
+                <fullName>Current DoorDash Partner</fullName>
+                <default>false</default>
+                <label>Current DoorDash Partner</label>
+            </value>
+            <value>
+                <fullName>Not Bought into Value Prop</fullName>
+                <default>false</default>
+                <label>Not Bought into Value Prop</label>
+            </value>
+            <value>
+                <fullName>Exclusive with Competitor</fullName>
+                <default>false</default>
+                <label>Exclusive with Competitor</label>
+            </value>
+            <value>
+                <fullName>Operational Obstacles</fullName>
+                <default>false</default>
+                <label>Operational Obstacles</label>
+            </value>
+            <value>
+                <fullName>Pricing Concerns</fullName>
+                <default>false</default>
+                <label>Pricing Concerns</label>
+            </value>
+            <value>
+                <fullName>Product/Feature Blockers</fullName>
+                <default>false</default>
+                <label>Product/Feature Blockers</label>
+            </value>
+            <value>
+                <fullName>Requested Call Back</fullName>
+                <default>false</default>
+                <label>Requested Call Back</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Duplicate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Invalid Contact Info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Mx Out of Business</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Out of Coverage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Not a Merchant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disqualified</controllingFieldValue>
+            <valueName>Current DoorDash Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Interested - Cool Down</controllingFieldValue>
+            <valueName>Not Bought into Value Prop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Interested - Cool Down</controllingFieldValue>
+            <valueName>Exclusive with Competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Interested - Cool Down</controllingFieldValue>
+            <valueName>Operational Obstacles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Interested - Cool Down</controllingFieldValue>
+            <valueName>Pricing Concerns</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Interested - Cool Down</controllingFieldValue>
+            <valueName>Product/Feature Blockers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Interested - Cool Down</controllingFieldValue>
+            <valueName>Requested Call Back</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

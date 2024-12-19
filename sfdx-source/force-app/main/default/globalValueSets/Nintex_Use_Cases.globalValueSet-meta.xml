@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>New Franchise - Unknown</fullName>
+        <default>false</default>
+        <label>New Franchise - Unknown</label>
+    </customValue>
+    <customValue>
+        <fullName>Change of Ownership</fullName>
+        <default>false</default>
+        <label>Change of Ownership</label>
+    </customValue>
+    <customValue>
+        <fullName>New additional stores</fullName>
+        <default>false</default>
+        <label>New additional stores</label>
+    </customValue>
+    <customValue>
+        <fullName>Rate Change</fullName>
+        <default>false</default>
+        <label>Rate Change</label>
+    </customValue>
+    <customValue>
+        <fullName>Integrated Franchise</fullName>
+        <default>false</default>
+        <label>Integrated Franchise</label>
+    </customValue>
+    <customValue>
+        <fullName>COO Same Store</fullName>
+        <default>false</default>
+        <label>COO Same Store</label>
+    </customValue>
+    <customValue>
+        <fullName>Drive Form - Franchise</fullName>
+        <default>false</default>
+        <label>Drive Form - Franchise</label>
+    </customValue>
+    <customValue>
+        <fullName>Drive - Amendment</fullName>
+        <default>false</default>
+        <label>Drive - Amendment</label>
+    </customValue>
+    <customValue>
+        <fullName>Withholding Opt-out</fullName>
+        <default>false</default>
+        <label>Withholding Opt-out</label>
+    </customValue>
+    <customValue>
+        <fullName>None</fullName>
+        <default>true</default>
+        <label>None</label>
+    </customValue>
+    <customValue>
+        <fullName>Middleware Provider</fullName>
+        <default>false</default>
+        <label>Middleware Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>SSMO</fullName>
+        <default>false</default>
+        <label>SSMO</label>
+    </customValue>
+    <customValue>
+        <fullName>Drive Amendment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Drive Amendment</label>
+    </customValue>
+    <customValue>
+        <fullName>New Franchise - Known</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>New Franchise - Known</label>
+    </customValue>
+    <description>LEM-2294: It captures the Nintex use case that led to the record creation</description>
+    <masterLabel>Nintex Use Cases</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

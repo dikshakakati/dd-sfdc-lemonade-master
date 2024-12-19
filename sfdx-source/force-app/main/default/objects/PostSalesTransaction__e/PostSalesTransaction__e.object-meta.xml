@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This event is used to orchestrate the process lifecycle of inbound PostSales transactions.  Generally these are a result of a Mx Portal transaction payload from Kafka being inserted into the Inbound Ingestion Log object.  
+It has it&apos;s own platform event since it is time sensitive and the Mx experience can be impacted by how quickly this process is executed.
+It is important that the PreSalesTransaction, PostSalesTransaction, and Instant_Ingestor event objects all have the same field shape.  
+LEM-19812</description>
+    <eventType>HighVolume</eventType>
+    <label>PostSalesTransaction</label>
+    <pluralLabel>PostSalesTransactions</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

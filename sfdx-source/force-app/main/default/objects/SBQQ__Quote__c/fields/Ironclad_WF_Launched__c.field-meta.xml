@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ironclad_WF_Launched__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is to track that Ironclad WF is launched only once on the quote and it wont be launched again</description>
+    <externalId>false</externalId>
+    <label>Is Ironclad WF Launched</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

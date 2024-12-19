@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Name_for_Lead_Conversion</fullName>
+    <active>true</active>
+    <description>LEM-14086 : It validates first and last name in order to convert Lead.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Lead_Validation_Rules),
+  ISCHANGED(IsConverted),
+  IsConverted,
+  OR(
+  ISBLANK(FirstName),
+  ISBLANK(LastName),
+  CONTAINS(LOWER(FirstName), LOWER($Label.Test)),
+  CONTAINS(LOWER(FirstName), LOWER($Label.NotProvided)),
+  CONTAINS(LOWER(FirstName), LOWER($Label.Unknown)),
+  CONTAINS(LOWER(FirstName), LOWER($Label.Name)),
+  CONTAINS(LOWER(FirstName), LOWER($Label.Change)),
+  CONTAINS(LOWER(FirstName), LOWER($Label.Manager)),
+  CONTAINS(LOWER(FirstName), LOWER($Label.Owner)),
+  CONTAINS(FirstName, $Label.QuestionMark),
+  CONTAINS(FirstName, $Label.FullStop),
+  CONTAINS(FirstName, $Label.Comma),
+  CONTAINS(FirstName, $Label.Hiphen),
+  CONTAINS(FirstName, $Label.DoubleDash),
+  CONTAINS(LOWER(LastName), LOWER($Label.Test)),
+  CONTAINS(LOWER(LastName), LOWER($Label.NotProvided)),
+  CONTAINS(LOWER(LastName), LOWER($Label.Unknown)),
+  CONTAINS(LOWER(LastName), LOWER($Label.Name)),
+  CONTAINS(LOWER(LastName), LOWER($Label.Change)),
+  CONTAINS(LOWER(LastName), LOWER($Label.Manager)),
+  CONTAINS(LOWER(LastName), LOWER($Label.Owner)),
+  CONTAINS(LastName, $Label.QuestionMark),
+  CONTAINS(LastName, $Label.FullStop),
+  CONTAINS(LastName, $Label.Comma),
+  CONTAINS(LastName, $Label.Hiphen),
+  CONTAINS(LastName, $Label.DoubleDash)
+
+)
+)</errorConditionFormula>
+    <errorMessage>The First Name and Last Name must not be blank and cannot be a holder name e.g. &quot;unknown&quot;, &quot;Test&quot;</errorMessage>
+</ValidationRule>

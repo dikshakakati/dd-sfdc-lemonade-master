@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Response__c</fullName>
+    <description>LEM-1596: Captures the values of Merchant interest or response after the discussion.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the Merchant response / interest following the discussion.</inlineHelpText>
+    <label>Response</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mx Uninterested - No further action necessary</fullName>
+                <default>false</default>
+                <label>Mx Uninterested - No further action necessary</label>
+            </value>
+            <value>
+                <fullName>Mx Receptive - No further action necessary</fullName>
+                <default>false</default>
+                <label>Mx Receptive - No further action necessary</label>
+            </value>
+            <value>
+                <fullName>Mx Receptive - Implementation required</fullName>
+                <default>false</default>
+                <label>Mx Receptive - Implementation required</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

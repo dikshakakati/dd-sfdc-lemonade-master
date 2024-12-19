@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Work_Order_Creation_Source__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15585: It indicates the Parent Work Order&apos;s Creation Source.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  WorkOrder.ParentWorkOrderId = null,
+  TEXT(WorkOrder.Creation_Source__c),
+  TEXT(WorkOrder.ParentWorkOrder.Creation_Source__c)
+  )</formula>
+    <label>Parent Work Order Creation Source</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

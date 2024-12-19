@@ -1,0 +1,27 @@
+/**
+ * @author Deloitte
+ * @date 12/04/2023
+ * @description CSS for storeAssociationFailures lightning web component.
+ */
+.dataTableStyling {
+  height: 500px;
+}
+.messageBoxStyling {
+  background-color: rgb(243, 243, 243);
+  text-align: center;
+  margin: 0.75rem;
+  border-radius: 0.25rem;
+}
+.messageStyling {
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+}
+.spinnerStyling {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}

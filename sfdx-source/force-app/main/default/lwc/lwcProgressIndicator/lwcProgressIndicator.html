@@ -1,0 +1,11 @@
+<template>
+    <template if:true={displayIndicator}>
+    <lightning-progress-indicator current-step={currentStep} type="base" has-error="true" variant="base">
+        <template for:each={progressIndicators} for:item="progressIndicatos">
+            <li key={progressIndicatos.Id}>
+                <lightning-progress-step label={progressIndicatos.Name} value={progressIndicatos.Name}></lightning-progress-step>
+            </li>
+        </template>
+    </lightning-progress-indicator>
+</template>
+</template>

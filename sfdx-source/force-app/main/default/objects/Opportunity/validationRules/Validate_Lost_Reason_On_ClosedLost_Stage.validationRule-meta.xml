@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Lost_Reason_On_ClosedLost_Stage</fullName>
+    <active>true</active>
+    <description>LEM-119: This rule validates the population of Lost Reason when the Opportunity Stage is Closed Lost.
+LEM-108: This validation rule incorporated with bypass framework.
+LEM-419: Validation rule to include Stalled stage
+LEM-8074: skip for coo same store.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  TEXT(Source__c) != $Label.Source_Product,
+  OR(
+    ISCHANGED(StageName),
+    ISCHANGED(Lost_Reason__c),
+    ISNEW()
+  ),
+  OR(
+    TEXT(StageName) = $Label.Opportunity_Stage_Stalled,
+    TEXT(StageName) = $Label.Closed_Lost_Stage_Value),
+    ISBLANK(TEXT(Lost_Reason__c)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Lost_Reason__c</errorDisplayField>
+    <errorMessage>Please update the Lost / Stalled Reason before moving the opportunity to Stalled or Closed Lost.</errorMessage>
+</ValidationRule>

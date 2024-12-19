@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Updated_By_System__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-4205: It is used to identify whether Work Order is updated through UI or by system. It prevents changing status to &apos;Dead&apos; on parent Work Order with Work Plans and Work Steps.</description>
+    <externalId>false</externalId>
+    <label>Is Updated By System</label>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

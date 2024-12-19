@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Transforms the Payload value to Sanitized Payload value</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>hasTaxId</name>
+        <dataType>Boolean</dataType>
+        <expression>CONTAINS({!$Record.Payload__c}, &apos;merchantTaxId&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>hasTaxIdValue</name>
+        <dataType>Boolean</dataType>
+        <expression>({!taxIdValueRightQuotePosition} - {!taxIdValueLeftQuotePosition}) &gt; 0</expression>
+    </formulas>
+    <formulas>
+        <name>sanitizedPayload</name>
+        <dataType>String</dataType>
+        <expression>IF({!hasTaxId},
+  LEFT({!$Record.Payload__c}, {!taxIdValueLeftQuotePosition}) + {!taxIdMaskedValue} + RIGHT({!$Record.Payload__c}, LEN({!$Record.Payload__c}) - {!taxIdValueRightQuotePosition} + 1),
+  {!$Record.Payload__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>taxIdMaskedValue</name>
+        <dataType>String</dataType>
+        <expression>IF({!hasTaxIdValue}, &apos;*&apos;,&apos;&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>taxIdValueLeftQuotePosition</name>
+        <dataType>Number</dataType>
+        <expression>FIND(&apos;&quot;merchantTaxId&quot;:&quot;&apos;, {!$Record.Payload__c})+16</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>taxIdValueRightQuotePosition</name>
+        <dataType>Number</dataType>
+        <expression>FIND(&apos;&quot;&apos;, {!$Record.Payload__c}, {!taxIdValueLeftQuotePosition} + 1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Inbound Ingestion Log - Sanitized Payload {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Inbound Ingestion Log - Sanitized Payload</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Sanitized_Payload</name>
+        <label>Set Sanitized Payload</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Sanitized_Payload__c</field>
+            <value>
+                <elementReference>sanitizedPayload</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Sanitized_Payload</targetReference>
+        </connector>
+        <object>Inbound_Ingestion_Log__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

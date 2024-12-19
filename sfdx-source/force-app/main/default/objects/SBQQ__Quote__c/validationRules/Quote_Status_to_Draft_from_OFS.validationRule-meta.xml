@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Status_to_Draft_from_OFS</fullName>
+    <active>true</active>
+    <description>LEM-6278: Prevent User from Updating Quote Status from &apos;Out For Signature&apos; to &apos;Draft&apos;. LEM-6711: Included Non-Templatized. LEM-18973-Exclude SMB Segment.</description>
+    <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+Segment__c &lt;&gt; &apos;SMB&apos;,
+ISCHANGED(SBQQ__Status__c),
+OR(
+ISPICKVAL(Contract_Generation_Path__c, &apos;Non-Templatized&apos;),
+ISPICKVAL(Contract_Generation_Path__c, &apos;Templatized&apos;)
+),
+ISPICKVAL(PRIORVALUE(SBQQ__Status__c), &apos;Out for Signature&apos;),
+ISPICKVAL(SBQQ__Status__c, &apos;Draft&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>SBQQ__Status__c</errorDisplayField>
+    <errorMessage>You cannot move this Quote status from &apos;Out for Signature&apos; or &apos;Approved&apos; to &apos;Draft&apos;. If you need to re-configure your quote, please move the status to &apos;Approved&apos; and then recall the approval.</errorMessage>
+</ValidationRule>

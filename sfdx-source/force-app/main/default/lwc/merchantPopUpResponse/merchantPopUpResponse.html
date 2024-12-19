@@ -1,0 +1,607 @@
+<template>
+  <template if:true={areAgreementsPopulated}>
+    <lightning-quick-action-panel>
+      <div class="border_template">
+        <template if:true={showAllLayout}>
+          <template if:true={picklistValues.data}>
+            <lightning-combobox
+              name={labels.IsThisFormForMarketplaceOrDrive}
+              class="slds-p-bottom_x-small slds-p-left_xx-small"
+              label={labels.IsThisFormForMarketplaceOrDrive}
+              value={formSelector}
+              options={picklistValues.data.values}
+              onchange={handlePickListChange}
+            >
+            </lightning-combobox>
+          </template>
+          <!-- Rate Change checkbox to be shown when Marketplace use cases need to be selected. -->
+          <template if:true={showRateChangeCheckBox}>
+            <lightning-input
+              class="slds-p-around_x-small"
+              type="checkbox"
+              label={labels.IsItRateChangeOrAdditionOfProduct}
+              name={labels.IsItRateChangeOrAdditionOfProduct}
+              onchange={handleChange}
+            ></lightning-input>
+          </template>
+          <!-- Record Form to display fields related to Drive Use Case. -->
+          <template if:true={isDrive}>
+            <!-- Drive Form-->
+            <lightning-record-edit-form
+              object-api-name={objectApiName}
+              onsubmit={handleRecordEditFormSubmit}
+              onsuccess={handleSuccess}
+              oncancel={handleCancel}
+            >
+              <template if:true={showFormLanguage}
+                ><lightning-input-field field-name="Form_Language__c">
+                </lightning-input-field
+              ></template>
+              <lightning-combobox
+                name="Mx Corporate Account"
+                class="slds-p-bottom_x-small validate slds-p-left_xx-small"
+                label="Mx Corporate Account"
+                options={corporateAccounts}
+                onchange={corporateAccountSelected}
+                required
+              >
+              </lightning-combobox>
+              <div if:false={loaded}>
+                <lightning-spinner
+                  alternative-text="Loading"
+                  size="medium"
+                  class="spins"
+                ></lightning-spinner>
+              </div>
+              <template if:false={isAmendmentTypePermitted}>
+                <lightning-combobox
+                  name={labels.FranchiseAmendmentType}
+                  class="slds-p-bottom_x-small validate slds-p-left_xx-small"
+                  label={labels.FranchiseAmendmentType}
+                  options={franchiseType}
+                  onchange={handleFranchiseTypeChange}
+                  required="true"
+                >
+                </lightning-combobox>
+              </template>
+              <template if:true={isAmendmentTypePermitted}>
+                <lightning-combobox
+                  name={labels.FranchiseAmendmentType}
+                  class="slds-p-bottom_x-small validate slds-p-left_xx-small"
+                  label={labels.FranchiseAmendmentType}
+                  options={addFranchiseTypeWithholdingOptOut}
+                  onchange={handleFranchiseTypeChange}
+                  required="true"
+                >
+                </lightning-combobox>
+              </template>
+              <template lwc:if={showMPBzId}>
+                <lightning-input-field
+                  field-name="MP_Bz_Id__c"
+                  required="true"
+                ></lightning-input-field>
+              </template>
+              <template lwc:if={isFranchiseTypeNotWithholdingOptOut}>
+                <lightning-input-field
+                  id="brandQuery1"
+                  field-name="Is_Mx_having_more_than_one_brand__c"
+                  required="true"
+                  onchange={handleChangeForMultipleBrands}
+                ></lightning-input-field>
+              </template>
+              <template lwc:if={isFranchiseTypeNotWithholdingOptOut}>
+                <template if:true={showBrandQuery2}>
+                  <lightning-input-field
+                    id="brandQuery2"
+                    field-name="Is_each_Franchise_having_own_Brand__c"
+                    required="true"
+                    onchange={handleChangeToDisplayBrandSelection}
+                  ></lightning-input-field>
+                </template>
+              </template>
+              <template if:false={showSelectBrand}>
+                <lightning-combobox
+                  name="Select Brand"
+                  class="slds-p-bottom_x-small validate slds-p-left_xx-small"
+                  label="Select Brand"
+                  required="true"
+                  options={contractBrandAssociations}
+                  onchange={handleBrandSelection}
+                >
+                </lightning-combobox>
+              </template>
+              <template if:true={isDriveAmendment}>
+                <lightning-input-field
+                  field-name="Closed_Date_for_Opportunities__c"
+                  required="true"
+                >
+                </lightning-input-field>
+              </template>
+              <template lwc:if={isFranchiseTypeNotWithholdingOptOut}>
+                <template if:false={isDriveFormFrachise}>
+                  <lightning-input-field
+                    field-name="Developer_ID__c"
+                    required="true"
+                  ></lightning-input-field>
+                </template>
+              </template>
+              <template if:true={isDriveIntegratedFranchise}>
+                <lightning-input-field
+                  field-name="Prefill_the_Business_Name__c"
+                  onchange={handleChangeOnPrefillBusinessName}
+                ></lightning-input-field>
+              </template>
+              <template lwc:if={isFranchiseTypeNotWithholdingOptOut}>
+                <lightning-input-field
+                  field-name="Do_you_need_to_track_Nintex_responses__c"
+                  required="true"
+                ></lightning-input-field>
+              </template>
+              <template lwc:if={isFranchiseTypeNotWithholdingOptOut}>
+                <lightning-input-field
+                  field-name="Custom_notes_for_manual_activation__c"
+                  required="true"
+                ></lightning-input-field>
+              </template>
+              <lightning-input-field
+                field-name="Send_submission_confirmation_to_emails__c"
+              ></lightning-input-field>
+
+              <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button
+                  class="slds-p-around_xx-small"
+                  label="Cancel"
+                  onclick={handleCancel}
+                ></lightning-button>
+                <lightning-button
+                  class="slds-p-around_xx-small"
+                  variant="brand"
+                  type="submit"
+                  label="Save"
+                >
+                </lightning-button>
+              </div>
+            </lightning-record-edit-form>
+          </template>
+          <template if:false={isDrive}>
+            <!-- Non Rate Change use case visible when user does not check the Rate Change checkbox. -->
+            <template if:false={isRateChange}>
+              <lightning-record-edit-form
+                object-api-name={objectApiName}
+                onsubmit={handleRecordEditFormSubmit}
+                onsuccess={handleSuccess}
+                oncancel={handleCancel}
+              >
+                <template if:true={showFormLanguage}
+                  ><lightning-input-field field-name="Form_Language__c">
+                  </lightning-input-field
+                ></template>
+                <template if:true={showPackageField}>
+                  <div>
+                    <lightning-dual-listbox
+                      name="Select Optional Package"
+                      label="Would you like stores that submit this form to be onboarded to any of the following packages?"
+                      source-label="Do Not Onboard"
+                      selected-label="Onboard"
+                      options={packageOptions}
+                      value={selectedPackages}
+                      required-options={requiredPackages}
+                      onchange={handlePackageChange}
+                    >
+                    </lightning-dual-listbox>
+                  </div>
+                </template>
+                <lightning-input-field
+                  field-name="Allow_Optional_Product_Selection__c"
+                  required="true"
+                  onchange={optionalProductSelection}
+                >
+                </lightning-input-field>
+                <lightning-input-field field-name="Business_ID__c">
+                </lightning-input-field>
+                <template if:true={viewOptionalProductSelection}>
+                  <div>
+                    <lightning-dual-listbox
+                      name="Select Optional Products"
+                      label="Select Optional Products"
+                      source-label="Available"
+                      selected-label="Selected"
+                      options={productOptions}
+                      onchange={handleChangeDualList}
+                    >
+                    </lightning-dual-listbox>
+                  </div>
+                </template>
+                <lightning-input-field
+                  field-name="Create_Opportunity_Closed_Won_Stage__c"
+                  required="true"
+                  onchange={handleOpportunityStage}
+                >
+                </lightning-input-field>
+                <lightning-input-field
+                  field-name="Is_Mx_having_more_than_one_brand__c"
+                  required="true"
+                  onchange={handleChangeForMultipleBrands}
+                ></lightning-input-field>
+                <template if:true={showBrandQuery2}>
+                  <lightning-input-field
+                    field-name="Is_each_Franchise_having_own_Brand__c"
+                    required="true"
+                    onchange={handleChangeToDisplayBrandSelection}
+                  ></lightning-input-field>
+                </template>
+                <template if:false={showSelectBrand}>
+                  <lightning-combobox
+                    name="Select Brand"
+                    class="slds-p-bottom_x-small validate slds-p-left_xx-small"
+                    label="Select Brand"
+                    required="true"
+                    options={contractBrandAssociations}
+                    onchange={handleBrandSelection}
+                  >
+                  </lightning-combobox>
+                </template>
+                <lightning-input-field
+                  field-name="Order_Protocol__c"
+                  required="true"
+                  onchange={handleOrderProtocolChange}
+                >
+                </lightning-input-field>
+                <template if:true={isOrderProtocolRelatedToPOS}>
+                  <lightning-input-field
+                    field-name="Default_POS_Integration_ID__c"
+                    required="true"
+                  >
+                  </lightning-input-field>
+                </template>
+                <div class="slds-p-bottom_x-small slds-p-left_xx-small">
+                  <c-lookup-search
+                    label="Select Business Vertical"
+                    selected-icon-name="standard:contact"
+                    object-label="Business Vertical"
+                    object-api-name="Business_Vertical__c"
+                    primary-field-to-search="Name"
+                    secondary-field="Vertical_Name__c"
+                    selected-record-id={selectedBusinessVertical}
+                    onvalueselected={handleBusinessVerticalSelection}
+                  >
+                  </c-lookup-search>
+                </div>
+                <template if:true={isOrderProtocolRelatedToTablet}>
+                  <h3 class="slds-section-title--divider">
+                    {sectionHeaders.TABLET_INFORMATION}
+                  </h3>
+                  <div>
+                    <lightning-input-field
+                      field-name="Tablet_Kit_Type__c"
+                      required="true"
+                    >
+                    </lightning-input-field>
+                    <lightning-input-field
+                      field-name="Tablet_Delivery_Method__c"
+                      required="true"
+                    >
+                    </lightning-input-field>
+                    <lightning-input-field
+                      field-name="Delay_Tablet_Shipment__c"
+                      required="true"
+                    >
+                    </lightning-input-field>
+                  </div>
+                </template>
+                <h3 class="slds-section-title--divider">
+                  {sectionHeaders.MENU_INFORMATION}
+                </h3>
+                <div>
+                  <template if:true={menuPicklistValues.data}>
+                    <lightning-combobox
+                      name={labels.MenuUIType}
+                      class="slds-p-bottom_x-small slds-p-right_xx-small slds-p-left_xx-small"
+                      label={labels.MenuUIType}
+                      value={defaultMenuUITypeValue}
+                      options={menuPicklistValues.data.values}
+                      required="true"
+                      read-only
+                    >
+                    </lightning-combobox>
+                  </template>
+                  <lightning-input-field
+                    field-name="Menu_To_Be_Completed_By__c"
+                    required="true"
+                  >
+                  </lightning-input-field>
+                  <template if:true={isOrderProtocolNotPOS}>
+                    <lightning-input-field
+                      field-name="Menu_Setup_Method__c"
+                      required="true"
+                      class="menuSetupMethod"
+                      onchange={handleChangeMenuSetupMethod}
+                    >
+                    </lightning-input-field>
+                  </template>
+                  <template if:true={showURLField}>
+                    <lightning-input-field
+                      field-name="Menu_URL__c"
+                      required="true"
+                    >
+                    </lightning-input-field>
+                  </template>
+                </div>
+                <!-- Column 1 -->
+                <h3 class="slds-section-title--divider">
+                  {sectionHeaders.ADDITIONAL_INFORMATION}
+                </h3>
+                <div class="slds-grid">
+                  <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field
+                      field-name="Is_Evening_Delivery_Required__c"
+                    ></lightning-input-field>
+                    <lightning-combobox
+                      name="Mx Corporate Account"
+                      class="slds-p-bottom_x-small validate slds-p-left_xx-small"
+                      label="Mx Corporate Account"
+                      options={corporateAccounts}
+                      onchange={corporateAccountSelected}
+                      required
+                    >
+                    </lightning-combobox>
+                  </div>
+                  <!-- Column 2 -->
+                  <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field
+                      class="slds-p-bottom_xxx-small slds-p-right_x-small slds-p-left_x-small"
+                      field-name="Is_Centrally_Activated__c"
+                      required="true"
+                    >
+                    </lightning-input-field>
+                    <lightning-input-field field-name="POS_System__c">
+                    </lightning-input-field>
+                  </div>
+                </div>
+                <div
+                  class="slds-p-bottom_x-small slds-p-right_xx-small slds-p-left_xx-small"
+                >
+                  <lightning-input-field
+                    field-name="Applicable_POS_Integrations__c"
+                    onchange={getPosIntegrationValue}
+                  >
+                  </lightning-input-field>
+                  <lightning-formatted-url
+                    value={posServiceProvidersHelptextLink}
+                    label={posServiceProvidersHelptext1}
+                  ></lightning-formatted-url>
+                  {posServiceProvidersHelptext}
+                  <template if:true={showPosServiceError}>
+                    <P style="color: red">{posServiceProvidersErrorMessage}</P>
+                  </template>
+                </div>
+                <lightning-input-field
+                  field-name="Allow_Mx_to_enter_custom_delivery_radius__c"
+                  required="true"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Allow_Mx_to_enter_minimum_prep_time__c"
+                  required="true"
+                ></lightning-input-field>
+                <template if:true={isMenuUITypeRetail}>
+                  <lightning-input-field
+                    field-name="Shopping_Protocol__c"
+                    required="true"
+                  ></lightning-input-field>
+                </template>
+                <lightning-input-field
+                  field-name="Disable_COO_submission__c"
+                ></lightning-input-field>
+                <lightning-input-field
+                  field-name="Mx_Portal_Name_Format__c"
+                ></lightning-input-field>
+                <div class="slds-grid">
+                  <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field
+                      field-name="Are_Pickup_Instructions_Required__c"
+                    >
+                    </lightning-input-field>
+                  </div>
+                  <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field
+                      field-name="Are_Parking_Instructions_Required__c"
+                    >
+                    </lightning-input-field>
+                  </div>
+                </div>
+                <template if:true={showSelfDeliveryOption}
+                  ><lightning-input-field
+                    class="slds-p-bottom_xxx-small slds-p-right_x-small slds-p-left_x-small"
+                    field-name="Is_this_form_request_for_Self_Delivery__c"
+                    required="true"
+                    onchange={getSelfDeliveryValue}
+                  >
+                  </lightning-input-field>
+                </template>
+                <template if:true={showSSNfield}
+                  ><lightning-input-field
+                    class="slds-p-bottom_xxx-small slds-p-right_x-small slds-p-left_x-small"
+                    field-name="Collect_last_4_digits_of_SSN__c"
+                  >
+                  </lightning-input-field>
+                </template>
+                <lightning-input-field
+                  field-name="Send_submission_confirmation_to_emails__c"
+                ></lightning-input-field>
+                <div class="slds-m-top_medium slds-align_absolute-center">
+                  <lightning-button
+                    class="slds-p-around_xx-small"
+                    label="Cancel"
+                    onclick={handleCancel}
+                  ></lightning-button>
+                  <lightning-button
+                    class="slds-p-around_xx-small"
+                    variant="brand"
+                    type="submit"
+                    label="Save"
+                  >
+                  </lightning-button>
+                </div>
+              </lightning-record-edit-form>
+            </template>
+            <!--Rate Change use case visible when user selects Rate Change checkbox. -->
+            <template if:true={isRateChange}>
+              <lightning-record-edit-form
+                object-api-name={objectApiName}
+                onsubmit={handleRecordEditFormSubmit}
+                onsuccess={handleSuccess}
+                oncancel={handleCancel}
+              >
+                <template if:true={showFormLanguage}
+                  ><lightning-input-field field-name="Form_Language__c">
+                  </lightning-input-field
+                ></template>
+                <template if:true={showPackageField}>
+                  <div>
+                    <lightning-dual-listbox
+                      name="Select Optional Package"
+                      label="Would you like stores that submit this form to be onboarded to any of the following packages?"
+                      source-label="Available"
+                      selected-label="Selected"
+                      options={packageOptions}
+                      value={selectedPackages}
+                      required-options={requiredPackages}
+                      onchange={handlePackageChange}
+                    >
+                    </lightning-dual-listbox>
+                  </div>
+                </template>
+                <lightning-input-field
+                  field-name="Allow_Optional_Product_Selection__c"
+                  required="true"
+                  onchange={optionalProductSelection}
+                >
+                </lightning-input-field>
+
+                <template if:true={viewOptionalProductSelection}>
+                  <div>
+                    <lightning-dual-listbox
+                      name="Select Optional Products"
+                      label="Select Optional Products"
+                      source-label="Available"
+                      selected-label="Selected"
+                      options={productOptions}
+                      onchange={handleChangeDualList}
+                    >
+                    </lightning-dual-listbox>
+                  </div>
+                </template>
+                <lightning-combobox
+                  name="Mx Corporate Account"
+                  class="slds-p-bottom_x-small validate slds-p-left_xx-small"
+                  label="Mx Corporate Account"
+                  options={corporateAccounts}
+                  onchange={fetchChildFranchiseAccounts}
+                  required
+                >
+                </lightning-combobox>
+                <lightning-input-field
+                  field-name="Is_Mx_having_more_than_one_brand__c"
+                  required="true"
+                  onchange={handleChangeForMultipleBrands}
+                ></lightning-input-field>
+                <template if:true={showBrandQuery2}>
+                  <lightning-input-field
+                    field-name="Is_each_Franchise_having_own_Brand__c"
+                    required="true"
+                    onchange={handleChangeToDisplayBrandSelection}
+                  ></lightning-input-field>
+                </template>
+                <template if:false={showSelectBrand}>
+                  <lightning-combobox
+                    name="Select Brand"
+                    required="true"
+                    class="slds-p-bottom_x-small validate slds-p-left_xx-small"
+                    label="Select Brand"
+                    options={contractBrandAssociations}
+                    onchange={handleBrandSelection}
+                  >
+                  </lightning-combobox>
+                </template>
+                <lightning-input-field
+                  field-name="Closed_Date_for_Opportunities__c"
+                  required="true"
+                >
+                </lightning-input-field>
+                <lightning-input-field
+                  field-name="Applies_to_all_franchise_of_a_given_Corp__c"
+                  required="true"
+                  onchange={handleFranchiseAccountVisibility}
+                >
+                </lightning-input-field>
+                <template if:true={showFranchiseOptions}>
+                  <lightning-dual-listbox
+                    name="franchiseAccountOptions"
+                    label="Franchise Accounts"
+                    source-label="Available"
+                    selected-label="Selected"
+                    required="true"
+                    options={franchiseAccounts}
+                    onchange={handleFranchiseAccountsSelection}
+                  ></lightning-dual-listbox>
+                </template>
+                <lightning-input-field
+                  field-name="Send_submission_confirmation_to_emails__c"
+                ></lightning-input-field>
+                <div class="slds-m-top_medium slds-align_absolute-center">
+                  <lightning-button
+                    class="slds-p-around_xx-small"
+                    label="Cancel"
+                    onclick={handleCancel}
+                  ></lightning-button>
+                  <lightning-button
+                    class="slds-p-around_xx-small"
+                    variant="brand"
+                    disabled={isSaveDisabled}
+                    type="submit"
+                    label="Save"
+                  ></lightning-button>
+                </div>
+              </lightning-record-edit-form>
+            </template>
+          </template>
+        </template>
+
+        <template if:false={showAllLayout}>
+          <lightning-record-view-form
+            record-id={globalResponseRecordId}
+            object-api-name={objectApiName}
+          >
+            <div class="slds-p-bottom_small">
+              <lightning-output-field
+                field-name={marketplaceOrDrive}
+              ></lightning-output-field>
+            </div>
+          </lightning-record-view-form>
+          <lightning-record-form
+            record-id={globalResponseRecordId}
+            object-api-name={objectApiName}
+            fields={dynamicFields}
+            columns={numberOfColumns}
+            mode="readonly"
+          >
+          </lightning-record-form>
+          <template if:true={viewOptionalProductSelection}>
+            <div class="slds-m-bottom_xx-small slds-text-color_weak">
+              <lightning-formatted-text
+                class="slds-p-left_xx-small"
+                value="Select Optional Products"
+              ></lightning-formatted-text>
+            </div>
+            <div class="slds-m-bottom_medium">
+              <lightning-formatted-text
+                class="slds-p-left_xx-small"
+                value={showSelectedOptions}
+              ></lightning-formatted-text>
+            </div>
+          </template>
+        </template>
+      </div>
+    </lightning-quick-action-panel>
+  </template>
+</template>

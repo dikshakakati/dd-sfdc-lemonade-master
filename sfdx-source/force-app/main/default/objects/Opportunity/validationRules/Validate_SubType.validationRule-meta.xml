@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_SubType</fullName>
+    <active>true</active>
+    <description>LEM-15788
+LEM-23603: Adds support for SMB opportunities to also have the sub-type set to contract correction.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  NOT($Permission.Data_Operations),
+  NOT(
+    AND(
+      NOT(ISPICKVAL( Account.Segment__c , &quot;SMB&quot;)), /* ENT */
+      $Permission.Strategy_and_Operations
+    )
+  ),
+  NOT(
+    AND(
+      ISPICKVAL( Account.Segment__c , &quot;SMB&quot;), /* SMB */
+      $Permission.Can_Create_Contract_Correction_Opportunity
+    )
+  ),
+  OR(ISNEW(),ISCHANGED( Opportunity_Sub_Type__c )),
+  OR(ISPICKVAL(Opportunity_Sub_Type__c,&quot;Contract Correction&quot;),ISPICKVAL(Opportunity_Sub_Type__c,&quot;Contract Correction - Amendment&quot;))
+)</errorConditionFormula>
+    <errorMessage>The Contract Correction Sub Type(s) are exclusively for the S&amp;O team to migrate missing contracts or update incorrect ones. For any corrections, please open an S&amp;O support case with Type: Sales /Deal Cycle Assistance and Sub Type: Missing MSA /Addendum.</errorMessage>
+</ValidationRule>

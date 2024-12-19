@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Mx Portal Amend Quoteline Creation</label>
+    <protected>false</protected>
+    <values>
+        <field>Event_Topic__c</field>
+        <value xsi:type="xsd:string">EVENT_TOPIC_ADD_QUOTE_LINES_ON_AMENDMENT_QUOTE</value>
+    </values>
+    <values>
+        <field>Falied_Step__c</field>
+        <value xsi:type="xsd:string">5</value>
+    </values>
+    <values>
+        <field>Integration_Source__c</field>
+        <value xsi:type="xsd:string">Mx Portal</value>
+    </values>
+</CustomMetadata>

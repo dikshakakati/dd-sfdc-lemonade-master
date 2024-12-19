@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Account_Segment_On_Conversion</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISNEW(),
+  NOT(ISBLANK(Converted_Lead_Id__c)),
+  ISPICKVAL(Creation_Source__c, &apos;Lead&apos;),
+  Record_Type_Name__c == &apos;Store&apos;
+)</errorConditionFormula>
+    <errorMessage>In order to convert this lead into an existing account, please choose an account that has Record Type = Business and Segment = SMB.</errorMessage>
+</ValidationRule>

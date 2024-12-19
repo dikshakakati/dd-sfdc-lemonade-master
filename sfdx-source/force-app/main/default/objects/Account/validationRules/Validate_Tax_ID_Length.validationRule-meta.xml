@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Tax_ID_Length</fullName>
+    <active>true</active>
+    <description>LEM-8030
+LEM-9597
+LEM-22303</description>
+    <errorConditionFormula>ISNEW()
+&amp;&amp;
+(NOT($Permission.Bypass_Account_Validation_Rules)
+&amp;&amp;
+NOT($Permission.Bypass_Account_Tax_Id_Length))
+&amp;&amp;
+(RecordType.Name = &apos;Business&apos; || RecordType.Name = &apos;Store&apos;) 
+&amp;&amp;
+NOT(ISBLANK(TaxID__c))
+&amp;&amp;
+(
+(BillingCountry = &quot;New Zealand&quot; &amp;&amp; NOT(REGEX(TaxID__c, &quot;^\\d{13}?$&quot;)))
+||
+(BillingCountry = &quot;Canada&quot; &amp;&amp; NOT(REGEX(TaxID__c, &quot;[0-9]{9}&quot;)))
+||
+(BillingCountry = &quot;Australia&quot; &amp;&amp; NOT(REGEX(TaxID__c, &quot;[0-9]{11}&quot;)))
+||
+(BillingCountry = &quot;United States&quot; &amp;&amp; NOT(REGEX(TaxID__c, &quot;^\\d{9}?$&quot;)))
+)</errorConditionFormula>
+    <errorDisplayField>TaxID__c</errorDisplayField>
+    <errorMessage>Please enter the correct Tax ID length (US = 9 digits, CAN = 9 digits, AUS = 11 digits, NZ = 13 digits).</errorMessage>
+</ValidationRule>

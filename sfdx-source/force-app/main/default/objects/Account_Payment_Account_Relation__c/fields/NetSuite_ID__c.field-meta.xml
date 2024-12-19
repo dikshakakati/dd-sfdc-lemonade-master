@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NetSuite_ID__c</fullName>
+    <description>LEM-1150: This field represents the associated Accounts Netsuite ID.</description>
+    <externalId>false</externalId>
+    <formula>Payment_Account__r.NetSuite_ID__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field represents the associated Accounts Netsuite ID.</inlineHelpText>
+    <label>NetSuite ID</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

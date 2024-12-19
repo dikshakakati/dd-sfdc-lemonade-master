@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medal_Rank_At_Closed_Stage__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14100: It represents the Medal Rank of the associated Account when Opportunity is Closed.</description>
+    <externalId>false</externalId>
+    <label>Medal Rank At Closed Stage</label>
+    <required>false</required>
+    <securityClassification>Propietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Medal_Rank_Values</valueSetName>
+    </valueSet>
+</CustomField>

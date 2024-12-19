@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_FieldsForCRMProduct</fullName>
+    <active>true</active>
+    <description>LEM-2983: Validates if all the fields required for CRM product are populated.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+    ISBLANK(
+        TEXT(CRM_Campaign_Type__c)
+    ),
+    TEXT(Product__c) = $Label.Brief_Product_CRM
+)</errorConditionFormula>
+    <errorDisplayField>CRM_Campaign_Type__c</errorDisplayField>
+    <errorMessage>Please provide the CRM Campaign Type before saving the Campaign Item.</errorMessage>
+</ValidationRule>

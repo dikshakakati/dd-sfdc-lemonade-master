@@ -1,0 +1,19 @@
+.header-styling {
+  border-bottom: 1px solid #d8ddd6;
+  border-top-left-radius: 0.25rem;
+  padding-bottom: 30px;
+  color: #16325c;
+  font-size: 15px;
+}
+.view-all-styling {
+  border-bottom: 1px solid #d8ddd6;
+  border-top-left-radius: 0.25rem;
+  padding-top: 40px;
+  color: #16325c;
+  font-size: 15px;
+}
+.account-name {
+  padding-top: 10px;
+  color: #16325c;
+  font-size: 12px;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Link__c</fullName>
+    <description>LEM-1695: It stores link to associated Account. It is used for embedding Account Name with link in email templates.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(LEFT($Api.Enterprise_Server_URL_540, FIND($CustomMetadata.Static_Configurations__mdt.Enterprise_Server_URL_Search_Key.Configuration_Value__c, $Api.Enterprise_Server_URL_540, 0) - 1) + AccountId, Account.Name)</formula>
+    <label>Account</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

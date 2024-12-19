@@ -1,0 +1,96 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <!-- Spinner -->
+  <div if:true={working}>
+      <lightning-spinner alternative-text="Loading..."  size="large" variant="brand"></lightning-spinner>
+  </div>
+  <div if:false={working} style="height: 750px;">
+    <div class="slds-p-around_medium">
+      <!-- Buttons -->
+      <lightning-button
+          label="Add Accounts"
+          variant="brand"
+          onclick={addAccounts}
+          disabled={addAccountsDisabled}>
+      </lightning-button>
+    </div>
+    <div if:true={showSuccess}>
+      <div class="slds-scoped-notification slds-media slds-media_center slds-theme_success" role="status">
+          <div class="slds-media__figure">
+            <span class="slds-icon_container slds-icon-utility-success" title="success">
+              <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+              </svg>
+              <span class="slds-assistive-text">success</span>
+            </span>
+          </div>
+          <div class="slds-media__body">
+            <p>Accounts added to Contract</p>
+          </div>
+      </div>
+    </div>
+    <!-- Tabset -->
+    <div>
+      <lightning-tabset variant="scoped" if:true={showTabs}>
+        <lightning-tab label="CSV Import" value="3" onactive={handleActive}>
+          <div class="slds-p-top_medium">
+            <div class="slds-p-around_medium lgc-bg">
+              {labels.csvInstructionsLabel}
+            </div>
+          </div>
+          <div class="slds-p-top_medium" >
+            <c-lwc-generic-upload-c-s-v
+            onfileadded={handleFileAdded}
+            onfilereaderror={handleFileReadError}
+            onfileremoved={handleFileRemoved}
+            >
+            </c-lwc-generic-upload-c-s-v>
+          </div>
+          <div if:true={importShowTable} >
+            <div class="slds-p-around_medium lgc-bg" if:true={importShowTable}>
+              {labels.selectedStoresLabel} <b>{selectedStores}</b>
+            </div>
+            <lightning-datatable
+                      key-field="id"
+                      data={importDataTable}
+                      columns={columns}
+                      onrowselection={selectedRowHandler}
+                      sorted-by="Name"
+                      data-id="Table3">
+            </lightning-datatable>
+          </div>
+          <div class="slds-p-around_medium lgc-bg" if:true={importShowTableAssociated}>
+            {labels.accountAssociatedLabel}
+          </div>
+          <div if:true={importShowTableAssociated}>
+            <lightning-datatable
+                      key-field="id"
+                      data={importDataTableAssociated}
+                      columns={columns}
+                      sorted-by="Name"
+                      hide-checkbox-column="true">
+            </lightning-datatable>
+          </div>
+          <div if:true={importShowError}>
+            <template for:each={importErrorMessages} for:item="errorMessage" for:index="index">
+                <div key={errorMessage.index} class="slds-scoped-notification slds-media slds-media_center slds-theme_error" role="status">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon_container slds-icon-utility-error" title="error">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                        </svg>
+                        <span class="slds-assistive-text">error</span>
+                      </span>
+                    </div>
+                    <div class="slds-media__body">
+                      <p>{errorMessage}
+                      </p>
+                    </div>
+                  </div>
+            </template>
+          </div>
+        </lightning-tab>
+      </lightning-tabset>
+    </div>
+  </div>
+</template>

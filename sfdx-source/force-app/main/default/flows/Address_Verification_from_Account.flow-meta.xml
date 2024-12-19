@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Apex class that generates payload for calling a platform event to GeoServiceEvent</description>
+        <name>Address_Verification_via_GeoServiceEvent</name>
+        <label>Address Verification via GeoServiceEvent</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>AddressVerificationServiceImpl</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Call_GeoServiceEvent</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Address_Verification_Error_Screen</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>account</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>AddressVerificationServiceImpl</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Reloads page data after the flow runs</description>
+        <name>ReloadPageData</name>
+        <label>ReloadPageData</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <actionName>c:ReloadPageData</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>c:ReloadPageData</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <description>Flow to run Address Verification from Account through Custom Button</description>
+    <environments>Default</environments>
+    <interviewLabel>Address Verification from Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Address Verification from Account</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Calls the platform event GeoServiceEvent and pass the payload from apex class</description>
+        <name>Call_GeoServiceEvent</name>
+        <label>Call GeoServiceEvent</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <connector>
+            <targetReference>Address_Verification</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>GeoServiceEvent_Creation_Error_Screen</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Payload__c</field>
+            <value>
+                <elementReference>Address_Verification_via_GeoServiceEvent.jsonString</elementReference>
+            </value>
+        </inputAssignments>
+        <object>GeoServiceEvent__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <screens>
+        <description>End Screen for the address verification flow</description>
+        <name>Address_Verification</name>
+        <label>Address Verification</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>ReloadPageData</targetReference>
+        </connector>
+        <fields>
+            <name>AddressVerification</name>
+            <fieldText>&lt;p&gt;Address Verification has been initiated. Please refresh the page and check the &lt;strong&gt;Address Verification Status&lt;/strong&gt; field on the Account for latest status.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-23620: It displays error screen for Address Verification.</description>
+        <name>Address_Verification_Error_Screen</name>
+        <label>Address Verification Error Screen</label>
+        <locationX>704</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Address_Verification_Error_Message</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Label.Brand_Creation_Failure_Error_Message}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-23620: It displays error screen for GeoServiceEvent creation.</description>
+        <name>GeoServiceEvent_Creation_Error_Screen</name>
+        <label>GeoServiceEvent Creation Error Screen</label>
+        <locationX>440</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Record_Creation_Error_Message</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Label.Brand_Creation_Failure_Error_Message}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Address_Verification_via_GeoServiceEvent</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Record Id of the Account on which the address verification needs to happen</description>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+</Flow>

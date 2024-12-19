@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateComissionStartDatePopulation</fullName>
+    <active>true</active>
+    <description>LEM-14342: Validates that Commission Start date is populated when 0% Commission of days is applicable.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  ISCHANGED(X0_Commission_of_days__c),
+  NOT(ISBLANK(TEXT(X0_Commission_of_days__c))),
+  ISBLANK(X0_Commission_Start_Date__c)
+)</errorConditionFormula>
+    <errorDisplayField>X0_Commission_Start_Date__c</errorDisplayField>
+    <errorMessage>If the 0% Commission(# of days) is applicable then you must populate the 0% Commission Start date.</errorMessage>
+</ValidationRule>

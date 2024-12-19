@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4255: It is used for bypassing flows on Work Step object.</description>
+    <isLicensed>false</isLicensed>
+    <label>Bypass Work Step Flows</label>
+</CustomPermission>

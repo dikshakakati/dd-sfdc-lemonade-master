@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Rx Enterprise</fullName>
+        <default>false</default>
+        <label>Rx Enterprise</label>
+    </customValue>
+    <customValue>
+        <fullName>Rx SMB</fullName>
+        <default>false</default>
+        <label>Rx SMB</label>
+    </customValue>
+    <customValue>
+        <fullName>Rx MHT</fullName>
+        <default>false</default>
+        <label>Rx MHT</label>
+    </customValue>
+    <customValue>
+        <fullName>Incumbents</fullName>
+        <default>false</default>
+        <label>Incumbents</label>
+    </customValue>
+    <customValue>
+        <fullName>Non-Rx</fullName>
+        <default>false</default>
+        <label>Non-Rx</label>
+    </customValue>
+    <customValue>
+        <fullName>G&amp;NP</fullName>
+        <default>false</default>
+        <label>G&amp;NP</label>
+    </customValue>
+    <description>LEM-1602: Create New Fields for Ads and Promos</description>
+    <masterLabel>LOB</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

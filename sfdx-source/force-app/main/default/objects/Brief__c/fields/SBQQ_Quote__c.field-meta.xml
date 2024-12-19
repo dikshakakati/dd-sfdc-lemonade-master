@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ_Quote__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-2983: Captures the Quote related to the Brief.</description>
+    <externalId>false</externalId>
+    <label>Quote</label>
+    <referenceTo>SBQQ__Quote__c</referenceTo>
+    <relationshipLabel>Briefs</relationshipLabel>
+    <relationshipName>Briefs</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

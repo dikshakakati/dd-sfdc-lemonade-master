@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Range__c</fullName>
+    <defaultValue>&apos;$$&apos;</defaultValue>
+    <description>LEM-6195: It indicates the price range that will be used to establish # of dollar signs on DoorDash App.</description>
+    <externalId>false</externalId>
+    <label>Price Range</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>$</fullName>
+                <default>false</default>
+                <label>$</label>
+            </value>
+            <value>
+                <fullName>$$</fullName>
+                <default>false</default>
+                <label>$$</label>
+            </value>
+            <value>
+                <fullName>$$$</fullName>
+                <default>false</default>
+                <label>$$$</label>
+            </value>
+            <value>
+                <fullName>$$$$</fullName>
+                <default>false</default>
+                <label>$$$$</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

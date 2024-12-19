@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Fields_for_Franchisee_Accounts</fullName>
+    <active>true</active>
+    <description>LEM-15901 Auto Verify New Accounts</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Account_Validation_Rules),
+$Profile.Name &lt;&gt; &quot;Mulesoft Integration&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;Nintex Integration&quot;,
+$RecordType.Name = $Label.BusinessAccountRecordTypeName,
+
+ISNEW(),
+ISPICKVAL(Type, &quot;Franchisee&quot;),
+CONTAINS(DoorDash_Legal_Entity__c, &quot;G&amp;C&quot;),
+
+OR(
+ISPICKVAL(Segment__c, &apos;&apos;),
+AND(
+  TEXT( Segment__c ) != $Label.AccountSegmentSMB,
+  ISBLANK(Legal_Business_Name__c)
+),
+ISPICKVAL(Commission_Calculation_Methodology__c, &apos;&apos;)
+)
+
+)</errorConditionFormula>
+    <errorMessage>Segment and Commission Calculation Methodology are required fields for Business Accounts of Franchisee Type when DoorDash Legal Entity is G&amp;C. Legal Business Name is required only for ENT Business Accounts.</errorMessage>
+</ValidationRule>

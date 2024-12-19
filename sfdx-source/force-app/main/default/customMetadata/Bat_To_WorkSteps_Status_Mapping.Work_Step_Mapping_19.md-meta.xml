@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Work Step Mapping</label>
+    <protected>false</protected>
+    <values>
+        <field>Bat_Status__c</field>
+        <value xsi:type="xsd:string">INTEGRATION_ACTIVATED</value>
+    </values>
+    <values>
+        <field>Exclusion_Code__c</field>
+        <value xsi:type="xsd:string">STORE_NOT_ACTIVE</value>
+    </values>
+    <values>
+        <field>Status_Reason__c</field>
+        <value xsi:type="xsd:string">Store can&apos;t be activated - Incomplete signup steps</value>
+    </values>
+    <values>
+        <field>Work_Plan_Status__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Work_Step_Status__c</field>
+        <value xsi:type="xsd:string">Complete</value>
+    </values>
+    <values>
+        <field>Work_Step_Type__c</field>
+        <value xsi:type="xsd:string">Enable Integration</value>
+    </values>
+</CustomMetadata>

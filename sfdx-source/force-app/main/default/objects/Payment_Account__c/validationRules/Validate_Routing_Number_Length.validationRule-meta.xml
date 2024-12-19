@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Routing_Number_Length</fullName>
+    <active>true</active>
+    <description>LEM-8030
+LEM-10158</description>
+    <errorConditionFormula>AND(    
+ NOT($Permission.Bypass_Payment_Account_Validation_Rules),
+ NOT(ISBLANK(RoutingNumber__c)),
+ OR(
+  AND( Business_Account__r.BillingCountry  = &apos;United States&apos;,
+   OR(NOT(REGEX(RoutingNumber__c,&quot;[0-9]{9}&quot;)),BEGINS(RoutingNumber__c,&quot;5&quot;),BEGINS(RoutingNumber__c,&quot;4&quot;))),
+  AND( Business_Account__r.BillingCountry  = &apos;Canada&apos;,
+   NOT(REGEX(RoutingNumber__c,&quot;[0-9]{5}&quot;))),
+  AND( Business_Account__r.BillingCountry  = &apos;Australia&apos;,
+   NOT(REGEX(RoutingNumber__c,&quot;[0-9]{6}&quot;)))
+)
+)</errorConditionFormula>
+    <errorDisplayField>RoutingNumber__c</errorDisplayField>
+    <errorMessage>Please enter the correct Routing Number length
+US = 9 ; Routing number cannot start with 4 or 5
+CA = 5
+AUS = 6</errorMessage>
+</ValidationRule>

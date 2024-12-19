@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Birthdate_Year</fullName>
+    <active>true</active>
+    <description>LEM-8030</description>
+    <errorConditionFormula>NOT($Permission.Bypass_Account_Validation_Rules) &amp;&amp;
+NOT(ISBLANK(Birthdate)) &amp;&amp;
+YEAR(Birthdate) &lt;= 1900</errorConditionFormula>
+    <errorDisplayField>Birthdate</errorDisplayField>
+    <errorMessage>Please ensure the birthdate is after the year 1900.</errorMessage>
+</ValidationRule>

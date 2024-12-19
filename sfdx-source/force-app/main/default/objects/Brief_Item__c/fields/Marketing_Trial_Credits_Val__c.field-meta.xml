@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Trial_Credits_Val__c</fullName>
+    <description>LEM-6823</description>
+    <externalId>false</externalId>
+    <formula>Quote_Line__r.Marketing_Trial_Credit__c</formula>
+    <inlineHelpText>Captures Attributes related to Promotion products</inlineHelpText>
+    <label>Marketing Trial Credits Per Store</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>is_Biz_Group_Id_Link_To_Biz_Ref_Id__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-14954 : [SFDC] Business ID/Business Group Automation</description>
+    <externalId>false</externalId>
+    <label>is Biz Group Id Link To Biz Ref Id</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

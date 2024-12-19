@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chunk_Number__c</fullName>
+    <description>This field holds the numeric sequence of the data chunk, indicating its order in the series of chunks associated with a specific Process Flow Request. It is used to ensure that data chunks are processed and reassembled in the correct order, maintaining data integrity and consistency throughout the operation.</description>
+    <externalId>false</externalId>
+    <label>Chunk Number</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

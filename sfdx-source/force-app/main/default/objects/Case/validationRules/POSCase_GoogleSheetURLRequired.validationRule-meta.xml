@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POSCase_GoogleSheetURLRequired</fullName>
+    <active>true</active>
+    <description>LEM-3078: It ensures that &quot;Google Sheet URL&quot; field is populated for POS Integrations Case record type when Account record type is Business or Store.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Case_Validation_Rules),
+  RecordType.DeveloperName = $Label.POSIntegrationsCaseRecordTypeName,
+  Account.Record_Type_Name__c = $Label.BusinessAccountRecordTypeName,
+  ISBLANK(Google_Sheet_URL__c)
+ )</errorConditionFormula>
+    <errorDisplayField>Google_Sheet_URL__c</errorDisplayField>
+    <errorMessage>Google Sheet URL is required.</errorMessage>
+</ValidationRule>

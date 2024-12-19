@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assets_Approved__c</fullName>
+    <description>LEM-2983: Asserts if the assets required for the campaign Brief have been approved or not.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Once the Mx has approved the assets required for the campaign, mark &apos;Yes&apos;. If there are no campaign assets, mark &apos;Yes&apos;.</inlineHelpText>
+    <label>Assets Approved?</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

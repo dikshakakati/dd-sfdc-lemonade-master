@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Schedule__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-5129: Add Discount Schedule to the Service Record</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Lookup to Discount Schedule record where pricing tiers are captured</inlineHelpText>
+    <label>Discount Schedule</label>
+    <referenceTo>SBQQ__DiscountSchedule__c</referenceTo>
+    <relationshipLabel>Services</relationshipLabel>
+    <relationshipName>Services</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

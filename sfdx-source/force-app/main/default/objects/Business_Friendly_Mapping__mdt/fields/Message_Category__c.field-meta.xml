@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Message_Category__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Message Category</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Banking Validations</fullName>
+                <default>true</default>
+                <label>Banking Validations</label>
+            </value>
+            <value>
+                <fullName>Test Category</fullName>
+                <default>false</default>
+                <label>Test Category</label>
+            </value>
+            <value>
+                <fullName>Services Missing</fullName>
+                <default>false</default>
+                <label>Services Missing</label>
+            </value>
+            <value>
+                <fullName>Timeout</fullName>
+                <default>false</default>
+                <label>Timeout</label>
+            </value>
+            <value>
+                <fullName>Decision Maker Or Store Duplicate</fullName>
+                <default>false</default>
+                <label>Decision Maker Or Store Duplicate</label>
+            </value>
+            <value>
+                <fullName>Invalid Data - Phone Number</fullName>
+                <default>false</default>
+                <label>Invalid Data - Phone Number</label>
+            </value>
+            <value>
+                <fullName>Missing Data - Currency</fullName>
+                <default>false</default>
+                <label>Missing Data - Currency</label>
+            </value>
+            <value>
+                <fullName>Missing Data - TaxId</fullName>
+                <default>false</default>
+                <label>Missing Data - TaxId</label>
+            </value>
+            <value>
+                <fullName>Missing Data - Billing Contact Name</fullName>
+                <default>false</default>
+                <label>Missing Data - Billing Contact Name</label>
+            </value>
+            <value>
+                <fullName>Missing Data - Decision Maker</fullName>
+                <default>false</default>
+                <label>Missing Data - Decision Maker</label>
+            </value>
+            <value>
+                <fullName>Invalid Data - Entity Type</fullName>
+                <default>false</default>
+                <label>Invalid Data - Entity Type</label>
+            </value>
+            <value>
+                <fullName>Invalid Data - Routing Number</fullName>
+                <default>false</default>
+                <label>Invalid Data - Routing Number</label>
+            </value>
+            <value>
+                <fullName>Invalid Data - Transit Number</fullName>
+                <default>false</default>
+                <label>Invalid Data - Transit Number</label>
+            </value>
+            <value>
+                <fullName>Invalid Data - Account Number</fullName>
+                <default>false</default>
+                <label>Invalid Data - Account Number</label>
+            </value>
+            <value>
+                <fullName>Invalid COO</fullName>
+                <default>false</default>
+                <label>Invalid COO</label>
+            </value>
+            <value>
+                <fullName>Geo Coverage Issue</fullName>
+                <default>false</default>
+                <label>Geo Coverage Issue</label>
+            </value>
+            <value>
+                <fullName>POS</fullName>
+                <default>false</default>
+                <label>POS</label>
+            </value>
+            <value>
+                <fullName>System Issue</fullName>
+                <default>false</default>
+                <label>System Issue</label>
+            </value>
+            <value>
+                <fullName>POS - Duplicate</fullName>
+                <default>false</default>
+                <label>POS - Duplicate</label>
+            </value>
+            <value>
+                <fullName>Global Do Not Activate</fullName>
+                <default>false</default>
+                <label>Global Do Not Activate</label>
+            </value>
+            <value>
+                <fullName>Invalid Data - Postal Code</fullName>
+                <default>false</default>
+                <label>Invalid Data - Postal Code</label>
+            </value>
+            <value>
+                <fullName>FullSend Create</fullName>
+                <default>false</default>
+                <label>FullSend Create</label>
+            </value>
+            <value>
+                <fullName>Amendment &amp; Bulk</fullName>
+                <default>false</default>
+                <label>Amendment &amp; Bulk</label>
+            </value>
+            <value>
+                <fullName>Invalid Data - Tax Strategy</fullName>
+                <default>false</default>
+                <label>Invalid Data - Tax Strategy</label>
+            </value>
+            <value>
+                <fullName>Error - Create Tax Strategy</fullName>
+                <default>false</default>
+                <label>Error - Create Tax Strategy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

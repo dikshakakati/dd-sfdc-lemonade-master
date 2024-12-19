@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_Required</fullName>
+    <active>true</active>
+    <description>LEM-15978: Address is required for all bulk requests.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.ByPass_Bulk_Update_Staging_Validation),
+    OR(
+       ISBLANK(Address__Street__s),
+       ISBLANK(Address__City__s),
+       ISPICKVAL(Address__StateCode__s,&apos;&apos;),
+       ISPICKVAL(Address__CountryCode__s,&apos;&apos;),
+       ISBLANK(Address__PostalCode__s)
+    )
+)</errorConditionFormula>
+    <errorMessage>Address is required.</errorMessage>
+</ValidationRule>

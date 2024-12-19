@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Core</fullName>
+        <default>false</default>
+        <label>Core</label>
+    </standardValue>
+    <standardValue>
+        <fullName>A&amp;P</fullName>
+        <default>false</default>
+        <label>A&amp;P</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Middleware Provider</fullName>
+        <default>false</default>
+        <label>Middleware Provider</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Churned Merchant</fullName>
+        <default>false</default>
+        <label>Churned Merchant</label>
+    </standardValue>
+</StandardValueSet>

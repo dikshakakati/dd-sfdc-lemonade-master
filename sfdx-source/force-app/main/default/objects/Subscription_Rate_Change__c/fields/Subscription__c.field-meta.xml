@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subscription__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-6457-Active Rate Provisioning</description>
+    <externalId>false</externalId>
+    <label>Subscription</label>
+    <securityClassification>Internal</securityClassification>
+    <referenceTo>SBQQ__Subscription__c</referenceTo>
+    <relationshipLabel>Subscription Rate Changes</relationshipLabel>
+    <relationshipName>Subscription_SRC</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

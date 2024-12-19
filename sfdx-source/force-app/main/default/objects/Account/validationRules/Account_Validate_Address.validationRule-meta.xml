@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Validate_Address</fullName>
+    <active>true</active>
+    <description>LEM-176: This rule is used to validate whether the essential fields are not null for respective countries.
+LEM-108: This validation rule incorporated with bypass framework.
+LEM-11126: Updated validation
+LEM-16932: Updated validation</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  NOT(AND(
+         ISCHANGED(Experience__c),
+         $User.Full_Name__c = &apos;Automated Process&apos;
+      )),
+  OR(
+      AND(
+        $RecordType.Name = $Label.BusinessAccountRecordTypeName,
+        $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+        ISBLANK(BillingCountry),
+        NOT(ISPICKVAL(Type,&apos;Holding Group&apos;))
+      ),
+      AND(
+        $RecordType.Name = $Label.StoreAccountRecordTypeName,
+        $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+      OR(
+        ISBLANK(BillingStreet),
+        ISBLANK(BillingPostalCode),
+        ISBLANK(BillingCity),
+        ISBLANK(BillingCountry)
+      )
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>For Store accounts, a full address is required. For Business accounts, only country is required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_All_WorkPlans_With_Integration_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-3985: It will provide Edit access on all Work Plans with type to MuleSoft user.</description>
+        <label>Share All WorkPlans With Integration Users</label>
+        <sharedTo>
+            <group>Integration_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Work_Plans_With_All_Internal_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-2883: It shares all Work Plans with all internal users using Owner Id not blank criteria. Based on record owner is not sharing the Work Plans where Owner is a Queue.</description>
+        <label>Share Work Plans With All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Store_Address_Verification</fullName>
+    <active>true</active>
+    <description>LEM-23470: It restricts to update &quot;Address Verification Status&quot; on Store Account.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  $Permission.Allow_Access_to_Verify_Address,
+  $RecordType.Name = $Label.StoreAccountRecordTypeName,
+  ISCHANGED(Address_Verification_Status__c),
+  NOT(
+    AND(
+      ISCHANGED(BillingAddress),
+      TEXT(Address_Verification_Status__c) = $Label.Unverified
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>You do not have access to update Address Verification Status on a Store Account. Please wait for address verification via the geo integration to update.</errorMessage>
+</ValidationRule>

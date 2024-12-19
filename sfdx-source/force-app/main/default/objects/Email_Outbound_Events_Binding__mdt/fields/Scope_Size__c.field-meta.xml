@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scope_Size__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13778: It is used to store the execution scope size based on the processing payload size.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Scope Size</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

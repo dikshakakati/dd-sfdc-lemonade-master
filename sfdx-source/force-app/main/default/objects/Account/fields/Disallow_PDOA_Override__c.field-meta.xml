@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disallow_PDOA_Override__c</fullName>
+    <description>LEM-2800: This field will be used to capture if User wants to override the PDOA date.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this field is set to no, the system will set PDOA (and may override what user enters). If this field is set to yes, then PDOA value set by user will remain</inlineHelpText>
+    <label>User Sets PDOA Value?</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>true</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

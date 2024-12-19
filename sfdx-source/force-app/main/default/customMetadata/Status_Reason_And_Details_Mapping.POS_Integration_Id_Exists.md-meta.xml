@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>POS_Integration_Id_Exists</label>
+    <protected>false</protected>
+    <values>
+        <field>Business_Friendly_Mapping__c</field>
+        <value xsi:type="xsd:string">POS_Integration_Id_Exists</value>
+    </values>
+    <values>
+        <field>Quick_Action_Name__c</field>
+        <value xsi:type="xsd:string">Update_POS_Information</value>
+    </values>
+    <values>
+        <field>Status_Reason__c</field>
+        <value xsi:type="xsd:string">Invalid POS details</value>
+    </values>
+    <values>
+        <field>Status__c</field>
+        <value xsi:type="xsd:string">Escalated</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">Setup Store</value>
+    </values>
+</CustomMetadata>

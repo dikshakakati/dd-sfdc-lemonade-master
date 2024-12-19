@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alcohol_Pickup_and_Pickup_Check__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-18455: It is used to check if Alcohol Pickup and Pickup of same package have equal requested commission.</description>
+    <externalId>false</externalId>
+    <label>Alcohol Pickup and Pickup Check</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

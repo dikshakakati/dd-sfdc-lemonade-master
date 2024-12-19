@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Contact_Or_User_Stakeholder</fullName>
+    <active>true</active>
+    <description>LEM-601: Validate to check that Contact or User has a value when created, neither both can be populated nor both can be blank.</description>
+    <errorConditionFormula>
+    AND(
+      NOT($Permission.Bypass_Stakeholder_Validation_Rules),
+      OR(
+        ISBLANK(Contact__c),
+        NOT(
+          ISBLANK(User__c)
+        )
+      ),
+      OR(
+        NOT(
+          ISBLANK(Contact__c)
+        ),
+        ISBLANK(User__c)
+      )
+    )
+    </errorConditionFormula>
+    <errorMessage>You must search for a single user or a single contact at a time.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order_Sub_Type__c</fullName>
+    <description>LEM-2348: It holds Work Order type values. It should always be in sync with Work Order&apos;s Sub-Type values and also maintain the field dependencies accordingly.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Work Order Sub-Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Additional store creation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Additional store creation</label>
+            </value>
+            <value>
+                <fullName>Ads and Promo - Activate</fullName>
+                <default>false</default>
+                <label>Ads and Promo - Activate</label>
+            </value>
+            <value>
+                <fullName>Ads and Promo - Deactivate</fullName>
+                <default>false</default>
+                <label>Ads and Promo - Deactivate</label>
+            </value>
+            <value>
+                <fullName>Business/store mapping update</fullName>
+                <default>false</default>
+                <label>Business/store mapping update</label>
+            </value>
+            <value>
+                <fullName>Caviar - Cross Listing</fullName>
+                <default>false</default>
+                <label>Caviar - Cross Listing</label>
+            </value>
+            <value>
+                <fullName>COO</fullName>
+                <default>false</default>
+                <label>COO</label>
+            </value>
+            <value>
+                <fullName>Invoicing group/NetSuite setup/update</fullName>
+                <default>false</default>
+                <label>Invoicing group/NetSuite setup/update</label>
+            </value>
+            <value>
+                <fullName>Menu Updates</fullName>
+                <default>false</default>
+                <label>Menu Updates</label>
+            </value>
+            <value>
+                <fullName>Metro Based Promo</fullName>
+                <default>false</default>
+                <label>Metro Based Promo</label>
+            </value>
+            <value>
+                <fullName>Net-new business</fullName>
+                <default>true</default>
+                <label>Net-new business</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Partnership creation/update</fullName>
+                <default>false</default>
+                <label>Partnership creation/update</label>
+            </value>
+            <value>
+                <fullName>Portal access</fullName>
+                <default>false</default>
+                <label>Portal access</label>
+            </value>
+            <value>
+                <fullName>Rate Change</fullName>
+                <default>false</default>
+                <label>Rate Change</label>
+            </value>
+            <value>
+                <fullName>SaaS Fee Setup</fullName>
+                <default>false</default>
+                <label>SaaS Fee Setup</label>
+            </value>
+            <value>
+                <fullName>Self Delivery</fullName>
+                <default>false</default>
+                <label>Self Delivery</label>
+            </value>
+            <value>
+                <fullName>Sponsored Listing</fullName>
+                <default>false</default>
+                <label>Sponsored Listing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

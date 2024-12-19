@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_QA_Date_Time__c</fullName>
+    <description>LEM-793: Indicates the date and time of last menu QA activity.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the date and time of last menu QA activity</inlineHelpText>
+    <label>Last QA Date/Time</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>LEM-10033,LEM-11497: It sends bell notification to stored Recipient Ids on Log.</description>
+        <name>Send_Bell_Notification_to_Recipient_Ids</name>
+        <label>Send Bell Notification to Recipient Ids</label>
+        <locationX>314</locationX>
+        <locationY>1274</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>$Label.Log_Bell_Notification_Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>activeRecipientIds</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>$Label.Log_Bell_Notification_Title</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <stringValue>{!logRecord.Store_Account_Name__c}: {!logRecord.Detailed_Message__c}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>logRecord.Store_Account_Id_18__c</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <description>LEM-11497: It stores recipient Ids in collection variable and updates the remaining recipient Ids in the text variable.</description>
+        <name>Add_recipient_Ids_in_variables</name>
+        <label>Add recipient Ids in variables</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>recipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>firstRecipientId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>remainingRecipients</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>updatedRemainingText</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Recipient_Ids_has_separator</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-11497: It stores remaining recipient Ids in collection variable.</description>
+        <name>Add_remaining_recipient_Ids</name>
+        <label>Add remaining recipient Ids</label>
+        <locationX>732</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>recipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>updatedRemainingText</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Recipient_Ids_Empty</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-11497: It assigns Recipient Ids field to a text variable.</description>
+        <name>Assign_Recipient_Ids_field_to_a_text_variable</name>
+        <label>Assign Recipient Ids field to a text variable</label>
+        <locationX>347</locationX>
+        <locationY>134</locationY>
+        <assignmentItems>
+            <assignToReference>remainingRecipients</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>logRecord.Recipient_Ids_To_Send_Notification__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Recipient_Ids_has_separator</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-12969: It collects ids from active user records.</description>
+        <name>Collect_Active_Recipient_Ids</name>
+        <label>Collect Active Recipient Ids</label>
+        <locationX>534</locationX>
+        <locationY>974</locationY>
+        <assignmentItems>
+            <assignToReference>activeRecipientIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Over_Active_Users.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Over_Active_Users</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <description>LEM-11497: It stores the comma separator value.</description>
+        <name>commaSeparator</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>,</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>LEM-11497: It checks whether active recipient Ids is empty or null.</description>
+        <name>Active_Recipient_Ids_Empty</name>
+        <label>Active Recipient Ids Empty?</label>
+        <locationX>446</locationX>
+        <locationY>1166</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Recipient_Ids_not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>activeRecipientIds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Bell_Notification_to_Recipient_Ids</targetReference>
+            </connector>
+            <label>Active Recipient Ids not null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-12969: It checks whether recipient Ids is empty or null.</description>
+        <name>Recipient_Ids_Empty</name>
+        <label>Recipient Ids Empty?</label>
+        <locationX>644</locationX>
+        <locationY>650</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_if_Recipient_Ids_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recipientIds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Active_Users_by_Recipient_Ids</targetReference>
+            </connector>
+            <label>Check if Recipient Ids Exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-11497: It checks whether remaining recipients text value has comma separator.</description>
+        <name>Recipient_Ids_has_separator</name>
+        <label>Recipient Ids has separator?</label>
+        <locationX>347</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Remaining_recipients_empty</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Comma separator missing</defaultConnectorLabel>
+        <rules>
+            <name>Comma_separator_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>remainingRecipients</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>commaSeparator</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_recipient_Ids_in_variables</targetReference>
+            </connector>
+            <label>Comma separator found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-11497: It checks whether remaining recipients variable is empty or not.</description>
+        <name>Remaining_recipients_empty</name>
+        <label>Remaining recipients empty?</label>
+        <locationX>644</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Add_remaining_recipient_Ids</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Remaining Recipients is not null</defaultConnectorLabel>
+        <rules>
+            <name>Remaining_Recipients_is_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>remainingRecipients</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Recipient_Ids_Empty</targetReference>
+            </connector>
+            <label>Remaining Recipients is null</label>
+        </rules>
+    </decisions>
+    <description>LEM-10033, LEM-11497: It sends bell notification to stored recipient Ids on Log creation.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-11497: It stores the first Recipient Id.</description>
+        <name>firstRecipientId</name>
+        <dataType>String</dataType>
+        <expression>Trim(LEFT({!remainingRecipients}, FIND(&apos;,&apos;,{!remainingRecipients})-1))</expression>
+    </formulas>
+    <formulas>
+        <name>updatedRemainingText</name>
+        <dataType>String</dataType>
+        <expression>Trim(right({!remainingRecipients}, len({!remainingRecipients})-FIND(&apos;,&apos;, {!remainingRecipients})))</expression>
+    </formulas>
+    <interviewLabel>Subflow - Send Bell Notification to Parent Account Owner {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow - Send Bell Notification to Recipient Ids</label>
+    <loops>
+        <description>LEM-12969: It iterates over collected users to send bell notification.</description>
+        <name>Loop_Over_Active_Users</name>
+        <label>Loop Over Active Users</label>
+        <locationX>446</locationX>
+        <locationY>866</locationY>
+        <collectionReference>Get_Active_Users_by_Recipient_Ids</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Collect_Active_Recipient_Ids</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Active_Recipient_Ids_Empty</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>LEM-12969: It collects &apos;Active&apos; User details by recipient ids.</description>
+        <name>Get_Active_Users_by_Recipient_Ids</name>
+        <label>Get Active Users by Recipient Ids</label>
+        <locationX>446</locationX>
+        <locationY>758</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Over_Active_Users</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>recipientIds</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>221</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Recipient_Ids_field_to_a_text_variable</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-12969: To store active users in recipientIds</description>
+        <name>activeRecipientIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-11497: It stores Log Record that triggered the flow.</description>
+        <name>logRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Log__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-11497: To store the Ids of all recipients.</description>
+        <name>recipientIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-11497: It stores the remaining recipient Ids.</description>
+        <name>remainingRecipients</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

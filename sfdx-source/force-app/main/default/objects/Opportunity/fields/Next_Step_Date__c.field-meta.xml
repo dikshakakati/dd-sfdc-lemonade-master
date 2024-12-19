@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Step_Date__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13561: It is used to represent the Date by when the Next Step should be completed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date by when the Next Step should be completed.</inlineHelpText>
+    <label>Next Step Date</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

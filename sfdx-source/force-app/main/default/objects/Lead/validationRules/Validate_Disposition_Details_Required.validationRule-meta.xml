@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Disposition_Details_Required</fullName>
+    <active>true</active>
+    <description>LEM-13419: It validates Disposition Reason and Disposition Details required for Not Interested - Cool Down Lead.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Lead_Validation_Rules),
+    TEXT(Status) =  $Label.LeadStatusNotInterestedCoolDown,
+    OR(
+      ISCHANGED(Status),
+      ISCHANGED(Disposition_Reason__c),
+      ISCHANGED(Disposition_Details__c),
+      ISNEW()
+    ),
+    OR(
+        ISBLANK(TEXT(Disposition_Reason__c)),
+        AND(
+          OR(
+            TEXT(Disposition_Reason__c) =  $Label.LeadDispositionReasonNotBoughtIntoValueProp,
+            TEXT(Disposition_Reason__c) =  $Label.LeadDispositionReasonExclusiveWithCompetitor,
+            TEXT(Disposition_Reason__c) =  $Label.LeadDispositionReasonOperationalObstacles,
+            TEXT(Disposition_Reason__c) =  $Label.LeadDispositionReasonProductOrFeatureBlockers
+          ),
+          ISBLANK(TEXT(Disposition_Details__c))
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Disposition Reason &amp; Disposition Details must be populated when the lead status is Not Interested - Cool Down. Please update before saving.</errorMessage>
+</ValidationRule>

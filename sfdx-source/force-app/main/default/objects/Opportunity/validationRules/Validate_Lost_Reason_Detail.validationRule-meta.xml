@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Lost_Reason_Detail</fullName>
+    <active>true</active>
+    <description>LEM-13468: It ensures for specific Lost / Stalled Reason require Lost Reason Detail to be populated.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  TEXT(Account.Segment__c) = $Label.AccountSegmentSMB,
+  Text(StageName)= $Label.Closed_Lost_Stage_Value ,
+  OR(
+    TEXT(Lost_Reason__c)= $Label.NotBoughtIntoValueProp,
+    TEXT(Lost_Reason__c)= $Label.OperationalObstacles,
+    TEXT(Lost_Reason__c)= $Label.ExclusiveWithCompetitor,
+    TEXT(Lost_Reason__c)= $Label.IncorrectData
+  ),
+  ISBLANK(TEXT(Lost_Reason_Details__c))
+)</errorConditionFormula>
+    <errorDisplayField>Lost_Reason_Details__c</errorDisplayField>
+    <errorMessage>Please add Lost Reason Detail before moving the opportunity to Closed Lost.</errorMessage>
+</ValidationRule>

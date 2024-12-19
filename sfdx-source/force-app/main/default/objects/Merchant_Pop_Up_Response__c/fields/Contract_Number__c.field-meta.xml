@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Number__c</fullName>
+    <description>LEM-3214: It is used in the approval email template to show the contract number.</description>
+    <externalId>false</externalId>
+    <formula>Contract__r.ContractNumber</formula>
+    <label>Contract Number</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

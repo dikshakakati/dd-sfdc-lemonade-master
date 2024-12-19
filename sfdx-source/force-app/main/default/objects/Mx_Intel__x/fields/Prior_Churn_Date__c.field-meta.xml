@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prior_Churn_Date__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13543: It stores the prior churn date.</description>
+    <externalDeveloperName>prior_churn_date</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Prior Churn Date</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Date</type>
+</CustomField>

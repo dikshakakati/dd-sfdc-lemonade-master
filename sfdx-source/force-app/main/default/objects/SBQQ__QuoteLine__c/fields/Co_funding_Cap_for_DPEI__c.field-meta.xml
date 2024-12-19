@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Co_funding_Cap_for_DPEI__c</fullName>
+    <description>LEM-15578</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is only applicable to promos associated to DPEI.</inlineHelpText>
+    <label>Co-funding Cap for DPEI</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Users_Approval_Group__c</fullName>
+    <description>LEM-14013: It holds the names of approval groups required for Approval Rules to fire.</description>
+    <externalId>false</externalId>
+    <label>Users Approval Group</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

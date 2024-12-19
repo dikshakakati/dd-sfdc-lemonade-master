@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_AC_Blank_On_Marketplace_Type</fullName>
+    <active>true</active>
+    <description>LEM-1430: Activated Centrally is required when Work Order type is Marketplace.
+LEM-1684: Bypassed it for Work Order created on store Account through system.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  NOT(
+    AND(
+      OR (
+        TEXT(Work_Order_Source__c) = $Label.WorkOrderSourceSystem,
+        TEXT(Work_Order_Source__c) = $Label.SOURCE_SSMO
+      ),
+      Account_Record_Type_Name__c = $Label.StoreAccountRecordTypeName
+    )
+  ),
+  ISBLANK(TEXT(Activated_Centrally_AC__c)),
+  TEXT(Type__c) = $Label.WorkOrder_Type_Marketplace
+)</errorConditionFormula>
+    <errorDisplayField>Activated_Centrally_AC__c</errorDisplayField>
+    <errorMessage>Please define Activated Centrally (AC) as Marketplace type is selected.</errorMessage>
+</ValidationRule>

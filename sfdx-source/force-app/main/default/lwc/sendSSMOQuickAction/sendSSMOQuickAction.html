@@ -1,0 +1,293 @@
+<!-- sldsValidatorIgnore -->
+<!--
+  @description       : SSMO Component
+  @author            : Soumya Dash
+  @group             :
+  @last modified on  : 12-05-2024
+  @last modified by  : Soumya Dash
+-->
+<template>
+    <template lwc:if={showComponent}>
+        <lightning-quick-action-panel header={headerText}>
+
+            <!-- edit screen starts -->
+            <template lwc:if={editScreen}>
+                <div style={heightCSS}>
+                    <template if:false={editScreenSpinner}>
+                        <lightning-spinner style="margin-top:7.7vh; height:80vh" size="medium" variant="brand" alternative-text="Loading"></lightning-spinner>
+                    </template>
+
+                    <!-- Readiness Check section -->
+                    <div class="scroll-to-section">
+                        <template if:false={isEligibile}>
+                            <c-send-s-s-m-o-readiness-check eligibility-messages={eligibilityMessages}></c-send-s-s-m-o-readiness-check>
+                        </template>
+                    </div>
+
+                    <!-- store Account -->
+                    <template lwc:if={reloadAccountHeader}>
+                        <c-ressmo-store-account-header
+                            store-account={storeAccount}
+                            quote={quote}
+                            contract={contract}
+                            source="popup"
+                            is-opened-from-contract={isOpenedFromContract}
+                            enabled-refresh="true"
+                            onrefreshressmoonboard={handleRefresh}
+                            fetch-store-screen={fetchStoreScreen}
+                            onconfirm={onConfirmStoreChange}
+                            store-record-type-id={storeRecordTypeId}
+                        ></c-ressmo-store-account-header>
+                    </template>
+                    <div class="slds-p-around_none slds-m-bottom_medium slds-m-horizontal_none">
+                        <template lwc:if = {isStoreFound}>
+                            <c-ssmo-input
+                                allmetadata={accountMetadata}
+                                objectapiname={accountObjectApi}
+                                objectrec={storeAccount}
+                                onformload={handleFormLoad}
+                                onvaluechange={handleValueChange}
+                                oncreatepayment={handleCreatePaymentAccount}
+                                brandfilter={brandFilter}
+                                onbrandrecordpickerchange={handleBrandRecordPickerChange}
+                                onrefresh={refresh}>
+                            </c-ssmo-input>
+                        </template>
+                        <template lwc:else>
+                            <div class="slds-align_absolute-center" style="height:5rem">
+                                <lightning-formatted-rich-text value={invalidStore}></lightning-formatted-rich-text>
+                                <lightning-helptext class="slds-m-left_xx-small" content={invalidStoreHelpText}></lightning-helptext>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Payment section -->
+                    <template if:true={isStoreFound}>
+                        <div class="slds-box slds-box_x-small slds-text-heading_small doordashSectionHeader" >
+                            {paymentAccountSection}
+                        </div>
+                        <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                            <template if:false={isPaymentAccountFound}>
+                                <div style="width:fit-content">
+                                    <lightning-input class="slds-m-left_x-small slds-m-bottom_small" label="Do you have Mx Banking Info?" type="toggle" message-toggle-active=""  message-toggle-inactive="" onchange={handlePaymentToggle} checked={showPaymentForm}></lightning-input>
+                                </div>
+                            </template>
+                            <lightning-record-edit-form object-api-name="Account" record-id={storeAccount.Id} onload={setStorePaymentSectionFields}>
+                                <lightning-layout multiple-rows pull-to-boundary="small">
+                                    <lightning-layout-item size="6" padding="horizontal-medium">
+                                        <lightning-input-field variant="label-inline" field-name="Legal_Business_Name__c" data-fieldname="Legal_Business_Name__c" data-objectapi="Store Account" onchange={handlePaymentAccountChange} required="true"></lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" padding="horizontal-medium">
+                                        <lightning-input-field variant="label-inline" field-name="TaxID__c" data-fieldname="TaxID__c" data-objectapi="Store Account" onchange={handlePaymentAccountChange}></lightning-input-field>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </lightning-record-edit-form>
+                            <template lwc:if={isPaymentAccountFound}>
+                                <!-- Payment Link -->
+                                <lightning-layout multiple-rows pull-to-boundary="small">
+                                    <lightning-layout-item size="6" padding="horizontal-medium">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                            <label class="slds-m-top_xx-small slds-form-element__label">Payment Account</label>
+                                            <div class="slds-form-element__control slds-p-top_x-small">
+                                                <template lwc:if={isPaymentAccountFound}>
+                                                    <a href={paymentAccountLink} target="_blank" class="slds-truncate slds-text-link doordashLink" onclick={handlePayementAccountLinkClick}>{paymentAccount.Name}</a>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </template>
+                            <template lwc:else>
+                                <!-- payment form -->
+                                <template if:true={showPaymentForm}>
+                                    <lightning-record-edit-form object-api-name="Payment_Account__c">
+                                        <lightning-layout multiple-rows pull-to-boundary="small">
+                                            <lightning-layout-item size="6" padding="horizontal-medium">
+                                                <lightning-input-field autocomplete="off" field-name="Bank_Account_Number__c"  data-fieldname="Bank_Account_Number__c" data-objectapi="Payment_Account__c" onchange={handlePaymentAccountChange} value={paymentAccount.Bank_Account_Number__c}></lightning-input-field>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="6" padding="horizontal-medium">
+                                                <lightning-input-field autocomplete="off" field-name="Institution_Number__c"  data-fieldname="Institution_Number__c" data-objectapi="Payment_Account__c" onchange={handlePaymentAccountChange} value={paymentAccount.Institution_Number__c}></lightning-input-field>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="6" padding="horizontal-medium">
+                                                <lightning-input-field autocomplete="off" field-name="RoutingNumber__c"  data-fieldname="RoutingNumber__c" data-objectapi="Payment_Account__c" onchange={handlePaymentAccountChange} value={paymentAccount.RoutingNumber__c}></lightning-input-field>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="6" padding="horizontal-medium">
+                                                <lightning-input-field field-name="Billing_Contact_Name__c"  data-fieldname="Billing_Contact_Name__c" data-objectapi="Payment_Account__c" onchange={handlePaymentAccountChange} value={paymentAccount.Billing_Contact_Name__c}></lightning-input-field>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="6" padding="horizontal-medium">
+                                                <lightning-input-field field-name="Entity_Type__c"  data-fieldname="Entity_Type__c" data-objectapi="Payment_Account__c" onchange={handlePaymentAccountChange} value={paymentAccount.Entity_Type__c}></lightning-input-field>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    </lightning-record-edit-form>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Contract Signatory -->
+                    <div class="slds-box slds-box_x-small slds-text-heading_small doordashSectionHeader" >{contactSection}</div>
+                    <template lwc:if={iscontactRoleFound}>
+                        <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                            <c-ssmo-input
+                                allmetadata={contactMetadata}
+                                objectapiname={contactObjectApi}
+                                objectrec={contact}
+                                onformload={handleFormLoad}
+                                onvaluechange={handleValueChange}>
+                            </c-ssmo-input>
+                            <template if:true={showEmailChangeConfirmation}>
+                                <lightning-layout multiple-rows pull-to-boundary="small">
+                                        <lightning-layout-item size="12" padding="horizontal-medium">
+                                            <div class="slds-checkbox slds-m-top_small">
+                                                <abbr class="slds-required" title="required">*</abbr>
+                                                <input type="checkbox" name="options" id="checkbox-unique-id-81" value="checkbox-unique-id-81" onchange={handleCheckBoxChange}/>
+                                                <label class="slds-checkbox__label" for="checkbox-unique-id-81">
+                                                <span class="slds-checkbox_faux"></span>
+                                                <span class="slds-form-element__label slds-m-left_x-small"><b>Reset SSMO Login</b></span>
+                                                </label>
+                                            </div>
+                                            <div class="slds-m-top_x-small">
+                                                <lightning-formatted-rich-text value = {emailConfirmText}></lightning-formatted-rich-text>
+                                            </div>
+                                        </lightning-layout-item>
+                                </lightning-layout>
+                            </template>
+                        </div>
+                    </template>
+                    <template lwc:else>
+                        <div class="slds-align_absolute-center" style="height:5rem">
+                            <lightning-formatted-rich-text value={invalidContact}></lightning-formatted-rich-text>
+                        </div>
+                    </template>
+
+                    <!-- quote -->
+                    <div class="slds-box slds-box_x-small slds-text-heading_small doordashSectionHeader">{quoteSection}</div>
+                    <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                        <c-ssmo-input
+                            allmetadata={quoteMetadata}
+                            objectapiname="SBQQ__Quote__c"
+                            objectrec={quote}
+                            onformload={handleFormLoad}
+                            onvaluechange={handleValueChange}
+                            genericinput={genericInputs.Quote}
+                            ongenericvaluechange={handleGenericValueChange}>
+                        </c-ssmo-input>
+                    </div>
+
+                    <!-- store hours -->
+                    <template if:false={isOrderProtocolPOS}>
+                        <div class="slds-box slds-box_x-small slds-text-heading_small doordashSectionHeader" >{storeHoursSection}</div>
+                        <div class="slds-m-top_small slds-p-left_small slds-p-bottom_large">
+                            <c-store-hours account-id={storeAccount.Id} onloadcomponent={setStoreHoursLoader} store-hours-title=""  onhoursofoperation={handleHoursOfOperation} onchangeinvalue={handleStoreHoursChange}></c-store-hours>
+                        </div>
+                    </template>
+
+                    <!-- Photoshoot contact-->
+                    <div class="slds-box slds-box_x-small slds-text-heading_small doordashSectionHeader" >{photoshootContactSection}</div>
+                    <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                        <template if:false={isPhotoshootContactFound}>
+                            <div style="width:fit-content">
+                                <lightning-input class="slds-m-left_x-small slds-m-bottom_small" label="Use same contact information as the Contract Signatory" type="toggle" message-toggle-active=""  message-toggle-inactive="" onchange={handlePhotoshootContractSignatoryToggle} checked={samePhotoshootAndContact}></lightning-input>
+                            </div>
+                        </template>
+                        <template lwc:if={samePhotoshootAndContact}>
+                            <c-ssmo-input
+                                allmetadata={photoshootMetadata}
+                                objectapiname="Contact"
+                                objectrec={contact}
+                                simple-data-disabled="true"
+                                onformload={handleFormLoad}
+                                onvaluechange={handleValueChange}
+                                genericinput={genericInputs.Photoshoot}
+                                ongenericvaluechange={handleGenericValueChange}>
+                            </c-ssmo-input>
+                        </template>
+                        <template lwc:else>
+                        <c-ssmo-input
+                            allmetadata={photoshootMetadata}
+                            objectapiname="Contact"
+                            objectrec={photoshootContact}
+                            simple-data-disabled={isPhotoshootAndContractSignatorySame}
+                            onformload={handleFormLoad}
+                            onvaluechange={handleValueChange}
+                            genericinput={genericInputs.Photoshoot}
+                            ongenericvaluechange={handleGenericValueChange}>
+                        </c-ssmo-input>
+                        </template>
+                    </div>
+
+                    <!-- Banking Info Text-->
+                    <template if:true={bankingInfo}>
+                        <div style="display: flex; align-items: center; padding-left: 20px;" class="slds-p-bottom_medium">
+                            <lightning-icon icon-name="utility:info" size="small"></lightning-icon>
+                            <p style="margin-left: 10px;">{label.RESSMO_BankingInfo_Note}</p>
+                        </div>
+                    </template>
+                    <!--<template if:false={bankingInfo}>
+                        <div style="display: flex; align-items: center; padding-left: 20px;" class="slds-p-bottom_medium">
+                            <lightning-icon icon-name="utility:warning" variant='warning' size="small">></lightning-icon>
+                            <p style="margin-left: 10px;">{label.RESSMO_BankingInfo_Warning}</p>
+                        </div>
+                    </template>-->
+
+                </div>
+
+            </template>
+            <!-- edit screen ends -->
+
+            <!-- confirmation screen start -->
+            <template lwc:if={confirmationScreen}>
+                <c-send-s-s-m-o-confirmation contact={contact} ssmo-link={SSMO_link}></c-send-s-s-m-o-confirmation>
+            </template>
+            <!-- confirmation screen ends -->
+
+            <!-- Acive mx link screen -->
+            <template lwc:if={activeMxLinkScreen}>
+                <c-send-s-s-m-o-active-mx mxlinkid={mxOnboardingLinkId}></c-send-s-s-m-o-active-mx>
+            </template>
+
+            <!-- genric error screen starts -->
+            <template lwc:if={errorScreen}>
+                <div class="slds-align_absolute-center">
+                    <lightning-formatted-rich-text value={errorMessage}></lightning-formatted-rich-text>
+                </div>
+            </template>
+            <!-- genric error screen ends -->
+
+            <!-- footer starts-->
+            <div slot="footer" class="slds-var-p-around_small force-visible">
+                <template lwc:if={editScreen}>
+                    <div style="position: relative;">
+                        <template lwc:if={showUIError}>
+                            <c-send-s-s-m-o-u-i-error ui-error-messages={uiErrorMessages} oncloseuierror={closeUIError}></c-send-s-s-m-o-u-i-error>
+                        </template>
+                        <lightning-button class="slds-var-m-left_x-small doordashButtonNeutral" variant="neutral" label="Cancel" onclick={closeQuickAction}></lightning-button>
+                        <lightning-button class="slds-var-m-left_x-small doordashButtonBrand" variant="brand" label="Quick Save" onclick={handleQuickSave} disabled={isQuickSaveDisabled}></lightning-button>
+                        <lightning-button class="slds-var-m-left_x-small doordashButtonBrand" variant="brand" label="Confirm &amp; Submit" onclick={handleConfirmAndSubmit} disabled={isSubmitDisabled}></lightning-button>
+                    </div>
+                </template>
+                <template lwc:if={confirmationScreen}>
+                    <lightning-button class="slds-var-m-left_x-small" variant="brand" label="Close" onclick={closeQuickAction}></lightning-button>
+                </template>
+                <template lwc:if={activeMxLinkScreen}>
+                    <lightning-button class="slds-var-m-left_x-small doordashButtonNeutral" variant="neutral" label="Generate Mx Link" onclick={handleGenerateMxLInk}></lightning-button>
+                    <lightning-button class="slds-var-m-left_x-small" variant="brand" label="Close" onclick={closeQuickAction}></lightning-button>
+                </template>
+                <template lwc:if={errorScreen}>
+                    <lightning-button class="slds-var-m-left_x-small" variant="brand" label="Close" onclick={closeQuickAction}></lightning-button>
+                </template>
+            </div>
+            <!-- footer ends -->
+
+        </lightning-quick-action-panel>
+    </template>
+    <template lwc:else>
+        <div class="slds-spinner_container slds-align_absolute-center" style="height: 34vh;">
+            <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+              <span class="slds-assistive-text">Loading</span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </template>
+</template>

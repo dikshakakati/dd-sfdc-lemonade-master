@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nintex_Photoshoot_Text_Value__c</fullName>
+    <description>LEM-15246: This field is only meant for storing the datetime value coming from nintex temporarily in YYYY-MM-DD hh:mm:ss format and to populate actual photoshoot time field using trigger</description>
+    <externalId>false</externalId>
+    <label>Nintex Photoshoot Text Value</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

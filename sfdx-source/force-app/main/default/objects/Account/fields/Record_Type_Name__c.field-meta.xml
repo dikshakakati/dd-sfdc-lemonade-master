@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Type_Name__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1206: It indicates record type name of the Account record.</description>
+    <externalId>false</externalId>
+    <formula>RecordType.DeveloperName</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Record Type Name</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

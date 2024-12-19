@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_Campaign_Programs_With_Internal_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-3677: It is used to provide edit access on Campaign Programs to all internal users.</description>
+        <label>Share Campaign Programs With Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

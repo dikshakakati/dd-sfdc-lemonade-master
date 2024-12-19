@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>LEM-1970: Fetches Work Plan related queues.</description>
+        <name>Get_Work_Plan_Queues</name>
+        <label>Get Work Plan Queues</label>
+        <locationX>578</locationX>
+        <locationY>638</locationY>
+        <actionName>AssignToQueueController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Assign_To_Queue</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <description>LEM-3034: It displays an error message when the current user has &quot;View Only&quot; custom permission assigned.</description>
+        <name>Set_Error_Message_on_View_Only_Access</name>
+        <label>Set Error Message on View Only Access</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.AssignToReadOnlyErrorMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Display_View_Only_Access_Error_Message_To_End_User</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>LEM-1536: It checks if result from subflow is a success or an error.</description>
+        <name>Check_Result_From_Subflow</name>
+        <label>Check Result From Subflow</label>
+        <locationX>578</locationX>
+        <locationY>998</locationY>
+        <defaultConnector>
+            <targetReference>Display_Error_Message_To_End_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Subflow_Result_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Display_Success_Message_To_End_User</targetReference>
+            </connector>
+            <label>Is Subflow Result Success?</label>
+        </rules>
+        <rules>
+            <name>Is_Subflow_Result_Partial_Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isPartialSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Display_Partial_Success_Message_To_End_User</targetReference>
+            </connector>
+            <label>Is Subflow Result Partial Success?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-3034: It checks whether the current user has &quot;View Only&quot; custom permission assigned.</description>
+        <name>Is_View_Only_User</name>
+        <label>Is View Only User?</label>
+        <locationX>578</locationX>
+        <locationY>158</locationY>
+        <defaultConnector>
+            <targetReference>Null_Check_On_Passed_Ids</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_View_Only_Permission_Assigned</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.Hide_Onboarding_Activations_Quick_Actions</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Permission.Show_Onboarding_Activations_Quick_Actions</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Error_Message_on_View_Only_Access</targetReference>
+            </connector>
+            <label>Has View Only Permission Assigned?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-1536: It checks whether a queue exists in the system.</description>
+        <name>Null_Check_For_Queue_Name</name>
+        <label>Null Check For Queues Name</label>
+        <locationX>842</locationX>
+        <locationY>518</locationY>
+        <defaultConnector>
+            <targetReference>Error_Message_On_Null_Queue_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Queue_Name_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Queue_Names_To_Prepare_Picklist</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Work_Plan_Queues</targetReference>
+            </connector>
+            <label>Is Queue Name Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-1536: It checks whether the passed record Ids are null.</description>
+        <name>Null_Check_On_Passed_Ids</name>
+        <label>Null Check On Passed Ids</label>
+        <locationX>1106</locationX>
+        <locationY>278</locationY>
+        <defaultConnector>
+            <targetReference>Error_Message_When_Passed_Ids_Are_Null</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Are_Passed_Ids_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ids</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Queue_Names_To_Prepare_Picklist</targetReference>
+            </connector>
+            <label>Are Passed Ids Not Null?</label>
+        </rules>
+    </decisions>
+    <description>LEM-1536: It updates owner id with the user selected queue for the selected Work Plan records from WorkPlan&apos;s list views.
+LEM-5153: Update decision element &quot;Has Record Access&quot; by checking a new permission.</description>
+    <dynamicChoiceSets>
+        <description>LEM-1970: It stores fetched Work Plan queues in the choices format.</description>
+        <name>workPlanQueueChoices</name>
+        <collectionReference>Get_Work_Plan_Queues</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>Group</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <interviewLabel>Assign To Queue (Bulk) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Assign To Queue</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>LEM-1536: It collects queue names from Group object to prepare picklist.</description>
+        <name>Get_Queue_Names_To_Prepare_Picklist</name>
+        <label>Get Queue Names To Prepare Picklist</label>
+        <locationX>842</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Null_Check_For_Queue_Name</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Group</object>
+        <sortField>Name</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <description>LEM-1536: Screen to select the queue name.</description>
+        <name>Assign_To_Queue</name>
+        <label>Assign To Queue</label>
+        <locationX>578</locationX>
+        <locationY>758</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Call_Subflow_For_Owner_Assignment</targetReference>
+        </connector>
+        <fields>
+            <name>Select_Queue_Name</name>
+            <choiceReferences>workPlanQueueChoices</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Select Queue Name</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Assign To Queue</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-1536: It displays error message to the end user.</description>
+        <name>Display_Error_Message_To_End_User</name>
+        <label>Display Error Message To End User</label>
+        <locationX>842</locationX>
+        <locationY>1118</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Display_Error_Message</name>
+            <extensionName>c:displayMessageInScreenFlow</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>isError</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isSuccess</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>message</name>
+                <value>
+                    <elementReference>outputMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Back To List View</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-1536: It displays partial success message to the end user.</description>
+        <name>Display_Partial_Success_Message_To_End_User</name>
+        <label>Display Partial Success Message To End User</label>
+        <locationX>578</locationX>
+        <locationY>1118</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Display_Partial_Success_Message</name>
+            <extensionName>c:displayMessageInScreenFlow</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>isError</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isSuccess</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>message</name>
+                <value>
+                    <elementReference>outputMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Back To List View</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-1536: It displays success message to the end user.</description>
+        <name>Display_Success_Message_To_End_User</name>
+        <label>Display Success Message To End User</label>
+        <locationX>314</locationX>
+        <locationY>1118</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Display_Success_Message</name>
+            <extensionName>c:displayMessageInScreenFlow</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>isError</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isSuccess</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>message</name>
+                <value>
+                    <elementReference>outputMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Back To List View</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-3034: It displays &quot;View Only&quot; access related error message to the end user.</description>
+        <name>Display_View_Only_Access_Error_Message_To_End_User</name>
+        <label>Display View Only Access Error Message To End User</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>View_Only_Access_Toast_Message</name>
+            <extensionName>c:displayMessageInScreenFlow</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>isError</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isSuccess</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>message</name>
+                <value>
+                    <elementReference>outputMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Back To List View</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-1536: It displays error message when queue name is null.</description>
+        <name>Error_Message_On_Null_Queue_Name</name>
+        <label>Error Message On Null Queue Name</label>
+        <locationX>1106</locationX>
+        <locationY>638</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Display_Error_On_Group</name>
+            <extensionName>c:displayMessageInScreenFlow</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>isError</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isSuccess</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>message</name>
+                <value>
+                    <stringValue>No queue exists. Please add associated queue.</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Back To List View</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-1536: It displays error message to the end user when passed Ids are null.</description>
+        <name>Error_Message_When_Passed_Ids_Are_Null</name>
+        <label>Error Message When Passed Ids Are Null</label>
+        <locationX>1370</locationX>
+        <locationY>398</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Display_Error_Message_On_Null_Ids</name>
+            <extensionName>c:displayMessageInScreenFlow</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>isError</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isSuccess</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>message</name>
+                <value>
+                    <stringValue>Select at least one record and try again.</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Back To List View</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_View_Only_User</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>LEM-1536: It calls the Owner Assignment subflow.</description>
+        <name>Call_Subflow_For_Owner_Assignment</name>
+        <label>Call Subflow For Owner Assignment</label>
+        <locationX>578</locationX>
+        <locationY>878</locationY>
+        <connector>
+            <targetReference>Check_Result_From_Subflow</targetReference>
+        </connector>
+        <flowName>Subflow_Work_Plan_Owner_Assignment</flowName>
+        <inputAssignments>
+            <name>recordIds</name>
+            <value>
+                <elementReference>ids</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>updatedOwnerId</name>
+            <value>
+                <elementReference>Select_Queue_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>isError</assignToReference>
+            <name>isError</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>isPartialSuccess</assignToReference>
+            <name>isPartialSuccess</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>isSuccess</assignToReference>
+            <name>isSuccess</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>outputMessage</assignToReference>
+            <name>outputMessage</name>
+        </outputAssignments>
+    </subflows>
+    <variables>
+        <description>LEM-1536: It stores list of WorkPlan record Ids. The name &apos;ids&apos; is required for the usage in Subflow.</description>
+        <name>ids</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It controls visibility of the error message to the end user.</description>
+        <name>isError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores value if subflow is partially successful.</description>
+        <name>isPartialSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It controls visibility of the success message to the end user.</description>
+        <name>isSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-1536: It stores the message depending on the decision outcome.</description>
+        <name>outputMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

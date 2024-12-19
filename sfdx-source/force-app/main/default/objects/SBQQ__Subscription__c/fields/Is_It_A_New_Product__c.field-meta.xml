@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_It_A_New_Product__c</fullName>
+    <description>LEM-18401: It is used to identify whether a subscription is added as net new in the corresponding contract. It checks if the subscription is created as part of the latest order and then pulls the value from corresponding quote line.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  SBQQ__OrderProduct__r.OrderId = SBQQ__Contract__r.SBQQ__Order__c,
+  SBQQ__QuoteLine__r.Is_It_A_New_Product__c,
+  false
+)</formula>
+    <label>OI Product Addition Input</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

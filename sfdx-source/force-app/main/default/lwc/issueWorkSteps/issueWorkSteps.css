@@ -1,0 +1,10 @@
+
+.info-icon-yellow {
+    --slds-c-icon-color-foreground-default: #0049b0;
+    --slds-c-icon-color-background: #FFC300
+    ;
+}
+.custom-box-yellow {
+    background-color: #FFC300
+    ;
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-13303: It is used to store the validations and their respective error/success messages and the service classes to be accessed.</description>
+    <label>Activation Checklist Validation</label>
+    <pluralLabel>Activation Checklist Validations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

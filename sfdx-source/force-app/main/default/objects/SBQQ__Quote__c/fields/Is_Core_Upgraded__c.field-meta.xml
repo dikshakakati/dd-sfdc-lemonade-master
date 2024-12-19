@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Core_Upgraded__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-16229: It is used to check if Core product is added/cloned or not on Amendment</description>
+    <externalId>false</externalId>
+    <label>Is Core Upgraded?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

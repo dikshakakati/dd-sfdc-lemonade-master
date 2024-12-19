@@ -1,0 +1,82 @@
+<!--
+  * @author Deloitte
+  * @date 04/16/2024
+  * @description LWC to create New Lead from list view.
+-->
+<template>
+  <lightning-card>
+    <lightning-modal-header
+      label="New Lead"
+      class="slds-text-heading--medium"
+    ></lightning-modal-header>
+    <div class="slds-p-around_medium">
+      <lightning-record-edit-form
+        object-api-name="Lead"
+        onsuccess={handleSuccess}
+        onsubmit={handleSubmit}
+        onerror={handleError}
+        onload={handleLoad}
+      >
+        <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-size_1-of-2">
+            <lightning-input-field field-name="Company"></lightning-input-field>
+            <lightning-input-field
+              field-name="FirstName"
+              required="true"
+            ></lightning-input-field>
+            <lightning-input-field
+              field-name="LastName"
+            ></lightning-input-field>
+            <lightning-input-address
+              address-label="Address"
+              street-label="Street"
+              city-label="City"
+              country-label="Country"
+              province-label="State/ Province"
+              postal-code-label="Zip/ Postal Code"
+              country={strCountry}
+              province={strState}
+              onchange={addressInputChange}
+              country-options={countries}
+              province-options={states}
+              show-address-lookup
+              required
+            >
+            </lightning-input-address>
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+            <lightning-input-field
+              field-name="PrimaryVertical__c"
+              required="true"
+            ></lightning-input-field>
+            <lightning-input-field field-name="OwnerId"></lightning-input-field>
+            <lightning-input-field field-name="Phone"></lightning-input-field>
+            <lightning-input-field field-name="Email"></lightning-input-field>
+          </div>
+        </div>
+        <lightning-modal-footer>
+          <div if:true={loaded}>
+            <lightning-button-group>
+              <lightning-button
+                label="Cancel"
+                variant="brand"
+                onclick={clickCancel}
+              ></lightning-button>
+              <div class="slds-p-right_small"></div>
+              <lightning-button
+                label="Save"
+                type="submit"
+                variant="brand"
+              ></lightning-button>
+            </lightning-button-group>
+          </div>
+          <div if:false={loaded} class="spinnerStyling">
+            <lightning-spinner
+              alternative-text={loadingAlternativeText}
+            ></lightning-spinner>
+          </div>
+        </lightning-modal-footer>
+      </lightning-record-edit-form>
+    </div>
+  </lightning-card>
+</template>

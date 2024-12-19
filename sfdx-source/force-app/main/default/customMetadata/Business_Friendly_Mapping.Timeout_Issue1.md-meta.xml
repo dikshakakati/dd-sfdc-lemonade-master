@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Timeout Issue1</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Business_Friendly_Message__c</field>
+        <value xsi:type="xsd:string">The integration is currently down. Wait 15 minutes and select the “Reattempt Provisioning” button on the work order. If issue still persists, reach out to BizApps for further support by raising a ticket in #ask-lemonade.</value>
+    </values>
+    <values>
+        <field>Integration_Key_String__c</field>
+        <value xsi:type="xsd:string">timeout</value>
+    </values>
+    <values>
+        <field>Integration_Type__c</field>
+        <value xsi:type="xsd:string">Xref Provisioning</value>
+    </values>
+    <values>
+        <field>Message_Category__c</field>
+        <value xsi:type="xsd:string">Timeout</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">140.0</value>
+    </values>
+</CustomMetadata>

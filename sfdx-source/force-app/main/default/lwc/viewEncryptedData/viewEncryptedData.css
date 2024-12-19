@@ -1,0 +1,44 @@
+/**
+ * @author Deloitte
+ * @date 26/07/2022
+ * @description CSS for viewEncryptedData lightning web component.
+ */
+.buttonStyling {
+  padding: 0.5rem;
+}
+.divStyling {
+  width: 50%;
+  display: inline-block;
+}
+.iconStyling {
+  float: right;
+  margin: 1.5rem 0.5rem 0rem 0rem;
+}
+.inputStyling {
+  border-bottom: solid 1px #e5e5e5;
+  outline: none;
+  float: left;
+  width: 85%;
+}
+.messageBoxStyling {
+  background-color: rgb(243, 243, 243);
+  text-align: center;
+  margin: 0.75rem;
+  border-radius: 0.25rem;
+}
+.messageStyling {
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+}
+.spinnerStyling {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+.toggleStyling {
+  width: 12.5rem;
+}

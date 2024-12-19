@@ -1,0 +1,1416 @@
+<!--
+  @description       :
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             :
+  @last modified on  : 12-01-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+   <div class="modal-content">
+      <div if:true={isLoading} class="slds-is-relative slds-p-around--x-large">
+         <div class="slds-spinner_container">
+            <div
+               role="status"
+               class="slds-spinner slds-spinner_medium slds-spinner_brand"
+               >
+               <span class="slds-assistive-text">Loading</span>
+               <div class="slds-spinner__dot-a"></div>
+               <div class="slds-spinner__dot-b"></div>
+            </div>
+         </div>
+      </div>
+      <div if:false={isLoading} class={parentDivStyling}>
+         <div
+               class="slds-grid slds-page-header slds-m-horizontal_small slds-m-top_small slds-grid_align-spread slds-grid_vertical-align-center"
+               >
+               <div class="slds-col slds-size_2-of-8">
+                  <div
+                     class="slds-page-header__title slds-grid slds-grid_vertical-align-center"
+                     >
+                     <label>Corporate Account Hierarchy</label>
+                  </div>
+               </div>
+               <div class="slds-col slds-size_2-of-8">
+                  <lightning-input
+                     placeholder={searchBoxPlaceholder}
+                     value={searchKey}
+                     type="search"
+                     variant="label-hidden"
+                     onkeydown={handleKeyDown}
+                     oncommit={handleCommit}
+                  ></lightning-input>
+               </div>
+               <div class="slds-form-element slds-col slds-size_3-of-8">
+                  <div class="leftStyling">
+                     <b style="float: left; margin-top: 6px">Show Contracting Entities</b>
+                     <label class="slds-checkbox_toggle" style="float:right; width:20%;">
+                     <input type="checkbox" name="contractingEntities" data-name="showContractingButton" onchange={handleShowContractingEntities}></input>
+                     <span class="slds-checkbox_faux_container" aria-live="assertive">
+                     <span class="slds-checkbox_faux"></span>
+                     <span class="slds-checkbox_on">Enabled</span>
+                     <span class="slds-checkbox_off">Disabled</span>
+                     </span>
+                     <span class="slds-checkbox_brand"></span>
+                     </label>
+                  </div>
+                  <div class="rightStyling">
+                     <b style="float: left; margin-top: 6px">Toggle Stores</b>
+                     <label class="slds-checkbox_toggle" style="float:right; width:30%;">
+                     <input type="checkbox" name="toggle" data-name="toggleButton" onchange={handleToggle}></input>
+                     <span class="slds-checkbox_faux_container" aria-live="assertive">
+                     <span class="slds-checkbox_faux"></span>
+                     <span class="slds-checkbox_on">Enabled</span>
+                     <span class="slds-checkbox_off">Disabled</span>
+                     </span>
+                     <span class="slds-checkbox_brand"></span>
+                     </label>
+                  </div>
+               </div>
+         </div>
+         <div class="filter-panel">
+            <div class="panel-box">
+            <div if:true={isPanelHidden} >
+               <lightning-button-icon onclick={togglePanel} size="small" icon-name="utility:filterList" alternative-text="Apply Filters" title="Apply Filters"></lightning-button-icon>
+            </div>
+            <div if:false={isPanelHidden}>
+               <lightning-button-icon style="position:absolute;right:0px;" onclick={togglePanel} size="small" icon-name="utility:chevronright"  alternative-text="Collapse" title="Collapse"></lightning-button-icon>
+               <br/>
+               <br/>
+               <div class="filter-box" onclick={handleFilterBoxClick}>
+                  <div class="slds-grid slds-wrap">
+                  <div class="slds-align_absolute-center slds-p-left--medium slds-p-right--medium">
+                     <div class="slds-col_bump-left">
+                        <c-multiselect-custom-lookup
+                           active-component-label={activeChildComponent}
+                           all-records={allBrands}
+                           selected-records={brandSelectedRecords}
+                           label = "Select Brands"
+                           search-box-placeholder="Search Brands"
+                           onsendsearchkey={getBrandSearchKey}
+                           onsendlabel={setActiveLabel}>
+                        </c-multiselect-custom-lookup>
+                     </div>
+                  </div>
+                  <div class="slds-align_absolute-center slds-p-left--medium slds-p-right--medium">
+                     <div class="slds-col_bump-left">
+                        <c-multiselect-custom-lookup
+                           active-component-label={activeChildComponent}
+                           all-records={allVerticals}
+                           selected-records={verticalSelectedRecords}
+                           label = "Select Verticals"
+                           search-box-placeholder="Search Verticals"
+                           onsendsearchkey={getVerticalSearchKey}
+                           onsendlabel={setActiveLabel}>
+                        </c-multiselect-custom-lookup>
+                     </div>
+                  </div>
+
+                  <div class="slds-align_absolute-center slds-p-left--medium slds-p-right--medium">
+                     <div class="slds-col_bump-left">
+                        <c-multiselect-custom-lookup
+                           active-component-label={activeChildComponent}
+                           all-records={allProducts}
+                           selected-records={productSelectedRecords}
+                           label = "Select Products"
+                           search-box-placeholder="Search Products"
+                           onsendsearchkey={getProductSearchKey}
+                           onsendlabel={setActiveLabel}>
+                        </c-multiselect-custom-lookup>
+                     </div>
+                  </div>
+
+                  <div class="slds-align_absolute-center slds-p-around_small">
+                        <lightning-button
+                           variant="brand"
+                           label="Apply Filters"
+                           onclick={handleApplyFilters}
+                           style="padding:0.5rem"
+                           disabled={applyFiltersButtonDisabled}
+                        ></lightning-button>
+                        <lightning-button
+                           variant="brand"
+                           label="Clear Filters"
+                           onclick={handleClearFilters}
+                           style="padding:0.5rem"
+                        ></lightning-button>
+                  </div>
+                  </div>
+               </div>
+            </div>
+            </div>
+         </div>
+         <template if:true={showMessage}>
+            <div class="messageBoxStyling">
+               <p class="messageStyling">{messageToBeDisplayed}</p>
+            </div>
+         </template>
+         <template if:false={showMessage}>
+            <table
+               class="slds-table slds-m-top_small slds-table_bordered slds-table_edit slds-m-horizontal_small slds-table_fixed-layout slds-table_resizable-cols slds-tree slds-table_tree slds-grid_vertical-align-center table_width"
+               role="treegrid"
+               aria-label="Corporate Account Hierarchy"
+               >
+               <thead>
+                  <tr class="slds-line-height_reset">
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        style="width: 15%;"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Account Name">Account Name</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Record Type Name">Record Type</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Account Type">Account Type</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Vertical">Vertical</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Owner">Owner</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate white" title="Contracts">Contracts</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Brands">Brands</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Products">Products</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="NetSuite Id">NetSuite Id</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Business Group Id">Business Group Id</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Business Id">Business Id</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Store Id">Store Id</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Account Name column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                     <th
+                        aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                        scope="col"
+                        >
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                           <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                              <span class="slds-truncate" title="Actions">Actions</span>
+                           </div>
+                        </a>
+                        <div class="slds-resizable">
+                           <input
+                              type="range"
+                              aria-label="Actions column width"
+                              class="slds-resizable__input slds-assistive-text"
+                              max="1000"
+                              min="20"
+                              tabindex="-1"
+                              />
+                           <span class="slds-resizable__handle">
+                           <span class="slds-resizable__divider"></span>
+                           </span>
+                        </div>
+                     </th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <!--Nested Accordion-->
+                  <template for:each={accountHierarchy} for:item="eachAccount">
+                     <tr key={eachAccount.Id}>
+                        <td class="slds-accordion__summary-content">
+                           <ul class="slds-accordion" data-name="accordion">
+                              <li class="slds-accordion__list-item">
+                                 <section
+                                    class="slds-accordion__section"
+                                    style="padding-left: 4px;"
+                                    data-name="parent_section"
+                                    data-id={eachAccount.Id}
+                                    >
+                                    <div class="slds-accordion__summary">
+                                       <button
+                                          class="slds-button slds-button_reset"
+                                          onclick={handleParentClick}
+                                          data-id={eachAccount.Id}
+                                          >
+                                          <svg
+                                             class="slds-accordion__summary-action-icon slds-button__icon"
+                                             aria-hidden="true"
+                                             >
+                                          </svg>
+                                       </button>
+                                       <span class="slds-accordion__summary-content">
+                                          <a data-id={eachAccount.Id} onclick={handleAccountNameClick} class="slds-truncate" title={eachAccount.Name}>
+                                            &nbsp;&nbsp;{eachAccount.Name}
+                                          </a>
+                                          <template if:true={eachAccount.Contracts}>
+                                             <lightning-icon
+                                                icon-name="custom:custom17"
+                                                alternative-text="Contracts"
+                                                title="Contracts"
+                                                class="slds-m-left_xx-small"
+                                                size="x-small"
+                                                >
+                                             </lightning-icon>
+                                             <strong class="slds-m-left--xx-small"></strong>
+                                          </template>
+                                       </span>
+                                    </div>
+                                 </section>
+                              </li>
+                           </ul>
+                        </td>
+                        <td class="slds-accordion__summary-content slds-truncate">
+                           <lightning-icon
+                              icon-name={iconBusinessAccount}
+                              alternative-text="Account"
+                              title="Account"
+                              class="slds-m-left_xx-small"
+                              size="x-small"
+                              ></lightning-icon>
+                           <strong class="slds-m-left--xx-small"></strong>
+                           {eachAccount.Record_Type_Name__c}
+                        </td>
+                        <td class="slds-truncate">{eachAccount.Type}</td>
+                        <td class="slds-truncate">{eachAccount.Primary_Vertical__c}</td>
+                        <td class="slds-truncate">{eachAccount.OwnerName}</td>
+                        <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                           <ul>
+                              <template for:each={eachAccount.Contracts} for:item="eachContract">
+                                 <li key={eachContract.Id}>
+                                    <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                    {eachContract.ContractNumber}
+                                    </a>
+                                    <template if:true={eachContract.Is_This_Ads_Or_Promo__c}>
+                                       <lightning-icon
+                                          icon-name={adsAndPromosIcon}
+                                          alternative-text="Ads &amp; Promos"
+                                          title="Ads &amp; Promos"
+                                          class="slds-m-left_xx-small"
+                                          size="x-small"
+                                          >
+                                       </lightning-icon>
+                                    </template>
+                                 </li>
+                              </template>
+                              <template if:true={eachAccount.showSeeMore}>
+                                 <a data-id={eachAccount.Id} onclick={handleSeeMore} class="slds-truncate" title={eachAccount.Name}>
+                                    See More
+                                 </a>
+                              </template>
+                           </ul>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                            <ul>
+                               <template for:each={eachAccount.Payment_Accounts__r} for:item="eachPaymentAccount">
+                                  <li key={eachPaymentAccount.Id}>
+                                     <a data-id={eachPaymentAccount.Id} onclick={handleNetSuiteIdClick} class="slds-truncate">
+                                     {eachPaymentAccount.NetSuite_ID__c}
+                                     </a>
+                                  </li>
+                               </template>
+                            </ul>
+                         </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                           <lightning-button-menu
+                               alternative-text="Actions"
+                               icon-name="utility:down"
+                               variant="border-filled"
+                               menu-alignment="auto"
+                               icon-size="x-small"
+                               onselect={handleMenuAction}
+                               data-record-id={eachAccount.Id}
+                              >
+                              <lightning-menu-item value="createOpportunity" label="Create Opportunity"></lightning-menu-item>
+                              <template if:true={hasWorkOrderCreationAccess}>
+                                 <lightning-menu-item value="createWorkOrder" label="Create Work Order"></lightning-menu-item>
+                              </template>
+                              <lightning-menu-item value="createCase" label="Create Case"></lightning-menu-item>
+                           </lightning-button-menu>
+                       </td>
+                     </tr>
+                     <template if:true={showFirstChildAccount}>
+                     <template for:each={eachAccount._children} for:item="childAccount">
+                        <tr key={childAccount.Id} data-name="first_business_section">
+                           <td class="table_child_padding slds-accordion__summary-content">
+                              <ul class="slds-accordion" data-name="accordion">
+                                 <li class="slds-accordion__list-item">
+                                    <section
+                                       class="slds-accordion__section"
+                                       style="padding: 0;"
+                                       data-name="business_section"
+                                       data-id={childAccount.Id}
+                                       >
+                                       <div class="slds-accordion__summary">
+                                          <button
+                                             class="slds-button slds-button_reset"
+                                             onclick={handleChildClick}
+                                             data-id={childAccount.Id}
+                                             data-name="business_section_button"
+                                             >
+                                             <svg
+                                                class="slds-accordion__summary-action-icon slds-button__icon"
+                                                aria-hidden="true"
+                                                >
+                                                <use if:true={childAccount.showCaratIcon}
+                                                   xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#switch"
+                                                   ></use>
+                                             </svg>
+                                          </button>
+                                          <span class="slds-accordion__summary-content">
+                                             <a data-id={childAccount.Id} onclick={handleAccountNameClick} class="slds-truncate" title={childAccount.Name}>
+                                                &nbsp;&nbsp;{childAccount.Name}
+                                             </a>
+                                             <template if:true={childAccount._HasContracts}>
+                                                <lightning-icon
+                                                   icon-name=custom:custom17
+                                                   alternative-text="Contracts"
+                                                   title="Contracts"
+                                                   class="slds-m-left_xx-small"
+                                                   size="x-small"
+                                                   >
+                                                </lightning-icon>
+                                                <strong class="slds-m-left--xx-small"></strong>
+                                             </template>
+                                          </span>
+                                       </div>
+                                    </section>
+                                 </li>
+                              </ul>
+                           </td>
+                           <td>
+                              <lightning-icon
+                                 icon-name={iconBusinessAccount}
+                                 alternative-text="Account"
+                                 title="Account"
+                                 class="slds-m-left_xx-small"
+                                 size="x-small"
+                                 ></lightning-icon>
+                              <strong class="slds-m-left--xx-small"></strong
+                                 >{childAccount.Record_Type_Name__c}
+                           </td>
+                           <td class="slds-truncate">{childAccount.Type}</td>
+                           <td class="slds-truncate">{childAccount.Primary_Vertical__c}</td>
+                           <td class="slds-truncate">{childAccount.OwnerName}</td>
+                           <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                              <ul>
+                                 <template for:each={childAccount.Contracts} for:item="eachContract">
+                                    <li key={eachContract.Id}>
+                                       <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                       {eachContract.ContractNumber}
+                                       <template if:true={eachContract.Is_This_Ads_Or_Promo__c}>
+                                          <lightning-icon
+                                             icon-name={adsAndPromosIcon}
+                                             alternative-text="Ads &amp; Promos"
+                                             title="Ads &amp; Promos"
+                                             class="slds-m-left_xx-small"
+                                             size="x-small"
+                                             >
+                                          </lightning-icon>
+                                       </template>
+                                       </a>
+                                    </li>
+                                 </template>
+                              </ul>
+                              <template if:true={childAccount.showSeeMore}>
+                                 <a data-id={childAccount.Id} onclick={handleSeeMore} class="slds-truncate" title={childAccount.Name}>
+                                    See More
+                                 </a>
+                              </template>
+                           </td>
+                           <td></td>
+                           <td></td>
+                           <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                              <ul>
+                                 <template for:each={childAccount.Payment_Accounts__r} for:item="eachPaymentAccount">
+                                    <li key={eachPaymentAccount.Id}>
+                                       <a data-id={eachPaymentAccount.Id} onclick={handleNetSuiteIdClick} class="slds-truncate">
+                                       {eachPaymentAccount.NetSuite_ID__c}
+                                       </a>
+                                    </li>
+                                 </template>
+                              </ul>
+                           </td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                              <lightning-button-menu
+                                  alternative-text="Actions"
+                                  icon-name="utility:down"
+                                  variant="border-filled"
+                                  menu-alignment="auto"
+                                  icon-size="x-small"
+                                  onselect={handleMenuAction}
+                                  data-record-id={childAccount.Id}
+                              >
+                              <lightning-menu-item value="createOpportunity" label="Create Opportunity"></lightning-menu-item>
+                              <template if:true={hasWorkOrderCreationAccess}>
+                                 <lightning-menu-item value="createWorkOrder" label="Create Work Order"></lightning-menu-item>
+                              </template>
+                              <lightning-menu-item value="createCase" label="Create Case"></lightning-menu-item>
+                              </lightning-button-menu>
+                          </td>
+                        </tr>
+                           <template for:each={childAccount._children} for:item="secondChildAccount">
+                              <tr key={secondChildAccount.Id} data-name="second_business_section" data-parent={childAccount.Id} data-id={secondChildAccount.Id}>
+                                 <td class="table_second_child_padding slds-accordion__summary-content">
+                                    <ul class="slds-accordion" data-name="accordion">
+                                       <li class="slds-accordion__list-item">
+                                          <section
+                                             class="slds-accordion__section"
+                                             style="padding: 0;"
+                                             data-name="second_business"
+                                             data-parent={childAccount.Id}
+                                             data-id={secondChildAccount.Id}
+                                             >
+                                             <div class="slds-accordion__summary">
+                                                <button
+                                                   class="slds-button slds-button_reset"
+                                                   onclick={handleChildClick}
+                                                   data-id={secondChildAccount.Id}
+                                                   data-name="second_business_name_button"
+                                                   >
+                                                   <svg
+                                                      class="slds-accordion__summary-action-icon slds-button__icon"
+                                                      aria-hidden="true"
+                                                      >
+                                                      <use if:true={secondChildAccount.showCaratIcon}
+                                                         xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#switch"
+                                                         ></use>
+                                                   </svg>
+                                                </button>
+                                                <span class="slds-accordion__summary-content">
+                                                   <a data-id={secondChildAccount.Id} onclick={handleAccountNameClick} class="slds-truncate" title={secondChildAccount.Name}>
+                                                    &nbsp;&nbsp;{secondChildAccount.Name}
+                                                   </a>
+                                                   <template if:true={secondChildAccount._HasContracts}>
+                                                      <lightning-icon
+                                                         icon-name=custom:custom17
+                                                         alternative-text="Contracts"
+                                                         title="Contracts"
+                                                         class="slds-m-left_xx-small"
+                                                         size="x-small"
+                                                         >
+                                                      </lightning-icon>
+                                                      <strong class="slds-m-left--xx-small"></strong>
+                                                   </template>
+                                                </span>
+                                             </div>
+                                          </section>
+                                       </li>
+                                    </ul>
+                                 </td>
+                                 <td>
+                                    <lightning-icon
+                                       icon-name={iconBusinessAccount}
+                                       alternative-text="Account"
+                                       title="Account"
+                                       class="slds-m-left_xx-small"
+                                       size="x-small"
+                                       ></lightning-icon>
+                                    <strong class="slds-m-left--xx-small"></strong
+                                       >{secondChildAccount.Record_Type_Name__c}
+                                 </td>
+                                 <td class="slds-truncate">{secondChildAccount.Type}</td>
+                                 <td class="slds-truncate">{secondChildAccount.Primary_Vertical__c}</td>
+                                 <td class="slds-truncate">{secondChildAccount.OwnerName}</td>
+                                 <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                    <ul>
+                                       <template for:each={secondChildAccount.Contracts} for:item="eachContract">
+                                          <li key={eachContract.Id}>
+                                             <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                             {eachContract.ContractNumber}
+                                             <template if:true={eachContract.Is_This_Ads_Or_Promo__c}>
+                                                <lightning-icon
+                                                   icon-name={adsAndPromosIcon}
+                                                   alternative-text="Ads &amp; Promos"
+                                                   title="Ads &amp; Promos"
+                                                   class="slds-m-left_xx-small"
+                                                   size="x-small"
+                                                   >
+                                                </lightning-icon>
+                                             </template>
+                                             </a>
+                                          </li>
+                                       </template>
+                                    </ul>
+                                    <template if:true={secondChildAccount.showSeeMore}>
+                                       <a data-id={secondChildAccount.Id} onclick={handleSeeMore} class="slds-truncate" title={secondChildAccount.Name}>
+                                          See More
+                                       </a>
+                                    </template>
+                                 </td>
+                                 <td></td>
+                                 <td></td>
+                                 <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                    <ul>
+                                       <template for:each={secondChildAccount.Payment_Accounts__r} for:item="eachPaymentAccount">
+                                          <li key={eachPaymentAccount.Id}>
+                                             <a data-id={eachPaymentAccount.Id} onclick={handleNetSuiteIdClick} class="slds-truncate">
+                                             {eachPaymentAccount.NetSuite_ID__c}
+                                             </a>
+                                          </li>
+                                       </template>
+                                    </ul>
+                                 </td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td>
+                                    <lightning-button-menu
+                                        alternative-text="Actions"
+                                        icon-name="utility:down"
+                                        variant="border-filled"
+                                        menu-alignment="auto"
+                                        icon-size="x-small"
+                                        onselect={handleMenuAction}
+                                        data-record-id={secondChildAccount.Id}
+                                    >
+                                       <lightning-menu-item value="createOpportunity" label="Create Opportunity"></lightning-menu-item>
+                                       <template if:true={hasWorkOrderCreationAccess}>
+                                          <lightning-menu-item value="createWorkOrder" label="Create Work Order"></lightning-menu-item>
+                                       </template>
+                                       <lightning-menu-item value="createCase" label="Create Case"></lightning-menu-item>
+                                   </lightning-button-menu>
+                                </td>
+                              </tr>
+                                 <template for:each={secondChildAccount._children} for:item="thirdChildAccount">
+                                    <tr key={thirdChildAccount.Id} data-name="third_business_section" data-parent={secondChildAccount.Id} data-id={thirdChildAccount.Id}>
+                                       <td class="table_third_child_padding slds-accordion__summary-content">
+                                          <ul class="slds-accordion" data-name="accordion">
+                                             <li class="slds-accordion__list-item">
+                                                <section
+                                                   class="slds-accordion__section"
+                                                   style="padding: 0;"
+                                                   data-parent={secondChildAccount.Id}
+                                                   data-name="third_business"
+                                                   data-id={thirdChildAccount.Id}
+                                                   >
+                                                   <div class="slds-accordion__summary">
+                                                      <button
+                                                         class="slds-button slds-button_reset"
+                                                         onclick={handleChildClick}
+                                                         data-id={thirdChildAccount.Id}
+                                                         data-name="third_business_section_button"
+                                                         >
+                                                         <svg
+                                                            class="slds-accordion__summary-action-icon slds-button__icon"
+                                                            aria-hidden="true"
+                                                            >
+                                                            <use if:true={thirdChildAccount.showCaratIcon}
+                                                               xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#switch"
+                                                               ></use>
+                                                         </svg>
+                                                      </button>
+                                                      <span class="slds-accordion__summary-content">
+                                                         <a data-id={thirdChildAccount.Id} onclick={handleAccountNameClick} class="slds-truncate" title={thirdChildAccount.Name}>
+                                                            &nbsp;&nbsp;{thirdChildAccount.Name}
+                                                         </a>
+                                                         <template if:true={thirdChildAccount._HasContracts}>
+                                                            <lightning-icon
+                                                               icon-name=custom:custom17
+                                                               alternative-text="Contracts"
+                                                               title="Contracts"
+                                                               class="slds-m-left_xx-small"
+                                                               size="x-small"
+                                                               >
+                                                            </lightning-icon>
+                                                            <strong class="slds-m-left--xx-small"></strong>
+                                                         </template>
+                                                      </span>
+                                                   </div>
+                                                </section>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                       <td>
+                                          <lightning-icon
+                                             icon-name={iconBusinessAccount}
+                                             alternative-text="Account"
+                                             title="Account"
+                                             class="slds-m-left_xx-small"
+                                             size="x-small"
+                                             ></lightning-icon>
+                                          <strong class="slds-m-left--xx-small"></strong
+                                             >{thirdChildAccount.Record_Type_Name__c}
+                                       </td>
+                                       <td class="slds-truncate">{thirdChildAccount.Type}</td>
+                                       <td class="slds-truncate">{thirdChildAccount.Primary_Vertical__c}</td>
+                                       <td class="slds-truncate">{thirdChildAccount.OwnerName}</td>
+                                       <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                          <ul>
+                                             <template for:each={thirdChildAccount.Contracts} for:item="eachContract">
+                                                <li key={eachContract.Id}>
+                                                   <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                                   {eachContract.ContractNumber}
+                                                   <template if:true={eachContract.Is_This_Ads_Or_Promo__c}>
+                                                      <lightning-icon
+                                                         icon-name={adsAndPromosIcon}
+                                                         alternative-text="Ads &amp; Promos"
+                                                         title="Ads &amp; Promos"
+                                                         class="slds-m-left_xx-small"
+                                                         size="x-small"
+                                                         >
+                                                      </lightning-icon>
+                                                   </template>
+                                                   </a>
+                                                </li>
+                                             </template>
+                                          </ul>
+                                          <template if:true={thirdChildAccount.showSeeMore}>
+                                             <a data-id={thirdChildAccount.Id} onclick={handleSeeMore} class="slds-truncate" title={thirdChildAccount.Name}>
+                                                See More
+                                             </a>
+                                          </template>
+                                       </td>
+                                       <td></td>
+                                       <td></td>
+                                       <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                          <ul>
+                                             <template for:each={thirdChildAccount.Payment_Accounts__r} for:item="eachPaymentAccount">
+                                                <li key={eachPaymentAccount.Id}>
+                                                   <a data-id={eachPaymentAccount.Id} onclick={handleNetSuiteIdClick} class="slds-truncate">
+                                                   {eachPaymentAccount.NetSuite_ID__c}
+                                                   </a>
+                                                </li>
+                                             </template>
+                                          </ul>
+                                       </td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                       <td>
+                                          <lightning-button-menu
+                                              alternative-text="Actions"
+                                              icon-name="utility:down"
+                                              variant="border-filled"
+                                              menu-alignment="auto"
+                                              icon-size="x-small"
+                                              onselect={handleMenuAction}
+                                              data-record-id={thirdChildAccount.Id}
+                                          >
+                                             <lightning-menu-item value="createOpportunity" label="Create Opportunity"></lightning-menu-item>
+                                             <template if:true={hasWorkOrderCreationAccess}>
+                                                <lightning-menu-item value="createWorkOrder" label="Create Work Order"></lightning-menu-item>
+                                             </template>
+                                             <lightning-menu-item value="createCase" label="Create Case"></lightning-menu-item>
+                                          </lightning-button-menu>
+                                      </td>
+                                    </tr>
+                                    <template for:each={thirdChildAccount._children} for:item="fourthChildAccount">
+                                       <tr key={fourthChildAccount.Id} data-name="fourth_business_section" data-parent={thirdChildAccount.Id} data-id={fourthChildAccount.Id}>
+                                          <td class="table_fourth_child_padding slds-accordion__summary-content">
+                                             <ul class="slds-accordion" data-name="accordion">
+                                                <li class="slds-accordion__list-item">
+                                                   <section
+                                                      class="slds-accordion__section"
+                                                      style="padding: 0;"
+                                                      data-name="fourth_business"
+                                                      data-parent={thirdChildAccount.Id}
+                                                      data-id={fourthChildAccount.Id}
+                                                      >
+                                                      <div class="slds-accordion__summary">
+                                                         <button
+                                                            class="slds-button slds-button_reset"
+                                                            onclick={handleChildClick}
+                                                            data-id={fourthChildAccount.Id}
+                                                            data-name="fourth_business_section_button"
+                                                            >
+                                                            <svg
+                                                               class="slds-accordion__summary-action-icon slds-button__icon"
+                                                               aria-hidden="true"
+                                                               >
+                                                               <use if:true={fourthChildAccount.showCaratIcon}
+                                                                  xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#switch"
+                                                                  ></use>
+                                                            </svg>
+                                                         </button>
+                                                         <span class="slds-accordion__summary-content">
+                                                            <a data-id={fourthChildAccount.Id} onclick={handleAccountNameClick} class="slds-truncate" title={fourthChildAccount.Name}>
+                                                                &nbsp;&nbsp;{fourthChildAccount.Name}
+                                                            </a>
+                                                            <template if:true={fourthChildAccount._HasContracts}>
+                                                               <lightning-icon
+                                                                  icon-name=custom:custom17
+                                                                  alternative-text="Contracts"
+                                                                  title="Contracts"
+                                                                  class="slds-m-left_xx-small"
+                                                                  size="x-small"
+                                                                  >
+                                                               </lightning-icon>
+                                                               <strong class="slds-m-left--xx-small"></strong>
+                                                            </template>
+                                                         </span>
+                                                      </div>
+                                                   </section>
+                                                </li>
+                                             </ul>
+                                          </td>
+                                          <td>
+                                             <lightning-icon
+                                                icon-name={iconBusinessAccount}
+                                                alternative-text="Account"
+                                                title="Account"
+                                                class="slds-m-left_xx-small"
+                                                size="x-small"
+                                                ></lightning-icon>
+                                             <strong class="slds-m-left--xx-small"></strong
+                                                >{fourthChildAccount.Record_Type_Name__c}
+                                          </td>
+                                          <td class="slds-truncate">{fourthChildAccount.Type}</td>
+                                          <td class="slds-truncate">{fourthChildAccount.Primary_Vertical__c}</td>
+                                          <td class="slds-truncate">{fourthChildAccount.OwnerName}</td>
+                                          <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                             <ul>
+                                                <template for:each={fourthChildAccount.Contracts} for:item="eachContract">
+                                                   <li key={eachContract.Id}>
+                                                      <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                                      {eachContract.ContractNumber}
+                                                      <template if:true={eachContract.Is_This_Ads_Or_Promo__c}>
+                                                         <lightning-icon
+                                                            icon-name={adsAndPromosIcon}
+                                                            alternative-text="Ads &amp; Promos"
+                                                            title="Ads &amp; Promos"
+                                                            class="slds-m-left_xx-small"
+                                                            size="x-small"
+                                                            >
+                                                         </lightning-icon>
+                                                      </template>
+                                                      </a>
+                                                   </li>
+                                                </template>
+                                             </ul>
+                                             <template if:true={fourthChildAccount.showSeeMore}>
+                                                <a data-id={fourthChildAccount.Id} onclick={handleSeeMore} class="slds-truncate" title={fourthChildAccount.Name}>
+                                                See More
+                                             </a>
+                                          </template>
+                                          </td>
+                                          <td></td>
+                                          <td></td>
+                                          <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                             <ul>
+                                                <template for:each={fourthChildAccount.Payment_Accounts__r} for:item="eachPaymentAccount">
+                                                   <li key={eachPaymentAccount.Id}>
+                                                      <a data-id={eachPaymentAccount.Id} onclick={handleNetSuiteIdClick} class="slds-truncate">
+                                                      {eachPaymentAccount.NetSuite_ID__c}
+                                                      </a>
+                                                   </li>
+                                                </template>
+                                             </ul>
+                                          </td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td>
+                                             <lightning-button-menu
+                                                 alternative-text="Actions"
+                                                 icon-name="utility:down"
+                                                 variant="border-filled"
+                                                 menu-alignment="auto"
+                                                 icon-size="x-small"
+                                                 onselect={handleMenuAction}
+                                                 data-record-id={fourthChildAccount.Id}
+                                             >
+                                                <lightning-menu-item value="createOpportunity" label="Create Opportunity"></lightning-menu-item>
+                                                <template if:true={hasWorkOrderCreationAccess}>
+                                                   <lightning-menu-item value="createWorkOrder" label="Create Work Order"></lightning-menu-item>
+                                                </template>
+                                                <lightning-menu-item value="createCase" label="Create Case"></lightning-menu-item>
+                                             </lightning-button-menu>
+                                         </td>
+                                       </tr>
+                                       <template for:each={fourthChildAccount.AssociatedXrefs} for:item="eachStore">
+                                          <tr key={eachStore.Id} data-parent={fourthChildAccount.Id} data-name="fifth_business_section" data-id={eachStore.Id}>
+                                             <td class="table_fourth_store_padding slds-accordion__summary-content">
+                                                <span class="slds-accordion__summary-content">
+                                                <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleAccountNameClick} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__r.Name}>
+                                                {eachStore.storeAccount.Salesforce_Account_Name__r.Name}
+                                                </a>
+                                                </span>
+                                             </td>
+                                             <td>
+                                                <lightning-icon
+                                                   icon-name={iconStoreAccount}
+                                                   alternative-text="Store"
+                                                   title="Store Account"
+                                                   class="slds-m-left_xx-small"
+                                                   size="x-small"
+                                                   ></lightning-icon>
+                                                <strong class="slds-m-left--xx-small"></strong
+                                                   >Store
+                                             </td>
+                                             <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Type}</td>
+                                             <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Primary_Vertical__c}</td>
+                                             <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Owner.Name}</td>
+                                             <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                                <ul>
+                                                   <template for:each={eachStore.contracts} for:item="eachContract">
+                                                      <li key={eachContract.Id}>
+                                                         <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                                         {eachContract.Contract_Name__c}
+                                                         </a>
+                                                      </li>
+                                                   </template>
+                                                </ul>
+                                                <template if:true={eachStore.showMoreContracts}>
+                                                   <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleSeeMoreContract} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__c}>
+                                                   See More
+                                                </a>
+                                                </template>
+                                             </td>
+                                             <td class="slds-accordion__summary-content slds-truncate">
+                                                {eachStore.storeAccount.BrandName}
+                                             </td>
+                                             <td>
+                                                <lightning-icon
+                                                   icon-name={eachStore.storeAccount.IconName}
+                                                   alternative-text="Store"
+                                                   title="Store Account"
+                                                   class="slds-m-left_xx-small"
+                                                   size="x-small"
+                                                   ></lightning-icon>
+                                                <strong class="slds-m-left--xx-small"></strong>
+                                                {eachStore.storeAccount.ProductName}
+                                             </td>
+                                             <td></td>
+                                             <td>{eachStore.storeAccount.Business_GroupID__c}</td>
+                                             <td>
+                                                <lightning-formatted-rich-text value={eachStore.storeAccount.Mint_BusinessPage__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                                             </td>
+                                             <td>
+                                                <lightning-formatted-rich-text value={eachStore.storeAccount.MINT_Store_Page__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                                             </td>
+                                             <td></td>
+                                          </tr>
+                                       </template>
+                                    </template>
+                                    <template for:each={thirdChildAccount.AssociatedXrefs} for:item="eachStore">
+                                       <tr key={eachStore.Id} data-parent={thirdChildAccount.Id} data-name="fourth_business_section" data-id={eachStore.Id}>
+                                          <td class="table_third_store_padding slds-accordion__summary-content">
+                                             <span class="slds-accordion__summary-content">
+                                             <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleAccountNameClick} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__r.Name}>
+                                             {eachStore.storeAccount.Salesforce_Account_Name__r.Name}
+                                             </a>
+                                             </span>
+                                          </td>
+                                          <td>
+                                             <lightning-icon
+                                                icon-name={iconStoreAccount}
+                                                alternative-text="Store"
+                                                title="Store Account"
+                                                class="slds-m-left_xx-small"
+                                                size="x-small"
+                                                ></lightning-icon>
+                                             <strong class="slds-m-left--xx-small"></strong
+                                                >Store
+                                          </td>
+                                          <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Type}</td>
+                                          <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Primary_Vertical__c}</td>
+                                          <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Owner.Name}</td>
+                                          <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                             <ul>
+                                                <template for:each={eachStore.contracts} for:item="eachContract">
+                                                   <li key={eachContract.Id}>
+                                                      <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                                      {eachContract.Contract_Name__c}
+                                                      </a>
+
+                                                   </li>
+                                                </template>
+                                             </ul>
+                                             <template if:true={eachStore.showMoreContracts}>
+                                                <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleSeeMoreContract} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__c}>
+                                                See More
+                                             </a>
+                                             </template>
+                                          </td>
+                                          <td class="slds-accordion__summary-content slds-truncate">
+                                             {eachStore.storeAccount.BrandName}
+                                          </td>
+                                          <td>
+                                             <lightning-icon
+                                                icon-name={eachStore.storeAccount.IconName}
+                                                alternative-text="Store"
+                                                title="Store Account"
+                                                class="slds-m-left_xx-small"
+                                                size="x-small"
+                                                ></lightning-icon>
+                                             <strong class="slds-m-left--xx-small"></strong>
+                                             {eachStore.storeAccount.ProductName}
+                                          </td>
+                                          <td></td>
+                                          <td>{eachStore.storeAccount.Business_GroupID__c}</td>
+                                          <td>
+                                             <lightning-formatted-rich-text value={eachStore.storeAccount.Mint_BusinessPage__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                                          </td>
+                                          <td>
+                                             <lightning-formatted-rich-text value={eachStore.storeAccount.MINT_Store_Page__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                                          </td>
+                                          <td></td>
+                                       </tr>
+                                    </template>
+                                 </template>
+                              <template for:each={secondChildAccount.AssociatedXrefs} for:item="eachStore">
+                                 <tr key={eachStore.Id} data-parent={secondChildAccount.Id} data-name="third_business_section" data-id={eachStore.Id}>
+                                    <td class="table_second_store_padding slds-accordion__summary-content">
+                                       <span class="slds-accordion__summary-content">
+                                       <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleAccountNameClick} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__r.Name}>
+                                       {eachStore.storeAccount.Salesforce_Account_Name__r.Name}
+                                       </a>
+                                       </span>
+                                    </td>
+                                    <td>
+                                       <lightning-icon
+                                          icon-name={iconStoreAccount}
+                                          alternative-text="Store"
+                                          title="Store Account"
+                                          class="slds-m-left_xx-small"
+                                          size="x-small"
+                                          ></lightning-icon>
+                                       <strong class="slds-m-left--xx-small"></strong
+                                          >Store
+                                    </td>
+                                    <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Type}</td>
+                                    <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Primary_Vertical__c}</td>
+                                    <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Owner.Name}</td>
+                                    <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                       <ul>
+                                          <template for:each={eachStore.contracts} for:item="eachContract">
+                                             <li key={eachContract.Id}>
+                                               <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                                {eachContract.Contract_Name__c}
+                                                </a>
+                              
+                                             </li>
+                                          </template>
+                                       </ul>
+                                       <template if:true={eachStore.showMoreContracts}>
+                                          <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleSeeMoreContract} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__c}>
+                                          See More
+                                       </a>
+                                       </template>
+                                    </td>
+                                    <td class="slds-accordion__summary-content slds-truncate">
+                                       {eachStore.storeAccount.BrandName}
+                                    </td>
+                                    <td>
+                                       <lightning-icon
+                                          icon-name={eachStore.storeAccount.IconName}
+                                          alternative-text="Store"
+                                          title="Store Account"
+                                          class="slds-m-left_xx-small"
+                                          size="x-small"
+                                          ></lightning-icon>
+                                       <strong class="slds-m-left--xx-small"></strong>
+                                       {eachStore.storeAccount.ProductName}
+                                    </td>
+                                    <td></td>
+                                    <td>{eachStore.storeAccount.Business_GroupID__c}</td>
+                                    <td>
+                                       <lightning-formatted-rich-text value={eachStore.storeAccount.Mint_BusinessPage__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                                    </td>
+                                    <td>
+                                       <lightning-formatted-rich-text value={eachStore.storeAccount.MINT_Store_Page__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                                    </td>
+                                    <td></td>
+                                 </tr>
+                              </template>
+                           </template>
+                        <template for:each={childAccount.AssociatedXrefs} for:item="eachStore">
+                           <tr key={eachStore.Id} data-parent={childAccount.Id} data-name="second_business_section" data-id={eachStore.Id}>
+                              <td class= "table_second_child_padding slds-accordion__summary-content">
+                                 <span class="slds-accordion__summary-content">
+                                 <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleAccountNameClick} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__r.Name}>
+                                 {eachStore.storeAccount.Salesforce_Account_Name__r.Name}
+                                 </a>
+                                 </span>
+                              </td>
+                              <td>
+                                 <lightning-icon
+                                    icon-name={iconStoreAccount}
+                                    alternative-text="Store"
+                                    title="Store Account"
+                                    class="slds-m-left_xx-small"
+                                    size="x-small"
+                                    ></lightning-icon>
+                                 <strong class="slds-m-left--xx-small"></strong
+                                    >Store
+                              </td>
+                              <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Type}</td>
+                              <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Primary_Vertical__c}</td>
+                              <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Owner.Name}</td>
+                              <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                                 <ul>
+                                    <template for:each={eachStore.contracts} for:item="eachContract">
+                                       <li key={eachContract.Id}>
+                                          <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                          {eachContract.Contract_Name__c}
+                                          </a>
+                                       </li>
+                                    </template>
+                                 </ul>
+                                 <template if:true={eachStore.showMoreContracts}>
+                                    <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleSeeMoreContract} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__c}>
+                                    See More
+                                 </a>
+                                 </template>
+                              </td>
+                              <td class="slds-accordion__summary-content slds-truncate">
+                                 {eachStore.storeAccount.BrandName}
+                              </td>
+                              <td>
+                                 <lightning-icon
+                                    icon-name={eachStore.storeAccount.IconName}
+                                    alternative-text="Store"
+                                    title="Store Account"
+                                    class="slds-m-left_xx-small"
+                                    size="x-small"
+                                    ></lightning-icon>
+                                 <strong class="slds-m-left--xx-small"></strong>
+                                 {eachStore.storeAccount.ProductName}
+                              </td>
+                              <td></td>
+                              <td>{eachStore.storeAccount.Business_GroupID__c}</td>
+                              <td>
+                                 <lightning-formatted-rich-text value={eachStore.storeAccount.Mint_BusinessPage__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                              </td>
+                              <td>
+                                 <lightning-formatted-rich-text value={eachStore.storeAccount.MINT_Store_Page__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                              </td>
+                              <td></td>
+                           </tr>
+                        </template>
+                     </template>
+                     </template>
+                     <template for:each={eachAccount.AssociatedXrefs} for:item="eachStore">
+                     <tr key={eachStore.Id} data-name="ultimate_parent_stores_section" data-id={eachStore.Id}>
+                        <td class= "table_child_padding slds-accordion__summary-content">
+                           <span class="slds-accordion__summary-content">
+                           <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleAccountNameClick} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__r.Name}>
+                              {eachStore.storeAccount.Salesforce_Account_Name__r.Name}
+                           </a>
+                           </span>
+                        </td>
+                        <td>
+                           <lightning-icon
+                              icon-name={iconStoreAccount}
+                              alternative-text="Store"
+                              title="Store Account"
+                              class="slds-m-left_xx-small"
+                              size="x-small"
+                              ></lightning-icon>
+                           <strong class="slds-m-left--xx-small"></strong
+                              >Store
+                        </td>
+                        <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Type}</td>
+                        <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Primary_Vertical__c}</td>
+                        <td class="slds-truncate">{eachStore.storeAccount.Salesforce_Account_Name__r.Owner.Name}</td>
+                        <td class="slds-accordion__summary-content" width="170px" style="word-wrap:break-word;">
+                           <ul>
+                              <template for:each={eachStore.contracts} for:item="eachContract">
+                                 <li key={eachContract.Id}>
+                                    <a data-id={eachContract.Id} onclick={handleContractClick} class="slds-truncate">
+                                    {eachContract.Contract_Name__c}
+                                    </a>
+                                 
+                                 </li>
+                              </template>
+                           </ul>
+                           <template if:true={eachStore.showMoreContracts}>
+                              <a data-id={eachStore.storeAccount.Salesforce_Account_Name__c} onclick={handleSeeMoreContract} class="slds-truncate" title={eachStore.storeAccount.Salesforce_Account_Name__c}>
+                              See More
+                           </a>
+                           </template>
+                        </td>
+                        <td class="slds-accordion__summary-content slds-truncate">
+                           {eachStore.storeAccount.BrandName}
+                        </td>
+                        <td>
+                           <lightning-icon
+                              icon-name={eachStore.storeAccount.IconName}
+                              alternative-text="Store"
+                              title="Store Account"
+                              class="slds-m-left_xx-small"
+                              size="x-small"
+                              ></lightning-icon>
+                           <strong class="slds-m-left--xx-small"></strong>
+                           {eachStore.storeAccount.ProductName}
+                        </td>
+                        <td></td>
+                        <td>{eachStore.storeAccount.Business_GroupID__c}</td>
+                        <td>
+                           <lightning-formatted-rich-text value={eachStore.storeAccount.Mint_BusinessPage__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                        </td>
+                        <td>
+                           <lightning-formatted-rich-text value={eachStore.storeAccount.MINT_Store_Page__c} class="slds-p-around_small"></lightning-formatted-rich-text>
+                        </td>
+                        <td></td>
+                     </tr>
+                  </template>
+                  </template>
+               </tbody>
+            </table>
+         </template>
+      </div>
+   </div>
+ </template>

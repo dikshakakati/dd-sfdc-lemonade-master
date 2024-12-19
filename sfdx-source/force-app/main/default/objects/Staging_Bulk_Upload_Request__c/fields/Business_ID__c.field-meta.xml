@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_ID__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-15978: Stores Business Account Id (18 digits).</description>
+    <externalId>false</externalId>
+    <label>Business ID</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Business</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Staging Bulk Upload Requests</relationshipLabel>
+    <relationshipName>Staging_Bulk_Upload_Requests</relationshipName>
+    <required>true</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_Integration_ID__c</fullName>
+    <description>BZAP-18797 Receive pos integration requests from BAT and process the requests.
+If Integration type is POS holds the value of previous pos integration Id</description>
+    <externalId>false</externalId>
+    <label>Previous Integration ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

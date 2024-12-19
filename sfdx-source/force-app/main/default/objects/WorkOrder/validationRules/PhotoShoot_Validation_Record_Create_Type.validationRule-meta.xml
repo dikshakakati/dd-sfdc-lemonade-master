@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PhotoShoot_Validation_Record_Create_Type</fullName>
+    <active>true</active>
+    <description>LEM-14097: It is used to validate record action for Photoshoot Work Order.</description>
+    <errorConditionFormula>AND(
+      Create_Record_Action__c = True,
+      ISNEW(),
+      ISPICKVAL( Type__c , &quot;PhotoShoot&quot;)
+    )</errorConditionFormula>
+    <errorMessage>Photoshoot Work Orders can only be created through Photoshoot Requests. Please navigate to business account and click “Photoshoot Request” button.</errorMessage>
+</ValidationRule>

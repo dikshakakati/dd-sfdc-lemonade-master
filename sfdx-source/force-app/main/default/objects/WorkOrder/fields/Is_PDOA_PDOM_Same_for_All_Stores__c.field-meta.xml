@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_PDOA_PDOM_Same_for_All_Stores__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-5126 : The fiels is set by code:, True if PDOx of all Child accounts are same, False if if PDOx of all Child accounts are not the same</description>
+    <externalId>false</externalId>
+    <label>Is PDOA/PDOM Same for All Stores?</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

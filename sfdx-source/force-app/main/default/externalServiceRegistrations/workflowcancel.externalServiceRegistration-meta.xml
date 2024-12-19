@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>workflowcancel</label>
+    <namedCredentialReference>IroncladWF</namedCredentialReference>
+    <operations>
+        <active>true</active>
+        <name>cancelworkflow</name>
+    </operations>
+    <registrationProviderType>SchemaInferred</registrationProviderType>
+    <schema>{&quot;openapi&quot;:&quot;3.0.1&quot;,&quot;info&quot;:{&quot;title&quot;:&quot;workflowcancel&quot;,&quot;description&quot;:&quot;&quot;},&quot;paths&quot;:{&quot;/workflows/{workflowid}/cancel&quot;:{&quot;post&quot;:{&quot;description&quot;:&quot;&quot;,&quot;operationId&quot;:&quot;cancelWorkflow&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;workflowid&quot;,&quot;in&quot;:&quot;path&quot;,&quot;description&quot;:&quot;&quot;,&quot;required&quot;:true,&quot;allowEmptyValue&quot;:false,&quot;schema&quot;:{&quot;type&quot;:&quot;string&quot;}}],&quot;requestBody&quot;:{&quot;description&quot;:&quot;&quot;,&quot;content&quot;:{&quot;application/json&quot;:{&quot;schema&quot;:{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;comment&quot;:{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;message&quot;:{&quot;type&quot;:&quot;string&quot;}}}}}}},&quot;required&quot;:true},&quot;responses&quot;:{&quot;2XX&quot;:{&quot;description&quot;:&quot;&quot;,&quot;content&quot;:{&quot;application/json&quot;:{}}}}}}}}</schema>
+    <schemaType>OpenApi3</schemaType>
+    <serviceBinding>{&quot;host&quot;:&quot;&quot;,&quot;basePath&quot;:&quot;/&quot;,&quot;allowedSchemes&quot;:[],&quot;requestMediaTypes&quot;:[],&quot;responseMediaTypes&quot;:[],&quot;compatibleMediaTypes&quot;:{}}</serviceBinding>
+    <status>Complete</status>
+    <systemVersion>5</systemVersion>
+</ExternalServiceRegistration>

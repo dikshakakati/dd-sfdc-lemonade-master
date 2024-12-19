@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Services Not In Draft</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Business_Friendly_Message__c</field>
+        <value xsi:type="xsd:string">The provisionable products are not in correct status. Either the Services are not set to &quot;Yes&quot; and/or activation order and/or order items are in a status of &quot;Activated&quot; instead of &quot;Draft&quot;. The Vendor Team should please raise a Data ticket in #ask-lemonade for the data to be fixed. Once fixed, the Vendor Team should click the &quot;Reattempt Provisioning&quot; button on the work order.</value>
+    </values>
+    <values>
+        <field>Integration_Key_String__c</field>
+        <value xsi:type="xsd:string">sfdc/orderItem&apos; failed: bad request (400)</value>
+    </values>
+    <values>
+        <field>Integration_Type__c</field>
+        <value xsi:type="xsd:string">Xref Provisioning</value>
+    </values>
+    <values>
+        <field>Message_Category__c</field>
+        <value xsi:type="xsd:string">Services Missing</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">110.0</value>
+    </values>
+</CustomMetadata>

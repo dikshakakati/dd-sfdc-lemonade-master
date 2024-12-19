@@ -1,0 +1,84 @@
+.mainDiv {
+    display:inline-block;
+    top: 8px;
+}
+
+.filter-label {
+    color: #606770;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-align_center {
+    text-align: center;
+}
+
+.expand-button{
+    position: relative;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    opacity: .6;
+    transition: .3s ease all;
+}
+.expand-button:hover{
+    opacity: 1;
+    transition: .3s ease all;
+}
+.expand-button:before{
+    content: "";
+    position: absolute;
+    background-color: #3578E5;
+    transition: transform 0.25s ease-out;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    margin-left: -2px;
+}
+.expand-button:after{
+    content: "";
+    position: absolute;
+    background-color: #3578E5;
+    transition: transform 0.25s ease-out;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -2px;
+}
+
+.collapse-button{
+    position: relative;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    opacity: .6;
+    transition: .3s ease all;
+}
+.collapse-button:hover{
+    opacity: 1;
+    transition: .3s ease all;
+}
+.collapse-button:before{
+    content: "";
+    position: absolute;
+    background-color: #3578E5;
+    transition: transform 0.25s ease-out;
+}
+.collapse-button:after{
+    content: "";
+    position: absolute;
+    background-color: #3578E5;
+    transition: transform 0.25s ease-out;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -2px;
+}

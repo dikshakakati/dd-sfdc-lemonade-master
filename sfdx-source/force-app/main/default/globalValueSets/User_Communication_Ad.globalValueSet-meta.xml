@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Push Notification</fullName>
+        <default>false</default>
+        <label>Push Notification</label>
+    </customValue>
+    <customValue>
+        <fullName>Email + Push Notification</fullName>
+        <default>false</default>
+        <label>Email + Push Notification</label>
+    </customValue>
+    <description>LEM-486 – Attributes related to Advertisement products</description>
+    <masterLabel>User Communication Ad</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

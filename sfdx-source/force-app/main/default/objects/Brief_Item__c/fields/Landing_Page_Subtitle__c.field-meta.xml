@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Landing_Page_Subtitle__c</fullName>
+    <description>LEM-9349: Minor Field Addition to Brief Item</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This will appear on the landing page of Sponsored Brand</inlineHelpText>
+    <label>Landing Page Subtitle</label>
+    <length>90</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

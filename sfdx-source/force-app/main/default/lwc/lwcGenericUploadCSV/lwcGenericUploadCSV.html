@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="CSV Import" icon-name="custom:custom19">
+        <form class="slds-form_inline">
+			<div class="slds-form-element">
+                <div style="margin-left:4%" class="slds-form-element">
+                    <template if:true={showLoadingSpinner}>
+                        <lightning-spinner alternative-text="Uploading......" size="medium"></lightning-spinner>
+                    </template>
+                </div>
+                <div class="inline-div">
+				    <lightning-input type="file" accept=".csv" onchange={importcsv}></lightning-input>
+                </div>
+                <div class="inline-div" if:true={hasFile}>
+                    <lightning-pill class="slds-form-element slds-text-body_small slds-text-color_error slds-p-top_x-small" 
+                                    label={filename} 
+                                    onremove={removeFile}>
+                    </lightning-pill>
+                </div>
+			</div>
+		</form>
+    </lightning-card>
+</template>

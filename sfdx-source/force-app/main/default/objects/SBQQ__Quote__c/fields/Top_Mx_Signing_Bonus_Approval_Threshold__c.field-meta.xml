@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_Mx_Signing_Bonus_Approval_Threshold__c</fullName>
+    <description>LEM-14395: Custom/Unique Terms - Attributes.</description>
+    <externalId>false</externalId>
+    <label>Top Mx Signing Bonus Approval Threshold</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

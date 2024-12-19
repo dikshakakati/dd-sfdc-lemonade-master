@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateUptimeRequiredBeforeApproval</fullName>
+    <active>true</active>
+    <description>LEM-14399: Validates if Uptime if populated for Account Billing Country Canada before quote is submitted for approval.</description>
+    <errorConditionFormula>AND(NOT($Permission.Bypass_Quote_Validation_Rules),
+OR(
+    Account_Billing_Country_Code__c = &apos;US&apos;,
+    Account_Billing_Country_Code__c = &apos;CA&apos;
+),
+
+AND(ISCHANGED(ApprovalStatus__c),
+OR(TEXT(ApprovalStatus__c) = $Label.Approval_Status_Pending,
+AND(TEXT(ApprovalStatus__c) = $Label.Approval_Status_Approved,
+ISBLANK(TEXT(PRIORVALUE(ApprovalStatus__c)))))),
+OR(ISPICKVAL(Custom_Partnership_Type__c, &quot;Exclusive&quot;),
+ISPICKVAL(Custom_Partnership_Type__c, &quot;Preferred&quot;),
+ISPICKVAL(Custom_Partnership_Type__c, &quot;Preferred-2&quot;)
+),Account_Billing_Country_Code__c = $Label.CA,
+ISBLANK(Uptime__c))</errorConditionFormula>
+    <errorMessage>Uptime is required before submitting quote for approval.</errorMessage>
+</ValidationRule>

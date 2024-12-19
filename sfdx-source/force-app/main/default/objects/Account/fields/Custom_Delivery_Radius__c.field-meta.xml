@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Delivery_Radius__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1048: Indicates custom delivery radius for Mx.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Signifies custom delivery radius for Mx</inlineHelpText>
+    <label>Custom Delivery Radius</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

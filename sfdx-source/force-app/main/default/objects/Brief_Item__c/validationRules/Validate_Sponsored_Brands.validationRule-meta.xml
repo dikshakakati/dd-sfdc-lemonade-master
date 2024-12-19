@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Sponsored_Brands</fullName>
+    <active>true</active>
+    <description>LEM-9594</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Product__c, &apos;Sponsored Brands&apos;),
+    ISPICKVAL(Status__c, &apos;Campaign Building&apos;),
+    OR(
+        ISBLANK(Collection_Title__c),
+        ISBLANK(Landing_Page_Subtitle__c),
+        ISBLANK(Brand_Logo__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Collection Title, Landing Page Subtitle and Brand Logo are required for Sponsored Brands Brief Items to move to ‘Campaign Building’</errorMessage>
+</ValidationRule>

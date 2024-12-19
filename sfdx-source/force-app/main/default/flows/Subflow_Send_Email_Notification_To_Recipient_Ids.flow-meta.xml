@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>LEM-11498: It sends email to the recipients populated in &apos;Emails Ids To Send Notification&apos; field for Logs.</description>
+        <name>Send_Email_Notification_to_Email_Ids</name>
+        <label>Send Email Notification to Email Ids</label>
+        <locationX>176</locationX>
+        <locationY>650</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <faultConnector>
+            <targetReference>Set_Email_result_as_failure</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>emailIdsToSendEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <elementReference>senderType_OrgWideEmailAddress</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>senderEmailAddress</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <description>LEM-11498: It collects email address from User records.</description>
+        <name>Collect_Email_Addresses</name>
+        <label>Collect Email Addresses</label>
+        <locationX>264</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>emailIdsToSendEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_over_Recipients.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>emailIdsToSendEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CommaSeparator</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_over_Recipients</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-11498: It sets email result as failure when email notification is not sent.</description>
+        <name>Set_Email_result_as_failure</name>
+        <label>Set Email result as failure</label>
+        <locationX>440</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>isEmailSentSuccessfully</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <constants>
+        <description>LEM-11498: It holds &apos;,&apos; value.</description>
+        <name>CommaSeparator</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>,</stringValue>
+        </value>
+    </constants>
+    <description>LEM-11498: It sends email to the recipients populated in &apos;Recipient_Ids_To_Send_Notification__c&apos; field for Logs.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>LEM-11498: It stores subject of email notification on Log.</description>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.LogEmailNotificationSubject} + &apos; &apos; + {!Get_Parent_Details.Name}</expression>
+    </formulas>
+    <formulas>
+        <description>LEM-11499: It navigates to the Parent (Corporate/Franchise) Account having &apos;Store/Work Order Association Failures&apos;.</description>
+        <name>logsReportLink</name>
+        <dataType>String</dataType>
+        <expression>HYPERLINK(
+        LEFT({!$Api.Enterprise_Server_URL_540}, FIND({!$CustomMetadata.Static_Configurations__mdt.Enterprise_Server_URL_Search_Key.Configuration_Value__c}, {!$Api.Enterprise_Server_URL_540}, 0) - 1) + {!$CustomMetadata.Static_Configurations__mdt.Store_Related_Services_URL_Prefix.Configuration_Value__c} + {!parentId} + {!$CustomMetadata.Static_Configurations__mdt.FigmentCaseURLSuffix.Configuration_Value__c} , {!$CustomMetadata.Static_Configurations__mdt.Business_Error_Logs_Report_Name.Configuration_Value__c}
+    )</expression>
+    </formulas>
+    <interviewLabel>Subflow - Send Email Notification To Recepient Ids {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow - Send Email Notification To Recipient Ids</label>
+    <loops>
+        <description>LEM-11498: It iterates over collected Users to send email notification.</description>
+        <name>Loop_over_Recipients</name>
+        <label>Loop over Recipients</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <collectionReference>Get_Recipient_Details</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Collect_Email_Addresses</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Send_Email_Notification_to_Email_Ids</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>LEM-11498: It collects details of Account associated with parent Id.</description>
+        <name>Get_Parent_Details</name>
+        <label>Get Parent Details</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_over_Recipients</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>parentId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-11498: It collects User details by Recipient Ids.</description>
+        <name>Get_Recipient_Details</name>
+        <label>Get Recipient Details</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Parent_Details</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>recipientIdsToSendEmail</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>User</object>
+        <sortField>Name</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Recipient_Details</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>LEM-11498: It stores the email body for the email on Log.</description>
+        <name>EmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; color: rgb(0, 0, 0); font-size: 11px;&quot;&gt;Hello,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: sans-serif; font-size: 11px;&quot;&gt;This email is notify you that your stores have failed to associate to a Work Order in DDMx Salesforce (Lemonade).&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;Please click&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif; color: rgb(0, 0, 0);&quot;&gt;{!logsReportLink} &lt;/span&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;and navigate to the&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;Store/Work Order Association Failures tab&lt;/strong&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;on the far right&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;to see all the stores that have failed to associate to a Work Order along with the error messages explaining the failure.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;Please reference this &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1QspmNB2d8ZUu9yiB26oBTJhqgdbE8bH4l1jEKX8pPns/edit#slide=id.g1e8c9e2a43a_0_0&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;guide&lt;/a&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt; for troubleshooting steps pertaining to the error.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;Thank you,&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot;font-size: 11px; font-family: sans-serif;&quot;&gt;DDMx Salesforce Team&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>LEM-11498: It stores email addresses to send email notification.</description>
+        <name>emailIdsToSendEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-11498: It stores value based on whether email notification is sent successfully or not.</description>
+        <name>isEmailSentSuccessfully</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-11498: Parent Id to get details for Email.</description>
+        <name>parentId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-11498: Set of Recipient Ids to send email notification.</description>
+        <name>recipientIdsToSendEmail</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-11498: It stores the sender email address received from the calling flow.</description>
+        <name>senderEmailAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Label.LogEmailNotificationSenderEmailAddress</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-11498: It stores the value &apos;OrgWideEmailAddress&apos; for sender type.</description>
+        <name>senderType_OrgWideEmailAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>OrgWideEmailAddress</stringValue>
+        </value>
+    </variables>
+</Flow>

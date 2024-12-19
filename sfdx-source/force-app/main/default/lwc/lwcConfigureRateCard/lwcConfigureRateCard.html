@@ -1,0 +1,272 @@
+<template>
+  <template lwc:if={isSpinner}>
+    <div class="spinner">
+      <lightning-spinner
+        alternative-text="Loading..."
+        size="medium"
+      ></lightning-spinner>
+    </div>
+  </template>
+  <lightning-card title="Configure Rate Card" icon-name="custom:custom40">
+    <template lwc:if={displayTable}>
+      <lightning-button-icon
+        icon-name="utility:add"
+        slot="actions"
+        onclick={handleAddRow}
+        class="slds-m-right_x-small"
+      >
+      </lightning-button-icon>
+      <lightning-button
+        label="Save"
+        icon-name="utility:save"
+        slot="actions"
+        disabled={isSaveInProgess}
+        onclick={handleSave}
+      >
+      </lightning-button>
+    </template>
+    <template lwc:elseif={eligibleProductCheck}>
+      <div class="slds-align_absolute-center">
+        <p>{errorMessageForSelectedProduct}</p>
+      </div>
+    </template>
+    <template lwc:elseif={quoteLineIdExists}>
+      <div class="slds-align_absolute-center">
+        <p>{errorMessageForBlankQLId}</p>
+      </div>
+    </template>
+    <template lwc:if={displayTable}>
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+          <tr class="">
+            <th class="slds-size_1-of-3" scope="col">
+              <div class="slds-truncate" title="State">State</div>
+            </th>
+            <th class="slds-size_1-of-3" scope="col">
+              <div class="slds-truncate" title="Fee Type">Fee Type</div>
+            </th>
+            <th class="slds-size_1-of-3" scope="col">
+              <div class="slds-truncate" title="Fee Value">Fee Value</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <template
+            for:each={filterList}
+            for:item="filterData"
+            for:index="index"
+          >
+            <tr key={filterData.RateCardKey}>
+              <td>
+                <lightning-combobox
+                  name="state"
+                  data-row-id={filterData.RateCardKey}
+                  data-index={index}
+                  variant="label-hidden"
+                  value={filterData.State__c}
+                  onchange={handleChange}
+                  options={stateOptions}
+                >
+                </lightning-combobox>
+              </td>
+              <td>
+                <lightning-combobox
+                  name="feeType"
+                  data-row-id={filterData.RateCardKey}
+                  data-index={index}
+                  variant="label-hidden"
+                  value={filterData.Fee_Type__c}
+                  onchange={handleChange}
+                  options={feeTypeOptions}
+                >
+                </lightning-combobox>
+              </td>
+              <td>
+                <template lwc:if={filterData.showRateCard}>
+                  <lightning-button
+                    label="View Rate Card Tiers"
+                    data-row-id={filterData.RateCardKey}
+                    data-index={index}
+                    variant="Brand"
+                    onclick={handleViewRateCard}
+                  >
+                  </lightning-button>
+                </template>
+                <template lwc:else>
+                  <lightning-input
+                    type="number"
+                    name="feeValue"
+                    data-row-id={filterData.RateCardKey}
+                    data-index={index}
+                    value={filterData.Requested_Fee__c}
+                    variant="label-hidden"
+                    onchange={handleChange}
+                    formatter="currency"
+                    step="any"
+                  >
+                  </lightning-input>
+                </template>
+              </td>
+              <td class="slds-size_1-of-10" data-label="Action">
+                <lightning-button-icon
+                  data-row-id={filterData.RateCardKey}
+                  data-index={index}
+                  title="Clone"
+                  class="slds-float--right"
+                  icon-name="action:clone"
+                  onclick={handleCloneRow}
+                >
+                </lightning-button-icon>
+              </td>
+              <td class="slds-size_1-of-10" data-label="Action">
+                <lightning-button-icon
+                  data-row-id={filterData.RateCardKey}
+                  data-index={index}
+                  title="Delete"
+                  class="slds-float--right"
+                  icon-name="action:delete"
+                  onclick={handleRemoveRow}
+                >
+                </lightning-button-icon>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </template>
+  </lightning-card>
+
+  <template lwc:if={showModal}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-modal="true"
+      aria-labelledby="modal-heading-01"
+      class="slds-modal slds-fade-in-open"
+    >
+      <div class="slds-modal__container">
+        <lightning-button-icon
+          class="slds-modal__close"
+          icon-name="utility:close"
+          size="large"
+          variant="bare"
+          alternative-text="Close"
+          title="Close"
+          onclick={handleCloseModal}
+        >
+        </lightning-button-icon>
+        <div class="slds-modal__header">
+          <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+            Rate Card Tier
+          </h1>
+        </div>
+        <div
+          class="slds-modal__content slds-p-around_medium"
+          id="modal-content-id-1"
+        >
+          <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+              <tr class="">
+                <th class="slds-size_1-of-3" scope="col">
+                  <div class="slds-truncate" title="State">Lower Bound</div>
+                </th>
+                <th class="slds-size_1-of-3" scope="col">
+                  <div class="slds-truncate" title="Fee Type">Upper Bound</div>
+                </th>
+                <th class="slds-size_1-of-3" scope="col">
+                  <div class="slds-truncate" title="Fee Value">Flat Fee</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <template
+                for:each={rateCardTier}
+                for:item="tier"
+                for:index="index"
+              >
+                <tr key={tier.RateCardTierKey}>
+                  <td>
+                    <lightning-input
+                      type="number"
+                      name="LowerBand"
+                      data-row-id={tier.RateCardTierKey}
+                      data-index={index}
+                      value={tier.Lower_Bound__c}
+                      variant="label-hidden"
+                      formatter="currency"
+                      step="any"
+                      onchange={handleChangeRateCardTierValues}
+                    >
+                    </lightning-input>
+                  </td>
+                  <td>
+                    <lightning-input
+                      type="number"
+                      name="UpperBand"
+                      data-row-id={tier.RateCardTierKey}
+                      data-index={index}
+                      value={tier.Upper_Bound__c}
+                      variant="label-hidden"
+                      formatter="currency"
+                      step="any"
+                      onchange={handleChangeRateCardTierValues}
+                    >
+                    </lightning-input>
+                  </td>
+                  <td>
+                    <lightning-input
+                      type="number"
+                      name="FlatFee"
+                      data-row-id={tier.RateCardTierKey}
+                      data-index={index}
+                      value={tier.Fee_Value__c}
+                      variant="label-hidden"
+                      formatter="currency"
+                      step="any"
+                      onchange={handleChangeRateCardTierValues}
+                    >
+                    </lightning-input>
+                  </td>
+                  <td data-label="Action">
+                    <lightning-button-icon
+                      data-row-id={tier.RateCardTierKey}
+                      data-index={index}
+                      class="slds-float--right"
+                      icon-name="action:delete"
+                      onclick={handleRemoveRowRateCardTier}
+                    >
+                    </lightning-button-icon>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+        <div class="slds-modal__footer">
+          <lightning-button
+            label="Cancel"
+            title="Cancel"
+            onclick={handleCloseModal}
+            class="slds-m-right_x-small"
+          ></lightning-button>
+          <lightning-button
+            label="Add Rate Card Tier"
+            variant="brand"
+            title="Add Rate Card Tier"
+            onclick={handleAddRowRateCardTier}
+            class="slds-m-right_x-small"
+          >
+          </lightning-button>
+          <lightning-button
+            label="Save"
+            variant="brand"
+            title="Save"
+            disabled={isSaveInProgess}
+            onclick={handleSaveRateCards}
+          ></lightning-button>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+  </template>
+</template>

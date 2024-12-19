@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Title</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15836: It stores the document title.</description>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+</CustomField>

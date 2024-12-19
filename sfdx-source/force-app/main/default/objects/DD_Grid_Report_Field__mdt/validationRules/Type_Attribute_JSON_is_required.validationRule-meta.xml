@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_Attribute_JSON_is_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ OR (
+   ISPICKVAL( Type__c , &apos;action&apos;) ,
+   ISPICKVAL( Type__c , &apos;currency&apos;) ,
+   ISPICKVAL( Type__c , &apos;url&apos;) ,
+   ISPICKVAL( Type__c , &apos;recordUrl&apos;)
+ ),
+ ISBLANK(Type_Attributes_JSON__c)
+)</errorConditionFormula>
+    <errorDisplayField>Type_Attributes_JSON__c</errorDisplayField>
+    <errorMessage>This field is required for this type.</errorMessage>
+</ValidationRule>

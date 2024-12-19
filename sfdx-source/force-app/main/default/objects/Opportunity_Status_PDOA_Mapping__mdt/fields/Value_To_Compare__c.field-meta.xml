@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_To_Compare__c</fullName>
+    <description>LEM-2796: It indicates value to compare for a condition to satisfy for populating PDOA on Work Order.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Value To Compare</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Today</fullName>
+                <default>true</default>
+                <label>Today</label>
+            </value>
+            <value>
+                <fullName>Yesterday</fullName>
+                <default>false</default>
+                <label>Yesterday</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

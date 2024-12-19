@@ -1,0 +1,27 @@
+<!--
+  * @author Deloitte
+  * @date 06/12/2024
+  * @description LWC to show Mx Onboarding Link fields.
+-->
+<template>
+  <lightning-card>
+    <template lwc:if={loaded}>
+      <template if:true={hasActiveMxOnboardingLink}>
+        <lightning-record-form
+          object-api-name={objectApiName}
+          record-id={mxOnboardingLink.Id}
+          fields={fields}
+          columns="1"
+          mode="readonly"
+        >
+        </lightning-record-form>
+      </template>
+    </template>
+    <template lwc:else>
+      <div class="spinnerStyling">
+        <lightning-spinner
+          alternative-text={loadingAlternativeText}
+        ></lightning-spinner></div
+    ></template>
+  </lightning-card>
+</template>

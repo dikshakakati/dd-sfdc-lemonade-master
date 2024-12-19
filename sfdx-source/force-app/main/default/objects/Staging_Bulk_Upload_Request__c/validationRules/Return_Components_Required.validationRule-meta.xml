@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Components_Required</fullName>
+    <active>true</active>
+    <description>LEM-15978: Return Components is required and should be &apos;Yes&apos; if Request Type is &apos;Return&apos;.</description>
+    <errorConditionFormula>AND(
+     NOT($Permission.ByPass_Bulk_Update_Staging_Validation),
+     Request_Type__c = $Label.Work_Order_Sub_Type_Return,
+     NOT(ISPICKVAL(Return_Components__c, &apos;Yes&apos;))
+   )</errorConditionFormula>
+    <errorMessage>Return Components value should be &apos;Yes&apos; if Request Type is &apos;Return&apos;.</errorMessage>
+</ValidationRule>

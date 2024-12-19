@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Owner</field>
+    </columns>
+    <columns>
+        <field>Opportunity$StageName</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Account</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$Who</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$Event_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$Owner</field>
+    </columns>
+    <currency>USD</currency>
+    <description>This report lists all opportunities where the associated events have Status = Meeting Missed.</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Activities$Event_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Event Missed</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Meeting Missed Events on Opportunities</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Country_Code__c</fullName>
+    <complianceGroup>PII</complianceGroup>
+    <description>LEM-24604: It stores Billing Account&apos;s country code.Created to utlize in Account&apos;s list view.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(BillingCountryCode)</formula>
+    <label>Billing Country Code</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

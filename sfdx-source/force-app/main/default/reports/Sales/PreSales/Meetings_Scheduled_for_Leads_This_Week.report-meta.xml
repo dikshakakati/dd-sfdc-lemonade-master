@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Company</field>
+    </columns>
+    <columns>
+        <field>Lead$Owner</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Event_Status__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Meeting_Forum__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Upcoming Meetings Scheduled for Leads This Week.</description>
+    <filter>
+        <criteriaItems>
+            <column>Lead.Activities$EventSubtype</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>event</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Meetings Scheduled for Leads This Week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead.Activities$ActivityDate</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

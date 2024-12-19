@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commission_Rate_Number__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-13822:Used to hold the value of matched Commission Rate </description>
+    <externalId>false</externalId>
+    <inlineHelpText>The commission rate record used to set the target, ceiling, and floor commission rates for this line</inlineHelpText>
+    <label>Commission Rate Number</label>
+    <referenceTo>Commission_Rate__c</referenceTo>
+    <relationshipLabel>Quote Lines (Commission Rate Number)</relationshipLabel>
+    <relationshipName>Quote_Lines1</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

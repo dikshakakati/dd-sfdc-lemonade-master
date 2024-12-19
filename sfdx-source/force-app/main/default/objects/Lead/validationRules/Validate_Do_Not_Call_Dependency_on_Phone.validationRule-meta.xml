@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Do_Not_Call_Dependency_on_Phone</fullName>
+    <active>true</active>
+    <description>LEM-13618: It ensures "Do Not Call" is not be populated unless "Phone" or "Mobile" are populated.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Lead_Validation_Rules),
+  ISBLANK(Phone),
+  ISBLANK(MobilePhone),
+  DoNotCall
+)</errorConditionFormula>
+    <errorDisplayField>DoNotCall</errorDisplayField>
+    <errorMessage>“Do Not Call” field can only be completed if “Phone” or “Mobile” fields are populated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Event_Validation_Rules</name>
+    </customPermissions>
+    <description>LEM-13539: It used to bypass validation rules on Event object.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Event Validations</label>
+</PermissionSet>

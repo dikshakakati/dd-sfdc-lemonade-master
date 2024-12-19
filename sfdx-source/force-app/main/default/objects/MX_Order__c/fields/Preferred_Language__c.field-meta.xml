@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Language__c</fullName>
+    <description>If state is qc default the language to French</description>
+    <externalId>false</externalId>
+    <formula>IF(
+TEXT(Merchant_Address__StateCode__s) = &apos;QC&apos;,
+&apos;French&apos;,
+IF(
+ISBLANK(TEXT(Account__r.Preferred_Language__c)),
+&apos;English&apos;,
+TEXT(Account__r.Preferred_Language__c)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Preferred Language</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

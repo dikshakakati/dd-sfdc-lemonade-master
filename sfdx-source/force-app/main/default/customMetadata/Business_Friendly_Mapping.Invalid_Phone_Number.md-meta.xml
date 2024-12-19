@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Invalid Phone Number</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Business_Friendly_Message__c</field>
+        <value xsi:type="xsd:string">Store phone number is incorrect. The AO should correct the phone number on the store account and then rerun provisioning by clicking &quot;Reattempt Provisioning&quot; button on the work order.</value>
+    </values>
+    <values>
+        <field>Integration_Key_String__c</field>
+        <value xsi:type="xsd:string">INVALID_ARGUMENT: Phone number is of invalid format</value>
+    </values>
+    <values>
+        <field>Integration_Type__c</field>
+        <value xsi:type="xsd:string">Xref Provisioning</value>
+    </values>
+    <values>
+        <field>Message_Category__c</field>
+        <value xsi:type="xsd:string">Invalid Data - Phone Number</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">70.0</value>
+    </values>
+</CustomMetadata>

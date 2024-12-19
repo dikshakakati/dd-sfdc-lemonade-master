@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_ROE_For_SMB_Business</fullName>
+    <active>true</active>
+    <description>LEM-14107: It is used to validate if none or all Rules of Engagement fields are populated.</description>
+    <errorConditionFormula>AND(
+	NOT($Permission.Bypass_Account_Validation_Rules),
+	TEXT(Segment__c) = $Label.AccountSegmentSMB,
+	CONTAINS(Record_Type_Name__c,$Label.BusinessAccountRecordTypeName),
+	CONTAINS(TEXT( Managed_Status__c), $Label.Managed_Value_For_Managed_Unmanaged_Field),
+        OR(
+            ISCHANGED(Mx_Contact_Status__c),
+            ISCHANGED(Pilot_New_Initiatives_Interest__c),
+            ISCHANGED(Marketing_Outreach__c),
+            ISCHANGED(DoorDash_Social_Media_Marketing_Feature__c),
+            ISCHANGED(MQOS_Outreach__c),
+            ISCHANGED(Mx_Interest_in_Co_Funded_Marketing_Ops__c),
+            ISCHANGED(Mx_Management_Requested__c),
+            ISCHANGED(Product_Priority__c),
+            ISCHANGED(Outreach_Strategy__c),
+            ISCHANGED(Vendor_Outreach__c)
+        ),
+	NOT(
+		OR(
+			AND(
+				NOT(ISBLANK(TEXT(Mx_Contact_Status__c))),
+				NOT(ISBLANK(TEXT(Pilot_New_Initiatives_Interest__c))),
+				NOT(ISBLANK(TEXT(Marketing_Outreach__c))),
+				NOT(ISBLANK(TEXT(DoorDash_Social_Media_Marketing_Feature__c))),
+				NOT(ISBLANK(TEXT(MQOS_Outreach__c))),
+				NOT(ISBLANK(TEXT(Mx_Interest_in_Co_Funded_Marketing_Ops__c))),
+				NOT(ISBLANK(TEXT(Mx_Management_Requested__c))),
+				NOT(ISBLANK(TEXT(Product_Priority__c))),
+				NOT(ISBLANK(TEXT(Outreach_Strategy__c))),
+				NOT(ISBLANK(TEXT(Vendor_Outreach__c)))
+			),
+			AND(
+				ISBLANK(TEXT(Mx_Contact_Status__c)),
+				ISBLANK(TEXT(Pilot_New_Initiatives_Interest__c)),
+				ISBLANK(TEXT(Marketing_Outreach__c)),
+				ISBLANK(TEXT(DoorDash_Social_Media_Marketing_Feature__c)),
+				ISBLANK(TEXT(MQOS_Outreach__c)),
+				ISBLANK(TEXT(Mx_Interest_in_Co_Funded_Marketing_Ops__c)),
+				ISBLANK(TEXT(Mx_Management_Requested__c)),
+				ISBLANK(TEXT(Product_Priority__c)),
+				ISBLANK(TEXT(Outreach_Strategy__c)),
+				ISBLANK(TEXT(Vendor_Outreach__c))
+			)
+		)
+	)
+)</errorConditionFormula>
+    <errorMessage>Please populate all fields on Rules of Engagement.</errorMessage>
+</ValidationRule>

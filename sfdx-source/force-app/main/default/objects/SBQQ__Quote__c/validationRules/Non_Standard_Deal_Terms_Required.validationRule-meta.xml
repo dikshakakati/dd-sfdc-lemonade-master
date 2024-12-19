@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Standard_Deal_Terms_Required</fullName>
+    <active>true</active>
+    <description>LEM-451: Indicate if non-productized deal terms are included on Quote</description>
+    <errorConditionFormula>AND( SBQQ__Primary__c,
+ISPICKVAL(Deal_Terms__c, &quot;Non-Standard&quot;),
+ISBLANK(Non_Standard_Deal_Terms__c)
+)
+
+ || NOT(ISBLANK(Non_Standard_Deal_Terms__c))
+	&amp;&amp; (ISPICKVAL(Deal_Terms__c,&quot;Non-Standard&quot;) = FALSE)</errorConditionFormula>
+    <errorDisplayField>Non_Standard_Deal_Terms__c</errorDisplayField>
+    <errorMessage>Non-Standard Deal Terms field is Required if Deal Terms = Non-Standard</errorMessage>
+</ValidationRule>

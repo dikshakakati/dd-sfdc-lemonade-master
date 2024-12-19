@@ -1,0 +1,21 @@
+.slds-modal__container {
+  max-width: 100rem !important;
+  width: 100% !important;
+}
+details > summary {
+  background-color: #1171e5;
+  color: white;
+}
+.tab {
+  display: inline-block;
+  margin-left: 2em;
+}
+.package-selection {
+  display: flex;
+}
+.right-margin {
+  margin-right: 10px;
+}
+.bulk-onboarding-modal-font {
+  font-size: 1.1em;
+}

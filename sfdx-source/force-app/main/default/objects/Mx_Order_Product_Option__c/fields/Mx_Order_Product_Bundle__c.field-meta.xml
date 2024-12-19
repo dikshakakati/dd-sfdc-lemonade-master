@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Order_Product_Bundle__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-14053: It is used to map the Product bundle.</description>
+    <externalId>false</externalId>
+    <label>Mx Order Product Bundle</label>
+    <referenceTo>Mx_Order_Product_Bundle__c</referenceTo>
+    <relationshipLabel>Mx Order Product Options</relationshipLabel>
+    <securityClassification>Confidential</securityClassification>
+    <relationshipName>Mx_Order_Product_Options</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

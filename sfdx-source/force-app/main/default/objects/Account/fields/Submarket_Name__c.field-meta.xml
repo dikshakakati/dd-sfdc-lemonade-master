@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submarket_Name__c</fullName>
+    <description>LEM-13822: Utilized on Quote lines for comparing Commission Rates Submarket Name for CRT Stamping</description>
+    <externalId>false</externalId>
+    <formula>SubMarket__r.Submarket_ID__c</formula>
+    <label>Submarket Name</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

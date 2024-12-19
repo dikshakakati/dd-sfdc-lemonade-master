@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rebate_Amount__c</fullName>
+    <description>LEM-13482: It is used to capture the Rebate Amount for a corresponding product in the magic wand (drawer) on the QLE screen.</description>
+    <externalId>false</externalId>
+    <label>Rebate Amount</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

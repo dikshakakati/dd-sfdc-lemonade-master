@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_By_Needed_for_Aggregate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISBLANK(  Group_By__c ),
+  ISPICKVAL( Type__c , &apos;Aggregate Query&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Group_By__c</errorDisplayField>
+    <errorMessage>Required for &apos;Aggregate Query&apos; Types</errorMessage>
+</ValidationRule>

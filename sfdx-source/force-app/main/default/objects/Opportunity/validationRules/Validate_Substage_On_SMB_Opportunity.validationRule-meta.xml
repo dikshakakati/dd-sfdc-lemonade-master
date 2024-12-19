@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Substage_On_SMB_Opportunity</fullName>
+    <active>true</active>
+    <description>LEM-14697: This is to validate that substage is selected when type is new and stage is either prospecting or pitching.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  TEXT(Account.Segment__c) = $Label.AccountSegmentSMB,
+  OR(
+    TEXT(Type) = $Label.Opportunity_Type_New,
+    TEXT(Type) = $Label.Opportunity_Type_Existing
+  ),
+  OR(
+    TEXT(StageName) = $Label.Opportunity_Stage_Prospecting,
+    TEXT(StageName) = $Label.Opportunity_Stage_Pitching
+  ),
+  ISBLANK(TEXT(Substage__c))
+)</errorConditionFormula>
+    <errorDisplayField>Substage__c</errorDisplayField>
+    <errorMessage>Substage must be populated when the opportunity stage is Prospecting or Pitching. Please update before saving.</errorMessage>
+</ValidationRule>

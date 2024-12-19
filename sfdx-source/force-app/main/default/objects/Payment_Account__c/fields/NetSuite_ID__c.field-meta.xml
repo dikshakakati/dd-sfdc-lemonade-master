@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NetSuite_ID__c</fullName>
+    <description>LEM-1371: Payment Account Object setup</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Captures the NetSuite record ID of the related Customer account in NetSuite.</inlineHelpText>
+    <label>NetSuite ID</label>
+    <length>255</length>
+    <securityClassification>Proprietary</securityClassification>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

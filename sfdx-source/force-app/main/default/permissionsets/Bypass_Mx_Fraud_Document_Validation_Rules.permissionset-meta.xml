@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Mx_Fraud_Document_Validation_Rules</name>
+    </customPermissions>
+    <description>LEM-18890: It assigns custom permission to bypass validation rules on Mx Fraud Document object.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Mx Fraud Document Validation Rules</label>
+</PermissionSet>

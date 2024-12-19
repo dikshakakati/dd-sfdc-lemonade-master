@@ -1,0 +1,133 @@
+:host {
+    height: 100%;
+    display: flex;
+}
+
+.leftPanel {
+    width:350px;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    cursor: inherit;
+    pointer-events: auto;
+    opacity: 1;
+    float: left;
+    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftPanel-Collapsed {
+    width:56px;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    cursor: inherit;
+    pointer-events: auto;
+    opacity: 1;
+    float: left;
+    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftPanel-Header {
+    background-color: #444950;
+    font-size: 16px;
+    color: #FFF;
+    padding: 12px;
+    display: flex;
+}
+
+.leftPanel-Body {
+    padding: 12px 0px;
+    flex: 1;
+    display: block;
+    height: calc(100% - 24px);
+}
+
+.leftPanel-Collapsed-Body {
+    padding: 12px;
+    flex: 1;
+    display: block;
+    height: calc(100% - 24px);
+}
+
+.leftPanel-Body_Buttons {
+    display: flex;
+}
+
+.leftPanel-Body_Button {
+    flex: 1;
+}
+
+.leftPanel-Body_Filters {
+    margin: 12px 0px;
+    overflow: hidden auto;
+    height: calc(100% - 46px);
+}
+
+.rightPanel {
+    height: 100%;
+    display: block;
+}
+
+.rightPanel-regular {
+    width: calc(100% - 350px);
+}
+
+.rightPanel-expanded {
+    width: calc(100% - 56px);
+}
+
+.rightPanel-regular-quick-view {
+    width: calc(100% - 782px);
+}
+
+.rightPanel-expanded-quick-view {
+    width: calc(100% - 488px);
+}
+
+.rightPanel-Header {
+    background-color: #FFF;
+    height: 56px;
+    display: flex;
+}
+
+.rightPanel-Header_Info {
+    display: flex;
+    align-items: center;
+}
+
+.rightPanel-Header_Buttons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+}
+
+.rightPanel-DataSection {
+    height: calc(100% - 56px);
+    max-height: calc(100% - 56px);
+    position: relative;
+}
+
+.rightPanel-DataTable {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+.rightPanel-backdrop {
+    position: absolute;
+    visibility: visible;
+    opacity: .3;
+    transition: opacity var(--lwc-durationSlowly,0.4s) linear;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 2;
+    color: #FFF;
+    font-size: 20px;
+}

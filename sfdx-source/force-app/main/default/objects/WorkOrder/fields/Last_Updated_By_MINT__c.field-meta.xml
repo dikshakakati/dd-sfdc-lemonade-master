@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Updated_By_MINT__c</fullName>
+    <description>This field indicates the value when does this last updated by MINT User / Last Synced back from MINT (MuleSoft User)</description>
+    <externalId>false</externalId>
+    <label>Last Updated By MINT</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

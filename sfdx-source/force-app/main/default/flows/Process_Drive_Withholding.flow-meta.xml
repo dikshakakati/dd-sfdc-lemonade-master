@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>LEM-9551: It initiates External Id field update on the business reference associated with the Xrefs of the Corporate Account.</description>
+        <name>Initiate_External_Id_update</name>
+        <label>Initiate External Id update</label>
+        <locationX>578</locationX>
+        <locationY>566</locationY>
+        <actionName>BusReferenceIntegrationService</actionName>
+        <actionType>apex</actionType>
+        <faultConnector>
+            <targetReference>Log_Failure</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>corporateAccountIds</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <description>LEM-9551: It checks for active franchise agreements associated with Contract and MP Bz Id populated on Contract.</description>
+        <name>Check_Active_Franchise_Agreement_and_MP_Bz_Id</name>
+        <label>Check Active Franchise Agreement and MP Bz Id</label>
+        <locationX>578</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Null_MP_Bz_Id_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_Active_Withholding_Contract_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>contractId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_Active_Withholding_Contract_Message</targetReference>
+            </connector>
+            <label>No Active Withholding Contract Exist?</label>
+        </rules>
+        <rules>
+            <name>No_Active_Franchise_Agreements</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Collect_Active_Franchise_Agreement</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_Active_Franchise_Agreement_Message</targetReference>
+            </connector>
+            <label>No Active Franchise Agreements?</label>
+        </rules>
+        <rules>
+            <name>Is_MP_Bz_Id_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>mpBzId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Confirmation_Message</targetReference>
+            </connector>
+            <label>Is MP Bz Id Not Null?</label>
+        </rules>
+    </decisions>
+    <description>LEM-9551: It is used to update External_Id__c on business reference with the MP Bz Id populated on Contract.</description>
+    <environments>Default</environments>
+    <interviewLabel>Process Drive Withholding {!$Flow.CurrentDateTime}</interviewLabel>
+    <isAdditionalPermissionRequiredToRun>true</isAdditionalPermissionRequiredToRun>
+    <label>Process Drive Withholding</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>LEM-9551: It creates log record when any exception occurs.</description>
+        <name>Log_Failure</name>
+        <label>Log Failure</label>
+        <locationX>842</locationX>
+        <locationY>674</locationY>
+        <inputAssignments>
+            <field>Class_Method_Name__c</field>
+            <value>
+                <elementReference>$Flow.CurrentStage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Class_Name__c</field>
+            <value>
+                <elementReference>$Flow.InterviewGuid</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Detailed_Message__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Record_Id__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>LEM-10179: It collects active franchise agreements associated with the Contract.</description>
+        <name>Collect_Active_Franchise_Agreement</name>
+        <label>Collect Active Franchise Agreement</label>
+        <locationX>578</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Active_Franchise_Agreement_and_MP_Bz_Id</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Franchise Agreement</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Contract__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>contractId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Agreement__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-9551: It collects MP Bz Id populated on Contract.</description>
+        <name>Collect_MP_Bz_Id</name>
+        <label>Collect MP Bz Id</label>
+        <locationX>578</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Collect_Active_Franchise_Agreement</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Activated</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Payment_Method__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Withholding</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>Contract</object>
+        <outputAssignments>
+            <assignToReference>contractId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>mpBzId</assignToReference>
+            <field>MP_Bz_Id__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <screens>
+        <description>LEM-9551: It is used to show the confirmation message.</description>
+        <name>Confirmation_Message</name>
+        <label>Confirmation Message</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Cancel</backButtonLabel>
+        <connector>
+            <targetReference>Initiate_External_Id_update</targetReference>
+        </connector>
+        <fields>
+            <name>Message</name>
+            <fieldText>&lt;p&gt;{!$Label.Process_Drive_Withholding_Prompt_Message}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Continue</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-10179: It shows the message when no active franchise agreement is associated with Contract.</description>
+        <name>No_Active_Franchise_Agreement_Message</name>
+        <label>No Active Franchise Agreement Message</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Show_No_Active_Franchise_Agreement_Message</name>
+            <fieldText>&lt;p&gt;{!$Label.No_Active_Franchise_Agreements_Message}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>OK</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-10496: It shows message when no active contract having Payment Method as &apos;Withholding&apos; associated with corporate account.</description>
+        <name>No_Active_Withholding_Contract_Message</name>
+        <label>No Active Withholding Contract Message</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Show_No_Active_Withholding_Contract_Message</name>
+            <fieldText>&lt;p&gt;{!$Label.No_Active_Withholding_Contract_Message}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>OK</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-9551: It shows the message when MP Bz Id is null.</description>
+        <name>Null_MP_Bz_Id_Message</name>
+        <label>Null MP Bz Id Message</label>
+        <locationX>1106</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>MP_Bz_Id_Null_Message</name>
+            <fieldText>&lt;p&gt;{!$Label.Null_MP_Bz_Id_Message}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>OK</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Collect_MP_Bz_Id</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-10179: It stores associated Contract Id.</description>
+        <name>contractId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-9551: It stores the MP Bz Id populated on the Contract.</description>
+        <name>mpBzId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-9551: It stores the record Id of current record.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

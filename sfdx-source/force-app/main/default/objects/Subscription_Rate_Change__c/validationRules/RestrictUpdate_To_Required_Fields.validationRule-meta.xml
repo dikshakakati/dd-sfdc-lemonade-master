@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictUpdate_To_Required_Fields</fullName>
+    <active>true</active>
+    <description>LEM-13365 Restrict updates on fields once record is created.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+OR(
+ISCHANGED(Rate_Change_Request__c),
+ISCHANGED(Subscription__c)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot edit the Subscription and Rate Change Request once the record is created.</errorMessage>
+</ValidationRule>

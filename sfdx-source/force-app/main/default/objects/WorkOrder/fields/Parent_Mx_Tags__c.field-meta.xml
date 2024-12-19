@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Mx_Tags__c</fullName>
+    <description>LEM-25599: It stores value from Mx Tags field on the parent Work Order to child Work Order. It is used by Q-assign to check Mx Tags for routing queues.</description>
+    <externalId>false</externalId>
+    <formula>IF(ParentWorkOrderId = null, Mx_Tags__c, ParentWorkOrder.Mx_Tags__c)</formula>
+    <label>Parent Mx Tags</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

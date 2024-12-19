@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AQS_Preview_Approval</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Preview Approval</masterLabel>
+    <openType>noSidebar</openType>
+    <protected>false</protected>
+    <url>/apex/sbaa__PreviewApprovals?Id={!SBQQ__Quote__c.Id}&amp;
+&amp;hidesubmit={!IF(SBQQ__Quote__c.Segment__c = &apos;SMB&apos;,1,0)}</url>
+</WebLink>

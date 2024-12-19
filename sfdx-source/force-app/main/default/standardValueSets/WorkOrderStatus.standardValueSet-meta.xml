@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupingStringEnum>WorkStatusCategory</groupingStringEnum>
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Planning</fullName>
+        <default>true</default>
+        <label>Planning</label>
+        <groupingString>None</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Confirmed</fullName>
+        <default>false</default>
+        <label>Confirmed</label>
+        <groupingString>None</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <label>In Progress</label>
+        <groupingString>None</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>At Risk</fullName>
+        <default>false</default>
+        <label>At Risk</label>
+        <groupingString>None</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Past Due</fullName>
+        <default>false</default>
+        <label>Past Due</label>
+        <groupingString>None</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Onboarding Complete</fullName>
+        <default>false</default>
+        <label>Onboarding Complete</label>
+        <groupingString>None</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Dead</fullName>
+        <default>false</default>
+        <label>Dead</label>
+        <groupingString>None</groupingString>
+    </standardValue>
+</StandardValueSet>

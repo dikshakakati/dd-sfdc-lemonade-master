@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assign_to_Others</fullName>
+    <availability>online</availability>
+    <description>LEM-4801: It is used for assigning the current WorkPlan and child WorkPlans to the selected user.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Assign To Others</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/flow/Assign_To_Others_Bulk?retURL=/lightning/o/WorkPlan/list?filterName=Recent</url>
+</WebLink>

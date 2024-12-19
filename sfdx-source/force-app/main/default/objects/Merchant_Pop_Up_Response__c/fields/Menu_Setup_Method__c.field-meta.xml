@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_Setup_Method__c</fullName>
+    <securityClassification>Confidential</securityClassification>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-7310- Used to store Menu setup method on the account.</description>
+    <externalId>false</externalId>
+    <label>Menu Setup Method</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ask Merchant to input</fullName>
+                <default>false</default>
+                <label>Ask Merchant to input</label>
+            </value>
+            <value>
+                <fullName>Clone Existing Menu(s)</fullName>
+                <default>false</default>
+                <label>Clone Existing Menu(s)</label>
+            </value>
+            <value>
+                <fullName>Link to Existing Menu(s)</fullName>
+                <default>false</default>
+                <label>Link to Existing Menu(s)</label>
+            </value>
+            <value>
+                <fullName>None - Menu Setup Complete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>None - Menu Setup Complete</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

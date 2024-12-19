@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Split_Category__c</fullName>
+    <description>LEM-16229: It is used to fetch the related Contract&apos;s split category.</description>
+    <externalId>false</externalId>
+    <formula>SBQQ__Opportunity2__r.Contract.Contract_Split_Category__c</formula>
+    <label>Contract Split Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advertisement_Quote_Line_Count__c</fullName>
+    <description>LEM - 2014: Used for &apos;Check for Templatized Contract Generation Path&apos; Product Validation Rule</description>
+    <externalId>false</externalId>
+    <formula>IF( CONTAINS(SBQQ__ProductFamily__c, &apos;Advertisement&apos;)
+
+
+			&amp;&amp;  ISBLANK(SBQQ__UpgradedSubscription__c),
+
+
+				1, 2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Advertisement Quote Line Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Supplemental_Agreement_URL__c</fullName>
+    <description>LEM-2771: URL for Master Supplemental Agreement</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please do not populate this field manually. Navigate to ‘Upload MSA &amp; FSA’ section under ‘Related’ tab and upload the files, this field will automatically get updated with the Public URL.</inlineHelpText>
+    <label>Master Service Agreement URL</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Url</type>
+</CustomField>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.WorkOrders$Owner</field>
+    </columns>
+    <columns>
+        <field>Account.WorkOrders$Name</field>
+    </columns>
+    <columns>
+        <field>Account.WorkOrders$Id</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.WorkOrders$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketplace</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.WorkOrders$LastModifiedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Maya Fisher,Michelle Watson,Tasia Hester,Alize Sanders,Cheyenne Stevenson,Dione Alvarado,Chi Macon,Mike Scaro,Veronica Reyes,Roxanne Angulo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.WorkOrders$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Maya Fisher,Michelle Watson,Tasia Hester,Alize Sanders,Cheyenne Stevenson,Dione Alvarado,Chi Macon,Mike Scaro,Veronica Reyes,Roxanne Angulo,Onboarding - POS Integrations,Onboarding - POS,Onboarding - POS Escalations,POS Integration Requests</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.WorkOrders$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Planning,Confirmed,In Progress,At Risk,Past Due,Onboarding Complete,Dead</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Square/Toast/Chow Block! Report (Dates)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Workorders_with_Workplans_Workstep__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.WorkOrders$LastModifiedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_to_Contact_for_Issues_or_Updates__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1162: It indicates whom should user ask direct question about POS request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who do we direct questions to about the POS request</inlineHelpText>
+    <label>Who to Contact for Issues or Updates</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Follow up with requester</fullName>
+                <default>false</default>
+                <label>Follow up with requester</label>
+            </value>
+            <value>
+                <fullName>Follow up with merchant</fullName>
+                <default>false</default>
+                <label>Follow up with merchant</label>
+            </value>
+            <value>
+                <fullName>Follow up with account owner</fullName>
+                <default>false</default>
+                <label>Follow up with account owner</label>
+            </value>
+            <value>
+                <fullName>Follow up with account owner and merchant</fullName>
+                <default>false</default>
+                <label>Follow up with account owner and merchant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

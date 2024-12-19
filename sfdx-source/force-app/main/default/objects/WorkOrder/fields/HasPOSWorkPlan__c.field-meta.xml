@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HasPOSWorkPlan__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-1874: It indicates whether parent Work Order is eligible for POS Work Plan whenever child Work Orders are attached with store Account not having POS Integration Type as &quot;non_integrated_mx&quot;.</description>
+    <externalId>false</externalId>
+    <label>HasPOSChildWorkPlans</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

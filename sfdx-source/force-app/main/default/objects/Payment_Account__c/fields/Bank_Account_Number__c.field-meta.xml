@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bank_Account_Number__c</fullName>
+    <complianceGroup>PII</complianceGroup>
+    <description>LEM-1150: This field used to store Bank account number.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please enter the correct Bank Account Number length (AUS = 6-10 digits, US = 6-17 digits, NZ = 13-16 digits, CAN = 7-12 digits)</inlineHelpText>
+    <label>Bank Account Number</label>
+    <length>50</length>
+    <maskChar>X</maskChar>
+    <maskType>all</maskType>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>EncryptedText</type>
+</CustomField>

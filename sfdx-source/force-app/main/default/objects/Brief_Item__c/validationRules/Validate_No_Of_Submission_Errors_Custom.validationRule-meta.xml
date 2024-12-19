@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_No_Of_Submission_Errors_Custom</fullName>
+    <active>true</active>
+    <description>LEM - 9491 : Add 3 Additional Fields - Brief Item</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+TEXT(Status__c) = $Label.Testing_New_Submission,
+OR(
+TEXT(Product__c) = $Label.Brief_Product_BuyAndGetOff,
+TEXT(Product__c) = $Label.Brief_Product_BuyOneGetOne,
+TEXT(Product__c) = $Label.Brief_Product_DoorDashDeals,
+TEXT(Product__c) = $Label.Brief_Product_TryMeFree,
+TEXT(Product__c) = $Label.Brief_Product_FirstOrderOff,
+TEXT(Product__c) = $Label.Brief_Product_FreeItemOverX,
+TEXT(Product__c) = $Label.Brief_Product_OrderAgain,
+TEXT(Product__c) = $Label.Brief_Product_SpendXGetY,
+TEXT(Product__c) = $Label.Brief_Product_Banners,
+TEXT(Product__c) = $Label.Brief_Product_CRM,
+TEXT(Product__c) = $Label.Brief_Product_SponsoredListing,
+TEXT(Product__c) = $Label.Brief_Product_CustomMarketing
+),
+TEXT(Brief__r.Configuration__c) = $Label.Brief_Configuration_Custom,
+ISBLANK( Number_of_Submission_Errors__c )
+)</errorConditionFormula>
+    <errorMessage>To move the Brief item Status to "Testing - New Submission" ,Number Of Submission Error is required when Brief Configuration is Custom (Ad Ops).</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HasWorkPlansGenerated__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-1956: It indicates whether Work Plans are generated on parent Work Order.</description>
+    <externalId>false</externalId>
+    <label>HasWorkPlansGenerated</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

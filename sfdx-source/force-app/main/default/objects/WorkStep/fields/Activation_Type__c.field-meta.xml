@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activation_Type__c</fullName>
+    <description>LEM-4670: It is used by Activations Team to classify the type of activation performed and report on the activated stores.</description>
+    <externalId>false</externalId>
+    <label>Activation Type</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None - Checklist Only</fullName>
+                <default>false</default>
+                <label>None - Checklist Only</label>
+            </value>
+            <value>
+                <fullName>Rep Activation</fullName>
+                <default>false</default>
+                <label>Rep Activation</label>
+            </value>
+            <value>
+                <fullName>Self-Activation</fullName>
+                <default>false</default>
+                <label>Self-Activation</label>
+            </value>
+            <value>
+                <fullName>Auto-Activation</fullName>
+                <default>false</default>
+                <label>Auto-Activation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

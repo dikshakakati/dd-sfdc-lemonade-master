@@ -1,0 +1,12 @@
+<template>
+    <lightning-quick-action-panel header={headerText} class={headerCSS} >
+        <template lwc:if={isSubHeaderBackGroundColor}> 
+            <div style={subHeaderStyle}>
+                <div if:true={subHeaderText} class={subHeaderCSS}>{subHeaderText}</div>
+            </div> 
+        </template>
+        <template lwc:else> 
+            <div if:true={subHeaderText} class={subHeaderCSS}>{subHeaderText}</div> 
+        </template>
+    </lightning-quick-action-panel>
+</template>

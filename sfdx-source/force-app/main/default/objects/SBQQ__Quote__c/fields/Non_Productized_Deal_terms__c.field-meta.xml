@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Productized_Deal_terms__c</fullName>
+    <description>LEM-6756: To properly operationalize Non-Productized deal terms for Drive opportunities.</description>
+    <externalId>false</externalId>
+    <label>Non-Productized Deal terms</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1-time adjustment</fullName>
+                <default>false</default>
+                <label>1-time adjustment</label>
+            </value>
+            <value>
+                <fullName>TRT Adjustments</fullName>
+                <default>false</default>
+                <label>TRT Adjustments</label>
+            </value>
+            <value>
+                <fullName>BI Script</fullName>
+                <default>false</default>
+                <label>BI Script</label>
+            </value>
+            <value>
+                <fullName>Drive Ops Monitoring</fullName>
+                <default>false</default>
+                <label>Drive Ops Monitoring</label>
+            </value>
+            <value>
+                <fullName>DAT process</fullName>
+                <default>false</default>
+                <label>DAT process</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

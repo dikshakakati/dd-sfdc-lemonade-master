@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand_Owner__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-564: Represents the Owner of the Brand.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents the Owner of the Brand</inlineHelpText>
+    <label>Brand Owner</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Business</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Brands</relationshipLabel>
+    <relationshipName>Brands</relationshipName>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

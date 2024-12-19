@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order_Type__c</fullName>
+    <description>LEM-2348: It holds Work Order type values. It should always be in sync with Work_Order_Type global value set until Salesforce support usage of global value set in custom metadata.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Work Order Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Marketplace</fullName>
+                <default>true</default>
+                <label>Marketplace</label>
+            </value>
+            <value>
+                <fullName>Storefront</fullName>
+                <default>false</default>
+                <label>Storefront</label>
+            </value>
+            <value>
+                <fullName>COO</fullName>
+                <default>false</default>
+                <label>COO</label>
+            </value>
+            <value>
+                <fullName>Drive</fullName>
+                <default>false</default>
+                <label>Drive</label>
+            </value>
+            <value>
+                <fullName>Post-Sales</fullName>
+                <default>false</default>
+                <label>Post-Sales</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

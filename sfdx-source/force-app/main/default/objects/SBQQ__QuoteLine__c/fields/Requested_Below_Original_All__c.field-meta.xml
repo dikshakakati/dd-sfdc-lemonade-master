@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Below_Original_All__c</fullName>
+    <description>LEM-13986: It checks original commission is greater than requested commission.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        SBQQ__Existing__c = false,
+        AND(
+          Package__c != $Label.SmallOrderFulfillment_Package,
+          Package__c != $Label.LargeOrderFulfillment_Package
+        ),
+        OR(
+            (
+                Requested_Commission__c &lt; Original_Commission__c &amp;&amp;
+                Requested_Commission__c &gt;= 0.01 &amp;&amp;
+                ISBLANK(TEXT(Prior_Approved_Commission_Percent__c))
+            ),
+            (
+                Requested_Commission__c &lt; Prior_Approved_Commission_Percent__c &amp;&amp;
+                Requested_Commission__c &gt;= 0.01 &amp;&amp;
+                !ISBLANK(TEXT(Prior_Approved_Commission_Percent__c)) &amp;&amp;
+                Requested_Commission__c != Prior_Approved_Commission_Percent__c
+            )
+        )
+    ),
+    1,2
+)</formula>
+    <label>Requested Below Original All</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

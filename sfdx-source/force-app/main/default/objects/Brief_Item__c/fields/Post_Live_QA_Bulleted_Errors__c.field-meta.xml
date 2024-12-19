@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Live_QA_Bulleted_Errors__c</fullName>
+    <description>LEM-3674: It is used to stores the errors that occurred after go live of the Brief Item.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Describe any errors found as part of the Post-Live QA process.</inlineHelpText>
+    <label>Post-Live QA Bulleted Errors</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

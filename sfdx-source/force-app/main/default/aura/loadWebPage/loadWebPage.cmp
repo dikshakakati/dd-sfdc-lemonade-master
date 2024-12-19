@@ -1,0 +1,4 @@
+<!-- LEM-449, LEM-2505 -->
+<aura:component implements="lightning:availableForFlowActions">
+  <aura:attribute name="url" type="String" required="true" />
+</aura:component>

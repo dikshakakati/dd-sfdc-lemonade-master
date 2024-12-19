@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Business_Address_Verification</fullName>
+    <active>true</active>
+    <description>LEM-23470: It restricts to update &quot;Address Verification Status&quot; on Business Account when users have 'Allow Access to Verify Address'permission.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  $Permission.Allow_Access_to_Verify_Address,
+  $RecordType.Name = $Label.BusinessAccountRecordTypeName,
+  ISCHANGED(Address_Verification_Status__c),
+  Text(Address_Verification_Status__c) = $Label.Verified,
+  OR(
+    ISBLANK(BillingStreet),
+    ISBLANK(BillingCity),
+    ISBLANK(TEXT(BillingStateCode)),
+    ISBLANK(BillingPostalCode),
+    ISBLANK( Billing_Country_Code__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>Billing Street, City, State/Province Code, Zip/Postal Code, and Country Code must be populated in order to update the Address Verification Status to Verified.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>LEM-13990: Sends the Slack Notification to the reassigned user along with the related record.</description>
+        <name>Reassigned_Slack_Notification</name>
+        <label>Reassigned Slack Notification</label>
+        <locationX>308</locationX>
+        <locationY>384</locationY>
+        <actionName>custom__Approval_Request_Slack_Notification</actionName>
+        <actionType>sendNotification</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>UserId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>custom__Approval_Request_Slack_Notification</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>LEM-13990: Stores the Id of the re-assigned user.</description>
+        <name>ReassignedUser</name>
+        <label>ReassignedUser</label>
+        <locationX>308</locationX>
+        <locationY>276</locationY>
+        <assignmentItems>
+            <assignToReference>UserId</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.sbaa__AssignedTo__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Reassigned_Slack_Notification</targetReference>
+        </connector>
+    </assignments>
+    <description>LEM-13990: Send a Slack Notification if the Approval request has been reassigned to a new user.</description>
+    <environments>Default</environments>
+    <interviewLabel>Reassign Slack Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reassign Slack Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>sbaa__Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Requested</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>sbaa__AssignedTo__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>sbaa__Approval__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>ReassignedUser</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-13990: Stores the User Id</description>
+        <name>UserId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,14 @@
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Segment__c</fullName>
+    <description>LEM-14728: It is used to populate the Account&apos;s Segment value.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <formula>TEXT(Account__r.Segment__c)</formula>
+    <label>Account Segment</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

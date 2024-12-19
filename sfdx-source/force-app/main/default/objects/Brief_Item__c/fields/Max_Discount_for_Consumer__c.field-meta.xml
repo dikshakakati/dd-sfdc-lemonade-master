@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Discount_for_Consumer__c</fullName>
+    <description>LEM-2983: Captures the maximum discount for the consumer.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field reflects the max discount offered to the consumer.</inlineHelpText>
+    <label>Max Discount for Consumer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

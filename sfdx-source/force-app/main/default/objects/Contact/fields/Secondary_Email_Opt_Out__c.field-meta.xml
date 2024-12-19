@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Email_Opt_Out__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <defaultValue>false</defaultValue>
+    <description>LEM-16624: It tracks if the Secondary email address associated with a Contact has opted out of email communications.</description>
+    <externalId>false</externalId>
+    <label>Secondary Email Opt Out</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

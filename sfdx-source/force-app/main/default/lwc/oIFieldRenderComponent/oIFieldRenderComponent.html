@@ -1,0 +1,365 @@
+<template>
+  <template lwc:if={sectionFields}>
+    <template for:each={sectionFields} for:item="field">
+      <template if:true={field.isText}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            required="true"
+            type="text"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            onfocusout={handleInputChange}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            type="text"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            onfocusout={handleInputChange}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isNumber}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            required="true"
+            type="number"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            type="number"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isEmail}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            required="true"
+            type="email"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            type="email"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isLongText}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-textarea
+            required="true"
+            key={field.OIAttribute__r.Id}
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-textarea>
+        </template>
+        <template lwc:else>
+          <lightning-textarea
+            key={field.OIAttribute__r.Id}
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-textarea>
+        </template>
+      </template>
+      <template if:true={field.isDate}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            required="true"
+            key={field.OIAttribute__r.Id}
+            type="date"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            type="date"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isCountryField}>
+        <lightning-combobox
+          required="true"
+          key={field.OIAttribute__r.Id}
+          placeholder="--Select--"
+          label={field.OIAttribute__r.Field_Name__c}
+          options={countries}
+          value={selectedCountry}
+          onchange={handleCountry}
+          data-api-name={field.OIAttribute__r.Field_API_Name__c}
+          data-field-type={field.OIAttribute__r.Data_Type__c}
+          data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+          field-level-help={field.Attribute_HelpText__c}
+        ></lightning-combobox>
+      </template>
+      <template if:true={field.isStateField}>
+        <lightning-combobox
+          required="true"
+          key={field.OIAttribute__r.Id}
+          placeholder="--Select--"
+          label={field.OIAttribute__r.Field_Name__c}
+          options={states}
+          value={selectedState}
+          onchange={handleState}
+          data-api-name={field.OIAttribute__r.Field_API_Name__c}
+          data-field-type={field.OIAttribute__r.Data_Type__c}
+          data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+          field-level-help={field.Attribute_HelpText__c}
+        ></lightning-combobox>
+      </template>
+      <template if:true={field.isPickList}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-combobox
+            required="true"
+            key={field.OIAttribute__r.Id}
+            placeholder="--Select--"
+            label={field.OIAttribute__r.Field_Name__c}
+            options={field.picklistValues}
+            value={field.defaultValue}
+            onchange={handlePicklistChange}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-combobox>
+        </template>
+        <template lwc:else>
+          <lightning-combobox
+            key={field.OIAttribute__r.Id}
+            placeholder="--Select--"
+            label={field.OIAttribute__r.Field_Name__c}
+            options={field.picklistValues}
+            value={field.defaultValue}
+            onchange={handlePicklistChange}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-combobox>
+        </template>
+      </template>
+      <template if:true={field.isPhone}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            required="true"
+            key={field.OIAttribute__r.Id}
+            type="Phone"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+            pattern="[0-9]+"
+            message-when-pattern-mismatch={phoneFormatValidationError}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            type="Phone"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+            pattern="[0-9]+"
+            message-when-pattern-mismatch={phoneFormatValidationError}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isCheckbox}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            required="true"
+            key={field.OIAttribute__r.Id}
+            type="checkbox"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            type="checkbox"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isDateTime}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            required="true"
+            key={field.OIAttribute__r.Id}
+            type="datetime"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            type="datetime"
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isPercent}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            required="true"
+            key={field.OIAttribute__r.Id}
+            type="number"
+            label={field.OIAttribute__r.Field_Name__c}
+            formatter="percent-fixed"
+            step=".01"
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            type="number"
+            label={field.OIAttribute__r.Field_Name__c}
+            formatter="percent-fixed"
+            step=".01"
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isTextArea}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-textarea
+            required="true"
+            key={field.OIAttribute__r.Id}
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-textarea>
+        </template>
+        <template lwc:else>
+          <lightning-textarea
+            key={field.OIAttribute__r.Id}
+            label={field.OIAttribute__r.Field_Name__c}
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-textarea>
+        </template>
+      </template>
+      <template if:true={field.isTime}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            required="true"
+            key={field.OIAttribute__r.Id}
+            label={field.OIAttribute__r.Field_Name__c}
+            type="time"
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            label={field.OIAttribute__r.Field_Name__c}
+            type="time"
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+          ></lightning-input>
+        </template>
+      </template>
+      <template if:true={field.isURL}>
+        <template lwc:if={field.Is_Required__c}>
+          <lightning-input
+            required="true"
+            key={field.OIAttribute__r.Id}
+            label={field.OIAttribute__r.Field_Name__c}
+            type="url"
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+        <template lwc:else>
+          <lightning-input
+            key={field.OIAttribute__r.Id}
+            label={field.OIAttribute__r.Field_Name__c}
+            type="url"
+            data-api-name={field.OIAttribute__r.Field_API_Name__c}
+            data-field-type={field.OIAttribute__r.Data_Type__c}
+            data-no-scenario-section={field.OISectionCondition__r.Store_Section_For_No_Rep_Scenario__c}
+            field-level-help={field.Attribute_HelpText__c}
+          ></lightning-input>
+        </template>
+      </template>
+    </template>
+  </template>
+</template>

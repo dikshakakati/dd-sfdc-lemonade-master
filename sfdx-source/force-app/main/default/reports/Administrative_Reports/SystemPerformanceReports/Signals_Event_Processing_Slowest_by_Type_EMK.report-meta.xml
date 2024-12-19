@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Inbound_Ingestion_Log__c$Name</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$UUID__c</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Inbound_Ingestion_Log__c$Status__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Maximum</aggregateTypes>
+        <field>CDF1</field>
+    </columns>
+    <currency>USD</currency>
+    <customDetailFormulas>
+        <calculatedFormula>CEILING((Inbound_Ingestion_Log__c.LastModifiedDate-Inbound_Ingestion_Log__c.CreatedDate)/0.00001157)</calculatedFormula>
+        <dataType>Double</dataType>
+        <description>Processing time in seconds</description>
+        <developerName>CDF1</developerName>
+        <label>Processing Time</label>
+        <scale>0</scale>
+    </customDetailFormulas>
+    <description>Displays the slowest processing time for successfully processed Signal events this week by integration type</description>
+    <filter>
+        <criteriaItems>
+            <column>Inbound_Ingestion_Log__c$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Completed,Success</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Inbound_Ingestion_Log__c$Parent_Log__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Inbound_Ingestion_Log__c$Integration_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Signals Event Processing Slowest by Type</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>InboundIngestionLogs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CDF1</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Inbound_Ingestion_Log__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_LASTTHISMONTH</interval>
+    </timeFrameFilter>
+</Report>

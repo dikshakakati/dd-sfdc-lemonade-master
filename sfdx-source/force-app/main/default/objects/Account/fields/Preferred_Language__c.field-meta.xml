@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Language__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1048: Signifies which Language the Mx prefers.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Signifies which Language the Mx prefers. This will be utilized to dictate Tablet Language, Mx Marketing Language, the Language Activations Reps will use to make calls, and to create an additional Menu in this Language</inlineHelpText>
+    <label>Preferred Language</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Preferred_Language_Values</valueSetName>
+    </valueSet>
+</CustomField>

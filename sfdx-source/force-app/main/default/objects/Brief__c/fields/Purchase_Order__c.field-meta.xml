@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchase_Order__c</fullName>
+    <description>LEM-2983: Captures the order number associated with the Brief.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the Advertiser has provided a PO# for the overall campaign or multiple at the product level, provide it here.</inlineHelpText>
+    <label>Purchase Order #</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>LEM-9964: It stores the Status values of SObjects(currently used for WorkStep).</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Status</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Workable</fullName>
+                <default>true</default>
+                <label>Not Workable</label>
+            </value>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Ready for QA</fullName>
+                <default>false</default>
+                <label>Ready for QA</label>
+            </value>
+            <value>
+                <fullName>QA Complete</fullName>
+                <default>false</default>
+                <label>QA Complete</label>
+            </value>
+            <value>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+                <label>Escalated</label>
+            </value>
+            <value>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+                <label>Blocked</label>
+            </value>
+            <value>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+                <label>Resolved</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Complete - DoorDash to implement link</fullName>
+                <default>false</default>
+                <label>Complete - DoorDash to implement link</label>
+            </value>
+            <value>
+                <fullName>Complete - Mx to implement link</fullName>
+                <default>false</default>
+                <label>Complete - Mx to implement link</label>
+            </value>
+            <value>
+                <fullName>Complete - Implemented on the call</fullName>
+                <default>false</default>
+                <label>Complete - Implemented on the call</label>
+            </value>
+            <value>
+                <fullName>Dead</fullName>
+                <default>false</default>
+                <label>Dead</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Active__c</fullName>
+    <description>LEM-17422: It is used to check if subscription is active or not.</description>
+    <externalId>false</externalId>
+    <formula>ISBLANK(SBQQ__TerminatedDate__c)</formula>
+    <label>Is Active?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

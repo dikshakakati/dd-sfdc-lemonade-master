@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Institution_Number_Input</fullName>
+    <active>true</active>
+    <description>LEM-3993: It is used to validate that only numerical values are allowed to enter for Institution Number.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Payment_Account_Validation_Rules),
+  NOT(ISBLANK(Institution_Number__c)),
+  NOT(ISNUMBER(Institution_Number__c))
+)</errorConditionFormula>
+    <errorDisplayField>Institution_Number__c</errorDisplayField>
+    <errorMessage>Please enter only numeric values for the Institution Number.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Update_On_Work_Plan_Name</fullName>
+    <active>true</active>
+    <description>LEM-1983: It restricts users from editing Work Plan Name.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Plan_Validation_Rules),
+  ISCHANGED(Name)
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Work Plan name cannot be edited.</errorMessage>
+</ValidationRule>

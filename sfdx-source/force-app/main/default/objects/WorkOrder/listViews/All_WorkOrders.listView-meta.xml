@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_WorkOrders</fullName>
+    <columns>Name</columns>
+    <columns>Work_Order_Name_Link__c</columns>
+    <columns>Account</columns>
+    <columns>Status</columns>
+    <columns>Provisioning_Status__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Proposed_Date_of_Menu__c</columns>
+    <columns>Actual_Number_Of_Stores__c</columns>
+    <columns>Activated_Centrally_AC__c</columns>
+    <columns>Vertical__c</columns>
+    <columns>MINT_Updates__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ParentWorkOrder</field>
+        <operation>equals</operation>
+    </filters>
+    <label>All Work Orders</label>
+</ListView>

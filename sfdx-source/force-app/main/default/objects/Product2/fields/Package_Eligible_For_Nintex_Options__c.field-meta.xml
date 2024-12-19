@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_Eligible_For_Nintex_Options__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-13995 Enable Sales Users to choose whether Fz stores get onboarded to SF</description>
+    <externalId>false</externalId>
+    <label>Package Eligible For Nintex</label>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

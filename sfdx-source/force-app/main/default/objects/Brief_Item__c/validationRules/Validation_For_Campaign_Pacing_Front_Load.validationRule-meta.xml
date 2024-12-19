@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Campaign_Pacing_Front_Load</fullName>
+    <active>true</active>
+    <description>LEM-9204: Validation for Campaign Pacing field For Front Load.</description>
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+        NOT(ISBLANK(Average_Daily_Budget__c)),
+        ISPICKVAL(Campaign_Pacing__c,'Front load'),
+        TEXT(Product__c) = $Label.Brief_Product_SponsoredListing
+        )</errorConditionFormula>
+    <errorMessage>Please do not select 'Front load' in Campaign Pacing as 'Average Daily Budget' is not Blank.</errorMessage>
+</ValidationRule>

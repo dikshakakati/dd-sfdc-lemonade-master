@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POS_Integration_Request_Queue</fullName>
+    <columns>Name</columns>
+    <columns>Work_Order_Name__c</columns>
+    <columns>Parent_Work_Plan__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Status__c</columns>
+    <columns>CreatedDate</columns>
+    <columns>Primary_Routing_Assigned__c</columns>
+    <columns>Owner_Link__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>POS Integration Request Queue</label>
+    <queue>POS_integration_request</queue>
+</ListView>

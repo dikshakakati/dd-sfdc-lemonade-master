@@ -1,0 +1,25 @@
+<!--
+  @description       : StoreHours Container Used as separate page
+  @author            : VenkateshDD
+  @group             : DDMx RESSMO - Aethereus
+  @last modified on  : 07-02-2024
+  @last modified by  : VenkateshDD
+-->
+<template>
+    <lightning-card title="Store Hours">
+        <div class="content-body" style="padding-left: 20px;">
+            <c-store-hours account-id={recordId} onloadcomponent={setLoader} onupdatestatus={handleSaveStaus}></c-store-hours>
+            <template if:true={loadComponent}>
+                <div style="width: 100%; display: flex; justify-content: center;">
+                <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+                </div>
+            </template>
+        </div>
+
+        <template if:false={loadComponent}>
+            <div class="slds-m-around_medium">
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </div>
+        </template>
+    </lightning-card>
+</template>

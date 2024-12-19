@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entity_Type__c</fullName>
+    <description>LEM-18006</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate the Ads Manager profile you want the campaign built within. Note: DMA = Designated Market Area (e.g. Wendy’s Southwest)</inlineHelpText>
+    <label>Entity Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>Franchise</fullName>
+                <default>false</default>
+                <label>Franchise</label>
+            </value>
+            <value>
+                <fullName>DMA</fullName>
+                <default>false</default>
+                <label>DMA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

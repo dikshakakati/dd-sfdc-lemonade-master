@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Event_Edit_Access</fullName>
+    <active>true</active>
+    <description>LEM-13539: To validate the edit access of Event given to the Assigned to or SMB manager or System Admin.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Event_Validation_Rules),
+  NOT($Permission.Allow_Event_and_Task_Update),
+  $User.Id != PRIORVALUE(OwnerId),
+  $Profile.Name != $Label.System_Administrator,
+  NOT(ISNEW()),
+  IF(AND(
+    (LEFT( PRIORVALUE( WhoId ) ,3) == $Label.LeadId),
+    (LEFT(WhoId,3) == $Label.ContactId)),
+    false,true)
+)</errorConditionFormula>
+    <errorMessage>You do not have edit access to this Event. Please contact your system administrator for assistance.</errorMessage>
+</ValidationRule>
+

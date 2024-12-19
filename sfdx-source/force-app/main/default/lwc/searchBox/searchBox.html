@@ -1,0 +1,23 @@
+<!--
+  * @author Deloitte
+  * @date 02/05/2022
+  * @description Reusable search component for placing a field search option.
+-->
+<template>
+  <div class="divStyling">
+    <div onkeyup={handleCommit} class={parentDivStyling}>
+      <lightning-input
+        placeholder={searchBoxPlaceholder}
+        value={searchKey}
+        type="search"
+        variant="label-hidden"
+        oncommit={handleCommit}
+      ></lightning-input>
+    </div>
+    <div class="slds-p-left_medium serverSearchStyling">
+      <c-server-search
+        enable-server-search={enableServerSearch}
+      ></c-server-search>
+    </div>
+  </div>
+</template>

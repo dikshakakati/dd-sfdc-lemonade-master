@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDOA_Delay_Reason_Required</fullName>
+    <active>true</active>
+    <description>LEM-6212</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Work_Order_Validation_Rules),
+    ISCHANGED(Proposed_Date_of_Activation__c),
+    ISPICKVAL(Opportunity__r.StageName,&apos;Closed Won&apos;),
+    NOT(ISBLANK(PRIORVALUE(Proposed_Date_of_Activation__c))),
+    OR(
+        ISPICKVAL(Status,&apos;In Progress&apos;),
+        ISPICKVAL(Status,&apos;At Risk&apos;),
+        ISPICKVAL(Status,&apos;Past Due&apos;)
+    ),
+    OR(
+        ISPICKVAL(PDOA_Delay_Reason__c, &quot;&quot;),
+        ISBLANK(PDOA_Delay_Details__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>You must enter a PDOA Delay Reason when changing the PDOA. If the PDOA Delay Reason is populated, please add additional details in the PDOA Delay Details field.</errorMessage>
+</ValidationRule>

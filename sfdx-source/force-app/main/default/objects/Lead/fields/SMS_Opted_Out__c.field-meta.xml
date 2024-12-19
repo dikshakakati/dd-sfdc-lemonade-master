@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMS_Opted_Out__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-17656: It is used to indicate if Mx has opted out of SMS.</description>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>SMS Opted Out</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

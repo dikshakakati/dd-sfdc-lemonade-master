@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Problem</fullName>
+        <default>false</default>
+        <label>Problem</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Feature Request</fullName>
+        <default>false</default>
+        <label>Feature Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Question</fullName>
+        <default>false</default>
+        <label>Question</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Business Hierarchy Assistance</fullName>
+        <default>false</default>
+        <label>Business Hierarchy Assistance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rate Change</fullName>
+        <default>false</default>
+        <label>Rate Change</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Coverage Check</fullName>
+        <default>false</default>
+        <label>Coverage Check</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Equipment Requests</fullName>
+        <default>false</default>
+        <label>Equipment Requests</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Drive Support</fullName>
+        <default>false</default>
+        <label>Drive Support</label>
+    </standardValue>
+</StandardValueSet>

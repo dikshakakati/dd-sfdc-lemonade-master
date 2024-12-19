@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selected_Brand__c</fullName>
+    <description>LEM-3211: It stores the Brand name selected by the user on Generate Franchise Form pop-up.</description>
+    <externalId>false</externalId>
+    <label>Selected Brand</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

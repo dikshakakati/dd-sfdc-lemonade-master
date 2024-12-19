@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interface__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-92: This field is look up for Interface__c Object.</description>
+    <externalId>false</externalId>
+    <label>Interface</label>
+    <referenceTo>Interface__c</referenceTo>
+    <relationshipLabel>Interface Transactions</relationshipLabel>
+    <relationshipName>Interface_Transactions</relationshipName>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

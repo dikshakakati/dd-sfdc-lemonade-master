@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Store_Hours_link__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description>LEM-16276: created to open the store hours component</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/lightning/cmp/c__StoreHoursWrapperComponent?c__recordId=&quot;+Id, &quot;Please click here&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Store Hours link</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

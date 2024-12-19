@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Fields_BulkOnboardingRecordType</fullName>
+    <active>true</active>
+    <description>LEM-12080: It is used to make Stage and Status fields required for Bulk Onboarding Record Type records.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Process_Flow_Request_Validation_Rules),
+  OR(
+    ISBLANK(TEXT(Stage__c)),  
+    ISBLANK(TEXT(Status__c))
+  ),
+  RecordType.DeveloperName = $Label.Bulk_Onboarding_Record_Type_Name
+)</errorConditionFormula>
+    <errorMessage>Please ensure that Stage and Status fields are populated.</errorMessage>
+</ValidationRule>

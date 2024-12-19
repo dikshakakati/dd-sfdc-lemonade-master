@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order_Name__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-982: It indicates link of the Work Order record.</description>
+    <externalId>false</externalId>
+    <formula>WorkOrder.Work_Order_Name_Link__c</formula>
+    <label>Work Order Name</label>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

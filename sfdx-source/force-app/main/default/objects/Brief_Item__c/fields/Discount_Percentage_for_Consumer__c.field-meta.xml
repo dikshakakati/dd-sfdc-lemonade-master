@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Percentage_for_Consumer__c</fullName>
+    <description>LEM-2983: Captures the discount percentage of the consumer.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field reflects the discount percentage offered to the consumer.</inlineHelpText>
+    <label>Discount Percentage for Consumer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Resolved_Work_Steps__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>LEM-2043: It indicates live number of Resolved child work steps.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicating live number of Resolved work steps</inlineHelpText>
+    <label>Number of Resolved Work Steps</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

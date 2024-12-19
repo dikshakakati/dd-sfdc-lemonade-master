@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Customer Acquisition</fullName>
+        <default>false</default>
+        <label>Customer Acquisition</label>
+    </customValue>
+    <customValue>
+        <fullName>Merchant Acquisition</fullName>
+        <default>false</default>
+        <label>Merchant Acquisition</label>
+    </customValue>
+    <customValue>
+        <fullName>Previously Contracted</fullName>
+        <default>false</default>
+        <label>Previously Contracted</label>
+    </customValue>
+    <customValue>
+        <fullName>Self-Funded Invoicing Flag/Corporate Subsidy</fullName>
+        <default>false</default>
+        <label>Self-Funded Invoicing Flag/Corporate Subsidy</label>
+    </customValue>
+    <customValue>
+        <fullName>Diversification</fullName>
+        <default>false</default>
+        <label>Diversification</label>
+    </customValue>
+    <customValue>
+        <fullName>Performance-Based</fullName>
+        <default>false</default>
+        <label>Performance-Based</label>
+    </customValue>
+    <description>LEM-1602: Create New Fields for Ads and Promos</description>
+    <masterLabel>Campaign Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

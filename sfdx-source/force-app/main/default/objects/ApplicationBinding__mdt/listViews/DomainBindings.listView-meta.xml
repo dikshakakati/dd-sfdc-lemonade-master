@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DomainBindings</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>ApplicationType__c</columns>
+    <columns>BindingObject__c</columns>
+    <columns>BindingObjectApiName__c</columns>
+    <columns>ImplementationType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ApplicationType__c</field>
+        <operation>equals</operation>
+        <value>Domain</value>
+    </filters>
+    <label>Domain Bindings</label>
+</ListView>

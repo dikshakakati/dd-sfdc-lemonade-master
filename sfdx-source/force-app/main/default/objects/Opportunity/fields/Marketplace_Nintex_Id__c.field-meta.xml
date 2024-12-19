@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketplace_Nintex_Id__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-2272: This field stores the workflow instance and also serves as identifier of the source that created the opportunity.</description>
+    <externalId>false</externalId>
+    <label>Marketplace Nintex Id</label>
+    <length>40</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

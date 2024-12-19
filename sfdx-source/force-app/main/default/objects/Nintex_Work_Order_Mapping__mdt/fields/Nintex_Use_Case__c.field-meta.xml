@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nintex_Use_Case__c</fullName>
+    <description>LEM-2348: It holds Nintex use case values. It should always be in sync with Nintex_Use_Cases global value set until Salesforce support usage of global value set in custom metadata.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Nintex Use Case</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Franchise - Unknown</fullName>
+                <default>true</default>
+                <label>New Franchise - Unknown</label>
+            </value>
+            <value>
+                <fullName>Change of Ownership</fullName>
+                <default>false</default>
+                <label>Change of Ownership</label>
+            </value>
+            <value>
+                <fullName>New additional stores</fullName>
+                <default>false</default>
+                <label>New additional stores</label>
+            </value>
+            <value>
+                <fullName>Rate Change</fullName>
+                <default>false</default>
+                <label>Rate Change</label>
+            </value>
+            <value>
+                <fullName>Drive Form - Franchise</fullName>
+                <default>false</default>
+                <label>Drive Form - Franchise</label>
+            </value>
+            <value>
+                <fullName>Integrated Franchise</fullName>
+                <default>false</default>
+                <label>Integrated Franchise</label>
+            </value>
+            <value>
+                <fullName>Drive - Amendment</fullName>
+                <default>false</default>
+                <label>Drive - Amendment</label>
+            </value>
+            <value>
+                <fullName>Middleware Provider</fullName>
+                <default>false</default>
+                <label>Middleware Provider</label>
+            </value>
+            <value>
+                <fullName>SSMO</fullName>
+                <default>false</default>
+                <label>SSMO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

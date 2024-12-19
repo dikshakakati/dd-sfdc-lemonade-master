@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DoorDash_Legal_Entity__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-578 : To store DoorDash legal entity for contract template generation.</description>
+    <externalId>false</externalId>
+    <label>DoorDash Legal Entity</label>
+    <length>80</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

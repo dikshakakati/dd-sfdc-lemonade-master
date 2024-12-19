@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.WorkOrders$Name</field>
+    </columns>
+    <columns>
+        <field>Account.WorkOrders$Id</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.WorkOrders$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Chris Sanchez,Jaclyn McCormick-Arigi,Camille Owens,Gabrielle Abrams,Chris Lovelace,Nina Nguyen,Kleo Bohlen,Alexis White-Gomez,Bobbi Finnie,Brandon Wilson,Christina Velasquez,David Johnson,Derek Weber,Elizabeth De Filippis,Elizabeth Hattar,Gene Bartlett,Jake Kent,Jordan Peterson,Josiah Clark,Kathlene Nido,Meghan DeLoera,Miki Orozco-Charles,Miraj Qader,Raven O&apos;Neill,Samuel Bates,Siala Suesue,Tarik Madkins,Valerie Perez,Zandrea Hindmarch,Kohl Sharples,Dylan Luque,Lily Golob,Jess Ghoston,Ed Herrera,Aidan Daly,Alisa Muraida,Jacob Coleman,Jesse Regnier,Quentin Miller,Samuel Murillo,Sara Beth Scott,Sylvia Smith,Victor Fernandez,Stephanie Jimenez,Cinthia Osuna,Ines Bindzi Mbarga,Angelia Sanchez,Robert Baca,Russell Longenecker,Ryan Hill,Shane Walsh,Sierra Delaney,Tranyce Hendricks</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <field>Account.WorkOrders$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Work Orders Created Yesterday [POSGemba]</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Workorders_with_Workplans_Workstep__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.WorkOrders$CreatedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

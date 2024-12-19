@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subtotal_based_Program_Type_Reqd_Fields</fullName>
+    <active>true</active>
+    <description>LEM-13634: Validation to ensure the conditionally required fields are filled in when Program Type is Subtotal-based</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Program_Type__c, &quot;Subtotal-based&quot;),
+    ISBLANK(Required_Spend_Threshold__c),
+    Text(SBQQ__Quote__r.SBQQ__Account__r.Segment__c) !=  $Label.AccountSegmentSMB
+)</errorConditionFormula>
+    <errorMessage>If Program Type is &apos;Subtotal-based&apos;, &apos;Required Spend Threshold&apos; can&apos;t be blank.</errorMessage>
+</ValidationRule>

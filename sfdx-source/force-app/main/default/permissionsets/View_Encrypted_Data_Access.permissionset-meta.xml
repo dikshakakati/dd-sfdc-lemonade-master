@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-3925: It enables &quot;View Encrypted Data&quot; system permission i.e. view the value of encrypted fields in plain text.
+SECURITY COMPLIANCE: It should not be assigned/added to any user/permission set group except &quot;Mulesoft Integration&quot; permission set group.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>View Encrypted Data Access</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewEncryptedData</name>
+    </userPermissions>
+</PermissionSet>

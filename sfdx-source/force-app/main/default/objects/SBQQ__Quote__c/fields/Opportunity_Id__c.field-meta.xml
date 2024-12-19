@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Id__c</fullName>
+    <description>LEM-4549: It is 18 character Id of the related Opportunity.</description>
+    <externalId>false</externalId>
+    <formula>CASESAFEID(SBQQ__Opportunity2__c)</formula>
+    <label>Opportunity Id</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

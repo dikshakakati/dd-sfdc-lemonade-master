@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Iterable_IDs</fullName>
+    <active>false</active>
+    <description>LEM-5421</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+ISPICKVAL(Status__c, &quot;Scheduled Live&quot;),
+ISPICKVAL(Product__c, &quot;CRM&quot;),
+ISBLANK( Iterable_ID_s__c)
+)</errorConditionFormula>
+    <errorMessage>The &apos;Iterable ID(s)&apos; field must be populated to shift the Brief Item status to ‘Scheduled Live’</errorMessage>
+</ValidationRule>

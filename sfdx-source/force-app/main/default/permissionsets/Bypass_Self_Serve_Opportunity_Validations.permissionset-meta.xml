@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Self_Serve_Opportunity_Validation</name>
+    </customPermissions>
+    <description>LEM-23233: It is used to bypass validation rules on Self-Serve Opportunity.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Self-Serve Opportunity Validations</label>
+</PermissionSet>

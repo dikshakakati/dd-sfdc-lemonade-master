@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Persona__c</fullName>
+    <description>LEM-22640: It indicates user&apos;s team and used for &apos;SMB&apos; operational metrics. It&apos;s a temporary field and planned to be cleaned-up in LEM-22353 ticket.</description>
+    <externalId>false</externalId>
+    <label>Persona</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SMB Pre-Sales: Manager</fullName>
+                <default>false</default>
+                <label>SMB Pre-Sales: Manager</label>
+            </value>
+            <value>
+                <fullName>SMB Pre-Sales: SDR Manager</fullName>
+                <default>false</default>
+                <label>SMB Pre-Sales: SDR Manager</label>
+            </value>
+            <value>
+                <fullName>SMB Pre-Sales: SDR Rep</fullName>
+                <default>false</default>
+                <label>SMB Pre-Sales: SDR Rep</label>
+            </value>
+            <value>
+                <fullName>Comm Ops users</fullName>
+                <default>false</default>
+                <label>Comm Ops users</label>
+            </value>
+            <value>
+                <fullName>Data Ops</fullName>
+                <default>false</default>
+                <label>Data Ops</label>
+            </value>
+            <value>
+                <fullName>Data Ops Manager</fullName>
+                <default>false</default>
+                <label>Data Ops Manager</label>
+            </value>
+            <value>
+                <fullName>Fraud Agents</fullName>
+                <default>false</default>
+                <label>Fraud Agents</label>
+            </value>
+            <value>
+                <fullName>Merchant Partner</fullName>
+                <default>false</default>
+                <label>Merchant Partner</label>
+            </value>
+            <value>
+                <fullName>Post Sales: Account Development Rep</fullName>
+                <default>false</default>
+                <label>Post Sales: Account Development Rep</label>
+            </value>
+            <value>
+                <fullName>Post Sales: Account Manager</fullName>
+                <default>false</default>
+                <label>Post Sales: Account Manager</label>
+            </value>
+            <value>
+                <fullName>Post Sales: Account Manager Manager</fullName>
+                <default>false</default>
+                <label>Post Sales: Account Manager Manager</label>
+            </value>
+            <value>
+                <fullName>Quantanite User</fullName>
+                <default>false</default>
+                <label>Quantanite User</label>
+            </value>
+            <value>
+                <fullName>Quantanite Users</fullName>
+                <default>false</default>
+                <label>Quantanite Users</label>
+            </value>
+            <value>
+                <fullName>S&amp;O User/ S&amp;O Rep</fullName>
+                <default>false</default>
+                <label>S&amp;O User/ S&amp;O Rep</label>
+            </value>
+            <value>
+                <fullName>S&amp;O User/S&amp;O Manager</fullName>
+                <default>false</default>
+                <label>S&amp;O User/S&amp;O Manager</label>
+            </value>
+            <value>
+                <fullName>Sales Enablement</fullName>
+                <default>false</default>
+                <label>Sales Enablement</label>
+            </value>
+            <value>
+                <fullName>Service Manager</fullName>
+                <default>false</default>
+                <label>Service Manager</label>
+            </value>
+            <value>
+                <fullName>Service Rep</fullName>
+                <default>false</default>
+                <label>Service Rep</label>
+            </value>
+            <value>
+                <fullName>SMB Post Sales Vendor Manager</fullName>
+                <default>false</default>
+                <label>SMB Post Sales Vendor Manager</label>
+            </value>
+            <value>
+                <fullName>SMB Post Sales Vendor Rep</fullName>
+                <default>false</default>
+                <label>SMB Post Sales Vendor Rep</label>
+            </value>
+            <value>
+                <fullName>SMB Post Sales: Account Development Manager</fullName>
+                <default>false</default>
+                <label>SMB Post Sales: Account Development Manager</label>
+            </value>
+            <value>
+                <fullName>SMB Pre Sales Vendor Manager</fullName>
+                <default>false</default>
+                <label>SMB Pre Sales Vendor Manager</label>
+            </value>
+            <value>
+                <fullName>SMB Pre Sales Vendor Rep</fullName>
+                <default>false</default>
+                <label>SMB Pre Sales Vendor Rep</label>
+            </value>
+            <value>
+                <fullName>SMB Sales: Pre-Sales Rep</fullName>
+                <default>false</default>
+                <label>SMB Sales: Pre-Sales Rep</label>
+            </value>
+            <value>
+                <fullName>Support Agent</fullName>
+                <default>false</default>
+                <label>Support Agent</label>
+            </value>
+            <value>
+                <fullName>Vendor - Arcgate</fullName>
+                <default>false</default>
+                <label>Vendor - Arcgate</label>
+            </value>
+            <value>
+                <fullName>Data Migration</fullName>
+                <default>false</default>
+                <label>Data Migration</label>
+            </value>
+            <value>
+                <fullName>Automated Process</fullName>
+                <default>false</default>
+                <label>Automated Process</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

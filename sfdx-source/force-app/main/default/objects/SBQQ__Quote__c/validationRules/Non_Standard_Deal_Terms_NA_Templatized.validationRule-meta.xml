@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Standard_Deal_Terms_NA_Templatized</fullName>
+    <active>true</active>
+    <description>LEM-1478 : Non-Standard Deal Terms cannot follow the ‘Templatized&apos; Contract Generation Path.  Please update Contract Generation Path to ‘Non-Templatized’ to use &apos;Non-Standard’ Deal Terms.</description>
+    <errorConditionFormula>AND(
+   ISPICKVAL(Deal_Terms__c, &quot;Non-Standard&quot;),
+   ISPICKVAL(Contract_Generation_Path__c, &apos;Templatized&apos;)
+   )</errorConditionFormula>
+    <errorMessage>Non-Standard Deal Terms cannot follow the ‘Templatized&apos; Contract Generation Path.  Please update Contract Generation Path to ‘Non-Templatized’ to use &apos;Non-Standard’ Deal Terms.</errorMessage>
+</ValidationRule>

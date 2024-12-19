@@ -1,0 +1,64 @@
+<template>
+  <div class="slds-m-around_small">
+    <lightning-button
+      label={label.modifyColumns}
+      onclick={showColumnSelectionWindow}
+    ></lightning-button>
+  </div>
+  <template if:true={isColumnSelectorOpened}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-labelledby="modal-heading-01"
+      aria-modal="true"
+      aria-describedby="modal-content-id-1"
+      class="slds-modal slds-fade-in-open"
+    >
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <div class="slds-page-header__title">{label.selectColumnsHeader}</div>
+          <div>{label.maxText} {maxColumns} {label.columnsText}</div>
+        </header>
+        <div if:true={displayError} class="errorMsg">
+          <div
+            class="reviewMsg slds-m-left_xx-small slds-m-right_xx-small slds-p-around--small"
+          >
+            {label.reviewMessage}
+          </div>
+          <div class="slds-p-left--medium slds-p-top--x-small">
+            {label.displayUptoText} {maxColumns} {label.fieldsText}.
+          </div>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium">
+          <lightning-dual-listbox
+            name="fieldSelection"
+            label={label.selectFields}
+            source-label={label.availableFields}
+            selected-label={label.selectedFields}
+            field-level-help={label.selectFieldsHelpText}
+            options={allFields}
+            value={allSelectedFields}
+            required-options={requiredOptions}
+            onchange={updateSelectedColumns}
+          ></lightning-dual-listbox>
+        </div>
+        <footer class="slds-modal__footer">
+          <lightning-button
+            name="cancelAction"
+            class="slds-p-around_x-small"
+            label={label.cancelAction}
+            onclick={closeModel}
+          ></lightning-button>
+          <lightning-button
+            name="saveAction"
+            class="slds-p-around_x-small"
+            label={label.saveAction}
+            onclick={closeModel}
+            variant="brand"
+          ></lightning-button>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+</template>

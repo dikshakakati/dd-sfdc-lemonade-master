@@ -1,0 +1,74 @@
+<template>
+    <div class={mainDivClass} onclick={stopEventPropagation}>
+        <template if:true={isFilterVariant}>
+            <div class="slds-grid slds-grid_align-spread">
+                <div class="slds-col">
+                    <label class={filterLabelClass} onclick={handleFilterShowHideToggle}>{label}</label>
+                </div>
+                <template if:true={hasExpandCollapse}>
+                    <div class="slds-col">
+                        <div class={expandCollapseClass} onclick={handleFilterShowHideToggle}></div>
+                    </div>
+                </template>
+            </div>
+            <template if:true={isExpanded}>
+                <template if:false={filterSelectionIsRequired}>
+                    <label class="slds-form-element slds-var-m-top_x-small slds-form-element__label">Apply Filter</label>
+                    <label class="slds-align_absolute-center slds-var-m-top_x-small slds-checkbox_toggle slds-grid">
+                        <input name="checkbox-toggle-1"
+                            type="checkbox" aria-describedby="checkbox-toggle-1"
+                            checked={applyFilter}
+                            onclick={handleApplyFilterOnClick}/>
+                        <span id="checkbox-toggle-1" class="slds-checkbox_faux_container slds-var-m-right_x-small" aria-live="assertive">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-checkbox_on text-align_center">Yes</span>
+                            <span class="slds-checkbox_off text-align_center">No</span>
+                        </span>
+                    </label>
+                    <label class="slds-var-m-top_x-small slds-form-element__label">Filter Value</label>
+                </template>
+            </template>
+        </template>
+        <template if:true={collapsedPillText}>
+            <div class="slds-align_absolute-center slds-var-m-top_x-small">
+                <c-dd-pill unique-identifier="collapsedPill"
+                    label={collapsedPillText}>
+                </c-dd-pill>
+            </div>
+        </template>
+        <template if:true={isExpanded}>
+            <label class={toggleClass}>
+                <template if:true={showLabelOnLeft}>
+                    <span class="slds-form-element__label slds-m-bottom_none label">
+                        {label}
+                    </span>
+                </template>
+                <template if:true={disabled}>
+                    <input name="checkbox-toggle-2"
+                        type="checkbox" aria-describedby="checkbox-toggle-2"
+                        disabled
+                        checked={checked}
+                        onclick={handleOnClick}/>
+                </template>
+                <template if:false={disabled}>
+                    <input name="checkbox-toggle-2"
+                        type="checkbox" aria-describedby="checkbox-toggle-2"
+                        checked={checked}
+                        onclick={handleOnClick}/>
+                </template>
+                <span id="checkbox-toggle-2" class="slds-checkbox_faux_container slds-var-m-right_x-small" aria-live="assertive">
+                    <span class="slds-checkbox_faux"></span>
+                    <template if:true={showCheckedText}>
+                        <span class="slds-checkbox_on text-align_center">{checkedTextTrue}</span>
+                        <span class="slds-checkbox_off text-align_center">{checkedTextFalse}</span>
+                    </template>
+                </span>
+                <template if:true={showLabelOnRight}>
+                    <span class="slds-form-element__label slds-m-bottom_none label">
+                        {label}
+                    </span>
+                </template>
+            </label>
+        </template>
+    </div>
+</template>

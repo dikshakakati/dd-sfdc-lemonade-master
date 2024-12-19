@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Account Readiness Error" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={oppty.data}>
+             <lightning-datatable
+                 key-field="Id"
+                 data={oppty.data}
+                 columns={columns}
+                 onsave={handleSave}
+                 draft-values={draftValues}></lightning-datatable>
+             </template>
+        </div>
+     </lightning-card>
+</template>

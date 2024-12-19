@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictOpportunityOnChildWorkOrder</fullName>
+    <active>true</active>
+    <description>LEM-1693: It restricts Opportunity on child Work Order.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  NOT($Permission.Enable_Async_Work_Steps_Status_Rollup),
+  $Profile.Name != $Label.System_Administrator,
+  NOT(ISBLANK(Opportunity__c)),
+  NOT(ISBLANK(ParentWorkOrderId)),
+  Opportunity__c != ParentWorkOrder.Opportunity__c
+)</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>Opportunity must match the opportunity on the parent Work Order.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <description>LEM-16064: It is used to set field values of Opportunity Team Member for each selected opportunity.</description>
+        <name>Opp_Update</name>
+        <label>Opp Update</label>
+        <locationX>402</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>OppTeamMember.OpportunityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_on_Opportunity_Ids</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OppTeamMember.UserId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OpportunityTeamMember.recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OppTeamMember.TeamMemberRole</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Select_Role</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>listOppTeammember</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>OppTeamMember</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oppVar.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_on_Opportunity_Ids</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oppVar.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OpportunityTeamMember.recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>listOfOpps</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oppVar</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_on_Opportunity_Ids</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <description>LEM-16064 It stores error message to display on creation.</description>
+        <name>errorMessage</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>An error was encountered, please reach out to System Administrator for assistance.</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>LEM-16064: It is used to check if there is any selected opportunity without Estimated # of Store populated.</description>
+        <name>Check_if_estimated_of_stores_field_blank</name>
+        <label>Check if estimated # of stores field blank</label>
+        <locationX>710</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Estimated_number_of_stores_blank_error_message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>estimated_number_of_store_not_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunities_with_Estimated_of_Stores_as_null</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen_Update_Opportunity_Team_Screen</targetReference>
+            </connector>
+            <label>estimated number of store not blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-16064: It is used to check if the selected user needs to be set as Opportunity Owner on the selected opportunities.</description>
+        <name>Check_if_Opportunity_Owner_checkbox_is_checked</name>
+        <label>Check if Opportunity Owner checkbox is checked</label>
+        <locationX>314</locationX>
+        <locationY>1082</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Owner_Chekced</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Set_User_as_Opportunity_Owner</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opportunity_Owner</targetReference>
+            </connector>
+            <label>Opportunity Owner Checked</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-16064: It is used to check whether the user has access to add Opportunity Team Members in bulk.</description>
+        <name>Check_User_Access</name>
+        <label>Check User Access</label>
+        <locationX>1337</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Error_Screen_For_No_Access</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>User_Has_Access</name>
+            <conditionLogic>1 OR 2 OR 3 OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.Can_Assign_Opportunity_Team_Members_in_Bulk</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Permission.Strategy_and_Operations</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>System Administrator</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Permission.Can_Assign_Opportunity_Team_SDR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ids_Blank</targetReference>
+            </connector>
+            <label>User Has Access</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-16064: It is used to check if selected Opportunity ids are blank.</description>
+        <name>Ids_Blank</name>
+        <label>Ids Blank</label>
+        <locationX>1040</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Ids_blank_screen_header</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Ids_exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ids</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opportunities_with_Estimated_of_Stores_as_null</targetReference>
+            </connector>
+            <label>Ids exist</label>
+        </rules>
+    </decisions>
+    <description>LEM-16064 - Update Opportunity Teams in bulk.</description>
+    <dynamicChoiceSets>
+        <name>TeamRole</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>TeamMemberRole</picklistField>
+        <picklistObject>OpportunityTeamMember</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <name>HasCanAssignOpportunityTeamSDRPermission</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Permission.Can_Assign_Opportunity_Team_SDR}</expression>
+    </formulas>
+    <interviewLabel>Update Opportunity Teams {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Opportunity Teams</label>
+    <loops>
+        <description>LEM-16064 - Loop on Opportunity Ids</description>
+        <name>Loop_on_Opportunity_Ids</name>
+        <label>Loop on Opportunity Ids</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <collectionReference>ids</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Opp_Update</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Opp_Team_member</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>LEM-16064: It is used to create Opportunity Team members for selected opportunities.</description>
+        <name>Create_Opp_Team_member</name>
+        <label>Create Opp Team member</label>
+        <locationX>314</locationX>
+        <locationY>974</locationY>
+        <connector>
+            <targetReference>Check_if_Opportunity_Owner_checkbox_is_checked</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Header</targetReference>
+        </faultConnector>
+        <inputReference>listOppTeammember</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>LEM-16064: It is used to get Estimated # of stores for each selected opportunity.</description>
+        <name>Get_Opportunities_with_Estimated_of_Stores_as_null</name>
+        <label>Get Opportunities with Estimated # of Stores as null</label>
+        <locationX>710</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_estimated_of_stores_field_blank</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>ids</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Estimated_Number_of_Stores__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>LEM-16064: It is used to update owner on the selected opportunities.</description>
+        <name>Update_Opportunity_Owner</name>
+        <label>Update Opportunity Owner</label>
+        <locationX>50</locationX>
+        <locationY>1190</locationY>
+        <faultConnector>
+            <targetReference>Error_Header</targetReference>
+        </faultConnector>
+        <inputReference>listOfOpps</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <description>LEM-16064: It is used to display error message if fault is encountered.</description>
+        <name>Error_Header</name>
+        <label>Error_Header</label>
+        <locationX>314</locationX>
+        <locationY>1298</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>DMLError</name>
+            <fieldText>&lt;p&gt;{!errorMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-16064: It is used to display error message if user does not have required access.</description>
+        <name>Error_Screen_For_No_Access</name>
+        <label>Error Screen For No Access</label>
+        <locationX>1634</locationX>
+        <locationY>242</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessageForNoAccess</name>
+            <fieldText>&lt;p&gt;{!noUserAccessMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Cancel</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-16064: It is used to display error message if any selected opportunities have Estimated # of store as null.</description>
+        <name>Estimated_number_of_stores_blank_error_message</name>
+        <label>Estimated number of stores blank error message</label>
+        <locationX>1106</locationX>
+        <locationY>566</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>number_of_store_blank_message</name>
+            <fieldText>&lt;p&gt;{!$Label.Estimated_of_Stores_Error}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Cancel</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-16064: It is used to display message when no opportunity is selected.</description>
+        <name>Ids_blank_screen_header</name>
+        <label>Ids blank screen header</label>
+        <locationX>1370</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Ids_Blank_screen</name>
+            <fieldText>&lt;p&gt;{!noOppSelected}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Cancel</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-16064: It is used get Team Member and Role details from the end user.</description>
+        <name>Screen_Update_Opportunity_Team_Screen</name>
+        <label>Screen Update Opportunity Team Screen</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Loop_on_Opportunity_Ids</targetReference>
+        </connector>
+        <fields>
+            <name>Screen_Update_Opportunity_Team_Display_Message</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Select a user and role to add the individual to the &lt;/span&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Opportunity Team &lt;/strong&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;on the selected Opportunities.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Screen_Update_Opportunity_Team_Display_Message2</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;If the user should also be set as the Opportunity Owner, select the “&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Set User as Opportunity Owner&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;” checkbox&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>OpportunityTeamMember</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>OwnerId</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Choose Opportunity Team Member</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>required</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Select_Role</name>
+            <choiceReferences>TeamRole</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>Sales Development Rep</stringValue>
+            </defaultValue>
+            <fieldText>Select Role</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Set_User_as_Opportunity_Owner</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Set User as Opportunity Owner</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>HasCanAssignOpportunityTeamSDRPermission</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>test1</name>
+            <fieldText>&lt;p&gt;{!Get_Opportunities_with_Estimated_of_Stores_as_null}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>1211</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_User_Access</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ids</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>listOfOpps</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>LEM-16064</description>
+        <name>listOppTeammember</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityTeamMember</objectType>
+    </variables>
+    <variables>
+        <description>LEM-16064 - If no opportunity is selected to create opportunity team member</description>
+        <name>noOppSelected</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Please select one or more Opportunity in order to update Opportunity Team</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-16064: It is used to store the error message to display when user don&apos;t have access to create Opportunity Team Member</description>
+        <name>noUserAccessMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>You do not currently have permissions to create Opportunity Teams, please contact your System Administrator.</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>OppTeamMember</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>OpportunityTeamMember</objectType>
+    </variables>
+    <variables>
+        <name>oppVar</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

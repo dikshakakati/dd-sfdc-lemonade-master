@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Adjustment__c</fullName>
+    <description>Total adjustment is the sum of week 1 to week 14 adjustment %</description>
+    <externalId>false</externalId>
+    <formula>(Week1_Ramp__c +  Week2_Ramp__c + Week3_Ramp__c + Week4_Ramp__c + Week5_Ramp__c + Week6_Ramp__c + Week7_Ramp__c + Week8_Ramp__c + Week9_Ramp__c + Week10_Ramp__c + Week11_Ramp__c + Week12_Ramp__c + Week13_Ramp__c + Week14_Ramp__c)*100</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Adjustment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,30 @@
+<template>
+  <lightning-record-picker
+    if:false={globalSearch}
+    lwc:ref="lookup"
+    display-info={displayInfoValue}
+    matching-info={matchingInfoValue}
+    filter={filterValue}
+    value={defaultValue}
+    required
+    label={label}
+    object-api-name={objectName}
+    placeholder={placeholder}
+    onchange={handleSelect}
+    onfocus={handleFocus}
+  ></lightning-record-picker>
+  <lightning-record-picker
+    if:true={globalSearch}
+    lwc:ref="lookup"
+    display-info={displayInfoValue}
+    matching-info={matchingInfoValue}
+    filter={filterValue}
+    value={defaultValue}
+    required
+    label={label}
+    object-api-name={objectName}
+    placeholder={placeholder}
+    onchange={handleSelect}
+    onfocus={handleFocus}
+  ></lightning-record-picker>
+</template>

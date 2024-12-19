@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_of_Brief__c</fullName>
+    <description>LEM-2982: Captures the campaign of the Brief with which the current Quote Relationship is associated.</description>
+    <externalId>false</externalId>
+    <label>Campaign of Brief</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

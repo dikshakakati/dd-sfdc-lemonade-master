@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NotAbleToRevertForBrandLicTempWetSign</fullName>
+    <active>true</active>
+    <description>LEM-19800: For Brand Licensing scenario, Contracting Flow should default to &quot;Templatized wet-sign&quot; and should not be able to revert it back.</description>
+    <errorConditionFormula>AND(
+      NOT(
+        $Permission.Bypass_Quote_Validation_Rules
+        ),
+      Pricing_Variation_Scenario__c = $Label.BrandLicencingValue,
+      TEXT(Contracting_Flow__c) &lt;&gt; $Label.TemplatizedWetSign,
+      ISCHANGED(Contracting_Flow__c)
+    )</errorConditionFormula>
+    <errorMessage>Contract Flow should be &quot;Templatized wet-sign&quot; for Brand licensing quotes.</errorMessage>
+</ValidationRule>

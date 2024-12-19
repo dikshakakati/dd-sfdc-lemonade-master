@@ -1,0 +1,79 @@
+<template>
+  <div if:true={working}>
+    <lightning-spinner
+      alternative-text="Loading..."
+      size="large"
+      variant="brand"
+    ></lightning-spinner>
+  </div>
+  <div if:false={working}>
+    <div class="border-container">
+    <header class="slds-grid slds-modal__header ">
+      <div class="slds-float_left">
+        <lightning-button
+          label="Back"
+          variant="brand"
+          onclick={backToParentComp}>
+        </lightning-button>
+      </div>
+    </header>
+
+    <lightning-modal-body>
+      <lightning-accordion class="slds-p-top_large slds-p-bottom_large">
+        <div lwc:if={subscriptionList} class="datatable-container">
+                    <lightning-datatable
+                      key-field="Id"
+                      data={subscriptionList}
+                      columns={columns}
+                      data-id="Table1"
+                      draft-values={draftValues}
+                      oncellchange={handleCellChange}
+                      suppress-bottom-bar=true
+                      hide-checkbox-column="true"
+                      wrap-table-header>
+                    </lightning-datatable>
+        </div>
+      </lightning-accordion>
+    </lightning-modal-body>
+
+    <footer class="slds-modal__footer">
+      <div class="slds-grid slds-wrap">
+        <div class="slds-float_left slds-grid slds-size_2-of-3">
+          <div class="slds-p-around_medium slds-size_1-of-2">
+            <lightning-input
+            class="inputStyle"
+            type="date"
+            name="EffectiveDate"
+            label="Effective Date"
+            required
+            onchange={handleInputChange}>
+            </lightning-input>
+          </div>
+          <div class="slds-p-around_medium slds-float_right slds-size_1-of-2">
+            <c-lookup-search-a-r-p
+            class="inputStyle"
+            label="S&amp;O Request Link"
+            selected-icon-name="standard:case"
+            object-label="Case"
+            object-api-name="Case"
+            field-api-name="Subject"
+            other-field-api-name="CaseNumber"
+            required="true"
+            onvalueselected={handleCaseSelected}
+            onvalueremoved={handleCaseRemoved}>
+            </c-lookup-search-a-r-p>
+          </div>
+        </div>
+        <div class="slds-float_right slds-p-around_large slds-size_1-of-3 slds-wrap" style="align-self: end;">
+          <lightning-button
+              label="Submit"
+              variant="brand"
+              onclick={submitProcess}
+              disabled={submitButtonDisable}>
+          </lightning-button>
+      </div>
+      </div>
+    </footer>
+    </div>
+  </div>
+</template>

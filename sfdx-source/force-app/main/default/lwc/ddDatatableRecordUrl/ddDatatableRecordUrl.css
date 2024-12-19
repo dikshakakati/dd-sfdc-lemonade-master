@@ -1,0 +1,12 @@
+:host {
+    padding: 0.25rem 0.5rem;
+    font-weight: 400;
+}
+
+a  {
+    cursor: pointer;
+    color: #006dcc;
+    text-decoration: none;
+    -webkit-transition: color .1s linear;
+    transition: color .1s linear;
+}

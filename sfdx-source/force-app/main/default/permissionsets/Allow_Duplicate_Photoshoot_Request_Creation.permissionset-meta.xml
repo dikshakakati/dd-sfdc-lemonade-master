@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Duplicate_Photoshoot_Request_Creation</name>
+    </customPermissions>
+    <description>LEM-13504: It allows the user to create duplicate Photoshoot request creation.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Duplicate Photoshoot Request Creation</label>
+</PermissionSet>

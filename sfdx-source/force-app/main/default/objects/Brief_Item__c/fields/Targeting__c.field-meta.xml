@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Targeting__c</fullName>
+    <description>LEM-11629: Layout Enhancements - Opportunity and Brief Item.</description>
+    <externalId>false</externalId>
+    <label>Targeting</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Targeting</valueSetName>
+    </valueSet>
+</CustomField>

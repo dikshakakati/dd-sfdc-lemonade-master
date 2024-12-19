@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Primary_Vertical</fullName>
+    <active>true</active>
+    <description>LEM-3632: Validates that the Primary vertical is mandatory for Business Account Record Type.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Account_Validation_Rules),
+    NOT($Permission.Bypass_Account_Address_Update_Functionality),
+    $Profile.Name &lt;&gt; $Label.System_Administrator,
+    NOT(
+      AND(
+        TEXT(Creation_Source__c) = $Label.Source_Nintex,
+        TEXT(Most_Recent_Nintex_Use_Case__c) = $Label.Middleware_Provider
+      )
+    ),
+    RecordType.Name  = $Label.BusinessAccountRecordTypeName,
+    ISBLANK(TEXT( Primary_Vertical__c ))
+    )</errorConditionFormula>
+    <errorMessage>Please enter the Primary Vertical value</errorMessage>
+</ValidationRule>

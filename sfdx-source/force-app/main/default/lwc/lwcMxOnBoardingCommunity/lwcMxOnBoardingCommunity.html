@@ -1,0 +1,92 @@
+<template>
+  <template lwc:if={loaded}>
+    <template if:true={isFirstScreen}>
+    <header>
+        <p>Instructions → </p>
+        <ul class="slds-list_dotted">
+        <li>{customLabel.generalInstruction}</li>
+        <li>{generalInstructionWithBusinessName}</li>
+        </ul>
+    </header>
+    </br>
+      <lightning-input
+                      type="email"
+                      label={customLabel.emailAddress}
+                      value={emailvalue}
+                      onchange={handleEmailChange}>
+              </lightning-input>
+        </lightning-input><br/>
+    </br>
+    </template>
+    <h2 class="slds-text-heading_medium slds-hyphenate">{titleToDisplay}</h2>
+    <template if:true={isRequiredMessageDisplay}>
+      <div class="slds-theme_error">
+        <lightning-icon
+          icon-name="utility:error"
+          variant="inverse"
+          size="small"
+        ></lightning-icon>
+        <span class="slds-p-left_xx-small">{requiredMessage}</span>
+      </div>
+  </template>
+    <template lwc:if={inputfields}>
+      <c-o-i-section-render-component
+        current-screen={currentScreen}
+        input-fields={inputfields}
+        onincreasestorecount={hideAddStore}
+        onsendstoresection={handleStoreSection}
+        load-back-button-info={loadBackButtonInfo}
+        back-button-section-info={backButtonSectionInfo}
+        is-external-community={isExternalCommunity}
+        payload-info={resultPayload}
+        sections-entered-by-rep = {sectionsEnteredByRep}
+        store-names={storeNames}
+        onsenddisplayedstoresectioncount={saveDisplayedStoreSectionCount}
+    ></c-o-i-section-render-component>
+    </template>
+    <footer class="slds-card__footer slds-grid slds-grid_align-end">
+      <template if:true={showSubmitButton}>
+      <lightning-button
+        variant="neutral"
+        label={customLabel.submitButton}
+        title={customLabel.submitButton}
+        onclick={handleSubmit}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+      </template>
+      <template if:true={showNextButton}>
+      <lightning-button
+        variant="neutral"
+        label={customLabel.nextButton}
+        title={customLabel.nextButton}
+        onclick={handleNext}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+      </template>
+      <template if:true={showAddStore}>
+      <lightning-button
+        variant="neutral"
+        label={customLabel.addStoreButton}
+        title={customLabel.maximumStoreValidationError}
+        onclick={handleAddStore}
+        disabled={isMaxStore}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+      </template>
+    </footer>
+    <template if:true={showBannerText}>
+      <h2 class="slds-text-heading_medium slds-hyphenate">{customLabel.thankYou}</h2>
+      {customLabel.submissionText}
+    </template>
+     <template if:true={showInactiveLinkText}>
+      <h2 class="slds-text-heading_medium slds-hyphenate">{customLabel.thankYou}</h2>
+      {customLabel.formLinkExpiredMessage}
+    </template>
+  </template>
+  <template lwc:else>
+    <div class="spinnerStyling">
+      <lightning-spinner
+        alternative-text={loadingAlternativeText}
+      ></lightning-spinner></div
+  ></template>
+  </template>

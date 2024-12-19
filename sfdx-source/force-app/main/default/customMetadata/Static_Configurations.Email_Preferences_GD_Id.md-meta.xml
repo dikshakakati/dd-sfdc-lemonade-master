@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Email Preferences GD Id</label>
+    <protected>false</protected>
+    <values>
+        <field>Configuration_Value__c</field>
+        <value xsi:type="xsd:string">6461e7c8-ceb1-49ab-bcc3-1f0293b27a38</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Email_Next_Schedule__c</fullName>
+    <description>LEM-2045: It indicates the scheduled time for secondary email notification on parent Work Step.</description>
+    <externalId>false</externalId>
+    <formula>Secondary_Email_Timer_Start_Time__c + ((Value($CustomMetadata.Static_Configurations__mdt.Secondary_Email_Time_Window_In_Mins.Configuration_Value__c)/60)/24)</formula>
+    <label>Secondary Email Next Schedule</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

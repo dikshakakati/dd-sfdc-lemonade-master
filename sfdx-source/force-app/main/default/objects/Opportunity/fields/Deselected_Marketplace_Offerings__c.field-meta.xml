@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deselected_Marketplace_Offerings__c</fullName>
+    <description>LEM-2734: Based on the terms of an MSA, Franchisees may be able to select Marketplace services they do not want their stores enrolled in. This field captures the services a Franchisee has deselected, and these services are not provisioned for all stores owned by the Franchisee.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Based on the terms of an MSA, Franchisees may be able to select Marketplace services they do not want their stores enrolled in. This field captures the services a Franchisee has deselected, and these services are not provisioned for all stores owned by the Franchisee.</inlineHelpText>
+    <label>Deselected Marketplace Offerings</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+                <label>Delivery</label>
+            </value>
+            <value>
+                <fullName>Pickup</fullName>
+                <default>false</default>
+                <label>Pickup</label>
+            </value>
+            <value>
+                <fullName>DashPass</fullName>
+                <default>false</default>
+                <label>DashPass</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

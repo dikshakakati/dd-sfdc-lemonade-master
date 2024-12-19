@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trialable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-14521: It is used to show to if the product is trialable or not.</description>
+    <externalId>false</externalId>
+    <label>Trialable?</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

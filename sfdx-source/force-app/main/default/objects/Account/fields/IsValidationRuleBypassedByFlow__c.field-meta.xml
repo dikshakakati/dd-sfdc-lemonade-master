@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsValidationRuleBypassedByFlow__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <defaultValue>false</defaultValue>
+    <description>LEM-24069: It is used to bypass the reparenting related validation rules triggered when store is reparented from &quot;Re-Parent Store Account&quot; flow.</description>
+    <externalId>false</externalId>
+    <label>IsValidationRuleBypassedByFlow</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

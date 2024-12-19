@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounts_with_Contracts</fullName>
+    <availability>online</availability>
+    <description>LEM-3457: Custom link to display all contracts associated to corporate accounts below its hierarchy.</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Accounts with Contracts</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/lightning/r/Report/{!$Label.All_Contracts_By_Account_Name_Report_Id}/view?fv0={!Account.Id}&amp;fv1={!Account.Id}&amp;fv2={!Account.Id}&amp;fv3={!Account.Id}&amp;fv4={!Account.Id}</url>
+</WebLink>

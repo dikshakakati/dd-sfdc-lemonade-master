@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unified_Store_ID__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-2197: Signifies the backend unified ID tying Marketplace and Drive Store IDs.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Signifies the backend unified ID tying Marketplace and Drive Store IDs</inlineHelpText>
+    <label>Unified Store ID</label>
+    <length>40</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

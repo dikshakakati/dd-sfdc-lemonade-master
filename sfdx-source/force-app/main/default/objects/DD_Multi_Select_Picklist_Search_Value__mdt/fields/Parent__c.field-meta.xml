@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Parent</label>
+    <referenceTo>DD_Multi_Select_Picklist_Master__mdt</referenceTo>
+    <relationshipLabel>DD Multi Select Picklist Search Values</relationshipLabel>
+    <relationshipName>DD_Multi_Select_Picklist_Search_Values</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

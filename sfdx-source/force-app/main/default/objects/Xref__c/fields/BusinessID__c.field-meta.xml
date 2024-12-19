@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BusinessID__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-2197: Signifies the corresponding backend business ID for the business.</description>
+    <externalId>false</externalId>
+    <formula>Business_Reference__r.External_Id__c</formula>
+    <inlineHelpText>Signifies the corresponding backend business ID for the business</inlineHelpText>
+    <label>Business ID</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

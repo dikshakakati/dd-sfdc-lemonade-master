@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Quote_Update_On_CL_Opportunity</fullName>
+    <active>true</active>
+    <description>LEM-14082: It throws error when user tries to update quote when the opportunity&apos;s stage is Closed Lost.</description>
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Quote_Validation_Rules),
+        TEXT(SBQQ__Opportunity2__r.StageName) = $Label.Opportunity_Stage_Closed_Lost
+    )</errorConditionFormula>
+    <errorMessage>No updates can be made on Quote when the associated Opportunity is in closed lost stage.</errorMessage>
+</ValidationRule>

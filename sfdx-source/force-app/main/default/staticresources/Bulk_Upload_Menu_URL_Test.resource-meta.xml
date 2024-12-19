@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Private</cacheControl>
+    <contentType>text/csv</contentType>
+    <description>LEM-10223: It is used to mock validate bulk upload functionality for Store Accounts without &quot;Menu URL&quot; in BulkCorporateOnboardingReqSrvcImplTest class.</description>
+</StaticResource>

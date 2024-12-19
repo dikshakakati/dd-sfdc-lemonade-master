@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>of_Core_Products_On_Quote__c</fullName>
+    <description>LEM-14401: It is used to store the number of core products that are added to the cart.</description>
+    <externalId>false</externalId>
+    <label># of Core Products On Quote</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

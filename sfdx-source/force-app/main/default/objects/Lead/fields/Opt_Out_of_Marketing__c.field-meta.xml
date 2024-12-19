@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opt_Out_of_Marketing__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <defaultValue>false</defaultValue>
+    <description>LEM-16624: Selection of “Opt out of Communications” button will result in this field being selected, which is used to indicate in Cassie that a Mx has opted out of all communications (both marketing &amp; transactional).</description>
+    <externalId>false</externalId>
+    <label>Opt Out of Marketing</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

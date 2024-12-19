@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/json</contentType>
+    <description>LEM-18411: It is used to capture the sample fallout payload for test classes related to SSMO and SSOB.</description>
+</StaticResource>

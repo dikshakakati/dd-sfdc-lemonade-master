@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CcAddress</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14155: It is used to store the cc address of associated email.</description>
+    <length>2000</length>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Text</type>
+</CustomField>

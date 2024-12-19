@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Digital</fullName>
+        <default>false</default>
+        <label>Digital</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Omnichannel</fullName>
+        <default>false</default>
+        <label>Omnichannel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>E-Commerce</fullName>
+        <default>false</default>
+        <label>E-Commerce</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Shopper Marketing</fullName>
+        <default>false</default>
+        <label>Shopper Marketing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FoodService</fullName>
+        <default>false</default>
+        <label>FoodService</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Decision Maker</fullName>
+        <default>false</default>
+        <label>Decision Maker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Store Manager</fullName>
+        <default>false</default>
+        <label>Store Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Store Operator</fullName>
+        <default>false</default>
+        <label>Store Operator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Technical Contact</fullName>
+        <default>false</default>
+        <label>Technical Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Accounting Contact</fullName>
+        <default>false</default>
+        <label>Accounting Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Legal Contact</fullName>
+        <default>false</default>
+        <label>Legal Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract Signatory</fullName>
+        <default>false</default>
+        <label>Contract Signatory</label>
+    </standardValue>
+    <standardValue>
+        <fullName>POS Contact</fullName>
+        <default>false</default>
+        <label>POS Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Primary 3P Contact</fullName>
+        <default>false</default>
+        <label>Primary 3P Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Business Admin</fullName>
+        <default>false</default>
+        <label>Business Admin</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Influencer</fullName>
+        <default>false</default>
+        <label>Influencer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gate Keeper</fullName>
+        <default>false</default>
+        <label>Gate Keeper</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Photoshoot Contact</fullName>
+        <default>false</default>
+        <label>Photoshoot Contact</label>
+    </standardValue>
+     <standardValue>
+        <fullName>Business Director</fullName>
+        <default>false</default>
+        <label>Business Director</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Business Owner</fullName>
+        <default>false</default>
+        <label>Business Owner</label>
+    </standardValue>
+</StandardValueSet>

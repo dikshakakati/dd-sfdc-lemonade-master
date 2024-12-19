@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>LEM-2983: Captures the Status of the Brief Item.</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Waiting for Inputs</fullName>
+                <default>true</default>
+                <label>Waiting for Inputs</label>
+            </value>
+            <value>
+                <fullName>Campaign Building</fullName>
+                <default>false</default>
+                <label>Campaign Building</label>
+            </value>
+            <value>
+                <fullName>Testing - New Submission</fullName>
+                <default>false</default>
+                <label>Testing - New Submission</label>
+            </value>
+            <value>
+                <fullName>Testing - Contract and Campaign Review</fullName>
+                <default>false</default>
+                <label>Testing - Contract and Campaign Review</label>
+            </value>
+            <value>
+                <fullName>Testing - In-App Review</fullName>
+                <default>false</default>
+                <label>Testing - In-App Review</label>
+            </value>
+            <value>
+                <fullName>Testing - Ready for Edits</fullName>
+                <default>false</default>
+                <label>Testing - Ready for Edits</label>
+            </value>
+            <value>
+                <fullName>Testing - Second Review</fullName>
+                <default>false</default>
+                <label>Testing - Second Review</label>
+            </value>
+            <value>
+                <fullName>Testing - Ready to Schedule Live</fullName>
+                <default>false</default>
+                <label>Testing - Ready to Schedule Live</label>
+            </value>
+            <value>
+                <fullName>Pre-Live Audit - New Submission</fullName>
+                <default>false</default>
+                <label>Pre-Live Audit - New Submission</label>
+            </value>
+            <value>
+                <fullName>Pre-Live Audit - Ready for Edits</fullName>
+                <default>false</default>
+                <label>Pre-Live Audit - Ready for Edits</label>
+            </value>
+            <value>
+                <fullName>Scheduled Live</fullName>
+                <default>false</default>
+                <label>Scheduled Live</label>
+            </value>
+            <value>
+                <fullName>Live QA Completed</fullName>
+                <default>false</default>
+                <label>Live QA Completed</label>
+            </value>
+            <value>
+                <fullName>Fully Executed</fullName>
+                <default>false</default>
+                <label>Fully Executed</label>
+            </value>
+            <value>
+                <fullName>Deactivated</fullName>
+                <default>false</default>
+                <label>Deactivated</label>
+            </value>
+            <value>
+                <fullName>Pre-Live Audit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pre-Live Audit</label>
+            </value>
+            <value>
+                <fullName>Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Testing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

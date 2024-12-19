@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Marketplace</fullName>
+        <default>false</default>
+        <label>Marketplace</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Advertisement</fullName>
+        <default>false</default>
+        <label>Advertisement</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Drive</fullName>
+        <default>false</default>
+        <label>Drive</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Marketplace Promotion</fullName>
+        <default>false</default>
+        <label>Marketplace Promotion</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Drive Promotion</fullName>
+        <default>false</default>
+        <label>Drive Promotion</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hardware</fullName>
+        <default>false</default>
+        <label>Hardware</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Marketing Commitment</fullName>
+        <default>false</default>
+        <label>Marketing Commitment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Voice Ordering</fullName>
+        <default>false</default>
+        <label>Voice Ordering</label>
+    </standardValue>
+</StandardValueSet>

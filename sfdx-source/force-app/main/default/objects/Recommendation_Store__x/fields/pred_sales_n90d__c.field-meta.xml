@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pred_sales_n90d__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-16067: It displays the Predicted Sales for 90 days of all the stores to which the VSP Recommendation applies.</description>
+    <externalDeveloperName>pred_sales_n90d</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Predicted n90 days $ Sales</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

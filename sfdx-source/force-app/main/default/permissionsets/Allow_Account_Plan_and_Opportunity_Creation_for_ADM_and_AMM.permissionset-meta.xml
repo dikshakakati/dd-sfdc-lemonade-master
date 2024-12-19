@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Account_Plan_and_Opportunity_Creation_for_ADM_and_AMM</name>
+    </customPermissions>
+    <description>LEM-20082: It is used to control visibility of VSP related features for post sales users.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Account Plan and Opportunity Creation for ADM and AMM</label>
+</PermissionSet>

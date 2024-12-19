@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provincial_Tax_ID__c</fullName>
+    <description>LEM-1150: To store Provincial Tax ID</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provincial Tax ID, applicable to Canadian Mxs only</inlineHelpText>
+    <label>Provincial Tax ID (CAN only)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

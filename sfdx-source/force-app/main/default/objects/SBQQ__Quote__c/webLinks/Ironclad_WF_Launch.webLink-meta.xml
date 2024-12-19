@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ironclad_WF_Launch</fullName>
+    <availability>online</availability>
+    <description>This button is created as part of CLM Setup and will be used to launch Ironclad Workflows from the Quote</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Ironclad Contract</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://demo.ironcladapp.com/workflows/63616b55ec0424985e92e2f1/launch/649344e43debfd98c0eded60?source=a669d216-064f-4bea-9cd3-ff1dc48db409&amp;externalId={!SBQQ__Quote__c.Id}</url>
+</WebLink>

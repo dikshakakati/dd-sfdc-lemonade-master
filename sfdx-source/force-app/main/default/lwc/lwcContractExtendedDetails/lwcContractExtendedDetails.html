@@ -1,0 +1,25 @@
+<!--
+  * @author Deloitte
+  * @date 06/10/2024
+  * @description It is parent container to display everything related to SMB segment below
+  * contracts tab.
+-->
+<template>
+  <c-lwc-subscription-summary
+    contract-id={contractId}
+    columns={columns}
+    split-category={splitCategory}
+  >
+  </c-lwc-subscription-summary>
+  <template lwc:if={bool}>
+    <div>
+      <c-merchant-services-details
+        contract-id={contractId}
+        columns={columns}
+        split-category={splitCategory}
+        business-account-id={businessAccountId}
+      >
+      </c-merchant-services-details>
+    </div>
+  </template>
+</template>

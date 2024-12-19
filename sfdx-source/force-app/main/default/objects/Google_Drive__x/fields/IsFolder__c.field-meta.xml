@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsFolder__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-2994: It helps identify whether the entity is a Google Drive folder or file.</description>
+    <externalDeveloperName>IsFolder</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>true</isSortingDisabled>
+    <label>IsFolder</label>
+    <readOnlyProxy>true</readOnlyProxy>
+    <securityClassification>Internal</securityClassification>
+    <type>Checkbox</type>
+</CustomField>

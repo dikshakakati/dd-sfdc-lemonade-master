@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provisioning_Status__c</fullName>
+    <description>LEM-2083: It indicates the Provisioning Status of stores and business. In addition to that, it has the following purposes:
+1. It is updated on child Work Orders by provisioning integration and parent Work Orders by apex based roll-up logic.
+2. Drives logic for Work Plans and Work Steps creation.
+3. Indicates the readiness of the stores for provisioning in the backend databases.</description>
+    <externalId>false</externalId>
+    <label>Provisioning Status</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>Readiness Check</fullName>
+                <default>false</default>
+                <label>Readiness Check</label>
+            </value>
+            <value>
+                <fullName>Readiness Check Failed</fullName>
+                <default>false</default>
+                <label>Readiness Check Failed</label>
+            </value>
+            <value>
+                <fullName>Readiness Check Complete</fullName>
+                <default>false</default>
+                <label>Readiness Check Complete</label>
+            </value>
+            <value>
+                <fullName>Ready for Provisioning</fullName>
+                <default>false</default>
+                <label>Ready for Provisioning</label>
+            </value>
+            <value>
+                <fullName>Provisioning Complete</fullName>
+                <default>false</default>
+                <label>Provisioning Complete</label>
+            </value>
+            <value>
+                <fullName>Provisioning Failed</fullName>
+                <default>false</default>
+                <label>Provisioning Failed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

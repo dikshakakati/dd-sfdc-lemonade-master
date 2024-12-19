@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_Email_to_Sales_Opportunity_Team_to_Use_Onboarding_Inputs</fullName>
+        <description>LEM-15358: Send Email to Sales Opportunity Team to Use Onboarding Inputs</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Marketplace AD Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Platform AD Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Commercial Operations</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Franchise Representative</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Merchant Experience Partner</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Pre-Sales Representative</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/SMB_Onboarding_Inputs_Rep_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_to_Sales_Opportunity_Team_for_RESSMO_Mx_Submission</fullName>
+        <description>LEM-25715 : Send Email to Sales Opportunity Team for RESSMO Mx Submission</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Commercial Operations</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Franchise Representative</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Merchant Experience Partner</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Pre-Sales Representative</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@doordash.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>OnboardingAndActivationsEmails/RESSMO_Completed_Rep_Notification_1734085038814</template>
+    </alerts>
+</Workflow>

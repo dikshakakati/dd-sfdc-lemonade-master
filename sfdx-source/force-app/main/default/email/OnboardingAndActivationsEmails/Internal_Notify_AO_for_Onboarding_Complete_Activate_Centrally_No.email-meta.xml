@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LEM-1240: When work plan “Central Activations” is set to complete and AC=No, notify the Account Owner.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[Internal] Notify AO for Onboarding Complete - Activate Centrally = No</name>
+    <relatedEntityType>WorkOrder</relatedEntityType>
+    <style>none</style>
+    <subject>{{{WorkOrder.Account}}} is ready for activation - Activations checklist is complete</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

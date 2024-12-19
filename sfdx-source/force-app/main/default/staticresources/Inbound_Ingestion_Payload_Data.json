@@ -1,0 +1,257 @@
+{
+   "uuid":"92108a53-e8d9-4a0c-9193-9152aeb86fe4",
+   "signupType":"MARKETPLACE",
+   "createdAt": "2024-06-28T16:08:35.163Z",
+   "business":{
+      "businessId":"12820285",
+      "isTest":false,
+      "name":"Los Pinchos de mi Abuela",
+      "legalBusinessName":"Los Pinchos de mi Abuela",
+      "businessPhone":"4074335545",
+      "headerImage":""
+   },
+   "businessGroup": {
+      "isNewBusinessGroup": null,
+      "businessGroupName": null,
+      "businessGroupId": "1200"
+    },
+   "merchantOwner":{
+      "firstName":"Mariela",
+      "lastName":"Esquilin",
+      "email":"lospinchosdemiabuela@gmail.com",
+      "mobilePhone":"+14074335545"
+   },
+   "store":{
+      "storeId":"28040568",
+      "storeType":"",
+      "storeName":"Los Pinchos de mi Abuela",
+      "street":"6848 Hoffner Ave",
+      "postalCode":"32822",
+      "city":"Orlando",
+      "treatmentGroup":[
+         "SINGULARITY",
+         "MANDATORY_HEADER"
+      ],
+      "deckRank":"",
+      "ipadUsername":"14074335545llri@ipad.doordash.com",
+      "ipadPassword":"1836",
+      "state":"FL",
+      "merchantTaxId":null,
+      "country":"United States",
+      "phone":"+14074335545",
+      "vertical":"VERTICAL_TYPE_RESTAURANT",
+      "segmentType":"SMB",
+      "sfdcCampaignId":"7012L000000qm0KQAQ",
+      "menuUrls":[
+         "Los Pinchos de Mi Abuela "
+      ],
+      "orderProtocol":"ORDER_PROTOCOL_TABLET",
+      "orderProtocol_fax":"",
+      "orderProtocol_email":"",
+      "menuCompletedBy":"DoorDash Onboarding Team",
+      "menuSetupMethod":"Create New Menu(s) using Menu Source",
+      "numberOfAddressableLocations":"NUMBER_OF_LOCATIONS_TWO_TO_FIVE",
+      "hoursOfOperation":"Monday Closed, Tuesday Closed, Wednesday 11:00AM-7:00PM, Thursday 10:00AM-3:00PM, Friday 11:00AM-8:00PM, Saturday 11:00AM-8:00PM, Sunday Closed",
+      "posIntegrationType":"",
+      "preferredLanguage":"locale",
+      "vendorContractType":"SSMO Sign Up Sheet",
+      "vendorActivityId":"65fb64b0de264b7d4b7d823d",
+      "vendorSafeRecord":"https://app.pactsafe.com/api/activity/65fb64b0de264b7d4b7d823d/record",
+      "isFranchisee":false,
+      "isAdditionalStore":true,
+      "numberOfFranchisee":"0",
+      "mxRequestingPhotoshoot":"Yes",
+      "matchedRecords": {
+        "lead": [
+          {
+            "id": "00QO100000A6T84MAF"
+          }
+        ],
+        "contact": [
+          {
+            "id": "003O100000eFQG7IAO"
+          }
+        ],
+        "account": [
+          {
+            "id": "003dx000001dnhpAAC"
+          }
+        ]
+      },
+      "hasValidEmail": true,
+      "addressVerificationInfo": {
+        "addressVerificationStatus": "Verified",
+        "rejectedReason": null,
+        "addressVerificationDate": "2024-05-28T16:08:35.163Z",
+        "validatedAddress": {
+          "latitude": 46.288462,
+          "longitude": -119.2763589,
+          "addressLine1": "1368 Jadwin Avenue",
+          "addressLine2": "",
+          "city": "Richland",
+          "state": "WA",
+          "stateCode":"WA",
+          "country": "United States",
+          "countryShortname": "US",
+          "postalCode": "99354",
+          "addressId": "326297455",
+          "timeZone": "America/Los_Angeles"
+        },
+        "submarket": {
+          "id": "591",
+          "name": "Kennewick"
+        },
+        "startingPoint": {
+          "id": 2801,
+          "startingPoint": "WA: Kennewick"
+        },
+        "alcoholRules": {
+          "alcoholAllowanceCategory": "Wet"
+        }
+      },
+      "orderProducts":[
+         {
+            "name":"Premier Package",
+            "productCode":null,
+            "productOptions":[
+               {
+                  "name":"Delivery",
+                  "productCode":null,
+                  "commission":30,
+                  "trialComission":0,
+                  "trialDuration":30,
+                  "productOptions":null
+               },
+               {
+                  "name":"Dashpass",
+                  "productCode":null,
+                  "fee":1,
+                  "trialFee":0,
+                  "productOptions":null
+               },
+               {
+                  "name":"Pickup",
+                  "productCode":null,
+                  "fee":6,
+                  "trialFee":0,
+                  "product Options":null
+               },
+               {
+                  "name":"Cx Delivery Fee",
+                  "productCode":null,
+                  "fee":1.99,
+                  "trialFee":0,
+                  "productOptions":null
+               },
+               {
+                  "name":"Service Rate",
+                  "productCode":null,
+                  "fee":11,
+                  "trialFee":11,
+                  "productOptions":null
+               }
+            ]
+         },
+         {
+            "name":"Hardware",
+            "productCode":null,
+            "productOptions":[
+               {
+                  "name":"Tablet Fee",
+                  "productCode":"null",
+                  "commission":null,
+                  "fee":8,
+                  "trialComission":null,
+                  "trialFee":null
+               },
+               {
+                  "name":"Printer Fee",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               }
+            ]
+         },
+         {
+            "name":"Standard Storefront Package",
+            "productCode":null,
+            "productOptions":[
+               {
+                  "name":"Set Up Fee",
+                  "productCode":"null",
+                  "commission":null,
+                  "fee":8,
+                  "trialComission":null,
+                  "trialFee":null
+               },
+               {
+                  "name":"Subscription Fee",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               },
+               {
+                  "name":"Mx Delivery Fee",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               },
+               {
+                  "name":"Payment Processing Fee",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               },
+               {
+                  "name":"Payment Processing Rate",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               },
+               {
+                  "name":"Pickup",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               },
+               {
+                  "name":"Cx Delivery Fee",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               },
+               {
+                  "name":"Service Rate",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               },
+               {
+                  "name":"Payment Processing Fee",
+                  "productCode":null,
+                  "commission":"8%",
+                  "fee":null,
+                  "trialComission":"8%",
+                  "trialFee":null
+               }
+            ]
+         }
+      ]
+   }
+}

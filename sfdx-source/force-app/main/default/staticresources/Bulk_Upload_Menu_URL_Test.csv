@@ -1,0 +1,3 @@
+Name*,Type*,Merchant Supplied ID,Parent Account ID*,Business ID*,Legal Business Name*,Country*,State,City*,Street*,Postal Code*,Phone*,In-Store Pickup Instructions,Parking / Arrival Instructions,Minimum Prep Time,Menu URL,Hours of Operation*,Shopping Protocol,POS System,POS Integration Id,Payment Account ID,Decision Maker ID
+Test 10219,Brick and Mortar,Test-1234,0017600000ZuxpWAAR,1,Test 10219 Burger,United States,Pennsylvania,Erie,1223 East 31st St.,16789,,Pickup Counter Placement,,2,https://www.google.com/,M-F 9am-12am,Mx Pick,Cake,169204,,
+Test 10219 - WA,Brick and Mortar,WA-1234,0017600000ZuxpWAAR,2,Test 10219 WA Burger,United States,Pennsylvania,Erie,4223 West 20th St.,14589,9134649867,Pickup Counter Placement,,2,,M-F 9am-1pm,Mx Pick,Cake,117204,,

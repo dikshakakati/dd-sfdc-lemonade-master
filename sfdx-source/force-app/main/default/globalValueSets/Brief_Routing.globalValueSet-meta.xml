@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Standard (Launch Ops)</fullName>
+        <default>false</default>
+        <label>Standard (Launch Ops)</label>
+    </customValue>
+    <customValue>
+        <fullName>Custom (Ad Ops)</fullName>
+        <default>false</default>
+        <label>Custom (Ad Ops)</label>
+    </customValue>
+    <description>LEM-12423: Eliminate Need for Sales to Select Configuration Type</description>
+    <masterLabel>Brief Routing</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Super Bowl</fullName>
+        <default>false</default>
+        <label>Super Bowl</label>
+    </customValue>
+    <customValue>
+        <fullName>Valentine&apos;s Day</fullName>
+        <default>false</default>
+        <label>Valentine&apos;s Day</label>
+    </customValue>
+    <customValue>
+        <fullName>March Madness</fullName>
+        <default>false</default>
+        <label>March Madness</label>
+    </customValue>
+    <customValue>
+        <fullName>Easter</fullName>
+        <default>false</default>
+        <label>Easter</label>
+    </customValue>
+    <customValue>
+        <fullName>Mother&apos;s Day</fullName>
+        <default>false</default>
+        <label>Mother&apos;s Day</label>
+    </customValue>
+    <customValue>
+        <fullName>NBA Finals</fullName>
+        <default>false</default>
+        <label>NBA Finals</label>
+    </customValue>
+    <customValue>
+        <fullName>Father&apos;s Day</fullName>
+        <default>false</default>
+        <label>Father&apos;s Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Summer of DashPass (Includes July 4th)</fullName>
+        <default>false</default>
+        <label>Summer of DashPass (Includes July 4th)</label>
+    </customValue>
+    <customValue>
+        <fullName>Back to School</fullName>
+        <default>false</default>
+        <label>Back to School</label>
+    </customValue>
+    <customValue>
+        <fullName>Fall Football</fullName>
+        <default>false</default>
+        <label>Fall Football</label>
+    </customValue>
+    <customValue>
+        <fullName>Halloween</fullName>
+        <default>false</default>
+        <label>Halloween</label>
+    </customValue>
+    <customValue>
+        <fullName>Winter Holidays Broadly</fullName>
+        <default>false</default>
+        <label>Winter Holidays Broadly</label>
+    </customValue>
+    <customValue>
+        <fullName>Winter Holidays: Thanksgiving</fullName>
+        <default>false</default>
+        <label>Winter Holidays: Thanksgiving</label>
+    </customValue>
+    <customValue>
+        <fullName>Winter Holidays: Deck the Doorstep</fullName>
+        <default>false</default>
+        <label>Winter Holidays: Deck the Doorstep</label>
+    </customValue>
+    <customValue>
+        <fullName>Winter Holidays; Christmas</fullName>
+        <default>false</default>
+        <label>Winter Holidays; Christmas</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthy New Year</fullName>
+        <default>false</default>
+        <label>Healthy New Year</label>
+    </customValue>
+    <customValue>
+        <fullName>St Patrick&apos;s Day</fullName>
+        <default>false</default>
+        <label>St Patrick&apos;s Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Cinco de Mayo</fullName>
+        <default>false</default>
+        <label>Cinco de Mayo</label>
+    </customValue>
+    <customValue>
+        <fullName>Memorial Day</fullName>
+        <default>false</default>
+        <label>Memorial Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Fourth of July</fullName>
+        <default>false</default>
+        <label>Fourth of July</label>
+    </customValue>
+    <customValue>
+        <fullName>Summer Olympics</fullName>
+        <default>false</default>
+        <label>Summer Olympics</label>
+    </customValue>
+    <customValue>
+        <fullName>Labor Day</fullName>
+        <default>false</default>
+        <label>Labor Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Black Friday / Cyber Monday</fullName>
+        <default>false</default>
+        <label>Black Friday / Cyber Monday</label>
+    </customValue>
+    <customValue>
+        <fullName>New Year&apos;s Eve</fullName>
+        <default>false</default>
+        <label>New Year&apos;s Eve</label>
+    </customValue>
+    <customValue>
+        <fullName>Groundhog Day</fullName>
+        <default>false</default>
+        <label>Groundhog Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Galentine&apos;s Day</fullName>
+        <default>false</default>
+        <label>Galentine&apos;s Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Mardi Gras</fullName>
+        <default>false</default>
+        <label>Mardi Gras</label>
+    </customValue>
+    <customValue>
+        <fullName>Presidents Day</fullName>
+        <default>false</default>
+        <label>Presidents Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Savings for Daylight Savings</fullName>
+        <default>false</default>
+        <label>Savings for Daylight Savings</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax Day</fullName>
+        <default>false</default>
+        <label>Tax Day</label>
+    </customValue>
+    <customValue>
+        <fullName>Spring Cleaning</fullName>
+        <default>false</default>
+        <label>Spring Cleaning</label>
+    </customValue>
+    <customValue>
+        <fullName>Earth Day &amp; 4/20</fullName>
+        <default>false</default>
+        <label>Earth Day &amp; 4/20</label>
+    </customValue>
+    <customValue>
+        <fullName>Graduation</fullName>
+        <default>false</default>
+        <label>Graduation</label>
+    </customValue>
+    <customValue>
+        <fullName>Juneteenth</fullName>
+        <default>false</default>
+        <label>Juneteenth</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
+    </customValue>
+    <description>LEM-13256 - DPEI Quote Line Attributes</description>
+    <masterLabel>Occasion</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

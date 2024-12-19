@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>MenuToBeCompletedBy req on WO for Mkt</label>
+    <protected>false</protected>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">LEM-1684, LEM-4669: It validates that &apos;Menu to be Completed By&apos; field is populated on Work Order when WorkOrder Type is &apos;Marketplace&apos; or &apos;COO&apos;.</value>
+    </values>
+    <values>
+        <field>Error_Message__c</field>
+        <value xsi:type="xsd:string">Please populate “Menu to be Completed By” as Marketplace or COO type is selected.</value>
+    </values>
+    <values>
+        <field>Field_Label__c</field>
+        <value xsi:type="xsd:string">Menu to be Completed By</value>
+    </values>
+    <values>
+        <field>Field_Name__c</field>
+        <value xsi:type="xsd:string">Menu_to_be_Completed_By__c</value>
+    </values>
+    <values>
+        <field>Is_Active__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Object_Label__c</field>
+        <value xsi:type="xsd:string">Work Order</value>
+    </values>
+    <values>
+        <field>Object_Name__c</field>
+        <value xsi:type="xsd:string">WorkOrder</value>
+    </values>
+    <values>
+        <field>Service_Class_Name__c</field>
+        <value xsi:type="xsd:string">IWorkOrderValidationsService</value>
+    </values>
+    <values>
+        <field>Service_Method_Name__c</field>
+        <value xsi:type="xsd:string">validateMenuToBeCompletedBy</value>
+    </values>
+</CustomMetadata>

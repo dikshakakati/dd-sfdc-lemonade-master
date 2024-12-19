@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source__c</fullName>
+    <description>LEM-13822:Used in QCP for comparing Commission Rates Filter_Value_1__c for CRT Stamping</description>
+    <externalId>false</externalId>
+    <formula>
+        IF(
+                OR(
+                    ISPICKVAL(SBQQ__Opportunity2__r.LeadSource, &quot;Get.doordash.com&quot;),
+                    CONTAINS(SBQQ__Opportunity2__r.CreatedBy.FirstName, &quot;Mulesoft &quot;)
+                ),
+                &quot;SSMO&quot;,
+                null
+            )
+    </formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Source</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

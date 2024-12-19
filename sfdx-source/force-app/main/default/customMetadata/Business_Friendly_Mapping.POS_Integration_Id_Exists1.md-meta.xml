@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>POS_Integration_Id_Exists1</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Business_Friendly_Message__c</field>
+        <value xsi:type="xsd:string">POS integration ID is duplicate and already tied to another store ID in product. Please correct POS integration and then rerun provisioning by clicking &quot;Reattempt Provisioning&quot; on the work order.
+
+            If original POS integration ID provided is valid, please contact Mx services to remove the duplicate POS integration ID tied to another store ID in product.</value>
+    </values>
+    <values>
+        <field>Integration_Key_String__c</field>
+        <value xsi:type="xsd:string">ALREADY_EXISTS: PSQLException: ERROR: duplicate key value violates unique constraint &quot;store_provider_type_location_id_key&quot;</value>
+    </values>
+    <values>
+        <field>Integration_Type__c</field>
+        <value xsi:type="xsd:string">Xref Provisioning</value>
+    </values>
+    <values>
+        <field>Message_Category__c</field>
+        <value xsi:type="xsd:string">POS - Duplicate</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">241.0</value>
+    </values>
+</CustomMetadata>

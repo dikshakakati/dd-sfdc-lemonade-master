@@ -1,0 +1,17 @@
+<!--
+  * @author Deloitte
+  * @date 10/16/2023
+  * @description Custom picklist template to show picklist in lightning datatable.
+-->
+<template>
+  <div>
+    <c-custom-picklist
+      label={typeAttributes.label}
+      value={value}
+      options={typeAttributes.options}
+      context={typeAttributes.context}
+      field-name={typeAttributes.fieldName}
+    >
+    </c-custom-picklist>
+  </div>
+</template>

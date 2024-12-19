@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_StorePageBannerPopulation</fullName>
+    <active>true</active>
+    <description>LEM-2983: Validates if Store Page Banner is included when Configuration is custom and Product Type is not Banner, Sponsored Listing, Sponsored Products, CRM
+LEM-12189: Clean up Brief/Brief Item Metadata</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Status__c, &apos;Campaign Building&apos;),
+ISPICKVAL(Brief__r.Configuration__c, &apos;Custom (Ad Ops)&apos;),
+ISPICKVAL(Store_Page_Banner_Included_for_Promo__c, &apos;&apos;),
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+NOT(
+OR(
+ISPICKVAL(Product__c, &apos;Banners&apos;),
+ISPICKVAL(Product__c, &apos;CRM&apos;),
+ISPICKVAL(Product__c, &apos;Branded Collections&apos;),
+ISPICKVAL(Product__c, &apos;Sampling&apos;),
+ISPICKVAL(Product__c, &apos;Custom Marketing Promotion&apos;),
+ISPICKVAL(Product__c, &apos;Sponsored Products&apos;),
+ISPICKVAL(Product__c, &apos;Sponsored Brands&apos;),
+ISPICKVAL(Product__c, &apos;Sponsored Listings&apos;))))</errorConditionFormula>
+    <errorDisplayField>Store_Page_Banner_Included_for_Promo__c</errorDisplayField>
+    <errorMessage>Please indicate if your campaign will have a Store Page Banner included for this promo before updating the Status to &apos;Campaign Building’.</errorMessage>
+</ValidationRule>

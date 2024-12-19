@@ -1,0 +1,32 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>59.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>Get Record Details</masterLabel>
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<property name="billingAddress" type="String" label="Billing Address" />
+			<property name="billingCity" type="String" label="Billing City" />
+			<property name="billingCountry" type="String" label="Billing Country" />
+			<property name="billingCountryCode" type="String" label="Billing Country Code" />
+			<property name="billingState" type="String" label="Billing State" />
+			<property name="billingStateCode" type="String" label="Billing State Code" />
+			<property name="billingStreet" type="String" label="Billing Street" />
+			<property name="billingPostalCode" type="String" label="Billing Postal Code" />
+			<property name="menuURL" type="String" label="Menu URL" />
+
+			<property name="contactFirstName" type="String" label="Contact First Name" />
+			<property name="contactLastName" type="String" label="Contact Last Name" />
+			<property name="contactEmail" type="String" label="Contact Email" />
+			<property name="contactPhone" type="String" label="Contact Phone" />
+			<property name="contactMobilePhone" type="String" label="Contact Mobile Phone" />
+
+			<property name="selectedAccountRecordId" type="String" label="Account Record Id"  role="inputOnly"/>
+			<property name="selectedContactRecordId" type="String" label="Contact Record Id"  role="inputOnly"/>
+			<property name="selectedObjectName" type="String" label="Select Object Name" role="inputOnly" />
+
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

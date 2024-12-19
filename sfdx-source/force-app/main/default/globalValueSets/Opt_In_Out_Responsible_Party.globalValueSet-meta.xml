@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>DoorDash</fullName>
+        <default>false</default>
+        <label>DoorDash</label>
+    </customValue>
+    <customValue>
+        <fullName>Merchant</fullName>
+        <default>false</default>
+        <label>Merchant</label>
+    </customValue>
+    <description>LEM-1363 - Capture Opt In/Out and Responsible Party</description>
+    <masterLabel>Opt-In/Out Responsible Party</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

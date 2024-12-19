@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Nintex_Signed_Date</fullName>
+    <active>true</active>
+    <description>LEM-2511: This validation rule is to validate if the Nintex Signed Date field
+      is populated before marking the Opportunity stage as Closed Won.</description>
+    <errorConditionFormula>AND(
+      NOT(TEXT(Deal_Type__c) = $Label.Opportunity_Lite),
+      NOT($Permission.Bypass_Opportunity_Validation_Rules),
+      NOT(TEXT(FranchiseAmendmentProcess__c) = $Label.Franchise_Opt_Out),
+      ISBLANK(Nintex_Signed_Date__c),
+      ISCHANGED(StageName),
+      TEXT(Source__c) != $Label.Source_Product,
+      TEXT(StageName) = $Label.Opportunity_Stage_Closed_Won,
+      Account.RecordType.DeveloperName = $Label.BusinessAccountRecordTypeName,
+      TEXT(Account.Type) = $Label.Type_Franchisee
+    )</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Please ensure a Nintex form has been signed for this opportunity (as indicated by the Nintex Signed Date field being populated) before marking it as Closed Won.</errorMessage>
+</ValidationRule>

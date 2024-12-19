@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4672: It is used to hide quick action buttons from user with read access on Contract sObject.</description>
+    <isLicensed>false</isLicensed>
+    <label>Hide Contract Quick Actions</label>
+</CustomPermission>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_Eligible_For_Entitlement__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-10841 CCP- Used to identify if a package is available for selection/ deselection in manage stores</description>
+    <externalId>false</externalId>
+    <label>Package Eligible For Entitlement</label>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

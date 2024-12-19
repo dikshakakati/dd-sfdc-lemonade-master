@@ -1,0 +1,4 @@
+<!-- LEM-449, LEM-2505 -->
+<design:component>
+  <design:attribute name="url" />
+</design:component>

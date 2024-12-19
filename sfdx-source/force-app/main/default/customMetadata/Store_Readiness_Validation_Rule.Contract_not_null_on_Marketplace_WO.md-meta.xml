@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contract not null on Marketplace WO</label>
+    <protected>false</protected>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">LEM-7999: It validates that &apos;Contract&apos; is not populated on Marketplace Work Order.</value>
+    </values>
+    <values>
+        <field>Error_Message__c</field>
+        <value xsi:type="xsd:string">Please ensure Contract is populated.</value>
+    </values>
+    <values>
+        <field>Field_Label__c</field>
+        <value xsi:type="xsd:string">Contract</value>
+    </values>
+    <values>
+        <field>Field_Name__c</field>
+        <value xsi:type="xsd:string">Contract__c</value>
+    </values>
+    <values>
+        <field>Is_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Object_Label__c</field>
+        <value xsi:type="xsd:string">Work Order</value>
+    </values>
+    <values>
+        <field>Object_Name__c</field>
+        <value xsi:type="xsd:string">WorkOrder</value>
+    </values>
+    <values>
+        <field>Service_Class_Name__c</field>
+        <value xsi:type="xsd:string">IWorkOrderValidationsService</value>
+    </values>
+    <values>
+        <field>Service_Method_Name__c</field>
+        <value xsi:type="xsd:string">validateContractOnMarketplace</value>
+    </values>
+</CustomMetadata>

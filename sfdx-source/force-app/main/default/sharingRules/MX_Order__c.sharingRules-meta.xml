@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Merchant_Order_Created_By_Automated_Process</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-22064: Share Merchant Orders created by Automated Process.</description>
+        <label>Share Merchant Order Created By Automated Process</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Mx_Order_With_Integration_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-20904: It provides Edit access on Xrefs to MuleSoft user.</description>
+        <label>Share Mx Order With Integration Users</label>
+        <sharedTo>
+            <group>Integration_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Mx_Order_All_User</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>It is used to give edit access for Mx Order records.</description>
+        <label>Mx Order All User</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

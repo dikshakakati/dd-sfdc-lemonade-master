@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corporate_Account__c</fullName>
+    <description>LEM-5727: It indicates corporate account associated with the parent work order. It is currently used to send internal communications to &quot;Drive Specialist&quot;. It is evaluated as per the logic below:
+a. If account associated with the work order is of franchisee type then corporate account populated on contract.
+b. Otherwise account associated with the parent work order.
+c. If it&apos;s a child work order then evaluate above mentioned logics using the parent work order fields.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  Account.RecordType.DeveloperName = $Label.BusinessAccountRecordTypeName,
+  IF(
+    TEXT(Account.Type) = $Label.Type_Franchisee,
+    Contract__r.AccountId,
+    AccountId
+  ),
+  IF(
+    TEXT(ParentWorkOrder.Account.Type) = $Label.Type_Franchisee,
+    ParentWorkOrder.Contract__r.AccountId,
+    ParentWorkOrder.AccountId
+  )
+)</formula>
+    <label>Corporate Account</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

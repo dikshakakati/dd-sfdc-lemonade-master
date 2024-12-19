@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Photoshoot_Contact_Details</fullName>
+    <description
+  >LEM-13492: It is used to display &apos;Photoshoot Contact Details&apos; section of the onboarding details on photoshoot Work Plan.</description>
+    <displayedFields>
+        <field>Contact_Name__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Email</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Phone</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>MobilePhone</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Photoshoot Contact Details</label>
+</FieldSet>

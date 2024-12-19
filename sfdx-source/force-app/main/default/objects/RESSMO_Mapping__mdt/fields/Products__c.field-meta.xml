@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products__c</fullName>
+    <description>DD_Custom_Id__c value of the Product2 records for which the entry is relevant and should be added in the payload, at the line level (applicable for Ads &amp; Promos initially)</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Products</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

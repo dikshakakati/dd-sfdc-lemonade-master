@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>LEM-24197: It allows generic Platform Event schema and the trigger listener to act as dispatcher of the events. It passes topic and corresponding payload to the trigger listener which identifies service corresponding to the passed topic and passes payload to the service layer for further processing.</description>
+    <eventType>HighVolume</eventType>
+    <label>Work Order Processor</label>
+    <pluralLabel>Work Order Processors</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

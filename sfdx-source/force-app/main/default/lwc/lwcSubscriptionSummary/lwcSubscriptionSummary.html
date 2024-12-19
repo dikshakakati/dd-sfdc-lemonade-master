@@ -1,0 +1,36 @@
+<!--
+  * @author Deloitte
+  * @date 06/10/2024
+  * @description It facilitates the retrieval and display subscription records
+  * and data below contract tab.
+-->
+<template>
+  <div class="data-table-template">
+    <template lwc:if={loaded}>
+      <!-- If data is loaded -->
+      <!--It is used to display error.-->
+      <template lwc:if={errors}>
+        <div>{errors}</div>
+      </template>
+      <!--It is used to display subscription table.-->
+      <template lwc:else>
+        <lightning-datatable
+          key-field={sectionValues.ID}
+          data={data}
+          columns={columns}
+          hide-checkbox-column
+          show-row-number-column
+        >
+        </lightning-datatable>
+      </template>
+    </template>
+    <template lwc:else>
+      <!-- If data is not loaded it displays spinner-->
+      <lightning-spinner
+        alternative-text={sectionValues.LOADING}
+        size={sectionValues.SPINNER_SIZE_MEDIUM}
+        class={sectionValues.SPINS}
+      ></lightning-spinner>
+    </template>
+  </div>
+</template>

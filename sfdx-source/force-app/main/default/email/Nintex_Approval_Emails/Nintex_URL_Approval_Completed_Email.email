@@ -1,0 +1,6 @@
+Please click on the below link to view the status of the completed Approval Request created for the Franchise Form URL:
+Contract #: {!Merchant_Pop_Up_Response__c.Contract_Number__c}
+Franchise Form Request Id: {!Merchant_Pop_Up_Response__c.Link}
+Requested By: {!Merchant_Pop_Up_Response__c.OwnerFullName}
+Status: {!Merchant_Pop_Up_Response__c.Approval_Status__c}
+Comments: {!ApprovalRequest.Comments}

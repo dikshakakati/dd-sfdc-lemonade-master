@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Commission__c</fullName>
+    <description>LEM-441: This is the agreed-upon commission rate for the quote to be used for integration, activation, and billing.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    SBQQ__Quote__r.Segment__c = $Label.AccountSegmentSMB,
+    IF(
+        NOT(ISBLANK(Requested_Commission__c)),
+        Requested_Commission__c,
+        Original_Commission__c
+      ),
+    IF(
+        NOT(ISNULL(Active_Commission__c)),
+        Active_Commission__c,
+        IF(
+          NOT(ISNULL(Requested_Commission__c)),
+          Requested_Commission__c,
+          IF(
+            NOT(ISNULL(Original_Commission__c)),
+            Original_Commission__c,
+            0
+            )
+          )
+      )
+    )
+    </formula>
+    <label>Final Commission</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

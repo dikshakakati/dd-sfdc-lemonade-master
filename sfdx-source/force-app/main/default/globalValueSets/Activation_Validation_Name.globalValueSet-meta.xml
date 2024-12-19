@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>PDOA</fullName>
+        <default>false</default>
+        <label>PDOA</label>
+    </customValue>
+    <customValue>
+        <fullName>Duplicate Work Orders</fullName>
+        <default>false</default>
+        <label>Duplicate Work Orders</label>
+    </customValue>
+    <customValue>
+        <fullName>MSID</fullName>
+        <default>false</default>
+        <label>MSID</label>
+    </customValue>
+    <customValue>
+        <fullName>Submarket</fullName>
+        <default>false</default>
+        <label>Submarket</label>
+    </customValue>
+    <customValue>
+        <fullName>Starting Point ID</fullName>
+        <default>false</default>
+        <label>Starting Point ID</label>
+    </customValue>
+    <customValue>
+        <fullName>Commission Rates</fullName>
+        <default>false</default>
+        <label>Commission Rates</label>
+    </customValue>
+    <customValue>
+        <fullName>Tier Level</fullName>
+        <default>false</default>
+        <label>Tier Level</label>
+    </customValue>
+    <customValue>
+        <fullName>Banking Information</fullName>
+        <default>false</default>
+        <label>Banking Information</label>
+    </customValue>
+    <customValue>
+        <fullName>Store Is Partner</fullName>
+        <default>false</default>
+        <label>Store Is Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Is Active</fullName>
+        <default>false</default>
+        <label>Business Is Active</label>
+    </customValue>
+    <customValue>
+        <fullName>Active Menu Count</fullName>
+        <default>false</default>
+        <label>Active Menu Count</label>
+    </customValue>
+    <customValue>
+        <fullName>Business ID</fullName>
+        <default>false</default>
+        <label>Business ID</label>
+    </customValue>
+    <customValue>
+        <fullName>Order Protocol</fullName>
+        <default>false</default>
+        <label>Order Protocol</label>
+    </customValue>
+    <customValue>
+        <fullName>Offers Pickup/Delivery/Dashpass</fullName>
+        <default>false</default>
+        <label>Offers Pickup/Delivery/Dashpass</label>
+    </customValue>
+    <description>LEM-13305: It is used to store the list of validations required for activations.</description>
+    <masterLabel>Activation Validation Name</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

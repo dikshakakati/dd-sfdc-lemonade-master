@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Estimated_Numbers_Of_Stores</fullName>
+    <active>true</active>
+    <description>LEM-463: This validation rule is to check if the Estimated # of stores is a positive number and cannot be less than or equal to 0.
+LEM-9554: Allow estimated # of stores to be 0 is subtype is Ads and Promos</description>
+    <errorConditionFormula>AND(
+     NOT(ISPICKVAL(Opportunity_Sub_Type__c,&quot;Ads &amp; Promos&quot;)),
+     NOT($Permission.Bypass_Opportunity_Validation_Rules),
+     NOT($Permission.Allow_Edit_Access_of_Mx_Portal_Opportunity),
+     Estimated_Number_of_Stores__c &lt;= 0
+                           )</errorConditionFormula>
+    <errorDisplayField>Estimated_Number_of_Stores__c</errorDisplayField>
+    <errorMessage>Please enter an estimated # of stores that is greater than zero.</errorMessage>
+</ValidationRule>

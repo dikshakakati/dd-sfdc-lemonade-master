@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HasCatalogWorkPlan__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-3493: It indicates whether parent Work Order is eligible for Catalog Work Plan whenever store Accounts associated with child Work Orders has Menu UI Type as ‘Retail’.</description>
+    <externalId>false</externalId>
+    <label>HasCatalogChildWorkPlans</label>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

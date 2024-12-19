@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Phone_Validation</name>
+    </customPermissions>
+    <description>LEM-22304: Allows users to bypass phone validations</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Phone Validation</label>
+</PermissionSet>

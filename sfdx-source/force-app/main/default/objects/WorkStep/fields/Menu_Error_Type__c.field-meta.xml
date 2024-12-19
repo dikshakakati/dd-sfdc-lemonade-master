@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_Error_Type__c</fullName>
+    <description>LEM-793: Indicates Work Step menu error type.</description>
+    <externalId>false</externalId>
+    <label>Menu Error Type</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Category Sort Order</fullName>
+                <default>false</default>
+                <label>Category Sort Order</label>
+            </value>
+            <value>
+                <fullName>Duplicate Category</fullName>
+                <default>false</default>
+                <label>Duplicate Category</label>
+            </value>
+            <value>
+                <fullName>Duplicate Items</fullName>
+                <default>false</default>
+                <label>Duplicate Items</label>
+            </value>
+            <value>
+                <fullName>Duplicate Options</fullName>
+                <default>false</default>
+                <label>Duplicate Options</label>
+            </value>
+            <value>
+                <fullName>Formatting</fullName>
+                <default>false</default>
+                <label>Formatting</label>
+            </value>
+            <value>
+                <fullName>Incomplete Update</fullName>
+                <default>false</default>
+                <label>Incomplete Update</label>
+            </value>
+            <value>
+                <fullName>Items Incorrect</fullName>
+                <default>false</default>
+                <label>Items Incorrect</label>
+            </value>
+            <value>
+                <fullName>Items Missing</fullName>
+                <default>false</default>
+                <label>Items Missing</label>
+            </value>
+            <value>
+                <fullName>Item Sort Order</fullName>
+                <default>false</default>
+                <label>Item Sort Order</label>
+            </value>
+            <value>
+                <fullName>Legal - Alcohol</fullName>
+                <default>false</default>
+                <label>Legal - Alcohol</label>
+            </value>
+            <value>
+                <fullName>Legal - Health</fullName>
+                <default>false</default>
+                <label>Legal - Health</label>
+            </value>
+            <value>
+                <fullName>Legal - THC/CBD</fullName>
+                <default>false</default>
+                <label>Legal - THC/CBD</label>
+            </value>
+            <value>
+                <fullName>Legal - Tobacco</fullName>
+                <default>false</default>
+                <label>Legal - Tobacco</label>
+            </value>
+            <value>
+                <fullName>Literal Translation</fullName>
+                <default>false</default>
+                <label>Literal Translation</label>
+            </value>
+            <value>
+                <fullName>Menu Hours Incorrect</fullName>
+                <default>false</default>
+                <label>Menu Hours Incorrect</label>
+            </value>
+            <value>
+                <fullName>Menu Hours Missing</fullName>
+                <default>false</default>
+                <label>Menu Hours Missing</label>
+            </value>
+            <value>
+                <fullName>Menu Title Formatting</fullName>
+                <default>false</default>
+                <label>Menu Title Formatting</label>
+            </value>
+            <value>
+                <fullName>Modifier Groups Incorrect</fullName>
+                <default>false</default>
+                <label>Modifier Groups Incorrect</label>
+            </value>
+            <value>
+                <fullName>Modifier Groups Missing</fullName>
+                <default>false</default>
+                <label>Modifier Groups Missing</label>
+            </value>
+            <value>
+                <fullName>Options Incorrect</fullName>
+                <default>false</default>
+                <label>Options Incorrect</label>
+            </value>
+            <value>
+                <fullName>Options Missing</fullName>
+                <default>false</default>
+                <label>Options Missing</label>
+            </value>
+            <value>
+                <fullName>Options Sort Order</fullName>
+                <default>false</default>
+                <label>Options Sort Order</label>
+            </value>
+            <value>
+                <fullName>Pricing Incorrect</fullName>
+                <default>false</default>
+                <label>Pricing Incorrect</label>
+            </value>
+            <value>
+                <fullName>Pricing Missing</fullName>
+                <default>false</default>
+                <label>Pricing Missing</label>
+            </value>
+            <value>
+                <fullName>Punctuation</fullName>
+                <default>false</default>
+                <label>Punctuation</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Spelling</fullName>
+                <default>false</default>
+                <label>Spelling</label>
+            </value>
+            <value>
+                <fullName>Translation Structure</fullName>
+                <default>false</default>
+                <label>Translation Structure</label>
+            </value>
+            <value>
+                <fullName>Unnecessary Translation</fullName>
+                <default>false</default>
+                <label>Unnecessary Translation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Agreed_to_Product__c</fullName>
+    <description>LEM-2589 Used to indicate whether the product must be provisioned for the Mx. A value of Yes indicates a Mx is entitled to a product and signed a contract agreeing to its terms and conditions. A value of No indicates a Mx is entitled to a service but has not chosen to take advantage of this product.</description>
+    <externalId>false</externalId>
+    <label>Mx Agreed to Product</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

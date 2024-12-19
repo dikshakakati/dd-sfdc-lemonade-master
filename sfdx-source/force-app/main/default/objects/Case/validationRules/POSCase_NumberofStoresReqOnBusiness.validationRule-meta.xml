@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POSCase_NumberofStoresReqOnBusiness</fullName>
+    <active>true</active>
+    <description>LEM-3078: It ensures that &quot;Number of Stores&quot; field is populated for POS Integrations Case record type when Account record type is Business.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Case_Validation_Rules),
+  Account.Record_Type_Name__c = $Label.BusinessAccountRecordTypeName,
+  RecordType.DeveloperName = $Label.POSIntegrationsCaseRecordTypeName,
+  OR(
+    ISBLANK(TEXT(Number_of_Stores__c)),
+    Number_of_Stores__c &lt; 1
+  )
+ )</errorConditionFormula>
+    <errorDisplayField>Number_of_Stores__c</errorDisplayField>
+    <errorMessage>Number of Stores is required.</errorMessage>
+</ValidationRule>

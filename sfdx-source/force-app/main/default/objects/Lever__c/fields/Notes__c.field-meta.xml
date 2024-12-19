@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notes__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-21815: It is used to store all applicable Store IDs for the inflation lever as comma-separated values.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For Inflation Lever, please enter all applicable Store IDs as comma separated values here</inlineHelpText>
+    <label>Notes</label>
+    <length>32768</length>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

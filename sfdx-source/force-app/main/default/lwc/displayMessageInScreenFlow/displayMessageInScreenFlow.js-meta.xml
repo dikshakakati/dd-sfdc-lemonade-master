@@ -1,0 +1,16 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <description>LEM-1536: LWC to display the message in flow screen.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Display Message In Screen Flow</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="isError" type="Boolean" label="Error" required="true" />
+            <property name="isSuccess" type="Boolean" label="Success" required="true" />
+            <property name="message" type="String" label="Message" required="true" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

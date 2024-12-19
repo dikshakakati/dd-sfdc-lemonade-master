@@ -1,0 +1,21 @@
+<template>
+    <lightning-button-icon
+        icon-name="utility:filterList"
+        alternative-text="View Current Filters"
+        title="View Current Filters"
+        onclick={handleShowModal}>
+    </lightning-button-icon>
+    <c-dd-modal data-id="modal"
+        title="Current Filters and Sort Configuration"
+        size="medium"
+        type="info"
+        modal-content-overflow>
+        <div slot="content" style="display: unset;">
+            <c-lwc-dd-grid-report-filter-view
+                filter-configuration={filterConfiguration}
+                sort-configuration={sortConfiguration}
+                field-configuration={fieldConfiguration}>
+            </c-lwc-dd-grid-report-filter-view>
+        </div>
+    </c-dd-modal>
+</template>

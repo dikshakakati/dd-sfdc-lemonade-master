@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ultimate_Parent_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-598: Lookup to the Ultimate Parent Account of the original Parent of the Initiative.</description>
+    <externalId>false</externalId>
+    <label>Ultimate Parent Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Hierarchy Initiatives</relationshipLabel>
+    <relationshipName>Hierarchy_Initiatives</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

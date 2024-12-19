@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MinimumActivePeriodEquals12Months</fullName>
+    <active>true</active>
+    <description>LEM-14401: Validates that Minimum active period equals 12 months if Activation bonus amount is greater than zero.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Quote_Validation_Rules),
+  ISCHANGED(Activation_Bonus_Amount__c),
+  Activation_Bonus_Amount__c &gt; 0 ,
+  OR(
+    Minimum_Active_Period__c &lt; 12, 
+    ISBLANK(Minimum_Active_Period__c)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Minimum_Active_Period__c</errorDisplayField>
+    <errorMessage>If Signing Bonus Amount is greater than 0, Minimum active period month should be 12.</errorMessage>
+</ValidationRule>

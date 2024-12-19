@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Description_Details__c</fullName>
+    <description>LEM-14633-DPEI Attributes to Opportunity Product, Order Product and Subscription objects</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If you have additional information about the item itself such as any description, rationale behind launch or key words, please include them here. We will ask for marketing-specific information in the next section.</inlineHelpText>
+    <label>Item Description/Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

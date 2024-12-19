@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DoorDash_Social_Media_Marketing_Feature__c</fullName>
+    <description>LEM-14107: It is used to store the engagement preference for social media and marketing.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <label>DoorDash Social Media/Marketing Feature</label>
+    <securityClassification>Proprietary</securityClassification>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Do Not Contact - Sensitive Relationship</fullName>
+                <default>false</default>
+                <label>Do Not Contact - Sensitive Relationship</label>
+            </value>
+            <value>
+                <fullName>High/Include - Very Interested</fullName>
+                <default>false</default>
+                <label>High/Include - Very Interested</label>
+            </value>
+            <value>
+                <fullName>Low/Exclude - Not Interested</fullName>
+                <default>false</default>
+                <label>Low/Exclude - Not Interested</label>
+            </value>
+            <value>
+                <fullName>Medium/Potential - Could be Interested</fullName>
+                <default>false</default>
+                <label>Medium/Potential - Could be Interested</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

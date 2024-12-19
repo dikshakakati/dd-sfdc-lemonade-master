@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ__Field__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the field you want updated when the conditions are met.</inlineHelpText>
+    <label>Target Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>SBQQ__TargetObject__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unit Price</fullName>
+                <default>false</default>
+                <label>Unit Price</label>
+            </value>
+            <value>
+                <fullName>Discount (%)</fullName>
+                <default>false</default>
+                <label>Discount (%)</label>
+            </value>
+            <value>
+                <fullName>Discount (Amt)</fullName>
+                <default>false</default>
+                <label>Discount (Amt)</label>
+            </value>
+            <value>
+                <fullName>Markup (%)</fullName>
+                <default>false</default>
+                <label>Markup (%)</label>
+            </value>
+            <value>
+                <fullName>Markup (Amt)</fullName>
+                <default>false</default>
+                <label>Markup (Amt)</label>
+            </value>
+            <value>
+                <fullName>Target</fullName>
+                <default>false</default>
+                <label>Target (%)</label>
+            </value>
+            <value>
+                <fullName>Norm</fullName>
+                <default>false</default>
+                <label>Norm (%)</label>
+            </value>
+            <value>
+                <fullName>Floor</fullName>
+                <default>false</default>
+                <label>Floor (%)</label>
+            </value>
+            <value>
+                <fullName>Explanation</fullName>
+                <default>false</default>
+                <label>Explanation</label>
+            </value>
+            <value>
+                <fullName>SBQQ__SpecialPriceType__c</fullName>
+                <default>false</default>
+                <label>SBQQ__SpecialPriceType__c</label>
+            </value>
+            <value>
+                <fullName>Trial_Fee__c</fullName>
+                <default>false</default>
+                <label>Trial_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Trial_Commission__c</fullName>
+                <default>false</default>
+                <label>Trial_Commission__c</label>
+            </value>
+            <value>
+                <fullName>Trial_Period__c</fullName>
+                <default>false</default>
+                <label>Trial_Period__c</label>
+            </value>
+            <value>
+                <fullName>Trial_End_Date__c</fullName>
+                <default>false</default>
+                <label>Trial_End_Date__c</label>
+            </value>
+            <value>
+                <fullName>Requested_Commission__c</fullName>
+                <default>false</default>
+                <label>Requested_Commission__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__SpecialPrice__c</fullName>
+                <default>false</default>
+                <label>SBQQ__SpecialPrice__c</label>
+            </value>
+            <value>
+                <fullName>Experience__c</fullName>
+                <default>false</default>
+                <label>Experience__c</label>
+            </value>
+            <value>
+                <fullName>DoorDash_Quote_Lines__c</fullName>
+                <default>false</default>
+                <label>DoorDash_Quote_Lines__c</label>
+            </value>
+            <value>
+                <fullName>Caviar_Quote_Lines__c</fullName>
+                <default>false</default>
+                <label>Caviar_Quote_Lines__c</label>
+            </value>
+            <value>
+                <fullName>Storefront_Quote_Lines__c</fullName>
+                <default>false</default>
+                <label>Storefront_Quote_Lines__c</label>
+            </value>
+            <value>
+                <fullName>Drive_Quote_Lines__c</fullName>
+                <default>false</default>
+                <label>Drive_Quote_Lines__c</label>
+            </value>
+            <value>
+                <fullName>Payment_Method__c</fullName>
+                <default>false</default>
+                <label>Payment_Method__c</label>
+            </value>
+            <value>
+                <fullName>Ads_Promos_Budget_Sum__c</fullName>
+                <default>false</default>
+                <label>Ads_Promos_Budget_Sum__c</label>
+            </value>
+            <value>
+                <fullName>Fee_Type__c</fullName>
+                <default>false</default>
+                <label>Fee_Type__c</label>
+            </value>
+            <value>
+                <fullName>Voice_Ordering_Quote_Lines__c</fullName>
+                <default>false</default>
+                <label>Voice_Ordering_Quote_Lines__c</label>
+            </value>
+            <value>
+                <fullName>Drive_Auto_Activation_Supported__c</fullName>
+                <default>false</default>
+                <label>Drive_Auto_Activation_Supported__c</label>
+            </value>
+            <value>
+                <fullName>Location_Territory_Definition__c</fullName>
+                <default>false</default>
+                <label>Location_Territory_Definition__c</label>
+            </value>
+            <value>
+                <fullName>HasPipelineProduct__c</fullName>
+                <default>false</default>
+                <label>HasPipelineProduct__c</label>
+            </value>
+            <value>
+                <fullName>Floor_Rate__c</fullName>
+                <default>false</default>
+                <label>Floor_Rate__c</label>
+            </value>
+            <value>
+                <fullName>Original_Commission__c</fullName>
+                <default>false</default>
+                <label>Original_Commission__c</label>
+            </value>
+            <value>
+                <fullName>Rebate_Amount__c</fullName>
+                <default>false</default>
+                <label>Rebate_Amount__c</label>
+            </value>
+            <value>
+                <fullName>Minimum_Monthly_Spend__c</fullName>
+                <default>false</default>
+                <label>Minimum_Monthly_Spend__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__ListPrice__c</fullName>
+                <default>false</default>
+                <label>SBQQ__ListPrice__c</label>
+            </value>
+            <value>
+                <fullName>of_marketing_discount_paid_by_Mx__c</fullName>
+                <default>false</default>
+                <label>of_marketing_discount_paid_by_Mx__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__OrderBy__c</fullName>
+                <default>false</default>
+                <label>SBQQ__OrderBy__c</label>
+            </value>
+            <value>
+                <fullName>Segment__c</fullName>
+                <default>false</default>
+                <label>Segment__c</label>
+            </value>
+            <value>
+                <fullName>Contract_Generation_Path__c</fullName>
+                <default>false</default>
+                <label>Contract_Generation_Path__c</label>
+            </value>
+            <value>
+                <fullName>of_Core_Products_On_Quote__c</fullName>
+                <default>false</default>
+                <label>of_Core_Products_On_Quote__c</label>
+            </value>
+            <value>
+                <fullName>Pricing_Audit__c</fullName>
+                <default>false</default>
+                <label>Pricing_Audit__c</label>
+            </value>
+            <value>
+                <fullName>Pricing_Search_Complete__c</fullName>
+                <default>false</default>
+                <label>Pricing_Search_Complete__c</label>
+            </value>
+            <value>
+                <fullName>Deal_Desk_Commission_Threshold__c</fullName>
+                <default>false</default>
+                <label>Deal_Desk_Commission_Threshold__c</label>
+            </value>
+            <value>
+                <fullName>Upper_Deal_Desk_Commission_Threshold__c</fullName>
+                <default>false</default>
+                <label>Upper_Deal_Desk_Commission_Threshold__c</label>
+            </value>
+            <value>
+                <fullName>User_Manager_Commission_Threshold__c</fullName>
+                <default>false</default>
+                <label>User_Manager_Commission_Threshold__c</label>
+            </value>
+            <value>
+                <fullName>CR_Modified_Date__c</fullName>
+                <default>false</default>
+                <label>CR_Modified_Date__c</label>
+            </value>
+            <value>
+                <fullName>User_Manager_Fee_Threshold__c</fullName>
+                <default>false</default>
+                <label>User_Manager_Fee_Threshold__c</label>
+            </value>
+            <value>
+                <fullName>Commission_Rate_Number__c</fullName>
+                <default>false</default>
+                <label>Commission_Rate_Number__c</label>
+            </value>
+            <value>
+                <fullName>Ceiling_Rate__c</fullName>
+                <default>false</default>
+                <label>Ceiling_Rate__c</label>
+            </value>
+            <value>
+                <fullName>Target_Rate__c</fullName>
+                <default>false</default>
+                <label>Target_Rate__c</label>
+            </value>
+            <value>
+                <fullName>Upper_Deal_Desk_Fee_Threshold__c</fullName>
+                <default>false</default>
+                <label>Upper_Deal_Desk_Fee_Threshold__c</label>
+            </value>
+            <value>
+                <fullName>Default_Fee__c</fullName>
+                <default>false</default>
+                <label>Default_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Default_Commission__c</fullName>
+                <default>false</default>
+                <label>Default_Commission__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__OriginalPrice__c</fullName>
+                <default>false</default>
+                <label>SBQQ__OriginalPrice__c</label>
+            </value>
+            <value>
+                <fullName>Maximum_Fee__c</fullName>
+                <default>false</default>
+                <label>Maximum_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Minimum_Fee__c</fullName>
+                <default>false</default>
+                <label>Minimum_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Deal_Desk_Fee_Threshold__c</fullName>
+                <default>false</default>
+                <label>Deal_Desk_Fee_Threshold__c</label>
+            </value>
+            <value>
+                <fullName>Is_Defaulting__c</fullName>
+                <default>false</default>
+                <label>Is_Defaulting__c</label>
+            </value>
+            <value>
+                <fullName>Storefront_Exclusivity__c</fullName>
+                <default>false</default>
+                <label>Storefront_Exclusivity__c</label>
+            </value>
+            <value>
+                <fullName>Has_Puerto_Rico_Locations__c</fullName>
+                <default>false</default>
+                <label>Has_Puerto_Rico_Locations__c</label>
+            </value>
+            <value>
+                <fullName>Auto_Bidding__c</fullName>
+                <default>false</default>
+                <label>Auto_Bidding__c</label>
+            </value>
+            <value>
+                <fullName>Budget__c</fullName>
+                <default>false</default>
+                <label>Budget__c</label>
+            </value>
+            <value>
+                <fullName>Delay_after_Activation_days__c</fullName>
+                <default>false</default>
+                <label>Delay_after_Activation_days__c</label>
+            </value>
+            <value>
+                <fullName>Estimated_Average_Daily_Budget__c</fullName>
+                <default>false</default>
+                <label>Estimated_Average_Daily_Budget__c</label>
+            </value>
+            <value>
+                <fullName>Flat_Discount_Amount_for_Consumer__c</fullName>
+                <default>false</default>
+                <label>Flat_Discount_Amount_for_Consumer__c</label>
+            </value>
+            <value>
+                <fullName>Length_of_Term__c</fullName>
+                <default>false</default>
+                <label>Length_of_Term__c</label>
+            </value>
+            <value>
+                <fullName>Marketing_Flat_Fee__c</fullName>
+                <default>false</default>
+                <label>Marketing_Flat_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Marketing_Trial_Credit__c</fullName>
+                <default>false</default>
+                <label>Marketing_Trial_Credit__c</label>
+            </value>
+            <value>
+                <fullName>Max_Number_of_Redemptions__c</fullName>
+                <default>false</default>
+                <label>Max_Number_of_Redemptions__c</label>
+            </value>
+            <value>
+                <fullName>Order_Service_Type__c</fullName>
+                <default>false</default>
+                <label>Order_Service_Type__c</label>
+            </value>
+            <value>
+                <fullName>Target_Cx_Audience__c</fullName>
+                <default>false</default>
+                <label>Target_Cx_Audience__c</label>
+            </value>
+            <value>
+                <fullName>Targeting__c</fullName>
+                <default>false</default>
+                <label>Targeting__c</label>
+            </value>
+            <value>
+                <fullName>Trial_Marketing_Fee__c</fullName>
+                <default>false</default>
+                <label>Trial_Marketing_Fee__c</label>
+            </value>
+            <value>
+                <fullName>Magic_Wand_Defaulted__c</fullName>
+                <default>false</default>
+                <label>Magic_Wand_Defaulted__c</label>
+            </value>
+            <value>
+                <fullName>Sort_Order_QL__c</fullName>
+                <default>false</default>
+                <label>Sort_Order_QL__c</label>
+            </value>
+             <value>
+                <fullName>Check_Start_Date_For_A_P_Product__c</fullName>
+                <default>false</default>
+                <label>Check_Start_Date_For_A_P_Product__c</label>
+            </value>
+            <value>
+                <fullName>Check_Delay_After_Activation_For_A_P__c</fullName>
+                <default>false</default>
+                <label>Check_Delay_After_Activation_For_A_P__c</label>
+            </value>
+            <value>
+                <fullName>  SBQQ__Existing__c</fullName>
+                <default>false</default>
+                <label> SBQQ__Existing__c</label>
+            </value>
+             <value>
+                <fullName>Split_Category__c</fullName>
+                <default>false</default>
+                <label>Split_Category__c</label>
+            </value>
+             <value>
+                <fullName>  Start_Date__c</fullName>
+                <default>false</default>
+                <label> Start_Date__c</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <valueName>Unit Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <valueName>Discount (%)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <valueName>Discount (Amt)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <valueName>Markup (%)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <controllingFieldValue>Product Option</controllingFieldValue>
+            <valueName>Markup (Amt)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Experience__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>DoorDash_Quote_Lines__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Caviar_Quote_Lines__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Storefront_Quote_Lines__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Drive_Quote_Lines__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Payment_Method__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Ads_Promos_Budget_Sum__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Voice_Ordering_Quote_Lines__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Drive_Auto_Activation_Supported__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>HasPipelineProduct__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>SBQQ__OrderBy__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Contract_Generation_Path__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>of_Core_Products_On_Quote__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Storefront_Exclusivity__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Is_Defaulting__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Has_Puerto_Rico_Locations__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__SpecialPriceType__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_Period__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_End_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Requested_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__SpecialPrice__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Fee_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Location_Territory_Definition__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Floor_Rate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Original_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Rebate_Amount__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Minimum_Monthly_Spend__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__ListPrice__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>of_marketing_discount_paid_by_Mx__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Segment__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Pricing_Audit__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Pricing_Search_Complete__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Deal_Desk_Commission_Threshold__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Upper_Deal_Desk_Commission_Threshold__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>User_Manager_Commission_Threshold__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>CR_Modified_Date__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>User_Manager_Fee_Threshold__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Commission_Rate_Number__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Ceiling_Rate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Target_Rate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Upper_Deal_Desk_Fee_Threshold__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Default_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Default_Commission__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__OriginalPrice__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Maximum_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Minimum_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Deal_Desk_Fee_Threshold__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Test_Field_POC__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__SubscriptionTerm__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__EndDate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__ProductSubscriptionType__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__SubscriptionType__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>SBQQ__StartDate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Auto_Bidding__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Budget__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Delay_after_Activation_days__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Estimated_Average_Daily_Budget__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Flat_Discount_Amount_for_Consumer__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Length_of_Term__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Marketing_Flat_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Marketing_Trial_Credit__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Max_Number_of_Redemptions__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Order_Service_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Target_Cx_Audience__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Targeting__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Trial_Marketing_Fee__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Sort_Order_QL__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line Pricing Guidance</controllingFieldValue>
+            <valueName>Target</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line Pricing Guidance</controllingFieldValue>
+            <valueName>Norm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line Pricing Guidance</controllingFieldValue>
+            <valueName>Floor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line Pricing Guidance</controllingFieldValue>
+            <valueName>Explanation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Line</controllingFieldValue>
+            <valueName>Magic_Wand_Defaulted__c</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

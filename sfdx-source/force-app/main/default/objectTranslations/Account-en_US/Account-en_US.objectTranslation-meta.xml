@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <recordTypes>
+        <label></label>
+        <name>Business</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Store</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Account_Validate_Address</name>
+    </validationRules>
+</CustomObjectTranslation>

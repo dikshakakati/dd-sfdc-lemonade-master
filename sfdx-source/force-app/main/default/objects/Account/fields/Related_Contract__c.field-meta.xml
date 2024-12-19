@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Contract__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-509: This field is used to pull the contract related to the account.</description>
+    <externalId>false</externalId>
+    <label>Related Contract</label>
+    <referenceTo>Contract</referenceTo>
+    <relationshipLabel>Related Contracts</relationshipLabel>
+    <relationshipName>RelatedContracts</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

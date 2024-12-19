@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Hello,</span></span></span></span></span></span></p>
+
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">This is a notification that a new case has been assigned to 'MxSx Bulk Upload' queue. Here are the details:</span></span></span></span></span></span></p>
+
+<p style="line-height:1.656; margin-left:40px; margin-top:16px; margin-bottom:16px"><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:700"><span style="font-style:normal"><span style="text-decoration:none">Account Name</span></span></span></span></span></span><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">: {{{Case.Account}}}</span></span></span></span></span></span><br />
+<span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:700"><span style="font-style:normal"><span style="text-decoration:none">Link to Case: </span></span></span></span></span></span><a href="{{{Case.link}}}">{{{Case.CaseNumber}}}</a></p>
+
+<p style="line-height:1.656; margin-top:16px; margin-bottom:16px"><span style="font-size:9pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#000000"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">—The DoorDash Team</span></span></span></span></span></span></p>
+{{{Case.Email_Thread}}}<br />
+&nbsp;</body>
+</html>

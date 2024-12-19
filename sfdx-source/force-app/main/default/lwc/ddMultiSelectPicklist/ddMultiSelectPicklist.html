@@ -1,0 +1,137 @@
+<template>
+    <div data-id="mainDiv" class={mainDivClass} onclick={stopEventPropagation}>
+      <template if:true={showFilterLabelSection}>
+        <div class="slds-grid slds-grid_align-spread">
+          <div class="slds-col">
+            <label class={filterLabelClass} onclick={handleButtonToggle}>
+              {label}
+              <template if:true={helpText}>
+                <span class="slds-var-m-right_x-small">
+                  <lightning-helptext
+                    content={helpText}
+                    icon-name="utility:info"
+                    icon-variant="inverse">
+                  </lightning-helptext>
+                </span>
+              </template>
+            </label>
+          </div>
+          <div class="slds-col">
+            <template if:true={showExpandCollapse}>
+              <div class={filterLabelSectionButtonClass}
+                   onclick={handleButtonToggle}>
+              </div>
+            </template>
+          </div>
+        </div>
+      </template>
+      <template if:true={isLabelVariantField}>
+        <div>
+          <label class="slds-form-element__label">{label}</label>
+          <template if:true={helpText}>
+            <span class="slds-var-m-right_x-small">
+              <lightning-helptext
+                content={helpText}
+                icon-name="utility:info"
+                icon-variant="inverse">
+              </lightning-helptext>
+            </span>
+          </template>
+        </div>
+      </template>
+      <template if:true={showPillContainerOnTop}>
+        <c-dd-multi-select-picklist-pill-container
+          selected-records={selectedRecords}
+          label-variant={labelVariant}
+          pill-focus-index={pillFocusIndex}
+          search-info={searchInfo}
+          onpillremove={handlePillRemove}>
+        </c-dd-multi-select-picklist-pill-container>
+      </template>
+      <div>
+        <template if:true={showOperatorSelectSection}>
+          <lightning-combobox
+              name="queryTypeSelect"
+              class="slds-var-m-top_x-small"
+              label="Operator"
+              value={operator}
+              options={operatorOptions}
+              onchange={handleOperatorOnChange} >
+          </lightning-combobox>
+        </template>
+        <template if:true={showInputSection}>
+          <div class={inputOuterDivClass} data-id="mainContainer">
+            <form class="dd-multiselect-picklist-form">
+              <div data-id="searchField"
+                  onclick={handleSearchFieldFocus}
+                  onkeyup={handleSearchFieldKeyUp}
+                  onkeypress={handleSearchFieldKeyPress}
+                  class={inputInnerDivClass}>
+                <lightning-input
+                  data-id="searchField-input"
+                  type="search"
+                  variant="label-hidden"
+                  class="slds-lookup__search-input max-width"
+                  value={searchKeyword}
+                  is-loading={isLoading}
+                  onchange={handleOnChange}
+                  title={disabledMessage}
+                  disabled={disabled}
+                  placeholder={searchInfo.Input_Field_Placeholder__c}
+                  required={required}
+                ></lightning-input>
+                <template if:true={hasError}>
+                  <div class="slds-form-element__help"
+                      data-error-message="true"
+                      aria-live="assertive">
+                    {errorMessage}
+                  </div>
+                </template>
+              </div>
+            </form>
+            <ul class={listBoxClass} style={listBoxStyle} data-id="listbox" role="listbox">
+              <template if:true={searchResultsMessage}>
+                <li class="slds-list__item slds-is-relative slds-var-p-top_x-small slds-align_absolute-center">
+                  {searchResultsMessage}
+                </li>
+              </template>
+              <template if:false={isLoading}>
+                <template for:each={searchResults} for:item="rec" for:index="idx">
+                  <c-dd-multi-select-picklist-lookup-result
+                    key={rec.value}
+                    rec={rec}
+                    icon-name={searchInfo.Icon_Name__c}
+                    icon-type={searchInfo.Icon_Type__c}
+                    icon-avatar-size={searchInfo.Dropdown_Icon_Avatar_Size__c}
+                    class-name={searchInfo.Dropdown_Item_Additional_CSS__c}
+                    parent-class-name={dropDownAdditionalStyle}
+                    item-index={idx}
+                    select-focus-index={selectFocusIndex}
+                    onselect={handleOnSelect}>
+                  </c-dd-multi-select-picklist-lookup-result>
+                </template>
+              </template>
+            </ul>
+          </div>
+        </template>
+      </div>
+      <template if:true={showAddIsBlankOrIsNotBlankButton}>
+        <div class="dd-multiselect-addIsBlankOrIsNotBlank">
+          <lightning-button
+            label="Add"
+            variant="brand"
+            onclick={addIsBlankOrIsNotBlank}>
+          </lightning-button>
+        </div>
+      </template>
+      <template if:true={showPillContainerOnBottom}>
+        <c-dd-multi-select-picklist-pill-container
+          selected-records={selectedRecords}
+          label-variant={labelVariant}
+          pill-focus-index={pillFocusIndex}
+          search-info={searchInfo}
+          onpillremove={handlePillRemove}>
+        </c-dd-multi-select-picklist-pill-container>
+      </template>
+    </div>
+  </template>

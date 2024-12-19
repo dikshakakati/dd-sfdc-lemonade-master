@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Disposition_Reason_Required</fullName>
+    <active>true</active>
+    <description>LEM-13419: It validates Disposition Reason required for Disqualified Lead.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Lead_Validation_Rules),
+    OR(
+      ISCHANGED(Status),
+      ISCHANGED(Disposition_Reason__c),
+      ISNEW()
+    ),
+    TEXT(Status) =  $Label.LeadStatusDisqualified,
+    ISBLANK(TEXT(Disposition_Reason__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Disposition Reason must be populated when the lead status is Disqualified. Please update before saving.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15948: It is used to store the failed steps.</description>
+    <fullName>Failed_Steps__c</fullName>
+    <externalId>false</externalId>
+    <label>Failed Steps</label>
+    <length>32768</length>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

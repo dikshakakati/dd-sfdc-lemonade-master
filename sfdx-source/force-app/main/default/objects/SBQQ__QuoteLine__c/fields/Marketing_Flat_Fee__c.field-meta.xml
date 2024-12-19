@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Flat_Fee__c</fullName>
+    <description>LEM-468 – Attributes related to Promotion products
+LEM-9346: Fixing the Process for In-Campaign Changes - default to $0 to mirror BI formula
+LEM-12451: Update ‘Incremental Marketing Fee per Redemption’ logic to Not Default to $0 in LWC</description>
+    <externalId>false</externalId>
+    <label>Incremental Marketing Fee Per Redemption</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

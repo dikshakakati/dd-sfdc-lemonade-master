@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-3548: It is used for email communication between Salesforce users and external users on parent Work Orders.</description>
+    <fieldOverrides>
+        <field>BccAddress</field>
+        <formula>&apos;&apos;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>HtmlBody</field>
+        <formula>&quot;&lt;p style=&apos;line-height: 1.38; text-align: center;&apos;&gt;&lt;img alt=&apos;DoorDash Logo&apos; src=&apos;https://doordashmx--sprintqa--c.documentforce.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Jpg&amp;versionId=06875000000gm4z&amp;operationContext=DELIVERY&amp;contentId=05T75000002Lwb0&amp;page=0&amp;d=/a/75000000CbDp/6tJ09B3kyrprDVIDEm6BU.3PEjhZZgWcjU3EEcGdsYo&amp;oid=00D750000008hl4&amp;dpt=null&amp;viewId=&apos; style=&apos;width: 145px; height: 80px;&apos; title=&apos;DoorDash_icon_RGB&apos; /&gt;&lt;/p&gt;&lt;hr style=&apos;height:1.38px;border-width:0;color:#ff0000;background-color:#ff0000&apos; /&gt;&lt;html style=&apos;overflow-y: hidden;&apos;&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body style=&apos;height: auto; min-height: auto;&apos;&gt;&lt;/body&gt;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;hr style=&apos;height:1.38px;border-width:0;color:#ff0000;background-color:#ff0000&apos; /&gt;&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Subject</field>
+        <formula>WorkOrder.Email_Reference_Id__c</formula>
+    </fieldOverrides>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>ValidatedFromAddress</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>ToAddress</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>CcAddress</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>BccAddress</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Subject</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>HtmlBody</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <standardLabel>SendEmail</standardLabel>
+    <targetObject>OutgoingEmail</targetObject>
+    <targetParentField>RelatedTo</targetParentField>
+    <type>SendEmail</type>
+</QuickAction>

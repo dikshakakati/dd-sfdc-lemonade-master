@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Offsite_Ads_Fields</fullName>
+    <active>true</active>
+    <description>LEM-18227: Validation to check the required fields for Offsite Ads Product on Brief Item before moving the status to &quot;Campaign Building&quot;</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+ISPICKVAL(Status__c, &quot;Campaign Building&quot;),
+Quote_Line__r.SBQQ__Product__r.ProductCode = &apos;10110&apos;,
+OR(
+ISBLANK(Service_Fee_As_Percent_Budget__c),
+ISBLANK(Data_Fee_As_Percent_Budget__c)))</errorConditionFormula>
+    <errorMessage>Offsite Banner type, Service Fee (as % of Budget), and Data Fee (as % of Budget) must be populated to move the status to &apos;Campaign Building&apos;</errorMessage>
+</ValidationRule>

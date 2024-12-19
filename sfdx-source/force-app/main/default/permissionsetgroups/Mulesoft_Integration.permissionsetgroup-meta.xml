@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-3576:  Permissions set group for provisioning requests</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Mulesoft Integration</label>
+    <permissionSets>Allow_Account_Reparenting</permissionSets>
+    <permissionSets>Allow_Async_Work_Steps_Status_Rollup</permissionSets>
+    <permissionSets>Allow_Account_Owner_Field_Update</permissionSets>
+    <permissionSets>Allow_Closed_Won_Opportunity_Field_Update</permissionSets>
+    <permissionSets>Bypass_Account_Validations</permissionSets>
+    <permissionSets>Bypass_Work_Order_Validations</permissionSets>
+    <permissionSets>MuleSoft</permissionSets>
+    <permissionSets>RESSMO</permissionSets>
+    <permissionSets>View_Encrypted_Data_Access</permissionSets>
+    <permissionSets>Xrefs_and_Business_Reference</permissionSets>
+    <permissionSets>SMB_Sales_App</permissionSets>
+    <permissionSets>HighVelocitySalesUser</permissionSets>
+    <permissionSets>Log_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

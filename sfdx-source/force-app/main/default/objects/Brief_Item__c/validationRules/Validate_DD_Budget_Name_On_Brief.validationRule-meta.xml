@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_DD_Budget_Name_On_Brief</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+        ISCHANGED(Status__c),
+        TEXT(Status__c) == $Label.Campaign_Building,
+        Package__c != $Label.Brief_Package_Sponsorships,
+        ISBLANK(Brief__r.DD_Budget_Name__c),
+        NOT(
+        OR(
+        ( Brief__r.Primary_Vertical__c ) == &quot;Rx&quot;,
+        ( Brief__r.Primary_Vertical__c ) == &quot;CPG&quot;)
+        ),
+        Percentof_Consumer_DiscFee_DD_Funded__c &gt; 0
+        )</errorConditionFormula>
+    <errorMessage>‘DD Funded Budget Name’ must be populated on the Brief if the % of Consumer
+        Discount DD-Funded is &gt;0%</errorMessage>
+</ValidationRule>

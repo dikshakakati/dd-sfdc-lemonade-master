@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Protocol__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1048: Order protocol defined for the Mxs being onboarded</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Signifies the type of order protocol requested for the Mx store</inlineHelpText>
+    <label>Order Protocol</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2 Tablets (Caviar and DoorDash Own)</fullName>
+                <default>false</default>
+                <label>2 Tablets (Caviar and DoorDash Own)</label>
+            </value>
+            <value>
+                <fullName>Android Tablet (Merchant Owns)</fullName>
+                <default>false</default>
+                <label>Android Tablet (Merchant Owns)</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Fax</fullName>
+                <default>false</default>
+                <label>Fax</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>POS</fullName>
+                <default>false</default>
+                <label>POS</label>
+            </value>
+            <value>
+                <fullName>POS (Caviar Owns)</fullName>
+                <default>false</default>
+                <label>POS (Caviar Owns)</label>
+            </value>
+            <value>
+                <fullName>POS and 2 Tablets (Caviar POS, DoorDash and Caviar Tablets)</fullName>
+                <default>false</default>
+                <label>POS and 2 Tablets (Caviar POS, DoorDash and Caviar Tablets)</label>
+            </value>
+            <value>
+                <fullName>POS and 2 Tablets (DoorDash POS, DoorDash and Caviar Tablets)</fullName>
+                <default>false</default>
+                <label>POS and 2 Tablets (DoorDash POS, DoorDash and Caviar Tablets)</label>
+            </value>
+            <value>
+                <fullName>POS and Tablet (Caviar Owns)</fullName>
+                <default>false</default>
+                <label>POS and Tablet (Caviar Owns)</label>
+            </value>
+            <value>
+                <fullName>POS and Tablet (DoorDash Owns)</fullName>
+                <default>false</default>
+                <label>POS and Tablet (DoorDash Owns)</label>
+            </value>
+            <value>
+                <fullName>POS and Tablet (Merchant Owns)</fullName>
+                <default>false</default>
+                <label>POS and Tablet (Merchant Owns)</label>
+            </value>
+            <value>
+                <fullName>POS and Tablet Return Label</fullName>
+                <default>false</default>
+                <label>POS and Tablet Return Label</label>
+            </value>
+            <value>
+                <fullName>Tablet (Caviar Owns)</fullName>
+                <default>false</default>
+                <label>Tablet (Caviar Owns)</label>
+            </value>
+            <value>
+                <fullName>Tablet (DoorDash Owns)</fullName>
+                <default>false</default>
+                <label>Tablet (DoorDash Owns)</label>
+            </value>
+            <value>
+                <fullName>Tablet and Printer (DoorDash Owns)</fullName>
+                <default>false</default>
+                <label>Tablet and Printer (DoorDash Owns)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

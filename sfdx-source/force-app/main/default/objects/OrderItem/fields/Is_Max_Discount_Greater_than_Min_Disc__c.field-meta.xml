@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Max_Discount_Greater_than_Min_Disc__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-13964: It indicates whether the difference between max discount and min discount is greater than or equal to 1.</description>
+    <externalId>false</externalId>
+    <label>Is Max Discount Greater than Min Disc</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_External_ID_Source</fullName>
+    <active>true</active>
+    <description>LEM-11168</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Bypass_Xref_Validation_Rules),
+ISPICKVAL(External_ID_Source__c, &quot;&quot;),
+$User.Full_Name__c != &apos;Mulesoft Integration User&apos;,
+$User.Full_Name__c != &apos;Automated Process&apos;,
+$User.Full_Name__c != &apos;Process Automation User&apos;
+)</errorConditionFormula>
+    <errorDisplayField>External_ID_Source__c</errorDisplayField>
+    <errorMessage>External ID Source is required in order to save.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country__c</fullName>
+    <description>The country component of the jurisdiction (e.g., &quot;United States&quot;). This is not necessary if more specific rules are applied. For example, if you have a rule that includes a City of &quot;Austin&quot; and a State of &quot;Texas&quot;, then you do not need to specify a country.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The country component of the jurisdiction (e.g., &quot;United States&quot;). This is not necessary if more specific rules are applied.</inlineHelpText>
+    <label>Country</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

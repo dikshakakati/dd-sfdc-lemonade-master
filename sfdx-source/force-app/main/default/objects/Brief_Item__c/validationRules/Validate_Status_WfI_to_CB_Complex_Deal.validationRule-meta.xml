@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Status_WfI_to_CB_Complex_Deal</fullName>
+    <active>false</active>
+    <description>LEM-6483: use to validate the UPC List,Ranking Order, Item Level Promo Type and Max Number of Redemptions per Cart being populated before moving the status from ‘wfi’ to ‘Campaign Building’ for the CPG Complex Deal. LEM-17471. LEM-18230</description>
+    <errorConditionFormula>AND(
+  /*Don&apos;t validate - bypass permission is granted*/
+  NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+  /*Fire only when brief status being changed*/
+  ISCHANGED(Status__c),
+  /*Validate Products of &quot;Buy One, Get One&quot; and &quot;Buy Item, Get $X
+  or Y% Off&quot;*/
+  OR(
+  Quote_Line__r.SBQQ__Product__r.ProductCode = &apos;10004&apos;,
+  Quote_Line__r.SBQQ__Product__r.ProductCode = &apos;10029&apos;),
+  /*Fire only for complex deal*/
+  ISPICKVAL(Quote_Line__r.Is_this_a_CPG_Complex_Deal__c, &apos;Yes&apos;
+  ),
+  /*Is status being changed to CB from WfI?*/
+  ISPICKVAL(PRIORVALUE(Status__c), &apos;Waiting for Inputs&apos;),
+  ISPICKVAL(Status__c, &apos;Campaign Building&apos;),
+  /*Throw exception if any of the below field isn&apos;t populated*/
+  OR(
+  ISBLANK(UPC_List__c),
+  ISBLANK(UPC_Ranking_Order__c),
+  ISBLANK(TEXT(Item_Level_Promo_Type__c)),
+  ISNULL(Max_Number_of_Redemptions_per_Cart__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>If ‘Is this a CPG Complex Deal’ = Yes, the UPC List, UPC Ranking, Item Level Promo Type and Max Number of Redemptions per Cart fields must be completed to move the Brief Item status to Campaign Building</errorMessage>
+</ValidationRule>

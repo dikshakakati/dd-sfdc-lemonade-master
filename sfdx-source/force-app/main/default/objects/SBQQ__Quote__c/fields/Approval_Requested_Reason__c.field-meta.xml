@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Requested_Reason__c</fullName>
+    <description>LEM-15260: Field to indicate the reason for requesting approvals</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the reason for requesting approvals, this field is required when the Quote has to go via approvals</inlineHelpText>
+    <label>Approval Requested Reason</label>
+    <length>32768</length>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Franchise_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-1979: Franchise Account to be selected by the user.</description>
+    <externalId>false</externalId>
+    <label>Franchise Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Franchisee</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Merchant Pop-Up Responses (Franchise Account)</relationshipLabel>
+    <relationshipName>Merchant_Pop_Up_Responses1</relationshipName>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

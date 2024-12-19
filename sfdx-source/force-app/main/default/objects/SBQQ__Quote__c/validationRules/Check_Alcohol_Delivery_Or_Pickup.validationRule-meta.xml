@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Alcohol_Delivery_Or_Pickup</fullName>
+    <active>true</active>
+    <description>LEM-17960 Alcohol Delivery/Alcohol Pickup are not allowed on the post-sale quotes</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Quote_Validation_Rules),
+    NOT($Permission.CommOps_User),
+    NOT($Permission.Ironclad_Integration_User),
+    $Profile.Name != $Label.System_Administrator,
+    Opportunity_Type__c = $Label.Opportunity_Type_Existing,
+    OR(
+        TEXT(SBQQ__Type__c) = $Label.Amendment_Quote,
+        TEXT(SBQQ__Type__c) = $Label.Opportunity_Type_New
+    ),
+    Alcohol_Product_Quantity__c = TRUE,
+    Is_Alcohol_Delivery_Pickup_Exists__c = FALSE,
+    Segment__c = $Label.AccountSegmentSMB,
+    Account_Billing_Country_Code__c = $Label.US
+)</errorConditionFormula>
+    <errorMessage>Alcohol Delivery/Alcohol Pickup are not allowed on the post sale quotes, please reach out to Comm Ops team to add Alcohol products</errorMessage>
+</ValidationRule>

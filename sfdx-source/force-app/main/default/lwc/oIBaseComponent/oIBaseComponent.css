@@ -1,0 +1,8 @@
+.spinnerStyling {
+	position: relative;
+	display: inline-block;
+	margin: 1rem;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: 100%;
+  }

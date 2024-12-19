@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_URL__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1048: Indicates the URL of the Mx&apos;s menu.
+LEM-5380: Changed the data type to LongTextArea(1000 characters) for allowing the URL with length more than 255 characters through Nintex form submission.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The URL of the Mx&apos;s menu</inlineHelpText>
+    <label>Menu URL</label>
+    <length>1000</length>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

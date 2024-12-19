@@ -1,0 +1,17 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>59.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>Display Message In Banner</masterLabel>
+	<description>LEM-13511 : Reusable Component To Display Banner Message</description>
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<property name="message" type="String" description="LEM-13511 : Send message from Flow. If multiple mesage then use HTML tag in your message" label="Display Message" role="inputOnly" />
+			<property name="messageType" type="String" description="LEM-13511 : Type of alert message - Error/Success/Warning" label="Message Type" role="inputOnly" />
+			<property name="displayMessage" type="Boolean" description="LEM-13511 : Flag Value To Display Message" label="Show Message" default="false"/>
+			<property name="messageList" type="String[]" description="LEM-13511 : Send message from Flow. If multiple mesage then use HTML tag in your message" label="Display Message List" role="inputOnly" />
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

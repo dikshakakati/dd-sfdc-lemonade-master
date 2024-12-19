@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mastered_In_Figment__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-5346: This field indicates whether the Xref has to be mastered in figment or
+    not depending on the segment type of the associated parent account.</description>
+    <externalId>false</externalId>
+    <formula>AND(
+        TEXT(Salesforce_Account_Name__r.Segment__c) =  $Label.AccountSegmentSMB,
+        TEXT(Salesforce_Account_Name__r.Primary_Vertical__c) &lt;&gt; $Label.PrimaryVerticalRx
+      )</formula>
+    <label>Mastered In Figment</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

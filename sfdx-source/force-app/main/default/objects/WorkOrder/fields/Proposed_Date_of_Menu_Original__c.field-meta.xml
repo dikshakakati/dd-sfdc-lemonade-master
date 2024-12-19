@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Date_of_Menu_Original__c</fullName>
+    <description>LEM-1048: Indicates the date when menu should be completed by.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Signifies the original date when menu was to be completed by</inlineHelpText>
+    <label>Proposed Date of Menu (Original)</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,23 @@
+<template>
+  <lightning-card>
+    <div class="slds-p-horizontal_medium slds-p-bottom_x-small">
+      <template if:true={localTime}>
+        <span class="label">Mx Local Time:&nbsp;</span>
+        <lightning-formatted-date-time value={localTime}
+                                       time-zone={timezone}
+                                       year="numeric"
+                                       day="2-digit"
+                                       month="long"
+                                       hour="numeric"
+                                       minute="2-digit"
+                                       time-zone-name="short">
+
+        </lightning-formatted-date-time>&nbsp;({offset})
+
+      </template>
+      <template if:true={error}>
+        {error}
+      </template>
+    </div>
+  </lightning-card>
+</template>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Number_of_Redemptions_per_Cx__c</fullName>
+    <description>LEM-2983: Captures the max number of redemptions per customer, LEM-17972: Updated the datatype of the field to number.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the max number of redemptions permitted per customer for the campaign.</inlineHelpText>
+    <label>Max Number of Redemptions per Cx</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

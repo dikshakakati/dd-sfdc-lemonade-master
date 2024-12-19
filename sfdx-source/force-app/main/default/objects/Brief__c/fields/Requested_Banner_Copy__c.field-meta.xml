@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Banner_Copy__c</fullName>
+    <description>LEM-2983: Captures the Banner Copy that was requested for the Brief.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If applicable, provide the requested banner copy here. Note: Promo campaigns advertise the value offer; awareness campaigns should have requested copy. Follow Creative Best Practices to ensure smooth process.</inlineHelpText>
+    <label>Requested Banner Copy</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

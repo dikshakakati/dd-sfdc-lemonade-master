@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>[Pre] AUS Inside Sales Pre-Sales Vendor</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>[Pre] AUS Inside Sales Pre-Sales Vendor</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>Australia_Inside_Pre_Sales</parentRole>
+</Role>

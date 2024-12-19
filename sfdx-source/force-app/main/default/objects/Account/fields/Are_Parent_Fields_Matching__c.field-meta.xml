@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Are_Parent_Fields_Matching__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-12375, LEM-25571: It indicates if any of the following fields value on child account is not matching with parent account&apos;s fields value:
+      1. OwnerId
+      2. Control_of_Price__c
+      3. Deck_Rank__c
+      4. Ultimate_Parent_Account__c
+    </description>
+    <externalId>false</externalId>
+    <formula>AND(
+      OwnerId = Parent.OwnerId,
+      TEXT(Control_of_Price__c) = TEXT(Parent.Control_of_Price__c),
+      TEXT(Deck_Rank__c) = TEXT(Parent.Deck_Rank__c),
+      Ultimate_Parent_Account__c = Parent.Ultimate_Parent_Account__c
+    )</formula>
+    <label>Are Parent Fields Matching?</label>
+    <securityClassification>Propietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

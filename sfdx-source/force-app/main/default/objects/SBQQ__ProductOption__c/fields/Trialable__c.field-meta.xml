@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trialable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-333 Initial Setup of Product Option object</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines if the Product Option, which is a unique pairing of bundle and option product, is trial eligible.</inlineHelpText>
+    <label>Trialable</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

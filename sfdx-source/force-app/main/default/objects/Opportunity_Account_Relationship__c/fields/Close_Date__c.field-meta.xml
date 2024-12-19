@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Date__c</fullName>
+    <description>LEM-3449: Records the close date of the related Opportunity.</description>
+    <externalId>false</externalId>
+    <formula>Opportunity__r.CloseDate</formula>
+    <label>Close Date</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

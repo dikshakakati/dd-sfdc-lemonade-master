@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <assignments>
+        <description>LEM-3607: Accumulated the Brand Association records in the choice set.</description>
+        <name>Accumulate_Association_Records_in_Choice_Set</name>
+        <label>Accumulate Association Records in Choice Set</label>
+        <locationX>1888</locationX>
+        <locationY>1838</locationY>
+        <assignmentItems>
+            <assignToReference>brandAssociationsUnrelatedToOpportunities</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_over_Brand_Associations_to_make_choice_set</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_over_Brand_Associations_to_make_choice_set</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3607: Stores all the Association Ids that are related to the Opportunity.</description>
+        <name>Accumulate_related_Association_Ids</name>
+        <label>Accumulate related Association Ids</label>
+        <locationX>1888</locationX>
+        <locationY>1238</locationY>
+        <assignmentItems>
+            <assignToReference>brandAssociationsRelatedToOpportunity</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_over_Opportunity_Brand_Relation.Brand__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_over_Opportunity_Brand_Relation</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3607: Accumulates all association Ids to a list</description>
+        <name>Assign_Association_Ids_to_a_list</name>
+        <label>Assign Association Ids to a list</label>
+        <locationX>1680</locationX>
+        <locationY>720</locationY>
+        <assignmentItems>
+            <assignToReference>brandAssociationIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_over_Brand_Associations.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_over_Brand_Associations</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3607: Updates brand Association Ids with the filtered list.</description>
+        <name>Assign_filtered_list_to_brandAssociationIds</name>
+        <label>Assign filtered list to brandAssociationIds</label>
+        <locationX>1800</locationX>
+        <locationY>1430</locationY>
+        <assignmentItems>
+            <assignToReference>brandAssociationIds</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>brandAssociationsRelatedToOpportunity</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_over_Brand_Associations_to_make_choice_set</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3607: Creates a new Opportunity Brand Relationship.</description>
+        <name>Assign_Opportunity_Brand_Relationship</name>
+        <label>Assign Opportunity Brand Relationship</label>
+        <locationX>2020</locationX>
+        <locationY>2654</locationY>
+        <assignmentItems>
+            <assignToReference>eachNewOpportunityBrandRelationship.Brand__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Iterate_over_Brand_Associations_to_capture_Selections.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>eachNewOpportunityBrandRelationship.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityBrandRelationships</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>eachNewOpportunityBrandRelationship</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>eachNewOpportunityBrandRelationship</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>emptyOpportunityBrandRelationship</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_over_Brand_Associations_to_capture_Selections</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-14049: It collects BrandIds from Brand Associations</description>
+        <name>Collects_BrandIds_from_BrandAssociations</name>
+        <label>Collects BrandIds from BrandAssociations</label>
+        <locationX>912</locationX>
+        <locationY>481</locationY>
+        <assignmentItems>
+            <assignToReference>brandIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterating_over_Brand_Associations.Brand_Name__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterating_over_Brand_Associations</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count</name>
+        <label>Count</label>
+        <locationX>230</locationX>
+        <locationY>402</locationY>
+        <assignmentItems>
+            <assignToReference>varNcount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Brand_Association_Records</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_if_Brand_Associations_are_Present</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3607: Assign brandAssociationIds to null.</description>
+        <name>Empty_Brand_Association_Ids</name>
+        <label>Empty Brand Association Ids</label>
+        <locationX>1448</locationX>
+        <locationY>1130</locationY>
+        <assignmentItems>
+            <assignToReference>brandAssociationIds</assignToReference>
+            <operator>RemoveAll</operator>
+            <value>
+                <elementReference>brandAssociationIds</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_over_Brand_Associations_to_make_choice_set</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3607: It is used to initialise the log record once a fault occurs during Opportunity Brand Relationship creation.</description>
+        <name>Generate_Log_Record</name>
+        <label>Generate Log Record</label>
+        <locationX>2196</locationX>
+        <locationY>3038</locationY>
+        <assignmentItems>
+            <assignToReference>OpportunityBrandRelationshipInsertError.Log_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>flowExceptionType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityBrandRelationshipInsertError.Quiddity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>errorSource</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityBrandRelationshipInsertError.Severity_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Log_Errors</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>LEM-3607: Stores the selected Ids in the string.</description>
+        <name>IDsToString</name>
+        <label>IDsToString</label>
+        <locationX>1932</locationX>
+        <locationY>2330</locationY>
+        <assignmentItems>
+            <assignToReference>selectedBrandIds</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Select_Brands</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_over_Brand_Associations_to_capture_Selections</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>LEM-3607: It is used to check if all Brands are associated with the Opportunity.</description>
+        <name>Are_all_Brands_related</name>
+        <label>Are all Brands related</label>
+        <locationX>1624</locationX>
+        <locationY>2114</locationY>
+        <defaultConnector>
+            <targetReference>Show_Brand_Choices</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>All_Brands_are_related_to_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>brandAssociationsUnrelatedToOpportunities</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>All_Brands_are_associated_screen</targetReference>
+            </connector>
+            <label>All Brands are related to Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-14049: It checks whether BrandIds are empty are not.</description>
+        <name>Are_Brand_Ids_Empty</name>
+        <label>Are Brand Ids Empty?</label>
+        <locationX>559</locationX>
+        <locationY>626</locationY>
+        <defaultConnector>
+            <targetReference>Error_on_no_Brands_found</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Brand Ids Empty</defaultConnectorLabel>
+        <rules>
+            <name>Brand_Ids_Not_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>brandIds</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Brands_from_Brand_Ids</targetReference>
+            </connector>
+            <label>Brand Ids Not Empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-14049: It checks the Brand is selected.</description>
+        <name>Brand_Selection</name>
+        <label>Brand Selection</label>
+        <locationX>849</locationX>
+        <locationY>1087</locationY>
+        <defaultConnector>
+            <targetReference>Error_Message_For_No_Brand_Selection</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>BrandNotSelected</defaultConnectorLabel>
+        <rules>
+            <name>BrandSelected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Brands</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Brands</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Brand_on_store_Account</targetReference>
+            </connector>
+            <label>BrandSelected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-3607: Checks if Brand Associations were retrieved or not.</description>
+        <name>Check_for_Existing_Brand_Association</name>
+        <label>Check for Existing Brand Associations2</label>
+        <locationX>1338</locationX>
+        <locationY>506</locationY>
+        <defaultConnector>
+            <targetReference>Iterate_over_Brand_Associations</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_Associations</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Brand_Associations</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_Brand_Associations_found</targetReference>
+            </connector>
+            <label>No Associations</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_Brand_Associations_are_Present</name>
+        <label>Check if Brand Associations are Present</label>
+        <locationX>50</locationX>
+        <locationY>468</locationY>
+        <defaultConnector>
+            <targetReference>Iterating_over_Brand_Associations</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>no_association</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Brand_Association_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Store_Accounts.Brand__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_Association_records</targetReference>
+            </connector>
+            <label>no association</label>
+        </rules>
+        <rules>
+            <name>one_record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Brand_Association_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Store_Accounts.Brand__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>One_Brand</targetReference>
+            </connector>
+            <label>one record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-3607: Used to check if the fetched list of Opportunity Brand Relationships is not empty.</description>
+        <name>Check_if_Opportunity_Brand_Relationships_were_retrieved</name>
+        <label>Check if Opportunity Brand Relationships were retrieved</label>
+        <locationX>1624</locationX>
+        <locationY>1022</locationY>
+        <defaultConnector>
+            <targetReference>Iterate_over_Opportunity_Brand_Relation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_relationship</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opportunity_Brand_Relationship</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Empty_Brand_Association_Ids</targetReference>
+            </connector>
+            <label>No relationship</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-14049: It checks if whether object type is Account or Opportunity.</description>
+        <name>Check_Object_Type</name>
+        <label>Check Object Type</label>
+        <locationX>931</locationX>
+        <locationY>181</locationY>
+        <defaultConnector>
+            <targetReference>Get_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Opportunity Object Type</defaultConnectorLabel>
+        <rules>
+            <name>Account_Object_Type</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>001</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Store_Accounts</targetReference>
+            </connector>
+            <label>Account Object Type</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-3607: Checks if the current Brand Association exists in the list with existing Opportunity Brand Relationships.</description>
+        <name>Checks_If_Opportunity_Brand_Relationship_exists</name>
+        <label>Checks If Opportunity Brand Relationship exists</label>
+        <locationX>1800</locationX>
+        <locationY>1730</locationY>
+        <defaultConnector>
+            <targetReference>Accumulate_Association_Records_in_Choice_Set</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Relationship_Is_There</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>brandAssociationIds</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Iterate_over_Brand_Associations_to_make_choice_set.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_over_Brand_Associations_to_make_choice_set</targetReference>
+            </connector>
+            <label>Relationship Is There</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>LEM-3607: Checks if the current Association Id is present in the selected choice list.</description>
+        <name>Checks_if_the_Association_Id_is_selected</name>
+        <label>Checks if the Association Id is selected</label>
+        <locationX>2152</locationX>
+        <locationY>2546</locationY>
+        <defaultConnector>
+            <targetReference>Iterate_over_Brand_Associations_to_capture_Selections</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>selectedBrandIds</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Iterate_over_Brand_Associations_to_capture_Selections.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Opportunity_Brand_Relationship</targetReference>
+            </connector>
+            <label>Selected</label>
+        </rules>
+    </decisions>
+    <description>LEM-3607,LEM-14049: Used to create associations between Opportunity and Brands commonly related to a Business Account.</description>
+    <dynamicChoiceSets>
+        <name>Brand_Record_Choice</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>Brand__c</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>LEM-3607: Collection Choice Set of all Brand Associations</description>
+        <name>brandAssociations</name>
+        <collectionReference>brandAssociationsUnrelatedToOpportunities</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Related_Brand_Name__c</displayField>
+        <object>Brand_Association__c</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>BrandChoiceSetCollection</name>
+        <collectionReference>Get_Brands_from_Brand_Ids</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>Brand__c</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>BrandTest</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>Brand__c</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>LEM-14049: It stores the selected Brand.</description>
+        <name>selectedBrand</name>
+        <collectionReference>Get_Brands_from_Brand_Ids</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>Brand__c</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <interviewLabel>Add Opportunit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Add Brand Associations To Store</label>
+    <loops>
+        <description>LEM-3607: Loop on Brand Associations to capture Ids in a list.</description>
+        <name>Iterate_over_Brand_Associations</name>
+        <label>Iterate over Brand Associations</label>
+        <locationX>1624</locationX>
+        <locationY>614</locationY>
+        <collectionReference>Get_Brand_Associations</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Association_Ids_to_a_list</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Opportunity_Brand_Relationship</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>LEM-3607: Captures the selected Brand Associations to create new Opportunity Brand Associations</description>
+        <name>Iterate_over_Brand_Associations_to_capture_Selections</name>
+        <label>Iterate over Brand Associations to capture Selections</label>
+        <locationX>1932</locationX>
+        <locationY>2438</locationY>
+        <collectionReference>brandAssociationsUnrelatedToOpportunities</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Checks_if_the_Association_Id_is_selected</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Opportunity_Brand_Relationships</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>LEM-3607: Loops over the list of Brand Associations to fetch the name of the Brand for display.</description>
+        <name>Iterate_over_Brand_Associations_to_make_choice_set</name>
+        <label>Iterate over Brand Associations to make choice set</label>
+        <locationX>1624</locationX>
+        <locationY>1622</locationY>
+        <collectionReference>Get_Brand_Associations</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Checks_If_Opportunity_Brand_Relationship_exists</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Are_all_Brands_related</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>LEM-3607: Iterates over all the fetched Opportunity Brand Relationships to eliminate Brand Association choice in the choice set that is already associated with the Opportunity.</description>
+        <name>Iterate_over_Opportunity_Brand_Relation</name>
+        <label>Iterate over Opportunity Brand Relation</label>
+        <locationX>1800</locationX>
+        <locationY>1130</locationY>
+        <collectionReference>Get_Opportunity_Brand_Relationship</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Accumulate_related_Association_Ids</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Assign_filtered_list_to_brandAssociationIds</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>LEM-14049: It iterates on Brand Associations to capture Brand Ids in a variable.</description>
+        <name>Iterating_over_Brand_Associations</name>
+        <label>Iterating over Brand Associations</label>
+        <locationX>496</locationX>
+        <locationY>419</locationY>
+        <collectionReference>Get_Brand_Association_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Collects_BrandIds_from_BrandAssociations</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Are_Brand_Ids_Empty</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>LEM-3607: Creates all Opportunity Brand Relationships.</description>
+        <name>Create_Opportunity_Brand_Relationships</name>
+        <label>Create Opportunity Brand Relationships</label>
+        <locationX>1932</locationX>
+        <locationY>2930</locationY>
+        <faultConnector>
+            <targetReference>Generate_Log_Record</targetReference>
+        </faultConnector>
+        <inputReference>opportunityBrandRelationships</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>LEM-3607: It is used to log the errors during Opportunity Brand Relationship creation.</description>
+        <name>Log_Errors</name>
+        <label>Log Errors</label>
+        <locationX>2196</locationX>
+        <locationY>3146</locationY>
+        <inputReference>OpportunityBrandRelationshipInsertError</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>LEM-14049: It queries brand association records with type licensee or licensor and parent business Account .</description>
+        <name>Get_Brand_Association_Records</name>
+        <label>Get Brand Association Records</label>
+        <locationX>150</locationX>
+        <locationY>316</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Count</targetReference>
+        </connector>
+        <filterLogic>(1 OR 2) AND 3 AND 4</filterLogic>
+        <filters>
+            <field>Relationship_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Licensee_Text</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Relationship_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Licensor_Text</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Business_Account_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Store_Accounts.ParentId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Brand_Name__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>Get_Store_Accounts.Brand__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Brand_Association__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-3607: Fetches all Brand Associations related to the Business Account of the Opportunity.</description>
+        <name>Get_Brand_Associations</name>
+        <label>Get Brand Associations</label>
+        <locationX>1338</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_for_Existing_Brand_Association</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Business_Account_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Opportunity.Account.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Brand_Association__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Brand_Name__c</queriedFields>
+        <queriedFields>Business_Account_Name__c</queriedFields>
+        <queriedFields>Related_Brand_Name__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-14049: It queries Brand records from passed Brand Ids.</description>
+        <name>Get_Brands_from_Brand_Ids</name>
+        <label>Get Brands from Brand Ids</label>
+        <locationX>226</locationX>
+        <locationY>696</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Select_Brand</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>brandIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Brand__c</object>
+        <sortField>Name</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-3607: Fetches the related Opportunity details.</description>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>1338</locationX>
+        <locationY>290</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Brand_Associations</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>AccountId</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-3607: Fetches all the Opportunity Brand Relationships</description>
+        <name>Get_Opportunity_Brand_Relationship</name>
+        <label>Get Opportunity Brand Relationship</label>
+        <locationX>1624</locationX>
+        <locationY>914</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_Opportunity_Brand_Relationships_were_retrieved</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Brand__c</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>brandAssociationIds</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity_Brand_Relationship__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Brand__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>LEM-14049: It queries store Account from passed recordId.</description>
+        <name>Get_Store_Accounts</name>
+        <label>Get Store Accounts</label>
+        <locationX>524</locationX>
+        <locationY>290</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Brand_Association_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Store</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>LEM-14049: It updates brand on store Account with selected Brand.</description>
+        <name>Update_Brand_on_store_Account</name>
+        <label>Update Brand on store Account</label>
+        <locationX>175</locationX>
+        <locationY>929</locationY>
+        <connector>
+            <targetReference>Success_Message_For_Brand_Update</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_on_Store_Account_Update</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Brand__c</field>
+            <value>
+                <elementReference>Brands</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <screens>
+        <description>LEM-3607: It is used to indicate the error message that all brand associations are related to the Opportunity.</description>
+        <name>All_Brands_are_associated_screen</name>
+        <label>All Brands are associated screen</label>
+        <locationX>1316</locationX>
+        <locationY>2222</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>BrandsAssociatedError</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(8, 8, 8);&quot;&gt;All existing Brand Associations have already been associated with this opportunity. Please move forward with the existing relationships or create a new Brand Association for the account.﻿&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Message_For_No_Brand_Selection</name>
+        <label>Error Message For No Brand Selection</label>
+        <locationX>1133</locationX>
+        <locationY>966</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>SelectBrand</name>
+            <fieldText>&lt;p&gt;{!$Label.BrandNotSelectedMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-14049: It displays screen to show error message when no Brand Associations were found.</description>
+        <name>Error_on_no_Brands_found</name>
+        <label>Error on no Brands found</label>
+        <locationX>790</locationX>
+        <locationY>774</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>noBrandAssociationsErrorMessage</name>
+            <fieldText>&lt;p&gt;{!$Label.BrandInformationUnavailable}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-14049: It shows error when Brand is not updated on store Account.</description>
+        <name>Error_on_Store_Account_Update</name>
+        <label>Error on Store Account Update</label>
+        <locationX>518</locationX>
+        <locationY>1169</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>recordNotUpdatedError</name>
+            <fieldText>&lt;p&gt;{!$Label.AccountNotUpdatedErrorMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>No_Association_records</name>
+        <label>No Association records</label>
+        <locationX>292</locationX>
+        <locationY>600</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>No_Association_For_Account</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!$Label.BrandInformationUnavailable}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-3607: Display screen to show error message when no Brand Associations were retrieved.</description>
+        <name>No_Brand_Associations_found</name>
+        <label>No Brand Associations found</label>
+        <locationX>1052</locationX>
+        <locationY>614</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>No_BrandAssociation_ErrorMessage</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(8, 8, 8);&quot;&gt;There are no Brand Associations created for this Account. Please ensure you have created the opportunity on the correct account, and navigate to the account to create a Brand Association before moving forward with this opportunity.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>One_Brand</name>
+        <label>One Brand</label>
+        <locationX>102</locationX>
+        <locationY>677</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>One_Brand_Assoc</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!$Label.No_BrandAssociation_ErrorMessage} &lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-14049: It displays screen to select the Brand to be added on store Account.</description>
+        <name>Select_Brand</name>
+        <label>Select Brand</label>
+        <locationX>373</locationX>
+        <locationY>851</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Brand_Selection</targetReference>
+        </connector>
+        <fields>
+            <name>Brands</name>
+            <choiceReferences>selectedBrand</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Brands</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-3607: Shows the choice of Brands to users.</description>
+        <name>Show_Brand_Choices</name>
+        <label>Show Brand Choices</label>
+        <locationX>1932</locationX>
+        <locationY>2222</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>IDsToString</targetReference>
+        </connector>
+        <fields>
+            <name>Select_Brands</name>
+            <choiceReferences>brandAssociations</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Select Brands</fieldText>
+            <fieldType>MultiSelectCheckboxes</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>LEM-14049: It shows success message when Brand is updated on store Account.</description>
+        <name>Success_Message_For_Brand_Update</name>
+        <label>Success Message For Brand Update</label>
+        <locationX>135</locationX>
+        <locationY>1108</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>recordUpdateSuccessMessage</name>
+            <fieldText>&lt;p&gt;{!$Label.BrandSuccessMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>805</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_Object_Type</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>LEM-3607: Stores all the Brand Association Ids</description>
+        <name>brandAssociationIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-3607: Captures all the Brands that do not have an existing association with the Opportunity.</description>
+        <name>brandAssociationsIdsUnrelatedToOpportunity</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-3607: Brand Associations that are related to the Opportunity.</description>
+        <name>brandAssociationsRelatedToOpportunity</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-3607: Accumulates Brand Associations that are not related to the Opportunity.</description>
+        <name>brandAssociationsUnrelatedToOpportunities</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Brand_Association__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-14049:It stores all the BrandIds from Brand Associations</description>
+        <name>brandIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>currentItem_filteredBrandAssociationIds</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-3607: Creates a new Opportunity Brand Relationship</description>
+        <name>eachNewOpportunityBrandRelationship</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity_Brand_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-3607: Un-initialised Opportunity Brand Relationship.</description>
+        <name>emptyOpportunityBrandRelationship</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity_Brand_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-3607: It is used to store the quiddity for any potential error</description>
+        <name>errorSource</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>&quot;Add Opportunity Brand Associations&quot; flow</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-3607: It is used to store the error message indicating that the Opportunity Brand Relationship creation failed.</description>
+        <name>flowExceptionType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Opportunity Brand Relationship insertion failed. Please contact System Administrator</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>LEM-3607: It is used to log the errors generated while inserting Opportunity Brand Relationship.</description>
+        <name>OpportunityBrandRelationshipInsertError</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Log__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-3607: Creates a new Opportunity Brand Relationship.</description>
+        <name>opportunityBrandRelationships</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity_Brand_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>LEM-3607: Stores the Opportunity Id of the current Opportunity.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-3607: Stores the selected Ids in a string</description>
+        <name>selectedBrandIds</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>LEM-14049: Stores the brand ids.</description>
+        <name>Store_Brand_Ids</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>varNcount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+</Flow>

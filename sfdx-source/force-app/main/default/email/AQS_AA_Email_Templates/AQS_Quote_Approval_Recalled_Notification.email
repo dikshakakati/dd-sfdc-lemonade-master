@@ -1,0 +1,33 @@
+<messaging:emailTemplate subject="Quote Approval - RECALLED: {!relatedTo.AQS_Quote__r.Name} for {!relatedTo.AQS_Quote__r.SBQQ__Opportunity2__r.Name}"
+recipientType="User"
+relatedToType="sbaa__Approval__c">
+<messaging:HtmlEmailBody >
+<html>
+<body>
+
+<apex:image value="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}/servlet/servlet.ImageServer?id={!$Setup.AQS_AA_Enablement_IDs__c.AQS_Approval_Email_Logo_ID__c}&oid={!$Organization.Id}" 
+/>
+
+<b></b>
+<p></p><br/>
+
+Hello {!recipient.name},
+
+<p> Your approval request for Quote {!relatedTo.AQS_Quote__r.Name} has been recalled.
+</p>
+
+<p>
+<b>Quote Name: </b>&nbsp;<apex:outputLink value="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}/{!relatedTo.AQS_Quote__r.Id}" >{!relatedTo.AQS_Quote__r.Name}</apex:outputLink><br/>
+<b>Opportunity Name: </b>&nbsp;<apex:outputLink value="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}/{!relatedTo.AQS_Quote__r.SBQQ__Opportunity2__r.Id}" >{!relatedTo.AQS_Quote__r.SBQQ__Opportunity2__r.Name}</apex:outputLink><br/>
+</p>
+
+<p>
+<b>Approvals:</b><br/>
+<sbaa:relatedList rendered="{!relatedTo.AQS_Quote__c != null}" recordId="{!relatedTo.AQS_Quote__c}" relationshipName="AQS_AA_Approvals__r" fieldSetName="AQS_Approval_Request"/>
+</p>
+
+
+</body>
+</html>
+</messaging:HtmlEmailBody>
+</messaging:emailTemplate>

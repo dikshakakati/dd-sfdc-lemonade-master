@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Pickup</fullName>
+        <default>false</default>
+        <label>Pickup</label>
+    </customValue>
+    <customValue>
+        <fullName>Delivery</fullName>
+        <default>false</default>
+        <label>Delivery</label>
+    </customValue>
+    <description>LEM-174 - Identifies if an option product is fulfilled by delivery or pickup. This field is not relevant to all products.</description>
+    <masterLabel>Fulfillment Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

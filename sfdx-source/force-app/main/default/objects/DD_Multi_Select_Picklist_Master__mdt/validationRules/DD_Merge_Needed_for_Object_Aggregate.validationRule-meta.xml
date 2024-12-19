@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DD_Merge_Needed_for_Object_Aggregate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISBLANK( Dropdown_Label_Merge_Format__c ),
+  OR(
+    ISPICKVAL( Type__c , &apos;Object Records&apos;),
+    ISPICKVAL( Type__c , &apos;Aggregate Query&apos;)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Dropdown_Label_Merge_Format__c</errorDisplayField>
+    <errorMessage>Required for &apos;Object Records&apos; / &apos;Aggregate Query&apos; Types</errorMessage>
+</ValidationRule>

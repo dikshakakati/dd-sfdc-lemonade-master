@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDOA_Delay_Reason__c</fullName>
+    <description>LEM-6212</description>
+    <externalId>false</externalId>
+    <label>PDOA Delay Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Information Missing/Incorrect</fullName>
+                <default>false</default>
+                <label>Account Information Missing/Incorrect</label>
+            </value>
+            <value>
+                <fullName>DM Decision - Missing Photos</fullName>
+                <default>false</default>
+                <label>DM Decision - Missing Photos</label>
+            </value>
+            <value>
+                <fullName>DM Decision - PDOA Moved Up</fullName>
+                <default>false</default>
+                <label>DM Decision - PDOA Moved Up</label>
+            </value>
+            <value>
+                <fullName>DM Decision - Refused Activation</fullName>
+                <default>false</default>
+                <label>DM Decision - Refused Activation</label>
+            </value>
+            <value>
+                <fullName>DM Decision - Store Operations Not Ready</fullName>
+                <default>false</default>
+                <label>DM Decision - Store Operations Not Ready</label>
+            </value>
+            <value>
+                <fullName>DM Decision - Temporary Closure</fullName>
+                <default>false</default>
+                <label>DM Decision - Temporary Closure</label>
+            </value>
+            <value>
+                <fullName>DM Unresponsive - Follow Up Needed</fullName>
+                <default>false</default>
+                <label>DM Unresponsive - Follow Up Needed</label>
+            </value>
+            <value>
+                <fullName>DM Unresponsive - Gone Dark</fullName>
+                <default>false</default>
+                <label>DM Unresponsive - Gone Dark</label>
+            </value>
+            <value>
+                <fullName>Drive SLA</fullName>
+                <default>false</default>
+                <label>Drive SLA</label>
+            </value>
+            <value>
+                <fullName>Invalid Bank Info</fullName>
+                <default>false</default>
+                <label>Invalid Bank Info</label>
+            </value>
+            <value>
+                <fullName>Invalid Fraud Flag</fullName>
+                <default>false</default>
+                <label>Invalid Fraud Flag</label>
+            </value>
+            <value>
+                <fullName>Missing Affiliate Program - Cannot Activate</fullName>
+                <default>false</default>
+                <label>Missing Affiliate Program - Cannot Activate</label>
+            </value>
+            <value>
+                <fullName>Non-Integrated Menu Issues</fullName>
+                <default>false</default>
+                <label>Non-Integrated Menu Issues</label>
+            </value>
+            <value>
+                <fullName>Not in Coverage</fullName>
+                <default>false</default>
+                <label>Not in Coverage</label>
+            </value>
+            <value>
+                <fullName>POS Integration Issues (DD)</fullName>
+                <default>false</default>
+                <label>POS Integration Issues (DD)</label>
+            </value>
+            <value>
+                <fullName>POS Integration Issues (Px)</fullName>
+                <default>false</default>
+                <label>POS Integration Issues (Px)</label>
+            </value>
+            <value>
+                <fullName>Readiness Check Failure</fullName>
+                <default>false</default>
+                <label>Readiness Check Failure</label>
+            </value>
+            <value>
+                <fullName>Tablet Delay</fullName>
+                <default>false</default>
+                <label>Tablet Delay</label>
+            </value>
+            <value>
+                <fullName>Valid Fraud Flag</fullName>
+                <default>false</default>
+                <label>Valid Fraud Flag</label>
+            </value>
+            <value>
+                <fullName>Account Information Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Account Information Issues</label>
+            </value>
+            <value>
+                <fullName>DM Decision to Push Back Launch</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DM Decision to Push Back Launch</label>
+            </value>
+            <value>
+                <fullName>DM Unresponsive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DM Unresponsive</label>
+            </value>
+            <value>
+                <fullName>Menu Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Menu Issues</label>
+            </value>
+            <value>
+                <fullName>No Photography</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Photography</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>POS Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>POS Issues</label>
+            </value>
+            <value>
+                <fullName>Store Manager Refused Activation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Store Manager Refused Activation</label>
+            </value>
+            <value>
+                <fullName>Temporary Closure</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Temporary Closure</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_Program_lookup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-9264: Sync between Opportunity and Brief/Brief Item</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the campaign program here (e.g. SoDP, Fall Football).</inlineHelpText>
+    <label>Campaign Program</label>
+    <referenceTo>Campaign_Program__c</referenceTo>
+    <relationshipLabel>Briefs</relationshipLabel>
+    <relationshipName>Briefs</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

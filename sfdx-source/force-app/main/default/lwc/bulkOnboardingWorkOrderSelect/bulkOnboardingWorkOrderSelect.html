@@ -1,0 +1,84 @@
+<template>
+    <div class="slds-p-horizontal_medium option-container slds-box">
+             
+        <!-- Stage / Progress Indicator -->
+        <c-bulk-onboarding-stage-bar current-step={currentStep}></c-bulk-onboarding-stage-bar>
+        <div if:false={isLoading}>
+            <lightning-card>                
+                <p class="option-text slds-m-around_medium" if:true={workOrders.length}>Choose a Work Order related to this Business Account.</p>
+                <div class="option-text slds-m-around_medium" if:false={workOrders.length}>No Work Order to display for this Account. &nbsp;
+                    <a onclick={switchToWorkOrderCreation} if:false={createNewDisabled}>Please create a new Work Order.</a>
+                    <span if:true={createNewDisabled}>To proceed, ensure a Work Order is created and in either Planning or Confirmed status.</span>
+                </div>
+                
+                <div class="slds-scrollable slds-m-around_medium slds-p-top_medium" if:true={workOrders.length}>
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th></th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Work Order #</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Type</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Status</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Provisioning Status</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Proposed Date of Activation</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Segment</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Vertical</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Order Protocol</div>
+                                </th>
+                                <th scope="col">
+                                <div class="slds-truncate">Created Date</div>
+                                </th>                      
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={workOrders} for:item="workOrder">
+                                <tr key={workOrder.Id}>
+                                <td>
+                                    <input type="radio" name="workOrder" value={workOrder.Id} onchange={handleSelect}></input>
+                                </td>
+                                <td>{workOrder.WorkOrderNumber}</td>
+                                <td>{workOrder.Type__c}</td>
+                                <td>{workOrder.Status}</td>
+                                <td>{workOrder.Provisioning_Status__c}</td>
+                                <td>
+                                    <lightning-formatted-date-time value={workOrder.Proposed_Date_of_Activation__c}></lightning-formatted-date-time>
+                                </td>
+                                <td>{workOrder.Segment__c}</td>
+                                <td>{workOrder.Vertical__c}</td>
+                                <td>{workOrder.Order_Protocol__c}</td>
+                                <td>
+                                    <lightning-formatted-date-time value={workOrder.CreatedDate}></lightning-formatted-date-time>
+                                </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="slds-p-vertical_medium slds-m-horizontal_medium" if:false={createNewDisabled}>
+                    <a onclick={switchToWorkOrderCreation} if:true={workOrders.length}>Can't find the Work Order you need? Create a new one instead.</a>
+                </div>
+
+                <div class="option-container-buttons">
+                    <lightning-button variant="brand" label="Next" onclick={handleNext} if:true={workOrders.length} disabled={isNextDisabled} class="slds-m-right_small"></lightning-button>
+                    <lightning-button variant="brand" label="Create New" onclick={switchToWorkOrderCreation} disabled={createNewDisabled} if:false={workOrders.length} class="slds-m-right_small"></lightning-button>
+                </div>
+            </lightning-card>
+         </div>
+    </div>
+ </template>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Status_Set_to_Contract_Signed</fullName>
+    <active>false</active>
+    <description>Lem-4912</description>
+    <errorConditionFormula>IF(AND($Profile.Name != &apos;System Administrator&apos;,$Permission.CommOps_User = FALSE,
+ISPICKVAL(PRIORVALUE(SBQQ__Status__c),&apos;Contract Signed&apos;),
+ISCHANGED(SBQQ__Status__c )),TRUE,
+IF(AND($Profile.Name != &apos;System Administrator&apos;,$Permission.CommOps_User = FALSE,
+AND(TEXT(SBQQ__Status__c) = &apos;Contract Signed&apos;, NOT(ISCHANGED(SBQQ__Status__c))),
+OR(ISCHANGED(Signed_Contract_link__c),
+ISCHANGED(Contract_Signed_Date__c))),TRUE,
+FALSE))</errorConditionFormula>
+    <errorMessage>Once Quote Status is &apos;Contract Signed&apos;, the following fields cannot be updated: Signed Contract Link, Contract Signed Date and Status</errorMessage>
+</ValidationRule>

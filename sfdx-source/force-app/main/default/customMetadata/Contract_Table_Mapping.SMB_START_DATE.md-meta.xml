@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CONTRACT EFFECTIVE DATE</label>
+    <protected>false</protected>
+    <values>
+        <field>API_Name__c</field>
+        <value xsi:type="xsd:string">StartDate</value>
+    </values>
+    <values>
+        <field>Available_On__c</field>
+        <value xsi:type="xsd:string">Opportunity,Account</value>
+    </values>
+    <values>
+        <field>Applicable_for_Product__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Hyper_Link_Display_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Object__c</field>
+        <value xsi:type="xsd:string">Contract</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">6.0</value>
+    </values>
+    <values>
+        <field>Segment__c</field>
+        <value xsi:type="xsd:string">SMB</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">Text</value>
+    </values>
+</CustomMetadata>

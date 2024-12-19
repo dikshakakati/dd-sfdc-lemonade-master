@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mx_Attributes__c</fullName>
+    <description>LEM-13822:Used in QCP for comparing Commission Rates Segment for CRT Stamping</description>
+    <externalId>false</externalId>
+    <formula>IF(
+        AND(
+          SBQQ__StartDate__c &lt; DATE(2023,1,16),
+          OR(Deck_Rank__c = &apos;Ace&apos;, Deck_Rank__c = &apos;King&apos;),
+          ISPICKVAL(SBQQ__Account__r.Partnership_Level__c ,&apos;Exclusive Partnership&apos;),
+          ISPICKVAL(SBQQ__Account__r.Exclusivity_Type__c ,&apos;Contractual&apos;)
+        ),
+        &apos;Exclusive&apos;,
+        IF(
+          AND(SBQQ__StartDate__c &lt; DATE(2023,1,16), ISPICKVAL(Top_Mx__c, &apos;Yes&apos;)),
+          &apos;Top Mx&apos;,
+          IF(
+            AND(SBQQ__StartDate__c &lt; DATE(2023,1,16), ISPICKVAL(Local_Premium__c, &apos;Yes&apos;)),
+            &apos;Local Premium&apos;,
+            IF(
+              AND(SBQQ__StartDate__c &lt; DATE(2023,1,16), ISPICKVAL(High_AOV__c, &apos;Yes&apos;)),
+              &apos;High AOV&apos;,
+              IF(
+                AND(
+                  SBQQ__StartDate__c &gt;= DATE(2023,1,16),
+                  ISPICKVAL(Local_Premium__c, &apos;Yes&apos;),
+                  ISPICKVAL(SBQQ__Account__r.Partnership_Level__c ,&apos;Exclusive Partnership&apos;),
+                  ISPICKVAL(SBQQ__Account__r.Exclusivity_Type__c ,&apos;Contractual&apos;)
+                ),
+                &apos;Exclusive Local Premium&apos;,
+                IF(
+                  AND(SBQQ__StartDate__c &gt;= DATE(2023,1,16), ISPICKVAL(Local_Premium__c, &apos;Yes&apos;)),
+                  &apos;Local Premium&apos;,
+                  IF(
+                    AND(
+                      SBQQ__StartDate__c &gt;= DATE(2023,1,16),
+                      ISPICKVAL(High_AOV__c, &apos;Yes&apos;),
+                      ISPICKVAL(SBQQ__Account__r.Partnership_Level__c ,&apos;Exclusive Partnership&apos;),
+                      ISPICKVAL(SBQQ__Account__r.Exclusivity_Type__c ,&apos;Contractual&apos;)
+                    ),
+                    &apos;Exclusive High AOV&apos;,
+                    IF(
+                      AND(SBQQ__StartDate__c &gt;= DATE(2023,1,16), ISPICKVAL(High_AOV__c, &apos;Yes&apos;)),
+                      &apos;High AOV&apos;,
+                      IF(
+                        AND(
+                          SBQQ__StartDate__c &gt;= DATE(2023,1,16),
+                          ISPICKVAL(Top_Mx__c, &apos;Yes&apos;),
+                          ISPICKVAL(SBQQ__Account__r.Partnership_Level__c ,&apos;Exclusive Partnership&apos;),
+                          ISPICKVAL(SBQQ__Account__r.Exclusivity_Type__c ,&apos;Contractual&apos;)
+                        ),
+                        &apos;Exclusive Top Mx&apos;,
+                        IF(
+                          AND(SBQQ__StartDate__c &gt;= DATE(2023,1,16), ISPICKVAL(Top_Mx__c, &apos;Yes&apos;)),
+                          &apos;Top Mx&apos;,
+                          IF(
+                            AND(
+                              SBQQ__StartDate__c &gt;= DATE(2023,1,16),
+                              ISPICKVAL(SBQQ__Account__r.Partnership_Level__c ,&apos;Exclusive Partnership&apos;),
+                              ISPICKVAL(SBQQ__Account__r.Exclusivity_Type__c ,&apos;Contractual&apos;)
+                            ),
+                            &apos;Exclusive&apos;,
+                            NULL
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    </formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Mx Attributes</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

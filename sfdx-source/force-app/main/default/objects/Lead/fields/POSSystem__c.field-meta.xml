@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POSSystem__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13618: It stores the value when the restaurant has a POS system.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used when the Rx has a POS system</inlineHelpText>
+    <label>POS System?</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Abacus</fullName>
+                <default>false</default>
+                <label>Abacus</label>
+            </value>
+            <value>
+                <fullName>AccuPOS</fullName>
+                <default>false</default>
+                <label>AccuPOS</label>
+            </value>
+            <value>
+                <fullName>Aldelo POS</fullName>
+                <default>false</default>
+                <label>Aldelo POS</label>
+            </value>
+            <value>
+                <fullName>Aloha NCR</fullName>
+                <default>false</default>
+                <label>Aloha NCR</label>
+            </value>
+            <value>
+                <fullName>Amber Systems Technology</fullName>
+                <default>false</default>
+                <label>Amber Systems Technology</label>
+            </value>
+            <value>
+                <fullName>Arrow POS</fullName>
+                <default>false</default>
+                <label>Arrow POS</label>
+            </value>
+            <value>
+                <fullName>Auphan</fullName>
+                <default>false</default>
+                <label>Auphan</label>
+            </value>
+            <value>
+                <fullName>Brilliant POS</fullName>
+                <default>false</default>
+                <label>Brilliant POS</label>
+            </value>
+            <value>
+                <fullName>Cake</fullName>
+                <default>false</default>
+                <label>Cake</label>
+            </value>
+            <value>
+                <fullName>Casio</fullName>
+                <default>false</default>
+                <label>Casio</label>
+            </value>
+            <value>
+                <fullName>Centro</fullName>
+                <default>false</default>
+                <label>Centro</label>
+            </value>
+            <value>
+                <fullName>Champion POS</fullName>
+                <default>false</default>
+                <label>Champion POS</label>
+            </value>
+            <value>
+                <fullName>Clover</fullName>
+                <default>false</default>
+                <label>Clover</label>
+            </value>
+            <value>
+                <fullName>Cluster</fullName>
+                <default>false</default>
+                <label>Cluster</label>
+            </value>
+            <value>
+                <fullName>Comtrex</fullName>
+                <default>false</default>
+                <label>Comtrex</label>
+            </value>
+            <value>
+                <fullName>Crisp</fullName>
+                <default>false</default>
+                <label>Crisp</label>
+            </value>
+            <value>
+                <fullName>Custom Propietary POS</fullName>
+                <default>false</default>
+                <label>Custom Propietary POS</label>
+            </value>
+            <value>
+                <fullName>Dig Inn</fullName>
+                <default>false</default>
+                <label>Dig Inn</label>
+            </value>
+            <value>
+                <fullName>Digital Dining</fullName>
+                <default>false</default>
+                <label>Digital Dining</label>
+            </value>
+            <value>
+                <fullName>Dinerware</fullName>
+                <default>false</default>
+                <label>Dinerware</label>
+            </value>
+            <value>
+                <fullName>Exa Touch</fullName>
+                <default>false</default>
+                <label>Exa Touch</label>
+            </value>
+            <value>
+                <fullName>Figure POS</fullName>
+                <default>false</default>
+                <label>Figure POS</label>
+            </value>
+            <value>
+                <fullName>Focus POS</fullName>
+                <default>false</default>
+                <label>Focus POS</label>
+            </value>
+            <value>
+                <fullName>FoodTech</fullName>
+                <default>false</default>
+                <label>FoodTech</label>
+            </value>
+            <value>
+                <fullName>Future POS</fullName>
+                <default>false</default>
+                <label>Future POS</label>
+            </value>
+            <value>
+                <fullName>Givex</fullName>
+                <default>false</default>
+                <label>Givex</label>
+            </value>
+            <value>
+                <fullName>HarbourTouch</fullName>
+                <default>false</default>
+                <label>HarbourTouch</label>
+            </value>
+            <value>
+                <fullName>Heartland</fullName>
+                <default>false</default>
+                <label>Heartland</label>
+            </value>
+            <value>
+                <fullName>HungerRush</fullName>
+                <default>false</default>
+                <label>HungerRush</label>
+            </value>
+            <value>
+                <fullName>InTouchPOS</fullName>
+                <default>false</default>
+                <label>InTouchPOS</label>
+            </value>
+            <value>
+                <fullName>JK Restaurant Systems</fullName>
+                <default>false</default>
+                <label>JK Restaurant Systems</label>
+            </value>
+            <value>
+                <fullName>Koomi</fullName>
+                <default>false</default>
+                <label>Koomi</label>
+            </value>
+            <value>
+                <fullName>Lavu</fullName>
+                <default>false</default>
+                <label>Lavu</label>
+            </value>
+            <value>
+                <fullName>Lighthouse</fullName>
+                <default>false</default>
+                <label>Lighthouse</label>
+            </value>
+            <value>
+                <fullName>Lightspeed</fullName>
+                <default>false</default>
+                <label>Lightspeed</label>
+            </value>
+            <value>
+                <fullName>Linga POS</fullName>
+                <default>false</default>
+                <label>Linga POS</label>
+            </value>
+            <value>
+                <fullName>Local Kitchens</fullName>
+                <default>false</default>
+                <label>Local Kitchens</label>
+            </value>
+            <value>
+                <fullName>Maitre D</fullName>
+                <default>false</default>
+                <label>Maitre D</label>
+            </value>
+            <value>
+                <fullName>Mediaworks</fullName>
+                <default>false</default>
+                <label>Mediaworks</label>
+            </value>
+            <value>
+                <fullName>Menusifu</fullName>
+                <default>false</default>
+                <label>Menusifu</label>
+            </value>
+            <value>
+                <fullName>Micros</fullName>
+                <default>false</default>
+                <label>Micros</label>
+            </value>
+            <value>
+                <fullName>Microsale</fullName>
+                <default>false</default>
+                <label>Microsale</label>
+            </value>
+            <value>
+                <fullName>Microworks</fullName>
+                <default>false</default>
+                <label>Microworks</label>
+            </value>
+            <value>
+                <fullName>Mobile Bytes</fullName>
+                <default>false</default>
+                <label>Mobile Bytes</label>
+            </value>
+            <value>
+                <fullName>MobiPOS</fullName>
+                <default>false</default>
+                <label>MobiPOS</label>
+            </value>
+            <value>
+                <fullName>NCR Cloud Connect</fullName>
+                <default>false</default>
+                <label>NCR Cloud Connect</label>
+            </value>
+            <value>
+                <fullName>NCR Silver</fullName>
+                <default>false</default>
+                <label>NCR Silver</label>
+            </value>
+            <value>
+                <fullName>NetPOS</fullName>
+                <default>false</default>
+                <label>NetPOS</label>
+            </value>
+            <value>
+                <fullName>None (no in-store POS system)</fullName>
+                <default>false</default>
+                <label>None (no in-store POS system)</label>
+            </value>
+            <value>
+                <fullName>Northstar POS</fullName>
+                <default>false</default>
+                <label>Northstar POS</label>
+            </value>
+            <value>
+                <fullName>Not sure</fullName>
+                <default>false</default>
+                <label>Not sure</label>
+            </value>
+            <value>
+                <fullName>One POS</fullName>
+                <default>false</default>
+                <label>One POS</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>ParBrink</fullName>
+                <default>false</default>
+                <label>ParBrink</label>
+            </value>
+            <value>
+                <fullName>Paytouch</fullName>
+                <default>false</default>
+                <label>Paytouch</label>
+            </value>
+            <value>
+                <fullName>PDQ</fullName>
+                <default>false</default>
+                <label>PDQ</label>
+            </value>
+            <value>
+                <fullName>PixelPoint</fullName>
+                <default>false</default>
+                <label>PixelPoint</label>
+            </value>
+            <value>
+                <fullName>Positouch</fullName>
+                <default>false</default>
+                <label>Positouch</label>
+            </value>
+            <value>
+                <fullName>POS Now</fullName>
+                <default>false</default>
+                <label>POS Now</label>
+            </value>
+            <value>
+                <fullName>Profitech</fullName>
+                <default>false</default>
+                <label>Profitech</label>
+            </value>
+            <value>
+                <fullName>QST</fullName>
+                <default>false</default>
+                <label>QST</label>
+            </value>
+            <value>
+                <fullName>QuBeyond</fullName>
+                <default>false</default>
+                <label>QuBeyond</label>
+            </value>
+            <value>
+                <fullName>QuickServe</fullName>
+                <default>false</default>
+                <label>QuickServe</label>
+            </value>
+            <value>
+                <fullName>Recipe</fullName>
+                <default>false</default>
+                <label>Recipe</label>
+            </value>
+            <value>
+                <fullName>Restaurant Manager</fullName>
+                <default>false</default>
+                <label>Restaurant Manager</label>
+            </value>
+            <value>
+                <fullName>Revel</fullName>
+                <default>false</default>
+                <label>Revel</label>
+            </value>
+            <value>
+                <fullName>Roti</fullName>
+                <default>false</default>
+                <label>Roti</label>
+            </value>
+            <value>
+                <fullName>RPower</fullName>
+                <default>false</default>
+                <label>RPower</label>
+            </value>
+            <value>
+                <fullName>RRT</fullName>
+                <default>false</default>
+                <label>RRT</label>
+            </value>
+            <value>
+                <fullName>Shift4</fullName>
+                <default>false</default>
+                <label>Shift4</label>
+            </value>
+            <value>
+                <fullName>Shopify POS</fullName>
+                <default>false</default>
+                <label>Shopify POS</label>
+            </value>
+            <value>
+                <fullName>Shopkeep</fullName>
+                <default>false</default>
+                <label>Shopkeep</label>
+            </value>
+            <value>
+                <fullName>SICOM</fullName>
+                <default>false</default>
+                <label>SICOM</label>
+            </value>
+            <value>
+                <fullName>Silverware</fullName>
+                <default>false</default>
+                <label>Silverware</label>
+            </value>
+            <value>
+                <fullName>Simphony</fullName>
+                <default>false</default>
+                <label>Simphony</label>
+            </value>
+            <value>
+                <fullName>SmartPOS</fullName>
+                <default>false</default>
+                <label>SmartPOS</label>
+            </value>
+            <value>
+                <fullName>SoftTouch</fullName>
+                <default>false</default>
+                <label>SoftTouch</label>
+            </value>
+            <value>
+                <fullName>SpeedLine</fullName>
+                <default>false</default>
+                <label>SpeedLine</label>
+            </value>
+            <value>
+                <fullName>SpotOn POS</fullName>
+                <default>false</default>
+                <label>SpotOn POS</label>
+            </value>
+            <value>
+                <fullName>Square</fullName>
+                <default>false</default>
+                <label>Square</label>
+            </value>
+            <value>
+                <fullName>Squirrel</fullName>
+                <default>false</default>
+                <label>Squirrel</label>
+            </value>
+            <value>
+                <fullName>Super Menu</fullName>
+                <default>false</default>
+                <label>Super Menu</label>
+            </value>
+            <value>
+                <fullName>Talech</fullName>
+                <default>false</default>
+                <label>Talech</label>
+            </value>
+            <value>
+                <fullName>Task POS</fullName>
+                <default>false</default>
+                <label>Task POS</label>
+            </value>
+            <value>
+                <fullName>Thrive</fullName>
+                <default>false</default>
+                <label>Thrive</label>
+            </value>
+            <value>
+                <fullName>Tillster</fullName>
+                <default>false</default>
+                <label>Tillster</label>
+            </value>
+            <value>
+                <fullName>Toast</fullName>
+                <default>false</default>
+                <label>Toast</label>
+            </value>
+            <value>
+                <fullName>TouchBistro</fullName>
+                <default>false</default>
+                <label>TouchBistro</label>
+            </value>
+            <value>
+                <fullName>TouchPoint</fullName>
+                <default>false</default>
+                <label>TouchPoint</label>
+            </value>
+            <value>
+                <fullName>Upserve</fullName>
+                <default>false</default>
+                <label>Upserve</label>
+            </value>
+            <value>
+                <fullName>Upsolution</fullName>
+                <default>false</default>
+                <label>Upsolution</label>
+            </value>
+            <value>
+                <fullName>VendPOS</fullName>
+                <default>false</default>
+                <label>VendPOS</label>
+            </value>
+            <value>
+                <fullName>Verona</fullName>
+                <default>false</default>
+                <label>Verona</label>
+            </value>
+            <value>
+                <fullName>Virtual Kitchens (varied POS systems)</fullName>
+                <default>false</default>
+                <label>Virtual Kitchens (varied POS systems)</label>
+            </value>
+            <value>
+                <fullName>Visual Touch</fullName>
+                <default>false</default>
+                <label>Visual Touch</label>
+            </value>
+            <value>
+                <fullName>Xenial</fullName>
+                <default>false</default>
+                <label>Xenial</label>
+            </value>
+            <value>
+                <fullName>Xoikos</fullName>
+                <default>false</default>
+                <label>Xoikos</label>
+            </value>
+            <value>
+                <fullName>Xperio</fullName>
+                <default>false</default>
+                <label>Xperio</label>
+            </value>
+            <value>
+                <fullName>XPient</fullName>
+                <default>false</default>
+                <label>XPient</label>
+            </value>
+            <value>
+                <fullName>Zonal</fullName>
+                <default>false</default>
+                <label>Zonal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

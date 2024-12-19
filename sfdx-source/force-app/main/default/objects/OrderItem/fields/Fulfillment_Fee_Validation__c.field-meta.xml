@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fulfillment_Fee_Validation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-13626: This field is used to check appropriate range for minimum and maximum delivery distance.</description>
+    <externalId>false</externalId>
+    <label>Fulfillment Fee Validation</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

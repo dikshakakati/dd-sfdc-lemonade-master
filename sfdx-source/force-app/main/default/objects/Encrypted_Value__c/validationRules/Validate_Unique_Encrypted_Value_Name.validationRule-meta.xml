@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Unique_Encrypted_Value_Name</fullName>
+    <active>true</active>
+    <description>LEM-2144 : It validates that unique encrypted value record is created across the org.</description>
+    <errorConditionFormula>AND(
+  OR(
+    ISNEW(),
+    ISCHANGED(Name)
+  ),
+  NOT(
+    ISBLANK(
+      VLOOKUP(
+        $ObjectType.Encrypted_Value__c.Fields.Name,
+        $ObjectType.Encrypted_Value__c.Fields.Name,
+        Name
+      )
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Duplicate values cannot be entered in the Name field.</errorMessage>
+</ValidationRule>

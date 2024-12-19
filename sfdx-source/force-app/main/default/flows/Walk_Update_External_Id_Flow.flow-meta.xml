@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>upon the creation of the creation, concat BGID, year, quarter, product</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>concate the Business Group Id, year, quarter, product type</description>
+        <name>Generate_Goal_External_Id</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Business_Group_Id__c}&amp;TEXT({!$Record.Year__c})&amp;TEXT({!$Record.Quarter__c})&amp;TEXT({!$Record.Product_Type__c})</expression>
+    </formulas>
+    <interviewLabel>Walk Update External Id Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Walk Update External Id Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>update the External Id field upload creating a new record</description>
+        <name>Update_External_Id</name>
+        <label>Update External Id</label>
+        <locationX>582</locationX>
+        <locationY>335</locationY>
+        <inputAssignments>
+            <field>External_Id__c</field>
+            <value>
+                <elementReference>Generate_Goal_External_Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>456</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Update_External_Id</targetReference>
+        </connector>
+        <object>Brand_Goal_Adjustment__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

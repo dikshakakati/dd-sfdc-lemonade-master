@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active__c</fullName>
+    <description>LEM-3440: Mulesoft reads this field to determine which Services are active
+LEM-13073: Updated logic to enable Self-Delivery Services for provisioning</description>
+    <externalId>false</externalId>
+    <formula>IF(Subscription__r.SBQQ__TerminatedDate__c &lt;= TODAY(),
+&quot;No&quot;,
+IF(CONTAINS(Order_Product__r.Product_Code__c, &quot;10056&quot;),
+&quot;No&quot;,
+IF(AND(CONTAINS(Product__r.Name, &quot;Tablet Fee&quot;),OR(NOT(CONTAINS(TEXT(Account__r.Order_Protocol__c), &quot;Tablet&quot;)),ISBLANK(TEXT(Account__r.Order_Protocol__c)))),
+&quot;No&quot;,
+IF(AND(CONTAINS(Product__r.Name, &quot;Printer Fee&quot;),OR(NOT(CONTAINS(TEXT(Account__r.Order_Protocol__c), &quot;Tablet and Printer&quot;)),ISBLANK(TEXT(Account__r.Order_Protocol__c)))),
+&quot;No&quot;,
+IF(AND(
+NOT(CONTAINS(TEXT(Mx_Agreed_to_Product__c), &quot;No&quot;)),
+IF((RIGHT(Order_Product__r.Product_Code__c, 5) == &quot;10025&quot;),NOT(CONTAINS(TEXT(Account__r.Order_Protocol__c), &quot;POS&quot;)),true),
+IF(OR(RIGHT(Order_Product__r.Product_Code__c, 5) == &quot;10062&quot;, RIGHT(Order_Product__r.Product_Code__c, 5) == &quot;10061&quot;),
+OR(Account__r.Record_Type_Name__c == &quot;Business&quot;,
+AND(RIGHT(Order_Product__r.Product_Code__c, 5) == &quot;10062&quot;, INCLUDES(Account__r.Alcohol_Product_Eligibility__c, &quot;Pickup&quot;)),
+AND(RIGHT(Order_Product__r.Product_Code__c, 5) == &quot;10061&quot;, INCLUDES(Account__r.Alcohol_Product_Eligibility__c, &quot;Delivery&quot;))),true),
+NOT(CONTAINS(Order_Product__r.Product_Code__c, &quot;10027&quot;)),
+NOT(CONTAINS(Order_Product__r.Product_Code__c, &quot;10017&quot;))
+),
+&quot;Yes&quot;,
+IF(
+OR(
+AND(
+CONTAINS(Order_Product__r.Product_Code__c, &quot;10027&quot;),
+ISPICKVAL(Account__r.Self_Delivery__c, &quot;Yes&quot;),
+ISPICKVAL(Mx_Agreed_to_Product__c, &quot;Yes&quot;)
+),
+AND(
+CONTAINS(Order_Product__r.Product_Code__c, &quot;10017&quot;),
+NOT(ISPICKVAL(Account__r.Self_Delivery__c, &quot;Yes&quot;)),
+ISPICKVAL(Mx_Agreed_to_Product__c, &quot;Yes&quot;)
+),
+AND(
+Bundle__c = &quot;Self-Delivery&quot;,
+ISPICKVAL(Account__r.Self_Delivery__c, &quot;Yes&quot;),
+ISPICKVAL(Mx_Agreed_to_Product__c, &quot;Yes&quot;)
+),
+AND(
+Bundle__c = &quot;Marketplace&quot;,
+NOT(ISPICKVAL(Account__r.Self_Delivery__c, &quot;Yes&quot;)),
+ISPICKVAL(Mx_Agreed_to_Product__c, &quot;Yes&quot;)
+)
+),
+&quot;Yes&quot;,
+&quot;No&quot;
+))))))</formula>
+    <label>Active</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

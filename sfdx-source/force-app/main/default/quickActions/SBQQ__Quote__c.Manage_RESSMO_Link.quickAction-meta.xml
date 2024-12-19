@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-16278 Voiding/Expiring Contract | LEM-18296: &apos;Manage RESSMO Link&apos; button - Quote</description>
+    <flowDefinition>Manage_RESSMO_Link_Quote</flowDefinition>
+    <label>Manage RESSMO Link</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

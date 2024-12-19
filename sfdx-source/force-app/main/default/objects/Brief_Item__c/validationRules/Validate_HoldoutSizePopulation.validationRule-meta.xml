@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_HoldoutSizePopulation</fullName>
+    <active>true</active>
+    <description>LEM-2983: Validates if Holdout Size is populated when Holdout Experiment is Yes.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+    TEXT(Holdout_Audience_Experiment__c)=$Label.Yes_Decision,
+    ISBLANK(Holdout_Size__c)
+)</errorConditionFormula>
+    <errorDisplayField>Holdout_Size__c</errorDisplayField>
+    <errorMessage>Please provide the Holdout Size before saving.</errorMessage>
+</ValidationRule>

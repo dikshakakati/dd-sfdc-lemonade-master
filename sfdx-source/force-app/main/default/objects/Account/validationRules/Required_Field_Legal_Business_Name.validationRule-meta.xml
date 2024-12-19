@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Field_Legal_Business_Name</fullName>
+    <active>true</active>
+    <description>LEM-17709: It validates that Legal Business Name field cannot be blanked out on Business Account.</description>
+    <errorConditionFormula>AND(
+      NOT($Permission.Bypass_Account_Validation_Rules),
+      NOT($Permission.Bypass_Self_Serve_Account_Validation),
+      TEXT(Segment__c) != $Label.AccountSegmentSMB,
+      $RecordType.Name = $Label.BusinessAccountRecordTypeName,
+      NOT( ISNEW() ),
+      PRIORVALUE( Legal_Business_Name__c )  != null,
+      ISBLANK(Legal_Business_Name__c)
+    )</errorConditionFormula>
+    <errorDisplayField>Legal_Business_Name__c</errorDisplayField>
+    <errorMessage>Legal Business Name on Account must be populated.</errorMessage>
+</ValidationRule>

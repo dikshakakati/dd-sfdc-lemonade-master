@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apex_Class_Required</fullName>
+    <active>true</active>
+    <description>Apex class name is required for Type Custom Search With Arguments</description>
+    <errorConditionFormula>AND( 
+  ISBLANK( ApexClassName__c ), 
+  ISPICKVAL( Type__c , &quot;Custom Search With Arguments&quot;)  
+)</errorConditionFormula>
+    <errorDisplayField>ApexClassName__c</errorDisplayField>
+    <errorMessage>Apex Class Name is required when type is selected as Custom Search With Arguments</errorMessage>
+</ValidationRule>

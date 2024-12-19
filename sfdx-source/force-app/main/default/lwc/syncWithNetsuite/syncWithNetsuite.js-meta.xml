@@ -1,0 +1,14 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>52.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>Sync With Netsuite</masterLabel>
+	<description>LEM-1285:Sync With Netsuite Integration Action Component</description>
+	<targets>
+		<target>lightning__RecordAction</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__RecordAction">
+			<actionType>Action</actionType>
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offsite_Ad_Required_Fields</fullName>
+    <active>true</active>
+    <description>LEM-18227: Validation to enforce the required field for Offsite Ad product when the Offsite Platform is either &quot;Display&quot; or &quot;Video&quot;</description>
+    <errorConditionFormula>AND(
+SBQQ__ProductCode__c = &apos;10110&apos;,
+OR(
+ISPICKVAL(Offsite_Platform__c, &apos;Display&apos;),
+ISPICKVAL(Offsite_Platform__c, &apos;Video&apos;)),
+OR(
+ISBLANK(Service_Fee_As_Percent_Budget__c),
+ISBLANK(Data_Fee_As_Percent_Budget__c)
+))</errorConditionFormula>
+    <errorMessage>Service Fee (as % of budget) and Data Fee (as % of budget) are required when the Offsite Platform is &quot;Display&quot; or &quot;Video&quot;</errorMessage>
+</ValidationRule>

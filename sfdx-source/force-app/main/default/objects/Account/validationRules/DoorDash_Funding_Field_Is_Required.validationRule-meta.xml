@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DoorDash_Funding_Field_Is_Required</fullName>
+    <active>false</active>
+    <description>LEM-13442: It insures DoorDash Funding should be populated for specific values of Partnership level.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  OR(
+    AND(
+      NOT(
+        OR(
+          TEXT(Partnership_Level__c) = $Label.ExclusivePartnership,
+          TEXT(Partnership_Level__c) = $Label.PreferredPartnership
+        )
+      ),
+      NOT(ISBLANK(DoorDash_Funding__c))
+    ),
+    AND(
+      OR(
+        TEXT(Partnership_Level__c) = $Label.ExclusivePartnership,
+        TEXT(Partnership_Level__c) = $Label.PreferredPartnership
+      ),
+      ISBLANK(DoorDash_Funding__c)
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>DoorDash_Funding__c</errorDisplayField>
+    <errorMessage>DoorDash Funding is required to be populated when Partnership Level is Exclusive Partnership or Preferred Partnership.</errorMessage>
+</ValidationRule>

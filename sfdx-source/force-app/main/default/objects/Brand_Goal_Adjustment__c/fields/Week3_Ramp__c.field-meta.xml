@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Week3_Ramp__c</fullName>
+    <description>adjustment percentage for week 1 of the quarter</description>
+    <externalId>false</externalId>
+    <label>Week3 Ramp</label>
+    <precision>12</precision>
+    <required>true</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

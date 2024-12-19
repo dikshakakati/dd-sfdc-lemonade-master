@@ -1,0 +1,211 @@
+{
+    "version": "1.0",
+    "timeStamp": "2024-04-17T15:51:38Z",
+    "sourceSystem": "ddmx",
+    "eventName": "activation-checklist-event",
+    "eventId": "d1bad008-ed10-e131-9731-9090de444f62",
+    "dataContentType": "application/json",
+    "responsePayload": {
+        "xrefSalesforceId": "a3qO1000008TlN7IAK",
+        "workStepSalesforceId": "0hFO10000000zzhMAA",
+        "storeId": 1615912,
+        "businessRefSalesforceId": "a3KO1000000MMDBMA4",
+        "businessId": 802116,
+        "accountSalesforceId": "001O100000BquksIAB",
+        "successful": false,
+        "error": [
+            {
+                "errorStage": "GET_POINT_OF_SALE",
+                "description": "UNAVAILABLE: no healthy upstream",
+                "errorType": "BAD_REQUEST"
+            }
+        ],
+        "GET_STORE": {
+            "id": "1615912",
+            "paymentProtocol": "Direct Deposit",
+            "merchantSuppliedId": "86876876",
+            "startingPointId": 140,
+            "customDeliveryFee": null,
+            "tierLevel": 5,
+            "isPartner": null,
+            "businessId": 802116,
+            "isStoreActive": false,
+            "isTest": false,
+            "orderProtocol": "EMAIL",
+            "paymentAccountId": 42211782,
+            "offersPickup": true,
+            "offersDelivery": true,
+            "isConsumerSubscriptionEligible": true,
+            "submarketId": 17
+        },
+        "GET_PAYMENT_ACCOUNT": {
+            "id": 42211782,
+            "statement_descriptor": "DoorDash - Store AORF16 - 220 Central Park South",
+            "created_at": "2024-04-17T12:52:54.773789+00:00",
+            "account_id": 21753893,
+            "account_type": "stripe_managed_account",
+            "entity": "store",
+            "resolve_outstanding_balance_frequency": null,
+            "payout_disabled": null,
+            "charges_enabled": true,
+            "old_account_id": null,
+            "upgraded_to_managed_account_at": null,
+            "is_verified_with_stripe": null,
+            "transfers_enabled": true
+        },
+        "GET_TAX_STRATEGY": null,
+        "GET_STORE_RETAIL": {
+            "storeId": "1615912"
+        },
+        "GET_STORE_ADDRESS_LINK": [
+            {
+                "id": "1805598",
+                "dasherInstructions": "",
+                "isActive": true,
+                "addressId": "51414062",
+                "storeId": "1615912"
+            }
+        ],
+        "GET_MENU": {
+            "isMenuActive": false
+        },
+        "GET_BUSINESS": {
+            "id": 802116,
+            "name": "Fr OA",
+            "description": "MDS - Fr OA",
+            "active": true,
+            "menuLocked": false
+        },
+        "GET_PRICING_PROGRAMS": {
+            "referenceEntityId": "1615912",
+            "referenceEntityType": "STORE",
+            "programs": [
+                {
+                    "program": {
+                        "product": {
+                            "experience": "DOORDASH",
+                            "channel": "MARKETPLACE",
+                            "fulfillmentType": "PICKUP",
+                            "audience": "ANY_AUDIENCE"
+                        },
+                        "referenceEntityId": "1615912",
+                        "referenceEntityType": "STORE",
+                        "startTime": "2024-04-17T12:52:53.249896Z",
+                        "sourceId": "802O1000003DltsIAC",
+                        "isPartner": false,
+                        "pricing": {
+                            "feeAttributes": [
+                                {
+                                    "name": "pickup_commission",
+                                    "friendlyDisplayName": "pickup_commission",
+                                    "feeType": "COMMISSION",
+                                    "flatFeeInCents": 0,
+                                    "feeRate": "1.000",
+                                    "feeRateChargingTarget": "SUBTOTAL",
+                                    "startTime": "2024-04-17T12:52:53.249896Z",
+                                    "isTiered": false
+                                }
+                            ]
+                        }
+                    },
+                    "programId": "6eac305d-6b78-4508-9cc7-1d2de0dabd2d",
+                    "isActive": true,
+                    "isTrial": false,
+                    "isPostTrial": false
+                },
+                {
+                    "program": {
+                        "product": {
+                            "experience": "DOORDASH",
+                            "channel": "MARKETPLACE",
+                            "fulfillmentType": "DELIVERY",
+                            "audience": "SUBSCRIBER"
+                        },
+                        "referenceEntityId": "1615912",
+                        "referenceEntityType": "STORE",
+                        "startTime": "2024-04-17T12:52:53.249896Z",
+                        "sourceId": "802O1000003DltrIAC",
+                        "isPartner": false,
+                        "pricing": {
+                            "feeAttributes": [
+                                {
+                                    "name": "dash_pass_marketing_fee",
+                                    "friendlyDisplayName": "Dash Pass Marketing Fee",
+                                    "feeType": "DASH_PASS_MARKETING_FEE",
+                                    "flatFeeInCents": 0,
+                                    "feeRateChargingTarget": "NO_RATE",
+                                    "startTime": "2024-04-17T12:52:53.249896Z",
+                                    "isTiered": false
+                                },
+                                {
+                                    "name": "subscription_commission",
+                                    "friendlyDisplayName": "subscription_commission",
+                                    "feeType": "COMMISSION",
+                                    "feeRate": "1.000",
+                                    "feeRateChargingTarget": "SUBTOTAL",
+                                    "startTime": "2024-04-17T12:52:53.249896Z",
+                                    "isTiered": false
+                                }
+                            ]
+                        }
+                    },
+                    "programId": "7d6345aa-9328-4a44-ae5a-9b78278b5cc0",
+                    "isActive": true,
+                    "isTrial": false,
+                    "isPostTrial": false
+                },
+                {
+                    "program": {
+                        "product": {
+                            "experience": "DOORDASH",
+                            "channel": "MARKETPLACE",
+                            "fulfillmentType": "DELIVERY",
+                            "audience": "ANY_AUDIENCE"
+                        },
+                        "referenceEntityId": "1615912",
+                        "referenceEntityType": "STORE",
+                        "startTime": "2024-04-17T12:52:53.249896Z",
+                        "sourceId": "802O1000003DltqIAC",
+                        "isPartner": false,
+                        "pricing": {
+                            "feeAttributes": [
+                                {
+                                    "name": "commission_rate",
+                                    "friendlyDisplayName": "commission_rate",
+                                    "feeType": "COMMISSION",
+                                    "flatFeeInCents": 0,
+                                    "feeRate": "1.000",
+                                    "feeRateChargingTarget": "SUBTOTAL",
+                                    "startTime": "2024-04-17T12:52:53.249896Z",
+                                    "isTiered": false
+                                }
+                            ]
+                        }
+                    },
+                    "programId": "8bc7ee7b-a08a-4fbf-8dcf-ae15c1b6ee54",
+                    "isActive": true,
+                    "isTrial": false,
+                    "isPostTrial": false
+                },
+                {
+                    "program": {
+                        "referenceEntityId": "1615912",
+                        "referenceEntityType": "STORE",
+                        "startTime": "2024-04-17T12:52:53.360Z",
+                        "sourceId": "Store Partnership",
+                        "isPartner": true,
+                        "pricing": {
+                            "inflationRate": "0.000",
+                            "inflationRoundingUnit": 0,
+                            "feeAttributes": []
+                        }
+                    },
+                    "isActive": true,
+                    "isTrial": false,
+                    "isPostTrial": false,
+                    "partnershipId": "10072604"
+                }
+            ]
+        }
+    }
+}

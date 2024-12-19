@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Stores_on_Quote__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-18591: It represents the number of stores on the Quote.</description>
+    <externalId>false</externalId>
+    <formula>Contract__r.SBQQ__Quote__r.Number_of_Stores__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Number of Stores on Quote</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

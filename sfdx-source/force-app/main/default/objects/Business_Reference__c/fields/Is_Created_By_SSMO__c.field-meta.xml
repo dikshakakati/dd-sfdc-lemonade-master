@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Created_By_SSMO__c</fullName>
+    <defaultValue>false</defaultValue>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15138: It is used to identify if Business Reference is created by SSMO fallout.</description>
+    <externalId>false</externalId>
+    <label>Is Created By SSMO</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

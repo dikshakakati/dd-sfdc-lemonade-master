@@ -1,0 +1,21 @@
+{
+  "trailingComma": "none",
+  "overrides": [
+    {
+      "files": "**/lwc/**/*.html",
+      "options": { "parser": "lwc" }
+    },
+    {
+      "files": "*.{cmp,page,component}",
+      "options": { "parser": "html" }
+    },
+    {
+      "files": "**/*.{cls,trigger,apex}",
+      "options": {
+        "apexInsertFinalNewline": false,
+        "printWidth": 100,
+        "tabWidth": 4
+      }
+    }
+  ]
+}

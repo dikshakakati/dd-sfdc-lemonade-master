@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Date_of_UPC_SKU_Update__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-540: Date of Last UPC / SKU Update</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of the CPG’s most recent UPC / SKU data update.</inlineHelpText>
+    <label>Last Date of UPC / SKU Update</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

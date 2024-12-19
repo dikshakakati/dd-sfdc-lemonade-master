@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Alcohol</fullName>
+        <default>false</default>
+        <label>Alcohol</label>
+    </customValue>
+    <customValue>
+        <fullName>Baby</fullName>
+        <default>false</default>
+        <label>Baby</label>
+    </customValue>
+    <customValue>
+        <fullName>Beauty</fullName>
+        <default>false</default>
+        <label>Beauty</label>
+    </customValue>
+    <customValue>
+        <fullName>Catering</fullName>
+        <default>false</default>
+        <label>Catering</label>
+    </customValue>
+    <customValue>
+        <fullName>Convenience</fullName>
+        <default>false</default>
+        <label>Convenience</label>
+    </customValue>
+    <customValue>
+        <fullName>CPG</fullName>
+        <default>false</default>
+        <label>CPG</label>
+    </customValue>
+    <customValue>
+        <fullName>Dashmart</fullName>
+        <default>false</default>
+        <label>Dashmart</label>
+    </customValue>
+    <customValue>
+        <fullName>Electronics</fullName>
+        <default>false</default>
+        <label>Electronics</label>
+    </customValue>
+    <customValue>
+        <fullName>Express Grocery</fullName>
+        <default>false</default>
+        <label>Express Grocery</label>
+    </customValue>
+    <customValue>
+        <fullName>Floral</fullName>
+        <default>false</default>
+        <label>Floral</label>
+    </customValue>
+    <customValue>
+        <fullName>Gifts</fullName>
+        <default>false</default>
+        <label>Gifts</label>
+    </customValue>
+    <customValue>
+        <fullName>Government/NonProfit</fullName>
+        <default>false</default>
+        <label>Government/NonProfit</label>
+    </customValue>
+    <customValue>
+        <fullName>Grocery</fullName>
+        <default>false</default>
+        <label>Grocery</label>
+    </customValue>
+    <customValue>
+        <fullName>Health &amp; Pharmacy</fullName>
+        <default>false</default>
+        <label>Health &amp; Pharmacy</label>
+    </customValue>
+    <customValue>
+        <fullName>Hemp &amp; Cannabis</fullName>
+        <default>false</default>
+        <label>Hemp &amp; Cannabis</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Chef</fullName>
+        <default>false</default>
+        <label>Home Chef</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Goods</fullName>
+        <default>false</default>
+        <label>Home Goods</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Improvement</fullName>
+        <default>false</default>
+        <label>Home Improvement</label>
+    </customValue>
+    <customValue>
+        <fullName>Hot &amp; Prepared</fullName>
+        <default>false</default>
+        <label>Hot &amp; Prepared</label>
+    </customValue>
+    <customValue>
+        <fullName>Misc.</fullName>
+        <default>false</default>
+        <label>Misc.</label>
+    </customValue>
+    <customValue>
+        <fullName>Nationwide Shipping</fullName>
+        <default>false</default>
+        <label>Nationwide Shipping</label>
+    </customValue>
+    <customValue>
+        <fullName>Office</fullName>
+        <default>false</default>
+        <label>Office</label>
+    </customValue>
+    <customValue>
+        <fullName>Parcel</fullName>
+        <default>false</default>
+        <label>Parcel</label>
+    </customValue>
+    <customValue>
+        <fullName>Pets</fullName>
+        <default>false</default>
+        <label>Pets</label>
+    </customValue>
+    <customValue>
+        <fullName>Rx</fullName>
+        <default>false</default>
+        <label>Rx</label>
+    </customValue>
+    <customValue>
+        <fullName>Supply Chain</fullName>
+        <default>false</default>
+        <label>Supply Chain</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharmacy</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Pharmacy</label>
+    </customValue>
+    <customValue>
+        <fullName>Cannabis</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Cannabis</label>
+    </customValue>
+    <description>LEM-280: This picklist value set is created to define the verticals and sub-verticals associated with store and business accounts.</description>
+    <masterLabel>Vertical</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

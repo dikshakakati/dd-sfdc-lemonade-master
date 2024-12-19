@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inverse_Relationship_Type__c</fullName>
+    <description>LEM-1337: Captures the type of Account from which the Relationship has been created.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The type of account from which the relationship is originating.</inlineHelpText>
+    <label>Inverse Relationship Type</label>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Account_Relationships_Types</valueSetName>
+    </valueSet>
+</CustomField>

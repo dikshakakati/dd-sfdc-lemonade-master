@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_Vendor__c</fullName>
+    <description>LEM-1353: Indicates vendor responsible for menu creation.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Vendor responsible for menu creation</inlineHelpText>
+    <label>Menu Vendor</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arcgate</fullName>
+                <default>false</default>
+                <label>Arcgate</label>
+            </value>
+            <value>
+                <fullName>Woflow</fullName>
+                <default>false</default>
+                <label>Woflow</label>
+            </value>
+            <value>
+                <fullName>Invisible</fullName>
+                <default>false</default>
+                <label>Invisible</label>
+            </value>
+            <value>
+                <fullName>Quantanite</fullName>
+                <default>false</default>
+                <label>Quantanite</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

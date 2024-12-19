@@ -1,0 +1,22 @@
+<!--
+@author CriticalRiver
+@date 05/02/2023
+@description Aura component to wrap removeStoresOnWorkOrder lightning web component.
+-->
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"
+>
+  <!--It overrides default width of the quick action panel-->
+  <aura:html tag="style">
+    .slds-modal__container{ max-width: 75% !important; width: 75% !important; }
+  </aura:html>
+  <aura:attribute
+    name="recordId"
+    type="String"
+    description="Id of the currect record"
+  />
+  <c:removeStoresOnWorkOrder
+    recordId="{!v.recordId}"
+    onclosemodal="{!c.closeModal}"
+  ></c:removeStoresOnWorkOrder>
+</aura:component>

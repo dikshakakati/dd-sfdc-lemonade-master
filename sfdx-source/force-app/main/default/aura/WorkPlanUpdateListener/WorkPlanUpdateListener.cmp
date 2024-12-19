@@ -1,0 +1,31 @@
+<!--
+@author Deloitte
+@date 19/04/2024
+@description Aura component to listen update on Work Plan to display a banner message
+about Activation Checklist.
+-->
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome">
+  <lightning:messageChannel
+    type="Activation_Checklist__c"
+    aura:id="activationChecklistMessageChannel"
+  />
+  <aura:attribute
+    name="workPlanRecord"
+    type="Object"
+    description="It holds the loaded Work Plan record"
+  />
+  <aura:attribute
+    name="recordLoadError"
+    type="String"
+    description="It holds the error message when record fails to load"
+  />
+  <!--fields cannot be moved to custom label due force:recordData limitation-->
+  <force:recordData
+    aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="Activation_Checklist_Validation__c"
+    targetFields="{!v.workPlanRecord}"
+    targetError="{!v.recordLoadError}"
+    recordUpdated="{!c.listenToUpdates}"
+  />
+</aura:component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_Contract_Details</fullName>
+    <description>LEM-2516: It is used to display Contract details section for business Account in the onboarding details component on Work Plan of Drive type.</description>
+    <displayedFields>
+        <field>Contract_Number_Link__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Drive Contract Details</label>
+</FieldSet>

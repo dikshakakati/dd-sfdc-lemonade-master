@@ -1,0 +1,67 @@
+<template>
+    <template if:true={showModal}>
+        <div class={mainDivClass}>
+            <section role="dialog"
+                    tabindex="-1"
+                    aria-labelledby="modal-heading-01"
+                    aria-modal="true"
+                    aria-describedby="modal-content-id-1"
+                    class={modalDivClass}>
+                <div class="slds-modal__container dd-modal__container">
+                    <header class={headerDivClass}>
+                        <template if:false={hideClose}>
+                            <lightning-button-icon
+                                onclick={hide}
+                                class="slds-modal__close"
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                                name="Close"
+                                size="large"
+                                variant="bare-inverse">
+                            </lightning-button-icon>
+                        </template>
+                        <template if:false={hideHeader}>
+                            <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{title}</h2>
+                            <!-- add optional tagline slot-->
+                        </template>
+                    </header>
+                    <div class={contentClass} id="modal-content-id-1">
+                        <div class={contentSlotClass}>
+                            <slot name="content"
+                                    onslotchange={handleContentSlotChange}>
+                            </slot>
+                        </div>
+                        <lightning-formatted-rich-text value={content} class={contentTextClass}>
+                        </lightning-formatted-rich-text>
+                    </div>
+                    <template if:false={hideFooter}>
+                        <div class={footerDivClass}>
+                            <template if:false={hideSecondaryButton}>
+                                <lightning-button
+                                    onclick={handleSecondaryButtonClick}
+                                    variant={secondaryButtonVariant}
+                                    label={secondaryButtonLabel}
+                                    class="slds-var-m-right_medium">
+                                </lightning-button>
+                            </template>
+                            <template if:false={hidePrimaryButton}>
+                                <lightning-button
+                                    onclick={handlePrimaryButtonClick}
+                                    variant={primaryButtonVariant}
+                                    label={primaryButtonLabel}
+                                    disabled={disablePrimaryButton}>
+                                </lightning-button>
+                            </template>
+                        </div>
+                    </template>
+                    <div class={footerSlotClass}>
+                        <slot name="footer"
+                              onslotchange={handleFooterSlotChange}>
+                        </slot>
+                    </div>
+                </div>
+                <div class={backdropClass}></div>
+            </section>
+        </div>
+    </template>
+</template>

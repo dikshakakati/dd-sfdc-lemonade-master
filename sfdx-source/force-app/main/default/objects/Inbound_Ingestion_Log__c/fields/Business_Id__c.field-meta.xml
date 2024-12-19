@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Id__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description>LEM-21439 as part of this story created this field to Hold the Business Reference External Id (businessId) from the inbound payload received for RESSMO.
+This field is used for retry mechanism in case if there is a failure of same businessId Payload before the NNS payload.</description>
+    <externalId>false</externalId>
+    <label>Business Id</label>
+    <length>50</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

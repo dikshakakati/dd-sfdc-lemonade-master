@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Lead_Validate_Address</fullName>
+<active>true</active>
+<description>LEM-13415: It is used to validate whether the address is not null for Lead.</description>
+<errorConditionFormula>AND(
+  NOT($Permission.Bypass_Lead_Validation_Rules),
+  $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+  AND(
+    OR(
+      ISBLANK(Street),
+      ISBLANK(PostalCode),
+      ISBLANK(City),
+      ISBLANK(Country)
+    ),
+    ISBLANK(Raw_Address__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>Please enter address information before saving the lead.</errorMessage>
+</ValidationRule>

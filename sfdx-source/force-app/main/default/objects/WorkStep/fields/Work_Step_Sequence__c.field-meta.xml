@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Step_Sequence__c</fullName>
+    <description>LEM-1061: It indicates sequence of WorkStep in a WorkOrder.</description>
+    <externalId>false</externalId>
+    <label>Work Step Sequence</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

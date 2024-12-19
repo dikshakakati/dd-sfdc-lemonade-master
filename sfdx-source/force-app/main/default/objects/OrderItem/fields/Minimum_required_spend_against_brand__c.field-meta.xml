@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimum_required_spend_against_brand__c</fullName>
+    <description>LEM-17588. LEM-18431-Updated label to Minimum required spend against CPG</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the minimum $$ amount the Cx must spend against the CPG to unlock the promotion.</inlineHelpText>
+    <label>Minimum required spend against CPG</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+    <securityClassification>Internal</securityClassification>
+</CustomField>

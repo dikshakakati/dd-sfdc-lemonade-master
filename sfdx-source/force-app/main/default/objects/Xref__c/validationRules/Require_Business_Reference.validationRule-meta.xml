@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Business_Reference</fullName>
+    <active>true</active>
+    <description>LEM-11133</description>
+    <errorConditionFormula>AND(
+ISBLANK( Business_Reference__c ),
+ISCHANGED(Integration_Status__c),
+ISPICKVAL(Integration_Status__c, &quot;Ready for Integration&quot;), 
+$User.Full_Name__c != &apos;Mulesoft Integration User&apos;,
+$User.Full_Name__c != &apos;Automated Process&apos;,
+$User.Full_Name__c != &apos;Process Automation User&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Business_Reference__c</errorDisplayField>
+    <errorMessage>Business Reference is required in order to update Integration Status to “Ready for Integration”.</errorMessage>
+</ValidationRule>

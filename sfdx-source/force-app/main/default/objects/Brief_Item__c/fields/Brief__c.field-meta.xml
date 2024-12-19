@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brief__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>LEM-2983: Captures the parent to the Brief Item.</description>
+    <externalId>false</externalId>
+    <label>Brief</label>
+    <referenceTo>Brief__c</referenceTo>
+    <relationshipLabel>Brief Items</relationshipLabel>
+    <relationshipName>Brief_Items</relationshipName>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

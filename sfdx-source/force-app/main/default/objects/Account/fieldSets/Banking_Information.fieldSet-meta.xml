@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Banking_Information</fullName>
+    <description>LEM-3161: It is used to display business account information in &quot;Banking Details&quot; section of the onboarding details on Work Plan.</description>
+    <displayedFields>
+        <field>Legal_Business_Name__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>TaxID__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Banking Information</label>
+</FieldSet>

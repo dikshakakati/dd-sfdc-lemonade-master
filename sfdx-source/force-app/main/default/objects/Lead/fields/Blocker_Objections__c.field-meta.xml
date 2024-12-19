@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blocker_Objections__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13398: It represents any blocker or objections in Lead creation.</description>
+    <externalId>false</externalId>
+    <label>Blocker / Objections</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

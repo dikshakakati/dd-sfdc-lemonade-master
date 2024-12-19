@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_UI_Type__c</fullName>
+    <description>LEM-3891: It indicates &quot;Menu UI Type&quot; applicable to work order as per the evaluation criteria below:
+1. Menu UI Type on parent Work Order:
+  a. At least 1 store Account has Menu UI Type as Rx and none of the associated store Accounts have Menu UI Type as Retail =&gt; Restaurant.
+  b. At least 1 store Account has Menu UI Type as Retail and none of the associated store Accounts have Menu UI Type as Restaurant =&gt; Retail.
+  c. At least 1 store Account has Menu UI Type as Rx and  At least 1 store Account has Menu UI Type as Retail =&gt; Restaurant.
+  d. else =&gt; Restaurant.
+2. Menu UI Type on child Work Order:
+  a. Store Account&apos;s Menu UI Type</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+  Account.RecordType.Name,
+  $Label.BusinessAccountRecordTypeName,
+    IF(
+      AND(
+        HasMenuWorkPlan__c,
+        HasCatalogWorkPlan__c
+      ),
+      $Label.RestaurantMenuUIType,
+      IF(
+        AND(
+          HasMenuWorkPlan__c,
+          !HasCatalogWorkPlan__c
+        ),
+        $Label.RestaurantMenuUIType,
+        IF(
+          AND(
+            !HasMenuWorkPlan__c,
+            HasCatalogWorkPlan__c
+          ),
+          $Label.RetailMenuUIType,
+          $Label.RestaurantMenuUIType
+        )
+      )
+    ),
+  $Label.StoreAccountRecordTypeName,
+  TEXT(Account.Menu_UI_Type__c),
+  &apos;&apos;
+)</formula>
+    <label>Menu UI Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

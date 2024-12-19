@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offsite_Platform__c</fullName>
+    <description>LEM-17971: Brief Item Fields for Offsite Ad Product</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the offsite platform where the offsite ad will be run.</inlineHelpText>
+    <label>Offsite Platform</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Offsite_Platform</valueSetName>
+    </valueSet>
+</CustomField>

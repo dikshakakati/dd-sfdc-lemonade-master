@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitors__c</fullName>
+    <description>This field is used to store the value of Account RelationshipType field whenever Account RelationshipType is equals to Delivery Partner or Exclusive Delivery Partner.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+       OR(
+         TEXT(Relationship_Type__c)  ==  $Label.Competitors_Delivery_Partner,
+         TEXT(Relationship_Type__c)  ==  $Label.Competitors_Exclusive_Delivery_Partner
+        ),
+        TRUE,
+        FALSE
+    )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Competitors</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

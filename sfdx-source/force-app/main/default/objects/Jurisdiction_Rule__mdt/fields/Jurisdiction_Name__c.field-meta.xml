@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jurisdiction_Name__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>The name of the jurisdiction (e.g., &quot;Canada&quot;, &quot;Seattle&quot;, &quot;Austin_Texas&quot;). This will be used in Apex to retrieve the appropriate Jurisdiction Rule. For simplicity, please refrain from using spaces, commas or special characters. For example `Austin_Texas` is used instead of `Austin, Texas`.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The name of the jurisdiction, without spaces or commas (e.g., &quot;Canada&quot;, &quot;Seattle&quot;, &quot;Austin_Texas&quot;). This will allow the logic to retrieve the applicable role.</inlineHelpText>
+    <label>Jurisdiction Name</label>
+    <length>255</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

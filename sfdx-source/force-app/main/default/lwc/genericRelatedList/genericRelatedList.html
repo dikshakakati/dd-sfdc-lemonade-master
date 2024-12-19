@@ -1,0 +1,113 @@
+<template>
+  <template if:false={viewAll}>
+    <article class="slds-card slds-card_boundary">
+      <div class="slds-p-left_small slds-theme_shade">
+        <header
+          class="slds-media slds-border_bottom slds-media_center slds-has-flexi-truncate"
+        >
+          <div class="slds-media__figure slds-p-top_small slds-p-bottom_small">
+            <lightning-icon
+              icon-name="standard:account"
+              size="small"
+            ></lightning-icon>
+          </div>
+          <div class="slds-media__body">
+            <h2 class="slds-card__header-title">
+              <a class="slds-card__header-link" onclick={navigateToPage}
+                >{title} {numberOfItems}</a
+              >
+            </h2>
+          </div>
+          <div class="slds-no-flex slds-m-right_small">
+            <template lwc:if={showExportButton}>
+              <lightning-button
+                label={exportButtonLabel}
+                title={exportButtonLabel}
+                onclick={exportData}
+              ></lightning-button>
+            </template>
+          </div>
+        </header>
+      </div>
+      <template if:true={showTable}>
+        <div>
+          <lightning-datatable
+            key-field="id"
+            data={data}
+            columns={columns}
+            show-row-number-column
+            hide-checkbox-column
+            default-sort-direction={defaultSortDirection}
+            sorted-direction={sortDirection}
+            sorted-by={sortedBy}
+            onsort={onHandleSort}
+            wrap-text-max-lines={wrapTextMaxLines}
+          >
+          </lightning-datatable>
+        </div>
+        <div
+          class="slds-align_absolute-center slds-m-top_small slds-m-bottom_small"
+        >
+          <a onclick={navigateToPage}>{labels.viewAllText}</a>
+        </div>
+      </template>
+    </article>
+  </template>
+  <template if:true={viewAll}>
+    <lightning-layout class="slds-m-top_x-small">
+      <article class="slds-card slds-card_boundary modalWidth">
+        <div
+          class="slds-grid slds-grid_vertical slds-theme_shade slds-border_bottom"
+        >
+          <div class="slds-col slds-grid slds-m-top--small slds-m-left_x-small">
+            <div class="slds-col">
+              <lightning-breadcrumbs>
+                <lightning-breadcrumb
+                  label={objectName}
+                  onclick={handleListViewNavigation}
+                >
+                </lightning-breadcrumb>
+                <lightning-breadcrumb
+                  label={recordName}
+                  onclick={handleRecordNavigation}
+                >
+                </lightning-breadcrumb>
+              </lightning-breadcrumbs>
+              <div class="slds-page-header__title slds-m-bottom--x-small">
+                {title}
+              </div>
+            </div>
+            <div class="slds-col slds-text-align_right slds-m-right_x-small">
+              <template lwc:if={showExportButton}>
+                <lightning-button
+                  label={exportButtonLabel}
+                  title={exportButtonLabel}
+                  onclick={exportData}
+                ></lightning-button>
+              </template>
+            </div>
+          </div>
+          <div
+            class="slds-m-bottom--x-small slds-m-top_small slds-m-left--x-small"
+          >
+            {numberOfItems}
+          </div>
+        </div>
+        <div>
+          <lightning-datatable
+            key-field="id"
+            data={data}
+            columns={viewAllColumns}
+            show-row-number-column
+            hide-checkbox-column
+            default-sort-direction={defaultSortDirection}
+            sorted-direction={sortDirection}
+            sorted-by={sortedBy}
+            onsort={onHandleSort}
+          >
+          </lightning-datatable>
+        </div>
+      </article>
+    </lightning-layout>
+  </template>
+</template>

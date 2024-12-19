@@ -1,0 +1,113 @@
+<!--
+  * @author Deloitte
+  * @date 10/15/2023
+  * @description LWC to show Work Steps records which are in Blocked Status.
+-->
+<template>
+  <template lwc:if={showComponent}>
+    <template lwc:if={viewAll}>
+      <lightning-card variant="Narrow">
+        <div class="bgColor">
+          <div class="slds-p-around_medium bgColor">
+            <lightning-tile variant="label-hidden">
+              <lightning-breadcrumbs>
+                <lightning-breadcrumb
+                  label={objectName}
+                  onclick={handleListViewNavigation}
+                >
+                </lightning-breadcrumb>
+                <lightning-breadcrumb
+                  label={name}
+                  onclick={handleRecordNavigation}
+                >
+                </lightning-breadcrumb>
+              </lightning-breadcrumbs>
+            </lightning-tile>
+          </div>
+          <div
+            class="slds-page-header__title slds-m-bottom--x-small slds-m-left--x-small bgColor"
+          >
+            <lightning-icon
+              icon-name="standard:account"
+              size="medium"
+            ></lightning-icon
+            >&nbsp;{title}
+          </div>
+          <div class="slds-m-top_small slds-m-left--x-small">
+            {numberOfItems}
+          </div>
+          <lightning-card variant="Narrow">
+            <div class="slds-var-p-around_small">
+              <template lwc:if={showTable}>
+                <c-custom-type-datatable
+                  key-field="Id"
+                  data={recordsToBeDisplayed}
+                  columns={columns}
+                  hide-checkbox-column
+                  show-row-number-column
+                  default-sort-direction={defaultSortDirection}
+                  sorted-direction={sortDirection}
+                  sorted-by={sortedBy}
+                  onsort={onHandleSort}
+                  onrefreshdatatable={handleRefresh}
+                  min-column-width="100"
+                >
+                </c-custom-type-datatable>
+              </template>
+            </div>
+          </lightning-card>
+        </div>
+      </lightning-card>
+    </template>
+    <template lwc:else>
+      <article class="slds-card slds-card_boundary">
+        <div class="slds-p-left_small slds-theme_shade">
+          <header
+            class="slds-media slds-border_bottom slds-media_center slds-has-flexi-truncate"
+          >
+            <div
+              class="slds-media__figure slds-p-top_small slds-p-bottom_small"
+            >
+              <lightning-icon
+                icon-name="standard:account"
+                size="small"
+              ></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <a class="slds-card__header-link" onclick={navigateToPage}
+                  >{title} {numberOfItems}</a
+                >
+              </h2>
+            </div>
+          </header>
+        </div>
+        <template lwc:if={showTable}>
+          <div lwc:if={loadComplete}>
+            <c-custom-type-datatable
+              key-field="Id"
+              data={truncatedRecords}
+              columns={columns}
+              show-row-number-column
+              hide-checkbox-column
+              default-sort-direction={defaultSortDirection}
+              sorted-direction={sortDirection}
+              sorted-by={sortedBy}
+              onsort={onHandleSort}
+              onrefreshdatatable={handleRefresh}
+            >
+            </c-custom-type-datatable>
+          </div>
+          <div
+            class="slds-align_absolute-center slds-m-top_small slds-m-bottom_small"
+          >
+            <a onclick={navigateToPage}>{labels.viewAllText}</a>
+          </div>
+        </template>
+      </article>
+    </template>
+  </template>
+  <template lwc:else>
+    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+  </template>
+</template>

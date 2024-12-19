@@ -1,0 +1,96 @@
+<template>
+    <div class="slds-modal_large">
+        <!-- Component Header -->
+        <header class="slds-modal__header">
+            <h2 class="slds-text-heading_medium slds-hyphenate">Bulk Onboard Stores</h2>
+        </header>
+
+        <!-- Component Body -->
+        <div class="slds-modal__content">
+            <!-- Saving indicator -->
+            <template if:true={showSpinner}>
+                <div class="flow-spinner-container" style="min-height: 160px;">
+                    <div class="slds-spinner slds-spinner_brand slds-spinner_medium" role="status">
+                        <span class="slds-assistive-text"></span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+
+                <div style="font-size: 1.2em" class="slds-p-bottom_xx-large slds-p-horizontal_xx-large slds-text-align_center" lwc:if={spinnerLoadingMessage}>
+                    {spinnerLoadingMessage}
+                </div>
+            </template>
+
+            <!-- Main Content -->
+            <template if:false={showSpinner}>
+                <!-- In Progress PFR - Continue or Start New? -->
+                <template if:true={isStep0}>
+                    <c-bulk-onboarding-existing-request work-order-type-error={workOrderTypeError} oncreatenewflow={handleResetExistingRequest} oncontinueexistingflow={handleUseExistingRequest}></c-bulk-onboarding-existing-request>
+                </template>
+
+                <!-- WORK ORDERS -->
+                <!-- Determine Work Order Association Method -->
+                <template if:true={isStep1}>
+                    <c-bulk-onboarding-work-order-options current-step={currentStep} has-opportunity-access={hasOpportunityAccess} oncreatenew={handleCreateNewWorkOrder} onselectexisting={handleSelectExistingWorkOrder}></c-bulk-onboarding-work-order-options>
+                </template>
+
+                <!-- Work Order Association -->
+                <template if:true={isStep2}>
+                    <!-- Work Order Selection -->
+                    <template if:false={createNewWorkOrder}>
+                        <c-bulk-onboarding-work-order-select current-step={currentStep} account-id={accountId} has-opportunity-access={hasOpportunityAccess} flow-request-id={flowRequestObj.Id} onworkorderselected={handleAddExistingWorkOrder} onswitchworkordermethod={handleSwitchWorkOrderMethod}></c-bulk-onboarding-work-order-select>
+                    </template>
+
+                    <!-- Work Order Creation -->
+                    <template if:true={createNewWorkOrder}>
+                        <c-bulk-onboarding-work-order current-step={currentStep} account-id={accountId} contract-id={recordId} opportunity-id={opportunityId} flow-request-id={flowRequestObj.Id} onworkordersuccess={handleGoToNext} onswitchworkordermethod={handleSwitchWorkOrderMethod}></c-bulk-onboarding-work-order>
+                    </template>
+                </template>
+                <!-- END WORK ORDERS -->
+
+                  <!-- Upload CSV File -->
+                  <template if:true={isStep3}>
+                    <c-bulk-onboarding-csv-upload has-valid-file={isCsvUploadSuccessful} contract-id={recordId} flow-request-id={flowRequestObj.Id} current-step={currentStep} onuploadfinished={handleManagePackages} onhandleuploadnext={handleGoToNext}></c-bulk-onboarding-csv-upload>
+                  </template>
+
+
+                  <!-- Link Payment Accounts -->
+                  <template if:true={isStep6}>
+                      <c-bulk-onboarding-payment-account
+                          flow-request-id={flowRequestObj.Id}
+                          account-id={accountId}
+                          current-step={currentStep}
+                          onpaymentaccountselected={handleSelectPaymentAccountOrDecisionMaker}
+                      ></c-bulk-onboarding-payment-account>
+                  </template>
+
+                  <!-- Choose Decision Makers -->
+                  <template if:true={isStep7}>
+                      <c-bulk-onboarding-decision-maker
+                      flow-request-id={flowRequestObj.Id}
+                      contract-id={recordId}
+                      current-step={currentStep}
+                      ondecisionmakerselected={handleSelectPaymentAccountOrDecisionMaker}
+                    ></c-bulk-onboarding-decision-maker>
+                  </template>
+
+                  <!-- Final Error Check -->
+                  <template if:true={isStep8}>
+                      <c-bulk-onboarding-final-error-check
+                          flow-request-id={flowRequestObj.Id}
+                          flow-request-obj={flowRequestObj}
+                          contract-id={recordId}
+                          current-step={currentStep}
+                          onnavigatetocompletion={handleNavigateToFinalScreen}
+                      ></c-bulk-onboarding-final-error-check>
+                  </template>
+
+                  <!-- Confirmation / Progress Screen -->
+                  <template if:true={isStep9}>
+                      <c-bulk-onboarding-progress-tracker flow-request-id={flowRequestObj.Id} flow-request-obj={flowRequestObj} current-step={currentStep} onfinishonboarding={handleFinishOnboarding}></c-bulk-onboarding-progress-tracker>
+                  </template>
+              </template>
+          </div>
+      </div>
+    </template>

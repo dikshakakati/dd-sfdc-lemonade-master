@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agency_Contract__c</fullName>
+    <description>LEM-10467: Tracking Two Briefs as One Uniform Campaign
+LEM-9347 - updated field type to URL</description>
+    <externalId>false</externalId>
+    <label>Agency Contract</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

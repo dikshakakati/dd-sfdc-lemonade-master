@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Name__c</fullName>
+    <description>LEM-2198: It is used to display Contract&apos;s ContractNumber with the link to Contract in the contract details section of the onboarding details on work plan.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/&apos; + Contract__c, Contract__r.ContractNumber, &apos;_blank&apos;)</formula>
+    <label>Contract Number</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

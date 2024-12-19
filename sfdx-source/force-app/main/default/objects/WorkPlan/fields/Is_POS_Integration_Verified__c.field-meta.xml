@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_POS_Integration_Verified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-25823: It indicates child WorkPlan's WorkOrder is having verified POS Integration Type and also being used to route WorkPlan owner to POS queue.</description>
+    <externalId>false</externalId>
+    <label>Is POS Integration Verified</label>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

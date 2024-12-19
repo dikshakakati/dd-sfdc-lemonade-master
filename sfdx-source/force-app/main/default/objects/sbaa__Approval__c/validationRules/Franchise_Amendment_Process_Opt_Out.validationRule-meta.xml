@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Franchise_Amendment_Process_Opt_Out</fullName>
+    <active>true</active>
+    <description>LEM-2049</description>
+    <errorConditionFormula>IF(AQS_Quote__c = NULL, FALSE,
+IF(AND(ISPICKVAL(AQS_Quote__r.Opt_In_Opt_Out_Decision__c, &apos;Opt-Out&apos;), OR(AQS_Quote__r.Opt_Out_Save_Period_days__c &lt; 1, ISNULL(AQS_Quote__r.Opt_Out_Save_Period_days__c))), TRUE, FALSE))</errorConditionFormula>
+    <errorMessage>&quot;Opt-Out Save Period (days)” is required when &quot;Franchise Amendment Process&quot; = Opt-Out.  Please update before proceeding.</errorMessage>
+</ValidationRule>

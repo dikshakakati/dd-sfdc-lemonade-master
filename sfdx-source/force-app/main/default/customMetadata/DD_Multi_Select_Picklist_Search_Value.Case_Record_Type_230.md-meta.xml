@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Case Record Type 230</label>
+    <protected>false</protected>
+    <values>
+        <field>Display_Sequence__c</field>
+        <value xsi:type="xsd:double">230.0</value>
+    </values>
+    <values>
+        <field>Dropdown_Label__c</field>
+        <value xsi:type="xsd:string">Onboarding Manager Handoff</value>
+    </values>
+    <values>
+        <field>Dropdown_SubLabel__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Parent__c</field>
+        <value xsi:type="xsd:string">Case_Record_Type</value>
+    </values>
+    <values>
+        <field>Pill_Label__c</field>
+        <value xsi:type="xsd:string">Onboarding Manager Handoff</value>
+    </values>
+    <values>
+        <field>Value__c</field>
+        <value xsi:type="xsd:string">0122L000000AXpOQAW</value>
+    </values>
+</CustomMetadata>

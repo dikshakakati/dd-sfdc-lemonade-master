@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4801: It is used for assigning the current Work Plan and child Work Plans to the current user.</description>
+    <flowDefinition>Assign_to_Others</flowDefinition>
+    <label>Assign To Others</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

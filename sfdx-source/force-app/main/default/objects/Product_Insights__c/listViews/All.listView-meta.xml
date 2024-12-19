@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Account_Name__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Initiative__c</columns>
+    <columns>Product__c</columns>
+    <columns>Origin__c</columns>
+    <columns>Actual_Incremental_Sales__c</columns>
+    <columns>Interest_Level__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Product Insights</label>
+</ListView>

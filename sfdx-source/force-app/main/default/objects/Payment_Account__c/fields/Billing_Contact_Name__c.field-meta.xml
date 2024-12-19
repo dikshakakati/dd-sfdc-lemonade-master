@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Contact_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-1371: Field to be only used when Record Type is Invoice. Payment Account record type uses the Contact related list for Billing Contact Name (is n:n relationship).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Captures the first name, last name, and email address to be setup in NetSuite</inlineHelpText>
+    <label>Billing Contact Name</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Payment Accounts</relationshipLabel>
+    <relationshipName>Payment_Accounts</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

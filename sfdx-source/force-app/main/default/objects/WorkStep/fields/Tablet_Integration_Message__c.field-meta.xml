@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tablet_Integration_Message__c</fullName>
+    <description>LEM-1395: It will be used to capture the exception message logged for the tablet case integration in Mulesoft logs.</description>
+    <externalId>false</externalId>
+    <label>Tablet Integration Message</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

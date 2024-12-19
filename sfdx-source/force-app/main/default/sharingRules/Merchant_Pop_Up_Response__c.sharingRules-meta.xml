@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_Merchant_Pop_Up_Responses_With_All_Internal_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-2893: It will provide edit access on Merchant Pop Up Responses to all internal Users.</description>
+        <label>Share Merchant Pop Up Responses With All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

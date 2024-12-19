@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Length_of_Term__c</fullName>
+    <description>LEM-13626: It is used to capture the length of term for a corresponding product in the magic wand (drawer) on the QLE screen.</description>
+    <externalId>false</externalId>
+    <label>Length of Term</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>30</fullName>
+                <default>false</default>
+                <label>30</label>
+            </value>
+            <value>
+                <fullName>60</fullName>
+                <default>false</default>
+                <label>60</label>
+            </value>
+            <value>
+                <fullName>90</fullName>
+                <default>false</default>
+                <label>90</label>
+            </value>
+            <value>
+                <fullName>Evergreen</fullName>
+                <default>false</default>
+                <label>Evergreen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+/**
+ * @author Deloitte
+ * @date 06/12/2024
+ * @description CSS for displayMxOnboardingLink lightning web component.
+ */
+.inputStyling {
+  margin-left: 15%;
+  width: 50%;
+}
+.spanStyling {
+  width: 20%;
+  display: inline-block;
+}
+.spinnerStyling {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}

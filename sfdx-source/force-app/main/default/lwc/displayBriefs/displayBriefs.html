@@ -1,0 +1,19 @@
+<template>
+  <template if:false={showComponent}>
+    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+  </template>
+  <template if:true={showComponent}>
+    <c-generic-related-list
+      view-all={viewAllRecords}
+      related-data={relatedData}
+      columns={columns}
+      view-all-columns={viewAllColumns}
+      title={labels.briefsRelatedListLabel}
+      record-id={recordId}
+      object-name={objectName}
+      record-name={name}
+      parent-component-name="c:displayBriefs"
+    ></c-generic-related-list>
+  </template>
+  <c-show-toast-message></c-show-toast-message>
+</template>

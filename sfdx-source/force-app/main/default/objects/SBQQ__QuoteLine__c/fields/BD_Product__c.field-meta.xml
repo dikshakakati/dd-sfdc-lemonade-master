@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BD_Product__c</fullName>
+    <description>Created as part of LEM-10075</description>
+    <externalId>false</externalId>
+    <label>BD Product</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Google Food Ordering (GFO)</fullName>
+                <default>false</default>
+                <label>Google Food Ordering (GFO)</label>
+            </value>
+            <value>
+                <fullName>Bbot</fullName>
+                <default>false</default>
+                <label>Bbot</label>
+            </value>
+            <value>
+                <fullName>Brand Licensing</fullName>
+                <default>false</default>
+                <label>Brand Licensing</label>
+            </value>
+            <value>
+                <fullName>B2B Drive</fullName>
+                <default>false</default>
+                <label>B2B Drive</label>
+            </value>
+            <value>
+                <fullName>Dashmart as a Service</fullName>
+                <default>false</default>
+                <label>Dashmart as a Service</label>
+            </value>
+            <value>
+                <fullName>Snap/EBT</fullName>
+                <default>false</default>
+                <label>Snap/EBT</label>
+            </value>
+            <value>
+                <fullName>PU Inflation Removal</fullName>
+                <default>false</default>
+                <label>PU Inflation Removal</label>
+            </value>
+            <value>
+                <fullName>Catapult</fullName>
+                <default>false</default>
+                <label>Catapult</label>
+            </value>
+            <value>
+                <fullName>Platform Renegotiations</fullName>
+                <default>false</default>
+                <label>Platform Renegotiations</label>
+            </value>
+            <value>
+                <fullName>Grocery Drive DSD</fullName>
+                <default>false</default>
+                <label>Grocery Drive DSD</label>
+            </value>
+            <value>
+                <fullName>Other (Marketplace)</fullName>
+                <default>false</default>
+                <label>Other (Marketplace)</label>
+            </value>
+            <value>
+                <fullName>Other (Drive)</fullName>
+                <default>false</default>
+                <label>Other (Drive)</label>
+            </value>
+            <value>
+                <fullName>Other / Business Right Sizing</fullName>
+                <default>false</default>
+                <label>Other / Business Right Sizing</label>
+            </value>
+            <value>
+                <fullName>Victory: Mx Retained</fullName>
+                <default>false</default>
+                <label>Victory: Mx Retained</label>
+            </value>
+            <value>
+                <fullName>Victory: Contractual Drive Defense Term</fullName>
+                <default>false</default>
+                <label>Victory: Contractual Drive Defense Term</label>
+            </value>
+            <value>
+                <fullName>Digital Ordering Total</fullName>
+                <default>false</default>
+                <label>Digital Ordering Total</label>
+            </value>
+            <value>
+                <fullName>A&amp;P Commitment &gt;1%</fullName>
+                <default>false</default>
+                <label>A&amp;P Commitment &gt;1%</label>
+            </value>
+            <value>
+                <fullName>GVP Growth</fullName>
+                <default>false</default>
+                <label>GVP Growth</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

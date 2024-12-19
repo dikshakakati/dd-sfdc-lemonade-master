@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Storefront_OB_Work_Plans_COO</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+    <columns>Work_Order_Name__c</columns>
+    <columns>WorkOrder</columns>
+    <columns>Work_Order_Sub_Type__c</columns>
+    <columns>Proposed_Date_of_Activation__c</columns>
+    <columns>Parent_Work_Plan__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Name</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress,Escalated,Blocked</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Storefront,Storefront Bundled</value>
+    </filters>
+    <filters>
+        <field>Owner</field>
+        <operation>equals</operation>
+        <value>Jillian Wilson</value>
+    </filters>
+    <filters>
+        <field>Owner_Link__c</field>
+        <operation>equals</operation>
+        <value>Jillian Wilson</value>
+    </filters>
+    <label>Storefront OB Work Plans (COO)</label>
+</ListView>

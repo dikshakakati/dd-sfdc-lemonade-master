@@ -1,0 +1,29 @@
+<!--
+  @description       : Confirmation/Success screen from send to SSMO
+  @author            : Soumya Dash
+  @group             :
+  @last modified on  : 07-25-2024
+  @last modified by  : Soumya Dash
+-->
+<template>
+    <div class="slds-align_absolute-center">
+        <lightning-layout-item>
+            <div class="slds-p-top_medium slds-p-bottom_x-small lgc-bg">
+                <lightning-tile type="media" >
+                    <a href={contactLink} target="_blank" onclick={handleContactLink}>{contact.FirstName} {contact.LastName}</a>
+                    <lightning-icon slot="media" icon-name="standard:contact"></lightning-icon>
+                    <p class="slds-truncate" title="email">{contact.Email}</p>
+                </lightning-tile>
+            </div>
+            <div class="clipboard-container slds-align_absolute-center">
+                <c-copy-to-clipboard
+                    display-text="Copy SSMO Link"
+                    copy-text={ssmoLink}
+                    click-to-copy-tool-tip="click to copy"
+                    copied-tool-tip="copied"
+                    icon-resent-after-copied-in-seconds="1"
+                ></c-copy-to-clipboard>
+            </div>
+        </lightning-layout-item>
+    </div>
+</template>

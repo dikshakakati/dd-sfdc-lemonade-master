@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Drive_CW_Opportunity</fullName>
+    <active>false</active>
+    <description>LEM-12245</description>
+    <errorConditionFormula>AND(
+
+NOT($Permission.Bypass_Work_Order_Validation_Rules),
+
+ISNEW(), 
+
+ISPICKVAL(Type__c, &quot;Drive&quot;), 
+
+ISBLANK(ParentWorkOrderId),
+
+OR(
+ISPICKVAL(Sub_Type__c, &quot;COO&quot;),
+ISPICKVAL(Sub_Type__c, &quot;Metro Based Promo&quot;), 
+ISPICKVAL(Sub_Type__c, &quot;Net-new Business&quot;),
+ISPICKVAL(Sub_Type__c, &quot;Partnership Creation/Update&quot;),
+ISPICKVAL(Sub_Type__c, &quot;Portal Access&quot;),
+ISPICKVAL(Sub_Type__c, &quot;SaaS Fee Setup&quot;)
+), 
+
+NOT(ISPICKVAL(Opportunity__r.StageName, &quot;Closed Won&quot;)) 
+
+)</errorConditionFormula>
+    <errorMessage>Please ensure there is a Closed Won Opportunity associated with this Work Order.</errorMessage>
+</ValidationRule>

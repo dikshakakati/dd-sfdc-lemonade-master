@@ -1,0 +1,38 @@
+<!--
+  @description       : Show error on UI
+  @author            : Soumya Dash
+  @group             :
+  @last modified on  : 07-24-2024
+  @last modified by  : Soumya Dash
+-->
+<template>
+    <section aria-describedby="dialog-body-id-112" aria-labelledby="dialog-heading-id-1" class="slds-popover slds-popover_error slds-nubbin_bottom-left" role="dialog" style="position: absolute; bottom: 3rem; right: 2.7rem;" >
+        <button class="slds-button slds-button_icon slds-button_icon-small slds-float_right slds-popover__close slds-button_icon-inverse" title="Close dialog"  onclick={closeErrorIcon}>
+            <svg class="slds-button__icon" aria-hidden="true">
+                <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+            </svg>
+            <span class="slds-assistive-text">Close dialog</span>
+        </button>
+        <header class="slds-popover__header">
+            <div class="slds-media slds-media_center slds-has-flexi-truncate ">
+            <div class="slds-media__body">
+                <h2 class="slds-truncate slds-text-heading_small slds-float_left" title={uierrorHeader}>{uierrorHeader}</h2>
+            </div>
+            </div>
+        </header>
+        <div class="slds-popover__body slds-float_left">
+            <b class="slds-float_left">{uierrorSubHeader}</b>
+            <ul class="slds-list_dotted slds-m-top_medium">
+                <template for:each={uiErrorMessages} for:item="err">
+                    <li class="slds-text-align_left" key={err}>{err}</li>
+                </template>
+            </ul>
+        </div>
+    </section>
+    <button class="slds-button slds-button_icon slds-button_icon-error" title="Error">
+        <svg class="slds-button__icon" aria-hidden="true">
+            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+        </svg>
+        <span class="slds-assistive-text">Error</span>
+    </button>
+</template>

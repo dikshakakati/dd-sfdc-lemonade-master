@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Will_DD_subsidize_prop_22_fees__c</fullName>
+    <description>LEM-1602: Create New Fields for Ads and Promos</description>
+    <externalId>false</externalId>
+    <label>Will DD subsidize prop 22 fees</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Will_DD_subsidize_prop_22_fees</valueSetName>
+    </valueSet>
+</CustomField>

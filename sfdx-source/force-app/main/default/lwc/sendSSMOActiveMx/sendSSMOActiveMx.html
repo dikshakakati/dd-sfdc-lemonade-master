@@ -1,0 +1,33 @@
+<!--
+  @description       :
+  @author            : Soumya Dash
+  @group             :
+  @last modified on  : 09-04-2024
+  @last modified by  : Soumya Dash
+-->
+<template>
+    <template lwc:if={loading}>
+        <div style="position:relative">
+            <div class="slds-spinner_container" style="height: 25vh;">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                  <span class="slds-assistive-text">Loading</span>
+                  <div class="slds-spinner__dot-a"></div>
+                  <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+        <div class="slds-var-p-around_xx-small slds-var-m-bottom_small">
+           Copy and paste the below link into your email to the Mx. If you need to regenerate a new link, you will need to mark the Status as Inactive <a target='_blank' onclick={handleMxClick}>here.</a>
+        </div>
+        <lightning-record-edit-form object-api-name="Mx_Onboarding_Link__c" record-id={mxlinkid} onload={loadScreen}>
+                <lightning-layout multiple-rows pull-to-boundary="small">
+                    <lightning-layout-item size="12" padding="horizontal-medium">
+                        <lightning-input-field class="slds-form-element__legend" field-name="One_Time_Mx_Link__c" read-only ></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="horizontal-medium">
+                        <lightning-input-field class="date-format-hide" field-name="Expiration_Date_Time__c" read-only ></lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+        </lightning-record-edit-form>
+</template>

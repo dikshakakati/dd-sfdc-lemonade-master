@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Figment_Case_ID__c</fullName>
+    <description>LEM-8483: Populate with link to corresponding Figment Case for the call</description>
+    <externalId>false</externalId>
+    <label>Figment Case ID</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

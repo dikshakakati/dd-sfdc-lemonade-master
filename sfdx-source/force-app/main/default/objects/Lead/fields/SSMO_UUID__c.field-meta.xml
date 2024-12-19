@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSMO_UUID__c</fullName>
+    <description>LEM-14186: It stores the SSMO UUID a unique identifier assigned to Salesforce records.</description>
+    <complianceGroup>GDPR</complianceGroup>
+    <externalId>false</externalId>
+    <inlineHelpText>This field stores the SSMO UUID a unique identifier assigned to Salesforce records</inlineHelpText>
+    <label>SSMO UUID</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-5250: It enables edit access to Data Verification Status field on Account.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Data_Verification_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Edit Access on Data Verification Status</label>
+</PermissionSet>

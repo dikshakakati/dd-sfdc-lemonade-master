@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.WorkOrders$Status</field>
+    </columns>
+    <columns>
+        <field>Account.WorkOrders$Name</field>
+    </columns>
+    <columns>
+        <field>Account.WorkOrders$Work_Order_Name__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.WorkOrders$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketplace</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.WorkOrders$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.WorkOrders$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Jacob Coleman,Nina Nguyen,Aidan Daly,Angelia Sanchez,Jesse Regnier,Kohl Sharples,Ryan Hill,Samuel Murillo,Sara beth Scott,Shane Walsh,Sierra Delaney,Victor Fernandez,Sylvia Smith,Quentin Miller,Miki Orozco-Charles,Christina Velasquez,Russell Longenecker,Miraj Qadar,Valerie Perez,Tarik Madkins,Tranyce Hendricks,Alisa Muraida,Elizabeth Defilippis,Elizabeth Hattar,Joseph Grana,Samuel Bates,Siala Suesue,Raven O’Neill,Derek Weber,Jordan Peterson,Meghan DeLoera,Bobbi Finnie,David Johnson,Gene Bartlett,Josiah Clark,Kathlene Nido,Alexis White-Gomez,Brandon Wilson,Jake Kent,Zandrea Hindmarch</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.WorkOrders$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>POS Team by Work Order Owner</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Workorders_with_Workplans_Workstep__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.WorkOrders$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

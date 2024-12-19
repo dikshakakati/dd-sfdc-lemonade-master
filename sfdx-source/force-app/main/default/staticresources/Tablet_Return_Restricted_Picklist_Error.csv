@@ -1,0 +1,2 @@
+Request Type,Store ID (18 Digit ID),Business ID (18 Digit ID),Order Protocol,Contact ID (18 Digit ID),Country,Street,City,State/Province,Zip/Postal Code,Shipping Type (standard or expedited),Return Components (Yes/No),Defective Tablet IMEI,Defective Printer IMEI,Replacement Reason,Replacement Reason if Other
+Return,{StoreId},{BusinessId},Tablet (DoorDash Owns),{ContactId},United States,1663 Mission Street,San Francisco,California,94122,Standard,Yes,,0909,Testing,Testing

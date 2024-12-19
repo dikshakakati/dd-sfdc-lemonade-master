@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_IDs_Matching_Store_IDs__c</fullName>
+    <description>LEM-2983: Captures the list of item Ids.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Visit the Item Promotions wiki for guidance on what info to provide. URL: https://doordash.atlassian.net/wiki/spaces/APW/pages/2780332882/Item+Promotions+Resource</inlineHelpText>
+    <label>Item IDs &amp; Matching Store IDs</label>
+    <length>32768</length>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

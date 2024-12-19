@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Order Protocol</label>
+    <protected>false</protected>
+    <values>
+        <field>Data_Type__c</field>
+        <value xsi:type="xsd:string">Picklist</value>
+    </values>
+    <values>
+        <field>Decimal_Places__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Field_API_Name__c</field>
+        <value xsi:type="xsd:string">Order_Protocol__c</value>
+    </values>
+    <values>
+        <field>Field_Name__c</field>
+        <value xsi:type="xsd:string">Order Protocol</value>
+    </values>
+    <values>
+        <field>Field_length__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Picklist_Values__c</field>
+        <value xsi:type="xsd:string">Android Tablet (Merchant Owns);Email;Fax;Other;Tablet (DoorDash Owns);Tablet and Printer (DoorDash Owns);POS;POS and Tablet (Merchant Owns);POS and Tablet (DoorDash Owns);POS and Tablet Return Label;POS (Caviar Owns);2 Tablets (Caviar and DoorDash Own);Tablet (Caviar Owns);POS and Tablet (Caviar Owns);POS and 2 Tablets (DoorDash POS, DoorDash and Caviar Tablets);POS and 2 Tablets (Caviar POS, DoorDash and Caviar Tablets)</value>
+    </values>
+</CustomMetadata>

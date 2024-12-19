@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inflation_Rounding_Unit__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15116: Signifies the menu inflation rounding unit.</description>
+    <externalId>false</externalId>
+    <label>Inflation Rounding Unit</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Public</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

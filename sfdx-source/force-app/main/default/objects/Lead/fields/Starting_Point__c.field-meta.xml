@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Starting_Point__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13402: It represents the starting point of the Lead.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the starting point of the Lead</inlineHelpText>
+    <label>Starting Point</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

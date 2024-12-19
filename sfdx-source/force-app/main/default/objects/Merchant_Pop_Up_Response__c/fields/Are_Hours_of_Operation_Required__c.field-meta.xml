@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Are_Hours_of_Operation_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-1979: Captures the decision if Hours of Operation are required or not.</description>
+    <externalId>false</externalId>
+    <label>Are Hours of Operation Required?</label>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

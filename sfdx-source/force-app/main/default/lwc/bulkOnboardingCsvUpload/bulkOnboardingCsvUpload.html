@@ -1,0 +1,724 @@
+<template>
+  <div class="slds-p-horizontal_medium option-container slds-box">
+    <!-- Stage / Progress Indicator -->
+    <c-bulk-onboarding-stage-bar
+      current-step={currentStep}
+    ></c-bulk-onboarding-stage-bar>
+
+    <!-- Saving indicator -->
+    <template if:true={showSpinner}>
+      <div class="flow-spinner-container" style="min-height: 160px">
+        <div
+          class="slds-spinner slds-spinner_brand slds-spinner_medium"
+          role="status"
+        >
+          <span class="slds-assistive-text"></span>
+          <div class="slds-spinner__dot-a"></div>
+          <div class="slds-spinner__dot-b"></div>
+        </div>
+      </div>
+    </template>
+
+    <template if:false={showSpinner}>
+      <div if:false={showBrandCountTable}>
+        <div if:false={uploadedValidFile}>
+          <p class="slds-text-title_bold slds-m-bottom_medium">
+            Upload Store Information
+          </p>
+          <p class="slds-m-bottom_medium bulk-onboarding-modal-font">
+            Next, let's upload your Stores' information. This step will link
+            your Stores to the Work Order and Contract in a CSV format.
+          </p>
+
+          <!--To render duplicate accounts page-->
+          <div
+            class="slds-p-around_medium slds-m-bottom_medium slds-box"
+            if:true={renderDuplicates}
+          >
+            <lightning-card class="slds-m-around_medium slds-text-align_center">
+              <lightning-icon
+                class="icon-warning"
+                icon-name="utility:warning"
+                alternative-text="Warning!"
+                title="Warning"
+                size="medium"
+              ></lightning-icon>
+              <p
+                class="slds-text-heading_medium slds-m-bottom_small slds-text-color_error"
+              >
+                Upload Unsuccessful
+              </p>
+            </lightning-card>
+            <p class="slds-m-bottom_small bulk-onboarding-modal-font">
+              <strong>Upload Unsuccessful:</strong> Your Stores CSV file
+              contains some errors. Please address the following issues and try
+              again:
+            </p>
+            <c-bulk-onboarding-duplicate-accounts
+              onbacktoerrormessage={returnBackToErrorMessagePage}
+              onremovestore={selectRemoveStore}
+              onforceupload={selectInsertStore}
+              row-number={selectedRowNumber}
+              row-name={selectedRowName}
+              has-non-duplicate-errors={bulkOnboardingContainer.hasNonDuplicateErrors}
+              potential-matches={potentialDuplicatesList}
+            ></c-bulk-onboarding-duplicate-accounts>
+          </div>
+
+          <!-- Error Messages Container -->
+          <div
+            class="slds-p-around_medium slds-m-bottom_medium slds-box"
+            if:true={showErrorMessages}
+          >
+            <div class="flex-container" if:true={isUploading}>
+              <span if:true={showRefreshErrorsLink}>
+                <a onclick={clickRefreshErrorsListWithUpdates}
+                  >New errors detected - Refresh list</a
+                >
+              </span>
+              <template if:false={showRefreshErrorsLink}>
+                <span class="invisible-flex-item"></span>
+              </template>
+              <span if:true={isUploading}>
+                <a onclick={clickHideAdvanceErrors}>Hide errors</a>
+              </span>
+            </div>
+
+            <!-- Error section heading - error icon / indicator -->
+            <lightning-card class="slds-m-around_medium slds-text-align_center">
+              <lightning-icon
+                class="icon-warning"
+                icon-name="utility:warning"
+                alternative-text="Warning!"
+                title="Warning"
+                size="medium"
+              ></lightning-icon>
+              <p
+                class="slds-text-heading_medium slds-m-bottom_small slds-text-color_error"
+              >
+                Upload Unsuccessful
+              </p>
+            </lightning-card>
+            <p class="slds-m-bottom_small bulk-onboarding-modal-font">
+              <strong>{errorMessageTitle}: </strong> {errorMessageText}
+            </p>
+
+            <div if:false={renderDuplicates}>
+              <!-- Error section body - table of error messages -->
+              <table
+                class="slds-table slds-table_bordered slds-table_cell-buffer"
+              >
+                <thead>
+                  <tr class="slds-line-height_reset">
+                    <th class="row-column" scope="col">
+                      <div class="slds-truncate" title="Row">Row</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="Error Message">
+                        Error Message
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template for:each={errorMessages} for:item="error">
+                    <tr class="slds-hint-parent" key={error.id}>
+                      <td class="row-column" data-label="Row">
+                        <div
+                          class="slds-truncate slds-text-color_error"
+                          title={error.displayRow}
+                        >
+                          <b>{error.displayRow}</b>
+                        </div>
+                      </td>
+                      <td data-label="Error Message">
+                        <div
+                          class="slds-truncate slds-text-color_error errorMessageStyling"
+                          title={error.message}
+                        >
+                          {error.message}
+                        </div>
+                        <template if:true={error.isDuplicateAccount}>
+                          <div class="slds-truncate errorMessageStyling">
+                            <a
+                              onclick={navigateToDuplicateAccountPage}
+                              data-row-number={error.rowNumber}
+                              >Please click here to view duplicates and select an
+                              action.</a
+                            >
+
+                            <span
+                              class="slds-float_right"
+                              lwc:if={bulkOnboardingContainer}
+                            >
+                              <!-- Do not display the actions if we have errors unrelated to duplicates -->
+                              <template
+                                if:false={bulkOnboardingContainer.hasNonDuplicateErrors}
+                              >
+                                <span
+                                  if:false={error.duplicateSelectionInfo.hasMadeSelection}
+                                >
+                                  <a
+                                    onclick={selectRemoveStore}
+                                    data-row-number={error.rowNumber}
+                                    >Remove</a
+                                  >
+                                  <span> | </span>
+                                  <a
+                                    onclick={selectInsertStore}
+                                    data-row-number={error.rowNumber}
+                                    >Upload</a
+                                  >
+                                </span>
+                              </template>
+
+                              <template
+                                if:true={bulkOnboardingContainer.hasNonDuplicateErrors}
+                              >
+                                <em>Please resolve above errors first.</em>
+                              </template>
+
+                              <span
+                                if:false={bulkOnboardingContainer.hasNonDuplicateErrors}
+                              >
+                                <span
+                                  if:true={error.duplicateSelectionInfo.shouldInsert}
+                                  class="slds-text-color_success slds-text-heading_small"
+                                  >✅ Uploading</span
+                                >
+                                <span
+                                  if:true={error.duplicateSelectionInfo.shouldRemoveFromUpload}
+                                  class="slds-text-color_error slds-text-heading_small"
+                                  >❌ Removing</span
+                                >
+                              </span>
+                            </span>
+                          </div>
+                        </template>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+
+              <template lwc:if={bulkOnboardingContainer}>
+                <div
+                  class="slds-m-vertical_medium slds-text-align_right"
+                  if:false={bulkOnboardingContainer.hasNonDuplicateErrors}
+                >
+                  <lightning-button
+                    class="slds-col_bump-left"
+                    label="Complete Selections"
+                    variant="brand"
+                    disabled={hasNotFinishedDuplicateSelections}
+                    onclick={clickFinishUpload}
+                  ></lightning-button>
+
+                  <div
+                    if:true={allStoresFromFileRemoved}
+                    class="slds-text-color_error slds-text-align_left"
+                  >
+                    <em
+                      >Every store from the CSV file has been removed. Please
+                      modify your selections or upload a new file below to
+                      proceed.</em
+                    >
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- File Upload Box & Instructions -->
+          <div
+            class="slds-p-around_medium slds-m-bottom_medium slds-box"
+            if:false={renderDuplicates}
+          >
+            <span if:false={isUploadButtonHidden}>
+              <p
+                class="slds-m-bottom_small bulk-onboarding-modal-font"
+                if:false={uploadedValidFile}
+              >
+                Ensure your Stores' details are formatted correctly by using a
+                CSV file as per the templates provided. Please retain the
+                original column structure without any additions or deletions.
+              </p>
+
+              <lightning-input
+                class="file-upload-button"
+                type="file"
+                accept=".csv"
+                label="Store CSV Upload"
+                onchange={handleFileUpload}
+              ></lightning-input>
+            </span>
+
+            <!-- Spinner -->
+            <template if:true={isUploading}>
+              <!-- This is the batch scenario where we show a more advanced percentage spinner -->
+              <template if:true={showPercentageLoader}>
+                <div if:true={errorMessages.length}>
+                  <span>{showOngoingErrorsMessage} &nbsp;</span>
+                  <span if:true={displayShowErrorsLink}>
+                    <a onclick={clickShowAdvanceErrors}>Show errors</a>
+                  </span>
+                </div>
+
+                <c-bulk-onboarding-saving-indicator
+                  milliseconds-remaining={millisecondsRemaining}
+                  percentage-completed={percentageCompleted}
+                  show-percentage-loader={showPercentageLoader}
+                  errors={errorMessages}
+                  warnings={warnings}
+                ></c-bulk-onboarding-saving-indicator>
+              </template>
+
+              <!-- Use the old-school loader for the non-batch scenario -->
+              <template if:false={showPercentageLoader}>
+                <div class="dots-bars-2"></div>
+                <p class="slds-m-bottom_small uploading-help-text">
+                  {savingStoresMessage}
+                </p>
+              </template>
+            </template>
+          </div>
+
+          <!-- Instructions -->
+          <div class="slds-m-vertical_medium">
+            <a
+              onclick={toggleInstructionsVisibility}
+              if:false={isInstructionsVisible}
+              >Click for CSV Upload Guide</a
+            >
+          </div>
+
+          <template if:true={isInstructionsVisible}>
+            <div class="slds-p-around_medium slds-m-bottom_medium slds-box">
+              <a onclick={toggleInstructionsVisibility}>Hide instructions</a>
+
+              <div class="slds-m-vertical_large">
+                <p class="slds-text-title_bold slds-m-bottom_x-small">
+                  General Guidelines:
+                </p>
+
+                <ul class="slds-p-left_medium">
+                  <li>
+                    <lightning-icon
+                      icon-name="utility:check"
+                      size="x-small"
+                    ></lightning-icon>
+                    Use the CSV from the template
+                  </li>
+                  <li>
+                    <lightning-icon
+                      icon-name="utility:check"
+                      size="x-small"
+                    ></lightning-icon>
+                    Do not change the column names
+                  </li>
+                  <li>
+                    <lightning-icon
+                      icon-name="utility:check"
+                      size="x-small"
+                    ></lightning-icon>
+                    Do not add additional columns
+                  </li>
+                  <li>
+                    <lightning-icon
+                      icon-name="utility:check"
+                      size="x-small"
+                    ></lightning-icon>
+                    You may upload a maximum of
+                    <strong><u>{allUsersMaxUploadSize}</u></strong> stores at a
+                    time. Launch Operations may upload up to
+                    <strong><u>{launchOpsMaxUploadSize}</u></strong> stores.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="slds-m-vertical_large">
+                <p class="slds-text-title_bold slds-m-bottom_x-small">
+                  Example Sheet:
+                </p>
+
+                <div class="slds-p-horizontal_medium">
+                  <a href="#" onclick={openExampleLink}
+                    >Click here to view an example Store CSV</a
+                  >
+                  <p class="slds-m-vertical_small">
+                    Or continue below for column-by-column instructions.
+                  </p>
+                </div>
+              </div>
+
+              <div class="slds-m-vertical_large">
+                <p class="slds-text-title_bold slds-m-bottom_x-small">
+                  Relationship Fields:
+                </p>
+                <p class="slds-m-bottom_small slds-p-horizontal_medium">
+                  For fields such as <code>Parent Account</code>,
+                  <code>Brand</code>, <code>Payment Account</code>, and
+                  <code>Decision Maker</code>, you'll need a special code called
+                  a <strong>Salesforce Record ID</strong>. You can find this
+                  code in the web address when you're looking at the specific
+                  record in Salesforce. It will be either 15 or 18 characters
+                  long.
+                </p>
+
+                <!-- Table for Reference Fields -->
+                <div class="slds-m-vertical_medium slds-p-horizontal_medium">
+                  <table
+                    class="slds-table slds-table_bordered slds-table_cell-buffer"
+                  >
+                    <thead>
+                      <tr class="slds-line-height_reset">
+                        <th scope="col">
+                          <div class="slds-truncate" title="Column">Column</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Object">Object</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Sample ID">
+                            Example ID
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <template
+                        for:each={relationshipFields}
+                        for:item="fieldInfo"
+                      >
+                        <tr class="slds-hint-parent" key={fieldInfo.fieldLabel}>
+                          <td data-label="Field / Column Name">
+                            <div class="slds-truncate">
+                              {fieldInfo.fieldLabel}
+                            </div>
+                          </td>
+                          <td data-label="Object">
+                            <div class="slds-truncate">
+                              {fieldInfo.objectLabel}
+                            </div>
+                          </td>
+                          <td data-label="Accepted Values">
+                            <div class="slds-cell-wrap">
+                              {fieldInfo.exampleId}
+                            </div>
+                          </td>
+                        </tr>
+                      </template>
+                    </tbody>
+                  </table>
+
+                  <!-- Notes for optional Reference fields -->
+                  <div
+                    class="slds-box slds-theme_alert-texture slds-m-vertical_medium slds-p-around_medium"
+                  >
+                    <div class="slds-media">
+                      <div class="slds-media__figure">
+                        <lightning-icon
+                          icon-name="utility:info"
+                          alternative-text="Info"
+                          title="Info"
+                          size="medium"
+                        ></lightning-icon>
+                      </div>
+                      <div class="slds-media__body">
+                        <p>
+                          Note: The <code>Payment Account</code> and
+                          <code>Decision Maker</code> columns are optional. If
+                          not included, you'll be prompted to select a Payment
+                          Account and Decision Maker in the following screens.
+                          These will apply stores. If you want different Payment
+                          Accounts and Decision Makers for each stores, include
+                          them in the CSV.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slds-m-vertical_large">
+                <p class="slds-text-title_bold slds-m-bottom_x-small">
+                  Required Fields:
+                </p>
+                <p class="slds-m-bottom_small slds-p-horizontal_medium">
+                  The fields below are the basic requirements for upload.
+                  Additional fields may be needed due to Readiness Checks and
+                  other validations based on your input.
+                </p>
+
+                <!-- Multi-column list for Required Fields -->
+                <div class="slds-m-vertical_medium slds-p-horizontal_medium">
+                  <div class="slds-grid slds-wrap">
+                    <template
+                      for:each={requiredFields}
+                      for:item="thisField"
+                      for:index="index"
+                    >
+                      <div
+                        class="slds-col slds-size_1-of-3 slds-p-around_x-small"
+                        key={thisField}
+                      >
+                        <div class="slds-truncate required-field">
+                          {thisField}
+                        </div>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slds-m-vertical_large">
+                <p class="slds-text-title_bold slds-m-bottom_x-small">
+                  Dropdown Fields:
+                </p>
+
+                <p class="slds-m-bottom_small slds-p-horizontal_medium">
+                  The table below lists specific fields from the sheet that
+                  correspond to dropdown menus on the Store page. These fields
+                  can only contain certain pre-defined values.
+                </p>
+
+                <!-- Table for Picklist Fields -->
+                <div class="slds-m-vertical_medium slds-p-around_medium">
+                  <table
+                    class="slds-table slds-table_bordered slds-table_cell-buffer"
+                  >
+                    <thead>
+                      <tr class="slds-line-height_reset">
+                        <th scope="col">
+                          <div class="slds-truncate" title="Column">Column</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Accepted Values">
+                            Accepted Values
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <template for:each={acceptedValues} for:item="fieldInfo">
+                        <tr class="slds-hint-parent" key={fieldInfo.fieldLabel}>
+                          <td data-label="Field">
+                            <div class="slds-truncate">
+                              {fieldInfo.fieldLabel}
+                            </div>
+                          </td>
+                          <td data-label="Accepted Values">
+                            <template if:true={fieldInfo.isLongString}>
+                              <div class="slds-cell-wrap">
+                                <span
+                                  >{fieldInfo.valuesStringTruncated}...
+                                </span>
+                                <a
+                                  href="javascript:void(0);"
+                                  onclick={fieldInfo.toggleSeeMore}
+                                  >See more</a
+                                >
+                              </div>
+                            </template>
+                            <template if:false={fieldInfo.isLongString}>
+                              <div class="slds-cell-wrap">
+                                {fieldInfo.valuesString}
+                              </div>
+                            </template>
+                          </td>
+                        </tr>
+                      </template>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Phone fields instructions -->
+              <div class="slds-m-vertical_large">
+                <p class="slds-text-title_bold slds-m-bottom_x-small">
+                  Phone Numbers:
+                </p>
+                <p class="slds-m-bottom_small slds-p-horizontal_medium">
+                  For the <code>Phone</code> Field:
+                </p>
+
+                <ul class="slds-p-left_medium">
+                  <li class="slds-p-bottom_x-small">
+                    <lightning-icon
+                      icon-name="utility:check"
+                      size="x-small"
+                    ></lightning-icon>
+                    Ensure that the phone number you upload is 10 digits for US
+                    & CAN stores and does not include the +1 for country code
+                  </li>
+                  <li class="slds-p-bottom_x-small">
+                    <lightning-icon
+                      icon-name="utility:check"
+                      size="x-small"
+                    ></lightning-icon>
+                    Ensure that the phone number you upload is 8-10 digits for
+                    NZ stores and does not include the +64 for country code
+                  </li>
+                  <li class="slds-p-bottom_x-small">
+                    <lightning-icon
+                      icon-name="utility:check"
+                      size="x-small"
+                    ></lightning-icon>
+                    Ensure that the phone number you upload is 8-11 digits for
+                    AUS stores and does not include the +64 for country code
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </template>
+
+          <!-- Template Retrieval -->
+          <div class="slds-m-vertical_medium">
+            <a onclick={toggleTemplateVisibility} if:false={isTemplateVisible}
+              >Need the template?</a
+            >
+          </div>
+
+          <template if:true={isTemplateVisible}>
+            <div class="slds-p-around_medium slds-m-bottom_medium slds-box">
+              <p class="slds-text-title_bold slds-m-bottom_small">
+                Download Template
+              </p>
+              <p class="slds-m-bottom_small">
+                Need the template? You can conveniently access it from
+                {storagePlatformName} using the link below.
+              </p>
+
+              <div class="slds-m-top_medium">
+                <a href="#" onclick={openTemplateLink}
+                  >Access on {storagePlatformName}</a
+                >
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div if:true={showBrandCountTable}>
+        <lightning-card title="Business Reference Selected">
+          <div class="slds-m-around_medium">
+            <div>
+              <p>Number of Stores by Brand uploading for this load</p>
+              <hr />
+              <p><b>Business Vertical: </b> {businessVerticalName}</p>
+              <hr />
+            </div>
+            <table
+              class="slds-table slds-table_bordered slds-table_cell-buffer"
+            >
+              <thead>
+                <tr class="slds-line-height_reset">
+                  <th class="slds-cell-wrap" scope="col">
+                    <div class="slds-truncate" title="Brand">Brand</div>
+                  </th>
+                  <th class="slds-cell-wrap" scope="col">
+                    <div class="slds-truncate" title="Number of Stores">
+                      Number of Stores
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <template for:each={brandToStoreCount} for:item="eachStore">
+                  <tr key={eachStore.key} class="slds-hint-parent">
+                    <td data-label="Brand" class="slds-text-align_left">
+                      {eachStore.key}
+                    </td>
+                    <td
+                      data-label="Number of Stores"
+                      class="slds-text-align_left"
+                    >
+                      {eachStore.value}
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+          <div class="slds-m-around_medium slds-text-align_right">
+            <lightning-button-group>
+              <lightning-button
+                label="Cancel"
+                variant="brand"
+                onclick={clickCancelBrandStoreCount}
+              ></lightning-button>
+              <div class="slds-p-left_small"></div>
+              <lightning-button
+                label="Confirm and Continue"
+                onclick={clickConfirmBrandStoreCount}
+                variant="neutral"
+              ></lightning-button>
+            </lightning-button-group>
+          </div>
+        </lightning-card>
+      </div>
+
+      <div if:true={uploadedValidFile}>
+        <div if:false={showSelectEntitlementScreen}>
+          <div>
+            <p class="slds-p-around_medium bulk-onboarding-modal-font">
+              Use ‘Manage Packages’ to phase onboard stores on selected
+              packages/products. Click ‘Next’ to onboard the stores on all the
+              packages/products available on the contract.
+            </p>
+          </div>
+          <div class="slds-p-around_medium slds-m-bottom_medium slds-box">
+            <lightning-button
+              class="slds-grid slds-grid_align-end"
+              label="Manage Packages"
+              variant="brand"
+              onclick={handleManagePackages}
+            ></lightning-button>
+            <lightning-card
+              class="slds-m-around_medium slds-text-align_center"
+              style="color: #047a02"
+            >
+              <lightning-icon
+                class="slds-m-bottom_small"
+                icon-name="action:approval"
+                alternative-text="Approved"
+                title="Approved"
+                size="large"
+              ></lightning-icon>
+              <p class="slds-text-heading_medium slds-m-bottom_small">
+                Validation Successful
+              </p>
+            </lightning-card>
+
+            <div class="bulk-onboarding-modal-font">
+              <strong>Note:</strong> The Store data will not be available in the
+              system until you complete the following steps in this process.
+              Please click 'Next' to continue.
+            </div>
+          </div>
+        </div>
+        <div if:true={showSelectEntitlementScreen}>
+          <div>
+            <c-bulk-onboarding-select-entitlements
+              flow-request-id={flowRequestId}
+              contract-id={contractId}
+              show-payment-account-skip-option={showPaymentAccountSkipOption}
+            ></c-bulk-onboarding-select-entitlements>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <div class="slds-grid slds-grid_align-end slds-m-around_medium">
+      <div if:false={showSelectEntitlementScreen}>
+        <lightning-button
+          class="slds-col_bump-left"
+          label="Next"
+          variant="brand"
+          onclick={handleNextandSkipCCP}
+          disabled={isNextDisabled}
+        ></lightning-button>
+      </div>
+    </div>
+  </div>
+</template>

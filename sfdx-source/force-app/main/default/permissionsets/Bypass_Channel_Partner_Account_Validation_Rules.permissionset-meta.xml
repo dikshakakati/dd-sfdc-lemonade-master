@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Channel_Partner_Account_Validation_Rules</name>
+    </customPermissions>
+    <description>LEM-17027: Custom Permission for Admins to work on POS Account Data Model without validations</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Channel Partner Account Validation Rules</label>
+</PermissionSet>

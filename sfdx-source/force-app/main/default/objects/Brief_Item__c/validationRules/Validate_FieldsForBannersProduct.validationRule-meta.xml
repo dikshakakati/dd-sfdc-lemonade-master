@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_FieldsForBannersProduct</fullName>
+    <active>true</active>
+    <description>LEM-2983: Validates if all the required fields for Product Type Banners are populated.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+    Package__c != $Label.Brief_Package_Sponsorships,
+    OR(
+        ISBLANK(
+            TEXT(Pricing_Type__c)
+        ),
+        ISBLANK(Banner_Dates__c),
+        ISBLANK(
+            TEXT(Banner_Types__c)
+        )
+    ),
+    TEXT(Product__c) = $Label.Brief_Product_Banners
+)</errorConditionFormula>
+    <errorMessage>Please provide the Pricing Type, Banner Dates and Banner Types before saving.</errorMessage>
+</ValidationRule>

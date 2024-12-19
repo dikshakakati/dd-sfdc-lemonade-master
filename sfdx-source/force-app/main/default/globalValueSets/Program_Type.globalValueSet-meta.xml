@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Subtotal-based</fullName>
+        <default>false</default>
+        <label>Subtotal-based</label>
+    </customValue>
+    <customValue>
+        <fullName>Order-based</fullName>
+        <default>false</default>
+        <label>Order-based</label>
+    </customValue>
+    <description>LEM-13634 - Store Rewards Quote Line Attributes</description>
+    <masterLabel>Program Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

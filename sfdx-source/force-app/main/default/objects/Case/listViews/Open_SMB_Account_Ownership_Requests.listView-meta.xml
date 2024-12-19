@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_SMB_Account_Ownership_Requests</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>New_Owner__c</columns>
+    <columns>Account_Segment__c</columns>
+    <columns>Approval_Status__c</columns>
+    <columns>Requester__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.TYPE</field>
+        <operation>equals</operation>
+        <value>Business Hierarchy Assistance</value>
+    </filters>
+    <filters>
+        <field>Sub_Type__c</field>
+        <operation>equals</operation>
+        <value>Account Ownership Change</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.SO_Support_Request</value>
+    </filters>
+    <filters>
+        <field>Account_Segment__c</field>
+        <operation>equals</operation>
+        <value>SMB</value>
+    </filters>
+    <label>Open SMB Account Ownership Requests</label>
+</ListView>

@@ -1,0 +1,98 @@
+<template>
+    <div class={mainDivClass} onclick={stopPropagation}>
+        <template if:true={showLabelSection}>
+            <div class="slds-grid slds-grid_align-spread">
+                <div class="slds-col">
+                    <label class={labelClass} onclick={handleButtonToggle}>{label}</label>
+                </div>
+                <template if:true={hasExpandCollapse}>
+                    <div class="slds-col">
+                        <div class={expandCollapseClass} onclick={handleButtonToggle}></div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:true={hasFilters}>
+            <div class="slds-var-m-top_x-small">
+                <template for:each={filters} for:item="filter">
+                    <c-dd-pill key={filter}
+                        unique-identifier={filter.label}
+                        label={filter.label}
+                        close-button-text="Remove"
+                        show-remove
+                        onclick={handleFilterPillClick}
+                        onremove={handleFilterPillOnRemove}>
+                    </c-dd-pill>
+                </template>
+            </div>
+        </template>
+        <template if:true={isExpanded}>
+            <div class="slds-var-m-top_x-small">
+                <form autocomplete="off" class="DD_DateFilter_Definition_Form">
+                    <article>
+                        <div>
+                            <lightning-combobox
+                                variant="label-hidden"
+                                class="slds-var-p-around_xx-small"
+                                value={operator}
+                                options={operatorOptions}
+                                onchange={handleOperatorOnChange} >
+                            </lightning-combobox>
+                            <template if:false={isOperatorIsBlankOrIsNotBlank}>
+                                <template if:true={showMinAndMaxValueInput}>
+                                    <lightning-input type="date" name="minValueInput"
+                                        data-id="minValueInput"
+                                        value={filterDefinition.minValue}
+                                        min={minValue}
+                                        max={maxValue}
+                                        label="From"
+                                        class="slds-var-p-around_xx-small"
+                                        placeholder={placeholderText}
+                                        onchange={handleMinValueInputChange}>
+                                    </lightning-input>
+                                    <lightning-input type="date" name="maxValueInput"
+                                        data-id="maxValueInput"
+                                        value={filterDefinition.maxValue}
+                                        min={minValue}
+                                        max={maxValue}
+                                        label="To"
+                                        class="slds-var-p-around_xx-small"
+                                        placeholder={placeholderText}
+                                        onchange={handleMaxValueInputChange}>
+                                    </lightning-input>
+                                </template>
+                                <template if:true={showValueInput}>
+                                    <lightning-input type="date" name="valueInput"
+                                        data-id="valueInput"
+                                        value={filterDefinition.value}
+                                        min={minValue}
+                                        max={maxValue}
+                                        variant="label-hidden"
+                                        class="slds-var-p-around_xx-small"
+                                        placeholder={placeholderText}
+                                        onchange={handleValueInputChange}>
+                                    </lightning-input>
+                                </template>
+                            </template>
+                        </div>
+                        <footer class="footer">
+                            <template if:true={showRemoveButton}>
+                                <lightning-button
+                                    label="Remove"
+                                    variant="destructive"
+                                    onclick={handleRemoveButtonClick}
+                                    class="slds-var-m-right_small">
+                                </lightning-button>
+                            </template>
+                            <lightning-button
+                                label={primaryButtonLabel}
+                                variant="brand"
+                                onclick={handlePrimaryButtonClick}>
+                            </lightning-button>
+                        </footer>
+                    </article>
+                </form>
+            </div>
+        </template>
+    </div>
+</template>

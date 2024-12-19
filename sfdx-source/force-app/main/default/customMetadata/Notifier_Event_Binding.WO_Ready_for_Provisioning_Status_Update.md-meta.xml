@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>WO Ready for Provisioning Status Update</label>
+    <protected>false</protected>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:type="xsd:string">WorkOrdersService</value>
+    </values>
+    <values>
+        <field>Partition_Key__c</field>
+        <value xsi:type="xsd:string">Provisioning_Status_Child</value>
+    </values>
+    <values>
+        <field>Platform_Event_Channel__c</field>
+        <value xsi:type="xsd:string">Work_Order_Processor__e</value>
+    </values>
+    <values>
+        <field>Scope_Size__c</field>
+        <value xsi:type="xsd:double">50.0</value>
+    </values>
+    <values>
+        <field>Topic__c</field>
+        <value xsi:type="xsd:string">WORK_ORDER_READY_FOR_PROVISIONING_STATUS_UPDATE</value>
+    </values>
+</CustomMetadata>

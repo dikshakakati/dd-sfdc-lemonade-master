@@ -1,0 +1,81 @@
+<!--
+  @description       :
+  @author            : rishab.goyal
+  @group             :
+  @last modified on  : 05-09-2024
+  @last modified by  : Gaurav
+-->
+<template>
+
+    <template lwc:if={showComponent}>
+        <lightning-card>
+        <template lwc:if={viewAll}>
+            <lightning-card variant="Narrow">
+                <div class="bgColor">
+                <div class="slds-p-around_medium bgColor">
+                    <lightning-tile variant="label-hidden">
+                    <lightning-breadcrumbs>
+                        <lightning-breadcrumb
+                        label={objectName}
+                        onclick={handleListViewNavigation}
+                        >
+                        </lightning-breadcrumb>
+                        <lightning-breadcrumb
+                        label={name}
+                        onclick={handleRecordNavigation}
+                        >
+                        </lightning-breadcrumb>
+                    </lightning-breadcrumbs>
+                    </lightning-tile>
+                </div>
+
+                    <div class="slds-page-header__title slds-m-bottom--x-small slds-m-left--small slds-m-right--small slds-grid slds-align-middle bgColor">
+                        <lightning-icon icon-name="standard:record_update" size="medium"></lightning-icon>
+                        <div class="slds-grow">{woLabel}</div>
+                        <!-- Add a button on the right side -->
+                        <div class="slds-col_bump-left slds-m-right--small">
+                            <lightning-button label="Download History" onclick={handleDownloadClick}></lightning-button>
+                        </div>
+                        <div class="slds-col_bump-left">
+                            <lightning-button label="View MINT History Dashboard" onclick={handleViewAllClick}></lightning-button>
+                        </div>
+                    </div>
+
+
+                    <div class="slds-var-p-around_small">
+                        <c-custom-type-datatable
+                        key-field="Id"
+                        data={recordsToBeDisplayed}
+                        columns={columnsToBeDisplayed}
+                        hide-checkbox-column
+                        show-row-number-column
+                        min-column-width="100">
+                        </c-custom-type-datatable>
+                    </div>
+
+                </div>
+            </lightning-card>
+
+        </template>
+        <template lwc:else>
+            <div class="bgColor">
+                <div class="slds-page-header__title slds-m-bottom--x-small slds-m-left--small slds-m-right--small slds-grid slds-align-middle bgColor">
+                        <lightning-icon icon-name="standard:record_update" size="medium"></lightning-icon>&nbsp;
+                        <a onclick={navigateToPage} style="cursor: pointer;" class="slds-flex slds-align-middle">
+                        <div class="slds-grow">{woLabel}</div></a>
+                </div>
+
+            </div>
+        </template>
+    </lightning-card>
+    </template>
+    <template lwc:else>
+        <template if:false={noAccess}>
+            <lightning-card>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </lightning-card>
+        </template>
+    </template>
+
+
+</template>

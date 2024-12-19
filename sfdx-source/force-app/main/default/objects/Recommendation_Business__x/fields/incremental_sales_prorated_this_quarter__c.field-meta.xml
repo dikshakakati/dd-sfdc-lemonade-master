@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>incremental_sales_prorated_this_quarter__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-17006 : It shows incremental sales prorated this quarter</description>
+    <externalDeveloperName>incremental_sales_prorated_this_quarter</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Adjusted Incr. Sales Uplift $</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

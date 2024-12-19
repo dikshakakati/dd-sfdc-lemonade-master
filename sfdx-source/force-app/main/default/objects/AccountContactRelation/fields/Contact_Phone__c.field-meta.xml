@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Phone__c</fullName>
+    <description>LEM-16014: It is used to display phone number of Contact on "Related Accounts" component on Task record page.</description>
+    <externalId>false</externalId>
+    <formula>Contact.Phone</formula>
+    <label>Contact Phone</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

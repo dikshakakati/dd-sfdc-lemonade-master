@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Mx_Order_Product_Option_All_User</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>LEM-20904: It is used to give edit access for Mx Order Product Option records.</description>
+        <label>Mx Order Product Option All User</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

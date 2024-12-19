@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_Generated__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-1285: True if value generated at runtime</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True if value generated at runtime</inlineHelpText>
+    <label>Value Generated</label>
+    <trackTrending>false</trackTrending>
+    <securityClassification>Confidential</securityClassification>
+    <type>Checkbox</type>
+</CustomField>

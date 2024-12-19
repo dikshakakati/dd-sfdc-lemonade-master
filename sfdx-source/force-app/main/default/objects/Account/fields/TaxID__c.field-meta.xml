@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TaxID__c</fullName>
+    <description>LEM-2966: This field used to store Tax ID</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Tax ID of the Merchant applicable to all countries. In US enter EIN, in CAN enter TIN, in AUS enter ABN, in NZ enter NZBN Tax ID (13 digits).</inlineHelpText>
+    <label>Tax ID</label>
+    <length>175</length>
+    <maskChar>X</maskChar>
+    <maskType>all</maskType>
+    <required>false</required>
+    <securityClassification>Confidential</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>EncryptedText</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Current_Date_Greater_Than_Start_Date__c</fullName>
+    <description>LEM-13626: It is used to check if the current date is greater than start date of Quote Line.</description>
+    <externalId>false</externalId>
+    <formula>Today() &gt; SBQQ__StartDate__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Current Date Greater Than Start Date</label>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

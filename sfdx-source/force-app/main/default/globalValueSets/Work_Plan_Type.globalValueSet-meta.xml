@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Activations</fullName>
+        <default>false</default>
+        <label>Activations</label>
+    </customValue>
+    <customValue>
+        <fullName>Ads and Promo - Activate</fullName>
+        <default>false</default>
+        <label>Ads and Promo - Activate</label>
+    </customValue>
+    <customValue>
+        <fullName>Ads and Promo - Deactivate</fullName>
+        <default>false</default>
+        <label>Ads and Promo - Deactivate</label>
+    </customValue>
+    <customValue>
+        <fullName>Catalog</fullName>
+        <default>false</default>
+        <label>Catalog</label>
+    </customValue>
+    <customValue>
+        <fullName>Caviar - Cross Listing</fullName>
+        <default>false</default>
+        <label>Caviar - Cross Listing</label>
+    </customValue>
+    <customValue>
+        <fullName>Central Activations</fullName>
+        <default>false</default>
+        <label>Central Activations</label>
+    </customValue>
+    <customValue>
+        <fullName>COO Same Store</fullName>
+        <default>false</default>
+        <label>COO Same Store</label>
+    </customValue>
+    <customValue>
+        <fullName>Drive</fullName>
+        <default>false</default>
+        <label>Drive</label>
+    </customValue>
+    <customValue>
+        <fullName>Grant Portal Access</fullName>
+        <default>false</default>
+        <label>Grant Portal Access</label>
+    </customValue>
+    <customValue>
+        <fullName>Menu</fullName>
+        <default>false</default>
+        <label>Menu</label>
+    </customValue>
+    <customValue>
+        <fullName>Menu Updates</fullName>
+        <default>false</default>
+        <label>Menu Updates</label>
+    </customValue>
+    <customValue>
+        <fullName>Onboarding</fullName>
+        <default>false</default>
+        <label>Onboarding</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>POS</fullName>
+        <default>false</default>
+        <label>POS</label>
+    </customValue>
+    <customValue>
+        <fullName>Rate Change</fullName>
+        <default>false</default>
+        <label>Rate Change</label>
+    </customValue>
+    <customValue>
+        <fullName>Setup Banking</fullName>
+        <default>false</default>
+        <label>Setup Banking</label>
+    </customValue>
+    <customValue>
+        <fullName>Sponsored Listing</fullName>
+        <default>false</default>
+        <label>Sponsored Listing</label>
+    </customValue>
+    <customValue>
+        <fullName>Storefront</fullName>
+        <default>false</default>
+        <label>Storefront</label>
+    </customValue>
+    <customValue>
+        <fullName>Storefront Bundled</fullName>
+        <default>false</default>
+        <label>Storefront Bundled</label>
+    </customValue>
+    <customValue>
+        <fullName>Tablet</fullName>
+        <default>false</default>
+        <label>Tablet</label>
+    </customValue>
+    <customValue>
+        <fullName>Return</fullName>
+        <default>false</default>
+        <label>Return</label>
+    </customValue>
+    <customValue>
+        <fullName>Central Activations Outreach</fullName>
+        <default>false</default>
+        <label>Central Activations Outreach</label>
+    </customValue>
+    <customValue>
+        <fullName>Vendor Photoshoot</fullName>
+        <default>false</default>
+        <label>Vendor Photoshoot</label>
+    </customValue>
+    <customValue>
+        <fullName>Photo Linking</fullName>
+        <default>false</default>
+        <label>Photo Linking</label>
+    </customValue>
+    <customValue>
+        <fullName>Photo QA</fullName>
+        <default>false</default>
+        <label>Photo QA</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Kit</fullName>
+        <default>false</default>
+        <label>Marketing Kit</label>
+    </customValue>
+    <customValue>
+        <fullName>Ads</fullName>
+        <default>false</default>
+        <label>Ads</label>
+    </customValue>
+    <customValue>
+        <fullName>Promos</fullName>
+        <default>false</default>
+        <label>Promos</label>
+    </customValue>
+    <description>LEM-1874: It is set of Work Plan type values.</description>
+    <masterLabel>Work Plan Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

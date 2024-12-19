@@ -1,0 +1,26 @@
+/**
+ * @author Deloitte
+ * @date 10/15/2023
+ * @description CSS for customPicklist lightning web component.
+ */
+.buttonStyling {
+  padding: 0.5rem;
+  float: right;
+}
+.divStyling {
+  width: 100%;
+}
+.iconStyling {
+  display: inline-block;
+  width: 20%;
+}
+.valueStyling {
+  display: inline-block;
+  width: 75%;
+}
+.exampleHolder {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}

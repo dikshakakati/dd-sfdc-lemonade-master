@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Created__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-2082 If the record was created automatically during the onboarding of one or more stores, this field is true. If the record was created manually by a user or data load, this field is false.
+
+Duplication rules and logic are only applied to records that were system created.</description>
+    <externalId>false</externalId>
+    <label>System Created</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Sub_Type__c</fullName>
+    <description>LEM-78: This field indicates the sub-type based on the selected Opportunity Type.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates sub-type based on selected Opportunity type</inlineHelpText>
+    <label>Sub Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Former Partner</fullName>
+                <default>false</default>
+                <label>Former Partner</label>
+            </value>
+            <value>
+                <fullName>Net New Partner</fullName>
+                <default>false</default>
+                <label>Net New Partner</label>
+            </value>
+            <value>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+                <label>Upgrade</label>
+            </value>
+            <value>
+                <fullName>Downgrade</fullName>
+                <default>false</default>
+                <label>Downgrade</label>
+            </value>
+            <value>
+                <fullName>Ads &amp; Promos</fullName>
+                <default>false</default>
+                <label>Ads &amp; Promos</label>
+            </value>
+            <value>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+                <label>Cancel</label>
+            </value>
+            <value>
+                <fullName>COO</fullName>
+                <default>false</default>
+                <label>COO</label>
+            </value>
+            <value>
+                <fullName>Rescue</fullName>
+                <default>false</default>
+                <label>Rescue</label>
+            </value>
+            <value>
+                <fullName>Contract Correction</fullName>
+                <default>false</default>
+                <label>Contract Correction - New</label>
+            </value>
+            <value>
+                <fullName>Contract Correction - Amendment</fullName>
+                <default>false</default>
+                <label>Contract Correction - Amendment</label>
+            </value>
+            <value>
+                <fullName>Retention</fullName>
+                <default>false</default>
+                <label>Retention</label>
+            </value>
+            <value>
+                <fullName>New Store Expansion</fullName>
+                <default>false</default>
+                <label>New Store Expansion</label>
+            </value>
+            <value>
+                <fullName>Contract Consolidation</fullName>
+                <default>false</default>
+                <label>Contract Consolidation</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>New</controllingFieldValue>
+            <valueName>Former Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New</controllingFieldValue>
+            <valueName>Net New Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New</controllingFieldValue>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>COO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New</controllingFieldValue>
+            <valueName>Contract Correction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>Downgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>Ads &amp; Promos</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>Cancel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>Contract Correction - Amendment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>Retention</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>New Store Expansion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Existing</controllingFieldValue>
+            <valueName>Contract Consolidation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rescue</controllingFieldValue>
+            <valueName>Rescue</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

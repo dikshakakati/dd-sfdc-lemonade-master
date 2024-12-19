@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Items_to_receive_discount__c</fullName>
+    <description>LEM-17972</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the list of items that receive the % off or flat $ off discount under the promo.</inlineHelpText>
+    <label>Items to receive discount</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+    <securityClassification>Internal</securityClassification>
+</CustomField>

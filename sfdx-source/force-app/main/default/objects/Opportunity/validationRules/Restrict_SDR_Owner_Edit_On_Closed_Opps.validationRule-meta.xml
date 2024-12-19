@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_SDR_Owner_Edit_On_Closed_Opps</fullName>
+    <active>true</active>
+    <description>LEM-25660: It ensures SDR Owner can only be updated on open Opportunities by the logged-in user or if the SDR Owner is blank.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Opportunity_Validation_Rules),
+  NOT($Permission.Allow_Edit_Access_of_Opportunity_Fields),
+  IsClosed,
+  ISCHANGED(SDR_Opportunity_Owner__c)
+)</errorConditionFormula>
+    <errorMessage>A SDR cannot edit SDR Owner once an opportunity is Closed Won or Closed Lost. If a correction is needed, please work with your manager and S&amp;O representative.</errorMessage>
+</ValidationRule>

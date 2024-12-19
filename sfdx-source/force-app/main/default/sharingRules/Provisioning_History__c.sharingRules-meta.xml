@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Share_Provisioning_Histories_With_All_Internal_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>LEM-3273: It gives read only access for Provisioning Histories with all internal users.</description>
+        <label>Share Provisioning Histories With All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

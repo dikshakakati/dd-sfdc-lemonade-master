@@ -1,0 +1,154 @@
+<!--
+  @description       :
+  @author            : Gaurav
+  @group             :
+  @last modified on  : 06-11-2024
+  @last modified by  : Gaurav
+-->
+<template>
+  <template lwc:if={showComponent}>
+    <template if:true={columns}>
+      <div style="width: 100%; overflow: scroll">
+        <table
+          class="slds-table slds-no-row-hover slds-table_bordered uniform-columns"
+        >
+          <thead>
+            <tr>
+              <th></th>
+
+              <!-- Placed all the columns dynamically -->
+              <template for:each={columns} for:item="col">
+                <th key={col}>{col.Label}</th>
+              </template>
+
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <template
+              for:each={rowsToBeDisplayed}
+              for:item="row"
+              for:index="rowIndex"
+            >
+              <tr key={row.contractId} data-row-index={rowIndex}>
+                <!-- Accordion placed as first element -->
+                <td>
+                  <template lwc:if={row.isAccordionExtended}>
+                    <lightning-icon
+                      icon-name="utility:chevrondown"
+                      data-row-index={rowIndex}
+                      onclick={accordionHandler}
+                      size="x-small"
+                      alternative-text="Accordion"
+                      title={accordionTitle}
+                    ></lightning-icon>
+                  </template>
+                  <template lwc:else>
+                    <lightning-icon
+                      icon-name="utility:chevronright"
+                      data-row-index={rowIndex}
+                      onclick={accordionHandler}
+                      size="x-small"
+                      alternative-text="Accordion"
+                      title={accordionTitle}
+                    ></lightning-icon>
+                  </template>
+                </td>
+
+                <!-- Dynamically placing all the elements for the row based on type of the field-->
+                <template
+                  for:each={row.rowData}
+                  for:item="data"
+                  for:index="dataIndex"
+                >
+                  <template lwc:if={data.isHyperLinked}>
+                    <td class="slds-truncate" key={data.value}>
+                      <a href={data.link} target="_blank"
+                        >{data.hyperLinkDisplayField}</a
+                      >
+                    </td>
+                  </template>
+                  <template lwc:else>
+                    <td class="slds-truncate" key={data.value}>{data.value}</td>
+                  </template>
+                </template>
+
+                <!-- Create Ammend button placed as a last element -->
+                <td>
+                  <template if:false={disableChangeRates}>
+                    <template if:true={isAccount}>
+                      <lightning-button
+                        data-contract-id={row.contractId}
+                        label="Change Rates"
+                        title="Change Rates"
+                        onclick={handleShowChangeRate}
+                        class="slds-m-left_x-small"
+                      ></lightning-button>
+                    </template>
+                  </template>
+                  <template if:false={isAccount}>
+                    <lightning-button
+                      data-contract-id={row.contractId}
+                      label="Create Amendment"
+                      title="Create Amendment"
+                      onclick={handleAmendButton}
+                      class="slds-m-left_x-small"
+                    ></lightning-button>
+                  </template>
+                </td>
+              </tr>
+
+              <!-- If the accordion is being pressed below section will be expanded -->
+              <template if:true={row.isAccordionExtended}>
+                <!-- Template if the segment is Enterprise-->
+                <template lwc:if={row.isSegmentEnterprise}>
+                  <tr key={row.contractId}>
+                    <td colspan={expandedColsLength}>
+                      <c-subscription-details
+                        contract-id={row.contractId}
+                      ></c-subscription-details>
+                    </td>
+                  </tr>
+                </template>
+                <!-- Template if the segment is SMB-->
+                <template lwc:else>
+                  <tr key={row.contractId}>
+                    <td colspan={expandedColsLength}>
+                      <c-lwc-contract-extended-details
+                        contract-id={row.contractId}
+                        columns={columns}
+                        split-category={tabName}
+                        business-account-id={businessAccountId}
+                      >
+                      </c-lwc-contract-extended-details>
+                    </td>
+                  </tr>
+                </template>
+              </template>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </template>
+    <template if:true={showChangeRatePopup}>
+      <c-change-Rate-Popup
+        onclose={handleCloseChangeRate}
+        contractid={passcontractid}
+        accountid={passaccountid}
+      >
+      </c-change-Rate-Popup>
+    </template>
+  </template>
+  <template lwc:else>
+    <!-- spinner   -->
+    <div class="slds-p-around_large">
+      <lightning-spinner
+        alternative-text={loadingHelpText}
+        size="medium"
+        class="spinner-medium"
+        variant="brand"
+        data-text={loadingHelpText}
+      ></lightning-spinner>
+    </div>
+  </template>
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Toggle_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT(ISPICKVAL(Type__c,&apos;Toggle&apos;)),
+  OR(Toggle_Default__c , Toggle_Filter_Required__c )
+)</errorConditionFormula>
+    <errorDisplayField>Type__c</errorDisplayField>
+    <errorMessage>Toggle section fields can only be set for Type &apos;Toggle&apos;</errorMessage>
+</ValidationRule>

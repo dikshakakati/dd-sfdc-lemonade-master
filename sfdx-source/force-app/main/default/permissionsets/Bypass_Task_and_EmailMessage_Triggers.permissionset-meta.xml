@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Skip_Activity_Trigger</name>
+    </customPermissions>
+    <description>LEM-24161: Permission set with Custom Permission to bypass Task and EmailMessage Triggers</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Task and EmailMessage Triggers</label>
+</PermissionSet>

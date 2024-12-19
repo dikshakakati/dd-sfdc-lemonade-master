@@ -1,0 +1,8 @@
+<template>
+  <template if:true={displayMessage}>
+    <div class={messageTypeClass} role="alert">
+      <span class="slds-assistive-text">{messageType}</span>
+      <span style="white-space: pre-line"> {displayMessageText}</span>
+    </div>
+  </template>
+</template>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-502: It enables access for Data Ops Analyst and Manager persona.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Enterprise Data Operations</label>
+    <mutingPermissionSets>Enterprise_Data_Operations_Muted</mutingPermissionSets>
+    <permissionSets>AAR_Data_Ops</permissionSets>
+    <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>Approval_Fields_Edit_Access</permissionSets>
+    <permissionSets>Allow_Account_Reparenting</permissionSets>
+    <permissionSets>Allow_Business_Group_Id_Update</permissionSets>
+    <permissionSets>Allow_Account_Team_Member_Update</permissionSets>
+    <permissionSets>Allow_Account_Owner_Field_Update</permissionSets>
+    <permissionSets>Allow_Closed_Won_Opportunity_Field_Update</permissionSets>
+    <permissionSets>CPQ_AA_License</permissionSets>
+    <permissionSets>CPQ_License</permissionSets>
+    <permissionSets>Data_Operations</permissionSets>
+    <permissionSets>Enable_SSO</permissionSets>
+    <permissionSets>Enterprise_Data_Operations_In_App_Guidance</permissionSets>
+    <permissionSets>Enable_VSP_Recommendations</permissionSets>
+    <permissionSets>Enterprise_Sales_App</permissionSets>
+    <permissionSets>force__SlackSalesCloud</permissionSets>
+    <permissionSets>Ironclad_Workflow_Launch</permissionSets>
+    <permissionSets>Files_Connect</permissionSets>
+    <permissionSets>Manage_Report_Type_Access</permissionSets>
+    <permissionSets>Manage_Stores</permissionSets>
+    <permissionSets>NamedCredentialAccess</permissionSets>
+    <permissionSets>Onboarding_and_Activations_App</permissionSets>
+    <permissionSets>QuoteToCash</permissionSets>
+    <permissionSets>SBQQ__SteelBrickCPQUser</permissionSets>
+    <permissionSets>activeprime__ActivePrime_Admin</permissionSets>
+    <permissionSets>dfsle__DocuSign_Login</permissionSets>
+    <permissionSets>dfsle__DocuSign_Sender</permissionSets>
+    <permissionSets>dfsle__DocuSign_User</permissionSets>
+    <permissionSets>sbaa__AdvancedApprovalsUser</permissionSets>
+    <permissionSets>SMB_Sales_App</permissionSets>
+    <permissionSets>HighVelocitySalesUser</permissionSets>
+    <permissionSets>Allow_Churn_Severity_Field_Update</permissionSets>
+    <permissionSets>Log_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Country_Filter_For_SMB__c</fullName>
+    <description>LEM-15266: It indicates the billing country code for 'SMB' quotes.</description>
+    <externalId>false</externalId>
+    <formula>IF(Segment__c = $Label.AccountSegmentSMB,
+     Account_Billing_Country_Code__c, &apos;&apos;)</formula>
+    <label>Billing Country Filter For SMB</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

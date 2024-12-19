@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>All_Enterprise_Sales_Roles_In_App_Guidance_Prompts</name>
+    </customPermissions>
+    <description>LEM-3412: Permission Set for In App Guidance for Enterprise Data Operations Users.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Enterprise Data Operations In-App Guidance</label>
+</PermissionSet>

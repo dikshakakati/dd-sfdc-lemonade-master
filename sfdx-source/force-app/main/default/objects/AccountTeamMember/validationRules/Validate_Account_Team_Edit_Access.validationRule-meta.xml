@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Account_Team_Edit_Access</fullName>
+    <active>true</active>
+    <description>LEM-15845: It enables users to have edit access on Account Team Member.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  NOT($Permission.Allow_Edit_Access_of_Account_Team),
+  TEXT(Account.Segment__c) = $Label.AccountSegmentSMB,
+  OR(
+    Account.RecordType.DeveloperName = $Label.BusinessAccountRecordTypeName,
+    Account.RecordType.DeveloperName = $Label.StoreAccountRecordTypeName
+  ),
+  OR(
+    ISCHANGED(TeamMemberRole),
+    ISNEW()
+  )
+)</errorConditionFormula>
+    <errorMessage>You do not have access to modify the Account Team of this account. Please create an S&amp;O Support Case to request Account Team changes.</errorMessage>
+</ValidationRule>

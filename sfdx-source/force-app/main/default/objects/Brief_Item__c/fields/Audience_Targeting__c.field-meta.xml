@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audience_Targeting__c</fullName>
+    <description>LEM-2983: Captures the targeted audience for the products.</description>
+    <externalId>false</externalId>
+    <label>Audience Targeting</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All Users</fullName>
+                <default>false</default>
+                <label>All Users</label>
+            </value>
+            <value>
+                <fullName>New Customer to Merchant</fullName>
+                <default>false</default>
+                <label>New Customer to Merchant</label>
+            </value>
+            <value>
+                <fullName>Existing Customers to Merchant</fullName>
+                <default>false</default>
+                <label>Existing Customers to Merchant</label>
+            </value>
+            <value>
+                <fullName>DashPass Subscribers</fullName>
+                <default>false</default>
+                <label>DashPass Subscribers</label>
+            </value>
+            <value>
+                <fullName>Non-DashPass Subscribers</fullName>
+                <default>false</default>
+                <label>Non-DashPass Subscribers</label>
+            </value>
+            <value>
+                <fullName>New Users to DoorDash</fullName>
+                <default>false</default>
+                <label>New Users to DoorDash</label>
+            </value>
+            <value>
+                <fullName>Churned Users from Store</fullName>
+                <default>false</default>
+                <label>Churned Users from Store</label>
+            </value>
+            <value>
+                <fullName>New Users to Convenience</fullName>
+                <default>false</default>
+                <label>New Users to Convenience</label>
+            </value>
+            <value>
+                <fullName>New Users to Pickup</fullName>
+                <default>false</default>
+                <label>New Users to Pickup</label>
+            </value>
+            <value>
+                <fullName>New Users to Grocery</fullName>
+                <default>false</default>
+                <label>New Users to Grocery</label>
+            </value>
+            <value>
+                <fullName>DoorDash for Work Users</fullName>
+                <default>false</default>
+                <label>DoorDash for Work Users</label>
+            </value>
+            <value>
+                <fullName>New Users to Merchant</fullName>
+                <default>false</default>
+                <label>New Users to Merchant</label>
+            </value>
+            <value>
+                <fullName>Existing Users to Convenience</fullName>
+                <default>false</default>
+                <label>Existing Users to Convenience</label>
+            </value>
+            <value>
+                <fullName>Existing Users to Grocery</fullName>
+                <default>false</default>
+                <label>Existing Users to Grocery</label>
+            </value>
+             <value>
+                <fullName>Existing Users to Merchant</fullName>
+                <default>false</default>
+                <label>Existing Users to Merchant</label>
+            </value>
+             <value>
+                <fullName>Custom Audience</fullName>
+                <default>false</default>
+                <label>Custom Audience</label>
+            </value>
+             <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+             <value>
+                <fullName>DDFW User</fullName>
+                <default>false</default>
+                <label>DDFW User</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

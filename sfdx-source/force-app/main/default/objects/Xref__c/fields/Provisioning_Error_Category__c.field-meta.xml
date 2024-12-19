@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provisioning_Error_Category__c</fullName>
+    <description>Created this field to capture the Provisioning Error Category in case of an Provisioning Error, this can used to report the errors based on categories and work accordingly. https://doordash.atlassian.net/browse/LEM-9937</description>
+    <externalId>false</externalId>
+    <label>Provisioning Error Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Banking Validation</fullName>
+                <default>false</default>
+                <label>Banking Validation</label>
+            </value>
+            <value>
+                <fullName>Missing SFDC Data</fullName>
+                <default>false</default>
+                <label>Missing SFDC Data</label>
+            </value>
+            <value>
+                <fullName>Service Record Mismatch</fullName>
+                <default>false</default>
+                <label>Service Record Mismatch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

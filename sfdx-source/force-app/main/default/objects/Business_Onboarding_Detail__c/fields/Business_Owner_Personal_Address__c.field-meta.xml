@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Owner_Personal_Address__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15117: Indicates the business owner personal address.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Signifies the Mx store hours of operations</inlineHelpText>
+    <label>Business Owner Personal Address</label>
+    <length>1000</length>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

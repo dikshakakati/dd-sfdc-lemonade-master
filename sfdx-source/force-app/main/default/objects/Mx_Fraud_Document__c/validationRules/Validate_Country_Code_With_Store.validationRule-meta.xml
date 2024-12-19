@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Country_Code_With_Store</fullName>
+    <active>true</active>
+    <description>LEM-15836: It validates the Country Code by matching it with Store Account&apos;s Country Code.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Mx_Fraud_Document_Validation_Rules),
+  ISBLANK(Mx_Store_Id__r.Legacy_ID__c),
+  IF(
+    AND(
+      NOT(ISBLANK(Mx_Store_Id__c)),
+      NOT(ISBLANK(TEXT(Mx_Store_Id__r.BillingCountryCode)))
+      ),
+    TEXT(Mx_Store_Id__r.BillingCountryCode) != TEXT(Mx_Country__c),
+    false
+  )
+)</errorConditionFormula>
+    <errorMessage>Country code should be matching with Store Account&apos;s Country code.</errorMessage>
+</ValidationRule>

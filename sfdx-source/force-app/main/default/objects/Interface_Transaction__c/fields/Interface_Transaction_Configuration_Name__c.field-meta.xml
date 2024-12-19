@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interface_Transaction_Configuration_Name__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13778: It stores the &apos;Interface Transaction Configuration&apos; custom metadata record name which contains the configurations specific to interface transaction record.</description>
+    <externalId>false</externalId>
+    <label>Interface Transaction Configuration Name</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

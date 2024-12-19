@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failed_address_verification</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Address_ID__c</columns>
+    <columns>Address_Verification_Status__c</columns>
+    <columns>Rejected_Reason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Address_Verification_Status__c</field>
+        <operation>equals</operation>
+        <value>Rejected</value>
+    </filters>
+    <label>Failed Address Verification</label>
+</ListView>

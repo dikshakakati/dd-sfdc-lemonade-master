@@ -1,0 +1,31 @@
+<!-- copyTextComponent.html -->
+<template>
+    <!--<div class="container">
+        <div class="container">
+            <div class="text-container">
+                <p>{displayText}</p>
+            </div>
+            <div class="clipboard-container" onclick={copyToClipboard} onmouseover={handleMouseOver} onmouseout={handleMouseOut}>
+                <template if:true={copied}>
+                    <lightning-icon icon-name="utility:copy_to_clipboard" size="small"></lightning-icon>
+                    <span class="tooltip">{copiedToolTip}</span>
+                </template>
+                <template if:false={copied}>
+                    <lightning-icon icon-name="utility:copy" size="small"></lightning-icon>
+                    <span class="tooltip">{clickToCopyToolTip}</span>
+                </template>
+            </div>
+            
+        </div>
+    </div>-->
+    <div>
+        <!--
+        <lightning-button label={displayText} title={getTitle} onclick={copyToClipboard}  variant={getVariant} icon-name={getIcon} icon-position="right" class="slds-m-left_x-small"></lightning-button>
+        -->
+        <button class={getButtonClass} type="button" onclick={copyToClipboard}>
+            {displayText}&nbsp;&nbsp;&nbsp;&nbsp;
+            <lightning-icon icon-name={getIcon} size="x-small" color={getIconColor}></lightning-icon>
+        </button>
+
+    </div>
+</template>

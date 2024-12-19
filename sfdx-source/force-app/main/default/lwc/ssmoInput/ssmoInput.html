@@ -1,0 +1,162 @@
+<!--
+  @description       :  Sedn to SSMO UI Dynamic Form
+  @author            : Soumya Dash
+  @group             :
+  @last modified on  : 09-17-2024
+  @last modified by  : Soumya Dash
+-->
+<template>
+    <template if:true={isLoaded}>
+        <lightning-record-edit-form object-api-name={objectapiname} onload={setFormLoad} >
+            <lightning-layout multiple-rows pull-to-boundary="small">
+                    <template for:each={metadataToDisplay} for:item="metadata" >
+                        <lightning-layout-item  key={metadata.Id} size="6" padding="horizontal-medium">
+
+                            <!-- simple lightning input field -->
+                            <template if:true={metadata.simpleMetadata}>
+                                <span>
+                                <template lwc:if={simpleDataDisabled}>
+                                    <lightning-input-field
+                                            field-name={metadata.Field_API_Name__c}
+                                            data-api={metadata.Field_API_Name__c}
+                                            value={metadata.value}
+                                            disabled="true">
+                                        </lightning-input-field>
+                                </template>
+                                <template lwc:else>
+                                    <template lwc:if={metadata.required}>
+                                        <lightning-input-field
+                                            field-name={metadata.Field_API_Name__c}
+                                            data-api={metadata.Field_API_Name__c}
+                                            onchange={handleValueChange}
+                                            value={metadata.value}
+                                            class="date-format-hide"
+                                            required="true">
+                                        </lightning-input-field>
+                                    </template>
+                                    <template lwc:else>
+                                        <lightning-input-field
+                                            field-name={metadata.Field_API_Name__c}
+                                            data-api={metadata.Field_API_Name__c}
+                                            onchange={handleValueChange}
+                                            value={metadata.value}
+                                            class="date-format-hide slds-not-required">
+                                        </lightning-input-field>
+                                    </template>
+                                </template>
+                                </span>
+                            </template>
+
+                            <!-- address lightning input -->
+                            <template if:true={metadata.addressMetadata}>
+                                <span>
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label">{metadata.Input_UI_Label__c}</label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-address
+                                                street-label="Street"
+                                                city-label="City"
+                                                country-label="Country"
+                                                province-label="State/Province"
+                                                postal-code-label="Zip/PostalCode"
+                                                onchange={handleAddressChange}
+                                                show-address-lookup
+                                                aria-label="hidden">
+                                            </lightning-input-address>
+                                        </div>
+                                    </div>
+                                </span>
+                            </template>
+
+                            <!-- Emputy Block -->
+                            <template if:true={metadata.emptyBlock}>
+                            </template>
+
+                            <!-- genreic lightning Input -->
+                            <template if:true={metadata.genericInput}>
+                                <template lwc:if={metadata.genericPicklistInput}>
+                                    <span>
+                                    <template lwc:if={metadata.required}>
+                                        <lightning-combobox
+                                            variant="label-inline"
+                                            name={metadata.Field_API_Name__c}
+                                            label={metadata.Input_UI_Label__c}
+                                            value={metadata.value}
+                                            options={metadata.genericPicklistInputValues}
+                                            onchange={handleGenericInputChange}
+                                            required="true"
+                                        ></lightning-combobox>
+                                    </template>
+                                    <template lwc:else>
+                                        <lightning-combobox
+                                            variant="label-inline"
+                                            name={metadata.Field_API_Name__c}
+                                            label={metadata.Input_UI_Label__c}
+                                            value={metadata.value}
+                                            options={metadata.genericPicklistInputValues}
+                                            onchange={handleGenericInputChange}
+                                        ></lightning-combobox>
+                                    </template>
+                                    </span>
+                                </template>
+                                <template lwc:else>
+                                    <span>
+                                        <lightning-input
+                                            variant = "label-inline"
+                                            type={metadata.Input_Type__c}
+                                            name={metadata.Field_API_Name__c}
+                                            value={metadata.value}
+                                            onchange={handleGenericInputChange}
+                                            label={metadata.Input_UI_Label__c}
+                                            class="date-format-hide">
+                                        </lightning-input>
+                                    </span>
+                                </template>
+
+                            </template>
+
+                            <!-- Payment Link -->
+                            <template if:true={metadata.paymentLink}>
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-m-top_xx-small slds-form-element__label">{metadata.Input_UI_Label__c}</label>
+                                    <div class="slds-form-element__control slds-p-top_x-small">
+                                        <template lwc:if={isPaymentAccountFound}>
+                                            <a href={paymentAccountLink} target="_blank" class="slds-truncate slds-text-link doordashLink" onclick={handlePayementAccountLinkClick}>{paymentAccountName}</a>
+                                        </template>
+                                        <template lwc:else>
+                                            <a class="slds-text-heading_small doordashLink" href="" taregt="_blank" onclick={handleCreatePaymentAccount}>{invalidPaymentAccount}</a>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <!-- brand lightning record picker -->
+                            <template if:true={metadata.brandRecordPicker}>
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label">
+                                        <abbr class="slds-required" title="required">*</abbr>
+                                        {metadata.Input_UI_Label__c}
+                                    </label>
+                                    <lightning-helptext content={brandHelpText}></lightning-helptext>
+                                    <div class="slds-form-element__control">
+                                        <lightning-record-picker
+                                            variant="label-hidden"
+                                            label="brand"
+                                            object-api-name={metadata.Field_API_Name__c}
+                                            placeholder={metadata.Input_UI_Label__c}
+                                            value={metadata.value}
+                                            filter={brandfilter}
+                                            onchange={handleBrandRecordPicker}
+                                            required>
+                                        </lightning-record-picker>
+                                    </div>
+                                </div>
+                            </template>
+
+                        </lightning-layout-item>
+                    </template>
+            </lightning-layout>
+        </lightning-record-edit-form>
+
+    </template>
+</template>

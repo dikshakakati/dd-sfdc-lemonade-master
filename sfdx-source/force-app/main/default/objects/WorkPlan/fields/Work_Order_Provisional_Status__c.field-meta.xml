@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order_Provisional_Status__c</fullName>
+    <description>As part of BASD-53808 created this field to display the provisioning status of WorkOrder on WorkPlan list view.</description>
+    <externalId>false</externalId>
+    <formula>Text(WorkOrder.Provisioning_Status__c )</formula>
+    <label>Work Order Provisional Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

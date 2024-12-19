@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictIncorrectOpportunityAssociation</fullName>
+    <active>true</active>
+    <description>LEM-11197: It restricts the association of Opportunity that does not have the same Account associated with the parent Work Order.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Work_Order_Validation_Rules),
+  ISBLANK(ParentWorkOrderId),
+  NOT(ISBLANK(Opportunity__c)),
+  OR(
+    AND(
+      Opportunity__r.AccountId != AccountId,
+      Opportunity__r.AccountId != Account.ParentId,
+      Opportunity__r.AccountId != Account.Ultimate_Parent_Account__c,
+      Segment__c = $Label.AccountSegmentSMB
+    ),
+    AND(
+      Opportunity__r.AccountId != AccountId,
+      Segment__c != $Label.AccountSegmentSMB
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>The opportunity you have selected is not related to the Work Order&apos;s associated Account. Please select a new opportunity thats related to the Work Order&apos;s associated Account.</errorMessage>
+</ValidationRule>

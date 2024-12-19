@@ -1,0 +1,27 @@
+<template>
+  <div>
+    <lightning-combobox
+      name={pickListLabel}
+      label={pickListLabel}
+      value={pickListValue}
+      placeholder={placeholder}
+      options={selectedOptions}
+      onchange={handleChange}
+      required={isRequired}
+      message-when-value-missing={errorMessage}
+      disabled={isDisabled}
+      field-level-help="Please select value"
+    ></lightning-combobox>
+  </div>
+  <div if:true={selectOther}>
+    <br />
+    <lightning-input
+      type="text"
+      name="input1"
+      label={otheOptionFieldLabel}
+      variant={otheOptionFieldVariant}
+      value={valueForOtherPicklist}
+      onchange={handleInputChange}
+    ></lightning-input>
+  </div>
+</template>

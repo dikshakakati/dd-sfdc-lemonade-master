@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Full_Name__c</fullName>
+    <description>LEM-5684: It shows the full name of the user that is first name plus last name.</description>
+    <externalId>false</externalId>
+    <formula>IF(FirstName = &apos;&apos;, LastName, FirstName + &apos; &apos;+ LastName )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Full Name</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

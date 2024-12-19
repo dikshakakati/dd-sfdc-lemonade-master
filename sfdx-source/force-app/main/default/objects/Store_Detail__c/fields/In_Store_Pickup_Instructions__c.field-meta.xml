@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Store_Pickup_Instructions__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-15116: Indicates any in-store pickup instructions once the Dasher has arrived at the store.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please add any in-store pickup instructions once the Dasher has arrived at the store (e.g. pickup counter placement, etc.)</inlineHelpText>
+    <label>In-Store Pickup Instructions</label>
+    <length>500</length>
+    <securityClassification>Public</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

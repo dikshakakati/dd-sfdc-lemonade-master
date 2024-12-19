@@ -1,0 +1,18 @@
+.border_template {
+  border: 0.15rem solid #00838a;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+.word_break {
+  word-wrap: break-word;
+}
+.spins::after {
+  position: relative;
+  display: inline-block;
+  content: "Fetching Franchise Accounts......";
+  width: 100%;
+  text-align: center;
+  margin-top: 50%;
+  vertical-align: middle;
+  font-weight: bold;
+}

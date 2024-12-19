@@ -1,0 +1,56 @@
+<apex:page sidebar="false" showheader="false">
+  <script src="../../soap/ajax/45.0/connection.js"></script>
+  <script src="/soap/ajax/45.0/functions.js"></script>
+  <script src="/soap/ajax/45.0/apex.js"></script>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/easyXDM/2.4.20/easyXDM.js"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="slds-scope">
+    <apex:includeLightning />
+    <div id="componentId" />
+    <script type="text/javascript">
+      var configuredObject;
+      var rpc = new easyXDM.Rpc(
+        {},
+        {
+          remote: {
+            postMessage: {}
+          },
+          local: {
+            postMessage: function (message) {
+              configuredObject = JSON.parse(message);
+              console.log("@@configuredObject", configuredObject);
+            }
+          }
+        }
+      );
+      $Lightning.use("c:DisplayQuoteLineAttributesApp", function () {
+        $Lightning.createComponent(
+          "c:lwcDisplayQuoteLineEditorAttributes",
+          {
+            productCode: configuredObject.target.SBQQ__ProductCode__c,
+            recordId: configuredObject.target.Id,
+            quoteId: configuredObject.target.SBQQ__Quote__c,
+            productId: configuredObject.target.SBQQ__Product__c,
+            poId: configuredObject.target.SBQQ__PricebookEntryId__c,
+            prodName: configuredObject.target.SBQQ__ProductName__c,
+            packageName: configuredObject.target.Package__c,
+            groupId: configuredObject.target.SBQQ__Group__c,
+            quoteType: configuredObject.quote.SBQQ__Type__c,
+            packageProd : configuredObject.target.SBQQ__ProductOption__c,
+            prodNumber : configuredObject.target.SBQQ__Number__c,
+            requiredBy : configuredObject.target.SBQQ__RequiredBy__c,
+            feeType: configuredObject.target.Fee_Type__c,
+            dealdeskuser: configuredObject.quote.Is_A_Deal_Desk_Active_User__c
+          },
+          "componentId"
+        );
+      });
+    </script>
+    <apex:pageMessages />
+  </body>
+</apex:page>

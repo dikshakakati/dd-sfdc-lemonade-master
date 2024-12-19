@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NumberOfLocations__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-13618 : It represents number of locations of the resturant.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of locations of the Rx</inlineHelpText>
+    <label>Number of Locations</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

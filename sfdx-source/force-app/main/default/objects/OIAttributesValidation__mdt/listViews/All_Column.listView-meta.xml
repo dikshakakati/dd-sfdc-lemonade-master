@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Column</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>FieldTocheck__c</columns>
+    <columns>Object_Name__c</columns>
+    <columns>FieldSource__c</columns>
+    <columns>FieldConditionOperator__c</columns>
+    <columns>Custom_Code__c</columns>
+    <columns>Validation_Type__c</columns>
+    <columns>Action__c</columns>
+    <columns>FieldConditionValue__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Column</label>
+</ListView>

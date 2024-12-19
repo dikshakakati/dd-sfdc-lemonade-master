@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LEM-4000: It enables access for Snowflake user.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Snowflake Integration</label>
+    <permissionSets>CPQ_License</permissionSets>
+    <permissionSets>RESSMO</permissionSets>
+    <permissionSets>Snowflake</permissionSets>
+    <permissionSets>Snowflake_QuoteToCash</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

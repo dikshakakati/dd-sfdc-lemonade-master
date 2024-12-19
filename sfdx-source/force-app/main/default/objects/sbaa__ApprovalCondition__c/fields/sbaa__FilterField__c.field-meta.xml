@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sbaa__FilterField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Field to evaluate the the Tested Field/Variable against</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field to evaluate the the Tested Field/Variable against</inlineHelpText>
+    <label>Filter Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Name</fullName>
+                <default>false</default>
+                <label>Name</label>
+            </value>
+            <value>
+                <fullName>Payment_Account_Payment_Terms__c</fullName>
+                <default>false</default>
+                <label>Payment_Account_Payment_Terms__c</label>
+            </value>
+            <value>
+                <fullName>Payment_Account_Payment_Terms_Number__c</fullName>
+                <default>false</default>
+                <label>Payment_Account_Payment_Terms_Number__c</label>
+            </value>
+            <value>
+                <fullName>Users_Approval_Group__c</fullName>
+                <default>false</default>
+                <label>Users_Approval_Group__c</label>
+            </value>
+            <value>
+                <fullName>Top_Mx_Signing_Bonus_Approval_Threshold__c</fullName>
+                <default>false</default>
+                <label>Top_Mx_Signing_Bonus_Approval_Threshold__c</label>
+            </value>
+            <value>
+                <fullName>Quarterly_Signing_Bonus_Threshold__c</fullName>
+                <default>false</default>
+                <label>Quarterly_Signing_Bonus_Threshold__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

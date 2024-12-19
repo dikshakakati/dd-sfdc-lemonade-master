@@ -1,0 +1,20 @@
+<!--
+@author Deloitte
+@date 18/07/2022
+@description Aura component to wrap readinessCheckOnStores lightning web component.
+-->
+<aura:component
+  implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"
+>
+  <!--@description It is used to hide the model on clicking Re-run Readiness Check quick action.-->
+  <aura:html tag="style">
+    .slds-modal { visibility: hidden; display: none; } .slds-backdrop { display:
+    none; }
+  </aura:html>
+  <aura:attribute
+    name="recordId"
+    type="String"
+    description="Id of the currect record"
+  />
+  <c:readinessCheckOnStores recordId="{!v.recordId}"></c:readinessCheckOnStores>
+</aura:component>

@@ -1,0 +1,26 @@
+<!--
+  * @author Deloitte
+  * @date 10/05/2022
+  * @description It is used for showing warning message on "Not Workable" WorkStep or WorkPlan.
+-->
+<template>
+  <template if:true={loaded}>
+    <template if:true={showMessage}>
+      <lightning-card>
+        <div class="slds-p-horizontal_small slds-p-bottom_xx-small">
+          <lightning-icon
+            icon-name="utility:warning"
+            variant={warningIconVariant}
+          >
+          </lightning-icon>
+          <p class="messageStyling">{bannerMessage}</p>
+        </div>
+      </lightning-card>
+    </template>
+  </template>
+  <div if:false={loaded} class="spinnerStyling">
+    <lightning-spinner
+      alternative-text={loadingAlternativeText}
+    ></lightning-spinner>
+  </div>
+</template>

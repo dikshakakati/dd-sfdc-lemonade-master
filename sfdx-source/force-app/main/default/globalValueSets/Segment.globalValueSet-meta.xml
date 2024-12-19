@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Enterprise</fullName>
+        <default>false</default>
+        <label>Enterprise</label>
+    </customValue>
+    <customValue>
+        <fullName>SMB</fullName>
+        <default>false</default>
+        <label>SMB</label>
+    </customValue>
+    <customValue>
+        <fullName>Mid-Market</fullName>
+        <default>false</default>
+        <label>Mid Market</label>
+    </customValue>
+    <description>LEM-14082: To store segment values to utilize across different objects.</description>
+    <masterLabel>Segment</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

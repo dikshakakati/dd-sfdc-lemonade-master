@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drive_Products_Approvals_Eligibility__c</fullName>
+    <description>LEM-25414: Evaluates if approval rule should trigger for Drive Products.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+      SBQQ__Existing__c = false,
+      IF(
+        Package__c = $Label.SmallOrderFulfillment_Package,
+        IF(
+          AND(
+            OR(
+              SBQQ__ProductName__c = $Label.Delivery_Product,
+              SBQQ__ProductName__c = $Label.AlcoholDelivery_Product
+            ),
+            OR(
+              AND(
+                ISBLANK(TEXT(Prior_Approved_Commission_Fee__c)),
+                SBQQ__SpecialPrice__c &lt; Value($Label.SixPointFiveZeroValve)
+              ),
+              AND(
+                !ISBLANK(TEXT(Prior_Approved_Commission_Fee__c)),
+                SBQQ__SpecialPrice__c &lt; Prior_Approved_Commission_Fee__c
+              )
+            )
+          ),
+          1,
+          IF(
+            AND(
+              SBQQ__ProductName__c = $Label.CashonDelivery_Product,
+              OR(
+                AND(
+                  ISBLANK(TEXT(Prior_Approved_Commission_Fee__c)),
+                  SBQQ__SpecialPrice__c &lt; Value($Label.ZeroPointSixSevenValue)
+                ),
+                AND(
+                  !ISBLANK(TEXT(Prior_Approved_Commission_Fee__c)),
+                  SBQQ__SpecialPrice__c &lt; Prior_Approved_Commission_Fee__c
+                )
+              )
+            ),
+            1,
+            2
+          )
+        ),
+        IF(
+          AND(
+            Package__c = $Label.LargeOrderFulfillment_Package,
+            OR(
+              SBQQ__ProductName__c = $Label.Delivery_Product,
+              SBQQ__ProductName__c = $Label.AlcoholDelivery_Product
+            )
+          ),
+          IF(
+            AND(
+              Text(Fee_Type__c) = $Label.FeeType_Fee,
+              OR(
+                AND(
+                  ISBLANK(TEXT(Prior_Approved_Commission_Fee__c)),
+                  OR(
+                    SBQQ__SpecialPrice__c &lt; Value($Label.TwentyValue),
+                    SBQQ__SpecialPrice__c &gt; Value($Label.HundredValue)
+                  )
+                ),
+                AND(
+                  !ISBLANK(TEXT(Prior_Approved_Commission_Fee__c)),
+                  OR(
+                    AND(
+                      SBQQ__SpecialPrice__c &lt; Prior_Approved_Commission_Fee__c,
+                      SBQQ__SpecialPrice__c &lt; Value($Label.TwentyValue),
+                      SBQQ__SpecialPrice__c != Prior_Approved_Commission_Fee__c
+                    ),
+                    AND(
+                      SBQQ__SpecialPrice__c &gt; Prior_Approved_Commission_Fee__c,
+                      SBQQ__SpecialPrice__c &gt; Value($Label.HundredValue),
+                      SBQQ__SpecialPrice__c != Prior_Approved_Commission_Fee__c
+                    )
+                  )
+                ),
+                Min__c &lt; Value($Label.TwentyThreeValue)
+              )
+            ),
+            1,
+            IF(
+              AND(
+                Text(Fee_Type__c) = $Label.FeeType_Commission,
+                OR(
+                  AND(
+                    (Requested_Commission__c*100) &lt; Value($Label.TenValue),
+                    ISBLANK(TEXT(Prior_Approved_Commission_Percent__c))
+                  ),
+                  AND(
+                    Requested_Commission__c &lt; Prior_Approved_Commission_Percent__c,
+                    !ISBLANK(TEXT(Prior_Approved_Commission_Percent__c))
+                  ),
+                  Min__c &lt; Value($Label.TwentyThreeValue)
+                )
+              ),
+              1,
+              2
+            )
+          ),
+          2
+        )
+      ),
+      2
+    )
+    </formula>
+    <label>Drive Products Approvals Eligibility</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

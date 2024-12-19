@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Lead_Converted_To_Existing_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-14727: It is created to identify whether lead is converted to existing account or new account.</description>
+    <externalId>false</externalId>
+    <label>Is Lead Converted To Existing Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

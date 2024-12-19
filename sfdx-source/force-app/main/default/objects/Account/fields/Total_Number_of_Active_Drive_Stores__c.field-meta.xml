@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Number_of_Active_Drive_Stores__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-16306: It stores count of Active Drive Stores for the Business.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/lightning/r/Report/&quot;+$CustomMetadata.Static_Configurations__mdt.Total_Number_of_Active_Drive_Stores.Configuration_Value__c +&quot;/view?fv4=&quot;+Id+&quot;&amp;fv5=&quot;+Id+&quot;&amp;fv6=&quot;+Id+&quot;&amp;fv7=&quot;+Id  ,TEXT(TotalNoOfActiveDriveStoresCalculate__c),&quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Count of Active Drive Stores for the Business.</inlineHelpText>
+    <label>Total # of Active Drive Stores</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Starting_Point__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-1157: This field represents the starting point of the store account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates the starting point of the store account</inlineHelpText>
+    <label>Starting Point</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

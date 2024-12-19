@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>English</fullName>
+        <default>false</default>
+        <label>English</label>
+    </customValue>
+    <customValue>
+        <fullName>French</fullName>
+        <default>false</default>
+        <label>French</label>
+    </customValue>
+    <customValue>
+        <fullName>Cantonese</fullName>
+        <default>false</default>
+        <label>Cantonese</label>
+    </customValue>
+    <customValue>
+        <fullName>Korean</fullName>
+        <default>false</default>
+        <label>Korean</label>
+    </customValue>
+    <customValue>
+        <fullName>Mandarin</fullName>
+        <default>false</default>
+        <label>Mandarin</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Spanish</fullName>
+        <default>false</default>
+        <label>Spanish</label>
+    </customValue>
+    <customValue>
+        <fullName>Arabic</fullName>
+        <default>false</default>
+        <label>Arabic</label>
+    </customValue>
+    <customValue>
+        <fullName>Vietnamese</fullName>
+        <default>false</default>
+        <label>Vietnamese</label>
+    </customValue>
+    <description>LEM-14086: Preferred Language values referred on Lead/Account/Contact.</description>
+    <masterLabel>Preferred Language Values</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

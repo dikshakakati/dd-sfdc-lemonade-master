@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merge_Field_Mapping</fullName>
+    <active>true</active>
+    <description>LEM-13777: It stores the merge field details specific to each integration scenario.</description>
+    <label>Merge Field Mapping</label>
+    <picklistValues>
+        <picklist>Comparator__c</picklist>
+        <values>
+            <fullName>EQUALS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIELD_CONTAINS_VALUE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIELD_DOES_NOT_CONTAIN_VALUE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIELD_IN_VALUE_ENTRIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIELD_NOT_IN_VALUE_ENTRIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GREATER_THAN_EQUALS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LESS_THAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT_EQUAL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

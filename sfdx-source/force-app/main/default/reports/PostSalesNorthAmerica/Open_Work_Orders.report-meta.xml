@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Work_Orders__r$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities.Work_Orders__r$Actual_Number_Of_Stores__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Work_Orders__r$Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Work_Orders__r$Status</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Work_Orders__r$Proposed_Date_of_Activation__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Work_Orders__r$Proposed_Date_of_Menu__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Work_Orders__r$Proposed_Date_of_Activation_Original__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>The current status of open work orders for all Accounts I own</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Opportunities.Work_Orders__r$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Onboarding Complete</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Open Work Orders</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Work_Orders__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Opportunities.Work_Orders__r$Proposed_Date_of_Activation__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

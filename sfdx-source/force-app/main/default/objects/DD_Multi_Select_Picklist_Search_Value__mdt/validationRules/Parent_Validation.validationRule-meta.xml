@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISPICKVAL(Parent__r.Type__c,&apos;Static Values (in DD Multi Select Picklist Search Value)&apos;))</errorConditionFormula>
+    <errorDisplayField>Parent__c</errorDisplayField>
+    <errorMessage>Entries are allowed only for parents of type &apos;Static Values&apos; in this custom metadata type</errorMessage>
+</ValidationRule>

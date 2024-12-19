@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Xref_Validation_Rules</name>
+    </customPermissions>
+    <description>LEM-5684: Used to bypass validation rule on Xref object.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Xref Validations</label>
+</PermissionSet>

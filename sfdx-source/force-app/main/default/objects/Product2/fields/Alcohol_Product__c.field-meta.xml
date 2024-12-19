@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alcohol_Product__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is created to flag if the product is Alcohol Product or not</description>
+    <externalId>false</externalId>
+    <label>Alcohol Product</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

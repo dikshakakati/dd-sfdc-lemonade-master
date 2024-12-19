@@ -1,0 +1,13 @@
+<!--
+  * @author  Deloitte
+  * @date 10/12/2022
+  * @description LWC qucik record action for Sync With Netsuite action button
+-->
+<template>
+    <form>
+        <div if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+    </form>
+        <c-show-toast-message></c-show-toast-message>
+</template>

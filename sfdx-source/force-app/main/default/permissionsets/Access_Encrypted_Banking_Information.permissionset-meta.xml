@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>ViewEncryptedDataController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>View_Encrypted_Banking_Information</name>
+    </customPermissions>
+    <description>LEM-2255: It enables access to the encrypted banking information for a persona.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Access Encrypted Banking Information</label>
+    <license>Salesforce</license>
+</PermissionSet>

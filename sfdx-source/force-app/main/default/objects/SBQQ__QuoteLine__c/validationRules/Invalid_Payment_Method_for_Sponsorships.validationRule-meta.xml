@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Payment_Method_for_Sponsorships</fullName>
+    <active>true</active>
+    <description>LEM-9644: Created to prevent the saving of a quote if any Sponsorship / Sponsored Brands related package is set to &quot;Withholding&quot; option type</description>
+    <errorConditionFormula>AND(ISPICKVAL(Payment_Method__c,&apos;Withholding&apos;),
+OR(
+  OR(CONTAINS(Package_Product_Code__c, &apos;10080-&apos;),
+     CONTAINS(Package_Product_Code__c, &apos;10081-&apos;)
+  ),
+  OR(Package_Product_Code__c = &apos;-10080&apos;,
+     Package_Product_Code__c = &apos;-10081&apos;)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Payment_Method__c</errorDisplayField>
+    <errorMessage>You cannot set Sponsorship products to &quot;Withholding&quot;</errorMessage>
+</ValidationRule>

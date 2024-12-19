@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validated_Return_Reason__c</fullName>
+    <description>LEM-17081: This field's value is sent by "Tablet" vendor once the defective item is received to capture the notes about actual return reason, updated via Mulesoft integration.</description>
+    <externalId>false</externalId>
+    <label>Validated Return Reason</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

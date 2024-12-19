@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Cases$Account</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Subject</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Description</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$Status</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Account.Cases$CreatedDate</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Description of all support cases tied to my accounts.</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Cases$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Open Support Cases</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>User_Specific_Accounts_and_Their_Cases__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Cases$LastModifiedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Type_Required</fullName>
+    <active>true</active>
+    <description>LEM-15978: Shipping Type is required if type is Tablet.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.ByPass_Bulk_Update_Staging_Validation), 
+    Type__c = $Label.Work_Order_Tablet, 
+    ISPICKVAL(Shipping_Type__c, &apos;&apos;)
+   )</errorConditionFormula>
+    <errorMessage>Shipping Type is required if type is &apos;Tablet&apos;.</errorMessage>
+</ValidationRule>

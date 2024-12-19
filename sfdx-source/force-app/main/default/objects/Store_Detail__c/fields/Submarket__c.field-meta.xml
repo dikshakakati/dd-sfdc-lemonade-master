@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SubMarket__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-13402: It represents the sub-market of the store and would be populated by Mulesoft.</description>
+    <label>Submarket</label>
+    <referenceTo>Submarket__c</referenceTo>
+    <relationshipLabel>Store Details</relationshipLabel>
+    <relationshipName>Store_Details</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Lookup</type>
+</CustomField>

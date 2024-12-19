@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>DoorDash</fullName>
+        <default>false</default>
+        <label>DoorDash</label>
+    </customValue>
+    <customValue>
+        <fullName>Self-Delivery</fullName>
+        <default>false</default>
+        <label>Self-Delivery</label>
+    </customValue>
+    <customValue>
+        <fullName>Flexible Fulfillment</fullName>
+        <default>false</default>
+        <label>Flexible Fulfillment</label>
+    </customValue>
+    <description>LEM-174 - Identifies if a bundle or option product is fulfilled by DoorDash, Self-Delivery, or Flexible Fulfillment.</description>
+    <masterLabel>Fulfillment Method</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

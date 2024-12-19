@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Step__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>LEM-13305: It is used to store the Activation Checklist Work Step associated with the Store Account.</description>
+    <externalId>false</externalId>
+    <label>Work Step</label>
+    <referenceTo>WorkStep</referenceTo>
+    <relationshipLabel>Activation Checklists (Work Step)</relationshipLabel>
+    <relationshipName>Activation_Checklists1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

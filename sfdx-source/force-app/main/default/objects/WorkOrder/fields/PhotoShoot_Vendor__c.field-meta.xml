@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PhotoShoot_Vendor__c</fullName>
+    <description>LEM-21576 : Assigning PhotoShoot Vendor For Bulk Request</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Assigning PhotoShoot Vendor For Bulk Request</inlineHelpText>
+    <label>PhotoShoot Vendor</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <securityClassification>Proprietary</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

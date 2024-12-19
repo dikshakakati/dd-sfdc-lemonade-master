@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Result__c</fullName>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>LEM-14155: It represents the result of the associated call.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents the result of a call</inlineHelpText>
+    <label>Call Result</label>
+    <required>false</required>
+    <securityClassification>Proprietary</securityClassification>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Appointment Set</fullName>
+                <default>false</default>
+                <label>Appointment Set</label>
+            </value>
+            <value>
+                <fullName>Completed Call</fullName>
+                <default>false</default>
+                <label>Completed Call</label>
+            </value>
+            <value>
+                <fullName>DM Identified</fullName>
+                <default>false</default>
+                <label>DM Identified</label>
+            </value>
+            <value>
+                <fullName>Follow Up</fullName>
+                <default>false</default>
+                <label>Follow Up</label>
+            </value>
+            <value>
+                <fullName>Hung Up</fullName>
+                <default>false</default>
+                <label>Hung Up</label>
+            </value>
+            <value>
+                <fullName>Incorrect Phone Number</fullName>
+                <default>false</default>
+                <label>Incorrect Phone Number</label>
+            </value>
+            <value>
+                <fullName>Language Blocked</fullName>
+                <default>false</default>
+                <label>Language Blocked</label>
+            </value>
+            <value>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+                <label>Left Message</label>
+            </value>
+            <value>
+                <fullName>Left Voicemail</fullName>
+                <default>false</default>
+                <label>Left Voicemail</label>
+            </value>
+            <value>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+                <label>No Answer</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Onboarding Support</fullName>
+                <default>false</default>
+                <label>Onboarding Support</label>
+            </value>
+            <value>
+                <fullName>Pitching</fullName>
+                <default>false</default>
+                <label>Pitching</label>
+            </value>
+            <value>
+                <fullName>Requested Call Back</fullName>
+                <default>false</default>
+                <label>Requested Call Back</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

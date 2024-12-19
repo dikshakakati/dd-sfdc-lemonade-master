@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>It enables “API Only User” system permission, will be used to freeze UI access of users during SMB pre-launch phase.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>API Only User Access</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApiUserOnly</name>
+    </userPermissions>
+</PermissionSet>

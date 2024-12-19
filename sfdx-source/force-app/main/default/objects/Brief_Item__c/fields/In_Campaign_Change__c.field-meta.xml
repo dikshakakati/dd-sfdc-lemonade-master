@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Campaign_Change__c</fullName>
+    <description>LEM-9346: Fixing the Process for In-Campaign Changes</description>
+    <externalId>false</externalId>
+    <label>In-Campaign Change</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Null</fullName>
+                <default>false</default>
+                <label>Null</label>
+            </value>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>Yes-Completed</fullName>
+                <default>false</default>
+                <label>Yes-Completed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

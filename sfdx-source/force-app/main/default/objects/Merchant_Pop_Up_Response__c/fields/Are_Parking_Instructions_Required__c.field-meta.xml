@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Are_Parking_Instructions_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-1979: Captures decision if Parking Arrival Instructions would be required or not.</description>
+    <externalId>false</externalId>
+    <label>Are Parking Instructions Required?</label>
+    <securityClassification>Internal</securityClassification>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

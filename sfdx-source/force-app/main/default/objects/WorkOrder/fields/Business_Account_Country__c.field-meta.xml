@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Account_Country__c</fullName>
+    <description>LEM-1113: It indicates the country code of Business Account.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  Account.RecordType.Name == $Label.BusinessAccountRecordTypeName,
+  TEXT(Account.BillingCountryCode),
+  IF(
+    Account.ParentId != null,
+    TEXT(Account.Parent.BillingCountryCode),
+    TEXT(Account.BillingCountryCode)
+  )
+)</formula>
+    <label>Business Account Country</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

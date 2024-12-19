@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>[Post] CAN Account Management West</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>[Post] CAN Account Management West</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>SMB_Post_sales_CAN</parentRole>
+</Role>

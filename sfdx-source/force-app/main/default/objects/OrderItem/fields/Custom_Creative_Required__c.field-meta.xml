@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Creative_Required__c</fullName>
+    <description>LEM-12423: Eliminate Need for Sales to Select Configuration Type</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reach out to Ad Ops if help is needed</inlineHelpText>
+    <label>Custom Creative Required?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Custom_Creative_Required</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offset_To_Apply__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>LEM-2796: It indicates the offset value to be added for 'Value To Apply' or 'Field To Refer' for populating PDOA on Work Order.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Offset to Apply</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Internal</securityClassification>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

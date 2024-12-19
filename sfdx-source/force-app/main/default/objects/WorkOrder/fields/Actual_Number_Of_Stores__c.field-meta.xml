@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Number_Of_Stores__c</fullName>
+    <description>LEM-813: Actual number of stores being onboarded as part of this work order.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Actual number of stores being onboarded as part of this work order</inlineHelpText>
+    <label>Actual Number Of Stores</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <securityClassification>Proprietary</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

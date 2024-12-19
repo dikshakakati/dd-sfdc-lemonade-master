@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Occasion__c</fullName>
+    <description>LEM-13256 - DPEI Quote Line Attributes</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please fill this when Occasion is ‘Other’</inlineHelpText>
+    <label>Other Occasion</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

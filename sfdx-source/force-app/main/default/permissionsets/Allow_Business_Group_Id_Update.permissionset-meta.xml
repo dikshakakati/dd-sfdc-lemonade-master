@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Allow_Business_Group_Id_Update</name>
+    </customPermissions>
+    <description>LEM-16137 It restrict Sales Users from editing the BGID field on Biz Ref</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Business Group Id Update</label>
+</PermissionSet>

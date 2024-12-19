@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_PaymentProtocol</fullName>
+    <active>true</active>
+    <description>LEM-2983: Validates if Payment Protocol is populated.
+LEM-17471: Bypass the rule for SKU level deals and threshold deals</description>
+    <errorConditionFormula>AND(
+          NOT($Permission.Bypass_Brief_Item_Validation_Rules),
+          Package__c != $Label.Brief_Package_Sponsorships,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_Banners,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_CnG_Categories,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_CnG_Collections,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_CnG_DoubleDash,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_CnG_Search,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_CRM,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_CustomMarketing,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_Branded_Collections,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_Sampling,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_Threshold_Promo,
+          TEXT(Product__c) &lt;&gt; $Label.Brief_Product_SKU_Level_Deals,
+          ISBLANK(
+            TEXT(Payment_Protocol__c)
+          )
+        )</errorConditionFormula>
+    <errorDisplayField>Payment_Protocol__c</errorDisplayField>
+    <errorMessage>Please provide the Payment Protocol before saving.</errorMessage>
+</ValidationRule>

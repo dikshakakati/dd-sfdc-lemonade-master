@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>LEM-14035: It is used to check if the bundle is active or not.</description>
+    <externalId>false</externalId>
+    <securityClassification>Confidential</securityClassification>
+    <label>Is Active?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

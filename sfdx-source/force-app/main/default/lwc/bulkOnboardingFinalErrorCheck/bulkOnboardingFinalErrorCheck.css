@@ -1,0 +1,42 @@
+.main-spinner {
+  min-height: 80px;
+}
+
+.success-message-text {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.store-row {
+  cursor: pointer;
+}
+
+.table-spinner {
+  min-height: 120px;
+}
+
+.refresh-icon {
+  cursor: pointer;
+}
+
+/* To compensate for the space that the DOM allocates for the label we are not using */
+.no-label-combobox {
+  margin-top: -1em;
+}
+
+.store-row td:first-of-type {
+  width: 40%;
+}
+
+.store-row td {
+  width: 30%;
+}
+
+/* Missing Information table spinner */
+.relative-spinner {
+  position: relative;
+}
+
+.disabled-table {
+  opacity: 0.3;
+}

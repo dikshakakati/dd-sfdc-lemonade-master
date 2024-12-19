@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disc_Percent_For_Consumer_Validation</fullName>
+    <active>true</active>
+    <description>Validation Created as part of LEM-22341 to validate Discount Percentage For Consumer Validation under A&amp;P Products</description>
+    <errorConditionFormula>AND(
+        NOT($Permission.Bypass_Ads_Promos_Validation),
+        OR(
+            SBQQ__ProductName__c = &apos;Custom Marketing Promotion&apos;,
+            SBQQ__ProductName__c = &apos;Spend X, Get Y&apos;,
+            SBQQ__ProductName__c = &apos;Order Again&apos;,
+            SBQQ__ProductName__c = &apos;Buy Item, Get $X or Y% Off&apos;
+        ),
+        Text(SBQQ__Quote__r.SBQQ__Account__r.Segment__c) = $Label.AccountSegmentSMB,
+        SBQQ__Existing__c = false,
+        OR(
+            AND(
+                NOT(ISBLANK(Discount_Percentage_for_Consumer__c)),
+                ISBLANK(Flat_Discount_Amount_for_Consumer__c),
+                OR(
+                    ISBLANK(Max_Discount_Amount_for_Consumer__c),
+                    ISBLANK(Max_Amount_from_Marketing_Percent__c),
+                    ISBLANK(Marketing_Only_Commission__c)
+                )
+            ),
+            AND(
+                NOT(ISBLANK(Flat_Discount_Amount_for_Consumer__c)),
+                OR(
+                    NOT(ISBLANK(Max_Discount_Amount_for_Consumer__c)),
+                    NOT(ISBLANK(Max_Amount_from_Marketing_Percent__c)),
+                    NOT(ISBLANK(Marketing_Only_Commission__c))
+                )
+            ),
+            AND(
+                ISBLANK(Discount_Percentage_for_Consumer__c),
+                OR(
+                    NOT(ISBLANK(Max_Discount_Amount_for_Consumer__c)),
+                    NOT(ISBLANK(Max_Amount_from_Marketing_Percent__c)),
+                    NOT(ISBLANK(Marketing_Only_Commission__c))
+                )
+            )
+        )
+)</errorConditionFormula>
+    <errorMessage>‘Max Discount Amount for Consumer&apos;, ‘Max Amount from Marketing Percent’ and &apos;Additional Marketing Fee&apos; are required only when &apos;Discount Percentage for Consumer’ is valued</errorMessage>
+</ValidationRule>

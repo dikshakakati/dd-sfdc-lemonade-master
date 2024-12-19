@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_to_Update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Whether this field should be send when a Quote has already been sent to SSMO</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Add to Update</label>
+    <type>Checkbox</type>
+</CustomField>

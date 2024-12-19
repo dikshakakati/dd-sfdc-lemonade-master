@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Owner_Change_for_SMB_Account</fullName>
+    <active>true</active>
+    <description>LEM-15845: To validate the edit access to the Account Owner field given to the owner of the account</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.Bypass_Account_Validation_Rules),
+  NOT(IsValidationRuleBypassedByFlow__c),
+  NOT($Permission.Allow_Edit_Access_of_Account_Owner),
+  $User.Id &lt;&gt; PRIORVALUE(OwnerId),
+  TEXT(Segment__c) = $Label.AccountSegmentSMB,
+  ISCHANGED(OwnerId)
+)</errorConditionFormula>
+    <errorMessage>You do not have access to change the Account Owner of this account. Please create an S&amp;O Support Case to request account ownership change.</errorMessage>
+</ValidationRule>

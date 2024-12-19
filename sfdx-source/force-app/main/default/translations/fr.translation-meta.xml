@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Distance pour l’AOR</label>
+        <name>Mx_Form_AOR_Distance_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>AOR activée</label>
+        <name>Mx_Form_AOR_Enabled_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Activation centrale (AC)</label>
+        <name>Mx_Form_Activated_Centrally_AC_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Ligne d’adresse 1</label>
+        <name>Mx_Form_Address_line_1_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Autre nom du commerce (Portail commerçant)</label>
+        <name>Mx_Form_Alternative_Store_Name_Mx_Portal_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le bon nombre de chiffres pour le numéro de compte bancaire (Australie = 6 à 10 chiffres, États-Unis = 6 à 17 chiffres, Nouvelle-Zélande = 13 à 16 chiffres, Canada = 7 à 12 chiffres).</label>
+        <name>Mx_Form_Bank_Account_Number_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro de compte bancaire</label>
+        <name>Mx_Form_Bank_Account_Number_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Saisit l’adresse courriel à configurer dans NetSuite.</label>
+        <name>Mx_Form_Billing_Contact_Email_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse courriel de la personne responsable de la facturation</label>
+        <name>Mx_Form_Billing_Contact_Email_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Saisit le prénom à configurer dans NetSuite.</label>
+        <name>Mx_Form_Billing_Contact_First_Name_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Prénom de la personne responsable de la facturation</label>
+        <name>Mx_Form_Billing_Contact_First_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Saisit le nom de famille à configurer dans NetSuite.</label>
+        <name>Mx_Form_Billing_Contact_Last_Name_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom de famille de la personne responsable de la facturation</label>
+        <name>Mx_Form_Billing_Contact_Last_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le numéro de téléphone sans caractère spécial, ni espace ni lettre, p. ex. 9491234567. Le numéro de téléphone doit être composé de 10 chiffres pour les États-Unis et le Canada, de 8 à 11 chiffres pour l’Australie et de 8 à 10 chiffres pour la Nouvelle-Zélande.</label>
+        <name>Mx_Form_Billing_Contact_Phone_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro de téléphone de la personne responsable de la facturation</label>
+        <name>Mx_Form_Billing_Contact_Phone_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Date de naissance du représentant légal</label>
+        <name>Mx_Form_Birthdate_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Marque</label>
+        <name>Mx_Form_Brand_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse courriel du directeur des opérations</label>
+        <name>Mx_Form_Business_Director_Email_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Prénom du directeur des opérations</label>
+        <name>Mx_Form_Business_Director_First_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom de famille du directeur des opérations</label>
+        <name>Mx_Form_Business_Director_Last_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro d’identification de l’entreprise</label>
+        <name>Mx_Form_Business_ID_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Business_Owner_City_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Business_Owner_Country_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Date de naissance du propriétaire de l&apos;entreprise</label>
+        <name>Mx_Form_Business_Owner_DOB_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse courriel du propriétaire de l’entreprise</label>
+        <name>Mx_Form_Business_Owner_Email_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Prénom du propriétaire de l’entreprise</label>
+        <name>Mx_Form_Business_Owner_First_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom de famille du propriétaire de l’entreprise</label>
+        <name>Mx_Form_Business_Owner_Last_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse postale du propriétaire de l’entreprise</label>
+        <name>Mx_Form_Business_Owner_Personal_Address_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Business_Owner_State_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Business_Owner_Street_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Business_Owner_zip_Postal_Code_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Ville</label>
+        <name>Mx_Form_City_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Pays</label>
+        <name>Mx_Form_Country_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Frais de livraison personnalisés pour la livraison par le commerçant.</label>
+        <name>Mx_Form_Custom_Delivery_Fee_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Frais de livraison personnalisés</label>
+        <name>Mx_Form_Custom_Delivery_Fee_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Désigne le rayon de livraison personnalisé du commerçant.</label>
+        <name>Mx_Form_Custom_Delivery_Radius_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Rayon de livraison personnalisé</label>
+        <name>Mx_Form_Custom_Delivery_Radius_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse courriel du décideur</label>
+        <name>Mx_Form_DM_Email_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Prénom du décideur</label>
+        <name>Mx_Form_DM_First_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom de famille du décideur</label>
+        <name>Mx_Form_DM_Last_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le numéro de téléphone sans caractère spécial, ni espace ni lettre, p. ex. 9491234567. Le numéro de téléphone doit être composé de 10 chiffres pour les États-Unis et le Canada, de 8 à 11 chiffres pour l’Australie et de 8 à 10 chiffres pour la Nouvelle-Zélande.</label>
+        <name>Mx_Form_DM_Phone_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro de téléphone du décideur</label>
+        <name>Mx_Form_DM_Phone_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Retarder l’envoi de la tablette</label>
+        <name>Mx_Form_Delay_Tablet_Shipment_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Présence d’ascenseurs / rampes d’accès?</label>
+        <name>Mx_Form_Has_Elevators_Ramps_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Désigne les heures d’ouverture du commerce du commerçant.</label>
+        <name>Mx_Form_Hours_of_Operation_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Heures d’ouverture</label>
+        <name>Mx_Form_Hours_of_Operation_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez ajouter toutes les instructions de cueillette au commerce lorsque le Dasher est arrivé au commerce (p. ex. emplacement du comptoir de cueillette).</label>
+        <name>Mx_Form_In_Store_Pickup_Instructions_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Instructions pour les commandes à emporter</label>
+        <name>Mx_Form_In_Store_Pickup_Instructions_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Inflation</label>
+        <name>Mx_Form_Inflation_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Unité d’arrondissement de l’inflation</label>
+        <name>Mx_Form_Inflation_Rounding_Unit_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Pour les commerçants canadiens, veuillez indiquer le numéro d’institution de la banque du commerçant.</label>
+        <name>Mx_Form_Institution_Number_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro d’institution</label>
+        <name>Mx_Form_Institution_Number_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Taxe + taux propres aux articles</label>
+        <name>Mx_Form_Item_Level_Tax_Categories_Rates_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez indiquer le nom de l’entité juridique sous laquelle votre entreprise est enregistrée.</label>
+        <name>Mx_Form_Legal_Business_Name_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom légal de l&apos;entreprise</label>
+        <name>Mx_Form_Legal_Business_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Storefront est une solution de commande en ligne qui se trouve sur votre site Web ou sur d’autres canaux. Vous ne payez pas de commission sur les commandes Storefront, seulement 2,9 % + 0,30 $ pour le traitement des paiements par carte de crédit.</label>
+        <name>Mx_Form_MXWebsite_Creation_Needed_for_Storefront_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Avez-vous besoin de créer un site Web pour Storefront?</label>
+        <name>Mx_Form_MXWebsite_Creation_Needed_for_Storefront_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez sélectionner une journée dans les 7 à 16 prochains jours. Nous ne pouvons pas répondre aux demandes de séance photo dans moins de 7 jours ou dans plus de 16 jours.</label>
+        <name>Mx_Form_MX_Photoshoot_Date_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Date à privilégier pour la séance photo</label>
+        <name>Mx_Form_MX_Photoshoot_Date_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Heure à privilégier pour la séance photo</label>
+        <name>Mx_Form_MX_Photoshoot_Time_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Storefront est une solution de commande en ligne qui se trouve sur votre site Web ou sur d’autres canaux. Vous ne payez pas de commission sur les commandes Storefront, seulement 2,9 % + 0,30 $ pour le traitement des paiements par carte de crédit.</label>
+        <name>Mx_Form_MX_Storefront_Match_Branded_Website_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Souhaitez-vous que nous fassions correspondre le lien de Storefront à la marque de votre site Web?</label>
+        <name>Mx_Form_MX_Storefront_Match_Branded_Website_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Storefront est une solution de commande en ligne qui se trouve sur votre site Web ou sur d’autres canaux. Vous ne payez pas de commission sur les commandes Storefront, seulement 2,9 % + 0,30 $ pour le traitement des paiements par carte de crédit.</label>
+        <name>Mx_Form_MX_Storefront_Mx_Has_Website_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Avez-vous un site Web où nous pouvons intégrer votre lien Storefront?</label>
+        <name>Mx_Form_MX_Storefront_Mx_Has_Website_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veillez à ce que votre site Web soit une URL complète et qu’elle commence par https://.</label>
+        <name>Mx_Form_MX_Storefront_Website_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Si vous avez répondu « oui » à la question précédente, veuillez saisir votre site Web.</label>
+        <name>Mx_Form_MX_Storefront_Website_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Rayon de livraison maximal</label>
+        <name>Mx_Form_Max_Delivery_Radius_KM_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Méthode de configuration des menus</label>
+        <name>Mx_Form_Menu_Setup_Method_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez indiquer la catégorie d’articles et le taux de taxe correspondant à chaque catégorie, en les séparant par une ligne. Par exemple
+ Boissons gazeuses – 6,9 %
+ Bonbons – 1,2 %</label>
+        <name>Mx_Form_Menu_URL_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>URL du menu</label>
+        <name>Mx_Form_Menu_URL_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Le menu doit être fait d’ici le</label>
+        <name>Mx_Form_Menu_to_be_Completed_By_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Identifiant fourni par le commerçant</label>
+        <name>Mx_Form_Merchant_Supplied_ID_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Le commerçant a demandé une séance photo</label>
+        <name>Mx_Form_Mx_Requested_Photoshoot_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Si vous décidez de soumettre des photos professionnelles, vous recevrez un courriel vous expliquant comment soumettre vos propres photos. Si vous optez pour une séance photo professionnelle gratuite, un représentant vous enverra un courriel pour planifier la séance.</label>
+        <name>Mx_Form_Mx_Requested_Photoshoot_MX_Form_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Choisissez l’une des options suivantes pour les photos de votre menu</label>
+        <name>Mx_Form_Mx_Requested_Photoshoot_MX_Form_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Escaliers à monter?</label>
+        <name>Mx_Form_Need_to_Climb_Stairs_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Courriel de protocole de commande</label>
+        <name>Mx_Form_Order_Protocol_Email_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Protocole de commande</label>
+        <name>Mx_Form_Order_Protocol_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Protocole de secours du PDV</label>
+        <name>Mx_Form_POS_Fallback_Protocol_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Si l’identifiant d’intégration du PDV n’est pas connu à l’heure actuelle, veuillez saisir « À confirmer » et le nom du point de vente en tant que paramètre fictif.</label>
+        <name>Mx_Form_POS_Integration_ID_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Identifiant d’intégration au PDV</label>
+        <name>Mx_Form_POS_Integration_ID_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Désigne les intégrations au PDV actives.</label>
+        <name>Mx_Form_POS_Integration_Type_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Type d’intégration au PDV</label>
+        <name>Mx_Form_POS_Integration_Type_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Système de PDV</label>
+        <name>Mx_Form_POS_System_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Stationnement / instructions d’arrivée</label>
+        <name>Mx_Form_Parking_Arrival_Instructions_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Payment_Address_line_1_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Saisit la ville de facturation.</label>
+        <name>Mx_Form_Payment_City_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Payment_City_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Saisit le pays de facturation.</label>
+        <name>Mx_Form_Payment_Country_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Payment_Country_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Description du paiement</label>
+        <name>Mx_Form_Payment_Descriptor_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Saisit l’état de facturation.</label>
+        <name>Mx_Form_Payment_State_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Payment_State_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Payment_Street_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Payment_zip_Postal_Code_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le numéro de téléphone sans caractère spécial, ni espace ni lettre, p. ex. 9491234567. Le numéro de téléphone doit être composé de 10 chiffres pour les États-Unis et le Canada, de 8 à 11 chiffres pour l’Australie et de 8 à 10 chiffres pour la Nouvelle-Zélande.</label>
+        <name>Mx_Form_Phone_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>numéro de téléphone du commerce</label>
+        <name>Mx_Form_Phone_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Il s’agit de la personne avec laquelle nous communiquerons pour déterminer le jour et l’heure de la séance photo.</label>
+        <name>Mx_Form_Photoshoot_Contact_Email_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse courriel de la personne responsable de la séance photo</label>
+        <name>Mx_Form_Photoshoot_Contact_Email_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Il s’agit de la personne avec laquelle nous communiquerons pour déterminer le jour et l’heure de la séance photo.</label>
+        <name>Mx_Form_Photoshoot_Contact_First_Name_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Prénom de la personne responsable de la séance photo</label>
+        <name>Mx_Form_Photoshoot_Contact_First_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Il s’agit de la personne avec laquelle nous communiquerons pour déterminer le jour et l’heure de la séance photo.</label>
+        <name>Mx_Form_Photoshoot_Contact_Last_Name_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom de famille de la personne responsable de la séance photo</label>
+        <name>Mx_Form_Photoshoot_Contact_Last_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le numéro de téléphone sans caractère spécial, ni espace ni lettre, p. ex. 9491234567. Le numéro de téléphone doit être composé de 10 chiffres pour les États-Unis et le Canada, de 8 à 11 chiffres pour l’Australie et de 8 à 10 chiffres pour la Nouvelle-Zélande.</label>
+        <name>Mx_Form_Photoshoot_Contact_Mobile_Phone_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro de cellulaire de la personne responsable de la séance photo</label>
+        <name>Mx_Form_Photoshoot_Contact_Mobile_Phone_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom de la personne responsable de la séance photo</label>
+        <name>Mx_Form_Photoshoot_Contact_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le numéro de téléphone sans caractère spécial, ni espace ni lettre, p. ex. 9491234567. Le numéro de téléphone doit être composé de 10 chiffres pour les États-Unis et le Canada, de 8 à 11 chiffres pour l’Australie et de 8 à 10 chiffres pour la Nouvelle-Zélande.</label>
+        <name>Mx_Form_Photoshoot_Contact_Phone_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro de téléphone de la personne responsable de la séance photo</label>
+        <name>Mx_Form_Photoshoot_Contact_Phone_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Date de la séance photo</label>
+        <name>Mx_Form_Photoshoot_Date_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Heure de la séance photo</label>
+        <name>Mx_Form_Photoshoot_Time_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Date d’activation proposée</label>
+        <name>Mx_Form_Proposed_Date_of_Activation_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Date de mise en œuvre proposée</label>
+        <name>Mx_Form_Proposed_Date_of_Implementation_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Date d’envoi de la tablette proposée</label>
+        <name>Mx_Form_Proposed_Date_of_Tablet_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro d’identification fiscal provincial, applicable uniquement aux commerçants canadiens.</label>
+        <name>Mx_Form_Provincial_Tax_ID_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Identifiant fiscal provincial</label>
+        <name>Mx_Form_Provincial_Tax_ID_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Il s’agit de la date de naissance du représentant pour le compte connecté Stripe.</label>
+        <name>Mx_Form_Representative_Date_of_Birth_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Date de naissance du représentant légal</label>
+        <name>Mx_Form_Representative_Date_of_Birth_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Il s’agit de l’adresse courriel du représentant pour le compte connecté Stripe.</label>
+        <name>Mx_Form_Representative_Email_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse courriel du représentant légal</label>
+        <name>Mx_Form_Representative_Email_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Il s’agit du prénom du représentant pour le compte connecté Stripe.</label>
+        <name>Mx_Form_Representative_First_Name_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Prénom du représentant légal</label>
+        <name>Mx_Form_Representative_First_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Il s’agit du nom de famille du représentant pour le compte connecté Stripe.</label>
+        <name>Mx_Form_Representative_Last_Name_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom de famille du représentant légal</label>
+        <name>Mx_Form_Representative_Last_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le numéro de téléphone sans caractère spécial, ni espace ni lettre, p. ex. 9491234567. Le numéro de téléphone doit être composé de 10 chiffres pour les États-Unis et le Canada, de 8 à 11 chiffres pour l’Australie et de 8 à 10 chiffres pour la Nouvelle-Zélande.</label>
+        <name>Mx_Form_Representative_Phone_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro de téléphone du représentant légal</label>
+        <name>Mx_Form_Representative_Phone_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro d’acheminement du commerçant.</label>
+        <name>Mx_Form_Routing_Number_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro d&apos;acheminement</label>
+        <name>Mx_Form_Routing_Number_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Désigne les quatre derniers chiffres du numéro de sécurité sociale du commerçant. Requis pour l’alcool aux États-Unis.</label>
+        <name>Mx_Form_SSN_Last_4Digits_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>NSS du représentant légal (4 derniers chiffres)</label>
+        <name>Mx_Form_SSN_Last_4Digits_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Notes de vente pour l’équipe des menus</label>
+        <name>Mx_Form_Sales_Notes_for_Menu_Team_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Exigences pour les Dashers de Seattle</label>
+        <name>Mx_Form_Seattle_Dasher_Requirements_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_State_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>État/Province</label>
+        <name>Mx_Form_State_Province_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Nom du commerce (nom du compte)</label>
+        <name>Mx_Form_Store_Name_Account_Name_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Storefront correspond au site Web de la marque?</label>
+        <name>Mx_Form_Storefront_Match_Branded_Website_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Le commerçant Storefront a un site Web?</label>
+        <name>Mx_Form_Storefront_Mx_Has_Website_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LEM-24213: It is used for translating Fields on Mx Onboarding Form --></label>
+        <name>Mx_Form_Storefront_Proposed_Date_of_Impl_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Date de mise en œuvre proposée pour Storefront</label>
+        <name>Mx_Form_Storefront_Proposed_Date_of_Impl_Total_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Site Web Storefront</label>
+        <name>Mx_Form_Storefront_Website_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Il doit s’agir de l’adresse de votre entreprise. Si aucune adresse n’est disponible, veuillez indiquer l’adresse de l’un de vos commerces.</label>
+        <name>Mx_Form_Street_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Rue</label>
+        <name>Mx_Form_Street_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Méthode d’envoi de la tablette</label>
+        <name>Mx_Form_Tablet_Delivery_Method_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro d’identification fiscal du commerçant applicable à tous les pays. Aux États-Unis, saisir le numéro EIN; au Canada, saisir le numéro NIF; en Australie, saisir le numéro ABN; en Nouvelle-Zélande, saisir le numéro d’identification fiscale NZBN (13 chiffres).</label>
+        <name>Mx_Form_Tax_ID_Field_Help_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Numéro d’identification fiscal</label>
+        <name>Mx_Form_Tax_ID_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Taux de remplacement de la taxe</label>
+        <name>Mx_Form_Tax_Override_Rate_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Type de restaurant</label>
+        <name>Mx_Form_Type_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Création de site Web nécessaire pour Storefront?</label>
+        <name>Mx_Form_Website_Creation_Needed_for_Storefront_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Code ZIP/Code postal</label>
+        <name>Mx_Form_zip_Postal_Code_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro de téléphone doit être composé de 8 à 11 chiffres.</label>
+        <name>Australia_Phone_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro de téléphone doit être composé de 10 chiffres. Le numéro de téléphone ne doit pas commencer par un « 0 ».</label>
+        <name>Canada_Phone_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Ajouter un commerce</label>
+        <name>Merchant_Form_Add_Store</name>
+    </customLabels>
+    <customLabels>
+        <label>Adresse courriel</label>
+        <name>Merchant_Form_Email_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Saisir les renseignements sur l’entreprise</label>
+        <name>Merchant_Form_Enter_Business_Details</name>
+    </customLabels>
+    <customLabels>
+        <label>Saisir les renseignements sur le commerce</label>
+        <name>Merchant_Form_Enter_Store_Details</name>
+    </customLabels>
+    <customLabels>
+        <label>Vous pouvez passer à l&apos;intégration à DoorDash. Veuillez saisir les données suivantes et soumettre ce formulaire afin que nous puissions commencer votre processus d’intégration.</label>
+        <name>Merchant_Form_General_Instruction</name>
+    </customLabels>
+    <customLabels>
+        <label>Ce lien de formulaire unique ne s’applique qu’à {businessName}. S’il ne s’agit pas de votre entreprise, veuillez communiquer avec votre représentant pour obtenir de l’aide.</label>
+        <name>Merchant_Form_General_Instruction_with_Business_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Nous sommes désolés de vous informer que le lien du formulaire a expiré. Veuillez communiquer avec le représentant des ventes pour résoudre ce problème.</label>
+        <name>Merchant_Form_Link_Expired_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Vous pouvez ajouter jusqu&apos;à 10 commerces.</label>
+        <name>Merchant_Form_Max_Store_Message</name>
+    </customLabels>
+    <customLabels>
+        <label>Suivant</label>
+        <name>Merchant_Form_Next</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez fournir tous les renseignements requis.</label>
+        <name>Merchant_Form_Required_Details_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez remplir tous les champs en utilisant le format requis.</label>
+        <name>Merchant_Form_Required_Format_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le processus de votre intégration a commencé. Si nous avons besoin de plus amples renseignements, nous communiquerons avec vous. Vous obtiendrez l’accès au Portail commerçant dans les prochains jours.</label>
+        <name>Merchant_Form_Submission_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Soumettre</label>
+        <name>Merchant_Form_Submit</name>
+    </customLabels>
+    <customLabels>
+        <label>Merci!</label>
+        <name>Merchant_Form_Thank_You</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro de téléphone doit être composé de 8 à 10 chiffres.</label>
+        <name>New_Zealand_Phone_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>No</label>
+        <name>OI_ActivateCentrally_No</name>
+    </customLabels>
+    <customLabels>
+        <label>Il semble que vous ayez saisi plusieurs commerces ayant la même adresse. Veuillez examiner vos renseignements et essayer de les soumettre à nouveau.</label>
+        <name>OI_Address_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le bon nombre de chiffres pour le numéro de compte bancaire (Australie = 6 à 10 chiffres, États-Unis = 6 à 17 chiffres, Nouvelle-Zélande = 13 à 16 chiffres, Canada = 7 à 12 chiffres)</label>
+        <name>OI_Bank_Account_Number_Validation_Message</name>
+    </customLabels>
+    <customLabels>
+        <label>La date de naissance ne peut être postérieure à la date d’aujourd’hui.</label>
+        <name>OI_Birthdate_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le format de l’adresse courriel n’est pas valide.</label>
+        <name>OI_Email_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro d’institution doit comporter XXX chiffres.</label>
+        <name>OI_Generic_Institution_Number_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro d’acheminement doit comporter XXX chiffres.</label>
+        <name>OI_Generic_Routing_Number_Length_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro d’acheminement ne doit pas commencer par XXX.</label>
+        <name>OI_Generic_Routing_Number_Start_Digits_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro d’identification fiscale doit comporter XXX chiffres.</label>
+        <name>OI_Generic_Tax_Id_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Schedule a FREE professional photoshoot</label>
+        <name>OI_MX_RequestedPhotoshoot_MXForm_Yes</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez fournir l’URL du menu.</label>
+        <name>OI_Menu_URL_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez retirer les caractères spéciaux, les espaces et les lettres du numéro de téléphone. Le numéro de téléphone doit être composé de 10 chiffres pour les États-Unis et le Canada, de 8 à 11 chiffres pour l’Australie et de 8 à 10 chiffres pour la Nouvelle-Zélande.</label>
+        <name>OI_Phone_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez vous assurer que la date et l’heure de la séance photo sélectionnées sont au moins 2 jours (~49 heures) à l’avance et qu’elles ne tombent pas un dimanche.</label>
+        <name>OI_Photoshoot_Date_Time_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez vous assurer que le prénom, le nom, l’adresse courriel et les coordonnées sont inscrits dans la section Renseignements sur la séance photo.</label>
+        <name>OI_Photoshoot_Fields_MX_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez choisir l’une des options proposées pour les photos de votre menu.</label>
+        <name>OI_Photoshoot_Requested_MX_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro d’identification fiscal provincial ne doit contenir que des chiffres. Il ne peut contenir qu&apos;un maximum de 17 chiffres.</label>
+        <name>OI_Provincial_Tax_Id_Validation</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez vous assurer que le NSS (quatre derniers chiffres) est indiqué.</label>
+        <name>OI_SSN_Last_4Digits_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez saisir le site Web Storefront.</label>
+        <name>OI_Storefront_Website_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Le numéro de téléphone doit être composé de 10 chiffres. Le numéro de téléphone ne doit pas commencer par un « 0 ».</label>
+        <name>United_States_Phone_Validation_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Ville</label>
+        <name>Mx_Form_Business_Owner_City_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Pays</label>
+        <name>Mx_Form_Business_Owner_Country_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>État/Province</label>
+        <name>Mx_Form_Business_Owner_State_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Rue</label>
+        <name>Mx_Form_Business_Owner_Street_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Code ZIP/Code postal</label>
+        <name>Mx_Form_Business_Owner_zip_Postal_Code_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Rue</label>
+        <name>Mx_Form_Payment_Address_line_1_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Ville</label>
+        <name>Mx_Form_Payment_City_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Pays</label>
+        <name>Mx_Form_Payment_Country_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>État/Province</label>
+        <name>Mx_Form_Payment_State_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Code ZIP/Code postal</label>
+        <name>Mx_Form_Payment_zip_Postal_Code_Field_Label</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur l’entreprise</label>
+        <name>Mx_Form_Business_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur la personne-ressource pour les paiements</label>
+        <name>Mx_Form_Payment_Contact_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements de paiement</label>
+        <name>Mx_Form_Payment_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur la séance photo</label>
+        <name>Mx_Form_Photoshoot_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce : Alcool</label>
+        <name>Mx_Form_Store_Details_Alcohol_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce : Courriel</label>
+        <name>Mx_Form_Store_Details_Email_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce : PDV</label>
+        <name>Mx_Form_Store_Details_POS_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce : Renseignements de paiement</label>
+        <name>Mx_Form_Store_Details_Payment_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce : Renseignements sur les Dashers de Seattle</label>
+        <name>Mx_Form_Store_Details_Seattle_Dasher_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce</label>
+        <name>Mx_Form_Store_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce : Renseignements sur la livraison par le commerçant</label>
+        <name>Mx_Form_Store_Details_Self_Delivery_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce : Renseignements Storefront</label>
+        <name>Mx_Form_Store_Details_Storefront_Details_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>entreprise</label>
+        <name>Mx_Form_Business_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>paiement</label>
+        <name>Mx_Form_Payment_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>photo</label>
+        <name>Mx_Form_Photoshoot_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce : Renseignements sur la livraison par le commerçant</label>
+        <name>Mx_Form_Self_Delivery_Section_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Renseignements sur le commerce</label>
+        <name>Mx_Form_Store_Section_Name</name>
+    </customLabels>
+</Translations>
